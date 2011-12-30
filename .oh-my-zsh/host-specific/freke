@@ -1,0 +1,23 @@
+export PATH=$PATH:/home/linduxed/bin/
+
+if [ -e /usr/share/terminfo/s/screen-256color-bce-s ]; then
+	export TERM='screen-256color-bce-s'
+else
+	export TERM='xterm-color'
+fi
+
+#
+#  ALIAS
+#
+alias pb='wgetpaste'
+
+alias aptow='aptitude show'
+alias aptsea='aptitude search'
+alias aptall='sudo aptitude install'
+alias aptrem='sudo aptitude remove'
+alias apturge='sudo aptitude purge'
+
+alias raad-screen='screen -raAd'
+
+keychain id_rsa -q
+. ~/.keychain/`uname -n`-sh

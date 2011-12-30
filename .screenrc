@@ -1,0 +1,25 @@
+# Screens start at 1
+bind c screen 1
+bind 0 select 10                                                            
+
+# Generate standard screens
+screen 1 
+select 1
+
+# Fix for residual editor text
+altscreen on
+
+# Use 256 colors
+# -- Conflict with NewsBeuter
+term screen-256color
+
+# Informative statusbar
+hardstatus off
+hardstatus alwayslastline
+hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %m-%d %{W}%c %{g}]'
+
+# Disable welcome message
+startup_message off
+
+# Use X scrolling mechanism
+termcapinfo xterm* ti@:te@

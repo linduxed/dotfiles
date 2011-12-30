@@ -1,0 +1,27 @@
+[user]
+	name = linduxed
+	email = linduxed@gmail.com
+[merge]
+	tool = vimdiff
+[color]
+	branch = auto
+	diff = auto
+	status = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[core]
+	autocrlf = input
+[github]
+	user = linduxed
+	token = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

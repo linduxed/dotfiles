@@ -1,0 +1,99 @@
+!xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #ffffff
+xscreensaver.Dialog.background:         #111111
+xscreensaver.Dialog.topShadowColor:     #111111
+xscreensaver.Dialog.bottomShadowColor:  #111111
+xscreensaver.Dialog.Button.foreground:  #666666
+xscreensaver.Dialog.Button.background:  #ffffff
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #666666
+xscreensaver.Dialog.text.background:    #ffffff
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        20
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #ff0000
+xscreensaver.passwd.thermometer.background:  #000000
+xscreensaver.passwd.thermometer.width:       8
+!datestamp format--see the strftime(3) manual page for details
+xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
+
+! make gnuplot dark
+gnuplot*background: black
+gnuplot*textColor: white
+gnuplot*borderColor: white
+gnuplot*axisColor: white 
+!gnuplot*line1Color:  red
+!gnuplot*line2Color:  green
+!gnuplot*line3Color:  blue
+!gnuplot*line4Color:  magenta
+!gnuplot*line5Color:  cyan
+!gnuplot*line6Color:  sienna
+!gnuplot*line7Color:  orange
+!gnuplot*line8Color:  coral
+
+URxvt.font:       xft:Liberation Mono:pixelsize=14:antialias=true:hinting=true
+URxvt.boldFont:   xft:Liberation Mono:bold:pixelsize=14:antialias=true:hinting=true
+URxvt.scrollBar: false
+URxvt.perl-ext-common:  default,matcher,clipboard
+URxvt.urlLauncher:      /usr/bin/chromium-browser
+URxvt.matcher.button:   1
+!URxvt*loginShell:true
+URxvt*transparent:true
+URxvt*shading:15
+URxvt*background:Black
+URxvt*foreground:White
+URxvt*saveLines:32767
+
+!xterm colors
+xterm*foreground:       #d3d3d3
+xterm*background:       #000000
+xterm*cursorColor:      orange
+xterm*color0:           #151515
+xterm*color8:           #505450
+xterm*color1:           #bf7979
+xterm*color9:           #f4a45f
+xterm*color2:           #97b26b
+xterm*color10:          #c5f779
+xterm*color3:           #cdcda1
+xterm*color11:          #ffffaf
+xterm*color4:           #4a5463
+xterm*color12:          #7d8794
+xterm*color5:           #9c3885
+xterm*color13:          #e628ba
+xterm*color6:           #88aadd
+xterm*color14:          #99ccff
+xterm*color7:           #ffffff
+xterm*color15:          #dedede
+ 
+!xterm settings
+xterm*geometry:         107x33
+xterm*dynamicColors:    true
+xterm*utf8:             2
+xterm*eightBitInput:    true
+!xterm*saveLines:        32767 ! uses shitloads of mem
+xterm*scrollTtyKeypress:true
+xterm*scrollTtyOutput:  false
+xterm*scrollBar:        false
+xterm*loginShell:       true
+xterm*faceName:         Terminus:pixelsize=14
+xterm*jumpScroll:       true
+xterm*multiScroll:      true
+xterm*toolBar:          false
+xterm*charClass:        33:48,35-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,126:48
+Xcursor*theme: 		Neutral
+
+Xft*dpi:                96
+Xft*antialias:          true
+Xft*hinting:            full
+
