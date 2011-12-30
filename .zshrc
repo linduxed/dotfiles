@@ -73,7 +73,7 @@ case $SHORTHOST in
 		host_specific_plugins="debian"
 		;;
 	korp)
-		host_specific_plugins="archlinux"
+		host_specific_plugins="archlinux rails rails3 ruby"
 		;;
 	munin)
 		host_specific_plugins="archlinux"
