@@ -24,7 +24,7 @@ nmap <F8> :set list!<CR>
 " F9: bound in ttlhl.vim.
 
 " Keybind for Tasklist
-nmap <F10> :TaskList<CR>
+map <F10> <Plug>TaskList
 
 " Keybind for Taglist
 nmap <F11> :TlistToggle<CR>
