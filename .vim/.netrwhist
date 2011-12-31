@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/linduxed/.vim/bundle/gundo/doc'
-let g:netrw_dirhist_2='/home/linduxed/Documents/kth/IOR/signup-fu/config'
-let g:netrw_dirhist_3='/home/linduxed/.oh-my-zsh/custom/example'
-let g:netrw_dirhist_4='/home/linduxed/.oh-my-zsh/log'
-let g:netrw_dirhist_5='/home/linduxed/.oh-my-zsh/themes'
-let g:netrw_dirhist_6='/home/linduxed/.oh-my-zsh/plugins/archlinux'
