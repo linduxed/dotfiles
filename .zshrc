@@ -65,24 +65,19 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 
-standard_plugins="git mercurial svn"
-host_specific_plugins=""
-
 case $SHORTHOST in
 	freke)
-		host_specific_plugins="debian"
+		plugins=(git mercurial svn debian)
 		;;
 	korp)
-		host_specific_plugins="archlinux rails rails3 ruby"
+		plugins=(git mercurial svn archlinux rails rails3 ruby)
 		;;
 	munin)
-		host_specific_plugins="archlinux"
+		plugins=(git mercurial svn archlinux)
 		;;
 	*)
 		;;
 esac
-
-plugins=($standard_plugins $host_specific_plugins)
 
 # Load the OH-MY-ZSH settings.
 source $ZSH/oh-my-zsh.sh

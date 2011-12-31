@@ -1,0 +1,15 @@
+set completion-ignore-case on
+
+# Completions longer than 2 chars have their prefix truncated.
+set completion-prefix-display-length 2
+
+# Makes TAB complete immediately if there's no match.
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# Treats hyphens and underscores the same.
+set completion-map-case on
+
+# Cycle through completion options.
+Control-h:menu-complete
+Control-j:menu-complete-backward

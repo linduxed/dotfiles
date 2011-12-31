@@ -1,0 +1,97 @@
+" Redesigned mapping for the Colemak layout for Vimperator 1.0
+" 2008-05-14 Andrew Kvalheim, http://aendruk.wordpress.com/. Public domain.
+"
+" Add the line "source ~/.vimperator/colemak.vim" in your .vimperatorrc file to automatically load this file.
+"
+" Colemak layout                                |QWERTY layout
+" ----------------------------------------------|------------------------------------------
+" ` 1 2 3 4 5 6 7 8 9 0 - =     Move Around:    |(instead of)   ` 1 2 3 4 5 6 7 8 9 0 - =
+"   q w f p g j l U y ; [ ] \        u          |     k           q w e r t y u i o p [ ] \
+"   a r s t d h N E I o '         n     i       |  h     l        a s d f g H J K L ; '
+"   z x c v b k m , . /              e          |     j           z x c v b n m , . /
+"
+" New mapping                                   |Consequential remapping(s)
+" ----------------------------------------------|------------------------------------------
+" ;     Start command line mode                 |.      Start an extended hint mode
+" n     Scroll document to the left             |k      Find next
+"                                               |K      Find previous
+" N     Go back in the browser history          |
+" <C-n> Go to an older position in the jump list|
+" i     Scroll document to the right            |s      Start caret mode
+" I     Go forward in the browser history       |
+" <C-i> Go to a newer position in the jump list |
+" u     Scroll document up                      |<C-d>  Undo closing of a tab
+" U     Scroll window upwards in the buffer     |
+" <C-u> Go to the previous tab                  |
+" e     Scroll document down                    |
+" E     Scroll window downwards in the buffer   |
+" <C-e> Go to the next tab                      |
+" j     Scroll up a full page                   |
+" h     Scroll down a full page                 |
+" <C-c> Copy currently selected text            |C      Stop loading the current web page
+
+
+" Remapping
+" -----------------------------------------------------------------------------------------
+" Start command line mode
+map -b ; :
+
+" Start an extended hint mode
+map -b . ;
+
+" Scroll document to the left
+map -b n h
+
+" Find next
+map -b k n
+
+" Go back in the browser history
+map -b N H
+
+" Find previous
+map -b K N
+
+" Go to an older position in the jump list
+map -b <C-n> <C-o>
+
+" Scroll document to the right
+map -b i l
+
+" Go forward in the browser history
+map -b I L
+
+" Start caret mode
+map -b w i
+
+" Scroll document up
+map -b u k
+
+" Undo closing of a tab
+map -b <C-d> u
+
+" Scroll window upwards in the buffer
+map -b U <C-u>
+
+" Go to the previous tab
+map -b <C-u> <C-p>
+
+" Scroll document down
+map -b e j
+
+" Scroll window downwards in the buffer
+map -b E <C-d>
+
+" Go to the next tab
+map -b <C-e> <C-n>
+
+" Scroll up a full page
+map -b j <C-b>
+
+" Scroll down a full page
+map -b h <C-f>
+
+" Copy currently selected text
+map -b <C-c> Y
+
+" Stop loading the current web page
+map -b C <C-c>" 
