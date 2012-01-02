@@ -109,6 +109,7 @@ set hidden                      " Allows hidden buffers
 set cursorline                  " Shows what line the cursor is on
 set cursorcolumn                " Shows what column the cursor is on
 set foldmethod=indent           " Make Vim fold according to the indentation.
+set mouse=n                     " Allow the mouse in normal mode.
 
 " Suffix-dependant autocommands.
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
