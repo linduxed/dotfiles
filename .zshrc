@@ -39,6 +39,12 @@ export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m' # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
+# Options
+setopt auto_continue
+unsetopt hup
+unsetopt check_jobs
+unsetopt case_glob
+
 # Custom colours
 if (( $+commands[dircolors] )); then
 	eval $(dircolors -b $ZSH/dircolors)
