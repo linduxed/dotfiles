@@ -76,7 +76,7 @@ case $SHORTHOST in
 		plugins=(git mercurial svn debian)
 		;;
 	korp)
-		plugins=(git mercurial svn archlinux rails rails3 ruby)
+		plugins=(git mercurial svn archlinux rails rails3 ruby rake)
 		;;
 	munin)
 		plugins=(git mercurial svn archlinux)
