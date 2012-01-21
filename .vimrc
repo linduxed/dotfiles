@@ -10,8 +10,9 @@ source ~/.vim/ttlhl.vim
 source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
 source ~/.vim/fugitive_related.vim
-" Fixes so endwise doesn't print garbage on CR.
-source ~/.vim/endwise_fix.vim
+"" Fixes so endwise doesn't print garbage on CR.
+"" Not used until conflict with Auto-Pairs is resolved: http://bit.ly/wspyke
+" source ~/.vim/endwise_fix.vim
 
 " Fix for pathogen which might be needed, depending on distro.
 filetype off
