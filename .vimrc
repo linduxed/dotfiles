@@ -104,7 +104,6 @@ set ignorecase                  " Ignore case.
 set smartcase                   " Ignore case when the pattern contains lowercase letters only.
 set showtabline=1               " Show tab page labels if there is more than one tab.
 set number                      " Display line numbers.
-set background=dark             " Adjust to dark backgrounds
 set shiftwidth=4                " Spaces for each step of (auto)indent
 set tabstop=4                   " Spaces that a <Tab> in the file counts for
 set softtabstop=4               " Spaces that a <Tab> counts for when editing
@@ -113,6 +112,7 @@ set cursorline                  " Shows what line the cursor is on
 set cursorcolumn                " Shows what column the cursor is on
 set foldmethod=indent           " Make Vim fold according to the indentation.
 set mouse=n                     " Allow the mouse in normal mode.
+" Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix-dependant autocommands.
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
