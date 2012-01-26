@@ -95,7 +95,6 @@ nnoremap <C-x> "+dd| " <C-x> with no selection cuts current line to clipboard
 nnoremap z u|xnoremap z :<C-u>undo<CR>|
 nnoremap gz U|xnoremap gz U<C-u>undo<CR>|
 nnoremap Z <C-r>|xnoremap Z :<C-u>redo<CR>|
-inoremap <CR> <C-g>u<CR>| " Break undo chain (Tip #1054)
 
 " Navigate help file
 " Use < and > to navigate in the help file instead
@@ -120,15 +119,14 @@ nnoremap ww cc|
 " Visual mode
 nnoremap a v|xnoremap a v|
 nnoremap A V|xnoremap A V|
-"nnoremap <C-a> <Esc>ggVG$|xnoremap <C-a> <Esc>ggVG$|vnoremap <C-a> <Esc>ggVG$|
 
 " Search
 nnoremap k n|xnoremap k n|onoremap k n|
 nnoremap K N|xnoremap K N|onoremap K N|
  
-"" Breaks diffput
-"nnoremap p t|xnoremap p t|onoremap p t|
-"nnoremap P T|xnoremap P T|onoremap P T|
+" Breaks diffput
+nnoremap p t|xnoremap p t|onoremap p t|
+nnoremap P T|xnoremap P T|onoremap P T|
 
 " Macros (replay the macro recorded by qq)
 nnoremap Q @q|
@@ -176,12 +174,6 @@ nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <D
 nnoremap <Delete> "_x|vnoremap <Delete> "_d|
 nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
 
-" Omni completion
-inoremap <C-S-Space> <C-p>|
-inoremap <expr> <C-Space> (&omnifunc == '' <bar><bar> pumvisible() ? "\<C-n>" : "\<C-x>\<C-o>")
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
 "Tip #1386, Make Vim completion popup menu work just like in an IDE
-set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? "\<lt>C-n>" : "\<lt>C-n>\<lt>C-r>=pumvisible() ? \"\\<lt>Down>\" : \"\"\<lt>CR>"
 inoremap <expr> <M-;> pumvisible() ? "\<lt>C-n>" : "\<lt>C-x>\<lt>C-o>\<lt>C-n>\<lt>C-p>\<lt>C-r>=pumvisible() ? \"\\<lt>Down>\" : \"\"\<lt>CR>"
