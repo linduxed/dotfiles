@@ -27,7 +27,7 @@ function prompt_linduxed_setup() {
   zstyle ':omz:plugin:git:prompt' added ' %%B%F{green}✚%f%%b'
   zstyle ':omz:plugin:git:prompt' ahead ' %%B%F{yellow}⬆%f%%b'
   zstyle ':omz:plugin:git:prompt' behind ' %%B%F{yellow}⬇%f%%b'
-  zstyle ':omz:plugin:git:prompt' branch ':%B%F{red}%b%f'
+  zstyle ':omz:plugin:git:prompt' branch ':%B%F{red}%b%f%%b)'
   zstyle ':omz:plugin:git:prompt' deleted ' %%B%F{red}✖%f%%b'
   zstyle ':omz:plugin:git:prompt' modified ' %%B%F{blue}✱%f%%b'
   zstyle ':omz:plugin:git:prompt' renamed ' %%B%F{magenta}➜%f%%b'
@@ -35,11 +35,11 @@ function prompt_linduxed_setup() {
   zstyle ':omz:plugin:git:prompt' stashed ' %%B%F{cyan}✭%f%%b'
   zstyle ':omz:plugin:git:prompt' unmerged ' %%B%F{yellow}═%f%%b'
   zstyle ':omz:plugin:git:prompt' untracked ' %%B%F{white}◼%f%%b'
-  zstyle ':omz:plugin:git:prompt' prompt '%B%F{magenta}git%f%b%s'
+  zstyle ':omz:plugin:git:prompt' prompt '(%B%F{magenta}git%f%b%s'
   zstyle ':omz:plugin:git:prompt' rprompt '%A%B%S%a%d%m%r%U%u'
 
   PROMPT='%B%n%b%F{cyan}@%f%B%m%b %(!.%B%F{red}#%f%b.%B%F{green}❯%f%b) '
-  RPROMPT='%(?::%F{red}⏎%f)${git_rprompt_info} (${git_prompt_info}%b)[%B%F{cyan}%~%f%b]'
+  RPROMPT='%(?::%F{red}⏎%f)${git_rprompt_info} ${git_prompt_info}%b[%B%F{cyan}%~%f%b]'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
