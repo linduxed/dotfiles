@@ -39,7 +39,7 @@ function prompt_linduxed_setup() {
   zstyle ':omz:plugin:git:prompt' rprompt '%A%B%S%a%d%m%r%U%u'
 
   PROMPT='%B%n%b%F{cyan}@%f%B%m%b %(!.%B%F{red}#%f%b.%B%F{green}❯%f%b) '
-  RPROMPT='%(?::%F{red}⏎%f)${git_rprompt_info} (${git_prompt_info})[%B%F{cyan}%~%f%b]'
+  RPROMPT='%(?::%F{red}⏎%f)${git_rprompt_info} (${git_prompt_info}%b)[%B%F{cyan}%~%f%b]'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
