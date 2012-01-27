@@ -36,6 +36,10 @@ manpath=(
   /usr/share/man
 )
 
+for path_file in /etc/manpaths.d/*(.N); do
+  manpath+=($(<$path_file))
+done
+
 path=(
   $HOME/.tilde/bin
   $HOME/.tilde/opt/bin
@@ -46,6 +50,10 @@ path=(
   /usr/sbin
   /sbin
 )
+
+for path_file in /etc/paths.d/*(.N); do
+  path+=($(<$path_file))
+done
 
 # Language
 export LANG="en_US.UTF-8"
@@ -97,3 +105,4 @@ if zstyle -t ':omz:environment:termcap' color; then
   export LESS_TERMCAP_ue=$'\E[0m'          # end underline
   export LESS_TERMCAP_us=$'\E[01;32m'      # begin underline
 fi
+

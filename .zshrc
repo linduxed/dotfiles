@@ -18,7 +18,7 @@ zstyle ':omz:terminal' auto-title 'yes'
 
 # Setting it to 'random' loads a random theme.
 # Auto set to 'off' on dumb terminals.
-zstyle ':omz:prompt' theme 'steeef'
+zstyle ':omz:prompt' theme 'linduxed'
 
 autoload -U zmv
 

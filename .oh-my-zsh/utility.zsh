@@ -44,6 +44,3 @@ function find-exec() {
   find . -type f -iname "*${1:-}*" -exec "${2:-file}" '{}' \;
 }
 
-toLower() {
-      echo $1 | tr "[:upper:]" "[:lower:]" 
-}
