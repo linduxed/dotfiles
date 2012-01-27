@@ -1,54 +1,26 @@
 # Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+OMZ=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="linduxed"
+# Set the key mapping style to 'emacs' or 'vi'.
+zstyle ':omz:editor' keymap 'emacs'
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+# Auto convert .... to ../..
+zstyle ':omz:editor' dot-expansion 'no'
 
-# Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# Set case-sensitivity for completion, history lookup, etc.
+zstyle ':omz:*:*' case-sensitive 'no'
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+# Color output (auto set to 'no' on dumb terminals).
+zstyle ':omz:*:*' color 'yes'
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Auto set the tab and window titles.
+zstyle ':omz:terminal' auto-title 'yes'
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
+# Setting it to 'random' loads a random theme.
+# Auto set to 'off' on dumb terminals.
+zstyle ':omz:prompt' theme 'steeef'
 
 autoload -U zmv
-
-# Variables
-WORDCHARS="${WORDCHARS:s,/,}"
-
-# Exports
-export BROWSER=firefox
-export EDITOR=vim
-# Make the manpages prettier
-export LESS_TERMCAP_mb=$'\E[01;31m' # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m' # begin bold
-export LESS_TERMCAP_me=$'\E[0m' # end mode
-export LESS_TERMCAP_se=$'\E[0m' # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;246m' # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m' # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-
-# Options
-setopt auto_continue
-unsetopt hup
-unsetopt check_jobs
-unsetopt case_glob
-
-# Custom colours
-if (( $+commands[dircolors] )); then
-	eval $(dircolors -b $ZSH/dircolors)
-fi
 
 toLower() {
   echo $1 | tr "[:upper:]" "[:lower:]" 
@@ -59,31 +31,28 @@ SYSTEM=`uname -s`
 SYSTEM=`toLower $SYSTEM`
 SHORTHOST=`hostname -s`
 
-if [ -r "$ZSH/host-specific/$SYSTEM" ]; then
-	source "$ZSH/host-specific/$SYSTEM"
+if [ -r "$OMZ/host-specific/$SYSTEM" ]; then
+	source "$OMZ/host-specific/$SYSTEM"
 fi
 
-if [ -r "$ZSH/host-specific/$SHORTHOST" ]; then
-	source "$ZSH/host-specific/$SHORTHOST"
+if [ -r "$OMZ/host-specific/$SHORTHOST" ]; then
+	source "$OMZ/host-specific/$SHORTHOST"
 fi
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-
+# Set the plugins to load (see $OMZ/plugins/).
 case $SHORTHOST in
 	freke)
-		plugins=(git mercurial svn debian)
+		zstyle ':omz:load' plugin 'archive' 'git' 'dpkg' 'tmux'
 		;;
 	korp)
-		plugins=(git mercurial svn archlinux rails rails3 ruby rake)
+		zstyle ':omz:load' plugin 'archive' 'git' 'bundler' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z'
 		;;
 	munin)
-		plugins=(git mercurial svn archlinux)
+		zstyle ':omz:load' plugin 'archive' 'git' 'pacman'
 		;;
 	*)
 		;;
 esac
 
 # Load the OH-MY-ZSH settings.
-source $ZSH/oh-my-zsh.sh
+source "$OMZ/init.zsh"
