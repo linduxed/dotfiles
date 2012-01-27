@@ -1,6 +1,6 @@
 # ------------------------------------------------------------------------------
 #          FILE:  prompt_linduxed_setup
-#   DESCRIPTION:  oh-my-zsh theme file.
+#   DESCRIPTION:  oh-my-zsh theme file. Fork of Sorin's theme
 #        AUTHOR:  Mikael Muszynski <linduxed@gmail.com>
 #       VERSION:  0.1
 # ------------------------------------------------------------------------------
@@ -35,11 +35,11 @@ function prompt_linduxed_setup() {
   zstyle ':omz:plugin:git:prompt' stashed ' %%B%F{cyan}✭%f%%b'
   zstyle ':omz:plugin:git:prompt' unmerged ' %%B%F{yellow}═%f%%b'
   zstyle ':omz:plugin:git:prompt' untracked ' %%B%F{white}◼%f%%b'
-  zstyle ':omz:plugin:git:prompt' prompt ' %B%F{magenta}git%f%b%s'
+  zstyle ':omz:plugin:git:prompt' prompt '%B%F{magenta}git%f%b%s'
   zstyle ':omz:plugin:git:prompt' rprompt '%A%B%S%a%d%m%r%U%u'
 
-  PROMPT='%B%F{cyan}%1~%f%b${git_prompt_info} %(!.%B%F{red}#%f%b.%B%F{green}❯%f%b) '
-  RPROMPT='%(?::%F{red}⏎%f)${git_rprompt_info}'
+  PROMPT='%B%n%b%F{cyan}@%f%B%m%b %(!.%B%F{red}#%f%b.%B%F{green}❯%f%b) '
+  RPROMPT='%(?::%F{red}⏎%f)${git_rprompt_info} (${git_prompt_info})[%B%F{cyan}%~%f%b]'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
 
