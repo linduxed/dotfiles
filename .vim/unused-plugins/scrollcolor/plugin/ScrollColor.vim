@@ -447,9 +447,9 @@ endfun
 
 command! CN :call s:NextColorscheme()
 command! CP :call s:PrevColorscheme()
-map \n :CN<cr>
-map \p :CP<cr>
-map \c :echo g:colors_name<cr>
+" map \n :CN<cr>
+" map \p :CP<cr>
+" map \c :echo g:colors_name<cr>
 
 " 2006-07-18 fixed bug with Align() -> s:Align() (affected L command)
 " 2006-07-18 added colorlist cache (s:list)
