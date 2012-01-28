@@ -41,3 +41,7 @@ let g:EasyMotion_mapping_j = '<Leader><Leader>e'
 let g:EasyMotion_mapping_k = '<Leader><Leader>u'
 let g:EasyMotion_mapping_n = '<Leader><Leader>k'
 let g:EasyMotion_mapping_N = '<Leader><Leader>K'
+
+let g:NERDTreeMapOpenExpl = 'y'
+let g:NERDTreeMapUpdir = 'l'
+let g:NERDTreeMapUpdirKeepOpen = 'L'

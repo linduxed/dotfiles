@@ -9,14 +9,58 @@ source ~/.vim/ttlhl.vim
 " Add the tab size setup tool
 source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
-source ~/.vim/fugitive_related.vim
+source ~/.vim/fugitive_related.vim"
 
-" Fix for pathogen which might be needed, depending on distro.
+" Needed for bundle-handler.
 filetype off
 
-" Load Pathogen
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles() 
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" Bundles here:
+" original repos on github
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'adimit/prolog.vim'
+Bundle 'fholgado/minibufexpl.vim'
+Bundle 'godlygeek/tabular'
+Bundle 'jiangmiao/auto-pairs'
+Bundle 'mattn/gist-vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'sjbach/lusty'
+Bundle 'sjl/gundo.vim'
+Bundle 'superjudge/tasklist-pathogen'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-eunuch'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-ragtag'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/python.vim'
+Bundle 'vim-scripts/pythoncomplete'
+Bundle 'vim-scripts/taglist.vim'
+" vim-scripts repos
+Bundle 'javacomplete'
+Bundle 'octave.vim'
+Bundle 'indenthaskell.vim'
+Bundle 'syntaxhaskell.vim'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
 
 " Load appropriate theme
 " if hostname() != 'freke' && hostname() != 'attana1'
@@ -73,7 +117,7 @@ if has("folding")
   endfunction
 endif
 
-" Initiate cursor restoration. 
+" Initiate cursor restoration.
 augroup resCur
   autocmd!
   if has("folding")
