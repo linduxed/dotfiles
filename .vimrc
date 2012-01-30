@@ -28,6 +28,7 @@ Bundle 'adimit/prolog.vim'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'godlygeek/tabular'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'kien/ctrlp.vim'
 Bundle 'mattn/gist-vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/nerdcommenter'
@@ -186,3 +187,7 @@ let g:gist_browser_command = 'firefox %URL% &'
 
 " Makes NERDcommenter add spaces around the comment signs for all languages
 let NERDSpaceDelims = 1
+
+" CTRL-P settings
+let g:ctrlp_max_height = 25
+let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp.vim/cache'
