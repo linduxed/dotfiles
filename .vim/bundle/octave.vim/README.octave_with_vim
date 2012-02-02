@@ -1,0 +1,31 @@
+For working with vim and octave it is convenient to open a fresh xterm on a
+fresh virtual desktop, covering the left half of the screen, and type
+"Olistening" in it. This will call the following little script
+~/bin/Olistening:
+
+-----------------cut here, save as ~/bin/Olistening and make executable-----
+#!/bin/bash
+xterm -T 'octave' -e perl ~/.vim/ftplugin/funnel.pl ~/.o-pipe octave&
+-----------------end cut----------------------------------------------------
+
+~/bin has to be in your PATH variable for this to work.
+
+The script opens a second xterm with a running octave interpreter. Before this
+works, you have to have a ~/.vim/ftplugin directory with the bundled 
+ftplugin/funnel.pl script in it. 
+
+funnel.pl requires some perl libraries (see the comments at the beginning of
+funnel.pl)
+
+Then open an octave script file. If you add the lines
+
+au BufNewFile,BufRead *.m     setf octave
+au BufNewFile,BufRead *.m     set syntax=matlab
+
+to your ~.vim/filetype.vim file (or create one with only these lines)
+then the vimscript octave.vim will be activated upon opening any file with 
+a filename matching *.m. The commands available at this point are elucidated
+in octave.vim.
+
+Note that the newly opened xterm will not close after quitting octave. You will
+have to close the window manually.

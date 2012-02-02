@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=1049
+
+Send Octave code from a VIM buffer to Octave using funnel.pl from vimscript #221. Contains
+
+README.octave_with_vim
+ftplugin/octave.vim
+ftplugin/funnel.pl
+
+ftplugin/funnel.pl is from Larry Clapp (vimscript #221). It is used for creating 
+a pipe that Octave is listening to.
+
+You can help improving these files via my subversion repository at http://kriemhild.uft.uni-bremen.de/svn/vim

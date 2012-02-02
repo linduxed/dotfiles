@@ -1,0 +1,13 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3034
+
+Improvement on the default vim haskell.vim syntax file:
+- highlights all Types, not just built in ones
+- highlights top level functions
+- functions and types are highlighted properly in import/export lists
+- repaired spell checking, thus only string and comments are spell checked
+- FFI support
+- QuasiQuotation support
+- highlighting of top level Template Haskell slices
+
+on github: http://github.com/urso/dotrc/blob/master/vim/syntax/haskell.vim
+

@@ -1,0 +1,4 @@
+- Fixed an "incompatible character encodings" error. (lilydjwg)
+- Added arrow key navigation. (Giuseppe Rota)
+- Fixed a divide-by-zero error. (Toby O'Connell)
+- Added g:LustyExplorerDefaultMappings configuration. (Göran Gustafsson)
