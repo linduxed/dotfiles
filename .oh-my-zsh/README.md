@@ -13,15 +13,19 @@ version is 4.3.10.
 
     `git clone https://github.com/sorin-ionescu/oh-my-zsh.git ~/.oh-my-zsh`
 
-2. Create a new Zsh configuration by copying the Zsh template provided:
+2. Initialize the submodules:
+
+    `git submodule update --init --recursive`
+
+3. Create a new Zsh configuration by copying the Zsh template provided:
 
     `cp ~/.oh-my-zsh/templates/zshrc.zsh ~/.zshrc`
 
-3. Set Zsh as your default shell:
+4. Set Zsh as your default shell:
 
     `chsh -s /bin/zsh`
 
-4. Open a new Zsh terminal window or tab.
+5. Open a new Zsh terminal window or tab.
 
 ### Mac OS X
 
@@ -54,13 +58,19 @@ accompanying README files to learn of what is available.
    tab.
    ![sorin theme](http://i.imgur.com/aipDQ.png "sorin theme")
 
-### Customization
+## Customization
 
 The project is managed via [Git](http://git-scm.com). It is highly recommend
 that you commit your changes and push them to [GitHub](http://github.com) to
 not lose them. If you do not know how to use Git, follow this
 [tutorial](http://gitimmersion.com) and bookmark this
 [reference](http://gitref.org).
+
+### Completions
+
+Submit program completions to the
+[zsh-completions](https://github.com/zsh-users/zsh-completions) project. The Oh
+My Zsh completions directory will be synched against it.
 
 ## Resources
 
@@ -79,7 +89,7 @@ improve its performance, do not hesitate to fork and send pull requests.
 
 (The MIT License)
 
-Copyright (c) 2011 Robby Russell, Sorin Ionescu, and contributors.
+Copyright (c) 2009-2012 Robby Russell, Sorin Ionescu, and contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

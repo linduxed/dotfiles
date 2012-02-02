@@ -1,27 +1,27 @@
-# Perl Grep
+# Perl Substitution
 
-local usage pattern modifiers invert
+local usage pattern replacement modifiers
 
 usage="$(
 cat <<EOF
-usage: $0 [-option ...] [--] pattern [file ...]
+usage: $0 [-option ...] [--] pattern replacement [file ...]
 
 options:
+  -g    match globally
   -i    ignore case
   -m    ^ and $ match the start and the end of a line
   -s    . matches newline
-  -v    invert match
   -x    ignore whitespace and comments
 EOF
 )"
 
-while getopts ':imsxv' opt; do
+while getopts ':gimsx' opt; do
   case "$opt" in
+    (g) modifiers="${modifiers}g" ;;
     (i) modifiers="${modifiers}i" ;;
     (m) modifiers="${modifiers}m" ;;
-    (s) modifiers="${modifiers}s" ;;
+    (s) modifiers="${sodifiers}s" ;;
     (x) modifiers="${modifiers}x" ;;
-    (v) invert="yes" ;;
     (:)
       print "$0: option requires an argument: $OPTARG" >&2
       print "$usage" >&2
@@ -36,13 +36,14 @@ while getopts ':imsxv' opt; do
 done
 shift $(( $OPTIND - 1 ))
 
-if (( $# < 1 )); then
+if (( $# < 2 )); then
   print "$usage" >&2
   return 1
 fi
 
 pattern="$1"
-shift
+replacement="$2"
+repeat 2 shift
 
-perl -n -l -e "print if ${invert:+not} m/${pattern//\//\\/}/${modifiers}" "$@"
+perl -i'.orig' -n -l -e "s/${pattern//\//\\/}/${replacement//\//\\/}/${modifiers}; print" "$@"
 
