@@ -6,8 +6,8 @@ vmap > >gv
 nmap <F1> :bprevious<CR>
 nmap <F2> :bnext<CR>
 " Lusty bindings
-nmap <F3> :LustyBufferExplorer<CR>
-nmap <F4> :LustyBufferGrep<CR>
+nmap <F3> :CtrlPBuffer<CR>
+nmap <F4> :CtrlPMRU<CR>
 " F5: bound in trailingspaces.vim file.
 " Toggling the Gundo menu
 nnoremap <F6> :GundoToggle<CR>

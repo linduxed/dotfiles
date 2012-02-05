@@ -33,7 +33,6 @@ Bundle 'mattn/gist-vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/nerdtree.git'
-Bundle 'sjbach/lusty'
 Bundle 'sjl/gundo.vim'
 Bundle 'superjudge/tasklist-pathogen'
 Bundle 'tpope/vim-abolish'
@@ -59,8 +58,6 @@ Bundle 'javacomplete'
 Bundle 'octave.vim'
 Bundle 'indenthaskell.vim'
 Bundle 'syntaxhaskell.vim'
-" non github repos
-Bundle 'git://git.wincent.com/command-t.git'
 
 " Load appropriate theme
 " if hostname() != 'freke' && hostname() != 'attana1'
