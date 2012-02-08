@@ -35,7 +35,7 @@ function prompt_linduxed_setup() {
   zstyle ':omz:plugin:git:prompt' stashed ' %%B%F{cyan}✭%f%%b'
   zstyle ':omz:plugin:git:prompt' unmerged ' %%B%F{yellow}═%f%%b'
   zstyle ':omz:plugin:git:prompt' untracked ' %%B%F{white}◼%f%%b'
-  zstyle ':omz:plugin:git:prompt' prompt '(%B%F{magenta}git%f%b%s'
+  zstyle ':omz:plugin:git:prompt' prompt '(%F{magenta}git%f%b%s'
   zstyle ':omz:plugin:git:prompt' rprompt '%A%B%S%a%d%m%r%U%u'
 
   PROMPT='%B%n%b%F{cyan}@%f%B%m%b %(!.%B%F{red}#%f%b.%B%F{green}❯%f%b) '

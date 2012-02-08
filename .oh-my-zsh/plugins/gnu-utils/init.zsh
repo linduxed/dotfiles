@@ -1,10 +1,9 @@
-# ------------------------------------------------------------------------------
-#          FILE:  gnu-utils.plugin.zsh
-#   DESCRIPTION:  oh-my-zsh plugin file.
-#        AUTHOR:  Sorin Ionescu <sorin.ionescu@gmail.com>
-#       VERSION:  1.0.2
-# ------------------------------------------------------------------------------
-
+#
+# Provides for the interactive usage of GNU Coreutils on BSD systems.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
 if (( $+commands[gdircolors] )); then
   function __gnu_utils() {
@@ -14,7 +13,7 @@ if (( $+commands[gdircolors] )); then
     local cmd
     local prefix
 
-    # coreutils
+    # GNU Coreutils.
     gcmds=('g[' 'gbase64' 'gbasename' 'gcat' 'gchcon' 'gchgrp' 'gchmod'
     'gchown' 'gchroot' 'gcksum' 'gcomm' 'gcp' 'gcsplit' 'gcut' 'gdate'
     'gdd' 'gdf' 'gdir' 'gdircolors' 'gdirname' 'gdu' 'gecho' 'genv' 'gexpand'

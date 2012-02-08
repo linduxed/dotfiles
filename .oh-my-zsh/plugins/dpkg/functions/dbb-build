@@ -1,7 +1,14 @@
-# Kernel-package building shortcut.
-MAKEFLAGS=''                  # Temporarily unset MAKEFLAGS ( '-j3' will fail ).
-appendage='-custom'           # This shows up in $ (uname -r ).
-revision=$(date +"%Y%m%d")    # This shows up in the .deb file name.
+#
+# Makes a dpkg Linux kernel package.
+#
+# Authors:
+#   Daniel Bolton <dbb@9y.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+MAKEFLAGS=''                  # Temporarily unset MAKEFLAGS ('-j3' will fail).
+appendage='-custom'           # Displayed in $(uname -r).
+revision=$(date +"%Y%m%d")    # Displayed in the dpkg package file name.
 
 make-kpkg clean
 

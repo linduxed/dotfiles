@@ -1,4 +1,10 @@
-# Based on ssh-agent code.
+#
+# Provides for an easier use of gpg-agent.
+#
+# Authors:
+#   Florian Walch <florian.walch@gmx.at>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
 
 local GPG_ENV="$HOME/.gnupg/gpg-agent.env"
 
@@ -16,16 +22,14 @@ function _gpg-agent-start() {
 if [[ -f "${GPG_ENV}" ]]; then
   source "${GPG_ENV}" > /dev/null
   ps -ef | grep "${SSH_AGENT_PID}" | grep gpg-agent > /dev/null || {
-    _gpg-agent-start;
+    _gpg-agent-start
   }
 else
-  _gpg-agent-start;
+  _gpg-agent-start
 fi
 
 export GPG_AGENT_INFO
 export SSH_AUTH_SOCK
 export SSH_AGENT_PID
-
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY="$(tty)"
 

@@ -1,5 +1,11 @@
-# Open the GitHub repository in the browser.
-local remote branches branch current_branch url
+#
+# Opens a GitHub repository in the default browser.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+local remote branches branch current_branch file url
 
 remote="${1:-origin}"
 url=$(
@@ -12,6 +18,7 @@ branches=($(
 ))
 current_branch="$(git-branch)"
 branch="${2:-master}"
+file="$3"
 
 if [[ -z "$2" ]]; then
   if (( $branches[(I)$current_branch] != 0 )); then
@@ -22,7 +29,7 @@ if [[ -z "$2" ]]; then
 fi
 
 if [[ -n "$url" ]]; then
-  url="${url}/tree/${branch}"
+  url="${url}/tree/${branch}/${file}"
 
   if (( $+commands[$BROWSER] )); then
     "$BROWSER" "$url"
