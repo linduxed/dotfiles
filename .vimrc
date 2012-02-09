@@ -187,3 +187,4 @@ let NERDSpaceDelims = 1
 " CTRL-P settings
 let g:ctrlp_max_height = 25
 let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp.vim/cache'
+let g:ctrlp_working_path_mode = 0
