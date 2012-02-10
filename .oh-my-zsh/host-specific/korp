@@ -1,8 +1,5 @@
 export PATH=$PATH:/home/linduxed/bin/
 
-# Make RVM a function.
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 #
 #  ALIAS
 #
