@@ -1,4 +1,0 @@
-- Open buffers in a new window split: "b" for horizontal, "v" for vertical. (Leonid Shevtsov)
-- Added arrow key navigation. (Giuseppe Rota)
-- Further fixes to saving/restoring key bindings. (Giuseppe Rota)
-- Added g:LustyJugglerDefaultMappings configuration. (Göran Gustafsson)

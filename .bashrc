@@ -119,4 +119,3 @@ export PATH=$PATH:/home/linduxed/bin/
 
 export EDITOR="vim"
 fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
