@@ -20,7 +20,7 @@ autocutsel -selection PRIMARY -fork &
 
 # Autostart
 /usr/lib/gnome-settings-daemon/gnome-settings-daemon &
-wicd-client &
+wicd-gtk -t &
 gnome-keyring-daemon &
 thunderbird &
 #firefox &
@@ -32,6 +32,7 @@ uim-toolbar-gtk-systray &
 #dropboxd &
 wmname LG3D &
 batti &
+kupfer &
  
 exec ck-launch-session dbus-launch awesome
 # exec gnome-session
