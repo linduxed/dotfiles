@@ -42,10 +42,10 @@ fi
 # Set the plugins to load (see $OMZ/plugins/).
 case $SHORTHOST in
 	freke)
-		zstyle ':omz:load' plugin 'archive' 'git' 'dpkg' 'tmux' 'ruby' 'rails' 'bundler'
+		zstyle ':omz:load' plugin 'archive' 'git' 'dpkg' 'tmux' 'ruby' 'rails'
 		;;
 	korp)
-		zstyle ':omz:load' plugin 'archive' 'git' 'bundler' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z' 'ruby'
+		zstyle ':omz:load' plugin 'archive' 'git' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z' 'ruby'
 		;;
 	munin)
 		zstyle ':omz:load' plugin 'archive' 'git' 'pacman'
