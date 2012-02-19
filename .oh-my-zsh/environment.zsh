@@ -85,7 +85,7 @@ fi
 
 # Browser (Default)
 if (( $+commands[xdg-open] )); then
-  export BROWSER='xdg-open'
+  export BROWSER='firefox %s'
 fi
 
 if (( $+commands[open] )); then
