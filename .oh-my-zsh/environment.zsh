@@ -48,14 +48,11 @@ for path_file in /etc/manpaths.d/*(.N); do
 done
 
 path=(
-  $HOME/.tilde/bin
-  $HOME/.tilde/opt/bin
-  /usr/local/bin
-  /usr/local/sbin
-  /usr/bin
-  /bin
-  /usr/sbin
-  /sbin
+  $HOME/.tilde/{bin,sbin}
+  $HOME/.tilde/opt/{bin,sbin}
+  /usr/local/{bin,sbin}
+  /usr/{bin,sbin}
+  /{bin,sbin}
 )
 
 for path_file in /etc/paths.d/*(.N); do
@@ -63,14 +60,9 @@ for path_file in /etc/paths.d/*(.N); do
 done
 
 # Language
-export LANG="en_US.UTF-8"
-export LC_ALL="$LANG"
-export LC_COLLATE="$LANG"
-export LC_CTYPE="$LANG"
-export LC_MESSAGES="$LANG"
-export LC_MONETARY="$LANG"
-export LC_NUMERIC="$LANG"
-export LC_TIME="$LANG"
+if [[ -z "$LANG" ]]; then
+  eval "$(locale)"
+fi
 
 # Editors
 export EDITOR="vim"
