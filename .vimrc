@@ -159,6 +159,7 @@ autocmd BufNewFile,BufRead *.txt set syntax=off
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.hs set et
 autocmd BufNewFile,BufRead *.rb set et sw=2 sts=2
+autocmd BufNewFile,BufRead *.feature set et sw=2 sts=2
 
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete
