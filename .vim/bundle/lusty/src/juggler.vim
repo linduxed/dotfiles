@@ -1,4 +1,4 @@
-"    Copyright: Copyright (C) 2008-2011 Stephen Bach
+"    Copyright: Copyright (C) 2008-2012 Stephen Bach
 "               Permission is hereby granted to use and distribute this code,
 "               with or without modifications, provided that this copyright
 "               notice is copied with it. Like anything else that's free,
@@ -12,10 +12,11 @@
 "   Maintainer: Stephen Bach <this-file@sjbach.com>
 " Contributors: Juan Frias, Bartosz Leper, Marco Barberis, Vincent Driessen,
 "               Martin Wache, Johannes Holzfuß, Adam Rutkowski, Carlo Teubner,
-"               lilydjwg, Leonid Shevtsov, Giuseppe Rota, Göran Gustafsson
+"               lilydjwg, Leonid Shevtsov, Giuseppe Rota, Göran Gustafsson,
+"               Chris Lasher
 "
-" Release Date: November 25, 2011
-"      Version: 1.4
+" Release Date: February 24, 2012
+"      Version: 1.5
 "
 "        Usage:
 "                 <Leader>lj  - Opens the buffer juggler.
@@ -32,7 +33,8 @@
 "               new bar showing the names of currently-opened buffers in
 "               most-recently-used order.
 "
-"               The buffers are mapped to these keys:
+"               By default, LustyJuggler follows the QWERTY layout, and
+"               buffers are mapped to these keys:
 "
 "                   1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th
 "                   ----------------------------------------
@@ -56,6 +58,19 @@
 "
 "               To cancel the juggler, press any of "q", "<ESC>", "<C-c",
 "               "<BS>", "<Del>", or "<C-h>".
+"
+"               LustyJuggler also supports the Dvorak keyboard layout. To
+"               enable this feature, place the following in your .vimrc:
+"
+"                 let g:LustyJugglerKeyboardLayout = "dvorak"
+"
+"               With the layout set to "dvorak", the buffer mapping is as
+"               follows:
+"
+"                   1st|2nd|3rd|4th|5th|6th|7th|8th|9th|10th
+"                   ----------------------------------------
+"                   a   o   e   u   i   d   h   t   n   s
+"                   1   2   3   4   5   6   7   8   9   0
 "
 "               LustyJuggler can act very much like <A-Tab> window switching.
 "               To enable this mode, add the following line to your .vimrc:
@@ -266,7 +281,11 @@ end
 
 {{RUBY_CODE_INSERTION_POINT}}
 
-$lusty_juggler = LustyJ::LustyJuggler.new
+if VIM::exists?('g:LustyJugglerKeyboardLayout') and VIM::evaluate_bool('g:LustyJugglerKeyboardLayout == "dvorak"')
+  $lusty_juggler = LustyJ::LustyJugglerDvorak.new
+else
+  $lusty_juggler = LustyJ::LustyJuggler.new
+end
 $lj_buffer_stack = LustyJ::BufferStack.new
 
 EOF
