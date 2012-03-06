@@ -1,0 +1,33 @@
+export PATH=$PATH:/home/linduxed/bin/
+
+#
+#  ALIAS
+#
+alias wcmirror='mplayer -vf mirror -tv driver=v4l2:device=/dev/video0:fps=30 tv://'
+alias unfs-temp='fusermount -u ~/temp/'
+alias figdoh='clear && figlet -tc -f doh'
+alias torrents='scp ~/downloads/*.torrent freke:torrents/ && echo && rm ~/downloads/*.torrent -v'
+
+alias hd-mplayer='mplayer -subfont-text-scale 2 -vo vdpau -vc ffh264vdpau'
+alias mplayer-louder='mplayer -af volume=+18dB'
+
+alias attana='ssh -C mmuszynski@92.33.15.126'
+
+alias usb='pmount /dev/sdb1'
+alias unusb='pumount /dev/sdb1'
+alias usb2='pmount /dev/sdc1'
+alias unusb2='pumount /dev/sdc1'
+
+alias finished='mplayer ~/.sounds/ngdbell.wav -really-quiet'
+
+alias dotfiles-update='rsync-azcp -Lk freke:dotfiles/ ~ --exclude ".vim/view/"'
+
+# Backup command
+alias backup_korp-extHDD='rsync-azcp ~/{annat,musik,stuff/img-packs,video} /media/sdb1/home/ --exclude={"video/youtubeDL/*","video/rss-downloads/*"}'
+alias backup_extHDD-freke='rsync-azcp /media/sdb1/home/{annat,Bilder,Documents,musik,stuff,video} freke:backup/ --exclude="video/youtubeDL","video/rss-downloads"'
+
+#
+#  KEYCHAIN
+#
+keychain id_rsa -q
+. ~/.keychain/`uname -n`-sh
