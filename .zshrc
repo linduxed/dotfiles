@@ -44,6 +44,9 @@ case $SHORTHOST in
 	freke)
 		zstyle ':omz:load' plugin 'archive' 'git' 'dpkg' 'tmux' 'ruby' 'rails'
 		;;
+	hugin)
+		zstyle ':omz:load' plugin 'archive' 'git' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z' 'ruby'
+		;;
 	korp)
 		zstyle ':omz:load' plugin 'archive' 'git' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z' 'ruby'
 		;;
