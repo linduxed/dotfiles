@@ -19,20 +19,24 @@ autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
 # Autostart
-/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
 wicd-gtk -t &
 gnome-keyring-daemon &
 thunderbird &
-#firefox &
+# firefox &
 xscreensaver -no-splash &
 start-pulseaudio-x11 &
-#nm-applet --sm-disable &
-#gwibber &
-uim-toolbar-gtk-systray &
-#dropboxd &
+dropboxd &
 wmname LG3D &
 batti &
 kupfer &
+/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
  
+# UIM related
+export GTK_IM_MODULE='uim'
+export QT_IM_MODULE='uim'
+uim-xim &
+export XMODIFIERS=@im='uim'
+uim-toolbar-gtk-systray &
+
 exec ck-launch-session dbus-launch awesome
 # exec gnome-session
