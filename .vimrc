@@ -58,6 +58,9 @@ Bundle 'javacomplete'
 Bundle 'octave.vim'
 Bundle 'indenthaskell.vim'
 Bundle 'syntaxhaskell.vim'
+" other repos
+Bundle "git://gitorious.org/vim-gnupg/vim-gnupg.git"
+
 
 " Load appropriate theme
 " if hostname() != 'freke' && hostname() != 'attana1'
