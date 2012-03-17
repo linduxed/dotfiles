@@ -10,8 +10,13 @@ if exists('g:loaded_ctrlp_tag') && g:loaded_ctrlp_tag
 en
 let g:loaded_ctrlp_tag = 1
 
-let s:tag_var = ['ctrlp#tag#init(s:tagfiles)', 'ctrlp#tag#accept',
-	\ 'tags', 'tag']
+let s:tag_var = {
+	\ 'init': 'ctrlp#tag#init(s:tagfiles)',
+	\ 'accept': 'ctrlp#tag#accept',
+	\ 'lname': 'tags',
+	\ 'sname': 'tag',
+	\ 'type': 'tabs',
+	\ }
 
 let g:ctrlp_ext_vars = exists('g:ctrlp_ext_vars') && !empty(g:ctrlp_ext_vars)
 	\ ? add(g:ctrlp_ext_vars, s:tag_var) : [s:tag_var]
@@ -28,8 +33,7 @@ endf
 
 fu! s:findcount(str)
 	let [tg, fname] = split(a:str, '\t\+\ze[^\t]\+$')
-	let [&l:tags, fname] = [s:ltags, expand(fname, 1)]
-	let tgs = taglist('^'.tg.'$')
+	let [fname, tgs] = [expand(fname, 1), taglist('^'.tg.'$')]
 	if empty(tgs) | retu [1, 1] | en
 	let [fnd, ct, pos] = [0, 0, 0]
 	for each in tgs
@@ -44,18 +48,32 @@ fu! s:findcount(str)
 	endfo
 	retu [fnd, pos]
 endf
+
+fu! s:filter(tags)
+	let [nr, alltags] = [0, a:tags]
+	wh 0 < 1
+		if alltags[nr] =~ '^!' && alltags[nr] !~ '^!_TAG_'
+			let nr += 1
+			con
+		en
+		if alltags[nr] =~ '^!_TAG_' && len(alltags) > nr
+			cal remove(alltags, nr)
+		el
+			brea
+		en
+	endw
+	retu alltags
+endf
 " Public {{{1
 fu! ctrlp#tag#init(tagfiles)
 	if empty(a:tagfiles) | retu [] | en
-	let tagfiles = sort(s:nodup(a:tagfiles))
-	let s:ltags  = join(tagfiles, ',')
-	let g:ctrlp_alltags = []
+	let [tagfiles, g:ctrlp_alltags] = [sort(s:nodup(a:tagfiles)), []]
 	for each in tagfiles
-		let alltags = ctrlp#utils#readfile(each)
+		let alltags = s:filter(ctrlp#utils#readfile(each))
 		cal extend(g:ctrlp_alltags, alltags)
 	endfo
-	sy match CtrlPTagFilename '\zs\t.*\ze$'
-	hi link CtrlPTagFilename Comment
+	sy match CtrlPTabExtra '\zs\t.*\ze$'
+	hi link CtrlPTabExtra Comment
 	retu g:ctrlp_alltags
 endf
 
@@ -64,18 +82,20 @@ fu! ctrlp#tag#accept(mode, str)
 	let str = matchstr(a:str, '^[^\t]\+\t\+[^\t]\+\ze\t')
 	let [md, tg] = [a:mode, split(str, '^[^\t]\+\zs\t')[0]]
 	let fnd = s:findcount(str)
-	if fnd[0] == 1
-		let cmd = md == 't' ? 'tabe' : md == 'h' ? 'new'
-			\ : md == 'v' ? 'vne' : 'ene'
-	el
-		let cmd = md == 't' ? 'tab stj' : md == 'h' ? 'stj'
-			\ : md == 'v' ? 'vert stj' : 'tj'
-	en
-	let cmd = cmd =~ 'tj\|ene' && &modified ? 'hid '.cmd : cmd
+	let cmds = {
+		\ 't': ['tab sp', 'tab stj'],
+		\ 'h': ['sp', 'stj'],
+		\ 'v': ['vs', 'vert stj'],
+		\ 'e': ['', 'tj'],
+		\ }
+	let cmd = fnd[0] == 1 ? cmds[md][0] : cmds[md][1]
+	let cmd = cmd == 'tj' && &modified ? 'hid '.cmd : cmd
 	try
+		let cmd = cmd =~ '^tab' ? tabpagenr('$').cmd : cmd
 		if fnd[0] == 1
-			exe cmd
-			let &l:tags = s:ltags
+			if cmd != ''
+				exe cmd
+			en
 			exe fnd[1].'ta' tg
 		el
 			exe cmd.' '.tg

@@ -38,7 +38,8 @@ class LustyJuggler
         "7" => 7,
         "8" => 8,
         "9" => 9,
-        "0" => 10
+        "0" => 10,
+        "10" => 10
       }
       @BUFFER_KEYS = @ALPHA_BUFFER_KEYS.merge(@NUMERIC_BUFFER_KEYS)
       @KEYPRESS_KEYS = {
@@ -85,10 +86,10 @@ class LustyJuggler
       @running = true
 
       # Need to zero the timeout length or pressing 'g' will hang.
+      @timeoutlen = VIM::evaluate("&timeoutlen")
       @ruler = VIM::evaluate_bool("&ruler")
       @showcmd = VIM::evaluate_bool("&showcmd")
       @showmode = VIM::evaluate_bool("&showmode")
-      @timeoutlen = VIM::evaluate("&timeoutlen")
       VIM::set_option 'timeoutlen=0'
       VIM::set_option 'noruler'
       VIM::set_option 'noshowcmd'
@@ -97,8 +98,8 @@ class LustyJuggler
       @key_mappings_map = Hash.new { |hash, k| hash[k] = [] }
 
       # Selection keys.
-      @KEYPRESS_MAPPINGS.keys.each do |c|
-        map_key(c, ":call <SID>LustyJugglerKeyPressed('#{c}')<CR>")
+      @KEYPRESS_MAPPINGS.each_pair do |c, v|
+        map_key(c, ":call <SID>LustyJugglerKeyPressed('#{v}')<CR>")
       end
 
       # Cancel keys.

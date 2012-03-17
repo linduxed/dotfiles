@@ -1,6 +1,6 @@
 " =============================================================================
 " File:          autoload/ctrlp/dir.vim
-" Description:   Directory switcher extension
+" Description:   Directory extension
 " Author:        Kien Nguyen <github.com/kien>
 " =============================================================================
 
@@ -11,16 +11,19 @@ en
 let [g:loaded_ctrlp_dir, g:ctrlp_newdir] = [1, 0]
 
 let s:ars = [
-	\ 's:folsym',
-	\ 's:dotfiles',
 	\ 's:maxdepth',
 	\ 's:maxfiles',
 	\ 's:compare_lim',
 	\ 's:glob',
 	\ ]
 
-let s:dir_var = ['ctrlp#dir#init('.join(s:ars, ', ').')', 'ctrlp#dir#accept',
-	\ 'dirs', 'dir']
+let s:dir_var = {
+	\ 'init': 'ctrlp#dir#init('.join(s:ars, ', ').')',
+	\ 'accept': 'ctrlp#dir#accept',
+	\ 'lname': 'dirs',
+	\ 'sname': 'dir',
+	\ 'type': 'path',
+	\ }
 
 let g:ctrlp_ext_vars = exists('g:ctrlp_ext_vars') && !empty(g:ctrlp_ext_vars)
 	\ ? add(g:ctrlp_ext_vars, s:dir_var) : [s:dir_var]
@@ -29,17 +32,12 @@ let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
 " Utilities {{{1
 fu! s:globdirs(dirs, depth)
 	let entries = split(globpath(a:dirs, s:glob), "\n")
-	if !s:folsym
-		let entries = filter(entries, 'getftype(v:val) != "link"')
-	en
-	let ftrfunc = s:dotfiles ? 'ctrlp#dirfilter(v:val)' : 'isdirectory(v:val)'
-	let alldirs = filter(entries, ftrfunc)
-	cal extend(g:ctrlp_alldirs, alldirs)
-	let depth = a:depth + 1
-	if !empty(g:ctrlp_alldirs) && !s:max(len(g:ctrlp_alldirs), s:maxfiles)
+	let [dirs, depth] = [ctrlp#dirnfile(entries)[0], a:depth + 1]
+	cal extend(g:ctrlp_alldirs, dirs)
+	if !empty(dirs) && !s:max(len(g:ctrlp_alldirs), s:maxfiles)
 		\ && depth <= s:maxdepth
 		sil! cal ctrlp#progress(len(g:ctrlp_alldirs))
-		cal s:globdirs(join(alldirs, ','), depth)
+		cal s:globdirs(join(dirs, ','), depth)
 	en
 endf
 
@@ -52,8 +50,8 @@ fu! ctrlp#dir#init(...)
 	for each in range(len(s:ars))
 		exe 'let' s:ars[each] '=' string(eval('a:'.(each + 1)))
 	endfo
-	let cadir = ctrlp#utils#cachedir().ctrlp#utils#lash().s:dir_var[3]
-	let cafile = cadir.ctrlp#utils#lash().ctrlp#utils#cachefile(s:dir_var[3])
+	let cadir = ctrlp#utils#cachedir().ctrlp#utils#lash().s:dir_var['sname']
+	let cafile = cadir.ctrlp#utils#lash().ctrlp#utils#cachefile(s:dir_var['sname'])
 	if g:ctrlp_newdir || !filereadable(cafile)
 		let g:ctrlp_alldirs = []
 		cal s:globdirs(s:cwd, 0)

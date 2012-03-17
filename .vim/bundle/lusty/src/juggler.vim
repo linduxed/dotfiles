@@ -13,10 +13,10 @@
 " Contributors: Juan Frias, Bartosz Leper, Marco Barberis, Vincent Driessen,
 "               Martin Wache, Johannes Holzfuß, Adam Rutkowski, Carlo Teubner,
 "               lilydjwg, Leonid Shevtsov, Giuseppe Rota, Göran Gustafsson,
-"               Chris Lasher
+"               Chris Lasher, Guy Haskin Fernald
 "
-" Release Date: February 24, 2012
-"      Version: 1.5
+" Release Date: February 29, 2012
+"      Version: 1.5.1
 "
 "        Usage:
 "                 <Leader>lj  - Opens the buffer juggler.

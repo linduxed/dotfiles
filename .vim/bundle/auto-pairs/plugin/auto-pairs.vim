@@ -153,6 +153,12 @@ function! AutoPairsDelete()
     if match(line,'^\s*'.close, col('.')-1) != -1
       let space = matchstr(line, '^\s*', col('.')-1)
       return "\<BS>". repeat("\<DEL>", len(space)+1)
+    else
+      let nline = getline(line('.')+1)
+      if nline =~ '^\s*'.close
+        let space = matchstr(nline, '^\s*')
+        return "\<BS>\<DEL>". repeat("\<DEL>", len(space)+1)
+      end
     end
   end
 
@@ -194,7 +200,8 @@ endfunction
 " endfunction
 
 function! AutoPairsMap(key)
-    execute 'inoremap <buffer> <silent> '.a:key.' <C-R>=AutoPairsInsert("\'.a:key.'")<CR>'
+  let escaped_key = substitute(a:key, "'", "''", 'g')
+  execute 'inoremap <buffer> <silent> '.a:key." <C-R>=AutoPairsInsert('".escaped_key."')<CR>"
 endfunction
 
 function! AutoPairsToggle()
@@ -283,6 +290,8 @@ function! AutoPairsForceInit()
   endif
 endfunction
 
+" Always silent the command
+inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>
 
 " Global keys mapping
 " comptible with other plugin
@@ -293,7 +302,7 @@ if g:AutoPairsMapCR
   endif
 
   if old_cr !~ 'AutoPairsReturn'
-    execute 'imap <silent> <CR> '.old_cr.'<C-R>=AutoPairsReturn()<CR>'
+    execute 'imap <CR> '.old_cr.'<SID>AutoPairsReturn'
   end
 endif
 

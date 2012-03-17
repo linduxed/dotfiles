@@ -10,12 +10,19 @@ fu! ctrlp#utils#lash()
 endf
 let s:lash = ctrlp#utils#lash()
 
+fu! s:lash(...)
+	retu match(a:0 ? a:1 : getcwd(), '[\/]$') < 0 ? s:lash : ''
+endf
+
 fu! ctrlp#utils#opts()
-	let s:cache_dir = $HOME.s:lash.'.ctrlp_cache'
+	let usrhome = $HOME.s:lash($HOME)
+	let cahome = exists('$XDG_CACHE_HOME') ? $XDG_CACHE_HOME : usrhome.'.cache'
+	let s:cache_dir = isdirectory(usrhome.'.ctrlp_cache')
+		\ ? usrhome.'.ctrlp_cache' : cahome.s:lash(cahome).'ctrlp'
 	if exists('g:ctrlp_cache_dir')
 		let s:cache_dir = expand(g:ctrlp_cache_dir, 1)
-		if isdirectory(s:cache_dir.s:lash.'.ctrlp_cache')
-			let s:cache_dir = s:cache_dir.s:lash.'.ctrlp_cache'
+		if isdirectory(s:cache_dir.s:lash(s:cache_dir).'.ctrlp_cache')
+			let s:cache_dir = s:cache_dir.s:lash(s:cache_dir).'.ctrlp_cache'
 		en
 	en
 endf
@@ -28,7 +35,7 @@ endf
 fu! ctrlp#utils#cachefile(...)
 	let tail = exists('a:1') ? '.'.a:1 : ''
 	let cache_file = substitute(getcwd(), '\([\/]\|^\a\zs:\)', '%', 'g').tail.'.txt'
-	retu exists('a:1') ? cache_file : s:cache_dir.s:lash.cache_file
+	retu exists('a:1') ? cache_file : s:cache_dir.s:lash(s:cache_dir).cache_file
 endf
 
 fu! ctrlp#utils#readfile(file)
@@ -45,14 +52,13 @@ endf
 
 fu! ctrlp#utils#mkdir(dir)
 	if exists('*mkdir') && !isdirectory(a:dir)
-		sil! cal mkdir(a:dir)
+		sil! cal mkdir(a:dir, 'p')
 	en
+	retu a:dir
 endf
 
 fu! ctrlp#utils#writecache(lines, ...)
-	let cache_dir = exists('a:1') ? a:1 : s:cache_dir
-	cal ctrlp#utils#mkdir(cache_dir)
-	if isdirectory(cache_dir)
+	if isdirectory(ctrlp#utils#mkdir(exists('a:1') ? a:1 : s:cache_dir))
 		sil! cal writefile(a:lines, exists('a:2') ? a:2 : ctrlp#utils#cachefile())
 		if !exists('a:1')
 			let g:ctrlp_newcache = 0
@@ -61,7 +67,8 @@ fu! ctrlp#utils#writecache(lines, ...)
 endf
 
 fu! ctrlp#utils#glob(...)
-	retu call('glob',  v:version > 701 ? a:000 : a:1)
+	let cond = v:version > 702 || ( v:version == 702 && has('patch051') )
+	retu call('glob', cond ? a:000 : [a:1])
 endf
 "}}}
 
