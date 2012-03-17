@@ -741,7 +741,6 @@ Special thanks:~
     * Ken Earley <github.com/kenearley>
     * Zak Johnson <github.com/zakj>
     * Diego Viola <github.com/diegoviola>
-    * Thibault Duplessis <github.com/ornicar>
         Bugfixes/Corrections.
 
 ===============================================================================

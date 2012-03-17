@@ -541,8 +541,7 @@ fu! s:PrtCurEnd()
 endf
 
 fu! s:PrtSelectMove(dir)
-	let torb = { 't': 'gg', 'b': 'G' }
-	exe 'keepj norm!' ( a:dir =~ '^[tb]$' ? torb[a:dir] : a:dir )
+	exe 'keepj norm!' ( a:dir =~ '^[tb]$' ? {'t': 'gg', 'b': 'G'}[a:dir] : a:dir )
 	if !exists('g:ctrlp_nolimit') | let s:cline = line('.') | en
 	if line('$') > winheight(0) | cal s:BuildPrompt(0, s:Focus()) | en
 endf
@@ -1124,27 +1123,23 @@ endf
 " Highlighting {{{2
 fu! s:syntax()
 	sy match CtrlPNoEntries '^ == NO ENTRIES ==$'
-	sy match CtrlPLinePre '^>'
+	sy match CtrlPLineMarker '^>'
 	hi link CtrlPNoEntries Error
-	if exists('g:colors_name')
-		exe 'hi CtrlPLinePre '.( has("gui_running") ? 'gui' : 'cterm' ).'fg=bg'
-	en
+	hi CtrlPLineMarker guifg=bg
 endf
 
 fu! s:highlight(pat, grp, bfn)
 	cal clearmatches()
 	if !empty(a:pat) && s:ispathitem()
 		let pat = substitute(a:pat, '\~', '\\~', 'g')
-		let pat = s:regexp
-			\ ? substitute(pat, '\\\@<!\^', '^> \\zs', 'g')
-			\ : escape(pat, '.')
+		let pat = s:regexp ? pat : escape(pat, '.')
 		" Match only filename
 		if s:byfname && a:bfn
 			let pat = substitute(pat, '\[\^\(.\{-}\)\]\\{-}', '[^\\/\1]\\{-}', 'g')
 			let pat = substitute(pat, '$', '\\ze[^\\/]*$', 'g')
 		en
 		cal matchadd(a:grp, '\c'.pat)
-		cal matchadd('CtrlPLinePre', '^>')
+		cal matchadd('CtrlPLineMarker', '^>')
 	en
 endf
 
