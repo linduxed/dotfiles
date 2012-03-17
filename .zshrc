@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh configuration.
 OMZ=$HOME/.oh-my-zsh
 
+# Source system-wide profile
+source /etc/profile
+
 # Set the key mapping style to 'emacs' or 'vi'.
 zstyle ':omz:editor' keymap 'emacs'
 
