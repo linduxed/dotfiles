@@ -165,9 +165,6 @@ fu! s:esctagscmd(bin, args, ...)
 		let last = s:enc != &enc ? s:enc : !empty($LANG) ? $LANG : &enc
 		let cmd = iconv(cmd, &enc, last)
 	en
-	if empty(cmd)
-		cal ctrlp#msg("Encoding conversion failed!")
-	en
 	retu cmd
 endf
 
@@ -196,20 +193,38 @@ fu! s:parseline(line)
 	let eval = '\v^([^\t]+)\t(.+)\t\/\^(.+)\$\/\;\"\t(.+)\tline(no)?\:(\d+)'
 	let vals = matchlist(a:line, eval)
 	if empty(vals) | retu '' | en
-	let [bufnr, bufname] = [bufnr(vals[2]), fnamemodify(vals[2], ':p:t')]
+	let [bufnr, bufname] = [bufnr('^'.vals[2].'$'), fnamemodify(vals[2], ':p:t')]
 	retu vals[1].'	'.vals[4].'|'.bufnr.':'.bufname.'|'.vals[6].'| '.vals[3]
+endf
+
+fu! s:syntax()
+	if !hlexists('CtrlPTagKind')
+		hi link CtrlPTagKind Title
+	en
+	if !hlexists('CtrlPBufName')
+		hi link CtrlPBufName Directory
+	en
+	if !hlexists('CtrlPTabExtra')
+		hi link CtrlPTabExtra Comment
+	en
+	sy match CtrlPTagKind '\zs[^\t|]\+\ze|\d\+:[^|]\+|\d\+|'
+	sy match CtrlPBufName '|\d\+:\zs[^|]\+\ze|\d\+|'
+	sy match CtrlPTabExtra '\zs\t.*\ze$' contains=CtrlPBufName,CtrlPTagKind
 endf
 " Public {{{1
 fu! ctrlp#buffertag#init(fname)
-	let fname = exists('s:bufname') ? s:bufname : a:fname
-	let bufs = exists('s:btmode') && s:btmode ? ctrlp#allbufs() : [fname]
+	let bufs = exists('s:btmode') && s:btmode
+		\ ? filter(ctrlp#buffers(), 'filereadable(v:val)')
+		\ : [exists('s:bufname') ? s:bufname : a:fname]
 	let lines = []
 	for each in bufs
-		let tftype = get(split(getbufvar(each, '&ft'), '\.'), 0, '')
-		cal extend(lines, s:process(each, tftype))
+		let bname = fnamemodify(each, ':p')
+		let tftype = get(split(getbufvar(bname, '&ft'), '\.'), 0, '')
+		cal extend(lines, s:process(bname, tftype))
 	endfo
-	sy match CtrlPTabExtra '\zs\t.*\ze$'
-	hi link CtrlPTabExtra Comment
+	if has('syntax') && exists('g:syntax_on')
+		cal s:syntax()
+	en
 	retu lines
 endf
 
