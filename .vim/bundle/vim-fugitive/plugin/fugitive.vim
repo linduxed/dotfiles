@@ -151,7 +151,7 @@ function! s:Detect(path)
   if exists('b:git_dir')
     silent doautocmd User Fugitive
     cnoremap <buffer> <expr> <C-R><C-G> <SID>recall()
-    nnoremap <buffer> <silent> y<C-G> :call setreg(v:register,<SID>recall())<CR>
+    nnoremap <buffer> <silent> c<C-G> :call setreg(v:register,<SID>recall())<CR>
     let buffer = fugitive#buffer()
     if expand('%:p') =~# '//'
       call buffer.setvar('&path',s:sub(buffer.getvar('&path'),'^\.%(,|$)',''))
