@@ -8,6 +8,12 @@
 setopt CORRECT # Correct commands.
 
 # The 'ls' Family
+<<<<<<< HEAD
+if zstyle -t ':omz:alias:ls' color; then
+  if [[ -f "$OMZ/dircolors" ]] && (( $+commands[dircolors] )); then
+    eval $(dircolors "$OMZ/dircolors")
+    alias ls='ls -hF --group-directories-first --color=auto'
+=======
 if (( $+commands[dircolors] )); then
   # GNU core utilities.
   alias ls='ls --group-directories-first'
@@ -17,6 +23,7 @@ if (( $+commands[dircolors] )); then
       eval $(dircolors "$HOME/.dir_colors")
     fi
     alias ls="$aliases[ls] --color=auto"
+>>>>>>> 37b140d1d31e4940c596b33fc14c4774a10ab618
   else
     alias ls="$aliases[ls] -F"
   fi
@@ -96,6 +103,12 @@ else
   fi
 fi
 
+<<<<<<< HEAD
+=======
+alias pbc='pbcopy'
+alias pbp='pbpaste'
+
+>>>>>>> 37b140d1d31e4940c596b33fc14c4774a10ab618
 # Top
 if (( $+commands[htop] )); then
   alias top=htop

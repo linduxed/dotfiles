@@ -86,7 +86,7 @@ alias giu='git add --update'
 compdef _git giu=git-add
 alias gid='git diff --no-ext-diff --cached'
 compdef _git gid=git-diff
-function giD() { git diff --no-ext-diff --cached --ignore-all-space "$@" | view - }
+function giD { git diff --no-ext-diff --cached --ignore-all-space "$@" | view - }
 compdef _git giD=git-diff
 alias gir='git reset'
 compdef _git gir=git-reset
@@ -154,9 +154,9 @@ alias gpA='git push --all && git push --tags'
 compdef _git gpA=git-push
 alias gpt='git push --tags'
 compdef _git gpt=git-push
-alias gpc='git push --set-upstream origin "$(git-branch)"'
+alias gpc='git push --set-upstream origin "$(git-current-branch)"'
 compdef _git gpc=git-push
-alias gpp='git pull origin "$(git-branch)" && git push origin "$(git-branch)"'
+alias gpp='git pull origin "$(git-current-branch)" && git push origin "$(git-branch)"'
 
 # Rebase (r)
 alias gr='git rebase'
@@ -235,7 +235,7 @@ alias gwS='git status'
 compdef _git gwS=git-status
 alias gwd='git diff --no-ext-diff'
 compdef _git gwd=git-diff
-function gwD() { git diff --no-ext-diff --ignore-all-space "$@" | view - }
+function gwD { git diff --no-ext-diff --ignore-all-space "$@" | view - }
 compdef _git gwD=git-diff
 alias gwr='git reset --soft'
 compdef _git gwr=git-reset
