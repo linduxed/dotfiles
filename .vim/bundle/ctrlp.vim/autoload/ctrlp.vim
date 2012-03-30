@@ -2,10 +2,10 @@
 " File:          autoload/ctrlp.vim
 " Description:   Fuzzy file, buffer, mru and tag finder.
 " Author:        Kien Nguyen <github.com/kien>
-" Version:       1.7.3
+" Version:       1.7.4
 " =============================================================================
 
-" Static variables {{{1
+" * Static variables {{{1
 fu! s:opts()
 	" Options
 	let hst = exists('+hi') ? &hi : 20
@@ -204,7 +204,7 @@ fu! s:Close()
 	unl! s:focus s:hisidx s:hstgot s:marked s:statypes s:cline s:init s:savestr
 		\ g:ctrlp_nolimit
 	cal ctrlp#recordhist()
-	cal s:onexit()
+	cal s:extvar('exit')
 	cal s:log(0)
 	ec
 endf
@@ -225,8 +225,10 @@ endf
 
 fu! ctrlp#reset()
 	cal s:opts()
+	cal s:autocmds()
 	cal ctrlp#utils#opts()
 	cal ctrlp#mrufiles#opts()
+	cal s:extvar('opts')
 endf
 " * Files {{{1
 fu! ctrlp#files()
@@ -308,7 +310,7 @@ fu! s:lsCmd()
 		retu cmd['types'][key][1]
 	en
 endf
-" Buffers {{{1
+" - Buffers {{{1
 fu! ctrlp#buffers()
 	retu map(filter(range(1, bufnr('$')), 'empty(getbufvar(v:val, "&bt"))'
 		\ .' && getbufvar(v:val, "&bl") && strlen(bufname(v:val))'),
@@ -349,7 +351,8 @@ fu! s:MatchedItems(items, str, pat, limit, ipt)
 	let s:matches = len(newitems)
 	retu newitems
 endf
-fu! s:SplitPattern(str) "{{{1
+
+fu! s:SplitPattern(str)
 	let str = a:str
 	if s:migemo && s:regexp && len(str) > 0 && executable('cmigemo')
 		let str = s:migemo(str)
@@ -697,7 +700,7 @@ endf
 
 fu! s:ToggleType(dir)
 	let ext = exists('g:ctrlp_ext_vars') ? len(g:ctrlp_ext_vars) : 0
-	let s:itemtype = s:walker(g:ctrlp_builtins + ext, s:itemtype, a:dir)
+	let s:itemtype = s:walker(2 + ext, s:itemtype, a:dir)
 	if s:byfname && !s:ispathitem() | let s:byfname = 0 | en
 	unl! g:ctrlp_nolimit
 	if has('syntax') && exists('g:syntax_on')
@@ -712,7 +715,8 @@ fu! s:PrtSwitcher()
 	cal s:BuildPrompt(1, s:Focus())
 	unl s:force
 endf
-fu! s:SetWD(...) "{{{1
+" - SetWD() {{{1
+fu! s:SetWD(...)
 	let pathmode = s:wpmode
 	let [s:crfilerel, s:dyncwd] = [fnamemodify(s:crfile, ':.'), getcwd()]
 	if a:0 && strlen(a:1) | if type(a:1)
@@ -731,7 +735,7 @@ fu! s:SetWD(...) "{{{1
 		cal extend(markers, s:rmarkers, 0)
 	en
 	for marker in markers
-		cal s:findroot(getcwd(), marker, 0, 0)
+		cal s:findroot(s:dyncwd, marker, 0, 0)
 		if exists('s:foundroot') | brea | en
 	endfo
 	unl! s:foundroot
@@ -756,7 +760,7 @@ fu! ctrlp#acceptfile(mode, line, ...)
 		if j2l | cal ctrlp#j2l(j2l) | en
 	el
 		" Determine the command to use
-		let useb = bufnr > 0 && empty(tail)
+		let useb = bufnr > 0 && getbufvar(bufnr, '&bl') && empty(tail)
 		let cmd =
 			\ md == 't' || s:splitwin == 1 ? ( useb ? 'tab sb' : 'tabe' ) :
 			\ md == 'h' || s:splitwin == 2 ? ( useb ? 'sb' : 'new' ) :
@@ -808,10 +812,11 @@ fu! s:AcceptSelection(mode)
 	if empty(line) | retu | en
 	" Do something with it
 	let actfunc = s:itemtype < 3 ? 'ctrlp#acceptfile'
-		\ : g:ctrlp_ext_vars[s:itemtype - ( g:ctrlp_builtins + 1 )]['accept']
+		\ : g:ctrlp_ext_vars[s:itemtype - 3]['accept']
 	cal call(actfunc, [a:mode, line])
 endf
-fu! s:CreateNewFile(...) "{{{1
+" - CreateNewFile() {{{1
+fu! s:CreateNewFile(...)
 	let [md, str] = ['', join(s:prompt, '')]
 	if empty(str) | retu | en
 	if s:argmap && !a:0
@@ -844,8 +849,7 @@ fu! s:CreateNewFile(...) "{{{1
 endf
 " * OpenMulti() {{{1
 fu! s:MarkToOpen()
-	if s:bufnr <= 0 || s:opmul == '0'
-		\ || ( s:itemtype > g:ctrlp_builtins && s:type() !~ 'rts' )
+	if s:bufnr <= 0 || s:opmul == '0' || ( s:itemtype > 2 && s:type() !~ 'rts' )
 		retu
 	en
 	let line = !empty(s:matched) ? s:matched[line('.') - 1] : ''
@@ -889,7 +893,8 @@ fu! s:OpenMulti()
 	" Move the cursor to a reusable window
 	let [tail, fnesc] = [s:tail(), exists('*fnameescape') && v:version > 701]
 	let [emptytail, nwpt] = [empty(tail), exists('g:ctrlp_open_multiple_files')]
-	let useb = bufnr('^'.mkd[0].'$') > 0 && emptytail
+	let bufnr = bufnr('^'.mkd[0].'$')
+	let useb = bufnr > 0 && getbufvar(bufnr, '&bl') && emptytail
 	let fst = call('ctrlp#normcmd', useb ? ['b', 'bo vert sb'] : ['e'])
 	" Check if it's a replaceable buffer
 	let repabl = ( empty(bufname('%')) && empty(&l:ft) ) || s:nosplit()
@@ -900,7 +905,7 @@ fu! s:OpenMulti()
 	" Open the files
 	for va in mkd
 		let bufnr = bufnr('^'.va.'$')
-		let useb = bufnr > 0 && emptytail
+		let useb = bufnr > 0 && getbufvar(bufnr, '&bl') && emptytail
 		let snd = md != '' && has_key(cmds, md) ?
 			\ ( useb ? cmds[md][0] : cmds[md][1] ) : ( useb ? 'vert sb' : 'vne' )
 		let cmd = ic == 1 && ( ucr == 'r' || repabl ) ? fst : snd
@@ -1092,9 +1097,8 @@ fu! s:lash(...)
 endf
 
 fu! s:ispathitem()
-	let ext = s:itemtype - ( g:ctrlp_builtins + 1 )
-	retu s:itemtype < 3
-		\ || ( s:itemtype > 2 && g:ctrlp_ext_vars[ext]['type'] == 'path' )
+	retu s:itemtype < 3 ||
+		\ ( s:itemtype > 2 && g:ctrlp_ext_vars[s:itemtype - 3]['type'] == 'path' )
 endf
 
 fu! ctrlp#dirnfile(entries)
@@ -1409,9 +1413,8 @@ fu! s:getenv()
 	let s:wpmode = exists('b:ctrlp_working_path_mode')
 		\ ? b:ctrlp_working_path_mode : s:pathmode
 	if exists('g:ctrlp_extensions')
-		if index(g:ctrlp_extensions, 'undo') >= 0 && exists('*undotree')
-			\ && ( v:version > 703 || ( v:version == 703 && has('patch005') ) )
-			let s:undotree = undotree()
+		if index(g:ctrlp_extensions, 'undo') >= 0
+			let s:undos = s:getundo()
 		en
 		if index(g:ctrlp_extensions, 'tag') >= 0
 			let s:tagfiles = s:tagfiles()
@@ -1484,8 +1487,8 @@ fu! s:regexfilter(str)
 	retu str
 endf
 
-fu! s:walker(max, pos, dir)
-	retu a:dir > 0 ? a:pos < a:max ? a:pos + 1 : 0 : a:pos > 0 ? a:pos - 1 : a:max
+fu! s:walker(m, p, d)
+	retu a:d > 0 ? a:p < a:m ? a:p + a:d : 0 : a:p > 0 ? a:p + a:d : a:m
 endf
 
 fu! s:matchfname(item, pat)
@@ -1522,18 +1525,30 @@ fu! s:insertcache(str)
 endf
 " Extensions {{{2
 fu! s:type(...)
-	let ext = s:itemtype - ( g:ctrlp_builtins + 1 )
-	retu s:itemtype > 2 ? g:ctrlp_ext_vars[ext][a:0 ? 'type' : 'sname'] : s:itemtype
+	retu s:itemtype > 2
+		\ ? g:ctrlp_ext_vars[s:itemtype - 3][a:0 ? 'type' : 'sname'] : s:itemtype
 endf
 
 fu! s:tagfiles()
 	retu filter(map(tagfiles(), 'fnamemodify(v:val, ":p")'), 'filereadable(v:val)')
 endf
 
-fu! s:onexit()
+fu! s:extvar(key)
 	if exists('g:ctrlp_ext_vars')
 		cal map(filter(copy(g:ctrlp_ext_vars),
-			\ 'has_key(v:val, "exit")'), 'eval(v:val["exit"])')
+			\ 'has_key(v:val, a:key)'), 'eval(v:val[a:key])')
+	en
+endf
+
+fu! s:getundo()
+	if exists('*undotree')
+		\ && ( v:version > 703 || ( v:version == 703 && has('patch005') ) )
+		retu [1, undotree()]
+	el
+		redi => result
+		sil! undol
+		redi END
+		retu [0, split(result, "\n")[1:]]
 	en
 endf
 
@@ -1543,6 +1558,10 @@ endf
 
 fu! ctrlp#prtclear()
 	cal s:PrtClear()
+endf
+
+fu! ctrlp#switchtype(id)
+	cal s:ToggleType(a:id - s:itemtype)
 endf
 "}}}1
 " * Initialization {{{1
@@ -1571,16 +1590,27 @@ fu! ctrlp#init(type, ...)
 	cal ctrlp#setlines(a:type)
 	cal s:BuildPrompt(1)
 endf
-if has('autocmd') "{{{1
+" - Autocmds {{{1
+fu! s:autocmds()
+	if !has('autocmd') | retu | en
 	aug CtrlPAug
 		au!
 		au BufEnter ControlP cal s:checkbuf()
 		au BufLeave ControlP cal s:Close()
 		au VimLeavePre * cal s:leavepre()
-		if s:lazy
-			au CursorHold ControlP cal s:ForceUpdate()
-		en
 	aug END
-en "}}}
+	if exists('#CtrlPLazy')
+		au! CtrlPLazy
+	en
+	if s:lazy
+		aug CtrlPLazy
+			au!
+			au CursorHold ControlP cal s:ForceUpdate()
+		aug END
+	en
+endf
+
+cal s:autocmds()
+"}}}
 
 " vim:fen:fdm=marker:fmr={{{,}}}:fdl=0:fdc=1:ts=2:sw=2:sts=2

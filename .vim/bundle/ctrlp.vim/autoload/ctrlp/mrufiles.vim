@@ -18,6 +18,9 @@ fu! ctrlp#mrufiles#opts()
 		exe 'let' va[0] '=' string(exists(ke) ? eval(ke) : va[1])
 	endfo
 	let [s:csen, s:mrbs] = [s:csen ? '#' : '?', []]
+	if exists('s:locked')
+		cal ctrlp#mrufiles#init()
+	en
 endf
 cal ctrlp#mrufiles#opts()
 " Utilities {{{1
@@ -82,10 +85,8 @@ fu! ctrlp#mrufiles#remove(files)
 	retu map(mrufs, 'fnamemodify(v:val, '':.'')')
 endf
 
-fu! ctrlp#mrufiles#list()
-	if a:0
-		cal s:record(a:1) | retu
-	en
+fu! ctrlp#mrufiles#list(...)
+	if a:0 | cal s:record(a:1) | retu | en
 	retu s:reformat(s:readcache())
 endf
 
@@ -99,18 +100,23 @@ fu! ctrlp#mrufiles#init()
 	aug CtrlPMRUF
 		au!
 		au BufReadPost,BufNewFile,BufWritePost * cal s:record(expand('<abuf>', 1))
-		au BufEnter,BufUnload * cal s:record(expand('<abuf>', 1), 1)
 		au QuickFixCmdPre  *vimgrep* let s:locked = 1
 		au QuickFixCmdPost *vimgrep* let s:locked = 0
 	aug END
+	aug CtrlPMREB
+		au!
+		au BufEnter,BufUnload * cal s:record(expand('<abuf>', 1), 1)
+	aug END
+	if exists('#CtrlPMREF')
+		au! CtrlPMREF
+	en
 	if s:mre
-		aug CtrlPMRE
+		aug CtrlPMREF
 			au!
 			au BufEnter,BufUnload * cal s:record(expand('<abuf>', 1))
 		aug END
-	el
-		if exists('#CtrlPMRE')
-			au! CtrlPMRE
+		if exists('#CtrlPMREB')
+			au! CtrlPMREB
 		en
 	en
 endf
