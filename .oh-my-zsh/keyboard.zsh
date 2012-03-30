@@ -7,7 +7,7 @@
 
 # Dumb terminals lack support.
 if [[ "$TERM" == 'dumb' ]]; then
-  return
+  return 1
 fi
 
 # The default styles.
@@ -19,7 +19,7 @@ zstyle ':omz:prompt:vi' insert '>>>'
 zstyle ':omz:prompt:vi' command '<<<'
 
 # Indicator to notify of generating completion.
-zstyle ':omz:completion' indicator '...'
+zstyle ':omz:editor' completing '...'
 
 # Beep on error in line editor.
 setopt BEEP
@@ -30,7 +30,7 @@ zle -N edit-command-line
 
 # Use human-friendly identifiers.
 zmodload zsh/terminfo
-typeset -g -A keyinfo
+typeset -gA keyinfo
 keyinfo=(
   'Control'   '\C-'
   'Escape'    '\e'
@@ -65,7 +65,7 @@ keyinfo=(
 for key in "$keyinfo[@]"; do
   if [[ -z "$key" ]]; then
     print "omz: one or more keys are non-bindable" >&2
-    return
+    return 1
   fi
 done
 
@@ -96,7 +96,7 @@ zle -N expand-dot-to-parent-directory-path
 # Displays an indicator when completing.
 function expand-or-complete-with-indicator {
   local indicator
-  zstyle -s ':omz:completion' indicator 'indicator'
+  zstyle -s ':omz:editor' completing 'indicator'
   print -Pn "$indicator"
   zle expand-or-complete-prefix
   zle redisplay

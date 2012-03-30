@@ -41,8 +41,8 @@ source "${0:h}/keyboard.zsh"
 source "${0:h}/completion.zsh"
 source "${0:h}/history.zsh"
 source "${0:h}/directory.zsh"
-source "${0:h}/alias.zsh"
 source "${0:h}/spectrum.zsh"
+source "${0:h}/alias.zsh"
 source "${0:h}/utility.zsh"
 
 # Autoload Zsh functions.
@@ -53,14 +53,16 @@ autoload -Uz zmv
 
 # Source plugins defined in ~/.zshrc.
 for plugin in "$plugins[@]"; do
-  zstyle ":omz:plugin:$plugin" enable 'yes'
-
   if [[ ! -d "${0:h}/plugins/$plugin" ]]; then
     print "omz: no such plugin: $plugin" >&2
   fi
 
   if [[ -f "${0:h}/plugins/$plugin/init.zsh" ]]; then
     source "${0:h}/plugins/$plugin/init.zsh"
+  fi
+
+  if (( $? == 0 )); then
+    zstyle ":omz:plugin:$plugin" enable 'yes'
   fi
 done
 unset plugin plugins
