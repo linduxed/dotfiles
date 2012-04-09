@@ -13,7 +13,7 @@ if exists('g:loaded_ctrlp_buftag') && g:loaded_ctrlp_buftag
 en
 let g:loaded_ctrlp_buftag = 1
 
-let s:buftag_var = {
+cal add(g:ctrlp_ext_vars, {
 	\ 'init': 'ctrlp#buffertag#init(s:crfile)',
 	\ 'accept': 'ctrlp#buffertag#accept',
 	\ 'lname': 'buffer tags',
@@ -21,21 +21,18 @@ let s:buftag_var = {
 	\ 'exit': 'ctrlp#buffertag#exit()',
 	\ 'type': 'tabs',
 	\ 'opts': 'ctrlp#buffertag#opts()',
-	\ }
-
-let g:ctrlp_ext_vars = exists('g:ctrlp_ext_vars') && !empty(g:ctrlp_ext_vars)
-	\ ? add(g:ctrlp_ext_vars, s:buftag_var) : [s:buftag_var]
+	\ })
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
 
 fu! ctrlp#buffertag#opts()
-	let opts = {
-		\ 'g:ctrlp_buftag_systemenc': ['s:enc', &enc],
-		\ 'g:ctrlp_buftag_ctags_bin': ['s:bin', ''],
-		\ 'g:ctrlp_buftag_types': ['s:usr_types', ''],
-		\ }
+	let [pref, opts] = ['g:ctrlp_buftag_', {
+		\ 'systemenc': ['s:enc', &enc],
+		\ 'ctags_bin': ['s:bin', ''],
+		\ 'types': ['s:usr_types', ''],
+		\ }]
 	for [ke, va] in items(opts)
-		exe 'let' va[0] '=' string(exists(ke) ? eval(ke) : va[1])
+		exe 'let' va[0] '=' string(exists(pref.ke) ? eval(pref.ke) : va[1])
 	endfo
 endf
 cal ctrlp#buffertag#opts()
@@ -199,18 +196,14 @@ fu! s:parseline(line)
 endf
 
 fu! s:syntax()
-	if !hlexists('CtrlPTagKind')
-		hi link CtrlPTagKind Title
+	if !ctrlp#nosy()
+		cal ctrlp#hicheck('CtrlPTagKind', 'Title')
+		cal ctrlp#hicheck('CtrlPBufName', 'Directory')
+		cal ctrlp#hicheck('CtrlPTabExtra', 'Comment')
+		sy match CtrlPTagKind '\zs[^\t|]\+\ze|\d\+:[^|]\+|\d\+|'
+		sy match CtrlPBufName '|\d\+:\zs[^|]\+\ze|\d\+|'
+		sy match CtrlPTabExtra '\zs\t.*\ze$' contains=CtrlPBufName,CtrlPTagKind
 	en
-	if !hlexists('CtrlPBufName')
-		hi link CtrlPBufName Directory
-	en
-	if !hlexists('CtrlPTabExtra')
-		hi link CtrlPTabExtra Comment
-	en
-	sy match CtrlPTagKind '\zs[^\t|]\+\ze|\d\+:[^|]\+|\d\+|'
-	sy match CtrlPBufName '|\d\+:\zs[^|]\+\ze|\d\+|'
-	sy match CtrlPTabExtra '\zs\t.*\ze$' contains=CtrlPBufName,CtrlPTagKind
 endf
 " Public {{{1
 fu! ctrlp#buffertag#init(fname)
@@ -223,9 +216,7 @@ fu! ctrlp#buffertag#init(fname)
 		let tftype = get(split(getbufvar(bname, '&ft'), '\.'), 0, '')
 		cal extend(lines, s:process(bname, tftype))
 	endfo
-	if has('syntax') && exists('g:syntax_on')
-		cal s:syntax()
-	en
+	cal s:syntax()
 	retu lines
 endf
 

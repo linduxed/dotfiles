@@ -10,7 +10,7 @@ if ( exists('g:loaded_ctrlp_undo') && g:loaded_ctrlp_undo )
 en
 let g:loaded_ctrlp_undo = 1
 
-let s:undo_var = {
+cal add(g:ctrlp_ext_vars, {
 	\ 'init': 'ctrlp#undo#init()',
 	\ 'accept': 'ctrlp#undo#accept',
 	\ 'lname': 'undo',
@@ -19,10 +19,7 @@ let s:undo_var = {
 	\ 'exit': 'ctrlp#undo#exit()',
 	\ 'type': 'line',
 	\ 'sort': 0,
-	\ }
-
-let g:ctrlp_ext_vars = exists('g:ctrlp_ext_vars') && !empty(g:ctrlp_ext_vars)
-	\ ? add(g:ctrlp_ext_vars, s:undo_var) : [s:undo_var]
+	\ })
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
 
@@ -82,11 +79,10 @@ fu! s:elapsed(nr)
 endf
 
 fu! s:syntax()
+	if ctrlp#nosy() | retu | en
 	for [ke, va] in items({'T': 'Directory', 'Br': 'Comment', 'Nr': 'String',
 		\ 'Sv': 'Comment', 'Po': 'Title'})
-		if !hlexists('CtrlPUndo'.ke)
-			exe 'hi link CtrlPUndo'.ke va
-		en
+		cal ctrlp#hicheck('CtrlPUndo'.ke, va)
 	endfo
 	sy match CtrlPUndoT '\v\d+ \zs[^ ]+\ze|\d+:\d+:\d+'
 	sy match CtrlPUndoBr '\[\|\]'
@@ -121,9 +117,6 @@ endf
 fu! ctrlp#undo#init()
 	let entries = s:undos[0] ? s:undos[1]['entries'] : s:undos[1]
 	if empty(entries) | retu [] | en
-	if has('syntax') && exists('g:syntax_on')
-		cal s:syntax()
-	en
 	let g:ctrlp_nolimit = 1
 	if !exists('s:lines')
 		if s:undos[0]
@@ -133,6 +126,7 @@ fu! ctrlp#undo#init()
 			let s:lines = map(reverse(entries), 's:formatul(v:val)')
 		en
 	en
+	cal s:syntax()
 	retu s:lines
 endf
 

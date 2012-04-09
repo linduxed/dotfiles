@@ -1,4 +1,4 @@
-*ctrlp.txt*       Fuzzy file, buffer, mru and tag finder. v1.7.4
+*ctrlp.txt*       Fuzzy file, buffer, mru and tag finder. v1.7.5
 *CtrlP* *ControlP* *'ctrlp'* *'ctrl-p'*
 ===============================================================================
 #                                                                             #
@@ -58,7 +58,7 @@ default: >
 Can be toggled on/off by pressing <c-d> inside the prompt.
 
                                                              *'g:ctrlp_regexp'*
-Set this to 1 to set |regexp| search as the default: >
+Set this to 1 to set regexp search as the default: >
   let g:ctrlp_regexp = 0
 <
 Can be toggled on/off by pressing <c-r> inside the prompt.
@@ -94,7 +94,7 @@ plugins, help and quickfix. Use this to setup some exceptions: >
   let g:ctrlp_reuse_window = 'netrw'
 <
 Acceptable values are partial name, filetype or buftype of the special buffers.
-Use |regexp| to specify the pattern.
+Use regexp to specify the pattern.
 Example: >
   let g:ctrlp_reuse_window = 'netrw\|help\|quickfix'
 <
@@ -145,6 +145,10 @@ only need to keep the lines that you’ve changed the values (inside []): >
     \ 'PrtClear()':           ['<c-u>'],
     \ 'PrtSelectMove("j")':   ['<c-j>', '<down>'],
     \ 'PrtSelectMove("k")':   ['<c-k>', '<up>'],
+    \ 'PrtSelectMove("t")':   ['<Home>', '<kHome>'],
+    \ 'PrtSelectMove("b")':   ['<End>', '<kEnd>'],
+    \ 'PrtSelectMove("u")':   ['<PageUp>', '<kPageUp>'],
+    \ 'PrtSelectMove("d")':   ['<PageDown>', '<kPageDown>'],
     \ 'PrtHistory(-1)':       ['<c-n>'],
     \ 'PrtHistory(1)':        ['<c-p>'],
     \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
@@ -186,7 +190,7 @@ Specify the number of recently opened files you want CtrlP to remember: >
 <
 
                                                        *'g:ctrlp_mruf_exclude'*
-Files you don’t want CtrlP to remember. Use |regexp| to specify the patterns: >
+Files you don’t want CtrlP to remember. Use regexp to specify the patterns: >
   let g:ctrlp_mruf_exclude = ''
 <
 Examples: >
@@ -213,11 +217,6 @@ MRU entries: >
   let g:ctrlp_mruf_case_sensitive = 1
 <
 
-                                                  *'g:ctrlp_mruf_last_entered'*
-Set to 1 to sort the MRU file list to most-recently-entered-buffer order: >
-  let g:ctrlp_mruf_last_entered = 0
-<
-
                                                            *'g:ctrlp_dotfiles'*
 Set this to 0 if you don’t want CtrlP to scan for dotfiles and dotdirs: >
   let g:ctrlp_dotfiles = 1
@@ -237,7 +236,7 @@ tools on Windows). So be a little mindful of what you put in your |wildignore|.
 
                                                       *'g:ctrlp_custom_ignore'*
 In addition to |'wildignore'|, use this for files and directories you want only
-CtrlP to not show. Use |regexp| to specify the patterns: >
+CtrlP to not show. Use regexp to specify the patterns: >
   let g:ctrlp_custom_ignore = ''
 <
 Examples: >
@@ -375,9 +374,12 @@ path: >
 
                                                          *'g:ctrlp_use_migemo'*
 Set this to 1 to use Migemo Pattern for Japanese filenames. Migemo Search only
-works in |regexp| mode. To split the pattern, separate words with space: >
+works in regexp mode. To split the pattern, separate words with space: >
   let g:ctrlp_use_migemo = 0
 <
+
+-------------------------------------------------------------------------------
+ADVANCED OPTIONS                                       *ctrlp-advanced-options*
 
                                                         *'g:ctrlp_status_func'*
 Use this to customize the statuslines for the CtrlP window: >
@@ -421,6 +423,18 @@ Structure of the functions: >
   endfunction
 <
 See https://gist.github.com/1610859 for a working example.
+
+                                                        *'g:ctrlp_buffer_func'*
+Specify the functions that will be called after entering and before exiting the
+CtrlP buffer: >
+  let g:ctrlp_buffer_func = {}
+<
+Example: >
+  let g:ctrlp_buffer_func = {
+    \ 'enter': 'Function_Name_1',
+    \ 'exit':  'Function_Name_2',
+    \ }
+<
 
                                                          *'g:ctrlp_match_func'*
 Set an external fuzzy matching function for CtrlP to use: >
@@ -477,6 +491,11 @@ COMMANDS                                                       *ctrlp-commands*
 :CtrlPMRU
    Open CtrlP in find Most-Recently-Used file mode.
 
+                                                               *:CtrlPLastMode*
+:CtrlPLastMode
+   Open CtrlP in the last mode used.
+   Works cross-session if you have a ! in your |'viminfo'| option.
+
                                                              *:CtrlPClearCache*
 :CtrlPClearCache
    Flush the cache for the current working directory. The same as pressing <F5>
@@ -517,8 +536,8 @@ Once inside the prompt:~
     Note: in filename mode, the prompt’s base is '>d>' instead of '>>>'
 
   <c-r>                                                    *'ctrlp-fullregexp'*
-    Toggle between the string mode and full |regexp| mode.
-    Note: in full |regexp| mode, the prompt’s base is 'r>>' instead of '>>>'
+    Toggle between the string mode and full regexp mode.
+    Note: in full regexp mode, the prompt’s base is 'r>>' instead of '>>>'
 
     See also |input-formats| (guide) and |g:ctrlp_regexp_search| (option).
 
@@ -639,12 +658,13 @@ a)  Simple string.
 
     E.g. 'abc' is understood internally as 'a[^a]\{-}b[^b]\{-}c'
 
-b)  Vim |regexp|. If the input string contains '*' or '|', it’ll be treated as
-    a Vim’s |regexp| |pattern| without any modification.
+b)  When in regexp mode, the input string’s treated as a Vim’s regexp |pattern|
+    without any modification.
 
     E.g. 'abc\d*efg' will be read as 'abc\d*efg'.
 
-    See also |ctrlp-fullregexp| (keymap) and |g:ctrlp_regexp_search| (option).
+    See |ctrlp-fullregexp| (keymap) and |g:ctrlp_regexp_search| (option) for
+    how to enable regexp mode.
 
 c)  End the string with a colon ':' followed by a Vim command to execute that
     command after opening the file. If you need to use ':' literally, escape it
@@ -672,6 +692,8 @@ e)  Similarly, submit '/' or '\' to find and go to the project’s root. If the
     project is large, using a VCS listing command to look for files might help
     speeding up the intial scan (see |g:ctrlp_user_command| for more details).
 
+    Note: e) and d) only work in find file mode and directory mode.
+
 f)  Type the name of a non-existent file and press <c-y> to create it. Mark a
     file with <c-z> to create the new file in the same directory as the marked
     file.
@@ -693,7 +715,7 @@ EXTENSIONS                                                 *g:ctrlp-extensions*
 Extensions are optional. To enable an extension, add its name to the variable
 g:ctrlp_extensions: >
   let g:ctrlp_extensions = ['tag', 'buffertag', 'quickfix', 'dir', 'rtscript',
-                            \ 'undo', 'line', 'changes']
+                            \ 'undo', 'line', 'changes', 'mixed']
 <
 The order of the items will be the order they appear on the statusline and when
 using <c-f>, <c-b>.
@@ -762,6 +784,12 @@ Available extensions:~
                 ':CtrlPChangeAll'.
     - Search for and jump to a recent change in the current buffer or in all
       listed buffers.
+
+                                                                  *:CtrlPMixed*
+  * Mixed mode:~
+    - Name: 'mixed'
+    - Command: ':CtrlPMixed'
+    - Search in files, buffers and MRU files.
 
 -------------------------------------------------------------------------------
 Buffer Tag mode options:~
@@ -895,10 +923,15 @@ Special thanks:~
 ===============================================================================
 CHANGELOG                                                     *ctrlp-changelog*
 
+    + New option: |g:ctrlp_buffer_func|, callback functions for CtrlP buffer.
+    + Remove: g:ctrlp_mruf_last_entered, make it a default for MRU mode.
+    + New commands: |:CtrlPLastMode|, open CtrlP in the last mode used.
+                    |:CtrlPMixed|, search in files, buffers and MRU files.
+
 Before 2012/03/31~
 
-    + New option: |g:ctrlp_default_input|, default input when entering CtrlP.
-                  |g:ctrlp_match_func|, allow using a custom fuzzy matcher.
+    + New options: |g:ctrlp_default_input|, default input when entering CtrlP.
+                   |g:ctrlp_match_func|, allow using a custom fuzzy matcher.
     + Rename:
         *ClearCtrlPCache* -> |CtrlPClearCache|
         *ClearAllCtrlPCaches* -> |CtrlPClearAllCaches|

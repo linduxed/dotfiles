@@ -11,7 +11,8 @@ en
 let g:loaded_ctrlp = 1
 
 let [g:ctrlp_lines, g:ctrlp_allfiles, g:ctrlp_alltags, g:ctrlp_alldirs,
-	\ g:ctrlp_buftags, g:ctrlp_builtins] = [[], [], [], [], {}, 2]
+	\ g:ctrlp_allmixes, g:ctrlp_buftags, g:ctrlp_ext_vars, g:ctrlp_builtins]
+	\ = [[], [], [], [], {}, {}, [], 2]
 
 if !exists('g:ctrlp_map') | let g:ctrlp_map = '<c-p>' | en
 if !exists('g:ctrlp_cmd') | let g:ctrlp_cmd = 'CtrlP' | en
@@ -20,6 +21,8 @@ com! -n=? -com=dir CtrlP cal ctrlp#init(0, <q-args>)
 
 com! CtrlPBuffer   cal ctrlp#init(1)
 com! CtrlPMRUFiles cal ctrlp#init(2)
+
+com! CtrlPLastMode cal ctrlp#init(-1)
 
 com! CtrlPClearCache     cal ctrlp#clr()
 com! CtrlPClearAllCaches cal ctrlp#clra()
@@ -39,22 +42,17 @@ en
 
 cal ctrlp#mrufiles#init()
 
-com! CtrlPTag cal ctrlp#init(ctrlp#tag#id())
-
-com! CtrlPQuickfix cal ctrlp#init(ctrlp#quickfix#id())
-
-com! -n=? -com=dir CtrlPDir cal ctrlp#init(ctrlp#dir#id(), <q-args>)
-
+com! CtrlPTag       cal ctrlp#init(ctrlp#tag#id())
+com! CtrlPQuickfix  cal ctrlp#init(ctrlp#quickfix#id())
+com! -n=? -com=dir CtrlPDir
+	\ cal ctrlp#init(ctrlp#dir#id(), <q-args>)
 com! -n=? -com=buffer CtrlPBufTag
 	\ cal ctrlp#init(ctrlp#buffertag#cmd(0, <q-args>))
 com! CtrlPBufTagAll cal ctrlp#init(ctrlp#buffertag#cmd(1))
-
-com! CtrlPRTS cal ctrlp#init(ctrlp#rtscript#id())
-
-com! CtrlPUndo cal ctrlp#init(ctrlp#undo#id())
-
-com! CtrlPLine cal ctrlp#init(ctrlp#line#id())
-
+com! CtrlPRTS       cal ctrlp#init(ctrlp#rtscript#id())
+com! CtrlPUndo      cal ctrlp#init(ctrlp#undo#id())
+com! CtrlPLine      cal ctrlp#init(ctrlp#line#id())
 com! -n=? -com=buffer CtrlPChange
 	\ cal ctrlp#init(ctrlp#changes#cmd(0, <q-args>))
 com! CtrlPChangeAll cal ctrlp#init(ctrlp#changes#cmd(1))
+com! CtrlPMixed     cal ctrlp#init(ctrlp#mixed#id())
