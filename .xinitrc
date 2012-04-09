@@ -21,7 +21,7 @@ autocutsel -selection PRIMARY -fork &
 # Autostart
 wicd-gtk -t &
 gnome-keyring-daemon &
-thunderbird &
+# thunderbird &
 # firefox &
 xscreensaver -no-splash &
 start-pulseaudio-x11 &
