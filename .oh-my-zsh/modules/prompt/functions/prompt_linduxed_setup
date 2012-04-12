@@ -1,0 +1,50 @@
+# ------------------------------------------------------------------------------
+#          FILE:  prompt_linduxed_setup
+#   DESCRIPTION:  oh-my-zsh theme file. Fork of Sorin's theme
+#        AUTHOR:  Mikael Muszynski <linduxed@gmail.com>
+#       VERSION:  0.1
+# ------------------------------------------------------------------------------
+function prompt_linduxed_precmd () {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+
+  if (( $+functions[git-info] )); then
+    git-info
+  fi
+}
+
+function prompt_linduxed_setup() {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd prompt_linduxed_precmd
+
+  zstyle ':omz:module:editor' completing '%B%F{red}...%f%b'
+  zstyle ':omz:module:editor:keymap:primary' overwrite ' %F{red}♺%f'
+  zstyle ':omz:module:editor:keymap' alternate ' %F{yellow}❮%f%B%F{red}❮%f%b%F{red}❮%f'
+  zstyle ':omz:module:git' action ':%%B%F{yellow}%s%f%%b'
+  zstyle ':omz:module:git' added ' %%B%F{green}✚%f%%b'
+  zstyle ':omz:module:git' ahead ' %%B%F{yellow}⬆%f%%b'
+  zstyle ':omz:module:git' behind ' %%B%F{yellow}⬇%f%%b'
+  zstyle ':omz:module:git' branch ':%B%F{red}%b%f%%b'
+  zstyle ':omz:module:git' deleted ' %%B%F{red}✖%f%%b'
+  zstyle ':omz:module:git' modified ' %%B%F{blue}✱%f%%b'
+  zstyle ':omz:module:git' renamed ' %%B%F{magenta}➜%f%%b'
+  zstyle ':omz:module:git' position ':%F{green}%p%f'
+  zstyle ':omz:module:git' commit ':%F{green}%.7c%f'
+  zstyle ':omz:module:git' stashed ' %%B%F{cyan}✭%f%%b'
+  zstyle ':omz:module:git' unmerged ' %%B%F{yellow}═%f%%b'
+  zstyle ':omz:module:git' untracked ' %%B%F{white}◼%f%%b'
+  zstyle ':omz:module:git' info \
+    'prompt'  '(%F{magenta}git%f%b%p%c%s)' \
+    'rprompt' '%A%B%S%a%d%m%r%U%u'
+
+  PROMPT='%B%n%b%F{cyan}@%f%B%m%b %(!.%B%F{red}#%f%b.%B%F{green}❯%f%b) '
+  RPROMPT='%(?::%F{red}⏎%f)${git_info[rprompt]} ${git_info[prompt]}%b[%B%F{cyan}%~%f%b]'
+  SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+}
+
+prompt_linduxed_setup "$@"
+

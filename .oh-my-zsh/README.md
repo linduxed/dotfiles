@@ -15,11 +15,11 @@ version is 4.3.10.
 
 2. Initialize the submodules:
 
-    `git submodule update --init --recursive`
+    `cd ~/.oh-my-zsh && git submodule update --init --recursive`
 
 3. Create a new Zsh configuration by copying the Zsh template provided:
 
-    `cp ~/.oh-my-zsh/templates/zshrc.zsh ~/.zshrc`
+    `cp ~/.oh-my-zsh/templates/zshrc ~/.zshrc`
 
 4. Set Zsh as your default shell:
 
@@ -29,7 +29,7 @@ version is 4.3.10.
 
 ### Mac OS X
 
-If you have administrator privileges, you must fix an Apple miss configuration
+If you have administrator privileges, you must fix an Apple misconfiguration
 in Mac OS X 10.7 Lion by renaming `/etc/zshenv` to `/etc/zprofile`, or Zsh will
 have the wrong `PATH` when executed non-interactively by scripts.
 
@@ -44,10 +44,10 @@ window or tab.
 Oh My Zsh has many features disabled by default. Read the source code and
 accompanying README files to learn of what is available.
 
-### Plugins
+### Modules
 
-1. Browse `plugins/` to see what is available.
-2. Load the plugins you need in `~/.zshrc` then open a new Zsh terminal window
+1. Browse `modules/` to see what is available.
+2. Load the modules you need in `~/.zshrc` then open a new Zsh terminal window
    or tab.
 
 ### Themes

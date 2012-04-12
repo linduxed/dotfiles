@@ -1,14 +1,11 @@
 # Path to your oh-my-zsh configuration.
 OMZ=$HOME/.oh-my-zsh
 
-# Source system-wide profile
-source /etc/profile
-
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':omz:editor' keymap 'emacs'
+zstyle ':omz:module:editor' keymap 'emacs'
 
 # Auto convert .... to ../..
-zstyle ':omz:editor' dot-expansion 'no'
+zstyle ':omz:module:editor' dot-expansion 'no'
 
 # Set case-sensitivity for completion, history lookup, etc.
 zstyle ':omz:*:*' case-sensitive 'no'
@@ -17,11 +14,13 @@ zstyle ':omz:*:*' case-sensitive 'no'
 zstyle ':omz:*:*' color 'yes'
 
 # Auto set the tab and window titles.
-zstyle ':omz:terminal' auto-title 'yes'
+zstyle ':omz:module:terminal' auto-title 'yes'
 
-# Setting it to 'random' loads a random theme.
-# Auto set to 'off' on dumb terminals.
-zstyle ':omz:prompt' theme 'linduxed'
+# Set the Zsh functions to load (man zshcontrib).
+zstyle ':omz:load' zfunction 'zargs' 'zmv'
+
+# Set the Zsh modules to load (man zshmodules).
+# zstyle ':omz:load' zmodule 'attr' 'stat'
 
 autoload -U zmv
 
@@ -42,23 +41,28 @@ if [ -r "$OMZ/host-specific/$SHORTHOST" ]; then
 	source "$OMZ/host-specific/$SHORTHOST"
 fi
 
-# Set the plugins to load (see $OMZ/plugins/).
+# Set the plugins to load (see $OMZ/modules/).
 case $SHORTHOST in
 	freke)
-		zstyle ':omz:load' plugin 'archive' 'git' 'dpkg' 'tmux' 'ruby' 'rails'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'history-substring-search' 'prompt' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility' 'rails'
 		;;
 	hugin)
-		zstyle ':omz:load' plugin 'archive' 'git' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z' 'ruby'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'gnu-utility' 'history' 'history-substring-search' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
 		;;
 	korp)
-		zstyle ':omz:load' plugin 'archive' 'git' 'pacman' 'gnu-utils' 'rails' 'rsync' 'z' 'ruby'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'gnu-utility' 'history' 'history-substring-search' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
 		;;
 	munin)
-		zstyle ':omz:load' plugin 'archive' 'git' 'pacman'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'pacman'
 		;;
 	*)
 		;;
 esac
+
+# Setting it to 'random' loads a random theme.
+# Auto set to 'off' on dumb terminals.
+# Has to be run after loading the modules.
+zstyle ':omz:module:prompt' theme 'linduxed'
 
 # Load the OH-MY-ZSH settings.
 source "$OMZ/init.zsh"
