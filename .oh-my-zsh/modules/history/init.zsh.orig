@@ -21,7 +21,12 @@ setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
 setopt HIST_IGNORE_SPACE         # Do not record an entry starting with a space.
 setopt HIST_SAVE_NO_DUPS         # Do not write duplicate entries in the history file.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+<<<<<<< HEAD
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
+=======
+setopt HIST_VERIFY               # Do not execute immediately upon history expansion.
+setopt HIST_BEEP                 # Beep when accessing non-existent history.
+>>>>>>> 10ab5e2b58f5c7cff41c18279016d9e963b70287
 
 # Aliases
 
