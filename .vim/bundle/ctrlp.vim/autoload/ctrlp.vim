@@ -462,7 +462,7 @@ fu! s:BuildPrompt(upd, ...)
 endf
 " - SetDefTxt() {{{1
 fu! s:SetDefTxt()
-	if s:deftxt == '0' || s:pathmode == 1 | retu | en
+	if s:deftxt == '0' || s:pathmode == 1 || !s:ispath | retu | en
 	let txt = s:deftxt
 	if !type(txt)
 		let txt = txt && !stridx(s:crfpath, s:dyncwd)
@@ -818,8 +818,7 @@ fu! s:AcceptSelection(mode)
 	en
 	if empty(line) | retu | en
 	" Do something with it
-	let actfunc = s:itemtype < 3 ? 'ctrlp#acceptfile'
-		\ : g:ctrlp_ext_vars[s:itemtype - 3]['accept']
+	let actfunc = s:itemtype < 3 ? 'ctrlp#acceptfile' : s:getextvar('accept')
 	cal call(actfunc, [a:mode, line])
 endf
 " - CreateNewFile() {{{1
@@ -1115,8 +1114,7 @@ fu! s:lash(...)
 endf
 
 fu! s:ispathitem()
-	retu s:itemtype < 3 ||
-		\ ( s:itemtype > 2 && g:ctrlp_ext_vars[s:itemtype - 3]['type'] == 'path' )
+	retu s:itemtype < 3 || ( s:itemtype > 2 && s:getextvar('type') == 'path' )
 endf
 
 fu! ctrlp#dirnfile(entries)
@@ -1358,7 +1356,6 @@ fu! s:setupblank()
 endf
 
 fu! s:leavepre()
-	if exists('s:itemtype') | let g:CTRLP_LAST_MODE = s:itemtype | en
 	if s:clrex && !( has('clientserver') && len(split(serverlist(), "\n")) > 1 )
 		cal ctrlp#clra()
 	en
@@ -1520,8 +1517,7 @@ fu! s:openfile(cmd, fid, tail, ...)
 endf
 
 fu! s:settype(type)
-	retu a:type < 0 ? exists('s:itemtype') ? s:itemtype
-		\ : exists('g:CTRLP_LAST_MODE') ? g:CTRLP_LAST_MODE : 0 : a:type
+	retu a:type < 0 ? exists('s:itemtype') ? s:itemtype : 0 : a:type
 endf
 " Matching {{{2
 fu! s:matchfname(item, pat)
@@ -1586,8 +1582,7 @@ fu! s:insertcache(str)
 endf
 " Extensions {{{2
 fu! s:mtype()
-	retu s:itemtype > 2
-		\ ? g:ctrlp_ext_vars[s:itemtype - 3]['type'] : 'path'
+	retu s:itemtype > 2 ? s:getextvar('type') : 'path'
 endf
 
 fu! s:execextvar(key)
@@ -1643,10 +1638,10 @@ fu! ctrlp#init(type, ...)
 	let [s:matches, s:init] = [1, 1]
 	cal s:Open()
 	cal s:SetWD(a:0 ? a:1 : '')
-	cal s:SetDefTxt()
 	cal s:MapKeys()
 	cal ctrlp#syntax()
 	cal ctrlp#setlines(s:settype(a:type))
+	cal s:SetDefTxt()
 	cal s:BuildPrompt(1)
 endf
 " - Autocmds {{{1
