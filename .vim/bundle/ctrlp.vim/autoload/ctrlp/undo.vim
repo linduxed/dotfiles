@@ -19,6 +19,7 @@ cal add(g:ctrlp_ext_vars, {
 	\ 'exit': 'ctrlp#undo#exit()',
 	\ 'type': 'line',
 	\ 'sort': 0,
+	\ 'nolim': 1,
 	\ })
 
 let s:id = g:ctrlp_builtins + len(g:ctrlp_ext_vars)
@@ -111,13 +112,13 @@ endf
 fu! s:formatul(...)
 	let parts = matchlist(a:1,
 		\ '\v^\s+(\d+)\s+\d+\s+([^ ]+\s?[^ ]+|\d+\s\w+\s\w+)(\s*\d*)$')
-	retu parts[2].' ['.parts[1].']'.( parts[3] != '' ? ' saved' : '' )
+	retu parts == [] ? '----'
+		\ : parts[2].' ['.parts[1].']'.( parts[3] != '' ? ' saved' : '' )
 endf
 " Public {{{1
 fu! ctrlp#undo#init()
 	let entries = s:undos[0] ? s:undos[1]['entries'] : s:undos[1]
 	if empty(entries) | retu [] | en
-	let g:ctrlp_nolimit = 1
 	if !exists('s:lines')
 		if s:undos[0]
 			let entries = s:dict2list(s:flatten(entries, s:undos[1]['seq_cur']))
