@@ -29,6 +29,10 @@ func! s:process(bang, cmd)
       let msg = 'With errors; press l to view log'
     endif
 
+    if 'updated' == g:vundle_last_status && empty(msg)
+      let msg = 'Bundles updated; press u to view changelog'
+    endif
+
     " goto next one
     exec ':+1'
 
@@ -61,6 +65,8 @@ func! vundle#installer#run(func_name, name, ...) abort
     echo n.' already installed'
   elseif 'deleted' == status
     echo n.' deleted'
+  elseif 'helptags' == status
+    echo n.' regenerated'
   elseif 'error' == status
     echohl Error
     echo 'Error processing '.n
@@ -101,7 +107,7 @@ endf
 
 func! vundle#installer#docs() abort
   call vundle#installer#helptags(g:bundles)
-  return 'updated'
+  return 'helptags'
 endf
 
 func! vundle#installer#helptags(bundles) abort
@@ -226,12 +232,24 @@ func! s:sync(bang, bundle) abort
     return 'todate'
   endif
 
+  call s:add_to_updated_bundles(out, a:bundle)
   return 'updated'
 endf
 
 func! s:system(cmd) abort
   return system(a:cmd)
 endf
+
+func! s:add_to_updated_bundles(out, bundle) abort
+  let git_pull_shas = matchlist(a:out, 'Updating \(\w\+\)..\(\w\+\)')
+
+  if (empty(git_pull_shas)) | return | endif
+
+  let initial_sha = git_pull_shas[1]
+  let updated_sha = git_pull_shas[2]
+
+  call add(g:updated_bundles, [initial_sha, updated_sha, a:bundle])
+endfunc
 
 func! s:log(str) abort
   let fmt = '%y%m%d %H:%M:%S'
