@@ -83,10 +83,10 @@ alias freke='ssh -R 8081:localhost:22 linduxed@freke.linduxed.se'
 # Mac OS X
 if [[ "$OSTYPE" == darwin* ]]; then
   alias o='open'
-  alias get='curl --continue-at - --location --progress-bar --remote-name'
+  alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
 else
   alias o='xdg-open'
-  alias get='wget --continue --progress=bar'
+  alias get='wget --continue --progress=bar --timestamping'
   alias pbc='pbcopy'
   alias pbp='pbpaste'
 
