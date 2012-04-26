@@ -8,6 +8,3 @@
 #gnome-terminal --role=ncmpcpp -x ncmpcpp &
 #gnome-terminal --role=htop -x htop &
 #gnome-terminal
-
-# gnome-power-manager &
-gnome-do &
