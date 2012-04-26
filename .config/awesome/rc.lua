@@ -203,17 +203,33 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-    awful.key({ modkey,           }, "u",     function () awful.tag.incmwfact( 0.05)    end),
-    awful.key({ modkey,           }, "e",     function () awful.tag.incmwfact(-0.05)    end),
-    awful.key({ modkey, "Shift"   }, "u",     function () awful.tag.incnmaster( 1)      end),
-    awful.key({ modkey, "Shift"   }, "e",     function () awful.tag.incnmaster(-1)      end),
-    awful.key({ modkey, "Control" }, "u",     function () awful.tag.incncol( 1)         end),
-    awful.key({ modkey, "Control" }, "e",     function () awful.tag.incncol(-1)         end),
+	-- Layout manipulation
+    awful.key({ modkey,           }, "u",  function () awful.tag.incmwfact( 0.05)    end),
+    awful.key({ modkey,           }, "e",  function () awful.tag.incmwfact(-0.05)    end),
+    awful.key({ modkey, "Shift"   }, "u",  function () awful.tag.incnmaster( 1)      end),
+    awful.key({ modkey, "Shift"   }, "e",  function () awful.tag.incnmaster(-1)      end),
+    awful.key({ modkey, "Control" }, "u",  function () awful.tag.incncol( 1)         end),
+    awful.key({ modkey, "Control" }, "e",  function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "F2", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "F2", function () awful.layout.inc(layouts, -1) end),
 
+	-- Volume
+	awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/.tilde/bin/pa-volume.sh down") end),
+	awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/.tilde/bin/pa-volume.sh up")   end),
+	awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/.tilde/bin/pa-volume.sh mute") end),
+
+	-- Background switching
+	awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/.tilde/bin/dual_bg_random_switch.sh") end),
+	awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/.tilde/bin/bg_random_switch.sh")      end),
+
+	-- MPD control
+	awful.key({ "Control", "Mod1" }, "p", function () awful.util.spawn("mpc toggle") end),
+	awful.key({ "Control", "Mod1" }, "s", function () awful.util.spawn("mpc stop")   end),
+	awful.key({ "Control", "Mod1" }, "y", function () awful.util.spawn("mpc next")   end),
+	awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("mpc prev")   end),
+
     -- Prompt
-    awful.key({ modkey },            "F1",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey }, "F1", function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "F4",
               function ()
@@ -303,7 +319,7 @@ root.keys(globalkeys)
 naughty.config.presets.critical.timeout = 8
 
 -- Autostart applications
-awful.util.spawn_with_shell("~/.config/awesome/autostart.sh")
+awful.util.spawn_with_shell("/home/linduxed/.config/awesome/autostart.sh")
 
 
 
