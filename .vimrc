@@ -78,6 +78,13 @@ else
 	let g:CSApprox_loaded = 0
 endif
 
+" Since hugin is using laptop-mode, the drive is generally spun down.
+" Syncs will cause input to lag for a brief moment, when the two coincide.
+if hostname() == 'hugin'
+	set swapsync=
+	set nofsync
+endif
+
 " Check filetype for plugins.
 filetype indent plugin on
 
