@@ -26,10 +26,8 @@ nnoremap e gj|xnoremap e j|onoremap e j|
 nnoremap i l|xnoremap i l|onoremap i l|
 
 " Added the 'g' in front of 'j' and 'k' for visual line navigation.
-nnoremap <silent> N 5h|xnoremap <silent> N 5h|onoremap N 5h|
 nnoremap <silent> U 5gk|xnoremap <silent> U 5gk|onoremap U 5gk|
 nnoremap <silent> E 5gj|xnoremap <silent> E 5gj|onoremap E 5gj|
-nnoremap <silent> I 5l|xnoremap <silent> I 5l|onoremap I 5l|
 
 " Home/end of line
 nnoremap L ^|xnoremap L ^|onoremap L ^|
@@ -59,6 +57,10 @@ nnoremap y w|xnoremap y w|onoremap y w|
 " WORD left/right
 nnoremap <C-l> B|vnoremap <C-l> B|onoremap <C-l> B|
 nnoremap <C-y> W|vnoremap <C-y> W|onoremap <C-y> W|
+
+" End of word left/right
+nnoremap <silent> N ge|xnoremap <silent> N ge|onoremap N ge|
+nnoremap <silent> I e|xnoremap <silent> I e|onoremap I e|
 
 " inneR text objects
 " e.g. dip (delete inner paragraph) is now drp
