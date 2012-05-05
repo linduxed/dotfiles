@@ -53,6 +53,7 @@ for path_file in /etc/manpaths.d/*(.N); do
 done
 
 path=(
+  /usr/lib/cw
   $HOME/.tilde/{bin,sbin}
   $HOME/.tilde/opt/{bin,sbin}
   /usr/local/{bin,sbin}

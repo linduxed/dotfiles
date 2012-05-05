@@ -52,8 +52,6 @@ alias _='sudo'
 alias b='${(z)BROWSER}'
 alias cd='nocorrect cd'
 alias cp='nocorrect cp -i'
-alias df='df -kh'
-alias du='du -kh'
 alias e='${(z)EDITOR}'
 alias find='noglob find'
 alias fc='noglob fc'
@@ -76,6 +74,18 @@ alias mc='mc -u'
 alias pull-all='find . -name ".git"  -type d -prune -execdir git pull \;'
 alias unzip-all='for a in *.zip; do mkdir $a:r; pushd $a:r; unzip ../$a; popd; done'
 alias pb='wgetpaste -X'
+
+# Coloured versions of commands (if available)
+if is-callable 'dfc'; then
+  alias df='dfc'
+else
+  alias df='df -kh'
+fi
+if is-callable 'cdu'; then
+  alias du='cdu -idh'
+else
+  alias du='du -kh'
+fi
 
 # Server logins
 alias freke='ssh -R 8081:localhost:22 linduxed@freke.linduxed.se'
