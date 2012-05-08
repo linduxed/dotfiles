@@ -44,13 +44,13 @@ fi
 # Set the plugins to load (see $OMZ/modules/).
 case $SHORTHOST in
 	freke)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'history-substring-search' 'prompt' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility' 'rails'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility' 'rails'
 		;;
 	hugin)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'gnu-utility' 'history' 'history-substring-search' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
 		;;
 	korp)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'gnu-utility' 'history' 'history-substring-search' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
 		;;
 	munin)
 		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'pacman'
