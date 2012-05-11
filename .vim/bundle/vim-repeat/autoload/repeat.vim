@@ -101,7 +101,9 @@ endfunction
 
 nnoremap <silent> .     :<C-U>call <SID>repeat(v:count)<CR>
 nnoremap <silent> z     :<C-U>call <SID>wrap('u',v:count)<CR>
-nnoremap <silent> gz    :<C-U>call <SID>wrap('U',v:count)<CR>
+if maparg('gz','n') ==# ''
+    nnoremap <silent> gz     :<C-U>call <SID>wrap('U',v:count)<CR>
+endif
 nnoremap <silent> Z     :<C-U>call <SID>wrap("\<Lt>C-R>",v:count)<CR>
 
 augroup repeatPlugin

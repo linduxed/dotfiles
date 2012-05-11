@@ -214,13 +214,13 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "F2", function () awful.layout.inc(layouts, -1) end),
 
 	-- Volume
-	awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/.tilde/bin/pa-volume.sh down") end),
-	awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/.tilde/bin/pa-volume.sh up")   end),
-	awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/.tilde/bin/pa-volume.sh mute") end),
+	awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh down") end),
+	awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh up")   end),
+	awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh mute") end),
 
 	-- Background switching
-	awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/.tilde/bin/dual_bg_random_switch.sh") end),
-	awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/.tilde/bin/bg_random_switch.sh")      end),
+	awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/bin/dual_bg_random_switch.sh") end),
+	awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/bin/bg_random_switch.sh")      end),
 
 	-- MPD control
 	awful.key({ "Control", "Mod1" }, "p", function () awful.util.spawn("mpc toggle") end),
