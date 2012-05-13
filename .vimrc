@@ -187,8 +187,8 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'firefox %URL% &'
 
-" Makes NERDcommenter add spaces around the comment signs for all languages
-let NERDSpaceDelims = 1
+let NERDSpaceDelims = 1        " Add spaces around the comment signs for all languages
+let NERD_haskell_alt_style = 1 " Alt style looks better for Haskell (currently doesn't work)
 
 " CTRL-P settings
 let g:ctrlp_max_height = 25
