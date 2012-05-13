@@ -65,6 +65,7 @@ nnoremap <silent> I e|xnoremap <silent> I e|onoremap I e|
 " inneR text objects
 " e.g. dip (delete inner paragraph) is now drp
 onoremap r i
+vnoremap r i
 
 " Folds, etc.
 nnoremap b z|xnoremap b z|
