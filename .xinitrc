@@ -38,5 +38,5 @@ uim-xim &
 export XMODIFIERS=@im='uim'
 uim-toolbar-gtk-systray &
 
-exec ck-launch-session dbus-launch awesome
+exec dbus-launch awesome
 # exec gnome-session
