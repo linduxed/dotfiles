@@ -1,4 +1,4 @@
-gnu-utility
+GNU Utility
 ===========
 
 Provides for the interactive use of GNU utilities on non-GNU systems.
@@ -9,6 +9,8 @@ utilities will be broken.
 
 However, for interactive use, prefixed commands can be wrapped in their
 non-prefixed counterparts.
+
+This module must be loaded **before** the *alias* module.
 
 Settings
 --------
@@ -23,7 +25,9 @@ the desired prefix:
 Authors
 -------
 
-*The authors of this module should be contacted via the GitHub issue tracker.*
+*The authors of this module should be contacted via the [issue tracker][1].*
 
- - [Sorin Ionescu](/sorin-ionescu)
+  - [Sorin Ionescu](https://github.com/sorin-ionescu)
+
+[1]: https://github.com/sorin-ionescu/oh-my-zsh/issues
 
