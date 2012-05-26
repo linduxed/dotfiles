@@ -1,27 +1,18 @@
 " Insert or delete brackets, parens, quotes in pairs.
 " Maintainer:	JiangMiao <jiangfriend@gmail.com>
 " Contributor: camthompson
-" Last Change:  2012-01-24
-" Version: 1.1.5
+" Last Change:  2012-05-16
+" Version: 1.2.2
 " Homepage: http://www.vim.org/scripts/script.php?script_id=3599
 " Repository: https://github.com/jiangmiao/auto-pairs
 "
 " Changes by linduxed:
-" FastWrap disabled due to not working properly.
 " Toggling of AutoPairs is done with <Leader>a in normal mode.
 
 if exists('g:AutoPairsLoaded') || &cp
   finish
 end
 let g:AutoPairsLoaded = 1
-
-" Shortcurs for 
-" <M-o> newline with indetation
-" <M-a> jump to of line
-" <M-n> jmup to next pairs
-if !exists('g:AutoPairsShortcuts')
-  let g:AutoPairsShortcuts = 1
-end
 
 if !exists('g:AutoPairs')
   let g:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`'}
@@ -54,16 +45,28 @@ if !exists('g:AutoPairsShortcutToggle')
   let g:AutoPairsShortcutToggle = '<Leader>a'
 end
 
-" if !exists('g:AutoPairsShortcutFastWrap')
-"   let g:AutoPairsShortcutFastWrap = '<M-i>'
-" end
+if !exists('g:AutoPairsShortcutFastWrap')
+  let g:AutoPairsShortcutFastWrap = '<M-e>'
+end
 
 if !exists('g:AutoPairsShortcutJump')
   let g:AutoPairsShortcutJump = '<M-n>'
 endif
 
-let g:AutoPairsClosedPairs = {}
+" Fly mode will for closed pair to jump to closed pair instead of insert.
+" also support AutoPairsBackInsert to insert pairs where jumped.
+if !exists('g:AutoPairsFlyMode')
+  let g:AutoPairsFlyMode = 0
+endif
 
+" Work with Fly Mode, insert pair where jumped
+if !exists('g:AutoPairsShortcutBackInsert')
+  let g:AutoPairsShortcutBackInsert = '<M-b>'
+endif
+
+
+" Will auto generated {']' => '[', ..., '}' => '{'}in initialize.
+let g:AutoPairsClosedPairs = {}
 
 
 function! AutoPairsInsert(key)
@@ -86,26 +89,38 @@ function! AutoPairsInsert(key)
     return a:key
   end
 
+  " The key is difference open-pair, then it means only for ) ] } by default
   if !has_key(g:AutoPairs, a:key)
-    " Skip the character if next character is space
-    if current_char == ' ' && next_char == a:key
-      return "\<Right>\<Right>"
-    end
-
-    " Skip the character if closed pair is next character
-    if current_char == ''
-      let next_lineno = line('.')+1
-      let next_line = getline(nextnonblank(next_lineno))
-      let next_char = matchstr(next_line, '\s*\zs.')
-      if next_char == a:key
-        return "\<ESC>e^a"
-      endif
-    endif
+    let b:autopairs_saved_pair = [a:key, getpos('.')]
 
     " Skip the character if current character is the same as input
     if current_char == a:key
       return "\<Right>"
     end
+
+    if !g:AutoPairsFlyMode
+      " Skip the character if next character is space
+      if current_char == ' ' && next_char == a:key
+        return "\<Right>\<Right>"
+      end
+
+      " Skip the character if closed pair is next character
+      if current_char == ''
+        let next_lineno = line('.')+1
+        let next_line = getline(nextnonblank(next_lineno))
+        let next_char = matchstr(next_line, '\s*\zs.')
+        if next_char == a:key
+          return "\<ESC>e^a"
+        endif
+      endif
+    endif
+
+    " Fly Mode, and the key is closed-pairs, search closed-pair and jump
+    if g:AutoPairsFlyMode && has_key(g:AutoPairsClosedPairs, a:key)
+      if search(a:key, 'W')
+        return "\<Right>"
+      endif
+    endif
 
     " Input directly if the key is not an open key
     return a:key
@@ -172,39 +187,68 @@ endfunction
 function! AutoPairsJump()
   call search('["\]'')}]','W')
 endfunction
+" string_chunk cannot use standalone
+let s:string_chunk = '\v%(\\\_.|[^\1]|[\r\n]){-}'
+let s:ss_pattern = '\v''' . s:string_chunk . ''''
+let s:ds_pattern = '\v"'  . s:string_chunk . '"'
 
-" " Fast wrap the word in brackets
-" function! AutoPairsFastWrap()
-"   let line = getline('.')
-"   let current_char = line[col('.')-1]
-"   let next_char = line[col('.')]
-"
-"   " Ignore EOL
-"   if col('.') == col('$')
-"     return ''
-"   end
-"   
-"   normal! x
-"   if match(next_char, '\s') != -1
-"     call search('\S', 'W')
-"     let next_char = getline('.')[col('.')-1]
-"   end
-"
-"   if has_key(g:AutoExtraPairs, next_char)
-"     let close = g:AutoExtraPairs[next_char]
-"     call search(close, 'W')
-"     return "\<RIGHT>".current_char."\<LEFT>"
-"   else
-"     if match(next_char, '\w') != -1
-"   	execute "normal! he"
-"     end
-"     execute "normal! a".current_char
-"     return ""
-"   end
-" endfunction
+func! s:RegexpQuote(str)
+  return substitute(a:str, '\v[\[\{\(\<\>\)\}\]]', '\\&', 'g')
+endf
+
+func! s:RegexpQuoteInSquare(str)
+  return substitute(a:str, '\v[\[\]]', '\\&', 'g')
+endf
+
+" Search next open or close pair
+func! s:FormatChunk(open, close)
+  let open = s:RegexpQuote(a:open)
+  let close = s:RegexpQuote(a:close)
+  let open2 = s:RegexpQuoteInSquare(a:open)
+  let close2 = s:RegexpQuoteInSquare(a:close)
+  if open == close
+    return '\v'.open.s:string_chunk.close
+  else
+    return '\v%(' . s:ss_pattern . '|' . s:ds_pattern . '|' . '[^'.open2.close2.']|[\r\n]' . '){-}(['.open2.close2.'])'
+  end
+endf
+
+" Fast wrap the word in brackets
+function! AutoPairsFastWrap()
+  let line = getline('.')
+  let current_char = line[col('.')-1]
+  let next_char = line[col('.')]
+  let open_pair_pattern = '\v[({\[''"]'
+  let at_end = col('.') >= col('$') - 1
+  normal x
+  " Skip blank
+  if next_char =~ '\v\s' || at_end
+    call search('\v\S', 'W')
+    let line = getline('.')
+    let next_char = line[col('.')-1]
+  end
+
+  if has_key(g:AutoPairs, next_char)
+    let followed_open_pair = next_char
+    let inputed_close_pair = current_char
+    let followed_close_pair = g:AutoPairs[next_char]
+    if followed_close_pair != followed_open_pair
+      " TODO replace system searchpair to skip string and nested pair.
+      " eg: (|){"hello}world"} will transform to ({"hello})world"}
+      call searchpair('\V'.followed_open_pair, '', '\V'.followed_close_pair, 'W')
+    else
+      call search(s:FormatChunk(followed_open_pair, followed_close_pair), 'We')
+    end
+    return "\<RIGHT>".inputed_close_pair."\<LEFT>"
+  else
+    normal e
+    return "\<RIGHT>".current_char."\<LEFT>"
+  end
+endfunction
 
 function! AutoPairsMap(key)
   let escaped_key = substitute(a:key, "'", "''", 'g')
+  " use expr will cause search() doesn't work
   execute 'inoremap <buffer> <silent> '.a:key." <C-R>=AutoPairsInsert('".escaped_key."')<CR>"
 endfunction
 
@@ -232,7 +276,7 @@ function! AutoPairsReturn()
     " conflict with javascript and coffee
     " javascript   need   indent new line
     " coffeescript forbid indent new line
-    if &filetype == 'coffeescript'
+    if &filetype == 'coffeescript' || &filetype == 'coffee'
       return "\<ESC>k==o".cmd
     else
       return "\<ESC>=ko".cmd
@@ -252,6 +296,16 @@ function! AutoPairsSpace()
   return "\<SPACE>".cmd
 endfunction
 
+function! AutoPairsBackInsert()
+  if exists('b:autopairs_saved_pair')
+    let pair = b:autopairs_saved_pair[0]
+    let pos  = b:autopairs_saved_pair[1]
+    call setpos('.', pos)
+    return pair
+  endif
+  return ''
+endfunction
+
 function! AutoPairsInit()
   let b:autopairs_loaded  = 1
   let b:autopairs_enabled = 1
@@ -262,25 +316,30 @@ function! AutoPairsInit()
     if open != close
       call AutoPairsMap(close)
     end
-    let g:AutoPairsClosedPairs[close] = 1
+    let g:AutoPairsClosedPairs[close] = open
   endfor
 
   " Still use <buffer> level mapping for <BS> <SPACE>
   if g:AutoPairsMapBS
-    execute 'inoremap <buffer> <silent> <expr> <BS> AutoPairsDelete()'
+    " Use <C-R> instead of <expr> for issue #14 sometimes press BS output strange words
+    execute 'inoremap <buffer> <silent> <BS> <C-R>=AutoPairsDelete()<CR>'
   end
 
   if g:AutoPairsMapSpace
-    execute 'inoremap <buffer> <silent> <expr> <SPACE> AutoPairsSpace()'
+    execute 'inoremap <buffer> <silent> <SPACE> <C-R>=AutoPairsSpace()<CR>'
   end
 
-" if g:AutoPairsShortcutFastWrap != ''
-"   execute 'inoremap <buffer> <silent> '.g:AutoPairsShortcutFastWrap.' <C-R>=AutoPairsFastWrap()<CR>'
-" end
+  " if g:AutoPairsShortcutFastWrap != ''
+  "   execute 'inoremap <buffer> <silent> '.g:AutoPairsShortcutFastWrap.' <C-R>=AutoPairsFastWrap()<CR>'
+  " end
+
+  if g:AutoPairsShortcutBackInsert != ''
+    execute 'inoremap <buffer> <silent> '.g:AutoPairsShortcutBackInsert.' <C-R>=AutoPairsBackInsert()<CR>'
+  end
 
   if g:AutoPairsShortcutToggle != ''
     " use <expr> to ensure showing the status when toggle
-    execute 'inoremap <buffer> <silent> <expr> '.g:AutoPairsShortcutToggle.' AutoPairsToggle()'
+    " execute 'inoremap <buffer> <silent> <expr> '.g:AutoPairsShortcutToggle.' AutoPairsToggle()'
     execute 'noremap <buffer> <silent> '.g:AutoPairsShortcutToggle.' :call AutoPairsToggle()<CR>'
   end
 
@@ -291,28 +350,52 @@ function! AutoPairsInit()
 
 endfunction
 
+function! s:ExpandMap(map)
+  let map = a:map
+  if map =~ '<Plug>'
+    let map = substitute(map, '\(<Plug>\w\+\)', '\=maparg(submatch(1), "i")', 'g')
+  endif
+  return map
+endfunction
+
 function! AutoPairsForceInit()
   if exists('b:autopairs_loaded')
     return
-  else
-    call AutoPairsInit()
+  end
+  " for auto-pairs starts with 'a', so the priority is higher than supertab and vim-endwise
+  "
+  " vim-endwise doesn't support <Plug>AutoPairsReturn
+  " when use <Plug>AutoPairsReturn will cause <Plug> isn't expanded
+  "
+  " supertab doesn't support <SID>AutoPairsReturn
+  " when use <SID>AutoPairsReturn  will cause Duplicated <CR>
+  "
+  " and when load after vim-endwise will cause unexpected endwise inserted. 
+  " so always load AutoPairs at last
+  
+  " Buffer level keys mapping
+  " comptible with other plugin
+  if g:AutoPairsMapCR
+    let old_cr = maparg('<CR>', 'i')
+    if old_cr == ''
+      let old_cr = '<CR>'
+    else
+      let old_cr = s:ExpandMap(old_cr)
+    endif
+
+    if old_cr !~ 'AutoPairsReturn'
+      " generally speaking, <silent> should not be here because every plugin
+      " has there own silent solution. but for some plugin which wasn't double silent 
+      " mapping, when maparg expand the map will lose the silent info, so <silent> always.
+      execute 'imap <buffer> <silent> <CR> '.old_cr.'<SID>AutoPairsReturn'
+    end
   endif
+  call AutoPairsInit()
 endfunction
 
 " Always silent the command
 inoremap <silent> <SID>AutoPairsReturn <C-R>=AutoPairsReturn()<CR>
+imap <script> <Plug>AutoPairsReturn <SID>AutoPairsReturn
 
-" Global keys mapping
-" comptible with other plugin
-if g:AutoPairsMapCR
-  let old_cr = maparg('<CR>', 'i')
-  if old_cr == ''
-    let old_cr = '<CR>'
-  endif
-
-  if old_cr !~ 'AutoPairsReturn'
-    execute 'imap <CR> '.old_cr.'<SID>AutoPairsReturn'
-  end
-endif
 
 au BufEnter * :call AutoPairsForceInit()
