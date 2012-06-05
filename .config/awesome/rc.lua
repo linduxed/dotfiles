@@ -9,7 +9,7 @@ require("naughty")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/themes/linduxed/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "gnome-terminal"
@@ -314,14 +314,11 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
-
 -- Make critical notifications disappear automatically.
 naughty.config.presets.critical.timeout = 8
 
 -- Autostart applications
-awful.util.spawn_with_shell("/home/linduxed/.config/awesome/autostart.sh")
-
-
+awful.util.spawn_with_shell(awful.util.getdir("config") .. "/autostart.sh")
 
 -- {{{ Rules
 awful.rules.rules = {
