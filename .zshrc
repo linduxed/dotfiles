@@ -55,6 +55,9 @@ case $SHORTHOST in
 	munin)
 		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'pacman'
 		;;
+	share-01)
+		zstyle ':omz:load' omodule 'alias' 'archive' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility'
+		;;
 	*)
 		;;
 esac
