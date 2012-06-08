@@ -12,6 +12,7 @@ alias hd-mplayer='mplayer -subfont-text-scale 2 -vo vdpau -vc ffh264vdpau'
 alias mplayer-louder='mplayer -af volume=+18dB'
 
 alias attana='ssh -C mmuszynski@92.33.15.126'
+alias freke-mosh='mosh linduxed@freke.linduxed.se'
 
 alias usb='pmount /dev/sdb1'
 alias unusb='pumount /dev/sdb1'
