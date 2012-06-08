@@ -25,21 +25,12 @@ zstyle ':omz:load' zfunction 'zargs' 'zmv'
 autoload -U zmv
 
 toLower() {
-  echo $1 | tr "[:upper:]" "[:lower:]" 
+  echo $1 | tr "[:upper:]" "[:lower:]"
 }
 
-# Host specific imports
 SYSTEM=`uname -s`
 SYSTEM=`toLower $SYSTEM`
 SHORTHOST=`hostname -s`
-
-if [ -r "$OMZ/host-specific/$SYSTEM" ]; then
-	source "$OMZ/host-specific/$SYSTEM"
-fi
-
-if [ -r "$OMZ/host-specific/$SHORTHOST" ]; then
-	source "$OMZ/host-specific/$SHORTHOST"
-fi
 
 # Set the plugins to load (see $OMZ/modules/).
 case $SHORTHOST in
@@ -69,3 +60,12 @@ zstyle ':omz:module:prompt' theme 'linduxed'
 
 # Load the OH-MY-ZSH settings.
 source "$OMZ/init.zsh"
+
+# Host specific settings
+if [ -r "$OMZ/host-specific/$SYSTEM" ]; then
+	source "$OMZ/host-specific/$SYSTEM"
+fi
+
+if [ -r "$OMZ/host-specific/$SHORTHOST" ]; then
+	source "$OMZ/host-specific/$SHORTHOST"
+fi
