@@ -153,8 +153,8 @@ set softtabstop=4               " Spaces that a <Tab> counts for when editing
 set hidden                      " Allows hidden buffers
 set cursorline                  " Shows what line the cursor is on
 set cursorcolumn                " Shows what column the cursor is on
-set foldmethod=indent           " Make Vim fold according to the indentation.
 set mouse=n                     " Allow the mouse in normal mode.
+set foldmethod=marker           " Make Vim fold with the help of markers.
 " Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix-dependant autocommands.
