@@ -44,7 +44,7 @@ case $SHORTHOST in
 		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
 		;;
 	munin)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'environment' 'git' 'pacman'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
 		;;
 	attana-server)
 		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility'
