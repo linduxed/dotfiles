@@ -28,9 +28,6 @@
 [submodule ".vim/bundle/tabular"]
 	path = .vim/bundle/tabular
 	url = git@github.com:godlygeek/tabular.git
-[submodule ".vim/bundle/snipmate.vim"]
-	path = .vim/bundle/snipmate.vim
-	url = git@github.com:msanders/snipmate.vim.git
 [submodule ".vim/bundle/vim-qargs"]
 	path = .vim/bundle/vim-qargs
 	url = git@github.com:nelstrom/vim-qargs.git
@@ -76,3 +73,6 @@
 [submodule ".vim/bundle/vim-speeddating"]
 	path = .vim/bundle/vim-speeddating
 	url = git@github.com:tpope/vim-speeddating.git
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
+	url = git@github.com:linduxed/snipmate.vim.git
