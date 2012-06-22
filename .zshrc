@@ -35,22 +35,22 @@ SHORTHOST=`hostname -s`
 # Set the plugins to load (see $OMZ/modules/).
 case $SHORTHOST in
 	freke)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility' 'rails'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'terminal' 'tmux' 'utility' 'rails'
 		;;
 	hugin)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
 		;;
 	korp)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
 		;;
 	munin)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'syntax-highlighting' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
 		;;
 	attana-server)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'terminal' 'tmux' 'utility'
 		;;
 	share-01)
-		zstyle ':omz:load' omodule 'alias' 'archive' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'syntax-highlighting' 'terminal' 'tmux' 'utility'
+		zstyle ':omz:load' omodule 'alias' 'archive' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'terminal' 'tmux' 'utility'
 		;;
 	*)
 		;;
