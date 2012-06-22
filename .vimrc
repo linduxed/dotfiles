@@ -192,6 +192,6 @@ let NERD_haskell_alt_style = 1 " Alt style looks better for Haskell (currently d
 
 " CTRL-P settings
 let g:ctrlp_max_height = 25
-let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp.vim/cache'
+let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp-cache'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multi = '2v'
