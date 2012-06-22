@@ -34,7 +34,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'msanders/snipmate.vim'
 Bundle 'nelstrom/vim-qargs'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree.git'
+Bundle 'scrooloose/nerdtree'
 Bundle 'sjbach/lusty'
 Bundle 'sjl/gundo.vim'
 Bundle 'tpope/vim-abolish'
@@ -189,6 +189,8 @@ let g:gist_browser_command = 'firefox %URL% &'
 
 let NERDSpaceDelims = 1        " Add spaces around the comment signs for all languages
 let NERD_haskell_alt_style = 1 " Alt style looks better for Haskell (currently doesn't work)
+
+let NERDTreeQuitOnOpen=1
 
 " CTRL-P settings
 let g:ctrlp_max_height = 25

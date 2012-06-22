@@ -22,8 +22,9 @@ map <F10> <Plug>TaskList
 nmap <F11> :TlistToggle<CR>
 " Keybind for NERD_Tree
 nmap <F12> :NERDTree<CR>
-let NERDTreeQuitOnOpen=1
 
+let g:gundo_map_move_newer = "u"
+let g:gundo_map_move_older = "e"
 
 let g:EasyMotion_mapping_f = '<Leader><Leader>f'
 let g:EasyMotion_mapping_F = '<Leader><Leader>F'
