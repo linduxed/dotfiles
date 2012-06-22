@@ -7,3 +7,18 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = git@github.com:kien/ctrlp.vim.git
+[submodule ".vim/bundle/webapi-vim"]
+	path = .vim/bundle/webapi-vim
+	url = git@github.com:mattn/webapi-vim.git
+[submodule ".vim/bundle/gist-vim"]
+	path = .vim/bundle/gist-vim
+	url = git@github.com:mattn/gist-vim.git
+[submodule ".vim/bundle/vim-easymotion"]
+	path = .vim/bundle/vim-easymotion
+	url = git@github.com:Lokaltog/vim-easymotion.git
+[submodule ".vim/bundle/prolog.vim"]
+	path = .vim/bundle/prolog.vim
+	url = git@github.com:adimit/prolog.vim.git
+[submodule ".vim/bundle/minibufexpl.vim"]
+	path = .vim/bundle/minibufexpl.vim
+	url = git@github.com:fholgado/minibufexpl.vim.git
