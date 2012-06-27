@@ -52,13 +52,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/python.vim'
 Bundle 'vim-scripts/pythoncomplete'
 Bundle 'vim-scripts/taglist.vim'
 " vim-scripts repos
 Bundle 'javacomplete'
 Bundle 'octave.vim'
-Bundle 'indenthaskell.vim'
 Bundle 'syntaxhaskell.vim'
 " other repos
 Bundle "git://gitorious.org/vim-gnupg/vim-gnupg.git"
