@@ -19,8 +19,8 @@ zstyle ':omz:module:terminal' auto-title 'yes'
 # Set the Zsh functions to load (man zshcontrib).
 zstyle ':omz:load' zfunction 'zargs' 'zmv'
 
-# Set the Zsh modules to load (man zshmodules).
-# zstyle ':omz:load' zmodule 'attr' 'stat'
+# Enable the yaourt frontend for pacman.
+zstyle ':omz:module:pacman' frontend 'yaourt'
 
 autoload -U zmv
 
@@ -38,13 +38,13 @@ case $SHORTHOST in
 		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'terminal' 'tmux' 'utility' 'rails'
 		;;
 	hugin)
-		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
 		;;
 	korp)
-		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
 		;;
 	munin)
-		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
 		;;
 	travelmate)
 		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'dpkg' 'prompt' 'rsync' 'spectrum' 'terminal' 'utility'
