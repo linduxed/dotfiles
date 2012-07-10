@@ -38,13 +38,13 @@ case $SHORTHOST in
 		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'terminal' 'tmux' 'utility' 'rails'
 		;;
 	hugin)
-		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
 		;;
 	korp)
-		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
 		;;
 	munin)
-		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
 		;;
 	attana-server)
 		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'terminal' 'tmux' 'utility'
