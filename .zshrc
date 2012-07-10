@@ -46,6 +46,9 @@ case $SHORTHOST in
 	munin)
 		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'yaourt' 'z'
 		;;
+	travelmate)
+		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'dpkg' 'prompt' 'rsync' 'spectrum' 'terminal' 'utility'
+		;;
 	attana-server)
 		zstyle ':omz:load' omodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'terminal' 'tmux' 'utility'
 		;;
