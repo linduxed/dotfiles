@@ -38,6 +38,7 @@ unset path_file
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  /usr/lib/cw
   $HOME/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
