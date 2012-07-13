@@ -1,4 +1,4 @@
-# Copyright (C) 2007-2010 Stephen Bach
+# Copyright (C) 2007 Stephen Bach
 #
 # Permission is hereby granted to use and distribute this code, with or without
 # modifications, provided that this copyright notice is copied with it. Like
@@ -40,6 +40,7 @@ class Display
     end
 
     def create(prefix)
+      VIM::command("let s:winstate = winrestcmd()")
 
       # Make a window for the display and move there.
       # Start at size 1 to mitigate flashing effect when
@@ -219,10 +220,16 @@ class Display
     end
 
     def self.max_height
-      stored_height = $curwin.height
-      $curwin.height = VIM::MOST_POSITIVE_INTEGER
+      # Compute the height of the display if it were grow to take up
+      # all available space, squishing every other Vim window to its
+      # minimal size.
+
+      # Ask for the world.  The resize command defaults to the max height.
+      VIM::command("resize")
+      # Remember what we got.
       highest_allowable = $curwin.height
-      $curwin.height = stored_height
+      # Restore the window state.
+      VIM::command("exe s:winstate")
       highest_allowable
     end
 

@@ -1,4 +1,4 @@
-"    Copyright: Copyright (C) 2008-2012 Stephen Bach
+"    Copyright: Copyright (C) 2008 Stephen Bach
 "               Permission is hereby granted to use and distribute this code,
 "               with or without modifications, provided that this copyright
 "               notice is copied with it. Like anything else that's free,
@@ -9,7 +9,7 @@
 "
 " Name Of File: lusty-juggler.vim
 "  Description: Dynamic Buffer Switcher Vim Plugin
-"   Maintainer: Stephen Bach <this-file@sjbach.com>
+"   Maintainer: Stephen Bach <http://items.sjbach.com/about>
 " Contributors: Juan Frias, Bartosz Leper, Marco Barberis, Vincent Driessen,
 "               Martin Wache, Johannes Holzfuß, Adam Rutkowski, Carlo Teubner,
 "               lilydjwg, Leonid Shevtsov, Giuseppe Rota, Göran Gustafsson,

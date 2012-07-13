@@ -1,4 +1,4 @@
-"    Copyright: Copyright (C) 2007-2012 Stephen Bach
+"    Copyright: Copyright (C) 2007 Stephen Bach
 "               Permission is hereby granted to use and distribute this code,
 "               with or without modifications, provided that this copyright
 "               notice is copied with it. Like anything else that's free,
@@ -9,7 +9,7 @@
 "
 " Name Of File: lusty-explorer.vim
 "  Description: Dynamic Filesystem and Buffer Explorer Vim Plugin
-"  Maintainers: Stephen Bach <this-file@sjbach.com>
+"  Maintainers: Stephen Bach <http://items.sjbach.com/about>
 "               Matt Tolton <matt-lusty-explorer@tolton.com>
 " Contributors: Raimon Grau, Sergey Popov, Yuichi Tateno, Bernhard Walle,
 "               Rajendra Badapanda, cho45, Simo Salminen, Sami Samhuri,
@@ -17,7 +17,7 @@
 "               Brett DiFrischia, Ali Asad Lotia, Kenneth Love, Ben Boeckel,
 "               robquant, lilydjwg, Martin Wache, Johannes Holzfuß
 "               Donald Curtis, Jan Zwiener, Giuseppe Rota, Toby O'Connell,
-"               Göran Gustafsson, Joel Elkins
+"               Göran Gustafsson, Joel Elkins, Dominick LoBraico
 "
 " Release Date: February 24, 2012
 "      Version: 4.3
