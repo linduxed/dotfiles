@@ -54,6 +54,7 @@ Bundle 'tpope/vim-vividchalk'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/pythoncomplete'
 Bundle 'vim-scripts/taglist.vim'
+Bundle 'xolox/vim-easytags'
 " vim-scripts repos
 Bundle 'javacomplete'
 Bundle 'octave.vim'

@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
 	url = git@github.com:linduxed/vim-fugitive.git
+[submodule "/home/linduxed/.vim/bundle/vim-easytags"]
+	path = /home/linduxed/.vim/bundle/vim-easytags
+	url = git@github.com:xolox/vim-easytags.git
