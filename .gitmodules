@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/prolog.vim"]
 	path = .vim/bundle/prolog.vim
 	url = git@github.com:adimit/prolog.vim.git
-[submodule ".vim/bundle/minibufexpl.vim"]
-	path = .vim/bundle/minibufexpl.vim
-	url = git@github.com:fholgado/minibufexpl.vim.git
 [submodule ".vim/bundle/vundle"]
 	path = .vim/bundle/vundle
 	url = git@github.com:gmarik/vundle.git
@@ -82,3 +79,6 @@
 [submodule "/home/linduxed/.vim/bundle/vim-easytags"]
 	path = /home/linduxed/.vim/bundle/vim-easytags
 	url = git@github.com:xolox/vim-easytags.git
+[submodule ".vim/bundle/minibufexpl.vim"]
+	path = .vim/bundle/minibufexpl.vim
+	url = git@github.com:linduxed/minibufexpl.vim.git
