@@ -186,9 +186,11 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'firefox %URL% &'
 
+" NERD-Commenter
 let NERDSpaceDelims = 1        " Add spaces around the comment signs for all languages
 let NERD_haskell_alt_style = 1 " Alt style looks better for Haskell (currently doesn't work)
 
+" NERD-Tree
 let NERDTreeQuitOnOpen=1
 
 " CTRL-P settings
