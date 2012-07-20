@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/minibufexpl.vim"]
 	path = .vim/bundle/minibufexpl.vim
 	url = git@github.com:linduxed/minibufexpl.vim.git
+[submodule ".vim/bundle/cscope_macros.vim"]
+	path = .vim/bundle/cscope_macros.vim
+	url = git@github.com:linduxed/cscope_macros.vim.git
