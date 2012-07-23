@@ -79,3 +79,6 @@
 [submodule ".vim/bundle/cscope_macros.vim"]
 	path = .vim/bundle/cscope_macros.vim
 	url = git@github.com:linduxed/cscope_macros.vim.git
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = git@github.com:tpope/vim-pathogen.git

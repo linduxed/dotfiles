@@ -12,6 +12,7 @@ source ~/.vim/stab.vim
 source ~/.vim/fugitive_related.vim"
 
 " Load all plugins with pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
 " Load appropriate theme
