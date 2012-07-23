@@ -150,3 +150,8 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp-cache'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multi = '2v'
+
+" snipMate bindings
+let g:snips_author = 'linduxed'	
+let g:snips_trigger_key='<C-h>'
+let g:snips_trigger_key_backwards='<C-b>'
