@@ -11,58 +11,8 @@ source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
 source ~/.vim/fugitive_related.vim"
 
-" Needed for bundle-handler.
-filetype off
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" Bundles here:
-" original repos on github
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'adimit/prolog.vim'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'godlygeek/tabular'
-Bundle 'jiangmiao/auto-pairs'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'msanders/snipmate.vim'
-Bundle 'nelstrom/vim-qargs'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'sjbach/lusty'
-Bundle 'sjl/gundo.vim'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-eunuch'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-speeddating'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-vividchalk'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/cscope_macros.vim'
-Bundle 'vim-scripts/pythoncomplete'
-Bundle 'vim-scripts/taglist.vim'
-Bundle 'xolox/vim-easytags'
-" vim-scripts repos
-Bundle 'javacomplete'
-Bundle 'octave.vim'
-Bundle 'syntaxhaskell.vim'
-" other repos
-Bundle "git://gitorious.org/vim-gnupg/vim-gnupg.git"
-
+" Load all plugins with pathogen
+call pathogen#infect()
 
 " Load appropriate theme
 " if hostname() != 'freke' && hostname() != 'attana1'
