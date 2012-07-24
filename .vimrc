@@ -130,7 +130,7 @@ autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 set listchars=tab:▸\ ,eol:¬
 
 " Use par as a formatter
-set formatprg=par\ -w80
+set formatprg=par\ -w72
 
 " Set Gist-plugin settings
 let g:gist_clip_command = 'xclip -selection clipboard'
