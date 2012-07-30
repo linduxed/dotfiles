@@ -106,6 +106,7 @@ set cursorline                  " Shows what line the cursor is on
 set cursorcolumn                " Shows what column the cursor is on
 set mouse=n                     " Allow the mouse in normal mode.
 set foldmethod=marker           " Make Vim fold with the help of markers.
+set scrolloff=5                 " Some lines at the top and bottom of the screen, for context.
 " Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix-dependant autocommands.
