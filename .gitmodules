@@ -1,6 +1,6 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = git://github.com/linduxed/oh-my-zsh.git
+	url = git@github.com:linduxed/oh-my-zsh.git
 
 # Vim plugins
 
