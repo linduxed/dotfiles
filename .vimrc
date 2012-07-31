@@ -107,6 +107,7 @@ set cursorcolumn                " Shows what column the cursor is on
 set mouse=n                     " Allow the mouse in normal mode.
 set foldmethod=marker           " Make Vim fold with the help of markers.
 set scrolloff=5                 " Some lines at the top and bottom of the screen, for context.
+set laststatus=2                " Always show the statusline.
 " Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix-dependant autocommands.
@@ -159,3 +160,4 @@ let g:snips_trigger_key_backwards='<C-b>'
 
 " Powerline
 let g:Powerline_symbols = 'fancy'
+set encoding=utf-8 " Necessary to show unicode glyphs.
