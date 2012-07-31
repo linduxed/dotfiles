@@ -100,3 +100,6 @@
 [submodule ".vim/bundle/vim-linduxed-theme"]
 	path = .vim/bundle/vim-linduxed-theme
 	url = git@github.com:linduxed/vim-linduxed-theme.git
+[submodule ".vim/bundle/vim-powerline"]
+	path = .vim/bundle/vim-powerline
+	url = git@github.com:Lokaltog/vim-powerline.git

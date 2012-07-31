@@ -156,3 +156,6 @@ let g:ctrlp_open_multi = '2v'
 let g:snips_author = 'linduxed'	
 let g:snips_trigger_key='<C-h>'
 let g:snips_trigger_key_backwards='<C-b>'
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
