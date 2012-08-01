@@ -113,18 +113,18 @@ set laststatus=2                " Always show the statusline.
 " Suffix-dependant autocommands.
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
 autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
-autocmd BufNewFile,BufRead *.txt set syntax=off
+autocmd BufNewFile,BufRead *.txt setlocal syntax=off
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
-autocmd BufNewFile,BufRead *.hs set et
-autocmd BufNewFile,BufRead *.rb set et sw=2 sts=2
-autocmd BufNewFile,BufRead *.feature set et sw=2 sts=2
+autocmd BufNewFile,BufRead *.hs setlocal et
+autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
 
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone
 
 " Language Omnicompletion
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 
@@ -154,7 +154,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multi = '2v'
 
 " snipMate bindings
-let g:snips_author = 'linduxed'	
+let g:snips_author = 'linduxed'
 let g:snips_trigger_key='<C-h>'
 let g:snips_trigger_key_backwards='<C-b>'
 
