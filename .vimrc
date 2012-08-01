@@ -127,6 +127,7 @@ set completeopt=longest,menuone
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " Textmate style invisible chars
 set listchars=tab:▸\ ,eol:¬
