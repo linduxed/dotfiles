@@ -139,3 +139,9 @@
 [submodule ".vim/bundle/syntaxhaskell.vim"]
 	path = .vim/bundle/syntaxhaskell.vim
 	url = git@github.com:vim-scripts/syntaxhaskell.vim.git
+[submodule ".vim/bundle/nerdcommenter"]
+	path = .vim/bundle/nerdcommenter
+	url = git@github.com:linduxed/nerdcommenter.git
+[submodule ".vim/bundle/vim-repeat"]
+	path = .vim/bundle/vim-repeat
+	url = git@github.com:linduxed/vim-repeat.git
