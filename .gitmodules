@@ -115,3 +115,27 @@
 [submodule ".vim/bundle/auto-pairs"]
 	path = .vim/bundle/auto-pairs
 	url = git@github.com:linduxed/auto-pairs.git
+[submodule ".vim/bundle/vim-gnupg"]
+	path = .vim/bundle/vim-gnupg
+	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
+[submodule ".vim/bundle/vim-abolish"]
+	path = .vim/bundle/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
+[submodule ".vim/bundle/javacomplete"]
+	path = .vim/bundle/javacomplete
+	url = git@github.com:vim-scripts/javacomplete.git
+[submodule ".vim/bundle/lusty"]
+	path = .vim/bundle/lusty
+	url = git@github.com:sjbach/lusty.git
+[submodule ".vim/bundle/pythoncomplete"]
+	path = .vim/bundle/pythoncomplete
+	url = git@github.com:vim-scripts/pythoncomplete.git
+[submodule ".vim/bundle/taglist.vim"]
+	path = .vim/bundle/taglist.vim
+	url = git@github.com:vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/octave.vim"]
+	path = .vim/bundle/octave.vim
+	url = git@github.com:vim-scripts/octave.vim.git
+[submodule ".vim/bundle/syntaxhaskell.vim"]
+	path = .vim/bundle/syntaxhaskell.vim
+	url = git@github.com:vim-scripts/syntaxhaskell.vim.git
