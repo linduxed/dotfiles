@@ -112,3 +112,6 @@
 [submodule ".vim/bundle/rope-vim"]
 	path = .vim/bundle/rope-vim
 	url = git@github.com:linduxed/rope-vim.git
+[submodule ".vim/bundle/auto-pairs"]
+	path = .vim/bundle/auto-pairs
+	url = git@github.com:linduxed/auto-pairs.git
