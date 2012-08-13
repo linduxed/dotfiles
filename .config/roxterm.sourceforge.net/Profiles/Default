@@ -1,5 +1,5 @@
 [roxterm profile]
-visible_bell=1
+visible_bell=0
 background_type=2
 saturation=0.165192
 scrollbar_pos=0
