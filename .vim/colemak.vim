@@ -66,6 +66,9 @@ nnoremap <silent> I e|xnoremap <silent> I e|onoremap I e|
 " e.g. dip (delete inner paragraph) is now drp
 onoremap r i
 vnoremap r i
+" Move visual replace from 'r' to 'R'
+onoremap R r
+vnoremap R r
 
 " Folds, etc.
 nnoremap b z|xnoremap b z|
