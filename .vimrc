@@ -118,6 +118,7 @@ autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.hs setlocal et
 autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
 
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete

@@ -148,3 +148,6 @@
 [submodule ".vim/bundle/ack.vim"]
 	path = .vim/bundle/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
+[submodule ".vim/bundle/warsow.vim"]
+	path = .vim/bundle/warsow.vim
+	url = git@github.com:vim-scripts/warsow.vim.git
