@@ -1,6 +1,6 @@
-[submodule ".oh-my-zsh"]
-	path = .oh-my-zsh
-	url = https://github.com/linduxed/oh-my-zsh.git
+[submodule ".zprezto"]
+	path = .zprezto
+	url = https://github.com/linduxed/prezto.git
 
 # Vim plugins
 
