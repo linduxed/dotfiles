@@ -27,7 +27,7 @@ zstyle ':prezto:module:pacman' frontend 'yaourt'
 # SHORTHOST is set in ~/.zshrc.
 case $SHORTHOST in
 	freke)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'terminal' 'tmux' 'utility' 'rails'
+		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'terminal' 'tmux' 'utility' 'rails' 'z'
 		;;
 	hugin)
 		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
