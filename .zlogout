@@ -8,7 +8,8 @@
 # Print the message.
 cat <<-EOF
 
-Thank you. Come again!
-  -- Dr. Apu Nahasapeemapetilon
+/  _ ._ ._  _  __|_o _ ._  | _  __|_ 
+\_(_)| || |(/_(_ |_|(_)| | |(_)_> |_o
+
 EOF
 
