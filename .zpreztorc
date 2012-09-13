@@ -27,25 +27,25 @@ zstyle ':prezto:module:pacman' frontend 'yaourt'
 # SHORTHOST is set in ~/.zshrc.
 case $SHORTHOST in
 	freke)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'ruby' 'spectrum' 'terminal' 'tmux' 'utility' 'rails' 'z'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'dpkg' 'git' 'gnu-utility' 'ruby' 'tmux' 'rails' 'z'
 		;;
 	hugin)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'z'
 		;;
 	korp)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'z'
 		;;
 	munin)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'pacman' 'prompt' 'rails' 'rsync' 'ruby' 'spectrum' 'terminal' 'utility' 'z'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'z'
 		;;
 	travelmate)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'git' 'gnu-utility' 'history' 'dpkg' 'prompt' 'rsync' 'spectrum' 'terminal' 'utility'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'dpkg' 'rsync'
 		;;
 	attana-server)
-		zstyle ':prezto:load' pmodule 'archive' 'command-not-found' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'terminal' 'tmux' 'utility'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'dpkg' 'git' 'gnu-utility' 'tmux'
 		;;
 	share-01)
-		zstyle ':prezto:load' pmodule 'archive' 'completion' 'directory' 'editor' 'environment' 'dpkg' 'git' 'gnu-utility' 'history' 'prompt' 'spectrum' 'terminal' 'tmux' 'utility'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'dpkg' 'git' 'gnu-utility' 'tmux'
 		;;
 	*)
 		;;
