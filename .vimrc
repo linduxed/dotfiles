@@ -144,7 +144,11 @@ let g:gist_browser_command = 'firefox %URL% &'
 
 " NERD-Commenter
 let NERDSpaceDelims = 1        " Add spaces around the comment signs for all languages
-let NERD_haskell_alt_style = 1 " Alt style looks better for Haskell (currently doesn't work)
+" Since Alt style is not implemented at the moment, use custom delimiters instead.
+let g:NERDCustomDelimiters = {
+    \ 'haskell': { 'leftAlt': '{-','rightAlt': '-}', 'left': '--', 'right': '' },
+    \ 'c': { 'leftAlt': '/*','rightAlt': '*/', 'left': '//', 'right': '' },
+\ }
 
 " NERD-Tree
 let NERDTreeQuitOnOpen=1
