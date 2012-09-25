@@ -79,7 +79,6 @@ unset path_file
 path=(
   /usr/lib/cw
   $HOME/bin
-  $HOME/.cabal/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
   /{bin,sbin}
