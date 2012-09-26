@@ -130,9 +130,6 @@
 [submodule ".vim/bundle/pythoncomplete"]
 	path = .vim/bundle/pythoncomplete
 	url = git://github.com/vim-scripts/pythoncomplete.git
-[submodule ".vim/bundle/taglist.vim"]
-	path = .vim/bundle/taglist.vim
-	url = git://github.com/vim-scripts/taglist.vim.git
 [submodule ".vim/bundle/octave.vim"]
 	path = .vim/bundle/octave.vim
 	url = git://github.com/vim-scripts/octave.vim.git
