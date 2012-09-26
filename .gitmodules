@@ -148,3 +148,6 @@
 [submodule ".vim/bundle/warsow.vim"]
 	path = .vim/bundle/warsow.vim
 	url = git://github.com/vim-scripts/warsow.vim.git
+[submodule ".vim/bundle/taglist.vim"]
+	path = .vim/bundle/taglist.vim
+	url = https://github.com/linduxed/taglist.vim.git
