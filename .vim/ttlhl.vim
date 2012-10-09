@@ -12,4 +12,4 @@ fu! s:ToggleTooLongHL()
 	endif
 endf
 
-nnoremap <F9> :call <SID>ToggleTooLongHL()<CR>
+nnoremap <F10> :call <SID>ToggleTooLongHL()<CR>

@@ -15,10 +15,10 @@ nnoremap <F6> :GundoToggle<CR>
 set pastetoggle=<F7>
 " Toggle invisible characters.
 nmap <F8> :set list!<CR>
-" F9: bound in ttlhl.vim.
 " Keybind for Tasklist
-map <F10> <Plug>TaskList
+map <F9> :make<CR>
 " Keybind for Taglist
+" F10: bound in ttlhl.vim.
 nmap <F11> :TlistToggle<CR>
 " Keybind for NERD_Tree
 nmap <F12> :NERDTree<CR>
