@@ -121,6 +121,7 @@ autocmd BufNewFile,BufRead *.hs setlocal et
 autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
+autocmd BufNewFile,BufRead *.c setlocal foldmethod=indent
 
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete
