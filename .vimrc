@@ -10,6 +10,8 @@ source ~/.vim/ttlhl.vim
 source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
 source ~/.vim/fugitive_related.vim"
+" Add quiet make
+source ~/.vim/quietmake.vim
 
 " Load all plugins with pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
