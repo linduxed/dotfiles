@@ -16,7 +16,7 @@ set pastetoggle=<F7>
 " Toggle invisible characters.
 nmap <F8> :set list!<CR>
 " Keybind for Tasklist
-" F9: bound in quietmake.vim.
+nmap <F9> :make<CR>
 " Keybind for Taglist
 " F10: bound in ttlhl.vim.
 nmap <F11> :TlistToggle<CR>
