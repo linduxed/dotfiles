@@ -1,13 +1,13 @@
 " Add colemak mappings.
 source ~/.vim/colemak.vim
-" Add custom bindings
-source ~/.vim/bindings.vim
 " Add the trailing whitespace stripper
 source ~/.vim/trailingspaces.vim
 " Add the tab size setup tool
 source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
 source ~/.vim/fugitive_related.vim"
+" Add custom bindings. Load after the scripts above.
+source ~/.vim/bindings.vim
 
 " Load all plugins with pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
