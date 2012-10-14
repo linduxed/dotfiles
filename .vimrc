@@ -108,6 +108,9 @@ set mouse=n                     " Allow the mouse in normal mode.
 set foldmethod=marker           " Make Vim fold with the help of markers.
 set scrolloff=5                 " Some lines at the top and bottom of the screen, for context.
 set laststatus=2                " Always show the statusline.
+set showbreak=…                 " Add an ellipsis at the start of wrapped lines.
+set wildmenu                    " Command completion menu.
+set wildmode=list:longest,full  " First tab: longest common string. Second tab: cycle through list.
 " Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix-dependant autocommands.
