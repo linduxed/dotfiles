@@ -134,10 +134,13 @@ autocmd FileType vim setlocal tw=0 cc=0
 autocmd FileType gitcommit setlocal tw=0 cc=0
 
 " RainbowParentheses autocommands.
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+
+" Turn off paste automatically.
+autocmd InsertLeave * set nopaste
 
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete
