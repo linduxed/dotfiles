@@ -114,7 +114,7 @@ set colorcolumn=+1              " Display a column, one column after the text wi
 set formatoptions=qrn1          " Check :help fo-table.
 " Using 'set background=dark' breaks some syntax - never use.
 
-" Suffix-dependant autocommands.
+" Suffix dependant autocommands.
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
 autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0 cc=0
@@ -125,15 +125,17 @@ autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
 autocmd BufNewFile,BufRead *.c setlocal foldmethod=indent
 
-" Omnicompletion
-set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
-
-" Language Omnicompletion
+" Filetype dependant autocommands.
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+autocmd FileType vim setlocal tw=0 cc=0
+autocmd FileType gitcommit setlocal tw=0 cc=0
+
+" Omnicompletion
+set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
 
 " Textmate style invisible chars
 set listchars=tab:▸\ ,eol:¬
