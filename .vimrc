@@ -4,8 +4,6 @@ source ~/.vim/colemak.vim
 source ~/.vim/bindings.vim
 " Add the trailing whitespace stripper
 source ~/.vim/trailingspaces.vim
-" Add togglable highlighting of too long lines
-source ~/.vim/ttlhl.vim
 " Add the tab size setup tool
 source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
@@ -111,12 +109,15 @@ set laststatus=2                " Always show the statusline.
 set showbreak=…                 " Add an ellipsis at the start of wrapped lines.
 set wildmenu                    " Command completion menu.
 set wildmode=list:longest,full  " First tab: longest common string. Second tab: cycle through list.
+set textwidth=79                " Wrap on set column.
+set colorcolumn=+1              " Display a column, one column after the text width.
+set formatoptions=qrn1          " Check :help fo-table.
 " Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix-dependant autocommands.
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
 autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
-autocmd BufNewFile,BufRead *.txt setlocal syntax=off
+autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0 cc=0
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.hs setlocal et
 autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2

@@ -18,7 +18,7 @@ nmap <F8> :set list!<CR>
 " Keybind for Tasklist
 nmap <F9> :make<CR>
 " Keybind for Taglist
-" F10: bound in ttlhl.vim.
+" F10: not bound.
 nmap <F11> :TlistToggle<CR>
 " Keybind for NERD_Tree
 nmap <F12> :NERDTree<CR>
