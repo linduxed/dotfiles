@@ -183,3 +183,7 @@ let g:snips_trigger_key_backwards='<C-b>'
 " Powerline
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8 " Necessary to show unicode glyphs.
+
+" Highlight trailing spaces, spaces before leading tabs and non-indenting tabs.
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd Syntax * syn match ExtraWhitespace /[^\t]\zs\t\+\|\s\+$\| \+\ze\t/
