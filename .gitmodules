@@ -151,3 +151,6 @@
 [submodule ".vim/bundle/taglist.vim"]
 	path = .vim/bundle/taglist.vim
 	url = https://github.com/linduxed/taglist.vim.git
+[submodule ".vim/bundle/rainbow_parentheses.vim"]
+	path = .vim/bundle/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim.git

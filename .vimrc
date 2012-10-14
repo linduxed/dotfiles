@@ -133,6 +133,12 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd FileType vim setlocal tw=0 cc=0
 autocmd FileType gitcommit setlocal tw=0 cc=0
 
+" RainbowParentheses autocommands.
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone
