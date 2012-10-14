@@ -1,3 +1,5 @@
+" <Leader>w bound in trailingspaces.vim
+
 " Don't remove visual block when indenting.
 vmap < <gv
 vmap > >gv
@@ -8,7 +10,7 @@ nmap <F2> :bnext<CR>
 " Lusty bindings
 nmap <F3> :CtrlPBuffer<CR>
 nmap <F4> :LustyBufferGrep<CR>
-" F5: bound in trailingspaces.vim file.
+" F5: not bound.
 " Toggling the Gundo menu
 nnoremap <F6> :GundoToggle<CR>
 " Toggle paste mode
