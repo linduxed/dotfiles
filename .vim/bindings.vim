@@ -1,5 +1,8 @@
 " <Leader>w bound in trailingspaces.vim
 
+" Paragraph reformatting.
+nnoremap <Leader>q gqip
+
 " Don't remove visual block when indenting.
 vmap < <gv
 vmap > >gv
