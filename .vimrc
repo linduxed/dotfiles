@@ -137,7 +137,8 @@ autocmd FileType gitcommit setlocal tw=0 cc=0
 autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
-autocmd Syntax * RainbowParenthesesLoadBraces
+" Haskell comment syntax breaks with Rainbow on.
+autocmd Syntax * if &ft != "haskell" | exec "RainbowParenthesesLoadBraces" | endif
 
 " Turn off paste automatically.
 autocmd InsertLeave * set nopaste
