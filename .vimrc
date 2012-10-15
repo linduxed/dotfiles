@@ -184,6 +184,9 @@ let g:snips_trigger_key_backwards='<C-b>'
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8 " Necessary to show unicode glyphs.
 
+" Load Doxygen syntax colouring on top of normal C/C++/Java/PHP/IDL syntax.
+let g:load_doxygen_syntax=1
+
 " Highlight trailing spaces, spaces before leading tabs and non-indenting tabs.
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /[^\t]\zs\t\+\|\s\+$\| \+\ze\t/
