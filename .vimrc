@@ -133,13 +133,6 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd FileType vim setlocal tw=0 cc=0
 autocmd FileType gitcommit setlocal tw=0 cc=0
 
-" RainbowParentheses autocommands.
-autocmd VimEnter * RainbowParenthesesToggle
-autocmd Syntax * RainbowParenthesesLoadRound
-autocmd Syntax * RainbowParenthesesLoadSquare
-" Haskell comment syntax breaks with Rainbow on.
-autocmd Syntax * if &ft != "haskell" | exec "RainbowParenthesesLoadBraces" | endif
-
 " Turn off paste automatically.
 autocmd InsertLeave * set nopaste
 
@@ -191,3 +184,34 @@ let g:load_doxygen_syntax=1
 " Highlight trailing spaces, spaces before leading tabs and non-indenting tabs.
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /[^\t]\zs\t\+\|\s\+$\| \+\ze\t/
+
+" RainbowParentheses autocommands.
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+" Haskell comment syntax breaks with Rainbow on.
+autocmd Syntax * if &ft != "haskell" | exec "RainbowParenthesesLoadBraces" | endif
+
+" Custom set of RainbowParentheses colours.
+" Basically the defaults without the 'black' entry (poor visibility).
+" Order has been moved around so that each step has more contrast.
+let g:rbpt_colorpairs = [
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['brown',       'RoyalBlue3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+" For the colours to loop properly, rbpt_max needs to equal the length
+" of rbpt_colorpairs.
+let g:rbpt_max = 15
