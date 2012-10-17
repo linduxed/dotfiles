@@ -112,6 +112,7 @@ set wildmode=list:longest,full  " First tab: longest common string. Second tab: 
 set textwidth=79                " Wrap on set column.
 set colorcolumn=+1              " Display a column, one column after the text width.
 set formatoptions=qrn1          " Check :help fo-table.
+set nojoinspaces                " No double spaces after ./!/? when lines are joined.
 " Using 'set background=dark' breaks some syntax - never use.
 
 " Suffix dependant autocommands.
