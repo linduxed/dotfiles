@@ -132,7 +132,6 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd FileType vim setlocal tw=0 cc=0
-autocmd FileType gitcommit setlocal tw=0 cc=0
 
 " Turn off paste automatically.
 autocmd InsertLeave * set nopaste
