@@ -144,9 +144,6 @@ set completeopt=longest,menuone
 " Textmate style invisible chars
 set listchars=tab:▸\ ,eol:¬
 
-" Use par as a formatter
-set formatprg=par\ -w72
-
 " Set Gist-plugin settings
 let g:gist_clip_command = 'xclip -selection clipboard'
 let g:gist_detect_filetype = 1
