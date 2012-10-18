@@ -111,7 +111,7 @@ set wildmenu                    " Command completion menu.
 set wildmode=list:longest,full  " First tab: longest common string. Second tab: cycle through list.
 set textwidth=79                " Wrap on set column.
 set colorcolumn=+1              " Display a column, one column after the text width.
-set formatoptions=qrn1          " Check :help fo-table.
+set formatoptions=qrn1t         " Check :help fo-table.
 set nojoinspaces                " No double spaces after ./!/? when lines are joined.
 " Using 'set background=dark' breaks some syntax - never use.
 
@@ -132,6 +132,7 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd FileType vim setlocal tw=0 cc=0
+autocmd FileType gitcommit setlocal tw=72
 
 " Turn off paste automatically.
 autocmd InsertLeave * set nopaste
