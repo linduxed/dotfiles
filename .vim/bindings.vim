@@ -12,8 +12,8 @@ nmap <F1> :bprevious<CR>
 nmap <F2> :bnext<CR>
 " Lusty bindings
 nmap <F3> :CtrlPBuffer<CR>
-nmap <F4> :LustyBufferGrep<CR>
-" F5: not bound.
+nmap <F4> :LustyJuggler<CR>
+nmap <F5> :LustyBufferGrep<CR>
 " Toggling the Gundo menu
 nnoremap <F6> :GundoToggle<CR>
 " Toggle paste mode

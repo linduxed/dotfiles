@@ -166,6 +166,10 @@ let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp-cache'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multi = '2v'
 
+" LustyJuggler settings
+let g:LustyJugglerKeyboardLayout = "colemak"
+let g:LustyJugglerShowKeys = 'a'
+
 " snipMate bindings
 let g:snips_author = 'linduxed'
 let g:snips_trigger_key='<C-h>'
