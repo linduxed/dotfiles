@@ -16,15 +16,9 @@ call pathogen#infect()
 " Load appropriate theme
 " if hostname() != 'freke' && hostname() != 'attana1'
 if hostname() != 'attana1'
-	" CSApprox fix for gnome-terminal
-	if &term =~ '^\(xterm\|screen\)$' && $COLORTERM == 'gnome-terminal'
-		set t_Co=256
-	endif
-	" Theme
 	colorscheme linduxed
-	"colorscheme lettuce
 else
-	let g:CSApprox_loaded = 0
+	colorscheme lettuce
 endif
 
 " Check filetype for plugins.
