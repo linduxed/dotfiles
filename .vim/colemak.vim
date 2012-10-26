@@ -1,7 +1,3 @@
-" Redesigned mapping for the Colemak layout for Vim 7.0
-" 2008-04-21 Shai Coleman, http://colemak.com/ . Public domain.
-" Edited by linduxed.
-
 " (nv  )       n = Left        ,     i = Right          , u = Up   , e = Down
 " (nv  )       N = Back EOword ,     I = Forward EOword , U = Up*5 , E = Down*5
 " (nv  )       l = Left 1 word ,     y = Right 1 word
@@ -75,9 +71,6 @@ nnoremap b z|xnoremap b z|
 nnoremap bu zk|xnoremap bu zk|
 nnoremap be zj|xnoremap be zj|
 
-" Map ; to :
-nnoremap ; :|xnoremap ; :|
-
 " Cut/copy/paste
 nnoremap x x|xnoremap x d|
 nnoremap c y|xnoremap c y|
@@ -90,15 +83,6 @@ nnoremap V p|xnoremap V p|
 nnoremap z u|xnoremap z :<C-u>undo<CR>|
 nnoremap gz U|xnoremap gz U<C-u>undo<CR>|
 nnoremap Z <C-r>|xnoremap Z :<C-u>redo<CR>|
-
-" Navigate help file
-" Use < and > to navigate in the help file
-au FileType help nnoremap <buffer> < <C-t>|
-au FileType help nnoremap <buffer> > <C-]>|
-au FileType help nnoremap <buffer> <CR> <C-]>|
-au FileType help nnoremap <buffer> <Backspace> <C-t>|
-au FileType help nnoremap <buffer> <silent> <expr> <Space> (winheight(0)-1) . "\<C-d>0"|
-au FileType help nnoremap <buffer> <silent> <expr> <S-Space> (winheight(0)-1) . "\<C-u>0"|"
 
 " inSert/Replace/append (T)
 nnoremap s i|
@@ -144,24 +128,3 @@ nnoremap <C-w>N <C-w>H|xnoremap <C-w>n <C-w>h|
 nnoremap <C-w>U <C-w>K|xnoremap <C-w>u <C-w>k|
 nnoremap <C-w>E <C-w>J|xnoremap <C-w>e <C-w>j|
 nnoremap <C-w>I <C-w>L|xnoremap <C-w>i <C-w>l|
-
-nnoremap <Space> i<Space><Esc><Right>|
-xnoremap <silent> <Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv><CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
-xnoremap <silent> <S-Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv<<CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
-
-" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
-nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
-vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
-inoremap <Tab> <Esc>|
-nnoremap <S-Tab> i<Tab><Esc><Right>
-vnoremap <S-Tab> >gv|
-inoremap <S-Tab> <Tab>|
-
-" Delete/Backspace
-nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
-nnoremap <Delete> "_x|vnoremap <Delete> "_d|
-nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
-
-"Tip #1386, Make Vim completion popup menu work just like in an IDE
-inoremap <expr> <C-n> pumvisible() ? "\<lt>C-n>" : "\<lt>C-n>\<lt>C-r>=pumvisible() ? \"\\<lt>Down>\" : \"\"\<lt>CR>"
-inoremap <expr> <M-;> pumvisible() ? "\<lt>C-n>" : "\<lt>C-x>\<lt>C-o>\<lt>C-n>\<lt>C-p>\<lt>C-r>=pumvisible() ? \"\\<lt>Down>\" : \"\"\<lt>CR>"
