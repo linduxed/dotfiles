@@ -103,30 +103,37 @@ set laststatus=2                " Always show the statusline.
 set showbreak=…                 " Add an ellipsis at the start of wrapped lines.
 set wildmenu                    " Command completion menu.
 set wildmode=list:longest,full  " First tab: longest common string. Second tab: cycle through list.
-set textwidth=79                " Wrap on set column.
-set colorcolumn=+1              " Display a column, one column after the text width.
 set formatoptions=qrn1t         " Check :help fo-table.
 set nojoinspaces                " No double spaces after ./!/? when lines are joined.
-" Using 'set background=dark' breaks some syntax - never use.
+set textwidth=79                " Wrap on set column.
+if exists('+colorcolumn')
+	set colorcolumn=+1          " Display a column, one column after the text width.
+endif
 
 " Suffix dependant autocommands.
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
-autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
-autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0 cc=0
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.hs setlocal et
 autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
 autocmd BufNewFile,BufRead *.c setlocal foldmethod=indent
+autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
+autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0
+if exists('+colorcolumn')
+	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
+endif
 
 " Filetype dependant autocommands.
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd FileType vim setlocal tw=0 cc=0
 autocmd FileType gitcommit setlocal tw=72
+autocmd FileType vim setlocal tw=0
+if exists('+colorcolumn')
+	autocmd FileType vim setlocal colorcolumn=0
+endif
 
 " Turn off paste automatically.
 autocmd InsertLeave * set nopaste
