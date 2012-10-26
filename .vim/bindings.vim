@@ -1,5 +1,7 @@
 " <Leader>w bound in trailingspaces.vim
 
+nnoremap <Leader><CR> i<CR><Esc>
+
 " Paragraph reformatting.
 nnoremap <Leader>q gqip
 
