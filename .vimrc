@@ -178,7 +178,9 @@ let g:snips_trigger_key='<C-h>'
 let g:snips_trigger_key_backwards='<C-b>'
 
 " Powerline
-let g:Powerline_symbols = 'fancy'
+if hostname() != 'freke'
+	let g:Powerline_symbols = 'fancy'
+endif
 set encoding=utf-8 " Necessary to show unicode glyphs.
 
 " Load Doxygen syntax colouring on top of normal C/C++/Java/PHP/IDL syntax.
