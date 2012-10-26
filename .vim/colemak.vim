@@ -2,8 +2,8 @@
 " 2008-04-21 Shai Coleman, http://colemak.com/ . Public domain.
 " Edited by linduxed.
 
-" (nv  )       n = Left        ,     i = Right   , u = Up   , e = Down
-" (nv  )       N = Left*5      ,     I = Right*5 , U = Up*5 , E = Down*5
+" (nv  )       n = Left        ,     i = Right          , u = Up   , e = Down
+" (nv  )       N = Back EOword ,     I = Forward EOword , U = Up*5 , E = Down*5
 " (nv  )       l = Left 1 word ,     y = Right 1 word
 " (nv  )   <C-l> = Left 1 WORD , <C-y> = Right 1 WORD
 " (nv  )       L = Home        ,     Y = End
