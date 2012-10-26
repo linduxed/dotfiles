@@ -54,7 +54,7 @@ inoremap <expr> <M-;> pumvisible() ? "\<lt>C-n>" : "\<lt>C-x>\<lt>C-o>\<lt>C-n>\
 
 " Miscellaneous tweaks
 nnoremap ; :|xnoremap ; :|
-nnoremap <Leader><CR> i<CR><Esc>
+nnoremap <Leader><CR> i<CR><Esc>`.
 
 let g:gundo_map_move_newer = "u"
 let g:gundo_map_move_older = "e"
