@@ -13,14 +13,6 @@ source ~/.vim/bindings.vim
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 
-" Load appropriate theme
-" if hostname() != 'freke' && hostname() != 'attana1'
-if hostname() != 'attana1'
-	colorscheme linduxed
-else
-	colorscheme lettuce
-endif
-
 " Check filetype for plugins.
 filetype indent plugin on
 
