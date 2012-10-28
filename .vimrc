@@ -18,8 +18,6 @@ set nocompatible
 
 " Add colemak mappings.
 source ~/.vim/colemak.vim
-" Add the trailing whitespace stripper
-source ~/.vim/trailingspaces.vim
 " Add the tab size setup tool
 source ~/.vim/stab.vim
 " Add fugitive related bindings and autocmd's
@@ -36,7 +34,9 @@ set nostartofline               " Keep cursor in the same column if possible.
 set whichwrap=b,s,[,],<,>,h,l   " Allow cursor to wrap between lines.
 set virtualedit=block           " Allow virtual editing in Visual block mode.
 set lazyredraw                  " Don't redraw screen while executing macros/mappings.
-set scrolloff=1                 " Minimal number of screen lines to keep above and below the cursor.
+set scrolloff=5                 " Minimal number of screen lines to keep above and below the cursor.
+set sidescroll=1                " Minimal number of characters from the edge with :wrap.
+set sidescrolloff=10            " Minimal number of characters from the edge with :nowrap.
 set incsearch                   " Enable incremental search.
 set backspace=indent,eol,start  " Allow backspacing over everything in insert mode.
 set winaltkeys=no               " Allow mapping of alt (meta) key shortcuts.
@@ -55,24 +55,39 @@ set cursorline                  " Shows what line the cursor is on
 set cursorcolumn                " Shows what column the cursor is on
 set mouse=n                     " Allow the mouse in normal mode.
 set foldmethod=marker           " Make Vim fold with the help of markers.
-set scrolloff=5                 " Some lines at the top and bottom of the screen, for context.
 set laststatus=2                " Always show the statusline.
 set showbreak=…                 " Add an ellipsis at the start of wrapped lines.
 set wildmenu                    " Command completion menu.
-set wildmode=list:longest,full  " First tab: longest common string. Second tab: cycle through list.
 set formatoptions=qrn1t         " Check :help fo-table.
 set nojoinspaces                " No double spaces after ./!/? when lines are joined.
 set textwidth=79                " Wrap on set column.
+set undofile                    " Persistent undos between sessions.
+set gdefault                    " When searching, use the 'g' flag all the time.
 if exists('+colorcolumn')
 	set colorcolumn=+1          " Display a column, one column after the text width.
 endif
 
+" Don't try to highlight lines longer than 800 characters.
+set synmaxcol=800
+
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
 " Omnicompletion
 set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone
+set complete=.,w,b,u,t
+set completeopt=longest,menuone,preview
 
 " Textmate style invisible chars
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+
+" Resize splits when the window is resized
+au VimResized * :wincmd =
+
+" {{{ Syntax colouring
 
 " Load Doxygen syntax colouring on top of normal C/C++/Java/PHP/IDL syntax.
 let g:load_doxygen_syntax=1
@@ -81,6 +96,46 @@ let g:load_doxygen_syntax=1
 highlight ExtraWhitespace ctermbg=red guibg=red
 autocmd Syntax * syn match ExtraWhitespace /[^\t]\zs\t\+\|\s\+$\| \+\ze\t/
 
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" }}}
+" Cursorline {{{
+" Only show cursorline in the current window and in normal mode.
+
+augroup cline
+    au!
+    au WinLeave,InsertEnter * set nocursorline
+    au WinEnter,InsertLeave * set cursorline
+augroup END
+
+" }}}
+" Wildmenu completion {{{
+
+set wildmenu
+" First tab: longest common string. Second tab: cycle through list.
+set wildmode=list:longest,full
+
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
+
+set wildignore+=*.luac                           " Lua byte code
+
+set wildignore+=migrations                       " Django migrations
+set wildignore+=*.pyc                            " Python byte code
+
+set wildignore+=*.orig                           " Merge resolution files
+
+" Clojure/Leiningen
+set wildignore+=classes
+set wildignore+=lib
+
+" }}}
 " {{{ viminfo
 
 " Tell vim to remember certain things when we exit
@@ -90,6 +145,27 @@ autocmd Syntax * syn match ExtraWhitespace /[^\t]\zs\t\+\|\s\+$\| \+\ze\t/
 "  %    :  saves and restores the buffer list
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,%,n~/.vim/viminfo
+
+" }}}
+" Backups {{{
+
+set backup                        " enable backups
+set noswapfile                    " It's 2012, Vim.
+
+set undodir=~/.vim/tmp/undo//     " undo files
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+
+" Make those folders automatically if they don't already exist.
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
 
 " }}}
 
@@ -257,6 +333,44 @@ endif
 
 " Turn off paste automatically.
 autocmd InsertLeave * set nopaste
+
+" }}}
+
+" }}}
+" {{{ Mappings
+
+" {{{ Trailing whitespace
+
+function! <SID>StripTrailingWhitespaces()
+    " Preparation: save last search, and cursor position.
+    let _s=@/
+    let l = line(".")
+    let c = col(".")
+    " Do the business:
+    %s/\s\+$//e
+    " Clean up: restore previous search history, and cursor position
+    let @/=_s
+    call cursor(l, c)
+endfunction
+
+nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
+
+" }}}
+" {{{ Miscellaneous
+
+" Emacs bindings in command line mode
+cnoremap <c-a> <home>
+cnoremap <c-e> <end>
+
+" Easier linewise reselection
+nnoremap <leader>V V`]
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" Split line (sister to [J]oin lines)
+" The normal use of S is covered by cc, so don't worry about shadowing it.
+nnoremap <Leader><CR> i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
 
 " }}}
 
