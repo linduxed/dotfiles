@@ -28,6 +28,8 @@ source ~/.vim/bindings.vim
 " }}}
 " {{{ Options
 
+" {{{ Miscellaneous
+
 syntax on                       " Enable syntax highlighting.
 colorscheme linduxed            " Use my theme.
 set nostartofline               " Keep cursor in the same column if possible.
@@ -87,6 +89,7 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 " Resize splits when the window is resized
 au VimResized * :wincmd =
 
+" }}}
 " {{{ Syntax colouring
 
 " Load Doxygen syntax colouring on top of normal C/C++/Java/PHP/IDL syntax.
@@ -94,7 +97,10 @@ let g:load_doxygen_syntax=1
 
 " Highlight trailing spaces, spaces before leading tabs and non-indenting tabs.
 highlight ExtraWhitespace ctermbg=red guibg=red
-autocmd Syntax * syn match ExtraWhitespace /[^\t]\zs\t\+\|\s\+$\| \+\ze\t/
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /[^\t]\zs\t\+\| \+\ze\t\|\S\zs\s\+$/
+au InsertEnter * match ExtraWhitespace /[^\t]\zs\t\+\| \+\ze\t\|\S\zs\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /[^\t]\zs\t\+\| \+\ze\t\|\S\zs\s\+$/
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
@@ -356,6 +362,36 @@ endfunction
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 " }}}
+" Highlight word {{{
+
+nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
+nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
+
+noremap <silent> <leader>hh :noh<cr>:call clearmatches()<cr>
+
+" }}}
+" Visual Mode */# from Scrooloose {{{
+
+function! s:VSetSearch()
+  let temp = @@
+  norm! gvy
+  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+  let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+" }}}
+" List navigation {{{
+
+nnoremap <left>  :cprev<cr>zvzz
+nnoremap <right> :cnext<cr>zvzz
+nnoremap <up>    :lprev<cr>zvzz
+nnoremap <down>  :lnext<cr>zvzz
+
+" }}}
 " {{{ Miscellaneous
 
 " Emacs bindings in command line mode
@@ -368,9 +404,26 @@ nnoremap <leader>V V`]
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
-" Split line (sister to [J]oin lines)
-" The normal use of S is covered by cc, so don't worry about shadowing it.
+" Split line
 nnoremap <Leader><CR> i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+
+" Don't move on *
+nnoremap * *<c-o>
+
+" Keep search matches in the middle of the window.
+nnoremap k nzzzv
+nnoremap K Nzzzv
+
+" Same when jumping around
+nnoremap g; g;zz
+nnoremap g, g,zz
+nnoremap <c-o> <c-o>zz
+
+" Toggle "keep current line in the center of the screen" mode
+nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
+
+" "Refocus" folds
+nnoremap <Leader>b zMzvzz
 
 " }}}
 
