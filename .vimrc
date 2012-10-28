@@ -143,7 +143,7 @@ set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone
 
 " Textmate style invisible chars
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 
 " Set Gist-plugin settings
 let g:gist_clip_command = 'xclip -selection clipboard'
