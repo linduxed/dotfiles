@@ -487,7 +487,7 @@ nnoremap <leader>V V`]
 nnoremap J mzJ`z
 
 " Split line
-nnoremap <Leader><CR> i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w
+nnoremap <Leader><CR> i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w:delmarks w<CR>
 
 nnoremap ; :|xnoremap ; :|
 
