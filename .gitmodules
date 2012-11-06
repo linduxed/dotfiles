@@ -151,3 +151,6 @@
 [submodule ".vim/bundle/rainbow_parentheses.vim"]
 	path = .vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule ".vim/bundle/vim-snipmate"]
+	path = .vim/bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
