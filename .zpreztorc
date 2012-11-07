@@ -26,22 +26,22 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # SHORTHOST is set in ~/.zshrc.
 case $SHORTHOST in
 	freke)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'dpkg' 'git' 'gnu-utility' 'ruby' 'tmux' 'rails' 'fasd'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'dpkg' 'git' 'gnu-utility' 'ruby' 'tmux' 'rails' 'fasd'
 		;;
 	hugin)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd' 'haskell'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd' 'haskell'
 		;;
 	korp)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd'
 		;;
 	munin)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd'
 		;;
 	travelmate)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'git' 'gnu-utility' 'dpkg' 'rsync'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'dpkg' 'rsync'
 		;;
 	attana-server)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'dpkg' 'git' 'gnu-utility' 'tmux'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'dpkg' 'git' 'gnu-utility' 'tmux'
 		;;
 	share-01)
 		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'dpkg' 'git' 'gnu-utility' 'tmux'
