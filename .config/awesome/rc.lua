@@ -306,7 +306,7 @@ for i = 1, keynumber do
 end
 
 clientbuttons = awful.util.table.join(
-    awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
+    awful.button({ },        1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
 
@@ -317,9 +317,6 @@ root.keys(globalkeys)
 -- Make critical notifications disappear automatically.
 naughty.config.presets.critical.timeout = 8
 
--- Autostart applications
-awful.util.spawn_with_shell(awful.util.getdir("config") .. "/autostart.sh")
-
 -- {{{ Rules
 awful.rules.rules = {
     -- All clients will match this rule.
@@ -329,24 +326,10 @@ awful.rules.rules = {
                      focus = true,
                      keys = clientkeys,
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pidgin" },
-      properties = { tag = tags[1][1] } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    { rule = { class = "Shredder" },
-      properties = { tag = tags[1][8] } },
-    { rule = { class = "Thunderbird" },
-      properties = { tag = tags[1][8] } },
-    { rule = { role = "ncmpcpp" },
-      properties = { tag = tags[1][9] } },
-    { rule = { role = "htop" },
-      properties = { tag = tags[1][9] } }
-  
-      -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "MPlayer" },     properties = { floating = true } },
+    { rule = { class = "gimp" },        properties = { floating = true } },
+    { rule = { class = "Shredder" },    properties = { tag = tags[1][8] } },
+    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][8] } },
 }
 -- }}}
 
