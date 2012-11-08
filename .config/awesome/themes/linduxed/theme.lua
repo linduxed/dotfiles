@@ -4,8 +4,8 @@ theme = {}
 
 theme.font          = "sans 8"
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#535d6c"
+theme.bg_normal     = "#111111"
+theme.bg_focus      = "#333c63"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 
@@ -47,25 +47,21 @@ theme.menu_width  = "100"
 -- beautiful.variable in your rc.lua
 --theme.bg_widget = "#cc0000"
 
--- Define the image to load
+-- Titlebar
 theme.titlebar_close_button_normal = config_dir .. "/themes/linduxed/titlebar/close_normal.png"
 theme.titlebar_close_button_focus  = config_dir .. "/themes/linduxed/titlebar/close_focus.png"
-
 theme.titlebar_ontop_button_normal_inactive = config_dir .. "/themes/linduxed/titlebar/ontop_normal_inactive.png"
 theme.titlebar_ontop_button_focus_inactive  = config_dir .. "/themes/linduxed/titlebar/ontop_focus_inactive.png"
 theme.titlebar_ontop_button_normal_active = config_dir .. "/themes/linduxed/titlebar/ontop_normal_active.png"
 theme.titlebar_ontop_button_focus_active  = config_dir .. "/themes/linduxed/titlebar/ontop_focus_active.png"
-
 theme.titlebar_sticky_button_normal_inactive = config_dir .. "/themes/linduxed/titlebar/sticky_normal_inactive.png"
 theme.titlebar_sticky_button_focus_inactive  = config_dir .. "/themes/linduxed/titlebar/sticky_focus_inactive.png"
 theme.titlebar_sticky_button_normal_active = config_dir .. "/themes/linduxed/titlebar/sticky_normal_active.png"
 theme.titlebar_sticky_button_focus_active  = config_dir .. "/themes/linduxed/titlebar/sticky_focus_active.png"
-
 theme.titlebar_floating_button_normal_inactive = config_dir .. "/themes/linduxed/titlebar/floating_normal_inactive.png"
 theme.titlebar_floating_button_focus_inactive  = config_dir .. "/themes/linduxed/titlebar/floating_focus_inactive.png"
 theme.titlebar_floating_button_normal_active = config_dir .. "/themes/linduxed/titlebar/floating_normal_active.png"
 theme.titlebar_floating_button_focus_active  = config_dir .. "/themes/linduxed/titlebar/floating_focus_active.png"
-
 theme.titlebar_maximized_button_normal_inactive = config_dir .. "/themes/linduxed/titlebar/maximized_normal_inactive.png"
 theme.titlebar_maximized_button_focus_inactive  = config_dir .. "/themes/linduxed/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_active = config_dir .. "/themes/linduxed/titlebar/maximized_normal_active.png"
@@ -74,7 +70,7 @@ theme.titlebar_maximized_button_focus_active  = config_dir .. "/themes/linduxed/
 -- You can use your own command to set your wallpaper
 theme.wallpaper_cmd = { "awsetbg " .. config_dir .. "/themes/linduxed/background.png" }
 
--- You can use your own layout icons like this:
+-- Layout icons:
 theme.layout_fairh = config_dir .. "/themes/linduxed/layouts/fairhw.png"
 theme.layout_fairv = config_dir .. "/themes/linduxed/layouts/fairvw.png"
 theme.layout_floating  = config_dir .. "/themes/linduxed/layouts/floatingw.png"
