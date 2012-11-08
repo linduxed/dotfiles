@@ -6,6 +6,9 @@ require("awful.rules")
 require("beautiful")
 -- Notification library
 require("naughty")
+-- Widget library
+vicious = require("vicious")
+require("colours")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
@@ -59,30 +62,62 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
--- }}}
-
 -- {{{ Wibox
 -- Create a textclock widget
-mytextclock = awful.widget.textclock({ align = "right" }, " %a %b %d, %H:%M:%S ", 1)
+datetime = awful.widget.textclock({ align = "right" }, "" .. colbblu .. "%a %b %d" .. coldef .. " " .. colcya .. "%H:%M:%S" .. coldef, 1)
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+
+space = widget({ type = "textbox" })
+space.text  = " "
+
+separator = widget({ type = "textbox" })
+separator.text = "" .. colwhi .. "|" .. coldef .. ""
+
+-- CPU widget
+cpu = widget({type = "textbox" })
+cpuicon = widget({type = "imagebox" })
+cpuicon.image = image(beautiful.widget_cpu)
+vicious.register(cpu,  vicious.widgets.cpu, "" .. colblu .. "CPU: " .. coldef .. colcya .. "$1" .. coldef .. coldblu .. "%" .. coldef, 5)
+
+-- Thermal widget
+thermal = widget({type = "textbox" })
+thermalicon = widget({type = "imagebox" })
+thermalicon.image = image(beautiful.widget_thermal)
+vicious.register(thermal,  vicious.widgets.thermal, "" .. colcya .. "$1" .. coldef .. coldblu .. "C" .. coldef, 5, { "coretemp.0", "core"})
+
+-- Network widget
+net_downicon = widget({ type = "imagebox" })
+net_upicon = widget({ type = "imagebox" })
+net_downicon.image = image(beautiful.widget_net_down)
+net_upicon.image = image(beautiful.widget_net_up)
+net = widget({ type = "textbox" })
+vicious.register(net, vicious.widgets.net, "" .. colbgre .. "${wlan0 down_kb}" .. coldef .. coldblu .. "k " .. coldef .. colcya .. "${wlan0 up_kb}" .. coldef .. coldblu .. "k" .. coldef, 5)
+
+-- Volume widget
+vol = widget({ type="textbox" })
+volicon = widget({ type="imagebox" })
+volicon.image = image(beautiful.widget_volume)
+vicious.register(vol, vicious.widgets.volume, "" .. colblu .. "Vol: " .. coldef .. colcya .. "$1" .. coldef .. coldblu .. "%" .. coldef, 2, "Master")
+
+vol:buttons(awful.util.table.join(
+    awful.button({ }, 1, function () awful.util.spawn_with_shell("urxvt -e alsamixer") end)
+))
+
+mpd = widget({ type = "textbox"})
+mpdicon = widget({ type="imagebox" })
+mpdicon.image = image(beautiful.widget_music)
+vicious.register(mpd, vicious.widgets.mpd, "" .. colmag .. "${Artist}" .. coldef .. " - " .. colbblu .. "${Title}" .. coldef)
+
+function mpd_text_rotate()
+    if string.len(mpd_text) >= mpd_text_max_size then
+        mpd_text = string.gsub(mpd_text, '^(.)(.+)$', '%2%1')
+        mpd_text_box.text = string.sub(mpd_text, 1, mpd_text_max_size).."..."
+    else
+        mpd_text_box.text = mpd_text
+    end
+end
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -147,13 +182,22 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-            mylauncher,
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-        mytextclock,
+		space,
+		datetime,
+		space, separator, space,
+		net,
+		space, separator, space,
+		vol, volicon,
+		space, separator, space,
+		thermal, space, cpu,
+		space, separator, space,
+		mpd,
+		space, separator, space,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
