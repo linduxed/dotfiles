@@ -11,6 +11,9 @@ require("naughty")
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/themes/linduxed/theme.lua")
 
+-- Make critical notifications disappear automatically.
+naughty.config.presets.critical.timeout = 8
+
 -- This is used later as the default terminal and editor to run.
 terminal = "roxterm"
 editor = os.getenv("EDITOR") or "vim"
@@ -313,9 +316,6 @@ clientbuttons = awful.util.table.join(
 -- Set keys
 root.keys(globalkeys)
 -- }}}
-
--- Make critical notifications disappear automatically.
-naughty.config.presets.critical.timeout = 8
 
 -- {{{ Rules
 awful.rules.rules = {
