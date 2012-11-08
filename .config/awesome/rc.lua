@@ -77,28 +77,18 @@ separator.text = "" .. colwhi .. "|" .. coldef .. ""
 
 -- CPU widget
 cpu = widget({type = "textbox" })
-cpuicon = widget({type = "imagebox" })
-cpuicon.image = image(beautiful.widget_cpu)
 vicious.register(cpu,  vicious.widgets.cpu, "" .. colblu .. "CPU: " .. coldef .. colcya .. "$1" .. coldef .. coldblu .. "%" .. coldef, 5)
 
 -- Thermal widget
 thermal = widget({type = "textbox" })
-thermalicon = widget({type = "imagebox" })
-thermalicon.image = image(beautiful.widget_thermal)
 vicious.register(thermal,  vicious.widgets.thermal, "" .. colcya .. "$1" .. coldef .. coldblu .. "C" .. coldef, 5, { "coretemp.0", "core"})
 
 -- Network widget
-net_downicon = widget({ type = "imagebox" })
-net_upicon = widget({ type = "imagebox" })
-net_downicon.image = image(beautiful.widget_net_down)
-net_upicon.image = image(beautiful.widget_net_up)
 net = widget({ type = "textbox" })
 vicious.register(net, vicious.widgets.net, "" .. colbgre .. "${wlan0 down_kb}" .. coldef .. coldblu .. "k " .. coldef .. colcya .. "${wlan0 up_kb}" .. coldef .. coldblu .. "k" .. coldef, 5)
 
 -- Volume widget
 vol = widget({ type="textbox" })
-volicon = widget({ type="imagebox" })
-volicon.image = image(beautiful.widget_volume)
 vicious.register(vol, vicious.widgets.volume, "" .. colblu .. "Vol: " .. coldef .. colcya .. "$1" .. coldef .. coldblu .. "%" .. coldef, 2, "Master")
 
 vol:buttons(awful.util.table.join(
@@ -106,8 +96,6 @@ vol:buttons(awful.util.table.join(
 ))
 
 mpd = widget({ type = "textbox"})
-mpdicon = widget({ type="imagebox" })
-mpdicon.image = image(beautiful.widget_music)
 vicious.register(mpd, vicious.widgets.mpd, "" .. colmag .. "${Artist}" .. coldef .. " - " .. colbblu .. "${Title}" .. coldef)
 
 function mpd_text_rotate()
