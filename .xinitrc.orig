@@ -5,8 +5,10 @@ if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
 	eval `dbus-launch --sh-syntax --exit-with-session`
 fi
 
-# Fix for Xorg's disabling of CAB.
-setxkbmap -option terminate:ctrl_alt_bksp &
+# Set layouts and fix for Xorg's disabling of CAB.
+# Layout switching with ScrollLock.
+setxkbmap -layout "us,us,se" -variant "colemak,altgr-intl,"\
+	-option grp:sclk_toggle,terminate:ctrl_alt_bksp &
 
 # Enables repeat for the CapsLock button (Colemak Backspace).
 xset r 66 &
@@ -19,6 +21,7 @@ autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
 # Autostart
+# kbdd &
 wicd-gtk -t &
 gnome-keyring-daemon &
 # thunderbird &
