@@ -63,6 +63,10 @@ end
 -- }}}
 
 -- {{{ Wibox
+-- Awesome logo
+logo = widget({ type = "imagebox" })
+logo.image = image(beautiful.awesome_icon)
+
 -- Create a textclock widget
 datetime = awful.widget.textclock({ align = "right" }, "" .. colbblu .. "%a %b %d" .. coldef .. " " .. colcya .. "%H:%M:%S" .. coldef, 1)
 
@@ -170,6 +174,7 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
+			logo,
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
