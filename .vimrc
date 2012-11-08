@@ -154,7 +154,6 @@ set viminfo='10,\"100,:20,%,n~/.vim/viminfo
 " Backups {{{
 
 set backup                        " enable backups
-set noswapfile                    " It's 2012, Vim.
 
 set undodir=~/.vim/tmp/undo//     " undo files
 set backupdir=~/.vim/tmp/backup// " backups
