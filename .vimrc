@@ -233,8 +233,6 @@ let g:ctrlp_open_multi = '2v'
 " {{{ snipMate
 
 let g:snips_author = 'linduxed'
-let g:snips_trigger_key='<C-h>'
-let g:snips_trigger_key_backwards='<C-b>'
 
 " }}}
 " {{{ NERD-Tree
@@ -558,6 +556,12 @@ let g:ctrlp_prompt_mappings = {
     \ 'OpenMulti()':          ['<c-o>'],
     \ 'PrtExit()':            ['<esc>', '<c-c>'],
     \ }
+
+" }}}
+" {{{ snipMate
+
+let g:snips_trigger_key='<C-h>'
+let g:snips_trigger_key_backwards='<C-b>'
 
 " }}}
 
