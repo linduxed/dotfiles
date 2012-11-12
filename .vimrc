@@ -316,6 +316,7 @@ autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0
 if exists('+colorcolumn')
 	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
+	autocmd BufNewFile,BufRead *.hs setlocal colorcolumn=0
 endif
 
 " }}}
