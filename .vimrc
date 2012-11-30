@@ -258,6 +258,11 @@ let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'firefox %URL% &'
 
 " }}}
+" {{{ minibufexpl
+
+let g:miniBufExplSetUT = 0
+
+" }}}
 
 " }}}
 " {{{ Autocommands

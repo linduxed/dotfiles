@@ -148,3 +148,6 @@
 [submodule ".vim/bundle/vim-snipmate"]
 	path = .vim/bundle/vim-snipmate
 	url = https://github.com/garbas/vim-snipmate.git
+[submodule ".vim/bundle/vim-plugin-minibufexpl"]
+	path = .vim/bundle/vim-plugin-minibufexpl
+	url = https://github.com/techlivezheng/vim-plugin-minibufexpl.git
