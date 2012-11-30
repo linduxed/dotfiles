@@ -70,9 +70,6 @@
 [submodule ".vim/bundle/vim-easytags"]
 	path = .vim/bundle/vim-easytags
 	url = git://github.com/xolox/vim-easytags.git
-[submodule ".vim/bundle/minibufexpl.vim"]
-	path = .vim/bundle/minibufexpl.vim
-	url = https://github.com/linduxed/minibufexpl.vim.git
 [submodule ".vim/bundle/cscope_macros.vim"]
 	path = .vim/bundle/cscope_macros.vim
 	url = https://github.com/linduxed/cscope_macros.vim.git
