@@ -41,7 +41,7 @@ case $SHORTHOST in
 		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'dpkg' 'rsync'
 		;;
 	attana-server)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'dpkg' 'git' 'gnu-utility' 'tmux'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'dpkg' 'git' 'gnu-utility' 'rsync' 'tmux'
 		;;
 	share-01)
 		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'dpkg' 'git' 'gnu-utility' 'tmux'
