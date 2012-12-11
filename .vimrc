@@ -104,7 +104,7 @@ au InsertLeave * match ExtraWhiteSpace /[^\t]\zs\t\+\| \+\ze\t\|\S\zs\s\+$/
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " }}}
-" Cursorline {{{
+" {{{ Cursorline
 " Only show cursorline in the current window and in normal mode.
 
 augroup cline
@@ -114,7 +114,7 @@ augroup cline
 augroup END
 
 " }}}
-" foldtext {{{
+" {{{ foldtext
 
 set foldtext=CustomFoldText()
 fu! CustomFoldText()
@@ -139,7 +139,7 @@ fu! CustomFoldText()
 endf
 
 " }}}
-" Wildmenu completion {{{
+" {{{ Wildmenu completion
 
 set wildmenu
 " First tab: longest common string. Second tab: cycle through list.
@@ -176,7 +176,7 @@ set wildignore+=lib
 set viminfo='10,\"100,:20,%,n~/.vim/viminfo
 
 " }}}
-" Backups {{{
+" {{{ Backups
 
 set backup                        " enable backups
 
@@ -388,7 +388,7 @@ endfunction
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 " }}}
-" Highlight word {{{
+" {{{ Highlight word
 
 nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
 nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
@@ -397,7 +397,7 @@ nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'
 noremap <silent> <leader>hh :noh<cr>:call clearmatches()<cr>
 
 " }}}
-" Visual Mode */# from Scrooloose {{{
+" {{{ Visual Mode */# from Scrooloose
 
 function! s:VSetSearch()
   let temp = @@
@@ -410,7 +410,7 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " }}}
-" List navigation {{{
+" {{{ List navigation
 
 nnoremap <left>  :cprev<cr>zvzz
 nnoremap <right> :cnext<cr>zvzz
