@@ -262,6 +262,9 @@ globalkeys = awful.util.table.join(
 	awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/bin/dual_bg_random_switch.sh") end),
 	awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/bin/bg_random_switch.sh")      end),
 
+	-- Keyboard layouts fix
+	awful.key({ modkey }, "F7", function () awful.util.spawn('setxkbmap -layout "us,us,se" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp') end),
+
 	-- MPD control
 	awful.key({ "Control", "Mod1" }, "p", function () awful.util.spawn("mpc toggle") end),
 	awful.key({ "Control", "Mod1" }, "s", function () awful.util.spawn("mpc stop")   end),
