@@ -127,7 +127,14 @@ vol = wibox.widget.textbox()
 vicious.register(vol, vicious.widgets.volume, "" .. colblu .. "Vol: " .. coldef .. colcya .. "$1" .. coldef .. coldblu .. "%" .. coldef, 2, "Master")
 
 mpd = wibox.widget.textbox()
-vicious.register(mpd, vicious.widgets.mpd, "" .. colmag .. "${Artist}" .. coldef .. " - " .. colbblu .. "${Title}" .. coldef)
+vicious.register(mpd, vicious.widgets.mpd,
+    function (widget, args)
+        if args["{state}"] == "Stop" then
+            return "" .. colwhi .. "MPD" .. coldef
+        else
+            return "" .. colmag .. args["{Artist}"] .. coldef .. " - " .. colbblu .. args["{Title}"] .. coldef
+        end
+    end)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
