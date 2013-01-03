@@ -1,3 +1,4 @@
+-- {{{ Required modules
 -- Standard awesome library
 local awful = require("awful")
 awful.rules = require("awful.rules")
@@ -12,6 +13,7 @@ local naughty = require("naughty")
 -- Widget library
 vicious = require("vicious")
 colours = require("colours")
+--}}}
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
