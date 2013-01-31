@@ -85,9 +85,6 @@
 [submodule ".vim/bundle/snipmate-snippets"]
 	path = .vim/bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
-[submodule ".vim/bundle/vim-signature"]
-	path = .vim/bundle/vim-signature
-	url = git://github.com/kshenoy/vim-signature.git
 [submodule ".vim/bundle/vim-linduxed-theme"]
 	path = .vim/bundle/vim-linduxed-theme
 	url = https://github.com/linduxed/vim-linduxed-theme.git
