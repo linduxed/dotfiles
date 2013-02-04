@@ -145,3 +145,6 @@
 [submodule ".vim/bundle/tagbar"]
 	path = .vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule ".vim/bundle/lushtags"]
+	path = .vim/bundle/lushtags
+	url = https://github.com/bitc/lushtags
