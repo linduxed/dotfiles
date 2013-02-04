@@ -466,8 +466,8 @@ nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
 nmap <F1> :bprevious<CR>
 nmap <F2> :bnext<CR>
 nmap <F3> :CtrlPBuffer<CR>
-nmap <F4> :LustyJuggler<CR>
-nmap <F5> :LustyBufferGrep<CR>
+" F4: not bound.
+" F5: not bound.
 nnoremap <F6> :GundoToggle<CR>
 set pastetoggle=<F7>
 nmap <F8> :set list!<CR>
