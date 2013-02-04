@@ -112,9 +112,6 @@
 [submodule ".vim/bundle/javacomplete"]
 	path = .vim/bundle/javacomplete
 	url = git://github.com/vim-scripts/javacomplete.git
-[submodule ".vim/bundle/lusty"]
-	path = .vim/bundle/lusty
-	url = git://github.com/sjbach/lusty.git
 [submodule ".vim/bundle/pythoncomplete"]
 	path = .vim/bundle/pythoncomplete
 	url = git://github.com/vim-scripts/pythoncomplete.git

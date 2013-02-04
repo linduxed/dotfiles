@@ -241,12 +241,6 @@ endif
 set encoding=utf-8 " Necessary to show unicode glyphs.
 
 " }}}
-" {{{ LustyJuggler
-
-let g:LustyJugglerKeyboardLayout = "colemak"
-let g:LustyJugglerShowKeys = 'a'
-
-" }}}
 " {{{ CTRL-P
 
 let g:ctrlp_max_height = 25
