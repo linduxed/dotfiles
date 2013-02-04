@@ -473,7 +473,7 @@ set pastetoggle=<F7>
 nmap <F8> :set list!<CR>
 nmap <F9> :make<CR>
 " F10: not bound.
-nmap <F11> :TlistToggle<CR>
+nmap <F11> :TagbarToggle<CR>
 nmap <F12> :NERDTree<CR>
 
 

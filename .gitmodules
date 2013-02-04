@@ -130,9 +130,6 @@
 [submodule ".vim/bundle/warsow.vim"]
 	path = .vim/bundle/warsow.vim
 	url = git://github.com/vim-scripts/warsow.vim.git
-[submodule ".vim/bundle/taglist.vim"]
-	path = .vim/bundle/taglist.vim
-	url = https://github.com/linduxed/taglist.vim.git
 [submodule ".vim/bundle/rainbow_parentheses.vim"]
 	path = .vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim.git
@@ -145,3 +142,6 @@
 [submodule ".vim/bundle/nerdcommenter"]
 	path = .vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/bundle/tagbar"]
+	path = .vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
