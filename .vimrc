@@ -20,8 +20,6 @@ set nocompatible
 source ~/.vim/colemak.vim
 " Add the tab size setup tool
 source ~/.vim/stab.vim
-" Add fugitive related bindings and autocmd's
-source ~/.vim/fugitive_related.vim"
 
 " }}}
 " {{{ Options
