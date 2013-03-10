@@ -326,7 +326,7 @@ augroup END
 
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
-autocmd BufNewFile,BufRead *.hs setlocal et
+autocmd BufNewFile,BufRead *.hs setlocal et sts=0
 autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
