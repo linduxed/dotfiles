@@ -437,27 +437,6 @@ vmap < <gv
 vmap > >gv
 
 " }}}
-" {{{ Convenience mappings
-
-" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
-nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
-vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
-inoremap <Tab> <Esc>|
-nnoremap <S-Tab> i<Tab><Esc><Right>
-vnoremap <S-Tab> >gv|
-inoremap <S-Tab> <Tab>|
-
-" Inserting spaces
-nnoremap <Space> i<Space><Esc><Right>|
-xnoremap <silent> <Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv><CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
-xnoremap <silent> <S-Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv<<CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
-
-" Delete/Backspace
-nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
-nnoremap <Delete> "_x|vnoremap <Delete> "_d|
-nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
-
-" }}}
 " {{{ Function keys
 
 nmap <F1> :bprevious<CR>
@@ -494,6 +473,24 @@ inoremap <expr> <M-;> pumvisible() ? "\<lt>C-n>" : "\<lt>C-x>\<lt>C-o>\<lt>C-n>\
 
 " }}}
 " {{{ Miscellaneous
+
+" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
+nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
+vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
+inoremap <Tab> <Esc>|
+nnoremap <S-Tab> i<Tab><Esc><Right>
+vnoremap <S-Tab> >gv|
+inoremap <S-Tab> <Tab>|
+
+" Inserting spaces
+nnoremap <Space> i<Space><Esc><Right>|
+xnoremap <silent> <Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv><CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
+xnoremap <silent> <S-Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv<<CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
+
+" Delete/Backspace
+nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
+nnoremap <Delete> "_x|vnoremap <Delete> "_d|
+nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
 
 " Emacs bindings in command line mode
 cnoremap <c-a> <home>
