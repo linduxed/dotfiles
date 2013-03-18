@@ -582,6 +582,12 @@ let g:snips_trigger_key='<C-h>'
 let g:snips_trigger_key_backwards='<C-b>'
 
 " }}}
+" {{{ Tabular
+
+vnoremap <Leader>te :Tabularize / = /l0<CR>
+nnoremap <Leader>te :Tabularize / = /l0<CR>
+
+" }}}
 
 " }}}
 
