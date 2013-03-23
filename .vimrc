@@ -279,6 +279,14 @@ let g:gist_browser_command = 'firefox %URL% &'
 let g:miniBufExplSetUT = 0
 
 " }}}
+" {{{ Ack
+
+" Use Silver Searcher on the hosts that have it.
+if hostname() != 'hugin'
+	let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
+" }}}
 
 " }}}
 " {{{ Autocommands
