@@ -148,3 +148,6 @@
 [submodule ".vim/bundle/lushtags"]
 	path = .vim/bundle/lushtags
 	url = https://github.com/bitc/lushtags
+[submodule ".vim/bundle/mark"]
+	path = .vim/bundle/mark
+	url = https://github.com/linduxed/Mark--Karkat
