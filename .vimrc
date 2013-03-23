@@ -379,15 +379,6 @@ endfunction
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 " }}}
-" {{{ Highlight word
-
-nnoremap <silent> <leader>h1 :execute 'match InterestingWord1 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h2 :execute '2match InterestingWord2 /\<<c-r><c-w>\>/'<cr>
-nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'<cr>
-
-noremap <silent> <leader>hh :noh<cr>:call clearmatches()<cr>
-
-" }}}
 " {{{ Visual Mode */# from Scrooloose
 
 function! s:VSetSearch()
@@ -410,9 +401,6 @@ nnoremap <down>  :lnext<cr>zvzz
 
 " }}}
 " {{{ Searching and jumping
-
-" Don't move on *
-nnoremap * *<c-o>
 
 " Keep search matches in the middle of the window.
 nnoremap k nzzzv
