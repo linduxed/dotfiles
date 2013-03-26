@@ -343,7 +343,6 @@ autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0
 if exists('+colorcolumn')
 	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
-	autocmd BufNewFile,BufRead *.hs setlocal colorcolumn=0
 endif
 
 " }}}
@@ -352,7 +351,7 @@ endif
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
 autocmd FileType gitcommit setlocal tw=72
 autocmd FileType vim setlocal tw=0
 if exists('+colorcolumn')
