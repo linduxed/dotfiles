@@ -85,6 +85,10 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 " Resize splits when the window is resized
 au VimResized * :wincmd =
 
+" Suffixes that get lower priority when doing tab completion for filenames.
+" These are files we are not likely to want to edit or read.
+set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
 " }}}
 " {{{ Syntax colouring
 
