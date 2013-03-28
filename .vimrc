@@ -285,8 +285,8 @@ let g:miniBufExplSetUT = 0
 " }}}
 " {{{ Ack
 
-" Use Silver Searcher on the hosts that have it.
-if hostname() != 'hugin'
+" Use Silver Searcher if present on the system.
+if executable("ag")
 	let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
 
