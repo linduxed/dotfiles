@@ -614,5 +614,11 @@ nnoremap <Leader>te :Tabularize / = /l0<CR>
 " }}}
 
 " }}}
+" {{{ Fixed width text formatting
+
+nnoremap <Leader>q :let old_tw=&tw<CR>:let &tw=79<CR>gqip:let &tw=old_tw<CR>:echo "\r"<CR>
+vnoremap <Leader>q <Esc>:let old_tw=&tw<CR>:set tw=79<CR>gvgq:let &tw=old_tw<CR><C-u>:echo "\r"<CR>
+
+" }}}
 
 " }}}
