@@ -151,3 +151,6 @@
 [submodule ".vim/bundle/xterm-color-table"]
 	path = .vim/bundle/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim
+[submodule ".vim/bundle/vim-unimpaired"]
+	path = .vim/bundle/vim-unimpaired
+	url = https://github.com/linduxed/vim-unimpaired
