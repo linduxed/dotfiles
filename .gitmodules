@@ -55,9 +55,6 @@
 [submodule ".vim/bundle/gundo.vim"]
 	path = .vim/bundle/gundo.vim
 	url = git://github.com/sjl/gundo.vim.git
-[submodule ".vim/bundle/vim-unimpaired"]
-	path = .vim/bundle/vim-unimpaired
-	url = git://github.com/tpope/vim-unimpaired.git
 [submodule ".vim/bundle/vim-speeddating"]
 	path = .vim/bundle/vim-speeddating
 	url = git://github.com/tpope/vim-speeddating.git
