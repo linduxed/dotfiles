@@ -388,6 +388,7 @@ endif
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
+autocmd FileType ruby compiler ruby
 autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
 autocmd FileType gitcommit setlocal tw=72
 autocmd FileType vim setlocal tw=0
