@@ -470,7 +470,7 @@ nmap <F3> :CtrlPBuffer<CR>
 nmap <F4> :CtrlPRoot<CR>
 nmap <F5> :CtrlPMRU<CR>
 nnoremap <F6> :GundoToggle<CR>
-set pastetoggle=<F7>
+" F7: not bound.
 nmap <F8> :set list!<CR>
 nmap <F9> :make<CR>
 " F10: not bound.
