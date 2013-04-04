@@ -467,8 +467,8 @@ vmap > >gv
 nmap <F1> :bprevious<CR>
 nmap <F2> :bnext<CR>
 nmap <F3> :CtrlPBuffer<CR>
-" F4: not bound.
-" F5: not bound.
+nmap <F4> :CtrlPRoot<CR>
+nmap <F5> :CtrlPMRU<CR>
 nnoremap <F6> :GundoToggle<CR>
 set pastetoggle=<F7>
 nmap <F8> :set list!<CR>
