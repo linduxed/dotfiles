@@ -465,7 +465,7 @@ vmap > >gv
 " {{{ Function keys
 
 nmap <F1> :buffer #<CR>
-nmap <F2> :ls<CR>:b
+nmap <F2> :Bufferlist<CR>
 nmap <F3> :CtrlPBuffer<CR>
 nmap <F4> :CtrlPRoot<CR>
 nmap <F5> :CtrlPMRU<CR>
