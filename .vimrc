@@ -372,7 +372,6 @@ augroup END
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.hs setlocal et sts=0
-autocmd BufNewFile,BufRead *.rb setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
 autocmd BufNewFile,BufRead *.c setlocal foldmethod=indent
@@ -389,6 +388,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType ruby compiler ruby
+autocmd FileType ruby et sw=2 sts=2
 autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
 autocmd FileType gitcommit setlocal tw=72
 autocmd FileType vim setlocal tw=0
