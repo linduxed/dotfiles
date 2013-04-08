@@ -324,6 +324,11 @@ if executable("ag")
 endif
 
 " }}}
+" {{{ Syntastic
+
+let g:syntastic_always_populate_loc_list=1
+
+" }}}
 
 " }}}
 " {{{ Autocommands
