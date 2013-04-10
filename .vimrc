@@ -382,6 +382,9 @@ autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
 autocmd BufNewFile,BufRead *.c setlocal foldmethod=indent
 autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0
+autocmd BufNewFile,BufRead *.sass setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.haml setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.scss setlocal et sw=2 sts=2
 if exists('+colorcolumn')
 	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
 endif
