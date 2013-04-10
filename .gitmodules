@@ -76,9 +76,6 @@
 [submodule ".vim/bundle/vim-addon-mw-utils"]
 	path = .vim/bundle/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule ".vim/bundle/snipmate-snippets"]
-	path = .vim/bundle/snipmate-snippets
-	url = git://github.com/honza/snipmate-snippets.git
 [submodule ".vim/bundle/vim-linduxed-theme"]
 	path = .vim/bundle/vim-linduxed-theme
 	url = https://github.com/linduxed/vim-linduxed-theme.git
