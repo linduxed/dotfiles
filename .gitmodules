@@ -154,3 +154,6 @@
 [submodule ".vim/bundle/scratch"]
 	path = .vim/bundle/scratch
 	url = https://github.com/vim-scripts/scratch.vim
+[submodule ".vim/bundle/vim-snippets"]
+	path = .vim/bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
