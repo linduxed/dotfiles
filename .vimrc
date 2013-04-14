@@ -393,6 +393,7 @@ endif
 " {{{ Filetype dependant autocommands
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal et
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType ruby compiler ruby
