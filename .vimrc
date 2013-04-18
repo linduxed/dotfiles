@@ -329,6 +329,12 @@ endif
 let g:syntastic_always_populate_loc_list=1
 
 " }}}
+" {{{ easytags
+
+" Auto-updating causes too frequent lag to be worth it.
+let g:easytags_auto_update = 0
+
+" }}}
 
 " }}}
 " {{{ Autocommands
@@ -393,6 +399,7 @@ endif
 " {{{ Filetype dependant autocommands
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType python setlocal et
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType ruby compiler ruby
