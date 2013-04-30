@@ -618,8 +618,12 @@ let g:ctrlp_prompt_mappings = {
 " }}}
 " {{{ snipMate
 
-let g:snips_trigger_key='<C-h>'
-let g:snips_trigger_key_backwards='<C-b>'
+imap <C-h>      <Plug>snipMateNextOrTrigger
+smap <C-h>      <Plug>snipMateNextOrTrigger
+imap <C-b>      <Plug>snipMateBack
+smap <C-b>      <Plug>snipMateBack
+imap <C-r><C-h> <Plug>snipMateShow
+smap <C-r><C-h> <Plug>snipMateShow
 
 " }}}
 " {{{ Tabular
