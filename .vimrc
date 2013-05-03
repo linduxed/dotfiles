@@ -335,6 +335,11 @@ let g:syntastic_always_populate_loc_list=1
 let g:easytags_auto_update = 0
 
 " }}}
+" {{{ Indent guides
+
+let g:indent_guides_auto_colors = 0
+
+" }}}
 
 " }}}
 " {{{ Autocommands
@@ -630,6 +635,11 @@ smap <C-r><C-h> <Plug>snipMateShow
 
 vnoremap <Leader>te :Tabularize / = /l0<CR>
 nnoremap <Leader>te :Tabularize / = /l0<CR>
+
+" }}}
+" {{{ Indent guides
+
+nmap <silent> <Leader>g <Plug>IndentGuidesToggle
 
 " }}}
 
