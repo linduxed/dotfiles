@@ -94,6 +94,7 @@ set nojoinspaces                " No double spaces after ./!/? when lines are jo
 set textwidth=79                " Wrap on set column.
 set undofile                    " Persistent undos between sessions.
 set gdefault                    " When searching, use the 'g' flag all the time.
+set iskeyword+=-                " Make keyword completion work across hyphens.
 if exists('+colorcolumn')
 	set colorcolumn=+1          " Display a column, one column after the text width.
 endif
