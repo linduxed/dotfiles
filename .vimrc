@@ -95,6 +95,9 @@ set textwidth=79                " Wrap on set column.
 set undofile                    " Persistent undos between sessions.
 set gdefault                    " When searching, use the 'g' flag all the time.
 set iskeyword+=-                " Make keyword completion work across hyphens.
+set history=50                  " How many ':' commands should be saved.
+set splitbelow                  " When doing horizontal splits, split panes downward.
+set splitright                  " When doing vertical splits, split panes to the right.
 if exists('+colorcolumn')
 	set colorcolumn=+1          " Display a column, one column after the text width.
 endif
@@ -122,6 +125,9 @@ au VimResized * :wincmd =
 " Suffixes that get lower priority when doing tab completion for filenames.
 " These are files we are not likely to want to edit or read.
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+
+" Treat <li> and <p> tags in HTML like block tags
+let g:html_indent_tags = 'li\|p'
 
 " }}}
 " {{{ Syntax colouring
