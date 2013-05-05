@@ -163,3 +163,6 @@
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
+[submodule ".vim/bundle/html"]
+	path = .vim/bundle/html
+	url = https://github.com/xenoterracide/html.vim
