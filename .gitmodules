@@ -166,3 +166,6 @@
 [submodule ".vim/bundle/html"]
 	path = .vim/bundle/html
 	url = https://github.com/xenoterracide/html.vim
+[submodule ".vim/bundle/greplace"]
+	path = .vim/bundle/greplace
+	url = https://github.com/vim-scripts/greplace.vim
