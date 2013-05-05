@@ -169,3 +169,6 @@
 [submodule ".vim/bundle/greplace"]
 	path = .vim/bundle/greplace
 	url = https://github.com/vim-scripts/greplace.vim
+[submodule ".vim/bundle/textile"]
+	path = .vim/bundle/textile
+	url = https://github.com/timcharper/textile.vim

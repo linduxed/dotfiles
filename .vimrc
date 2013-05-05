@@ -347,6 +347,12 @@ let g:easytags_auto_update = 0
 let g:indent_guides_auto_colors = 0
 
 " }}}
+" {{{ Textile
+
+let g:TextileOS="Linux"
+let g:TextileBrowser="/usr/bin/firefox"
+
+" }}}
 
 " }}}
 " {{{ Autocommands
