@@ -2,3 +2,14 @@
 .env
 .gitignore
 tags
+*.DS_Store
+*.sw[nop]
+.sass-cache/
+db/*.sqlite3
+log/*.log
+rerun.txt
+tmp/**/*
+!tmp/cache/.keep
+vendor/bundler_gems
+vim/.netrwhist
+zeus.json
