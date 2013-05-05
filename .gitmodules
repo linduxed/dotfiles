@@ -175,3 +175,6 @@
 [submodule ".vim/bundle/coffeescript"]
 	path = .vim/bundle/coffeescript
 	url = https://github.com/kchmck/vim-coffee-script
+[submodule ".vim/bundle/treetop"]
+	path = .vim/bundle/treetop
+	url = https://github.com/nanki/treetop.vim
