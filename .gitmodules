@@ -178,3 +178,6 @@
 [submodule ".vim/bundle/treetop"]
 	path = .vim/bundle/treetop
 	url = https://github.com/nanki/treetop.vim
+[submodule ".vim/bundle/rspec"]
+	path = .vim/bundle/rspec
+	url = https://github.com/thoughtbot/vim-rspec

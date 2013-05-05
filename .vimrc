@@ -656,6 +656,14 @@ nnoremap <Leader>te :Tabularize / = /l0<CR>
 nmap <silent> <Leader>g <Plug>IndentGuidesToggle
 
 " }}}
+" {{{ rspec
+
+nmap <Leader>st :call RunCurrentSpecFile()<CR>
+nmap <Leader>sr :call RunNearestSpec()<CR>
+nmap <Leader>ss :call RunLastSpec()<CR>
+
+
+" }}}
 
 " }}}
 " {{{ Fixed width text formatting
