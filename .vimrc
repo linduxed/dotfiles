@@ -409,6 +409,7 @@ autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0
 autocmd BufNewFile,BufRead *.sass setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.haml setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.scss setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.coffee setlocal et sw=2 sts=2
 if exists('+colorcolumn')
 	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
 endif
