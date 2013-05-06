@@ -194,6 +194,19 @@ for s = 1, screen.count() do
                                               return awful.widget.tasklist.label.currenttags(c, s)
                                           end, mytasklist.buttons)
 
+    -- Keyboard layout widget
+    kbdwidget = widget({type = "textbox", name = "kbdwidget"})
+    kbdwidget.text = "" .. colgre .. "KBD" .. coldef
+    dbus.request_name("session", "ru.gentoo.kbdd")
+    dbus.add_match("session", "interface='ru.gentoo.kbdd',member='layoutChanged'")
+    dbus.add_signal("ru.gentoo.kbdd", function(...)
+        local data = {...}
+        local layout = data[2]
+        lts = {[0] = "ColE", [1] = "ColS", [2] = "Swe"}
+        kbdwidget.text = "" .. colgre .. lts[layout] .. coldef
+        end
+    )
+
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox - order matters
@@ -213,6 +226,8 @@ for s = 1, screen.count() do
         vol, volicon,
         space, separator, space,
         thermal, space, cpu,
+        space, separator, space,
+        kbdwidget,
         space, separator, space,
         mpd,
         space, separator, space,
