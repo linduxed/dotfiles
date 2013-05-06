@@ -674,5 +674,11 @@ nnoremap <Leader>q :let old_tw=&tw<CR>:let &tw=79<CR>gqip:let &tw=old_tw<CR>:ech
 vnoremap <Leader>q <Esc>:let old_tw=&tw<CR>:set tw=79<CR>gvgq:let &tw=old_tw<CR><C-u>:echo "\r"<CR>
 
 " }}}
+" {{{ Keyboard layout switching
+
+nnoremap <Leader>lc :source ~/.vim/colemak.vim<CR>
+nnoremap <Leader>lq :source ~/.vim/disable-colemak.vim<CR>
+
+" }}}
 
 " }}}
