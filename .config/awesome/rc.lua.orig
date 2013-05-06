@@ -63,7 +63,7 @@ layouts =
     awful.layout.suit.max,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
-	awful.layout.suit.fair.horizontal,
+    awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max.fullscreen,
@@ -77,13 +77,13 @@ layouts =
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-	if s == 1 then
-		tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, { awful.layout.suit.spiral.dwindle, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.fair.horizontal })
-	elseif s == 2 then
-		tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.tile.bottom)
-	else
-		tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.tile)
-	end
+    if s == 1 then
+        tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, { awful.layout.suit.spiral.dwindle, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.tile, awful.layout.suit.fair.horizontal })
+    elseif s == 2 then
+        tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.tile.bottom)
+    else
+        tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, awful.layout.suit.tile)
+    end
 end
 -- }}}
 
@@ -199,23 +199,23 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-			logo,
+            logo,
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
         mylayoutbox[s],
-		space,
-		datetime,
-		space, separator, space,
-		net,
-		space, separator, space,
-		vol, volicon,
-		space, separator, space,
-		thermal, space, cpu,
-		space, separator, space,
-		mpd,
-		space, separator, space,
+        space,
+        datetime,
+        space, separator, space,
+        net,
+        space, separator, space,
+        vol, volicon,
+        space, separator, space,
+        thermal, space, cpu,
+        space, separator, space,
+        mpd,
+        space, separator, space,
         s == 1 and mysystray or nil,
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
@@ -268,7 +268,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
-	-- Layout manipulation
+    -- Layout manipulation
     awful.key({ modkey,           }, "u",  function () awful.tag.incmwfact( 0.05)    end),
     awful.key({ modkey,           }, "e",  function () awful.tag.incmwfact(-0.05)    end),
     awful.key({ modkey, "Shift"   }, "u",  function () awful.tag.incnmaster( 1)      end),
@@ -278,26 +278,26 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F2", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "F2", function () awful.layout.inc(layouts, -1) end),
 
-	-- Volume
-	awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh mute") end),
-	awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh down") end),
-	awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh up")   end),
+    -- Volume
+    awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh mute") end),
+    awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh down") end),
+    awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh up")   end),
 
-	-- Background switching
-	awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/bin/dual_bg_random_switch.sh") end),
-	awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/bin/bg_random_switch.sh")      end),
+    -- Background switching
+    awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/bin/dual_bg_random_switch.sh") end),
+    awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/bin/bg_random_switch.sh")      end),
 
-	-- Keyboard layouts fix
-	awful.key({ modkey }, "F7", function () awful.util.spawn('setxkbmap -layout "us,us,se" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp') end),
+    -- Keyboard layouts fix
+    awful.key({ modkey }, "F7", function () awful.util.spawn('setxkbmap -layout "us,us,se" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp') end),
 
-	-- Lock screen
-	awful.key({ modkey }, "F6", function () awful.util.spawn("xscreensaver-command -lock") end),
+    -- Lock screen
+    awful.key({ modkey }, "F6", function () awful.util.spawn("xscreensaver-command -lock") end),
 
-	-- MPD control
-	awful.key({ "Control", "Mod1" }, "p", function () awful.util.spawn("mpc toggle") end),
-	awful.key({ "Control", "Mod1" }, "s", function () awful.util.spawn("mpc stop")   end),
-	awful.key({ "Control", "Mod1" }, "y", function () awful.util.spawn("mpc next")   end),
-	awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("mpc prev")   end),
+    -- MPD control
+    awful.key({ "Control", "Mod1" }, "p", function () awful.util.spawn("mpc toggle") end),
+    awful.key({ "Control", "Mod1" }, "s", function () awful.util.spawn("mpc stop")   end),
+    awful.key({ "Control", "Mod1" }, "y", function () awful.util.spawn("mpc next")   end),
+    awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("mpc prev")   end),
 
     -- Prompt
     awful.key({ modkey }, "F1", function () mypromptbox[mouse.screen]:run() end),
@@ -320,15 +320,15 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "k",      function (c) c.minimized = not c.minimized    end),
     awful.key({ modkey, "Shift"   }, "k",
-   	function ()
-	    for _, ttag in pairs(awful.tag.selectedlist(mouse.screen)) do
-		for _, tclient in pairs(ttag:clients()) do
-		    if tclient.minimized then
-			tclient.minimized = false
-			client.focus = tclient
-		    end
-	        end
-	    end
+    function ()
+        for _, ttag in pairs(awful.tag.selectedlist(mouse.screen)) do
+        for _, tclient in pairs(ttag:clients()) do
+            if tclient.minimized then
+            tclient.minimized = false
+            client.focus = tclient
+            end
+            end
+        end
         end),
     awful.key({ modkey,           }, "m",
         function (c)
@@ -418,7 +418,7 @@ client.add_signal("manage", function (c, startup)
     if not startup then
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.
-	awful.client.setslave(c)
+    awful.client.setslave(c)
 
         -- Put windows in a smart way, only if they does not set an initial position.
         if not c.size_hints.user_position and not c.size_hints.program_position then
