@@ -353,6 +353,11 @@ let g:TextileOS="Linux"
 let g:TextileBrowser="/usr/bin/firefox"
 
 " }}}
+" {{{ rspec
+
+let g:rspec_command = "!bundle exec rspec -c {spec}"
+
+" }}}
 
 " }}}
 " {{{ Autocommands
