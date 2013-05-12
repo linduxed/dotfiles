@@ -202,10 +202,6 @@ set wildignore+=*.pyc                            " Python byte code
 
 set wildignore+=*.orig                           " Merge resolution files
 
-" Clojure/Leiningen
-set wildignore+=classes
-set wildignore+=lib
-
 " }}}
 " {{{ viminfo
 
