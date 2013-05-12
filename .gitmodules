@@ -148,9 +148,6 @@
 [submodule ".vim/bundle/vim-ruby"]
 	path = .vim/bundle/vim-ruby
 	url = https://github.com/linduxed/vim-ruby
-[submodule ".vim/bundle/buffet"]
-	path = .vim/bundle/buffet
-	url = https://github.com/sandeepcr529/Buffet.vim
 [submodule ".vim/bundle/scratch"]
 	path = .vim/bundle/scratch
 	url = https://github.com/vim-scripts/scratch.vim
