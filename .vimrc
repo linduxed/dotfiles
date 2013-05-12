@@ -500,8 +500,8 @@ vmap > >gv
 " {{{ Function keys
 
 nmap <F1> :buffer #<CR>
-" F2: not bound.
-nmap <F3> :CtrlPBuffer<CR>
+nmap <F2> :CtrlPBuffer<CR>
+nmap <F3> :CtrlPTag<CR>
 nmap <F4> :CtrlPRoot<CR>
 nmap <F5> :CtrlPMRU<CR>
 nnoremap <F6> :GundoToggle<CR>
