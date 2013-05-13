@@ -202,7 +202,7 @@ for s = 1, screen.count() do
     dbus.add_signal("ru.gentoo.kbdd", function(...)
         local data = {...}
         local layout = data[2]
-        lts = {[0] = "ColE", [1] = "ColS", [2] = "Swe"}
+        lts = {[0] = "ColE", [1] = "ColS", [2] = "US"}
         kbdwidget.text = "" .. colgre .. lts[layout] .. coldef
         end
     )
@@ -303,7 +303,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/bin/bg_random_switch.sh")      end),
 
     -- Keyboard layouts fix
-    awful.key({ modkey }, "F7", function () awful.util.spawn('setxkbmap -layout "us,us,se" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp') end),
+    awful.key({ modkey }, "F7", function () awful.util.spawn('setxkbmap -layout "us,us,us" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp') end),
 
     -- Lock screen
     awful.key({ modkey }, "F6", function () awful.util.spawn("xscreensaver-command -lock") end),

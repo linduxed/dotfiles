@@ -7,7 +7,7 @@ fi
 
 # Set layouts and fix for Xorg's disabling of CAB.
 # Layout switching with ScrollLock.
-setxkbmap -layout "us,us,se" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp &
+setxkbmap -layout "us,us,us" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp &
 
 # Enables repeat for the CapsLock button (Colemak Backspace).
 xset r 66 &
