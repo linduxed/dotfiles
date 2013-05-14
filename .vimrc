@@ -463,7 +463,13 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <silent> <Leader>wk :call <SID>StripTrailingWhitespaces()<CR>
+
+" }}}
+" {{{ Highlight whitespace
+
+nnoremap <silent> <Leader>we :highlight ExtraWhitespace ctermbg=red guibg=red<CR>
+nnoremap <silent> <Leader>wd :highlight ExtraWhitespace ctermbg=none guibg=none<CR>
 
 " }}}
 " {{{ Visual Mode */# from Scrooloose
