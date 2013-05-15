@@ -4,10 +4,10 @@ action=$1
 shift
 
 [ "$action" = "usage" ] && {
-	echo " Add and prioritize A:"
+	echo " Add and do:"
 	curcmd=`basename $0`
-	echo " $curcmd \"THING I NEED TO DO +project @context\""
-	echo " Add an item and prioritize it A in one step"
+	echo " $curcmd \"THING I DID +project @context\""
+	echo " Add an item and mark it as done in one step"
 	echo ""
 	exit
 }
@@ -16,5 +16,5 @@ if "$TODO_SH" command add "$@"; then
 	# figure out the line of what we just added, and prioritize it A
 	line=`sed -n '$ =' "$TODO_FILE"`
 	echo "$line"
-	"$TODO_SH" command pri "$line" A
+	"$TODO_SH" command do "$line"
 fi
