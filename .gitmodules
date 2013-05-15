@@ -178,6 +178,3 @@
 [submodule ".vim/bundle/rspec"]
 	path = .vim/bundle/rspec
 	url = https://github.com/thoughtbot/vim-rspec
-[submodule ".vim/bundle/todo.txt"]
-	path = .vim/bundle/todo.txt
-	url = https://github.com/freitass/todo.txt-vim
