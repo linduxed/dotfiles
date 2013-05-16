@@ -26,16 +26,16 @@ zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 # SHORTHOST is set in ~/.zshrc.
 case $SHORTHOST in
 	freke)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'dpkg' 'git' 'gnu-utility' 'ruby' 'tmux' 'rails' 'rsync' 'fasd' 'haskell'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'dpkg' 'git' 'gnu-utility' 'tmux' 'ruby' 'rails' 'rsync' 'fasd' 'haskell'
 		;;
 	hugin)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd' 'haskell' 'todo'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rsync' 'ruby' 'rails' 'fasd' 'haskell' 'todo'
 		;;
 	korp)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rsync' 'ruby' 'rails' 'fasd'
 		;;
 	munin)
-		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rails' 'rsync' 'ruby' 'fasd'
+		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rsync' 'ruby' 'rails' 'fasd'
 		;;
 	travelmate)
 		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'dpkg' 'rsync'
