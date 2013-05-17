@@ -175,6 +175,3 @@
 [submodule ".vim/bundle/rspec"]
 	path = .vim/bundle/rspec
 	url = https://github.com/thoughtbot/vim-rspec
-[submodule ".vim/bundle/magictags"]
-	path = .vim/bundle/magictags
-	url = git@github.com:linduxed/vim-magictags.git
