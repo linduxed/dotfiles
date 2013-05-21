@@ -96,6 +96,7 @@ set undofile                    " Persistent undos between sessions.
 set gdefault                    " When searching, use the 'g' flag all the time.
 set iskeyword+=-                " Make keyword completion work across hyphens.
 set history=50                  " How many ':' commands should be saved.
+set dictionary=spell            " Use the spelling dictionary as the completion dictionary.
 set splitbelow                  " When doing horizontal splits, split panes downward.
 set splitright                  " When doing vertical splits, split panes to the right.
 if exists('+colorcolumn')
@@ -432,7 +433,8 @@ autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType ruby compiler ruby
 autocmd FileType ruby setlocal et sw=2 sts=2
 autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
-autocmd FileType gitcommit setlocal spell tw=72
+autocmd FileType gitcommit setlocal spell tw=72 complete+=k
+autocmd FileType markdown setlocal spell complete+=k
 autocmd FileType vim setlocal tw=0
 if exists('+colorcolumn')
 	autocmd FileType vim setlocal colorcolumn=0
