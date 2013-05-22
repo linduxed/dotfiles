@@ -97,7 +97,6 @@ set gdefault                    " When searching, use the 'g' flag all the time.
 set iskeyword+=-                " Make keyword completion work across hyphens.
 set history=50                  " How many ':' commands should be saved.
 set dictionary=spell            " Use the spelling dictionary as the completion dictionary.
-set splitbelow                  " When doing horizontal splits, split panes downward.
 set splitright                  " When doing vertical splits, split panes to the right.
 if exists('+colorcolumn')
 	set colorcolumn=+1          " Display a column, one column after the text width.
