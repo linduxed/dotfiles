@@ -361,6 +361,13 @@ let g:TextileBrowser="/usr/bin/firefox"
 let g:rspec_command = "!bundle exec rspec -c {spec}"
 
 " }}}
+" {{{ Solarized colorscheme
+
+if !has('gui_running')
+	let g:solarized_termcolors=256
+endif
+
+" }}}
 
 " }}}
 " {{{ Autocommands

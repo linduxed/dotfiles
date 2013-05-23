@@ -178,3 +178,6 @@
 [submodule ".vim/bundle/rspec"]
 	path = .vim/bundle/rspec
 	url = https://github.com/thoughtbot/vim-rspec
+[submodule ".vim/bundle/solarized"]
+	path = .vim/bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized
