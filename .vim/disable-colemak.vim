@@ -109,6 +109,7 @@ ounmap p
 nunmap P
 xunmap P
 ounmap P
+nunmap dt
 nunmap Q
 nunmap gs
 xunmap gs

@@ -107,6 +107,9 @@ nnoremap K N|xnoremap K N|onoremap K N|
 nnoremap p t|xnoremap p t|onoremap p t|
 nnoremap P T|xnoremap P T|onoremap P T|
 
+" Fix diffput (t for 'transfer')
+nnoremap dt dp
+
 " Macros (replay the macro recorded by qq)
 nnoremap Q @q|
 
