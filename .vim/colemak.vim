@@ -41,11 +41,11 @@ vnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
 vnoremap <silent> <expr> <S-PageUp> (winheight(0)-1) . "\<C-u>"
 vnoremap <silent> <expr> <S-PageDown> (winheight(0)-1) . "\<C-d>"
 
-" Half page up/down
-nnoremap <silent> <expr> <C-u> (winheight(0)/2) . "\<C-u>"
-nnoremap <silent> <expr> <C-e> (winheight(0)/2) . "\<C-d>"
-vnoremap <silent> <expr> <C-u> (winheight(0)/2) . "\<C-u>"
-vnoremap <silent> <expr> <C-e> (winheight(0)/2) . "\<C-d>"
+" Jumplist navigation
+nnoremap <C-u> <C-i>
+nnoremap <C-e> <C-o>
+vnoremap <C-u> <C-i>
+vnoremap <C-e> <C-o>
 
 " Words forwards/backwards
 nnoremap l b|xnoremap l b|onoremap l b|
