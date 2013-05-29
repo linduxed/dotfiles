@@ -67,6 +67,17 @@ endfunction
 command! ClearRegisters call ClearRegisters()
 
 " }}}
+" {{{ Theme switching
+
+function! Light()
+	set background="light"
+	colorscheme solarized
+endfunction
+
+command! Light call Light()
+command! Dark colorscheme linduxed
+
+" }}}
 
 " }}}
 " {{{ Options
