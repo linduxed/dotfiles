@@ -167,9 +167,9 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " Only show cursorline in the current window and in normal mode.
 
 augroup cline
-    au!
-    au WinLeave,InsertEnter * set nocursorline
-    au WinEnter,InsertLeave * set cursorline
+	au!
+	au WinLeave,InsertEnter * set nocursorline
+	au WinEnter,InsertLeave * set cursorline
 augroup END
 
 " }}}
@@ -177,24 +177,24 @@ augroup END
 
 set foldtext=CustomFoldText()
 fu! CustomFoldText()
-    "get first non-blank line
-    let fs = v:foldstart
-    while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
-    endwhile
-    if fs > v:foldend
-        let line = getline(v:foldstart)
-    else
-        let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
-    endif
+	"get first non-blank line
+	let fs = v:foldstart
+	while getline(fs) =~ '^\s*$' | let fs = nextnonblank(fs + 1)
+	endwhile
+	if fs > v:foldend
+		let line = getline(v:foldstart)
+	else
+		let line = substitute(getline(fs), '\t', repeat(' ', &tabstop), 'g')
+	endif
 
-    let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
-    let foldSize = 1 + v:foldend - v:foldstart
-    let foldSizeStr = " " . foldSize . " lines "
-    let foldLevelStr = repeat("+--", v:foldlevel)
-    let lineCount = line("$")
-    let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
-    let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
-    return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+	let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+	let foldSize = 1 + v:foldend - v:foldstart
+	let foldSizeStr = " " . foldSize . " lines "
+	let foldLevelStr = repeat("+--", v:foldlevel)
+	let lineCount = line("$")
+	let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
+	let expansionString = repeat(".", w - strwidth(foldSizeStr.line.foldLevelStr.foldPercentage))
+	return line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
 endf
 
 " }}}
@@ -240,13 +240,13 @@ set directory=~/.vim/tmp/swap//   " swap files
 
 " Make those folders automatically if they don't already exist.
 if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
+	call mkdir(expand(&undodir), "p")
 endif
 if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
+	call mkdir(expand(&backupdir), "p")
 endif
 if !isdirectory(expand(&directory))
-    call mkdir(expand(&directory), "p")
+	call mkdir(expand(&directory), "p")
 endif
 
 " }}}
@@ -266,22 +266,22 @@ autocmd Syntax * if &ft != "haskell" | exec "RainbowParenthesesLoadBraces" | end
 " Basically the defaults without the 'black' entry (poor visibility).
 " Order has been moved around so that each step has more contrast.
 let g:rbpt_colorpairs = [
-    \ ['blue',        'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['brown',       'RoyalBlue3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['blue',        'firebrick3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+	\ ['blue',        'SeaGreen3'],
+	\ ['darkgray',    'DarkOrchid3'],
+	\ ['darkgreen',   'firebrick3'],
+	\ ['brown',       'RoyalBlue3'],
+	\ ['darkcyan',    'RoyalBlue3'],
+	\ ['darkred',     'SeaGreen3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['brown',       'firebrick3'],
+	\ ['darkcyan',    'SeaGreen3'],
+	\ ['gray',        'RoyalBlue3'],
+	\ ['darkgreen',   'RoyalBlue3'],
+	\ ['blue',        'firebrick3'],
+	\ ['darkmagenta', 'DarkOrchid3'],
+	\ ['darkred',     'DarkOrchid3'],
+	\ ['red',         'firebrick3'],
+	\ ]
 " For the colours to loop properly, rbpt_max needs to equal the length
 " of rbpt_colorpairs.
 let g:rbpt_max = 15
@@ -318,8 +318,8 @@ let NERDTreeQuitOnOpen=1
 let NERDSpaceDelims = 1 " Add spaces around the comment signs for all languages
 " Since Alt style is not implemented at the moment, use custom delimiters instead.
 let g:NERDCustomDelimiters = {
-    \ 'haskell': { 'leftAlt': '{-','rightAlt': '-}', 'left': '--', 'right': '' },
-    \ 'c': { 'leftAlt': '/*','rightAlt': '*/', 'left': '//', 'right': '' },
+	\ 'haskell': { 'leftAlt': '{-','rightAlt': '-}', 'left': '--', 'right': '' },
+	\ 'c': { 'leftAlt': '/*','rightAlt': '*/', 'left': '//', 'right': '' },
 \ }
 
 " }}}
@@ -389,39 +389,39 @@ endif
 " {{{ Restore cursor position
 
 function! ResCur()
-  if line("'\"") <= line("$")
-    normal! g`"
-    return 1
-  endif
+	if line("'\"") <= line("$")
+		normal! g`"
+		return 1
+	endif
 endfunction
 " Open fold if cursor is restored inside a fold.
 if has("folding")
-  function! UnfoldCur()
-    if !&foldenable
-      return
-    endif
-    let cl = line(".")
-    if cl <= 1
-      return
-    endif
-    let cf  = foldlevel(cl)
-    let uf  = foldlevel(cl - 1)
-    let min = (cf > uf ? uf : cf)
-    if min
-      execute "normal!" min . "zo"
-      return 1
-    endif
-  endfunction
+	function! UnfoldCur()
+		if !&foldenable
+			return
+		endif
+		let cl = line(".")
+		if cl <= 1
+			return
+		endif
+		let cf  = foldlevel(cl)
+		let uf  = foldlevel(cl - 1)
+		let min = (cf > uf ? uf : cf)
+		if min
+			execute "normal!" min . "zo"
+			return 1
+		endif
+	endfunction
 endif
 
 " Initiate cursor restoration.
 augroup resCur
-  autocmd!
-  if has("folding")
-    autocmd BufWinEnter * if ResCur() | call UnfoldCur() | endif
-  else
-    autocmd BufWinEnter * call ResCur()
-  endif
+	autocmd!
+	if has("folding")
+		autocmd BufWinEnter * if ResCur() | call UnfoldCur() | endif
+	else
+		autocmd BufWinEnter * call ResCur()
+	endif
 augroup END
 
 " }}}
@@ -474,15 +474,15 @@ autocmd InsertLeave * set nopaste
 " {{{ Trailing whitespace
 
 function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
+	" Preparation: save last search, and cursor position.
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	" Do the business:
+	%s/\s\+$//e
+	" Clean up: restore previous search history, and cursor position
+	let @/=_s
+	call cursor(l, c)
 endfunction
 
 nnoremap <silent> <Leader>wk :call <SID>StripTrailingWhitespaces()<CR>
@@ -497,10 +497,10 @@ nnoremap <silent> <Leader>wd :highlight ExtraWhitespace ctermbg=none guibg=none<
 " {{{ Visual Mode */# from Scrooloose
 
 function! s:VSetSearch()
-  let temp = @@
-  norm! gvy
-  let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-  let @@ = temp
+	let temp = @@
+	norm! gvy
+	let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+	let @@ = temp
 endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
@@ -641,34 +641,34 @@ let g:NERDTreeMapUpdirKeepOpen = 'L'
 " {{{ CTRL-P
 
 let g:ctrlp_prompt_mappings = {
-    \ 'PrtBS()':              ['<bs>'],
-    \ 'PrtDelete()':          ['<del>'],
-    \ 'PrtDeleteWord()':      ['<c-w>'],
-    \ 'PrtClear()':           ['<c-k>'],
-    \ 'PrtSelectMove("j")':   ['<c-e>', '<down>'],
-    \ 'PrtSelectMove("k")':   ['<c-u>', '<up>'],
-    \ 'PrtHistory(-1)':       ['<c-j>'],
-    \ 'PrtHistory(1)':        ['<c-h>'],
-    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
-    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
-    \ 'AcceptSelection("t")': ['<c-t>', '<MiddleMouse>'],
-    \ 'AcceptSelection("v")': ['<c-v>', '<c-q>', '<RightMouse>'],
-    \ 'ToggleFocus()':        ['<tab>'],
-    \ 'ToggleRegex()':        ['<c-r>'],
-    \ 'ToggleByFname()':      ['<c-d>'],
-    \ 'ToggleType(1)':        ['<c-f>', '<c-up'],
-    \ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
-    \ 'PrtCurStart()':        ['<c-l>'],
-    \ 'PrtCurEnd()':          ['<c-y>'],
-    \ 'PrtCurLeft()':         ['<c-n>', '<left>'],
-    \ 'PrtCurRight()':        ['<c-i>', '<right>'],
-    \ 'PrtClearCache()':      ['<F5>'],
-    \ 'PrtDeleteMRU()':       ['<F7>'],
-    \ 'CreateNewFile()':      ['<c-g>'],
-    \ 'MarkToOpen()':         ['<c-z>'],
-    \ 'OpenMulti()':          ['<c-o>'],
-    \ 'PrtExit()':            ['<esc>', '<c-c>'],
-    \ }
+	\ 'PrtBS()':              ['<bs>'],
+	\ 'PrtDelete()':          ['<del>'],
+	\ 'PrtDeleteWord()':      ['<c-w>'],
+	\ 'PrtClear()':           ['<c-k>'],
+	\ 'PrtSelectMove("j")':   ['<c-e>', '<down>'],
+	\ 'PrtSelectMove("k")':   ['<c-u>', '<up>'],
+	\ 'PrtHistory(-1)':       ['<c-j>'],
+	\ 'PrtHistory(1)':        ['<c-h>'],
+	\ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
+	\ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
+	\ 'AcceptSelection("t")': ['<c-t>', '<MiddleMouse>'],
+	\ 'AcceptSelection("v")': ['<c-v>', '<c-q>', '<RightMouse>'],
+	\ 'ToggleFocus()':        ['<tab>'],
+	\ 'ToggleRegex()':        ['<c-r>'],
+	\ 'ToggleByFname()':      ['<c-d>'],
+	\ 'ToggleType(1)':        ['<c-f>', '<c-up'],
+	\ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
+	\ 'PrtCurStart()':        ['<c-l>'],
+	\ 'PrtCurEnd()':          ['<c-y>'],
+	\ 'PrtCurLeft()':         ['<c-n>', '<left>'],
+	\ 'PrtCurRight()':        ['<c-i>', '<right>'],
+	\ 'PrtClearCache()':      ['<F5>'],
+	\ 'PrtDeleteMRU()':       ['<F7>'],
+	\ 'CreateNewFile()':      ['<c-g>'],
+	\ 'MarkToOpen()':         ['<c-z>'],
+	\ 'OpenMulti()':          ['<c-o>'],
+	\ 'PrtExit()':            ['<esc>', '<c-c>'],
+	\ }
 
 " }}}
 " {{{ snipMate
