@@ -11,7 +11,7 @@ toLower() {
 
 SYSTEM=`uname -s`
 SYSTEM=`toLower $SYSTEM`
-SHORTHOST=`hostname -s`
+SHORTHOST=`uname -n`
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
