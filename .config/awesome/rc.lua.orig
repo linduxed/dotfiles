@@ -309,9 +309,9 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "F2", function () awful.layout.inc(layouts, -1) end),
 
     -- Volume
-    awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh mute") end),
-    awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh down") end),
-    awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh up")   end),
+    awful.key({ modkey }, "F10", function () awful.util.spawn("/usr/bin/mute_toggle") end),
+    awful.key({ modkey }, "F11", function () awful.util.spawn("/usr/bin/vol_down") end),
+    awful.key({ modkey }, "F12", function () awful.util.spawn("/usr/bin/vol_up")   end),
 
     -- Background switching
     awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/bin/dual_bg_random_switch.sh") end),
