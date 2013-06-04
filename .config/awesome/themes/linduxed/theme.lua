@@ -1,4 +1,3 @@
-local awful = require("awful")
 config_dir = awful.util.getdir("config")
 
 theme = {}
@@ -9,20 +8,19 @@ theme.bg_normal     = "#111111"
 theme.bg_focus      = "#333c63"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
 
 theme.fg_normal     = "#aaaaaa"
 theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 
-theme.border_width  = 2
+theme.border_width  = "2"
 theme.border_normal = "#000000"
 theme.border_focus  = "#535d6c"
 theme.border_marked = "#91231c"
 
 -- There are other variable sets
--- overriding the default one when
+-- overriding the deefault one when
 -- defined, the sets are:
 -- [taglist|tasklist]_[bg|fg]_[focus|urgent]
 -- titlebar_[bg|fg]_[normal|focus]
@@ -41,8 +39,8 @@ theme.tasklist_floating_icon = config_dir .. "/themes/linduxed/tasklist/floating
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
 theme.menu_submenu_icon = config_dir .. "/themes/linduxed/submenu.png"
-theme.menu_height = 15
-theme.menu_width  = 100
+theme.menu_height = "15"
+theme.menu_width  = "100"
 
 -- You can add as many variables as
 -- you wish and access them by using
@@ -70,7 +68,7 @@ theme.titlebar_maximized_button_normal_active = config_dir .. "/themes/linduxed/
 theme.titlebar_maximized_button_focus_active  = config_dir .. "/themes/linduxed/titlebar/maximized_focus_active.png"
 
 -- You can use your own command to set your wallpaper
-theme.wallpaper = config_dir .. "/themes/linduxed/background.png"
+theme.wallpaper_cmd = { "awsetbg " .. config_dir .. "/themes/linduxed/background.png" }
 
 -- Layout icons:
 theme.layout_fairh = config_dir .. "/themes/linduxed/layouts/fairhw.png"
@@ -88,9 +86,5 @@ theme.layout_dwindle = config_dir .. "/themes/linduxed/layouts/dwindlew.png"
 
 theme.awesome_icon = config_dir .. "/icons/awesome16.png"
 
--- Define the icon theme for application icons. If not set then the icons
--- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
-
 return theme
--- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
+-- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80
