@@ -118,7 +118,6 @@ set formatoptions=qrn1t         " Check :help fo-table.
 set nojoinspaces                " No double spaces after ./!/? when lines are joined.
 set textwidth=79                " Wrap on set column.
 set undofile                    " Persistent undos between sessions.
-set gdefault                    " When searching, use the 'g' flag all the time.
 set iskeyword+=-                " Make keyword completion work across hyphens.
 set history=50                  " How many ':' commands should be saved.
 set dictionary=spell            " Use the spelling dictionary as the completion dictionary.
