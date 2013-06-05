@@ -438,8 +438,8 @@ augroup END
 " {{{ Suffix dependant autocommands
 
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
-autocmd BufNewFile,BufRead *.html setlocal et tw=0
-autocmd BufNewFile,BufRead *.erb setlocal et
+autocmd BufNewFile,BufRead *.html setlocal et tw=0 sw=2 sts=2
+autocmd BufNewFile,BufRead *.erb setlocal et sw=2 sts=2
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.eml setlocal tw=72
 autocmd BufNewFile,BufRead *.hs setlocal et sts=0
