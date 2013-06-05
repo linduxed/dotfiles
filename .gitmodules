@@ -184,3 +184,6 @@
 [submodule ".vim/bundle/syntaxcomplete"]
 	path = .vim/bundle/syntaxcomplete
 	url = https://github.com/vim-scripts/SyntaxComplete
+[submodule ".vim/bundle/matchit"]
+	path = .vim/bundle/matchit
+	url = https://github.com/vim-scripts/matchit.zip
