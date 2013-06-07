@@ -548,18 +548,18 @@ vmap > >gv
 " }}}
 " {{{ Function keys
 
-nmap <F1> :buffer #<CR>
-nmap <F2> :CtrlPBuffer<CR>
-nmap <F3> :CtrlPTag<CR>
-nmap <F4> :CtrlPRoot<CR>
-nmap <F5> :CtrlPMRU<CR>
+nnoremap <F1> :buffer #<CR>
+nnoremap <F2> :CtrlPBuffer<CR>
+nnoremap <F3> :CtrlPTag<CR>
+nnoremap <F4> :CtrlPRoot<CR>
+nnoremap <F5> :CtrlPMRU<CR>
 nnoremap <F6> :GundoToggle<CR>
 " F7: not bound.
-nmap <F8> :set list!<CR>
-nmap <F9> :make<CR>
+nnoremap <F8> :set list!<CR>
+nnoremap <F9> :make<CR>
 " F10: not bound.
-nmap <F11> :TagbarToggle<CR>
-nmap <F12> :NERDTree<CR>
+nnoremap <F11> :TagbarToggle<CR>
+nnoremap <F12> :NERDTree<CR>
 
 
 " }}}
