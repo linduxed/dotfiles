@@ -1,7 +1,7 @@
 [roxterm profile]
 visible_bell=0
 background_type=2
-saturation=0.168168
+saturation=0.081818
 scrollbar_pos=0
 scrollback_lines=2000
 disable_menu_access=1
@@ -15,4 +15,4 @@ always_show_tabs=0
 show_resize_grip=0
 font=Inconsolata 11
 scroll_on_keystroke=1
-colour_scheme=GTK
+colour_scheme=solarized-light
