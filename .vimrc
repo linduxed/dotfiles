@@ -311,6 +311,7 @@ let g:ctrlp_max_height = 25
 let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp-cache'
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_open_multi = '2v'
+let g:ctrlp_custom_ignore = { 'dir': 'tmp' }
 
 " }}}
 " {{{ snipMate
