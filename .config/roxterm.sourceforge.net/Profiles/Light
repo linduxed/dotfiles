@@ -15,4 +15,4 @@ always_show_tabs=0
 show_resize_grip=0
 font=Inconsolata 11
 scroll_on_keystroke=1
-colour_scheme=solarized-light
+colour_scheme=Light
