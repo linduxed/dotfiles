@@ -391,6 +391,13 @@ let g:rspec_command = "!bundle exec rspec -c {spec}"
 if !has('gui_running')
 	let g:solarized_termcolors=256
 endif
+let g:solarized_termtrans  = 0
+let g:solarized_degrade    = 0
+let g:solarized_bold       = 1
+let g:solarized_underline  = 1
+let g:solarized_italic     = 1
+let g:solarized_contrast   = "normal"
+let g:solarized_visibility = "normal"
 
 " }}}
 
