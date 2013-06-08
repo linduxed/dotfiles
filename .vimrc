@@ -70,12 +70,19 @@ command! ClearRegisters call ClearRegisters()
 " {{{ Theme switching
 
 function! Light()
-	set background="light"
+	let g:solarized_termtrans = 0
+	set background=light
 	colorscheme solarized
 endfunction
 
+function! Dark()
+	let g:solarized_termtrans = 1
+	set background=dark
+	colorscheme solar_linduxed
+endfunction
+
 command! Light call Light()
-command! Dark colorscheme linduxed
+command! Dark  call Dark()
 
 " }}}
 
