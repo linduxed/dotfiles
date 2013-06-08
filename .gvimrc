@@ -1,4 +1,4 @@
-colorscheme vividchalk
+colorscheme solar_linduxed
 
 " Remove menu bar, toolbar and right-hand scroll bar.
 set guioptions-=m

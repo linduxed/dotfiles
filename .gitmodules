@@ -187,3 +187,6 @@
 [submodule ".vim/bundle/matchit"]
 	path = .vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip
+[submodule ".vim/bundle/solar_linduxed"]
+	path = .vim/bundle/solar_linduxed
+	url = https://github.com/linduxed/vim-colors-solarized.git

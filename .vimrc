@@ -82,10 +82,29 @@ command! Dark colorscheme linduxed
 " }}}
 " {{{ Options
 
+" {{{ Colorscheme
+
+syntax on
+set background=dark
+
+if !has('gui_running')
+	set t_Co=256
+	let g:solarized_termcolors=256
+endif
+
+let g:solarized_termtrans  = 1
+let g:solarized_degrade    = 0
+let g:solarized_bold       = 1
+let g:solarized_underline  = 1
+let g:solarized_italic     = 1
+let g:solarized_contrast   = "normal"
+let g:solarized_visibility = "normal"
+
+colorscheme solar_linduxed
+
+" }}}
 " {{{ Miscellaneous
 
-syntax on                       " Enable syntax highlighting.
-colorscheme linduxed            " Use my theme.
 set nostartofline               " Keep cursor in the same column if possible.
 set whichwrap=b,s,[,],<,>,h,l   " Allow cursor to wrap between lines.
 set virtualedit=block           " Allow virtual editing in Visual block mode.
@@ -373,6 +392,8 @@ let g:easytags_dynamic_files = 2
 " {{{ Indent guides
 
 let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermfg=none ctermbg=234 cterm=none
+hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
 
 " }}}
 " {{{ Textile
@@ -384,20 +405,6 @@ let g:TextileBrowser="/usr/bin/firefox"
 " {{{ rspec
 
 let g:rspec_command = "!bundle exec rspec -c {spec}"
-
-" }}}
-" {{{ Solarized colorscheme
-
-if !has('gui_running')
-	let g:solarized_termcolors=256
-endif
-let g:solarized_termtrans  = 0
-let g:solarized_degrade    = 0
-let g:solarized_bold       = 1
-let g:solarized_underline  = 1
-let g:solarized_italic     = 1
-let g:solarized_contrast   = "normal"
-let g:solarized_visibility = "normal"
 
 " }}}
 
