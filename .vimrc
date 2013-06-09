@@ -584,17 +584,6 @@ nnoremap <F12> :NERDTree<CR>
 
 
 " }}}
-" {{{ Help file navigation
-
-" Use < and > to navigate in the help file
-au FileType help nnoremap <buffer> < <C-t>|
-au FileType help nnoremap <buffer> > <C-]>|
-au FileType help nnoremap <buffer> <CR> <C-]>|
-au FileType help nnoremap <buffer> <Backspace> <C-t>|
-au FileType help nnoremap <buffer> <silent> <expr> <Space> (winheight(0)-1) . "\<C-d>0"|
-au FileType help nnoremap <buffer> <silent> <expr> <S-Space> (winheight(0)-1) . "\<C-u>0"|"
-
-" }}}
 " {{{ Completion menu
 
 "Tip #1386, Make Vim completion popup menu work just like in an IDE
@@ -611,6 +600,12 @@ inoremap <Tab> <Esc>|
 nnoremap <S-Tab> i<Tab><Esc><Right>
 vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
+
+" Help file navigation
+au FileType help nnoremap <buffer> < <C-t>|
+au FileType help nnoremap <buffer> > <C-]>|
+au FileType help nnoremap <buffer> <CR> <C-]>|
+au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
 " Inserting spaces
 nnoremap <Space> i<Space><Esc><Right>|
