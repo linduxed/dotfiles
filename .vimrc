@@ -622,7 +622,7 @@ cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
 " Easier linewise reselection
-nnoremap <leader>V V`]
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
