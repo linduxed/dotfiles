@@ -621,7 +621,7 @@ nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
 
-" Easier linewise reselection
+" Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Keep the cursor in place while joining lines
