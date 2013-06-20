@@ -72,7 +72,7 @@ command! ClearRegisters call ClearRegisters()
 function! Light()
 	let g:solarized_termtrans = 0
 	set background=light
-	colorscheme solarized
+	colorscheme solar_linduxed
 endfunction
 
 function! Dark()
