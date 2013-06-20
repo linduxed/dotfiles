@@ -1,7 +1,7 @@
 [roxterm profile]
 visible_bell=0
 background_type=2
-saturation=0.168168
+saturation=0.048485
 scrollbar_pos=0
 scrollback_lines=2000
 disable_menu_access=1
