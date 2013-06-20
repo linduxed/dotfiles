@@ -493,6 +493,7 @@ autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
 autocmd FileType ruby compiler ruby
 autocmd FileType ruby setlocal foldmethod=indent
 autocmd FileType ruby setlocal foldlevel=1
+autocmd FileType ruby IndentGuidesEnable
 autocmd FileType ruby setlocal et sw=2 sts=2
 autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
 autocmd FileType gitcommit setlocal spell tw=72 complete+=k
