@@ -58,10 +58,12 @@ nnoremap <C-y> W|vnoremap <C-y> W|onoremap <C-y> W|
 nnoremap <silent> N ge|xnoremap <silent> N ge|onoremap N ge|
 nnoremap <silent> I e|xnoremap <silent> I e|onoremap I e|
 
-" inneR text objects
-" e.g. dip (delete inner paragraph) is now drp
+" Text objects
+" diw is drw. daw is now dtw.
 onoremap r i
 vnoremap r i
+onoremap t a
+vnoremap t a
 " Move visual replace from 'r' to 'R'
 onoremap R r
 vnoremap R r

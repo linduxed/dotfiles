@@ -58,6 +58,8 @@ xunmap I
 ounmap I
 ounmap r
 vunmap r
+ounmap t
+vunmap t
 ounmap R
 vunmap R
 nunmap b
