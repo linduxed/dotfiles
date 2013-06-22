@@ -419,6 +419,16 @@ let g:TextileBrowser="/usr/bin/firefox"
 let g:rspec_command = "!bundle exec rspec -c {spec}"
 
 " }}}
+" {{{ Text objects
+
+" Default bindings disabled for remapping to colemak bindings.
+let g:textobj_rubyblock_no_default_key_mappings = 1
+let g:textobj_indent_no_default_key_mappings = 1
+let g:textobj_space_no_default_key_mappings = 1
+let g:textobj_underscore_no_default_key_mappings = 1
+let g:textobj_url_no_default_key_mappings = 1
+
+" }}}
 
 " }}}
 " {{{ Autocommands
@@ -738,6 +748,30 @@ nmap <Leader>st :call RunCurrentSpecFile()<CR>
 nmap <Leader>sr :call RunNearestSpec()<CR>
 nmap <Leader>ss :call RunLastSpec()<CR>
 
+" }}}
+" {{{ Text objects
+
+" Bindings adjusted to work with colemak.vim.
+xmap tr <Plug>(textobj-rubyblock-a)
+omap tr <Plug>(textobj-rubyblock-a)
+xmap rr <Plug>(textobj-rubyblock-i)
+omap rr <Plug>(textobj-rubyblock-i)
+xmap ti <Plug>(textobj-indent-a)
+omap ti <Plug>(textobj-indent-a)
+xmap ri <Plug>(textobj-indent-i)
+omap ri <Plug>(textobj-indent-i)
+xmap tS <Plug>(textobj-space-a)
+omap tS <Plug>(textobj-space-a)
+xmap rS <Plug>(textobj-space-i)
+omap rS <Plug>(textobj-space-i)
+xmap t_ <Plug>(textobj-underscore-a)
+omap t_ <Plug>(textobj-underscore-a)
+xmap r_ <Plug>(textobj-underscore-i)
+omap r_ <Plug>(textobj-underscore-i)
+xmap tu <Plug>(textobj-url-a)
+omap tu <Plug>(textobj-url-a)
+xmap ru <Plug>(textobj-url-i)
+omap ru <Plug>(textobj-url-i)
 
 " }}}
 
