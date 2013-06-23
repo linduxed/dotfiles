@@ -12,14 +12,19 @@ set tab-size = 8 # Number of spaces per tab
 #
 # Syntax: bind <keymap> <key> <request>
 
-bind main w scroll-line-up
-bind main s scroll-line-down
-
-bind diff a previous
-bind diff d next
-bind diff b move-first-line
-
+bind generic u move-up
+bind generic e move-down
+bind generic k find-next
+bind generic K find-prev
 bind generic g view-next
+bind generic E edit
+bind generic U status-update
+
+bind diff u scroll-line-up
+bind diff e scroll-line-down
+bind diff n previous
+bind diff i next
+bind diff b move-first-line
 
 #
 # Color configuration
@@ -59,14 +64,15 @@ color committer magenta default
 
 # Misc
 color signoff yellow default
+color graph-commit yellow default bold
 
 # UI colors
 color default default default
-color cursor white green
+color cursor white blue bold
 color status green default
 color title-blur white blue
-color title-focus white blue bold
-color main-date blue default
+color title-focus yellow blue bold
+color main-date cyan default
 color main-author green default
 color main-commit default default
 color main-delim magenta default
