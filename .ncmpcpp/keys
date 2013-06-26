@@ -30,9 +30,9 @@ key_page_down = 338 'h'
 #
 key_delete = 330 'D'
 #
-key_volume_up = 'i' 261 
+key_volume_up = 'i' 261
 #
-key_volume_down = 'n' 260 
+key_volume_down = 'n' 260
 #
 #key_toggle_space_mode = 't'
 #
