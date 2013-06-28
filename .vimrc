@@ -493,6 +493,10 @@ if exists('+colorcolumn')
 	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
 endif
 
+" Add RSpec highlighting to non-Rails projects.
+autocmd BufNewFile,BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+highlight def link rubyRspec Function
+
 " }}}
 " {{{ Filetype dependant autocommands
 
