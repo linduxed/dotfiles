@@ -494,7 +494,7 @@ if exists('+colorcolumn')
 endif
 
 " Add RSpec highlighting to non-Rails projects.
-autocmd BufNewFile,BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let
+autocmd BufNewFile,BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context let expect pending
 highlight def link rubyRspec Function
 
 " }}}
