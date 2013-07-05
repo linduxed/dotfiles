@@ -17,3 +17,4 @@ font=Inconsolata 11
 scroll_on_keystroke=1
 colour_scheme=GTK
 cursor_blink_mode=2
+cursor_shape=2
