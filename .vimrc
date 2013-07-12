@@ -117,7 +117,7 @@ set whichwrap=b,s,[,],<,>,h,l   " Allow cursor to wrap between lines.
 set virtualedit=block           " Allow virtual editing in Visual block mode.
 set lazyredraw                  " Don't redraw screen while executing macros/mappings.
 set scrolloff=5                 " Minimal number of screen lines to keep above and below the cursor.
-set sidescroll=1                " Minimal number of characters from the edge with :wrap.
+set sidescroll=1                " By how many characters should side scrolling jump with :nowrap.
 set sidescrolloff=10            " Minimal number of characters from the edge with :nowrap.
 set incsearch                   " Enable incremental search.
 set backspace=indent,eol,start  " Allow backspacing over everything in insert mode.
