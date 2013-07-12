@@ -604,7 +604,6 @@ nnoremap <F9> :make<CR>
 nnoremap <F11> :TagbarToggle<CR>
 nnoremap <F12> :NERDTree<CR>
 
-
 " }}}
 " {{{ Completion menu
 
