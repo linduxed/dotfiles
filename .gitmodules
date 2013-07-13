@@ -91,9 +91,6 @@
 [submodule ".vim/bundle/rope-vim"]
 	path = .vim/bundle/rope-vim
 	url = https://github.com/linduxed/rope-vim.git
-[submodule ".vim/bundle/auto-pairs"]
-	path = .vim/bundle/auto-pairs
-	url = https://github.com/linduxed/auto-pairs.git
 [submodule ".vim/bundle/vim-gnupg"]
 	path = .vim/bundle/vim-gnupg
 	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
