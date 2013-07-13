@@ -603,7 +603,7 @@ nnoremap <F2> :CtrlPBuffer<CR>
 nnoremap <F3> :CtrlPTag<CR>
 nnoremap <F4> :CtrlPRoot<CR>
 nnoremap <F5> :CtrlPMRU<CR>
-nnoremap <F6> :GundoToggle<CR>
+" F6: not bound.
 " F7: not bound.
 nnoremap <F8> :set list!<CR>
 nnoremap <F9> :make<CR>
@@ -663,12 +663,6 @@ nnoremap ; :|xnoremap ; :|
 " }}}
 " {{{ Plugin specific
 
-" {{{ Gundo
-
-let g:gundo_map_move_newer = "u"
-let g:gundo_map_move_older = "e"
-
-" }}}
 " {{{ EasyMotion
 
 let g:EasyMotion_mapping_f = '<Leader><Leader>f'
