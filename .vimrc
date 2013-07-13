@@ -429,6 +429,13 @@ let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
 
 " }}}
+" {{{ delimitMate
+
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+let delimitMate_jump_expansion = 1
+
+" }}}
 
 " }}}
 " {{{ Autocommands

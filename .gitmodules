@@ -202,3 +202,6 @@
 [submodule ".vim/bundle/textobj-space"]
 	path = .vim/bundle/textobj-space
 	url = https://github.com/saihoooooooo/vim-textobj-space
+[submodule ".vim/bundle/delimitMate"]
+	path = .vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
