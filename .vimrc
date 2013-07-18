@@ -520,6 +520,7 @@ autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
 autocmd FileType gitcommit setlocal spell tw=72 complete+=k
 autocmd FileType markdown setlocal spell complete+=k
 autocmd FileType vim setlocal tw=0
+autocmd FileType tex setlocal spell complete+=k
 if exists('+colorcolumn')
 	autocmd FileType vim setlocal colorcolumn=0
 endif
