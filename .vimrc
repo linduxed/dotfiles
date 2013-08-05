@@ -146,7 +146,6 @@ set textwidth=79                " Wrap on set column.
 set undofile                    " Persistent undos between sessions.
 set iskeyword+=-                " Make keyword completion work across hyphens.
 set history=50                  " How many ':' commands should be saved.
-set dictionary=spell            " Use the spelling dictionary as the completion dictionary.
 set splitright                  " When doing vertical splits, split panes to the right.
 if exists('+colorcolumn')
 	set colorcolumn=+1          " Display a column, one column after the text width.
@@ -517,10 +516,10 @@ autocmd FileType ruby setlocal foldlevel=1
 autocmd FileType ruby IndentGuidesEnable
 autocmd FileType ruby setlocal et sw=2 sts=2
 autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
-autocmd FileType gitcommit setlocal spell tw=72 complete+=k
-autocmd FileType markdown setlocal spell complete+=k
+autocmd FileType gitcommit setlocal spell tw=72 complete+=kspell
+autocmd FileType markdown setlocal spell complete+=kspell
 autocmd FileType vim setlocal tw=0
-autocmd FileType tex setlocal spell complete+=k
+autocmd FileType tex setlocal spell complete+=kspell
 if exists('+colorcolumn')
 	autocmd FileType vim setlocal colorcolumn=0
 endif
