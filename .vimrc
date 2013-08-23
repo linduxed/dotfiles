@@ -149,6 +149,7 @@ set undofile                    " Persistent undos between sessions.
 set iskeyword+=-                " Make keyword completion work across hyphens.
 set history=50                  " How many ':' commands should be saved.
 set splitright                  " When doing vertical splits, split panes to the right.
+set shiftround                  " Indent to multiples of shiftwidth with < and >.
 if exists('+colorcolumn')
 	set colorcolumn=+1          " Display a column, one column after the text width.
 endif
