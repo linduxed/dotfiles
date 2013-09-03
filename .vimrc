@@ -445,6 +445,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#hunks#enabled = 1
+let g:airline#extensions#hunks#non_zero_only = 1
 
 " }}}
 
@@ -786,6 +788,12 @@ xmap tu <Plug>(textobj-url-a)
 omap tu <Plug>(textobj-url-a)
 xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
+
+" }}}
+" {{{ signify
+
+nmap <leader>ge <plug>(signify-next-jump)
+nmap <leader>gu <plug>(signify-prev-jump)
 
 " }}}
 
