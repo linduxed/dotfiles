@@ -202,3 +202,6 @@
 [submodule ".vim/bundle/numbers"]
 	path = .vim/bundle/numbers
 	url = https://github.com/myusuf3/numbers.vim.git
+[submodule ".vim/bundle/airline"]
+	path = .vim/bundle/airline
+	url = https://github.com/bling/vim-airline.git
