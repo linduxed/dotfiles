@@ -134,6 +134,7 @@ set number
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
+set expandtab
 set hidden
 set cursorline
 set cursorcolumn
@@ -495,20 +496,20 @@ augroup END
 " {{{ Suffix dependant autocommands
 
 autocmd BufNewFile,BufRead *.html let g:ragtag_global_maps = 1
-autocmd BufNewFile,BufRead *.html setlocal et tw=0 sw=2 sts=2
-autocmd BufNewFile,BufRead *.erb setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.html setlocal tw=0 sw=2 sts=2
+autocmd BufNewFile,BufRead *.erb setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.eml setlocal tw=72
-autocmd BufNewFile,BufRead *.hs setlocal et sts=0
-autocmd BufNewFile,BufRead *.feature setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.hs setlocal sts=0
+autocmd BufNewFile,BufRead *.feature setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
-autocmd BufNewFile,BufRead *.c setlocal foldmethod=indent
+autocmd BufNewFile,BufRead *.c setlocal noet foldmethod=indent
 autocmd BufNewFile,BufRead *.txt let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.txt setlocal syntax=off tw=0
-autocmd BufNewFile,BufRead *.sass setlocal et sw=2 sts=2
-autocmd BufNewFile,BufRead *.haml setlocal et sw=2 sts=2
-autocmd BufNewFile,BufRead *.scss setlocal et sw=2 sts=2
-autocmd BufNewFile,BufRead *.coffee setlocal et sw=2 sts=2
+autocmd BufNewFile,BufRead *.sass setlocal sw=2 sts=2
+autocmd BufNewFile,BufRead *.haml setlocal sw=2 sts=2
+autocmd BufNewFile,BufRead *.scss setlocal sw=2 sts=2
+autocmd BufNewFile,BufRead *.coffee setlocal sw=2 sts=2
 if exists('+colorcolumn')
 	autocmd BufNewFile,BufRead *.txt setlocal colorcolumn=0
 endif
@@ -521,14 +522,14 @@ highlight def link rubyRspec Function
 " {{{ Filetype dependant autocommands
 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType python setlocal et
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
+autocmd FileType java setlocal noet
 autocmd FileType ruby compiler ruby
 autocmd FileType ruby setlocal foldmethod=indent
 autocmd FileType ruby setlocal foldlevel=1
 autocmd FileType ruby IndentGuidesEnable
-autocmd FileType ruby setlocal et sw=2 sts=2
+autocmd FileType ruby setlocal sw=2 sts=2
 autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
 autocmd FileType gitcommit setlocal spell tw=72 complete+=kspell
 autocmd FileType markdown setlocal spell complete+=kspell
