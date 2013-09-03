@@ -114,45 +114,45 @@ colorscheme solar_linduxed
 " }}}
 " {{{ Miscellaneous
 
-set nostartofline               " Keep cursor in the same column if possible.
-set whichwrap=b,s,[,],<,>,h,l   " Allow cursor to wrap between lines.
-set virtualedit=block           " Allow virtual editing in Visual block mode.
-set lazyredraw                  " Don't redraw screen while executing macros/mappings.
-set scrolloff=5                 " Minimal number of screen lines to keep above and below the cursor.
-set sidescroll=1                " By how many characters should side scrolling jump with :nowrap.
-set sidescrolloff=10            " Minimal number of characters from the edge with :nowrap.
-set incsearch                   " Enable incremental search.
-set backspace=indent,eol,start  " Allow backspacing over everything in insert mode.
-set winaltkeys=no               " Allow mapping of alt (meta) key shortcuts.
-set ruler                       " Show the cursor position all the time.
-set showcmd                     " Display incomplete commands.
-set hlsearch                    " Highlight search patterns.
-set ignorecase                  " Ignore case.
-set smartcase                   " Ignore case when the pattern contains lowercase letters only.
-set showtabline=1               " Show tab page labels if there is more than one tab.
-set number                      " Display line numbers.
-set shiftwidth=4                " Spaces for each step of (auto)indent
-set tabstop=4                   " Spaces that a <Tab> in the file counts for
-set softtabstop=4               " Spaces that a <Tab> counts for when editing
-set hidden                      " Allows hidden buffers
-set cursorline                  " Shows what line the cursor is on
-set cursorcolumn                " Shows what column the cursor is on
-set mouse=n                     " Allow the mouse in normal mode.
-set foldmethod=marker           " Make Vim fold with the help of markers.
-set laststatus=2                " Always show the statusline.
-set showbreak=…                 " Add an ellipsis at the start of wrapped lines.
-set wildmenu                    " Command completion menu.
-set formatoptions=qrn1t         " Check :help fo-table.
-set nojoinspaces                " No double spaces after ./!/? when lines are joined.
-set textwidth=79                " Wrap on set column.
-set undofile                    " Persistent undos between sessions.
-set iskeyword+=-                " Make keyword completion work across hyphens.
-set history=50                  " How many ':' commands should be saved.
-set splitright                  " When doing vertical splits, split panes to the right.
-set shiftround                  " Indent to multiples of shiftwidth with < and >.
-set autoread                    " Automatically reload a file that has changed outside of Vim.
+set nostartofline
+set whichwrap=b,s,[,],<,>,h,l
+set virtualedit=block
+set lazyredraw
+set scrolloff=5
+set sidescroll=1
+set sidescrolloff=10
+set incsearch
+set backspace=indent,eol,start
+set winaltkeys=no
+set ruler
+set showcmd
+set hlsearch
+set ignorecase
+set smartcase
+set showtabline=1
+set number
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
+set hidden
+set cursorline
+set cursorcolumn
+set mouse=n
+set foldmethod=marker
+set laststatus=2
+set showbreak=…
+set wildmenu
+set formatoptions=qrn1t
+set nojoinspaces
+set textwidth=79
+set undofile
+set iskeyword+=-
+set history=50
+set splitright
+set shiftround
+set autoread
 if exists('+colorcolumn')
-	set colorcolumn=+1          " Display a column, one column after the text width.
+	set colorcolumn=+1
 endif
 
 " Don't try to highlight lines longer than 800 characters.
