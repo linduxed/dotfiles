@@ -500,7 +500,6 @@ autocmd BufNewFile,BufRead *.html setlocal tw=0 sw=2 sts=2
 autocmd BufNewFile,BufRead *.erb setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead *.eml let g:autoclose_loaded = 0
 autocmd BufNewFile,BufRead *.eml setlocal tw=72
-autocmd BufNewFile,BufRead *.hs setlocal sts=0
 autocmd BufNewFile,BufRead *.feature setlocal sw=2 sts=2
 autocmd BufNewFile,BufRead */.warsow*/*.cfg set filetype=warsow
 autocmd BufNewFile,BufRead *.c setlocal noet foldmethod=indent
@@ -530,7 +529,8 @@ autocmd FileType ruby setlocal foldmethod=indent
 autocmd FileType ruby setlocal foldlevel=1
 autocmd FileType ruby IndentGuidesEnable
 autocmd FileType ruby setlocal sw=2 sts=2
-autocmd FileType haskell setlocal tw=120 omnifunc=necoghc#omnifunc
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+autocmd FileType haskell setlocal sts=0 tw=120
 autocmd FileType gitcommit setlocal spell tw=72 complete+=kspell
 autocmd FileType markdown setlocal spell complete+=kspell
 autocmd FileType vim setlocal tw=0
