@@ -327,14 +327,6 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 15
 
 " }}}
-" {{{ Powerline
-
-if hostname() != 'freke'
-	let g:Powerline_symbols = 'fancy'
-endif
-set encoding=utf-8 " Necessary to show unicode glyphs.
-
-" }}}
 " {{{ CTRL-P
 
 let g:ctrlp_max_height = 25
