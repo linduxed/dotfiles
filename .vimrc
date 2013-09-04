@@ -395,16 +395,6 @@ endif
 let g:syntastic_always_populate_loc_list=1
 
 " }}}
-" {{{ easytags
-
-" The default location of the global tag file.
-" Due to g:easytags_dynamic_files = 2, it's almost never used.
-let g:easytags_file = '~/.vimtags'
-" Always write to the first file in the &tags variable.
-" This currently generates a <language>.vim in the closest git-directory.
-let g:easytags_dynamic_files = 2
-
-" }}}
 " {{{ Indent guides
 
 let g:indent_guides_auto_colors = 0
