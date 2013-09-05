@@ -738,7 +738,7 @@ nnoremap <Leader>tc :Tabularize /:\zs/l0l1<CR>
 " }}}
 " {{{ Indent guides
 
-nmap <silent> <Leader>g <Plug>IndentGuidesToggle
+nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
 " }}}
 " {{{ rspec
