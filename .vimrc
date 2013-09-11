@@ -793,5 +793,11 @@ nnoremap <Leader>lc :source ~/.vim/colemak.vim<CR>
 nnoremap <Leader>lq :source ~/.vim/disable-colemak.vim<CR>
 
 " }}}
+" {{{ Tab switching
+
+nnoremap ]v :tabnext<CR>
+nnoremap [v :tabprevious<CR>
+
+" }}}
 
 " }}}
