@@ -205,3 +205,6 @@
 [submodule ".vim/bundle/signify"]
 	path = .vim/bundle/signify
 	url = https://github.com/mhinz/vim-signify.git
+[submodule ".vim/bundle/bundler"]
+	path = .vim/bundle/bundler
+	url = https://github.com/tpope/vim-bundler.git
