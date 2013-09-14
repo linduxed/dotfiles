@@ -27,3 +27,5 @@
 	user = linduxed
 [push]
 	default = simple
+[init]
+	templatedir = ~/.git_template
