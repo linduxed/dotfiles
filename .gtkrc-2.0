@@ -2,7 +2,7 @@
 # Any customization should be done in ~/.gtkrc-2.0.mine instead.
 
 gtk-theme-name="Blapple"
-gtk-icon-theme-name="OxygenRefit2-green-version"
+gtk-icon-theme-name="hicolor"
 gtk-font-name="Sans 10"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH
