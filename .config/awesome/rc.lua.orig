@@ -298,21 +298,17 @@ globalkeys = awful.util.table.join(
     awful.key({        }, "XF86MonBrightnessUp",   function () awful.util.spawn("xbacklight -inc 10") end),
 
     -- Volume
-    awful.key({ modkey }, "F10", function () awful.util.spawn("/usr/bin/mute_toggle") end),
-    awful.key({ modkey }, "F11", function () awful.util.spawn("/usr/bin/vol_down") end),
-    awful.key({ modkey }, "F12", function () awful.util.spawn("/usr/bin/vol_up")   end),
-    awful.key({        }, "XF86AudioLowerVolume", function () awful.util.spawn("/usr/bin/vol_down") end),
-    awful.key({        }, "XF86AudioRaiseVolume", function () awful.util.spawn("/usr/bin/vol_up") end),
+    awful.key({ modkey }, "F10", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh mute") end),
+    awful.key({ modkey }, "F11", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh down") end),
+    awful.key({ modkey }, "F12", function () awful.util.spawn("/home/linduxed/bin/pa-volume.sh up")   end),
 
     -- Background switching
     awful.key({ modkey }, "F9", function () awful.util.spawn("/home/linduxed/bin/dual_bg_random_switch.sh") end),
     awful.key({ modkey }, "F8", function () awful.util.spawn("/home/linduxed/bin/bg_random_switch.sh")      end),
 
-    -- Keyboard layouts fix
-    awful.key({ modkey }, "F7", function () awful.util.spawn('setxkbmap -layout "us,us,us" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp') end),
+    -- autorandr
+    awful.key({ modkey }, "F7", function () awful.util.spawn('/usr/bin/autorandr --change --default laptop') end),
 
-    -- Lock screen
-    awful.key({ modkey }, "F6", function () awful.util.spawn("xscreensaver-command -lock") end),
 
     -- MPD control
     awful.key({ "Control", "Mod1" }, "p", function () awful.util.spawn("mpc toggle") end),
@@ -320,10 +316,13 @@ globalkeys = awful.util.table.join(
     awful.key({ "Control", "Mod1" }, "y", function () awful.util.spawn("mpc next")   end),
     awful.key({ "Control", "Mod1" }, "l", function () awful.util.spawn("mpc prev")   end),
 
+    -- Lock screen
+    awful.key({ modkey, "Shift" }, "l", function () awful.util.spawn("xscreensaver-command -lock") end),
+
     -- Prompt
     awful.key({ modkey }, "F1", function () mypromptbox[mouse.screen]:run() end),
 
-    awful.key({ modkey }, "F4",
+    awful.key({ modkey, "Shift" }, "F1",
               function ()
                   awful.prompt.run({ prompt = "Run Lua code: " },
                   mypromptbox[mouse.screen].widget,
