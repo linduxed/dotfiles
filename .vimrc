@@ -524,9 +524,6 @@ endif
 " }}}
 " {{{ Miscellaneous
 
-" Turn off paste automatically.
-autocmd InsertLeave * set nopaste
-
 autocmd BufRead,BufNewFile ~/Documents/studentcompetitions/* set tw=120
 
 " }}}
