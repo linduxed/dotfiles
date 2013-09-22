@@ -432,6 +432,11 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 
 " }}}
+" {{{ markdown
+
+let g:markdown_fenced_languages = ['ruby', 'haskell', 'vim', 'sh', 'c']
+
+" }}}
 
 " }}}
 " {{{ Autocommands
