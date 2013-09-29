@@ -1,0 +1,118 @@
+# {{{ Setup
+
+set $mod Mod4
+set $ALT Mod1
+
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+
+bar {
+   status_command    i3pystatus
+   position          top
+   workspace_buttons yes
+}
+
+# }}}
+# {{{ Layout
+
+bindsym $mod+r layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+f layout toggle split
+bindsym $mod+d focus child
+bindsym $mod+a focus parent
+bindsym $mod+h split h
+bindsym $mod+v split v
+bindsym $mod+t fullscreen
+
+bindsym $mod+p mode "resize"
+
+mode "resize" {
+    bindsym n resize grow width 5 px or 5 ppt
+    bindsym e resize shrink height 5 px or 5 ppt
+    bindsym u resize grow height 5 px or 5 ppt
+    bindsym i resize shrink width 5 px or 5 ppt
+
+    bindsym Left resize grow width 5 px or 5 ppt
+    bindsym Down resize shrink height 5 px or 5 ppt
+    bindsym Up resize grow height 5 px or 5 ppt
+    bindsym Right resize shrink width 5 px or 5 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# }}}
+# {{{ Navigation
+
+bindsym $mod+u focus up
+bindsym $mod+e focus down
+bindsym $mod+n focus left
+bindsym $mod+i focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+u move up
+bindsym $mod+Shift+e move down
+bindsym $mod+Shift+n move left
+bindsym $mod+Shift+i move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+
+# }}}
+# {{{ Floating
+
+floating_modifier $mod
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+# }}}
+# {{{ Workspaces
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8:email
+bindsym $mod+9 workspace 9:shells
+bindsym $mod+0 workspace 10:irc
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8:email
+bindsym $mod+Shift+9 move container to workspace 9:shells
+bindsym $mod+Shift+0 move container to workspace 10:irc
+
+assign [class="Thunderbird"] 8:email
+
+# }}}
+# {{{ Commands
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+grave kill
+bindsym $mod+F1 exec quickswitch.py
+bindsym $mod+F2 exec dmenu_run
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+p restart
+bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# }}}
+# {{{ Application mappings
+
+# MPD
+bindsym Control+$ALT+p exec "mpc toggle"
+bindsym Control+$ALT+s exec "mpc stop"
+bindsym Control+$ALT+l exec "mpc prev"
+bindsym Control+$ALT+y exec "mpc next"
+
+# }}}
