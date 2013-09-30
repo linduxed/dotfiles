@@ -14,14 +14,14 @@ bar {
 # }}}
 # {{{ Layout
 
-bindsym $mod+r layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+f layout toggle split
-bindsym $mod+d focus child
-bindsym $mod+a focus parent
+bindsym $mod+y layout stacking
+bindsym $mod+semicolon layout toggle split
+bindsym $mod+bracketleft layout tabbed
+bindsym $mod+m focus child
+bindsym $mod+k focus parent
 bindsym $mod+h split h
 bindsym $mod+j split v
-bindsym $mod+t fullscreen
+bindsym $mod+f fullscreen
 
 bindsym $mod+l mode "resize"
 
