@@ -61,6 +61,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+o move container to output right
+bindsym $mod+apostrophe move workspace to output right
+
 # }}}
 # {{{ Floating
 
