@@ -100,19 +100,32 @@ assign [class="Thunderbird"] 8:email
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+grave kill
-bindsym $mod+F1 exec quickswitch.py
-bindsym $mod+F2 exec dmenu_run
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+p restart
 bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # }}}
-# {{{ Application mappings
+# {{{ Mappings
 
-# MPD
+bindsym $mod+F1 exec quickswitch.py
+bindsym $mod+F2 exec dmenu_run
+bindsym $mod+F3 exec "asus-kbd-backlight down"
+bindsym $mod+F4 exec "asus-kbd-backlight up"
+bindsym $mod+F5 exec "asus-screen-brightness down"
+bindsym $mod+F6 exec "asus-screen-brightness up"
+bindsym $mod+F7 exec "asus-screen-brightness up"
+bindsym $mod+F7 exec "/usr/bin/autorandr --change --default laptop"
+bindsym $mod+F8 exec "/home/linduxed/bin/bg_random_switch.sh"
+bindsym $mod+F9 exec "/home/linduxed/bin/dual_no-pivot_bg_random_switch.sh"
+bindsym $mod+F10 exec "/home/linduxed/bin/pa-volume.sh mute"
+bindsym $mod+F11 exec "/home/linduxed/bin/pa-volume.sh down"
+bindsym $mod+F12 exec "/home/linduxed/bin/pa-volume.sh up"
+
 bindsym Control+$ALT+p exec "mpc toggle"
 bindsym Control+$ALT+s exec "mpc stop"
 bindsym Control+$ALT+l exec "mpc prev"
 bindsym Control+$ALT+y exec "mpc next"
+
+bindsym $mod+Shift+l exec "xscreensaver-command -lock"
 
 # }}}
