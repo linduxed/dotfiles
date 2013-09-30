@@ -101,8 +101,8 @@ assign [class="Thunderbird"] 8:email
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+grave kill
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+p restart
-bindsym $mod+Shift+f exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # }}}
 # {{{ Mappings
