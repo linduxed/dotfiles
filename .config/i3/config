@@ -96,6 +96,12 @@ bindsym $mod+Shift+0 move container to workspace 10:irc
 assign [class="Thunderbird"] 8:email
 
 # }}}
+# {{{ Scratchpad
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# }}}
 # {{{ Commands
 
 bindsym $mod+Return exec i3-sensible-terminal
