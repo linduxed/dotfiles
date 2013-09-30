@@ -1,18 +1,4 @@
 #!/bin/sh
-
-# D-bus
-if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
-	eval `dbus-launch --sh-syntax --exit-with-session`
-fi
-
-# Set layouts and fix for Xorg's disabling of CAB.
-# Layout switching with ScrollLock.
-setxkbmap -layout "us,us,us" -variant "colemak,altgr-intl," -option grp:sclk_toggle,terminate:ctrl_alt_bksp &
-
-# Enables repeat for the CapsLock button (Colemak Backspace).
-xset r 66 &
-
-# Xdefaults gets loaded.
 xrdb -load ~/.Xdefaults &
 
 # Synchronize X clipboard and X selection.
@@ -20,25 +6,27 @@ autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
 # Autostart
-# kbdd &
+kbdd &
 wicd-gtk -t &
 gnome-keyring-daemon &
-# thunderbird &
-# firefox &
+thunderbird &
+firefox &
 xscreensaver -no-splash &
 start-pulseaudio-x11 &
 dropboxd &
+SpiderOak &
 wmname LG3D &
 batti &
 kupfer &
-/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
+workrave &
+~/bg_random_switch.sh &
  
 # UIM related
-export GTK_IM_MODULE='uim'
-export QT_IM_MODULE='uim'
-uim-xim &
-export XMODIFIERS=@im='uim'
-uim-toolbar-gtk-systray &
+# export GTK_IM_MODULE='uim'
+# export QT_IM_MODULE='uim'
+# uim-xim &
+# export XMODIFIERS=@im='uim'
+# uim-toolbar-gtk-systray &
+export TERMINAL="roxterm"
 
-exec dbus-launch awesome
-# exec gnome-session
+exec i3 -V >> ~/.config/i3/i3log 2>&1
