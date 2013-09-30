@@ -20,10 +20,10 @@ bindsym $mod+bracketleft layout tabbed
 bindsym $mod+m focus child
 bindsym $mod+k focus parent
 bindsym $mod+h split h
-bindsym $mod+j split v
+bindsym $mod+l split v
 bindsym $mod+f fullscreen
 
-bindsym $mod+l mode "resize"
+bindsym $mod+j mode "resize"
 
 mode "resize" {
     bindsym n resize grow width 5 px or 5 ppt
