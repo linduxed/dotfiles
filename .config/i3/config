@@ -27,14 +27,14 @@ bindsym $mod+j mode "resize"
 
 mode "resize" {
     bindsym n resize shrink width 5 px or 5 ppt
+    bindsym i resize grow width 5 px or 5 ppt
     bindsym e resize shrink height 5 px or 5 ppt
     bindsym u resize grow height 5 px or 5 ppt
-    bindsym i resize grow width 5 px or 5 ppt
 
     bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
     bindsym Down resize shrink height 5 px or 5 ppt
     bindsym Up resize grow height 5 px or 5 ppt
-    bindsym Right resize grow width 5 px or 5 ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
