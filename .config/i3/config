@@ -14,8 +14,8 @@ bar {
 # }}}
 # {{{ Layout
 
-bindsym $mod+y layout stacking
-bindsym $mod+semicolon layout toggle split
+bindsym $mod+y layout toggle split
+bindsym $mod+semicolon layout stacking
 bindsym $mod+bracketleft layout tabbed
 bindsym $mod+m focus child
 bindsym $mod+k focus parent
