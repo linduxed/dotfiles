@@ -211,3 +211,6 @@
 [submodule ".vim/bundle/rake"]
 	path = .vim/bundle/rake
 	url = https://github.com/tpope/vim-rake.git
+[submodule ".vim/bundle/hspec"]
+	path = .vim/bundle/hspec
+	url = https://github.com/hspec/hspec.vim.git
