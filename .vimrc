@@ -523,6 +523,9 @@ autocmd FileType gitcommit setlocal spell tw=72 complete+=kspell
 autocmd FileType markdown setlocal spell complete+=kspell
 autocmd FileType vim setlocal tw=0
 autocmd FileType tex setlocal spell complete+=kspell
+autocmd FileType coffee setlocal foldmethod=indent
+autocmd FileType coffee IndentGuidesEnable
+autocmd FileType coffee setlocal sw=2 sts=2
 if exists('+colorcolumn')
 	autocmd FileType vim setlocal colorcolumn=0
 endif
