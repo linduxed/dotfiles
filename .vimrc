@@ -519,7 +519,7 @@ autocmd FileType ruby setlocal foldlevel=1
 autocmd FileType ruby IndentGuidesEnable
 autocmd FileType ruby setlocal sw=2 sts=2
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd FileType haskell setlocal sts=0 tw=120
+autocmd FileType haskell setlocal sts=0
 autocmd FileType gitcommit setlocal spell tw=72 complete+=kspell
 autocmd FileType markdown setlocal spell complete+=kspell
 autocmd FileType vim setlocal tw=0
