@@ -347,11 +347,6 @@ endif
 let g:snips_author = 'linduxed'
 
 " }}}
-" {{{ NERD-Tree
-
-let NERDTreeQuitOnOpen=1
-
-" }}}
 " {{{ NERD-Commenter
 
 let NERDSpaceDelims = 1 " Add spaces around the comment signs for all languages
@@ -690,13 +685,6 @@ let g:EasyMotion_mapping_j = '<Leader><Leader>e'
 let g:EasyMotion_mapping_k = '<Leader><Leader>u'
 let g:EasyMotion_mapping_n = '<Leader><Leader>k'
 let g:EasyMotion_mapping_N = '<Leader><Leader>K'
-
-" }}}
-" {{{ NERD-Tree
-
-let g:NERDTreeMapOpenExpl = 'y'
-let g:NERDTreeMapUpdir = 'l'
-let g:NERDTreeMapUpdirKeepOpen = 'L'
 
 " }}}
 " {{{ CTRL-P
