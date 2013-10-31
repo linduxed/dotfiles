@@ -1,19 +1,9 @@
-" {{{ Preamble
-
-" Load all plugins with pathogen
+" Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
-
-" Check filetype for plugins.
 filetype indent plugin on
 
-" Fallback indentation.
-set autoindent
-
-" Make Vim behave in a more useful way.
-set nocompatible
-
-" }}}
+" 
 " {{{ Source external settings
 
 " Add colemak mappings.
@@ -114,6 +104,7 @@ colorscheme solar_linduxed
 " }}}
 " {{{ Miscellaneous
 
+set autoindent
 set nostartofline
 set whichwrap=b,s,[,],<,>,h,l
 set virtualedit=block
