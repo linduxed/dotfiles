@@ -7,29 +7,9 @@ filetype indent plugin on
 source ~/.vim/colemak.vim
 source ~/.vim/utilities/stab.vim
 source ~/.vim/utilities/clear_registers.vim
+source ~/.vim/utilities/theme_switcher.vim
 
 " {{{ Functions
-
-" {{{ Theme switching
-
-function! Light()
-	let g:solarized_termtrans = 0
-	set background=light
-	colorscheme solar_linduxed
-	RainbowParenthesesActivate
-endfunction
-
-function! Dark()
-	let g:solarized_termtrans = 1
-	set background=dark
-	colorscheme solar_linduxed
-	RainbowParenthesesActivate
-endfunction
-
-command! Light call Light()
-command! Dark  call Dark()
-
-" }}}
 
 " }}}
 " {{{ Options
