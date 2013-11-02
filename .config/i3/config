@@ -116,8 +116,8 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # }}}
 # {{{ Mappings
 
-bindsym $mod+F1 exec quickswitch.py
-bindsym $mod+F2 exec dmenu_run
+bindsym $mod+F1 exec dmenu_run
+bindsym $mod+F2 exec quickswitch.py
 bindsym $mod+F3 exec "asus-kbd-backlight down"
 bindsym $mod+F4 exec "asus-kbd-backlight up"
 bindsym $mod+F5 exec "asus-screen-brightness down"
