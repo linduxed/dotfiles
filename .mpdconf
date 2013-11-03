@@ -1,0 +1,42 @@
+# Files and directories #######################################################
+#
+music_directory    "~/musik"
+playlist_directory "~/.mpd/playlists"
+db_file            "~/.mpd/mpd.db"
+log_file           "~/.mpd/log"
+pid_file           "~/.mpd/mpd.pid"
+state_file         "~/.mpd/state"
+sticker_file       "~/.mpd/sticker.sql"
+#
+###############################################################################
+
+# General music daemon options ################################################
+#
+restore_paused "yes"
+#
+###############################################################################
+
+# Audio Output ################################################################
+#
+# Pulse
+audio_output {
+   type   "pulse"
+   name   "MPD Pulse Output"
+   # server "localhost"
+   # sink   "alsa_output.pci-0000_00_1b.0.analog-stereo"
+}
+# ALSA
+#audio_output {
+#    type       "alsa"
+#    name       "MPD ALSA Output"
+#    mixer_type "software"
+#}
+#
+###############################################################################
+
+# Character Encoding ##########################################################
+#
+filesystem_charset "UTF-8"
+id3v1_encoding     "UTF-8"
+#
+###############################################################################
