@@ -6,6 +6,7 @@ autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
 # Autostart
+[ ! -s ~/.mpd/pid  ] && mpd &
 kbdd &
 wicd-gtk -t &
 gnome-keyring-daemon &
@@ -20,7 +21,7 @@ batti &
 kupfer &
 workrave &
 ~/bg_random_switch.sh &
- 
+
 # UIM related
 # export GTK_IM_MODULE='uim'
 # export QT_IM_MODULE='uim'
