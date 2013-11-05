@@ -133,3 +133,5 @@ nnoremap <C-w>N <C-w>H|xnoremap <C-w>n <C-w>h|
 nnoremap <C-w>U <C-w>K|xnoremap <C-w>u <C-w>k|
 nnoremap <C-w>E <C-w>J|xnoremap <C-w>e <C-w>j|
 nnoremap <C-w>I <C-w>L|xnoremap <C-w>i <C-w>l|
+" Disable spawning empty buffer
+nnoremap <C-w><C-n> <nop>|xnoremap <C-w><C-n> <nop>|
