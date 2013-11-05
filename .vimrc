@@ -24,11 +24,6 @@ source ~/.vim/plugin-settings/gist.vim
 
 " {{{ Plugin settings
 
-" {{{ minibufexpl
-
-let g:miniBufExplSetUT = 0
-
-" }}}
 " {{{ Ack
 
 " Use Silver Searcher if present on the system.
@@ -47,12 +42,6 @@ let g:syntastic_always_populate_loc_list=1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermfg=none ctermbg=234 cterm=none
 hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
-
-" }}}
-" {{{ Textile
-
-let g:TextileOS="Linux"
-let g:TextileBrowser="/usr/bin/firefox"
 
 " }}}
 " {{{ rspec
