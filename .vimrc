@@ -5,9 +5,6 @@ filetype indent plugin on
 
 " Load settings
 source ~/.vim/colemak.vim
-source ~/.vim/utilities/stab.vim
-source ~/.vim/utilities/clear_registers.vim
-source ~/.vim/utilities/theme_switcher.vim
 source ~/.vim/settings/colorscheme.vim
 source ~/.vim/settings/miscellaneous.vim
 source ~/.vim/settings/syntax_coloring.vim
