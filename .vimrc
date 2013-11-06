@@ -31,7 +31,6 @@ source ~/.vim/plugin-settings/delimitmate.vim
 source ~/.vim/plugin-settings/markdown.vim
 source ~/.vim/autocommands/filetype_dependant.vim
 source ~/.vim/autocommands/restore_cursor_position.vim
-source ~/.vim/autocommands/suffix_dependant.vim
 source ~/.vim/autocommands/misc.vim
 source ~/.vim/mappings/trailing_whitespace.vim
 source ~/.vim/mappings/highlight_whitespace.vim
