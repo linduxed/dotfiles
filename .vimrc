@@ -27,7 +27,6 @@ colorscheme solar_linduxed
 source ~/.vim/colemak.vim
 source ~/.vim/settings/miscellaneous.vim
 source ~/.vim/settings/syntax_coloring.vim
-source ~/.vim/settings/colorline.vim
 source ~/.vim/settings/foldtext.vim
 source ~/.vim/settings/wildmenu.vim
 source ~/.vim/settings/viminfo.vim
