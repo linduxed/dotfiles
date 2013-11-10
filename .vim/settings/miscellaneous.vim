@@ -38,7 +38,7 @@ set splitright
 set shiftround
 set autoread
 if exists('+colorcolumn')
-	set colorcolumn=+1
+    set colorcolumn=+1
 endif
 
 " Don't try to highlight lines longer than 800 characters.
