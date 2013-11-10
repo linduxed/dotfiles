@@ -8,7 +8,6 @@ set sidescroll=1
 set sidescrolloff=10
 set incsearch
 set backspace=indent,eol,start
-set winaltkeys=no
 set ruler
 set showcmd
 set hlsearch
