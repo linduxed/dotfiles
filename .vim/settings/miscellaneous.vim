@@ -49,8 +49,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 set tags=./tags,./TAGS,tags,TAGS
 let g:html_indent_tags = 'li\|p'
 let g:netrw_liststyle = 3
-if exists('+colorcolumn')
-    set colorcolumn=+1
-endif
+set colorcolumn=+1
 
 au VimResized * :wincmd =
