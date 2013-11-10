@@ -40,7 +40,6 @@ set notimeout
 set ttimeout
 set ttimeoutlen=10
 set omnifunc=syntaxcomplete#Complete
-set complete=.,w,b,u,t
 set completeopt=longest,menuone,preview
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
