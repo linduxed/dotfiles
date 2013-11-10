@@ -1,4 +1,5 @@
 set backup
+set undofile
 
 set undodir=~/.vim/tmp/undo//
 set backupdir=~/.vim/tmp/backup//

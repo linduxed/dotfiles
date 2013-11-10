@@ -30,7 +30,6 @@ set wildmenu
 set formatoptions=qrn1t
 set nojoinspaces
 set textwidth=79
-set undofile
 set iskeyword+=-
 set history=50
 set splitright
