@@ -69,6 +69,6 @@ set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.i
 let g:html_indent_tags = 'li\|p'
 
 " Set order of tagfiles.
-set tags=./tags,./TAGS,tags,TAGS,~/.vimtags
+set tags=./tags,./TAGS,tags,TAGS
 
 let g:netrw_liststyle = 3
