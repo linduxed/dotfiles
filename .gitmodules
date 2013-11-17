@@ -211,3 +211,6 @@
 [submodule ".vim/bundle/hspec"]
 	path = .vim/bundle/hspec
 	url = https://github.com/hspec/hspec.vim.git
+[submodule ".vim/bundle/colemak"]
+	path = .vim/bundle/colemak
+	url = https://github.com/linduxed/colemak.vim.git
