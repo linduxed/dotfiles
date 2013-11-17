@@ -109,19 +109,7 @@ endif
 
 " {{{1 Sourcing
 
-source ~/.vim/plugin-settings/rainbow_parentheses.vim
-source ~/.vim/plugin-settings/ctrlp.vim
-source ~/.vim/plugin-settings/snipmate.vim
-source ~/.vim/plugin-settings/nerd_commenter.vim
-source ~/.vim/plugin-settings/gist.vim
-source ~/.vim/plugin-settings/ack.vim
-source ~/.vim/plugin-settings/syntastic.vim
-source ~/.vim/plugin-settings/indent_guides.vim
-source ~/.vim/plugin-settings/rspec.vim
-source ~/.vim/plugin-settings/text_objects.vim
-source ~/.vim/plugin-settings/airline.vim
-source ~/.vim/plugin-settings/delimitmate.vim
-source ~/.vim/plugin-settings/markdown.vim
+source ~/.vim/plugin_settings.vim
 source ~/.vim/autocommands/filetype_dependant.vim
 source ~/.vim/autocommands/restore_cursor_position.vim
 source ~/.vim/autocommands/misc.vim
