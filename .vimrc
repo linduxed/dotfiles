@@ -79,7 +79,6 @@ au VimResized * :wincmd =
 " {{{1 Sourcing
 
 source ~/.vim/settings/syntax_coloring.vim
-source ~/.vim/settings/foldtext.vim
 source ~/.vim/settings/wildmenu.vim
 source ~/.vim/settings/viminfo.vim
 source ~/.vim/settings/backups.vim
