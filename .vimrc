@@ -72,6 +72,9 @@ set completeopt=longest,menuone,preview
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tags=./tags,./TAGS,tags,TAGS
+set wildmenu
+set wildmode=list:longest,full
+set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.o,*.obj,*.exe,*.dll,*.manifest,*.spl,*.sw?,*.DS_Store,*.luac,migrations,*.pyc,*.orig
 let g:html_indent_tags = 'li\|p'
 let g:netrw_liststyle = 3
 au VimResized * :wincmd =
@@ -79,7 +82,6 @@ au VimResized * :wincmd =
 " {{{1 Sourcing
 
 source ~/.vim/settings/syntax_coloring.vim
-source ~/.vim/settings/wildmenu.vim
 source ~/.vim/settings/viminfo.vim
 source ~/.vim/settings/backups.vim
 source ~/.vim/plugin-settings/rainbow_parentheses.vim
