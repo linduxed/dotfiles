@@ -111,7 +111,6 @@ endif
 
 source ~/.vim/plugin_settings.vim
 source ~/.vim/plugin_mappings.vim
-source ~/.vim/autocommands/restore_cursor_position.vim
 source ~/.vim/autocommands/misc.vim
 source ~/.vim/mappings/trailing_whitespace.vim
 source ~/.vim/mappings/highlight_whitespace.vim
