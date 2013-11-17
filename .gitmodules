@@ -214,3 +214,6 @@
 [submodule ".vim/bundle/colemak"]
 	path = .vim/bundle/colemak
 	url = https://github.com/linduxed/colemak.vim.git
+[submodule ".vim/bundle/obsession"]
+	path = .vim/bundle/obsession
+	url = https://github.com/tpope/vim-obsession.git
