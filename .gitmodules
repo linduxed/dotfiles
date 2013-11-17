@@ -220,3 +220,6 @@
 [submodule ".vim/bundle/capslock"]
 	path = .vim/bundle/capslock
 	url = https://github.com/tpope/vim-capslock.git
+[submodule ".vim/bundle/elixir"]
+	path = .vim/bundle/elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
