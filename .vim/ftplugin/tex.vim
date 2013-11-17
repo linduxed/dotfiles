@@ -1,0 +1,1 @@
+setlocal spell complete+=kspell
