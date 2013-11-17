@@ -78,7 +78,6 @@ au VimResized * :wincmd =
 
 " {{{1 Sourcing
 
-source ~/.vim/colemak.vim
 source ~/.vim/settings/syntax_coloring.vim
 source ~/.vim/settings/foldtext.vim
 source ~/.vim/settings/wildmenu.vim
@@ -109,7 +108,6 @@ source ~/.vim/mappings/function_keys.vim
 source ~/.vim/mappings/completion_menu.vim
 source ~/.vim/mappings/misc.vim
 source ~/.vim/mappings/fixed_width_formatting.vim
-source ~/.vim/mappings/layout_switching.vim
 source ~/.vim/mappings/tab_switching.vim
 source ~/.vim/plugin-mappings/easymotion.vim
 source ~/.vim/plugin-mappings/ctrlp.vim
