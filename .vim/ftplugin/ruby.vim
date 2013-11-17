@@ -1,4 +1,4 @@
-ruby setlocal foldmethod=indent
-ruby setlocal foldlevel=1
-ruby IndentGuidesEnable
-ruby setlocal sw=2 sts=2
+setlocal foldmethod=indent
+setlocal foldlevel=1
+IndentGuidesEnable
+setlocal sw=2 sts=2
