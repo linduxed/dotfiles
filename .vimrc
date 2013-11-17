@@ -82,7 +82,6 @@ au VimResized * :wincmd =
 
 " {{{1 Sourcing
 
-source ~/.vim/settings/syntax_coloring.vim
 source ~/.vim/settings/viminfo.vim
 source ~/.vim/settings/backups.vim
 source ~/.vim/plugin-settings/rainbow_parentheses.vim
