@@ -106,8 +106,8 @@ omap ru <Plug>(textobj-url-i)
 
 " {{{1 Colemak
 
-nnoremap <Leader>lc :ColemakEnable
-nnoremap <Leader>lq :ColemakDisable
+nnoremap <Leader>lc :ColemakEnable<CR>
+nnoremap <Leader>lq :ColemakDisable<CR>
 
 " {{{1 StripTrailingWhitespace
 
