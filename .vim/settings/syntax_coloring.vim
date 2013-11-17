@@ -1,6 +1,3 @@
-" Load Doxygen syntax colouring on top of normal C/C++/Java/PHP/IDL syntax.
-let g:load_doxygen_syntax=1
-
 " Highlight the following:
 " * Trailing spaces
 " * Spaces before leading tabs
