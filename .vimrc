@@ -111,7 +111,6 @@ endif
 
 source ~/.vim/plugin_settings.vim
 source ~/.vim/plugin_mappings.vim
-source ~/.vim/mappings/trailing_whitespace.vim
 source ~/.vim/mappings/highlight_whitespace.vim
 source ~/.vim/mappings/visual_search.vim
 source ~/.vim/mappings/search_and_jump.vim

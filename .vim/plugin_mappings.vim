@@ -103,3 +103,12 @@ xmap tu <Plug>(textobj-url-a)
 omap tu <Plug>(textobj-url-a)
 xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
+
+" {{{1 Colemak
+
+nnoremap <Leader>lc :ColemakEnable
+nnoremap <Leader>lq :ColemakDisable
+
+" {{{1 StripTrailingWhitespace
+
+nnoremap <silent> <Leader>wk :StripTrailingWhitespace<CR>
