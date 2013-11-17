@@ -110,6 +110,7 @@ endif
 " {{{1 Sourcing
 
 source ~/.vim/plugin_settings.vim
+source ~/.vim/plugin_mappings.vim
 source ~/.vim/autocommands/filetype_dependant.vim
 source ~/.vim/autocommands/restore_cursor_position.vim
 source ~/.vim/autocommands/misc.vim
@@ -123,10 +124,3 @@ source ~/.vim/mappings/completion_menu.vim
 source ~/.vim/mappings/misc.vim
 source ~/.vim/mappings/fixed_width_formatting.vim
 source ~/.vim/mappings/tab_switching.vim
-source ~/.vim/plugin-mappings/easymotion.vim
-source ~/.vim/plugin-mappings/ctrlp.vim
-source ~/.vim/plugin-mappings/snipmate.vim
-source ~/.vim/plugin-mappings/tabular.vim
-source ~/.vim/plugin-mappings/indent_guides.vim
-source ~/.vim/plugin-mappings/rspec.vim
-source ~/.vim/plugin-mappings/text_objects.vim
