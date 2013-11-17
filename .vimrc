@@ -111,12 +111,4 @@ endif
 
 source ~/.vim/plugin_settings.vim
 source ~/.vim/plugin_mappings.vim
-source ~/.vim/mappings/highlight_whitespace.vim
-source ~/.vim/mappings/visual_search.vim
-source ~/.vim/mappings/search_and_jump.vim
-source ~/.vim/mappings/selection_and_folds.vim
-source ~/.vim/mappings/function_keys.vim
-source ~/.vim/mappings/completion_menu.vim
-source ~/.vim/mappings/misc.vim
-source ~/.vim/mappings/fixed_width_formatting.vim
-source ~/.vim/mappings/tab_switching.vim
+source ~/.vim/mappings.vim
