@@ -1,4 +1,5 @@
-" Pathogen
+" {{{1 Pathogen
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 filetype indent plugin on
