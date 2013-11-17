@@ -80,16 +80,35 @@ let g:netrw_liststyle = 3
 let g:load_doxygen_syntax=1
 au VimResized * :wincmd =
 
-" Tell vim to remember certain things when we exit
+" {{{2 viminfo
+
 "  '10  :  marks will be remembered for up to 10 previously edited files
 "  "100 :  will save up to 100 lines for each register
 "  :20  :  up to 20 lines of command-line history will be remembered
 "  n... :  where to save the viminfo files
 set viminfo='10,\"100,:20,n~/.vim/viminfo
 
+" {{{2 backups
+
+set backup
+set undofile
+
+set undodir=~/.vim/tmp/undo//
+set backupdir=~/.vim/tmp/backup//
+set directory=~/.vim/tmp/swap//
+
+if !isdirectory(expand(&undodir))
+    call mkdir(expand(&undodir), "p")
+endif
+if !isdirectory(expand(&backupdir))
+    call mkdir(expand(&backupdir), "p")
+endif
+if !isdirectory(expand(&directory))
+    call mkdir(expand(&directory), "p")
+endif
+
 " {{{1 Sourcing
 
-source ~/.vim/settings/backups.vim
 source ~/.vim/plugin-settings/rainbow_parentheses.vim
 source ~/.vim/plugin-settings/ctrlp.vim
 source ~/.vim/plugin-settings/snipmate.vim
