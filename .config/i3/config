@@ -6,7 +6,7 @@ set $ALT Mod1
 font pango:Inconsolata 10
 
 bar {
-   status_command    i3pystatus
+   status_command    python ~/.config/i3/pystatus
    position          top
    workspace_buttons yes
 }
