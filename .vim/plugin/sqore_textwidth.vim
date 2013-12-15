@@ -1,4 +1,4 @@
-autocmd BufRead,BufNewFile ~/Documents/studentcompetitions/*
+autocmd BufRead,BufNewFile ~/Documents/sqore/*
     \ if &ft == 'gitcommit' |
     \     setl tw=72 |
     \ else |
