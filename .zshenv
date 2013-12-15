@@ -63,7 +63,6 @@ path=(
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
   /{bin,sbin}
-  $path
 )
 
 #
