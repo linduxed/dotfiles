@@ -63,7 +63,6 @@ set hidden
 set mouse=n
 set foldmethod=marker
 set showbreak=…
-set wildmenu
 set history=50
 set synmaxcol=800
 set splitright
