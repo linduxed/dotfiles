@@ -62,6 +62,7 @@ path=(
   $HOME/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
+  /usr/bin/vendor_perl/
   /{bin,sbin}
 )
 
