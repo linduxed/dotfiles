@@ -1,34 +1,34 @@
 [user]
-	name = Mikael Muszynski
-	email = linduxed@gmail.com
+    name = Mikael Muszynski
+    email = linduxed@gmail.com
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [color]
-	branch = auto
-	diff = auto
-	status = auto
+    branch = auto
+    diff = auto
+    status = auto
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = cyan
+    added = green
+    changed = yellow
+    untracked = cyan
 [core]
-	autocrlf = input
-	excludesfile = ~/.gitignore_global
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
 [github]
-	user = linduxed
+    user = linduxed
 [push]
-	default = simple
+    default = simple
 [alias]
-	delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
+    delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
     pr = !hub pull-request
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
