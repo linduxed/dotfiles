@@ -112,3 +112,7 @@ let g:textobj_indent_no_default_key_mappings = 1
 let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
+" {{{1 EasyMotion
+
+" Characters at the end of the string have higher precedence.
+let g:EasyMotion_keys = 'hdoairesnt'
