@@ -15,3 +15,4 @@ vim/.netrwhist
 zeus.json
 .ruby-version
 Session.vim
+.rubocop.yml
