@@ -103,6 +103,8 @@ let g:snips_author = 'linduxed'
 " {{{1 Syntastic
 
 let g:syntastic_always_populate_loc_list=1
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_rubocop_exec = '~/.rbenv/shims/rubocop'
 
 " {{{1 TextObjects
 
