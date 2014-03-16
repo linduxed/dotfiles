@@ -77,6 +77,8 @@ for_window [class="Gnome-screenshot"] floating enable
 # }}}
 # {{{ Workspaces
 
+bindsym $mod+Tab workspace back_and_forth
+
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
