@@ -220,3 +220,6 @@
 [submodule ".vim/bundle/elixir"]
 	path = .vim/bundle/elixir
 	url = https://github.com/elixir-lang/vim-elixir.git
+[submodule ".vim/bundle/vim-rsi"]
+	path = .vim/bundle/vim-rsi
+	url = https://github.com/tpope/vim-rsi
