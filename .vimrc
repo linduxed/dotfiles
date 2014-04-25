@@ -69,7 +69,8 @@ set splitright
 set autoread
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set list
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:∘
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tags=./tags,./TAGS,tags,TAGS
 set wildmenu
