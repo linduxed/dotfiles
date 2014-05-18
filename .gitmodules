@@ -130,9 +130,6 @@
 [submodule ".vim/bundle/vim-snippets"]
 	path = .vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule ".rbenv"]
-	path = .rbenv
-	url = https://github.com/sstephenson/rbenv.git
 [submodule ".vim/bundle/indent-guides"]
 	path = .vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
@@ -223,3 +220,6 @@
 [submodule "prezto"]
 	path = prezto
 	url = https://github.com/linduxed/prezto
+[submodule "rbenv"]
+	path = rbenv
+	url = https://github.com/sstephenson/rbenv.git
