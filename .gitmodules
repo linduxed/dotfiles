@@ -1,9 +1,6 @@
 [submodule ".vim/bundle/vim-powerline"]
 	path = .vim/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
-[submodule "prezto"]
-	path = prezto
-	url = https://github.com/linduxed/prezto
 [submodule "rbenv"]
 	path = rbenv
 	url = https://github.com/sstephenson/rbenv.git
@@ -223,3 +220,6 @@
 [submodule "vim/bundle/xterm-color-table"]
 	path = vim/bundle/xterm-color-table
 	url = https://github.com/guns/xterm-color-table.vim
+[submodule "zprezto"]
+	path = zprezto
+	url = https://github.com/linduxed/prezto
