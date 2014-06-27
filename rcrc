@@ -1,0 +1,3 @@
+COPY_ALWAYS="rbenv"
+EXCLUDES="vim/bundle"
+SYMLINK_DIRS="zprezto"

@@ -17,7 +17,7 @@ nnoremap <F3> :CtrlPTag<CR>
 nnoremap <F4> :CtrlPRoot<CR>
 nnoremap <F5> :CtrlPMRU<CR>
 nnoremap <F6> :UndotreeToggle<CR>
-nnoremap <F7> :NumbersToggle<CR>
+" F7: not bound.
 nnoremap <F8> :set list!<CR>
 nnoremap <F9> :make<CR>
 " F10: not bound.
