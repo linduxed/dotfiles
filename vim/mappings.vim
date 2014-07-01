@@ -57,6 +57,7 @@ function! s:VSetSearch()
 endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " {{{1 Miscellaneous
 
@@ -69,7 +70,6 @@ inoremap <Tab> <Esc>|
 nnoremap <S-Tab> i<Tab><Esc><Right>
 vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
 " Help file navigation
 au FileType help nnoremap <buffer> < <C-t>|
