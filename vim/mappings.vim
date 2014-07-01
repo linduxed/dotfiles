@@ -60,6 +60,8 @@ vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 
 " {{{1 Miscellaneous
 
+let mapleader = " "
+
 " The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
 nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
