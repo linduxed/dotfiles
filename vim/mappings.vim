@@ -77,11 +77,6 @@ au FileType help nnoremap <buffer> > <C-]>|
 au FileType help nnoremap <buffer> <CR> <C-]>|
 au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
-" Delete/Backspace
-nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
-nnoremap <Delete> "_x|vnoremap <Delete> "_d|
-nnoremap <Backspace> a<Left><Backspace><Right><Esc>|vnoremap <Backspace> "_d|
-
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
