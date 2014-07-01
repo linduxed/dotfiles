@@ -77,11 +77,6 @@ au FileType help nnoremap <buffer> > <C-]>|
 au FileType help nnoremap <buffer> <CR> <C-]>|
 au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
-" Inserting spaces
-nnoremap <Space> i<Space><Esc><Right>|
-xnoremap <silent> <Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv><CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
-xnoremap <silent> <S-Space> :<C-u>let b:tmp_var=&sw\|set sw=1\|normal! gv<<CR>:<C-u>let &sw=b:tmp_var\|normal! gv<CR>
-
 " Delete/Backspace
 nnoremap <C-d> "_dw|vnoremap <C-d> "_d|inoremap <C-d> <Delete>|cnoremap <C-d> <Delete>|
 nnoremap <Delete> "_x|vnoremap <Delete> "_d|
