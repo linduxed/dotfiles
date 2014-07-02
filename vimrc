@@ -112,5 +112,5 @@ endif
 " {{{1 Sourcing
 
 source ~/.vim/plugin_settings.vim
-source ~/.vim/plugin_mappings.vim
 source ~/.vim/mappings.vim
+source ~/.vim/plugin_mappings.vim
