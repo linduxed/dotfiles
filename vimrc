@@ -111,6 +111,9 @@ endif
 
 " {{{1 Sourcing
 
+" mappings.vim needs to be sourced after plugin_settings, otherwise some
+" plugin_settings get overwritten by mappings.vim.
+
 source ~/.vim/plugin_settings.vim
 source ~/.vim/mappings.vim
 source ~/.vim/plugin_mappings.vim
