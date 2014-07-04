@@ -17,10 +17,8 @@ start-pulseaudio-x11 &
 dropboxd &
 SpiderOak &
 wmname LG3D &
-batti &
 kupfer &
 workrave &
-~/bg_random_switch.sh &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
