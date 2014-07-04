@@ -1,5 +1,3 @@
-!xscreensaver ---------------------------------------------------------------
-
 !font settings
 xscreensaver.Dialog.headingFont:        -*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
 xscreensaver.Dialog.bodyFont:           -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
@@ -32,7 +30,7 @@ xscreensaver.dateFormat:    %I:%M%P %a %b %d, %Y
 gnuplot*background: black
 gnuplot*textColor: white
 gnuplot*borderColor: white
-gnuplot*axisColor: white 
+gnuplot*axisColor: white
 !gnuplot*line1Color:  red
 !gnuplot*line2Color:  green
 !gnuplot*line3Color:  blue
@@ -75,7 +73,7 @@ xterm*color6:           #88aadd
 xterm*color14:          #99ccff
 xterm*color7:           #ffffff
 xterm*color15:          #dedede
- 
+
 !xterm settings
 xterm*geometry:         107x33
 xterm*dynamicColors:    true
@@ -91,9 +89,8 @@ xterm*jumpScroll:       true
 xterm*multiScroll:      true
 xterm*toolBar:          false
 xterm*charClass:        33:48,35-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,126:48
-Xcursor*theme: 		Neutral
+Xcursor*theme:          Neutral
 
 Xft*dpi:                96
 Xft*antialias:          true
 Xft*hinting:            full
-
