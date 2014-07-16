@@ -37,7 +37,7 @@ case $SHORTHOST in
 	share-01)
 		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'dpkg' 'git' 'gnu-utility' 'tmux'
 		;;
-	nattramn)
+	lindorm)
 		zstyle ':prezto:load' pmodule 'environment' 'terminal' 'editor' 'history' 'directory' 'spectrum' 'utility' 'completion' 'prompt' 'archive' 'command-not-found' 'syntax-highlighting' 'git' 'gnu-utility' 'pacman' 'rsync' 'ruby' 'rails' 'fasd' 'haskell' 'todo' 'tmux' 'history-substring-search'
 		;;
 	*)
