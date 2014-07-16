@@ -86,3 +86,5 @@ nnoremap <Leader>b zMzvzz
 
 nnoremap ]v :tabnext<CR>
 nnoremap [v :tabprevious<CR>
+
+nnoremap <leader>fn :echo @%<CR>
