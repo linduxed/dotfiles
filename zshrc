@@ -20,9 +20,9 @@ fi
 
 # Host specific settings
 if [ -r "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SYSTEM" ]; then
-	source "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SYSTEM"
+  source "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SYSTEM"
 fi
 
 if [ -r "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SHORTHOST" ]; then
-	source "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SHORTHOST"
+  source "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SHORTHOST"
 fi
