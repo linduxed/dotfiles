@@ -27,6 +27,9 @@ if [ -r "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SHORTHOST" ]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/host-specific/$SHORTHOST"
 fi
 
-if [ -r "/etc/zsh/zprofile" ]; then
-  source "/etc/zsh/zprofile"
+if test -d /etc/profile.d/; then
+  for profile in /etc/profile.d/*.sh; do
+    test -r "$profile" && . "$profile"
+  done
+  unset profile
 fi
