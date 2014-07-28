@@ -32,3 +32,5 @@
     pr = !hub pull-request
 [init]
     templatedir = ~/.git_template
+[web]
+    browser = xdg-open
