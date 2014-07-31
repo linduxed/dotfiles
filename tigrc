@@ -1,7 +1,4 @@
-#
-# Base configuration
-#
-# Syntax: set <option> = <value>
+# man tigrc for explanations
 
 set show-rev-graph = yes # Show revision graph?
 set line-number-interval = 5 # Interval between line numbers
