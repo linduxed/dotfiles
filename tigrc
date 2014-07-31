@@ -15,6 +15,7 @@ bind diff e scroll-line-down
 bind diff n previous
 bind diff i next
 bind diff b move-first-line
+bind generic Y @sh -c "echo -n %(commit) | xclip -selection c"
 
 # Color configuration
 color diff-header yellow default
