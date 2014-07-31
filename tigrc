@@ -1,5 +1,7 @@
 # man tigrc for explanations
 
+set line-graphics = utf-8
+
 # Key configuration
 bind generic u move-up
 bind generic e move-down
