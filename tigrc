@@ -1,7 +1,5 @@
 # man tigrc for explanations
 
-set tab-size = 8
-
 # Key configuration
 bind generic u move-up
 bind generic e move-down
