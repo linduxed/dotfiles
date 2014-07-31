@@ -2,13 +2,9 @@
 
 set show-rev-graph = yes # Show revision graph?
 set line-number-interval = 5 # Interval between line numbers
-set tab-size = 8 # Number of spaces per tab
+set tab-size = 8
 
-#
 # Key configuration
-#
-# Syntax: bind <keymap> <key> <request>
-
 bind generic u move-up
 bind generic e move-down
 bind generic k find-next
@@ -16,19 +12,13 @@ bind generic K find-prev
 bind generic g view-next
 bind generic E edit
 bind generic U status-update
-
 bind diff u scroll-line-up
 bind diff e scroll-line-down
 bind diff n previous
 bind diff i next
 bind diff b move-first-line
 
-#
 # Color configuration
-#
-# Syntax: color <line> <color> <color> [<attribute>]
-
-# Diff colors
 color diff-header yellow default
 color diff-index blue default
 color diff-chunk magenta default
