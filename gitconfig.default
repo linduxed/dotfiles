@@ -3,6 +3,7 @@
     email = linduxed@gmail.com
 [merge]
     tool = vimdiff
+    defaultToUpstream = true
 [color]
     branch = auto
     diff = auto
