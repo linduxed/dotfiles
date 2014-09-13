@@ -505,8 +505,8 @@ def_key "W"
 #def_key "`"
 #  add_random_items
 #
-#def_key "ctrl_p"
-#  set_selected_items_priority
+def_key "d"
+ set_selected_items_priority
 #
 #def_key "q"
 #  quit

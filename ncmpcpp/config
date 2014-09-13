@@ -222,7 +222,7 @@ mpd_music_dir = "/home/linduxed/musik"
 ##   not available.
 ##
 #
-song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b}"
+song_columns_list_format = "(7f)[green]{l} (25)[cyan]{a} (40)[]{t|f} (30)[red]{b} (3)[green]{P}"
 #
 ##### various settings #####
 #
