@@ -118,3 +118,6 @@ let g:textobj_url_no_default_key_mappings = 1
 
 " Characters at the end of the string have higher precedence.
 let g:EasyMotion_keys = 'hdoairesnt'
+" {{{1 vim-rsi
+
+let g:rsi_no_meta = 1
