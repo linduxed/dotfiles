@@ -9,7 +9,6 @@ autocutsel -selection PRIMARY -fork &
 [ ! -s ~/.mpd/pid  ] && mpd &
 kbdd &
 wicd-gtk -t &
-gnome-keyring-daemon &
 thunderbird &
 firefox &
 xscreensaver -no-splash &
