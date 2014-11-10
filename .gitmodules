@@ -223,3 +223,6 @@
 [submodule "vim/bundle/bracketed-paste"]
 	path = vim/bundle/bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste
+[submodule "vim/bundle/goyo"]
+	path = vim/bundle/goyo
+	url = https://github.com/junegunn/goyo.vim
