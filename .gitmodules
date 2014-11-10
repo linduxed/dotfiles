@@ -220,3 +220,6 @@
 [submodule "zprezto"]
 	path = zprezto
 	url = https://github.com/linduxed/prezto
+[submodule "vim/bundle/bracketed-paste"]
+	path = vim/bundle/bracketed-paste
+	url = https://github.com/ConradIrwin/vim-bracketed-paste
