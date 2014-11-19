@@ -226,3 +226,6 @@
 [submodule "vim/bundle/goyo"]
 	path = vim/bundle/goyo
 	url = https://github.com/junegunn/goyo.vim
+[submodule "vim/bundle/rust"]
+	path = vim/bundle/rust
+	url = https://github.com/wting/rust.vim
