@@ -55,7 +55,7 @@ esac
 zstyle ':prezto:module:editor' keymap 'emacs'
 
 # Auto convert .... to ../..
-zstyle ':prezto:module:editor' dot-expansion 'yes'
+# zstyle ':prezto:module:editor' dot-expansion 'yes'
 
 #
 # Git
