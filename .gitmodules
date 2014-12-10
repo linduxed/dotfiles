@@ -229,3 +229,6 @@
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = https://github.com/wting/rust.vim
+[submodule "vim/bundle/toml"]
+	path = vim/bundle/toml
+	url = https://github.com/cespare/vim-toml
