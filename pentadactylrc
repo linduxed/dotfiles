@@ -5,12 +5,6 @@ source ~/.pentadactyl/colemak.pentadactyl
 
 colorscheme simple_dark
 
-" New tabs have a black background.
-style -group=user -name=black_new_tab chrome://* xul|browser { background-color: black; }
-
-" Set the default search engine
-set defsearch=duck
-
 " Remap page zoom to text zoom
 map zi zI
 map zo zO
