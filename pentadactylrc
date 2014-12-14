@@ -13,3 +13,5 @@ set showtabline=always
 
 " Option from the Tab Options plugin
 " set tabclose=right,opener,previous,left
+
+set! browser.tabs.closeWindowWithLastTab=false
