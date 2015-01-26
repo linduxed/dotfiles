@@ -17,3 +17,4 @@ zeus.json
 Session.vim
 .rubocop.yml
 .rspec
+.ackrc
