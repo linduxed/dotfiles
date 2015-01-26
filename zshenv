@@ -4,6 +4,8 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
+export TERM=xterm-256color
+
 #
 # Browser
 #
