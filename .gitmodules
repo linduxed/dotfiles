@@ -156,7 +156,7 @@
 	url = https://github.com/linduxed/vim-fugitive.git
 [submodule "vim/bundle/vim-gnupg"]
 	path = vim/bundle/vim-gnupg
-	url = git://gitorious.org/vim-gnupg/vim-gnupg.git
+	url = https://github.com/jamessan/vim-gnupg.git
 [submodule "vim/bundle/vim-haml"]
 	path = vim/bundle/vim-haml
 	url = git://github.com/tpope/vim-haml.git
