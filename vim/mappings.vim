@@ -67,8 +67,6 @@ vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
 
 " Help file navigation
-au FileType help nnoremap <buffer> < <C-t>|
-au FileType help nnoremap <buffer> > <C-]>|
 au FileType help nnoremap <buffer> <CR> <C-]>|
 au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
