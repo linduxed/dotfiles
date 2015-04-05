@@ -1,1 +1,2 @@
 SYMLINK_DIRS="rbenv vim zprezto"
+EXCLUDES="README.md"
