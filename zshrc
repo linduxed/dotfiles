@@ -17,4 +17,6 @@ if test -d /etc/profile.d/; then
   unset profile
 fi
 
+# Host-specific configuration loaded after aliases for overriding.
+source "$HOME/.zsh_alias"
 source "$HOME/.zsh_host-specific"
