@@ -76,7 +76,6 @@ set tags=./tags,./TAGS,tags,TAGS
 set wildmenu
 set wildmode=list:longest,full
 set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.o,*.obj,*.exe,*.dll,*.manifest,*.spl,*.sw?,*.DS_Store,*.luac,migrations,*.pyc,*.orig
-set cryptmethod=blowfish
 let g:html_indent_tags = 'li\|p'
 let g:netrw_liststyle = 3
 let g:load_doxygen_syntax=1
