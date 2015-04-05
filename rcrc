@@ -1,2 +1,3 @@
 SYMLINK_DIRS="rbenv vim zprezto"
 EXCLUDES="README.md"
+TAGS="desktop mpd programming todo"
