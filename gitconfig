@@ -36,3 +36,5 @@
     templatedir = ~/.git_template
 [web]
     browser = xdg-open
+[include]
+    path = ~/.gitconfig_overrides
