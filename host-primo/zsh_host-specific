@@ -1,0 +1,17 @@
+#
+#  ALIAS
+#
+alias wcmirror='mplayer -vf mirror -tv driver=v4l2:device=/dev/video0:fps=30 tv://'
+alias figdoh='clear && figlet -tc -f doh'
+
+alias usb='pmount /dev/sdb1'
+alias unusb='pumount /dev/sdb1'
+alias usb2='pmount /dev/sdc1'
+alias unusb2='pumount /dev/sdc1'
+
+# Load hub.
+eval "$(hub alias -s)"
+
+# envoy
+envoy -t ssh-agent
+source <(envoy -p)
