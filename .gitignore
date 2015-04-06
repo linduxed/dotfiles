@@ -1,3 +1,5 @@
 vim/ctrlp-cache
 vim/tmp
 vim/viminfo
+vim/spell/*.spl
+vim/spell/*.sug
