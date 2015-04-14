@@ -111,4 +111,4 @@ nnoremap <Leader>lq :ColemakDisable<CR>
 
 " {{{1 StripTrailingWhitespace
 
-nnoremap <silent> <Leader>wk :StripTrailingWhitespace<CR>
+nnoremap <silent> <Leader>kw :StripTrailingWhitespace<CR>
