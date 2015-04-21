@@ -2,7 +2,7 @@
     name = Mikael Muszynski
     email = linduxed@gmail.com
 [merge]
-    tool = nvim -d
+    tool = vimdiff
     defaultToUpstream = true
 [color]
     branch = auto
