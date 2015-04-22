@@ -42,28 +42,9 @@ if [[ -n $PS1 ]] ; then
     alias lla='ls -la'
     alias la='ls -a'
 
-    alias pb='pastebinit'
-    alias wcmirror='mplayer -tv driver=v4l2:device=/dev/video0:fps=30 tv://'
-    alias usb='pmount /dev/sdb1'
-    alias unusb='pumount /dev/sdb1'
-    alias usb2='pmount /dev/sdc1'
-    alias unusb2='pumount /dev/sdc1'
-    alias figdoh='clear && figlet -tc -f doh'
-
-    # enable programmable completion features (you don't need to enable
-    # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-    # sources /etc/bash.bashrc).
     if [ -f /etc/bash_completion ]; then
         . /etc/bash_completion
     fi
-
-    #Use GREP color features by default
-    export GREP_OPTIONS='--color=auto'
-
-    # Fix Java gray windows.
-    export AWT_TOOLKIT=MToolkit
-
-    export PATH=$PATH:/home/linduxed/bin/
 
     export EDITOR="vim"
 fi
