@@ -34,7 +34,7 @@ if [[ -n $PS1 ]] ; then
     esac
 
     if [ -x /usr/bin/dircolors ]; then
-        eval "`dircolors -b ~/.dircolors`"
+        eval "`dircolors -b ~/.zprezto/dircolors`"
         alias ls='ls --color=auto -p'
     fi
 
