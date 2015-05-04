@@ -90,3 +90,4 @@ nnoremap <leader>fy :let @*=@%<Bar>echo @% "- yanked"<CR>
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>e :e<CR>
