@@ -11,7 +11,6 @@ kbdd &
 wicd-gtk -t &
 thunderbird &
 firefox &
-xscreensaver -no-splash &
 start-pulseaudio-x11 &
 dropboxd &
 SpiderOak &
@@ -19,6 +18,7 @@ wmname LG3D &
 kupfer &
 workrave &
 xrandr --output HDMI-0 --mode 1920x1080 --right-of DP-0 --rotate left &
+xscreensaver -no-splash &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
