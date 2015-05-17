@@ -57,6 +57,8 @@ nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
 nmap <Leader>mm <Plug>MarkSet
 xmap <Leader>mm <Plug>MarkSet
+nmap <Leader>mr <Plug>MarkRegex
+xmap <Leader>mr <Plug>MarkRegex
 nmap <Leader>mt <Plug>MarkToggle
 nmap <Leader>mx <Plug>MarkClear
 nmap <Leader>mc <Plug>MarkAllClear
