@@ -53,6 +53,20 @@ let g:EasyMotion_mapping_N = '<Leader><Leader>K'
 
 nmap <silent> <Leader>i <Plug>IndentGuidesToggle
 
+" {{{1 Mark
+
+nmap <Leader>mm <Plug>MarkSet
+xmap <Leader>mm <Plug>MarkSet
+nmap <Leader>mt <Plug>MarkToggle
+nmap <Leader>mx <Plug>MarkClear
+nmap <Leader>mc <Plug>MarkAllClear
+nmap <Leader>m* <Plug>MarkSearchCurrentNext
+nmap <Leader>m# <Plug>MarkSearchCurrentPrev
+nmap <Leader>m/ <Plug>MarkSearchAnyNext
+nmap <Leader>m? <Plug>MarkSearchAnyPrev
+nmap * <Plug>MarkSearchNext
+nmap # <Plug>MarkSearchPrev
+
 " {{{1 Rspec
 
 nmap <Leader>st :call RunCurrentSpecFile()<CR>

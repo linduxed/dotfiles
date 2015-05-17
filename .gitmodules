@@ -55,9 +55,6 @@
 [submodule "vim/bundle/lushtags"]
 	path = vim/bundle/lushtags
 	url = https://github.com/bitc/lushtags
-[submodule "vim/bundle/mark"]
-	path = vim/bundle/mark
-	url = https://github.com/linduxed/Mark--Karkat
 [submodule "vim/bundle/matchit"]
 	path = vim/bundle/matchit
 	url = https://github.com/vim-scripts/matchit.zip
@@ -232,3 +229,6 @@
 [submodule "vim/bundle/rust"]
 	path = vim/bundle/rust
 	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/bundle/mark"]
+	path = vim/bundle/mark
+	url = https://github.com/asins/mark
