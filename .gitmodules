@@ -79,9 +79,6 @@
 [submodule "vim/bundle/rake"]
 	path = vim/bundle/rake
 	url = https://github.com/tpope/vim-rake.git
-[submodule "vim/bundle/rspec"]
-	path = vim/bundle/rspec
-	url = https://github.com/thoughtbot/vim-rspec
 [submodule "vim/bundle/scratch"]
 	path = vim/bundle/scratch
 	url = https://github.com/vim-scripts/scratch.vim
