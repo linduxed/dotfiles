@@ -49,6 +49,29 @@ let g:EasyMotion_mapping_k = '<Leader><Leader>u'
 let g:EasyMotion_mapping_n = '<Leader><Leader>k'
 let g:EasyMotion_mapping_N = '<Leader><Leader>K'
 
+" {{{1 incsearch
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+augroup incsearch-keymap
+  autocmd!
+  autocmd VimEnter * call s:incsearch_keymap()
+augroup END
+function! s:incsearch_keymap()
+  IncSearchNoreMap <C-i> <Over>(incsearch-next)
+  IncSearchNoreMap <C-n> <Over>(incsearch-prev)
+  IncSearchNoreMap <C-h> <Over>(incsearch-scroll-f)
+  IncSearchNoreMap <C-j> <Over>(incsearch-scroll-b)
+endfunction
+
 " {{{1 IndentGuides
 
 nmap <silent> <Leader>i <Plug>IndentGuidesToggle
@@ -66,8 +89,8 @@ nmap <Leader>m* <Plug>MarkSearchCurrentNext
 nmap <Leader>m# <Plug>MarkSearchCurrentPrev
 nmap <Leader>m/ <Plug>MarkSearchAnyNext
 nmap <Leader>m? <Plug>MarkSearchAnyPrev
-nmap * <Plug>MarkSearchNext
-nmap # <Plug>MarkSearchPrev
+nmap <Leader>* <Plug>MarkSearchNext
+nmap <Leader># <Plug>MarkSearchPrev
 
 " {{{1 Rspec
 

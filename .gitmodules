@@ -232,3 +232,6 @@
 [submodule "vim/bundle/mark"]
 	path = vim/bundle/mark
 	url = https://github.com/asins/mark
+[submodule "vim/bundle/incsearch"]
+	path = vim/bundle/incsearch
+	url = https://github.com/haya14busa/incsearch.vim
