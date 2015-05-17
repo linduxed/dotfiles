@@ -68,7 +68,6 @@ editor_syntax_highlighting=1
 editor_visible_tabs=1
 editor_visible_spaces=1
 nice_rotating_dash=1
-horizontal_split=0
 mcview_remember_file_position=0
 editor_backup_extension=~
 
@@ -99,9 +98,15 @@ filetype_mode=1
 permission_mode=0
 ignore_ftp_chattr_errors=true
 
+preallocate_space=0
+editor_drop_selection_on_copy=1
+editor_cursor_after_inserted_block=0
+editor_group_undo=0
+editor_ask_filename_before_edit=0
+editor_filesize_threshold=64M
+editor_stop_format_chars=-+*\\,.;:&>
+
 [Layout]
-equal_split=1
-first_panel_size=136
 message_visible=1
 keybar_visible=1
 xterm_title=1
@@ -113,6 +118,12 @@ permission_mode=0
 filetype_mode=1
 
 free_space=1
+
+horizontal_split=0
+vertical_equal=1
+left_panel_size=68
+horizontal_equal=1
+top_panel_size=136
 
 [Dirs]
 other_dir=/home/linduxed/backup/video
@@ -170,6 +181,8 @@ base_color=gray,black:normal=white,black:selected=black,brown:marked=black,light
 xterm=
 color_terminals=
 
+xterm-256color=
+
 [Panels]
 kilobyte_si=false
 mix_all_files=false
@@ -186,6 +199,10 @@ mouse_move_pages=true
 filetype_mode=true
 permission_mode=false
 quick_search_mode=2
+
+show_mini_info=true
+torben_fj_mode=false
+select_flags=6
 
 [Panelize]
 Find *.orig after patching=find . -name *.orig -print
