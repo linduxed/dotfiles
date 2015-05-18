@@ -36,9 +36,6 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'xdg-open %URL%'
 
-" {{{1 incsearch
-
-let g:incsearch#auto_nohlsearch = 1
 
 " {{{1 IndentGuides
 

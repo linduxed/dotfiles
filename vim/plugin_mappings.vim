@@ -54,12 +54,6 @@ let g:EasyMotion_mapping_N = '<Leader><Leader>K'
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
 
 augroup incsearch-keymap
   autocmd!
@@ -89,8 +83,8 @@ nmap <Leader>m* <Plug>MarkSearchCurrentNext
 nmap <Leader>m# <Plug>MarkSearchCurrentPrev
 nmap <Leader>m/ <Plug>MarkSearchAnyNext
 nmap <Leader>m? <Plug>MarkSearchAnyPrev
-nmap <Leader>* <Plug>MarkSearchNext
-nmap <Leader># <Plug>MarkSearchPrev
+nmap * <Plug>MarkSearchNext
+nmap # <Plug>MarkSearchPrev
 
 " {{{1 Rspec
 
