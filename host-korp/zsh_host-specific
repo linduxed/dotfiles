@@ -1,2 +1,4 @@
+export TERM=xterm-256color
+
 envoy -t ssh-agent
 source <(envoy -p)
