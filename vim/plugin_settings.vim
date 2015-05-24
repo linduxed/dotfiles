@@ -29,6 +29,13 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
 
+" {{{1 EasyMotion
+
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade Comment
+hi link EasyMotionTarget2First Identifier
+hi link EasyMotionTarget2Second Identifier
+
 " {{{1 Gist
 
 let g:gist_clip_command = 'xclip -selection clipboard'
