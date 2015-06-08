@@ -88,9 +88,6 @@
 [submodule "vim/bundle/solar_linduxed"]
 	path = vim/bundle/solar_linduxed
 	url = https://github.com/linduxed/vim-colors-solarized.git
-[submodule "vim/bundle/syntastic"]
-	path = vim/bundle/syntastic
-	url = git://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/syntaxcomplete"]
 	path = vim/bundle/syntaxcomplete
 	url = https://github.com/vim-scripts/SyntaxComplete

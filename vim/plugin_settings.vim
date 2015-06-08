@@ -9,7 +9,6 @@ endif
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
@@ -107,12 +106,6 @@ let g:rspec_command = "!bundle exec rspec -c {spec}"
 " {{{1 SnipMate
 
 let g:snips_author = 'linduxed'
-
-" {{{1 Syntastic
-
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_ruby_checkers = ['mri', 'rubocop']
-let g:syntastic_ruby_rubocop_exec = '~/.rbenv/shims/rubocop'
 
 " {{{1 TextObjects
 
