@@ -232,3 +232,6 @@
 [submodule "vim/bundle/mustache-handlebars"]
 	path = vim/bundle/mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars
+[submodule "vim/bundle/neomake"]
+	path = vim/bundle/neomake
+	url = https://github.com/benekastah/neomake
