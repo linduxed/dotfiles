@@ -38,3 +38,5 @@
     browser = xdg-open
 [include]
     path = ~/.gitconfig_overrides
+[rebase]
+    autosquash = true
