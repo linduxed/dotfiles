@@ -12,7 +12,7 @@ wicd-gtk -t &
 thunderbird &
 firefox &
 start-pulseaudio-x11 &
-dropboxd &
+dropbox &
 SpiderOak &
 wmname LG3D &
 kupfer &
