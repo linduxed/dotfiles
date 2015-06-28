@@ -1,0 +1,30 @@
+zstyle ':prezto:*:*' case-sensitive 'no'
+zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:load' zfunction 'zargs' 'zmv'
+zstyle ':prezto:load' pmodule \
+    'environment' \
+    'terminal' \
+    'editor' \
+    'history' \
+    'directory' \
+    'spectrum' \
+    'utility' \
+    'completion' \
+    'prompt' \
+    'archive' \
+    'command-not-found' \
+    'syntax-highlighting' \
+    'git' \
+    'gnu-utility' \
+    'pacman' \
+    'rsync' \
+    'ruby' \
+    'rails' \
+    'fasd' \
+    'haskell' \
+    'todo' \
+    'tmux' \
+    'history-substring-search'
+zstyle ':prezto:module:editor' keymap 'emacs'
+zstyle ':prezto:module:prompt' theme 'linduxed'
+zstyle ':prezto:module:terminal' auto-title 'yes'

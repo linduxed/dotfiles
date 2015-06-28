@@ -1,0 +1,6 @@
+export TERM=xterm-256color
+
+eval "$(hub alias -s)"
+
+envoy -t ssh-agent
+source <(envoy -p)
