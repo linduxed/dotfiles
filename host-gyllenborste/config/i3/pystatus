@@ -18,7 +18,10 @@ status.register("battery",
         "FULL": "=",
     },)
 
-status.register("temp", format="{temp:.0f}°C")
+status.register("temp",
+    file="/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input",
+    format="{temp:.0f}°C"
+)
 
 status.register(
     "pulseaudio",
