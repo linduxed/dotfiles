@@ -235,3 +235,6 @@
 [submodule "vim/bundle/neomake"]
 	path = vim/bundle/neomake
 	url = https://github.com/benekastah/neomake
+[submodule "vim/bundle/systemd-syntax"]
+	path = vim/bundle/systemd-syntax
+	url = https://github.com/Matt-Deacalion/vim-systemd-syntax
