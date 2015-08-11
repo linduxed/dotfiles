@@ -5,5 +5,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 
+set guifont=Inconsolata\ 20
+
 " Use console dialogs.
 set guioptions+=c
