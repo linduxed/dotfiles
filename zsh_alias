@@ -11,4 +11,4 @@ alias pb='gist -c'
 alias pbh='wgetpaste -l Haskell'
 alias pbr='wgetpaste -l Ruby'
 alias dl='aria2c'
-alias eaf='$EDITOR $(find . -type f)'
+alias eaf="find . -type f -exec $EDITOR '{}' +"
