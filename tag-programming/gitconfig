@@ -40,3 +40,5 @@
     path = ~/.gitconfig_overrides
 [rebase]
     autosquash = true
+[rerere]
+    enabled = true
