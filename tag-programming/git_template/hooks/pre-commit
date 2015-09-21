@@ -5,6 +5,9 @@ exit 0 if ARGV.include?('--no-verify')
 keywords = %w(binding.pry console.log)
 
 files_changed = %x(git diff-index --name-only HEAD --).split
+
+exit 0 if files_changed.empty?
+
 %x(git grep -q -E "#{keywords.join('|')}" #{files_changed.join(' ')})
 
 if $?.exitstatus.zero?
