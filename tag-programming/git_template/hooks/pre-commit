@@ -10,7 +10,7 @@ exit 0 if files_changed.empty?
 
 `git grep -q -E "#{keywords.join('|')}" #{files_changed.join(' ')}`
 
-if $CHILD_STATUS.exitstatus.zero?
+if $?.exitstatus.zero?
   puts '# Check following lines:'
   files_changed.each do |file|
     keywords.each do |keyword|
