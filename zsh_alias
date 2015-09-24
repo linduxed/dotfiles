@@ -7,7 +7,5 @@ alias unusb2='pumount /dev/sdc1'
 alias mc='mc -u'
 alias pull-all='find . -name ".git"  -type d -prune -execdir git pull \;'
 alias pb='gist -c'
-alias pbh='wgetpaste -l Haskell'
-alias pbr='wgetpaste -l Ruby'
 alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
