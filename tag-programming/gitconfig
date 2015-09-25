@@ -42,3 +42,5 @@
     autosquash = true
 [rerere]
     enabled = true
+[diff]
+    algorithm = patience
