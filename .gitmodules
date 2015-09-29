@@ -238,3 +238,6 @@
 [submodule "vim/bundle/systemd-syntax"]
 	path = vim/bundle/systemd-syntax
 	url = https://github.com/Matt-Deacalion/vim-systemd-syntax
+[submodule "vim/bundle/vim-racer"]
+	path = vim/bundle/vim-racer
+	url = https://github.com/racer-rust/vim-racer

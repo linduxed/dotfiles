@@ -122,3 +122,6 @@ let g:EasyMotion_keys = 'hdoairesnt'
 " {{{1 vim-rsi
 
 let g:rsi_no_meta = 1
+" {{{1 vim-racer
+
+let g:racer_cmd = "/usr/bin/racer"
