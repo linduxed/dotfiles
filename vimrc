@@ -1,3 +1,7 @@
+" {{{1 Early plugin disabling
+
+source ~/.vim/plugin_disabling.vim
+
 " {{{1 Pathogen
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
