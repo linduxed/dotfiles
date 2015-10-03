@@ -8,7 +8,10 @@ status = Status(standalone=True)
 
 status.register("clock", format="%a %-d %b %X W%V")
 
-status.register("temp", format="{temp:.0f}°C")
+status.register("temp",
+    file="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
+    format="{temp:.0f}°C"
+)
 
 status.register(
     "pulseaudio",
