@@ -18,7 +18,17 @@ status.register("battery",
         "FULL": "=",
     },)
 
+status.register(
+    "cpu_usage_graph",
+    graph_width=20,
+    graph_style="braille-fill"
+)
+
 status.register("temp", format="{temp:.0f}°C")
+
+status.register("load",
+    format="{avg1} {avg5} {avg15}"
+)
 
 status.register(
     "pulseaudio",
