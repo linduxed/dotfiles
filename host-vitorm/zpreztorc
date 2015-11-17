@@ -24,7 +24,8 @@ zstyle ':prezto:load' pmodule \
     'haskell' \
     'todo' \
     'tmux' \
-    'history-substring-search'
+    'history-substring-search' \
+    'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'linduxed'
 zstyle ':prezto:module:terminal' auto-title 'yes'
