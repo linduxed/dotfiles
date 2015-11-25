@@ -19,6 +19,7 @@ kupfer &
 workrave &
 xrandr --output HDMI-0 --mode 1920x1080 --right-of DP-0 --rotate left &
 xscreensaver -no-splash &
+redshift-gtk &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
