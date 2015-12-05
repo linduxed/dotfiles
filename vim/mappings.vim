@@ -85,8 +85,8 @@ nnoremap <Leader>b zMzvzz
 nnoremap ]v :tabnext<CR>
 nnoremap [v :tabprevious<CR>
 
-nnoremap <leader>fp :echo @%<CR>
-nnoremap <leader>fy :let @*=@%<Bar>echo @% "- yanked"<CR>
+nnoremap <leader>pp :echo @%<CR>
+nnoremap <leader>py :let @*=@%<Bar>echo @% "- yanked"<CR>
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
