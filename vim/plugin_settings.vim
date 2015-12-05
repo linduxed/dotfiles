@@ -14,14 +14,6 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#branch#displayed_head_limit = 12
 
-" {{{1 CTRLP
-
-let g:ctrlp_max_height = 25
-let g:ctrlp_cache_dir = $HOME.'/.vim/ctrlp-cache'
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_open_multi = '2v'
-let g:ctrlp_custom_ignore = { 'dir': 'tmp' }
-
 " {{{1 DelimitMate
 
 let delimitMate_expand_cr = 1

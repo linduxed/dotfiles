@@ -1,35 +1,3 @@
-" {{{1 CTRLP
-
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtBS()':              ['<bs>'],
-    \ 'PrtDelete()':          ['<del>'],
-    \ 'PrtDeleteWord()':      ['<c-w>'],
-    \ 'PrtClear()':           ['<c-k>'],
-    \ 'PrtSelectMove("j")':   ['<c-e>', '<down>'],
-    \ 'PrtSelectMove("k")':   ['<c-u>', '<up>'],
-    \ 'PrtHistory(-1)':       ['<c-j>'],
-    \ 'PrtHistory(1)':        ['<c-h>'],
-    \ 'AcceptSelection("e")': ['<cr>', '<2-LeftMouse>'],
-    \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
-    \ 'AcceptSelection("t")': ['<c-t>', '<MiddleMouse>'],
-    \ 'AcceptSelection("v")': ['<c-v>', '<c-q>', '<RightMouse>'],
-    \ 'ToggleFocus()':        ['<tab>'],
-    \ 'ToggleRegex()':        ['<c-r>'],
-    \ 'ToggleByFname()':      ['<c-d>'],
-    \ 'ToggleType(1)':        ['<c-f>', '<c-up'],
-    \ 'ToggleType(-1)':       ['<c-b>', '<c-down>'],
-    \ 'PrtCurStart()':        ['<c-l>'],
-    \ 'PrtCurEnd()':          ['<c-y>'],
-    \ 'PrtCurLeft()':         ['<c-n>', '<left>'],
-    \ 'PrtCurRight()':        ['<c-i>', '<right>'],
-    \ 'PrtClearCache()':      ['<F5>'],
-    \ 'PrtDeleteMRU()':       ['<F7>'],
-    \ 'CreateNewFile()':      ['<c-g>'],
-    \ 'MarkToOpen()':         ['<c-z>'],
-    \ 'OpenMulti()':          ['<c-o>'],
-    \ 'PrtExit()':            ['<esc>', '<c-c>'],
-    \ }
-
 " {{{1 EasyMotion
 
 let g:EasyMotion_mapping_f = '<Leader><Leader>f'

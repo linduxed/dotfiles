@@ -7,10 +7,10 @@ inoremap <expr> <M-;> pumvisible() ? "\<lt>C-n>" : "\<lt>C-x>\<lt>C-o>\<lt>C-n>\
 " {{{1 Function keys
 
 nnoremap <F1> :buffer #<CR>
-nnoremap <F2> :CtrlPBuffer<CR>
-nnoremap <F3> :CtrlPTag<CR>
-nnoremap <F4> :CtrlPRoot<CR>
-nnoremap <F5> :CtrlPMRU<CR>
+" F2: not bound.
+" F3: not bound.
+" F4: not bound.
+" F5: not bound.
 nnoremap <F6> :UndotreeToggle<CR>
 " F7: not bound.
 nnoremap <F8> :set list!<CR>
