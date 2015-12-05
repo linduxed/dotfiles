@@ -238,3 +238,9 @@
 [submodule "vim/bundle/vim-racer"]
 	path = vim/bundle/vim-racer
 	url = https://github.com/racer-rust/vim-racer
+[submodule "vim/bundle/fzf.vim"]
+	path = vim/bundle/fzf.vim
+	url = https://github.com/junegunn/fzf.vim
+[submodule "vim/bundle/fzf"]
+	path = vim/bundle/fzf
+	url = https://github.com/junegunn/fzf
