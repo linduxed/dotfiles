@@ -113,3 +113,7 @@ nnoremap <Leader>lq :ColemakDisable<CR>
 " {{{1 StripTrailingWhitespace
 
 nnoremap <silent> <Leader>kw :StripTrailingWhitespace<CR>
+
+" {{{1 fzf
+
+nnoremap <C-p> :FZF<CR>
