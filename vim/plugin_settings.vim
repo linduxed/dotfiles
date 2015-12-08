@@ -35,6 +35,15 @@ let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'xdg-open %URL%'
 
 
+" {{{1 haskell-vim
+
+let g:haskell_indent_if = 3
+let g:haskell_indent_case = 4
+let g:haskell_indent_let = 4
+let g:haskell_indent_where = 2
+let g:haskell_indent_do = 3
+let g:haskell_indent_in = 1
+
 " {{{1 IndentGuides
 
 let g:indent_guides_auto_colors = 0
