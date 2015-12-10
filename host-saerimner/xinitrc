@@ -14,7 +14,7 @@ firefox &
 xscreensaver -no-splash &
 start-pulseaudio-x11 &
 dropbox &
-SpiderOak &
+SpiderOakONE &
 wmname LG3D &
 kupfer &
 workrave &
