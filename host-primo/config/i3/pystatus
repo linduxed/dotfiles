@@ -15,7 +15,7 @@ status.register(
 )
 
 status.register("temp",
-    file="/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input",
+    file="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input",
     format="{temp:.0f}°C"
 )
 
