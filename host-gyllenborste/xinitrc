@@ -8,7 +8,7 @@ autocutsel -selection PRIMARY -fork &
 # Autostart
 [ ! -s ~/.mpd/pid  ] && mpd &
 kbdd &
-wicd-gtk -t &
+nm-applet &
 thunderbird &
 firefox &
 xscreensaver -no-splash &
