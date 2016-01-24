@@ -14,6 +14,7 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#branch#displayed_head_limit = 12
 let g:airline#extensions#capslock#enabled = 1
+let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''◆'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 
 " {{{1 DelimitMate
 
