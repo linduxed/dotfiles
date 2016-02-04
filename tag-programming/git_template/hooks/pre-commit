@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'English'
+
 exit 0 if ARGV.include?('--no-verify')
 
 keywords = %w(binding.pry console.log)
@@ -10,12 +12,12 @@ exit 0 if files_changed.empty?
 
 `git grep -q -E "#{keywords.join('|')}" #{files_changed.join(' ')}`
 
-if $?.exitstatus.zero?
+if $CHILD_STATUS.exitstatus.zero?
   puts '# Check following lines:'
   files_changed.each do |file|
     keywords.each do |keyword|
       `git grep -q #{keyword} #{file}`
-      if $?.exitstatus.zero?
+      if $CHILD_STATUS.exitstatus.zero?
         line = `git grep -n #{keyword} #{file} | awk -F ":" '{print $2}'`.split.join(', ')
         puts "#\t\033[31m#{file}\033[0m contains #{keyword} at line \033[33m#{line}\033[0m."
       end
