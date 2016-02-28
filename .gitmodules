@@ -151,9 +151,6 @@
 [submodule "vim/bundle/vim-misc"]
 	path = vim/bundle/vim-misc
 	url = https://github.com/xolox/vim-misc
-[submodule "vim/bundle/vim-pathogen"]
-	path = vim/bundle/vim-pathogen
-	url = git://github.com/tpope/vim-pathogen.git
 [submodule "vim/bundle/vim-qargs"]
 	path = vim/bundle/vim-qargs
 	url = git://github.com/nelstrom/vim-qargs.git
