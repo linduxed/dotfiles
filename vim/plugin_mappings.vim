@@ -1,21 +1,21 @@
 " {{{1 EasyMotion
 
-let g:EasyMotion_mapping_f = '<Leader><Leader>f'
-let g:EasyMotion_mapping_F = '<Leader><Leader>F'
-let g:EasyMotion_mapping_t = '<Leader><Leader>p'
-let g:EasyMotion_mapping_T = '<Leader><Leader>P'
-let g:EasyMotion_mapping_w = '<Leader><Leader>y'
-let g:EasyMotion_mapping_W = '<Leader><Leader>Y'
-let g:EasyMotion_mapping_b = '<Leader><Leader>l'
-let g:EasyMotion_mapping_B = '<Leader><Leader>L'
-let g:EasyMotion_mapping_e = '<Leader><Leader>i'
-let g:EasyMotion_mapping_E = '<Leader><Leader>I'
-let g:EasyMotion_mapping_ge = '<Leader><Leader>n'
-let g:EasyMotion_mapping_gE = '<Leader><Leader>N'
-let g:EasyMotion_mapping_j = '<Leader><Leader>e'
-let g:EasyMotion_mapping_k = '<Leader><Leader>u'
-let g:EasyMotion_mapping_n = '<Leader><Leader>k'
-let g:EasyMotion_mapping_N = '<Leader><Leader>K'
+nmap <Leader><Leader>f <Plug>(easymotion-f)
+nmap <Leader><Leader>F <Plug>(easymotion-F)
+nmap <Leader><Leader>p <Plug>(easymotion-t)
+nmap <Leader><Leader>P <Plug>(easymotion-T)
+nmap <Leader><Leader>y <Plug>(easymotion-w)
+nmap <Leader><Leader>Y <Plug>(easymotion-W)
+nmap <Leader><Leader>l <Plug>(easymotion-b)
+nmap <Leader><Leader>L <Plug>(easymotion-B)
+nmap <Leader><Leader>i <Plug>(easymotion-e)
+nmap <Leader><Leader>I <Plug>(easymotion-E)
+nmap <Leader><Leader>n <Plug>(easymotion-ge)
+nmap <Leader><Leader>N <Plug>(easymotion-gE)
+nmap <Leader><Leader>e <Plug>(easymotion-j)
+nmap <Leader><Leader>u <Plug>(easymotion-k)
+nmap <Leader><Leader>k <Plug>(easymotion-n)
+nmap <Leader><Leader>K <Plug>(easymotion-N)
 
 " {{{1 incsearch
 
