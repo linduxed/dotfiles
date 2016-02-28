@@ -60,6 +60,17 @@ let g:mwDefaultHighlightingPalette = 'maximum'
 
 let g:markdown_fenced_languages = ['ruby', 'haskell', 'vim', 'sh', 'c']
 
+" {{{1 Neomake
+
+let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
+let g:neomake_warning_sign = {
+  \ 'text': '>>',
+  \ 'texthl': 'Todo',
+  \ }
+let g:neomake_error_sign = {
+  \ 'texthl': 'Error',
+  \ }
+autocmd! BufWritePost * Neomake
 " {{{1 NERDcommenter
 
 let NERDSpaceDelims = 1 " Add spaces around the comment signs for all languages

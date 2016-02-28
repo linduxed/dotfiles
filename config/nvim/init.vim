@@ -1,10 +1,10 @@
 " {{{1 Early plugin disabling
 
-source ~/.vim/plugin_disabling.vim
+source ~/.config/nvim/plugin_disabling.vim
 
 " {{{1 Plugins
 
-source ~/.vim/plugins.vim
+source ~/.config/nvim/plugins.vim
 
 " {{{1 Colorscheme
 
@@ -96,9 +96,9 @@ set viminfo='10,\"100,:20
 set backup
 set undofile
 
-set undodir=~/.vim/tmp/undo//
-set backupdir=~/.vim/tmp/backup//
-set directory=~/.vim/tmp/swap//
+set undodir=~/.config/nvim/tmp/undo//
+set backupdir=~/.config/nvim/tmp/backup//
+set directory=~/.config/nvim/tmp/swap//
 
 if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), "p")
@@ -115,6 +115,6 @@ endif
 " mappings.vim needs to be sourced after plugin_settings, otherwise some
 " plugin_settings get overwritten by mappings.vim.
 
-source ~/.vim/plugin_settings.vim
-source ~/.vim/mappings.vim
-source ~/.vim/plugin_mappings.vim
+source ~/.config/nvim/plugin_settings.vim
+source ~/.config/nvim/mappings.vim
+source ~/.config/nvim/plugin_mappings.vim
