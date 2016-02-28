@@ -2,6 +2,10 @@
 
 source ~/.vim/plugin_disabling.vim
 
+" {{{1 Plugins
+
+source ~/.vim/plugins.vim
+
 " {{{1 Colorscheme
 
 syntax on
