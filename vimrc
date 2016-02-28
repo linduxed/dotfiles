@@ -2,11 +2,9 @@
 
 source ~/.vim/plugin_disabling.vim
 
-" {{{1 Pathogen
+" {{{1 Plugins
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-filetype indent plugin on
+source ~/.vim/plugins.vim
 
 " {{{1 Colorscheme
 
