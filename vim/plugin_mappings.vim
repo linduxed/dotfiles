@@ -36,7 +36,7 @@ endfunction
 
 " {{{1 IndentGuides
 
-nmap <silent> <Leader>i <Plug>IndentGuidesToggle
+nmap <silent> <Leader>ai <Plug>IndentGuidesToggle
 
 " {{{1 Mark
 
@@ -70,10 +70,10 @@ smap <C-r><C-h> <Plug>snipMateShow
 
 " {{{1 Tabularize
 
-vnoremap <Leader>te :Tabularize / = /l0<CR>
-nnoremap <Leader>te :Tabularize / = /l0<CR>
-vnoremap <Leader>tc :Tabularize /:\zs/l0l1<CR>
-nnoremap <Leader>tc :Tabularize /:\zs/l0l1<CR>
+vnoremap <Leader>ate :Tabularize / = /l0<CR>
+nnoremap <Leader>ate :Tabularize / = /l0<CR>
+vnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
+nnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
 
 " {{{1 TextObjects
 
@@ -101,12 +101,12 @@ omap ru <Plug>(textobj-url-i)
 
 " {{{1 Colemak
 
-nnoremap <Leader>lc :ColemakEnable<CR>
-nnoremap <Leader>lq :ColemakDisable<CR>
+nnoremap <Leader>alc :ColemakEnable<CR>
+nnoremap <Leader>alq :ColemakDisable<CR>
 
 " {{{1 StripTrailingWhitespace
 
-nnoremap <silent> <Leader>kw :StripTrailingWhitespace<CR>
+nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
 
 " {{{1 fzf
 
