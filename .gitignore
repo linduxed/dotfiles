@@ -4,3 +4,4 @@ vim/viminfo*
 vim/shada
 vim/spell/*.spl
 vim/spell/*.sug
+vim/plugged
