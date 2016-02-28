@@ -54,11 +54,6 @@ nmap <Leader>m? <Plug>MarkSearchAnyPrev
 nmap * <Plug>MarkSearchNext
 nmap # <Plug>MarkSearchPrev
 
-" {{{1 Signify
-
-nmap <leader>ge <plug>(signify-next-jump)
-nmap <leader>gu <plug>(signify-prev-jump)
-
 " {{{1 SnipMate
 
 imap <C-h>      <Plug>snipMateNextOrTrigger
