@@ -54,12 +54,6 @@ nmap <Leader>m? <Plug>MarkSearchAnyPrev
 nmap * <Plug>MarkSearchNext
 nmap # <Plug>MarkSearchPrev
 
-" {{{1 Rspec
-
-nmap <Leader>st :call RunCurrentSpecFile()<CR>
-nmap <Leader>sr :call RunNearestSpec()<CR>
-nmap <Leader>ss :call RunLastSpec()<CR>
-
 " {{{1 Signify
 
 nmap <leader>ge <plug>(signify-next-jump)

@@ -102,10 +102,6 @@ let g:rbpt_colorpairs = [
 " of rbpt_colorpairs.
 let g:rbpt_max = 15
 
-" {{{1 Rspec
-
-let g:rspec_command = "!bundle exec rspec -c {spec}"
-
 " {{{1 SnipMate
 
 let g:snips_author = 'linduxed'
