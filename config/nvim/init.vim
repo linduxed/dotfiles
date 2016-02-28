@@ -4,7 +4,12 @@ source ~/.config/nvim/plugin_disabling.vim
 
 " {{{1 Plugins
 
-source ~/.config/nvim/plugins.vim
+call plug#begin()
+
+source ~/.config/nvim/default_plugins.vim
+source ~/.config/nvim/host_specific_plugins.vim
+
+call plug#end()
 
 " {{{1 Colorscheme
 
