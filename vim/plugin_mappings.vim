@@ -103,3 +103,7 @@ nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
 " {{{1 fzf
 
 nnoremap <C-p> :FZF<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fb :BLines<CR>
+nnoremap <leader>fm :Marks<CR>
+nnoremap <leader>fh :Helptags<CR>
