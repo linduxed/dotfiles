@@ -1,7 +1,3 @@
-" {{{1 Early plugin disabling
-
-source ~/.config/nvim/plugin_disabling.vim
-
 " {{{1 Plugins
 
 call plug#begin()
