@@ -1,18 +1,18 @@
 " {{{1 EasyMotion
 
-nmap <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
-nmap <Leader><Leader>s <Plug>(easymotion-sn)
-nmap <Leader><Leader>f <Plug>(easymotion-bd-f)
-nmap <Leader><Leader>F <Plug>(easymotion-overwin-f)
-nmap <Leader><Leader>p <Plug>(easymotion-bd-t)
-nmap <Leader><Leader>y <Plug>(easymotion-bd-w)
-nmap <Leader><Leader>Y <Plug>(easymotion-bd-W)
-nmap <Leader><Leader>l <Plug>(easymotion-overwin-w)
-nmap <Leader><Leader>i <Plug>(easymotion-bd-e)
-nmap <Leader><Leader>I <Plug>(easymotion-bd-E)
-nmap <Leader><Leader>e <Plug>(easymotion-bd-jk)
-nmap <Leader><Leader>u <Plug>(easymotion-overwin-line)
-nmap <Leader><Leader>k <Plug>(easymotion-bd-n)
+map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
+map <Leader><Leader>s <Plug>(easymotion-sn)
+map <Leader><Leader>f <Plug>(easymotion-bd-f)
+map <Leader><Leader>F <Plug>(easymotion-overwin-f)
+map <Leader><Leader>p <Plug>(easymotion-bd-t)
+map <Leader><Leader>y <Plug>(easymotion-bd-w)
+map <Leader><Leader>Y <Plug>(easymotion-bd-W)
+map <Leader><Leader>l <Plug>(easymotion-overwin-w)
+map <Leader><Leader>i <Plug>(easymotion-bd-e)
+map <Leader><Leader>I <Plug>(easymotion-bd-E)
+map <Leader><Leader>e <Plug>(easymotion-bd-jk)
+map <Leader><Leader>u <Plug>(easymotion-overwin-line)
+map <Leader><Leader>k <Plug>(easymotion-bd-n)
 
 " {{{1 incsearch
 
