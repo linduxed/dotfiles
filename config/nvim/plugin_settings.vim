@@ -22,6 +22,10 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
 
+" {{{1 deoplete
+
+let g:deoplete#enable_at_startup = 1
+
 " {{{1 EasyMotion
 
 hi link EasyMotionTarget ErrorMsg
