@@ -40,6 +40,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'linduxed/vim-surround'
 Plug 'linduxed/vim-unimpaired'
 Plug 'guns/xterm-color-table.vim'
+Plug 'Shougo/deoplete.nvim'
 
 " Text objects
 
