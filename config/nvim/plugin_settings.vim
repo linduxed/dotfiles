@@ -25,6 +25,8 @@ let delimitMate_jump_expansion = 1
 " {{{1 deoplete
 
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#set('_', 'converters',
+    \ ['converter_remove_paren'])
 
 " {{{1 EasyMotion
 
