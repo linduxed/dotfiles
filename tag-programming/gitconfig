@@ -4,6 +4,10 @@
 [merge]
     tool = vimdiff
     defaultToUpstream = true
+[mergetool]
+    prompt = true
+[mergetool "vimdiff"]
+    cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [color]
     branch = auto
     diff = auto
