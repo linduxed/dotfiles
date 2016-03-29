@@ -43,6 +43,10 @@ let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'xdg-open %URL%'
 
 
+" {{{1 vim-gitgutter
+
+let g:gitgutter_map_keys = 0
+
 " {{{1 haskell-vim
 
 let g:haskell_indent_if = 3

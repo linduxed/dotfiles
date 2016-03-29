@@ -14,6 +14,15 @@ map <Leader><Leader>e <Plug>(easymotion-bd-jk)
 map <Leader><Leader>u <Plug>(easymotion-overwin-line)
 map <Leader><Leader>k <Plug>(easymotion-bd-n)
 
+" {{{1 vim-gitgutter
+
+nmap ]c <Plug>GitGutterNextHunk
+nmap [c <Plug>GitGutterPrevHunk
+nmap <silent> <Leader>agt <Plug>GitGutterLineHighlightsToggle
+nmap <silent> <Leader>ags <Plug>GitGutterStageHunk
+nmap <silent> <Leader>agr <Plug>GitGutterRevertHunk
+nmap <silent> <Leader>agp <Plug>GitGutterPreviewHunk
+
 " {{{1 incsearch
 
 map /  <Plug>(incsearch-forward)
