@@ -23,6 +23,12 @@ nmap <silent> <Leader>ags <Plug>GitGutterStageHunk
 nmap <silent> <Leader>agr <Plug>GitGutterRevertHunk
 nmap <silent> <Leader>agp <Plug>GitGutterPreviewHunk
 
+" {{{1 vim-grepper
+
+nmap gl <plug>(GrepperOperator)
+xmap gl <plug>(GrepperOperator)
+nmap <Leader>gl :Grepper<CR>
+
 " {{{1 incsearch
 
 map /  <Plug>(incsearch-forward)
