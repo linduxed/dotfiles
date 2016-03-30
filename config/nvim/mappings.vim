@@ -62,7 +62,6 @@ let mapleader = " "
 nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
-nnoremap <S-Tab> i<Tab><Esc><Right>
 vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
 
