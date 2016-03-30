@@ -1,3 +1,8 @@
+" {{{1 Colemak
+
+nnoremap <Leader>alc :ColemakEnable<CR>
+nnoremap <Leader>alq :ColemakDisable<CR>
+
 " {{{1 EasyMotion
 
 map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
@@ -14,6 +19,13 @@ map <Leader><Leader>e <Plug>(easymotion-bd-jk)
 map <Leader><Leader>u <Plug>(easymotion-overwin-line)
 map <Leader><Leader>k <Plug>(easymotion-bd-n)
 
+" {{{1 fzf
+
+nnoremap <C-p> :FZF<CR>
+nnoremap <leader>fl :Lines<CR>
+nnoremap <leader>fb :BLines<CR>
+nnoremap <leader>fm :Marks<CR>
+nnoremap <leader>fh :Helptags<CR>
 " {{{1 vim-gitgutter
 
 nmap ]c <Plug>GitGutterNextHunk
@@ -66,6 +78,11 @@ nmap <Leader>m? <Plug>MarkSearchAnyPrev
 nmap * <Plug>MarkSearchNext
 nmap # <Plug>MarkSearchPrev
 
+" {{{1 vim-sayonara
+
+nmap aq :Sayonara<CR>
+nmap abq :Sayonara!<CR>
+
 " {{{1 SnipMate
 
 imap <C-h>      <Plug>snipMateNextOrTrigger
@@ -74,6 +91,10 @@ imap <C-b>      <Plug>snipMateBack
 smap <C-b>      <Plug>snipMateBack
 imap <C-r><C-h> <Plug>snipMateShow
 smap <C-r><C-h> <Plug>snipMateShow
+
+" {{{1 StripTrailingWhitespace
+
+nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
 
 " {{{1 Tabularize
 
@@ -105,25 +126,3 @@ xmap tu <Plug>(textobj-url-a)
 omap tu <Plug>(textobj-url-a)
 xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
-
-" {{{1 vim-sayonara
-
-nmap aq :Sayonara<CR>
-nmap abq :Sayonara!<CR>
-
-" {{{1 Colemak
-
-nnoremap <Leader>alc :ColemakEnable<CR>
-nnoremap <Leader>alq :ColemakDisable<CR>
-
-" {{{1 StripTrailingWhitespace
-
-nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
-
-" {{{1 fzf
-
-nnoremap <C-p> :FZF<CR>
-nnoremap <leader>fl :Lines<CR>
-nnoremap <leader>fb :BLines<CR>
-nnoremap <leader>fm :Marks<CR>
-nnoremap <leader>fh :Helptags<CR>
