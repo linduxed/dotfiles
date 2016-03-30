@@ -35,6 +35,9 @@ hi link EasyMotionShade Comment
 hi link EasyMotionTarget2First Identifier
 hi link EasyMotionTarget2Second Identifier
 
+" Characters at the end of the string have higher precedence.
+let g:EasyMotion_keys = 'hdoairesnt'
+
 " {{{1 Gist
 
 let g:gist_clip_command = 'xclip -selection clipboard'
@@ -135,10 +138,6 @@ let g:textobj_indent_no_default_key_mappings = 1
 let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
-" {{{1 EasyMotion
-
-" Characters at the end of the string have higher precedence.
-let g:EasyMotion_keys = 'hdoairesnt'
 " {{{1 vim-rsi
 
 let g:rsi_no_meta = 1
