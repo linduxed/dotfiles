@@ -95,6 +95,9 @@ let g:NERDCustomDelimiters = {
     \ 'c': { 'leftAlt': '/*','rightAlt': '*/', 'left': '//', 'right': '' },
 \ }
 
+" {{{1 vim-racer
+
+let g:racer_cmd = "/usr/bin/racer"
 " {{{1 RainbowParentheses
 
 autocmd VimEnter * RainbowParenthesesToggle
@@ -128,6 +131,10 @@ let g:rbpt_colorpairs = [
 " of rbpt_colorpairs.
 let g:rbpt_max = 15
 
+" {{{1 vim-rsi
+
+let g:rsi_no_meta = 1
+
 " {{{1 SnipMate
 
 let g:snips_author = 'linduxed'
@@ -141,10 +148,3 @@ let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
 
-" {{{1 vim-rsi
-
-let g:rsi_no_meta = 1
-
-" {{{1 vim-racer
-
-let g:racer_cmd = "/usr/bin/racer"
