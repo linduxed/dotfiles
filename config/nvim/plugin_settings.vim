@@ -45,7 +45,6 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'xdg-open %URL%'
 
-
 " {{{1 vim-gitgutter
 
 let g:gitgutter_map_keys = 0
@@ -84,9 +83,11 @@ let g:neomake_error_sign = {
   \ 'texthl': 'Error',
   \ }
 autocmd! BufWritePost * Neomake
+
 " {{{1 NERDcommenter
 
 let NERDSpaceDelims = 1 " Add spaces around the comment signs for all languages
+
 " Since Alt style is not implemented at the moment, use custom delimiters instead.
 let g:NERDCustomDelimiters = {
     \ 'haskell': { 'leftAlt': '{-','rightAlt': '-}', 'left': '--', 'right': '' },
@@ -99,6 +100,7 @@ let g:NERDCustomDelimiters = {
 autocmd VimEnter * RainbowParenthesesToggle
 autocmd Syntax * RainbowParenthesesLoadRound
 autocmd Syntax * RainbowParenthesesLoadSquare
+
 " Haskell comment syntax breaks with Rainbow on.
 autocmd Syntax * if &ft != "haskell" | exec "RainbowParenthesesLoadBraces" | endif
 
@@ -138,9 +140,11 @@ let g:textobj_indent_no_default_key_mappings = 1
 let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
+
 " {{{1 vim-rsi
 
 let g:rsi_no_meta = 1
+
 " {{{1 vim-racer
 
 let g:racer_cmd = "/usr/bin/racer"
