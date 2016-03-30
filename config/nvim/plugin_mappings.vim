@@ -106,6 +106,11 @@ omap tu <Plug>(textobj-url-a)
 xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
 
+" {{{1 vim-sayonara
+
+nmap aq :Sayonara<CR>
+nmap abq :Sayonara!<CR>
+
 " {{{1 Colemak
 
 nnoremap <Leader>alc :ColemakEnable<CR>
