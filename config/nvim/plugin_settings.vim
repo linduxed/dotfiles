@@ -45,7 +45,7 @@ let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
 let g:gist_browser_command = 'xdg-open %URL%'
 
-" {{{1 vim-gitgutter
+" {{{1 gitgutter
 
 let g:gitgutter_map_keys = 0
 
@@ -95,7 +95,7 @@ let g:NERDCustomDelimiters = {
     \ 'c': { 'leftAlt': '/*','rightAlt': '*/', 'left': '//', 'right': '' },
 \ }
 
-" {{{1 vim-racer
+" {{{1 racer
 
 let g:racer_cmd = "/usr/bin/racer"
 " {{{1 RainbowParentheses
@@ -131,7 +131,7 @@ let g:rbpt_colorpairs = [
 " of rbpt_colorpairs.
 let g:rbpt_max = 15
 
-" {{{1 vim-rsi
+" {{{1 rsi
 
 let g:rsi_no_meta = 1
 
