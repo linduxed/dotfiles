@@ -26,7 +26,7 @@ nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>fb :BLines<CR>
 nnoremap <leader>fm :Marks<CR>
 nnoremap <leader>fh :Helptags<CR>
-" {{{1 vim-gitgutter
+" {{{1 gitgutter
 
 nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
@@ -35,7 +35,7 @@ nmap <silent> <Leader>ags <Plug>GitGutterStageHunk
 nmap <silent> <Leader>agr <Plug>GitGutterRevertHunk
 nmap <silent> <Leader>agp <Plug>GitGutterPreviewHunk
 
-" {{{1 vim-grepper
+" {{{1 grepper
 
 nmap gl <plug>(GrepperOperator)
 xmap gl <plug>(GrepperOperator)
@@ -78,7 +78,7 @@ nmap <Leader>m? <Plug>MarkSearchAnyPrev
 nmap * <Plug>MarkSearchNext
 nmap # <Plug>MarkSearchPrev
 
-" {{{1 vim-sayonara
+" {{{1 sayonara
 
 nmap aq :Sayonara<CR>
 nmap abq :Sayonara!<CR>
