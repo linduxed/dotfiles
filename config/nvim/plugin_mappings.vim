@@ -26,6 +26,7 @@ nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>fb :BLines<CR>
 nnoremap <leader>fm :Marks<CR>
 nnoremap <leader>fh :Helptags<CR>
+
 " {{{1 gitgutter
 
 nmap ]c <Plug>GitGutterNextHunk
