@@ -81,8 +81,8 @@ nmap # <Plug>MarkSearchPrev
 
 " {{{1 sayonara
 
-nmap aq :Sayonara<CR>
-nmap abq :Sayonara!<CR>
+nmap <leader>aq :Sayonara<CR>
+nmap <leader>abq :Sayonara!<CR>
 
 " {{{1 SnipMate
 
