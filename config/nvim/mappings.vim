@@ -17,7 +17,7 @@ nnoremap <F8> :set list!<CR>
 nnoremap <F9> :make<CR>
 " F10: not bound.
 nnoremap <F11> :TagbarToggle<CR>
-" F12: not bound.
+nnoremap <F12> :NERDTreeToggle<CR>
 
 " {{{1 Whitespace highlighting
 

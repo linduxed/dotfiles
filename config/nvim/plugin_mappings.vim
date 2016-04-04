@@ -79,6 +79,16 @@ nmap <Leader>m? <Plug>MarkSearchAnyPrev
 nmap * <Plug>MarkSearchNext
 nmap # <Plug>MarkSearchPrev
 
+" {{{1 NERDtree
+
+let g:NERDTreeMapOpenExpl = 'y'
+let g:NERDTreeMapUpdir = 'l'
+let g:NERDTreeMapUpdirKeepOpen = 'L'
+let g:NERDTreeMapJumpFirstChild = 'U'
+let g:NERDTreeMapJumpLastChild = 'E'
+let g:NERDTreeMapJumpPrevSibling = '<C-u>'
+let g:NERDTreeMapJumpNextSibling = '<C-e>'
+
 " {{{1 sayonara
 
 nmap <leader>aq :Sayonara<CR>

@@ -95,6 +95,10 @@ let g:NERDCustomDelimiters = {
     \ 'c': { 'leftAlt': '/*','rightAlt': '*/', 'left': '//', 'right': '' },
 \ }
 
+" {{{1 NERDtree
+
+let NERDTreeQuitOnOpen = 1
+
 " {{{1 racer
 
 let g:racer_cmd = "/usr/bin/racer"
