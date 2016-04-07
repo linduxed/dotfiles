@@ -49,6 +49,10 @@ let g:gist_browser_command = 'xdg-open %URL%'
 
 let g:gitgutter_map_keys = 0
 
+" {{{1 go
+
+let g:go_textobj_enabled = 0
+
 " {{{1 haskell-vim
 
 let g:haskell_indent_if = 3
