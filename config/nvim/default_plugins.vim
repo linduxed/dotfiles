@@ -40,6 +40,7 @@ Plug 'garbas/vim-snipmate' | Plug 'MarcWeber/vim-addon-mw-utils' | Plug 'tomtom/
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-speeddating'
 Plug 'linduxed/vim-surround'
+Plug 'cespare/vim-toml'
 Plug 'linduxed/vim-unimpaired'
 Plug 'guns/xterm-color-table.vim'
 Plug 'Shougo/deoplete.nvim'
