@@ -3,6 +3,10 @@
 nnoremap <Leader>alc :ColemakEnable<CR>
 nnoremap <Leader>alq :ColemakDisable<CR>
 
+" {{{1 deoplete
+
+nnoremap <Leader>ad :call deoplete#toggle()<CR>
+
 " {{{1 EasyMotion
 
 map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
