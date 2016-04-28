@@ -1,3 +1,5 @@
+Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'elixir-lang/vim-elixir'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
