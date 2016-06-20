@@ -48,6 +48,7 @@
     enabled = true
 [diff]
     algorithm = patience
+    compactionHeuristic = true
 [commit]
     verbose = true
 [submodule]
