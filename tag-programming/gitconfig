@@ -48,3 +48,5 @@
     enabled = true
 [diff]
     algorithm = patience
+[commit]
+    verbose = true
