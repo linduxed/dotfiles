@@ -50,3 +50,5 @@
     algorithm = patience
 [commit]
     verbose = true
+[submodule]
+    fetchJobs = 4
