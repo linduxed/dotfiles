@@ -9,4 +9,4 @@ alias pull-all='find . -name ".git"  -type d -prune -execdir git pull \;'
 alias pb='gist -c'
 alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
-alias gpbc="git rev-parse HEAD && git rev-parse HEAD | pbcopy"
+alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
