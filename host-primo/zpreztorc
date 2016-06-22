@@ -25,7 +25,6 @@ zstyle ':prezto:load' pmodule \
     'todo' \
     'tmux' \
     'history-substring-search' \
-    'autosuggestions' \
     'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'linduxed'
