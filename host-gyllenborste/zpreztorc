@@ -23,6 +23,7 @@ zstyle ':prezto:load' pmodule \
     'fasd' \
     'todo' \
     'tmux' \
+    'ssh' \
     'history-substring-search' \
     'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'
