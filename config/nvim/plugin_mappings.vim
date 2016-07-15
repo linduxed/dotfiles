@@ -30,6 +30,7 @@ nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>fb :BLines<CR>
 nnoremap <leader>fm :Marks<CR>
 nnoremap <leader>fh :Helptags<CR>
+nnoremap <leader>fw :Windows<CR>
 
 " {{{1 gitgutter
 
