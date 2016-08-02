@@ -3,6 +3,8 @@ export PASSWORD_STORE_DIR=$HOME/SpiderOak\ Hive/password-store
 
 export GOPATH=$HOME/Documents/go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.cabal/bin
+export PATH=$PATH:$HOME/.local/bin
 export RUST_SRC_PATH='/usr/src/rust/src'
 export LUA_PATH='/home/linduxed/.luarocks/share/lua/5.3/?.lua;/home/linduxed/.luarocks/share/lua/5.3/?/init.lua;/usr/share/lua/5.3/?.lua;/usr/share/lua/5.3/?/init.lua;/usr/lib/lua/5.3/?.lua;/usr/lib/lua/5.3/?/init.lua;./?.lua;./?/init.lua'
 export LUA_CPATH='/home/linduxed/.luarocks/lib/lua/5.3/?.so;/usr/lib/lua/5.3/?.so;/usr/lib/lua/5.3/loadall.so;./?.so'

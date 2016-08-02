@@ -3,5 +3,7 @@ export PASSWORD_STORE_DIR=$HOME/SpiderOak\ Hive/password-store
 
 export GOPATH=$HOME/Documents/go
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.cabal/bin
+export PATH=$PATH:$HOME/.local/bin
 
 eval "$(hub alias -s)"
