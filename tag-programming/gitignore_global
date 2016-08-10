@@ -18,3 +18,5 @@ Session.vim
 .rubocop.yml
 .rspec
 .ackrc
+.stack-work
+.cabal-sandbox
