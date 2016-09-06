@@ -1,0 +1,144 @@
+# {{{ Setup
+
+set $mod Mod4
+set $ALT Mod1
+
+font pango:Inconsolata 14
+
+bar {
+   status_command    python ~/.config/i3/pystatus
+   position          top
+   workspace_buttons yes
+}
+
+# }}}
+# {{{ Layout
+
+bindsym $mod+y layout toggle split
+bindsym $mod+semicolon layout stacking
+bindsym $mod+bracketleft layout tabbed
+bindsym $mod+m focus child
+bindsym $mod+k focus parent
+bindsym $mod+h split h
+bindsym $mod+l split v
+bindsym $mod+f fullscreen
+
+bindsym $mod+j mode "resize"
+
+mode "resize" {
+    bindsym n resize shrink width 5 px or 5 ppt
+    bindsym i resize grow width 5 px or 5 ppt
+    bindsym e resize shrink height 5 px or 5 ppt
+    bindsym u resize grow height 5 px or 5 ppt
+
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+    bindsym Down resize shrink height 5 px or 5 ppt
+    bindsym Up resize grow height 5 px or 5 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# }}}
+# {{{ Navigation
+
+bindsym $mod+u focus up
+bindsym $mod+e focus down
+bindsym $mod+n focus left
+bindsym $mod+i focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+u move up
+bindsym $mod+Shift+e move down
+bindsym $mod+Shift+n move left
+bindsym $mod+Shift+i move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+o move container to output right
+bindsym $mod+apostrophe move workspace to output right
+
+# }}}
+# {{{ Floating
+
+floating_modifier $mod
+bindsym $mod+Shift+t floating toggle
+bindsym $mod+t focus mode_toggle
+
+for_window [class="FTL" instance="FTL"] floating enable
+for_window [class="Gnome-screenshot"] floating enable
+
+# }}}
+# {{{ Workspaces
+
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8:email
+bindsym $mod+9 workspace 9:shells
+bindsym $mod+0 workspace 10:irc
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8:email
+bindsym $mod+Shift+9 move container to workspace 9:shells
+bindsym $mod+Shift+0 move container to workspace 10:irc
+
+assign [class="Thunderbird"] 8:email
+
+# }}}
+# {{{ Scratchpad
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# }}}
+# {{{ Commands
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+grave kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# }}}
+# {{{ Mappings
+
+bindsym $mod+F1 exec dmenu_run
+bindsym $mod+F2 exec quickswitch.py
+bindsym $mod+F3 exec "/usr/bin/asus-kbd-backlight down"
+bindsym $mod+F4 exec "/usr/bin/asus-kbd-backlight up"
+bindsym $mod+F5 exec "/usr/bin/xbacklight -dec 10"
+bindsym $mod+F6 exec "/usr/bin/xbacklight -inc 10"
+bindsym $mod+F7 exec "/usr/bin/autorandr --change --force --default laptop"
+bindsym $mod+F8 exec "/home/linduxed/bin/bg_random_switch.sh"
+bindsym $mod+F9 exec "/usr/bin/xrandr --output eDP1 --off && sleep 1 && /usr/bin/xrandr --output eDP1 --mode 3200x1800"
+bindsym $mod+F10 exec "/usr/bin/pulseaudio-ctl mute"
+bindsym $mod+F11 exec "/usr/bin/pulseaudio-ctl down"
+bindsym $mod+F12 exec "/usr/bin/pulseaudio-ctl up"
+
+bindsym Control+$ALT+p exec "mpc toggle"
+bindsym Control+$ALT+s exec "mpc stop"
+bindsym Control+$ALT+l exec "mpc prev"
+bindsym Control+$ALT+y exec "mpc next"
+
+bindsym $mod+Shift+l exec "xscreensaver-command -lock"
+
+# }}}
