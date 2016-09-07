@@ -125,8 +125,8 @@ bindsym $mod+F1 exec dmenu_run
 bindsym $mod+F2 exec quickswitch.py
 bindsym $mod+F3 exec "/usr/bin/kbdlight down 20"
 bindsym $mod+F4 exec "/usr/bin/kbdlight up 20"
-bindsym $mod+F5 exec "/usr/bin/xbacklight -dec 10"
-bindsym $mod+F6 exec "/usr/bin/xbacklight -inc 10"
+bindsym $mod+F5 exec "/usr/bin/xbacklight -dec 20"
+bindsym $mod+F6 exec "/usr/bin/xbacklight -inc 20"
 bindsym $mod+F7 exec "/usr/bin/autorandr --change --force --default laptop"
 bindsym $mod+F8 exec "/home/linduxed/bin/bg_random_switch.sh"
 bindsym $mod+F9 exec "/usr/bin/xrandr --output eDP1 --off && sleep 1 && /usr/bin/xrandr --output eDP1 --mode 3200x1800"
