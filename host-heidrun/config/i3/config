@@ -123,8 +123,8 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+F1 exec dmenu_run
 bindsym $mod+F2 exec quickswitch.py
-bindsym $mod+F3 exec "/usr/bin/asus-kbd-backlight down"
-bindsym $mod+F4 exec "/usr/bin/asus-kbd-backlight up"
+bindsym $mod+F3 exec "/usr/bin/kbdlight down 20"
+bindsym $mod+F4 exec "/usr/bin/kbdlight up 20"
 bindsym $mod+F5 exec "/usr/bin/xbacklight -dec 10"
 bindsym $mod+F6 exec "/usr/bin/xbacklight -inc 10"
 bindsym $mod+F7 exec "/usr/bin/autorandr --change --force --default laptop"
