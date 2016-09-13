@@ -56,6 +56,21 @@ let g:gitgutter_map_keys = 0
 
 let g:go_textobj_enabled = 0
 
+" {{{1 Goyo
+
+function! s:goyo_enter()
+  set nocursorcolumn
+  set nocursorline
+endfunction
+
+function! s:goyo_leave()
+  set cursorcolumn
+  set cursorline
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 " {{{1 haskell-vim
 
 let g:haskell_indent_if = 3
