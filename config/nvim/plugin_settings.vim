@@ -41,6 +41,10 @@ hi link EasyMotionTarget2Second Identifier
 " Characters at the end of the string have higher precedence.
 let g:EasyMotion_keys = 'hdoairesnt'
 
+" {{{1 fugitive
+
+let g:fugitive_no_maps = 1
+
 " {{{1 Gist
 
 let g:gist_clip_command = 'xclip -selection clipboard'
