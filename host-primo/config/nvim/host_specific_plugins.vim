@@ -1,5 +1,3 @@
-Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'elixir-lang/vim-elixir'
 Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
 Plug 'kchmck/vim-coffee-script'
