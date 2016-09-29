@@ -28,7 +28,7 @@ map <Leader><Leader>k <Plug>(easymotion-bd-n)
 nnoremap <C-p> :FZF<CR>
 nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>fb :BLines<CR>
-nnoremap <leader>fm :Marks<CR>
+nnoremap <leader>fm :call fzf#vim#marks(0)<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fw :Windows<CR>
 nnoremap <leader>fa :Ag<CR>
