@@ -32,6 +32,7 @@ nnoremap <leader>fm :call fzf#vim#marks(0)<CR>
 nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fw :Windows<CR>
 nnoremap <leader>fa :Ag<CR>
+nnoremap <leader>fs :Snippets<CR>
 
 " {{{1 gitgutter
 
