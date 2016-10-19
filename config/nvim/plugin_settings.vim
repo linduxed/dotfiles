@@ -173,10 +173,6 @@ let g:rbpt_max = 15
 
 let g:rsi_no_meta = 1
 
-" {{{1 SnipMate
-
-let g:snips_author = 'linduxed'
-
 " {{{1 TextObjects
 
 " Default bindings disabled for remapping to colemak bindings.
@@ -199,3 +195,6 @@ let g:tagbar_type_moon = {
         \ 'p:properties',
     \ ]
     \ }
+" {{{1 UltiSnips
+
+let g:snips_author = 'linduxed'

@@ -100,14 +100,6 @@ let g:NERDTreeMapJumpNextSibling = '<C-e>'
 nmap <leader>aq :Sayonara<CR>
 nmap <leader>abq :Sayonara!<CR>
 
-" {{{1 SnipMate
-
-imap <C-h>      <Plug>snipMateNextOrTrigger
-smap <C-h>      <Plug>snipMateNextOrTrigger
-imap <C-b>      <Plug>snipMateBack
-smap <C-b>      <Plug>snipMateBack
-imap <C-r><C-h> <Plug>snipMateShow
-smap <C-r><C-h> <Plug>snipMateShow
 
 " {{{1 StripTrailingWhitespace
 
@@ -119,6 +111,13 @@ vnoremap <Leader>ate :Tabularize / = /l0<CR>
 nnoremap <Leader>ate :Tabularize / = /l0<CR>
 vnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
+
+" {{{1 UltiSnips
+
+let g:UltiSnipsExpandTrigger="<C-h>"
+let g:UltiSnipsListSnippets="<C-r><C-h>"
+let g:UltiSnipsJumpForwardTrigger="<c-o>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 " {{{1 TextObjects
 
