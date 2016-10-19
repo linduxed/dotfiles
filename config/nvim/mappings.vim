@@ -25,8 +25,8 @@ nnoremap <F12> :NERDTreeToggle<CR>
 
 " {{{1 Whitespace highlighting
 
-nnoremap <silent> <Leader>we :highlight ExtraWhitespace ctermbg=red guibg=red<CR>
-nnoremap <silent> <Leader>wd :highlight ExtraWhitespace ctermbg=none guibg=none<CR>
+nnoremap <silent> <Leader>awe :highlight ExtraWhitespace ctermbg=red guibg=red<CR>
+nnoremap <silent> <Leader>awd :highlight ExtraWhitespace ctermbg=none guibg=none<CR>
 
 " {{{1 Change behaviour of standard functions
 
