@@ -135,6 +135,7 @@ let NERDTreeQuitOnOpen = 1
 " {{{1 racer
 
 let g:racer_cmd = "/usr/bin/racer"
+
 " {{{1 RainbowParentheses
 
 autocmd VimEnter * RainbowParenthesesToggle
