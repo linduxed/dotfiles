@@ -1,3 +1,7 @@
+" {{{1 Miscellaneous
+
+let mapleader = " "
+
 " {{{1 Completion menu
 
 "Tip #1386, Make Vim completion popup menu work just like in an IDE
@@ -53,10 +57,6 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
-" {{{1 Miscellaneous
-
-let mapleader = " "
 
 " The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
 nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
