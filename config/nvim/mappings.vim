@@ -46,18 +46,6 @@ nnoremap J mzJ`z
 vmap < <gv
 vmap > >gv
 
-" {{{2 Make * in visual-mode behave smarter
-
-function! s:VSetSearch()
-    let temp = @@
-    norm! gvy
-    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-    let @@ = temp
-endfunction
-
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
 " The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
 nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
@@ -92,3 +80,15 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>e :e<CR>
 
 tnoremap <C-\> <C-\><C-n>
+
+" {{{2 Make * in visual-mode behave smarter
+
+function! s:VSetSearch()
+    let temp = @@
+    norm! gvy
+    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
