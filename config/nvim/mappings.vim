@@ -60,9 +60,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" Split line
-nnoremap <Leader><CR> i<CR><esc>^mwgk:silent! s/\v +$//<CR>:noh<CR>`w:delmarks w<CR>
-
 " Toggle "keep current line in the center of the screen" mode
 nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
 
@@ -92,3 +89,14 @@ endfunction
 
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+" {{{2 Split line and remove potential trailing whitespace
+
+function! s:SplitLine()
+    exe "norm! i\<CR>"
+    norm! ^mwgk
+    s/\v +$//
+    norm! `w
+    delmarks w
+endfunction
+nnoremap <Leader><CR> :call <SID>SplitLine()<CR>
