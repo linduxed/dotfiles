@@ -2,6 +2,54 @@
 
 let mapleader = " "
 
+" Help file navigation
+au FileType help nnoremap <buffer> <CR> <C-]>|
+au FileType help nnoremap <buffer> <Backspace> <C-t>|
+
+" Reselection of pasted text (linewise or not, it adjusts)
+nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" Toggle "keep current line in the center of the screen" mode
+nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
+
+" "Refocus" folds
+nnoremap <Leader>b zMzvzz
+
+nnoremap ]v :tabnext<CR>
+nnoremap [v :tabprevious<CR>
+
+nnoremap <leader>pp :echo @%<CR>
+nnoremap <leader>py :let @*=@%<Bar>echo @% "- yanked"<CR>
+
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q<CR>
+nnoremap <leader>e :e<CR>
+
+tnoremap <C-\> <C-\><C-n>
+
+" {{{2 Make * in visual-mode behave smarter
+
+function! s:VSetSearch()
+    let temp = @@
+    norm! gvy
+    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
+    let @@ = temp
+endfunction
+
+vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
+vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
+
+" {{{2 Split line and remove potential trailing whitespace
+
+function! s:SplitLine()
+    exe "norm! i\<CR>"
+    norm! ^mwgk
+    s/\v +$//
+    norm! `w
+    delmarks w
+endfunction
+nnoremap <Leader><CR> :call <SID>SplitLine()<CR>
+
 " {{{1 Completion menu
 
 "Tip #1386, Make Vim completion popup menu work just like in an IDE
@@ -52,51 +100,3 @@ vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
 vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
-
-" Help file navigation
-au FileType help nnoremap <buffer> <CR> <C-]>|
-au FileType help nnoremap <buffer> <Backspace> <C-t>|
-
-" Reselection of pasted text (linewise or not, it adjusts)
-nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-" Toggle "keep current line in the center of the screen" mode
-nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
-
-" "Refocus" folds
-nnoremap <Leader>b zMzvzz
-
-nnoremap ]v :tabnext<CR>
-nnoremap [v :tabprevious<CR>
-
-nnoremap <leader>pp :echo @%<CR>
-nnoremap <leader>py :let @*=@%<Bar>echo @% "- yanked"<CR>
-
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>e :e<CR>
-
-tnoremap <C-\> <C-\><C-n>
-
-" {{{2 Make * in visual-mode behave smarter
-
-function! s:VSetSearch()
-    let temp = @@
-    norm! gvy
-    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-    let @@ = temp
-endfunction
-
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
-" {{{2 Split line and remove potential trailing whitespace
-
-function! s:SplitLine()
-    exe "norm! i\<CR>"
-    norm! ^mwgk
-    s/\v +$//
-    norm! `w
-    delmarks w
-endfunction
-nnoremap <Leader><CR> :call <SID>SplitLine()<CR>
