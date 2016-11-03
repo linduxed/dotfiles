@@ -44,7 +44,7 @@ vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 function! s:SplitLine()
     exe "norm! i\<CR>"
     norm! ^mwgk
-    s/\v +$//
+    s/\v *$//
     norm! `w
     delmarks w
 endfunction
