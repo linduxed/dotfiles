@@ -29,6 +29,7 @@ colorscheme solar_linduxed
 
 " {{{1 Miscellaneous options
 
+set inccommand=nosplit
 set expandtab
 set shiftwidth=4
 set tabstop=4
