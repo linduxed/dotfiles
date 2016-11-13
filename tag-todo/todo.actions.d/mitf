@@ -1,0 +1,106 @@
+#!/usr/bin/ruby
+
+# Most Important Task with offset into the Future
+#
+# This is an add-on for https://github.com/ginatrapani/todo.txt-cli/, and more
+# specifically an extension to the MIT add-on https://github.com/codybuell/mit.
+#
+# This add-on allows the user to generate MIT TODOs for certain day in
+# the future. Assuming today's YYYY-MM-DD date is 2016-01-15, then the command
+# "todo.sh mitf 10d 'Foo @bar +baz'" would result in running the MIT command
+# "todo.sh mit 2016.01.25 'Foo @bar +baz'".
+#
+# Sample commands:
+#
+# $ date -Idate
+# 2016-11-13
+#
+# $ todo.sh mitf 3d "Foo @bar +baz"
+# 85 2016-11-13 {2016.11.16} Foo @bar +baz
+# TODO: 85 added.
+#
+# $ todo.sh mitf 1w "Foo @bar +baz"
+# 86 2016-11-13 {2016.11.20} Foo @bar +baz
+# TODO: 86 added.
+#
+# $ todo.sh mitf 2m "Foo @bar +baz"
+# 87 2016-11-13 {2017.01.13} Foo @bar +baz
+# TODO: 87 added.
+
+require 'date'
+
+class DateParser
+  class ParseError < StandardError; end
+
+  def initialize(date)
+    @date = date
+  end
+
+  def parse
+    matches = @date.downcase.match(/\A(\d+)([dwm])\z/i)
+    fail ParseError if matches.nil?
+
+    number, time_period = matches[1].to_i, matches[2]
+
+    case time_period
+    when 'd'
+      Date.today + number
+    when 'w'
+      Date.today + (7 * number)
+    when 'm'
+      Date.today >> number
+    end
+  end
+end
+
+module DateFormatter
+  def self.with_dots(date)
+    date.to_s.gsub('-', '.')
+  end
+end
+
+class CLI
+  def run
+    show_usage_and_exit if usage_requested?
+
+    date_in_future = DateParser.new(ARGV[1]).parse
+    formatted_date = DateFormatter.with_dots(date_in_future)
+    todo = ARGV[2]
+
+    command_output = `todo.sh mit #{formatted_date} #{todo}`
+    puts command_output
+    exit 0
+  rescue DateParser::ParseError
+    puts 'ERROR: bad time provided'
+    exit 1
+  end
+
+  private
+
+  def usage_requested?
+    [ARGV[0], ARGV[1]].any? { |s| s == 'usage' }
+  end
+
+  def show_usage_and_exit
+    usage_message = <<-EOF
+      Most Important Task in Future (MITF):
+        Adds a MIT task (requires the MIT add-on) a certain amount of days, weeks or
+        months into the future.
+
+        mitf [TIME] [TODO]
+          TIME is structured as an integer followed by "d" (days), "w" (weeks) or "m"
+          (months). Sample TIMEs would be "3d", "4w" and "12m". Quotes are not
+          necessary.
+
+          Sample TODO would be "Foo @bar +baz". Quotes around TODO are necessary.
+    EOF
+
+    # Remove leading indentation
+    usage_message.gsub!(/^#{usage_message.scan(/^[ \t]*(?=\S)/).min}/, '')
+
+    puts usage_message
+    exit 0
+  end
+end
+
+CLI.new.run
