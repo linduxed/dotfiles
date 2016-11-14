@@ -44,18 +44,32 @@ class DateParser
 
     case time_period
     when 'd'
-      Date.today + number
+      days_from_today(number)
     when 'w'
-      Date.today + (7 * number)
+      weeks_from_today(number)
     when 'm'
-      Date.today >> number
+      months_from_today(number)
     end
+  end
+
+  private
+
+  def days_from_today(number)
+    Date.today + number
+  end
+
+  def weeks_from_today(number)
+    Date.today + (7 * number)
+  end
+
+  def months_from_today(number)
+    Date.today >> number
   end
 end
 
 module DateFormatter
   def self.with_dots(date)
-    date.to_s.gsub('-', '.')
+    date.to_s.tr('-', '.')
   end
 end
 
