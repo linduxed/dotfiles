@@ -40,15 +40,11 @@ set sidescrolloff=10
 set notimeout
 set ttimeout
 set ttimeoutlen=10
-set incsearch
-set hlsearch
 set ignorecase
 set smartcase
-set autoindent
 set nostartofline
 set formatoptions=qrn1t
 set whichwrap=b,s,[,],<,>,h,l
-set backspace=indent,eol,start
 set iskeyword+=-
 set virtualedit=block
 set nojoinspaces
@@ -58,23 +54,18 @@ set cursorcolumn
 set ruler
 set showcmd
 set showtabline=1
-set laststatus=2
 set number
 set hidden
 set mouse=n
 set foldmethod=marker
 set showbreak=…
-set history=50
 set synmaxcol=800
 set splitright
-set autoread
 set omnifunc=syntaxcomplete#Complete
 set completeopt=longest,menuone,preview
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:∘
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set tags=./tags,./TAGS,tags,TAGS
-set wildmenu
 set wildmode=list:longest,full
 set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.o,*.obj,*.exe,*.dll,*.manifest,*.spl,*.sw?,*.DS_Store,*.luac,migrations,*.pyc,*.orig
 let g:html_indent_tags = 'li\|p'
