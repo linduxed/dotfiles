@@ -100,3 +100,10 @@ vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
 inoremap <Tab> <Esc>|
 vnoremap <S-Tab> >gv|
 inoremap <S-Tab> <Tab>|
+
+" 1. Entering visual-mode is done while holding Shift.
+" 2. colemak.vim maps "u" to "k" (moving up)
+"
+" These two together cause me to uppercase stuff when I just wanted to move
+" up, causing frustration. Disable uppercasing with "U"; I can use "`" anyway.
+vnoremap U k
