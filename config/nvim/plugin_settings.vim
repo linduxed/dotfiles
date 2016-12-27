@@ -228,6 +228,10 @@ let g:rbpt_max = 15
 
 let g:rsi_no_meta = 1
 
+" {{{1 ruby
+
+let g:no_ruby_maps = 1
+
 " {{{1 TextObjects
 
 " Default bindings disabled for remapping to colemak bindings.

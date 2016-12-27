@@ -57,6 +57,6 @@ Plug 'kana/vim-textobj-user'
 
 Plug 'Matt-Deacalion/vim-systemd-syntax'
 Plug 'tpope/vim-markdown'
-Plug 'linduxed/vim-ruby'
+Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-endwise'
 Plug 'xenoterracide/html.vim'
