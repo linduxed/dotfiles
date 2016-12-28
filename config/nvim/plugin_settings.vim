@@ -257,3 +257,7 @@ let g:tagbar_type_moon = {
 " {{{1 UltiSnips
 
 let g:snips_author = 'linduxed'
+" {{{1 wheel
+
+" Disable for mouse, due to erratic behavior.
+let g:wheel#map#mouse = 0

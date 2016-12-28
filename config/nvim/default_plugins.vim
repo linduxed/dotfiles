@@ -42,6 +42,7 @@ Plug 'linduxed/vim-surround'
 Plug 'cespare/vim-toml'
 Plug 'linduxed/vim-unimpaired'
 Plug 'SirVer/ultisnips'
+Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
 
 " Text objects
