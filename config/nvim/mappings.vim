@@ -9,9 +9,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" Toggle "keep current line in the center of the screen" mode
-nnoremap <leader>C :let &scrolloff=999-&scrolloff<cr>
-
 " "Refocus" folds
 nnoremap <Leader>b zMzvzz
 
