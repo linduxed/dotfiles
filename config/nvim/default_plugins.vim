@@ -1,7 +1,7 @@
-Plug 'vim-scripts/SyntaxComplete'
 Plug 'linduxed/colemak.vim'
 Plug 'linduxed/cscope_macros.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
@@ -15,6 +15,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'vim-scripts/scratch.vim'
+Plug 'vim-scripts/SyntaxComplete'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'linduxed/undotree'
@@ -42,7 +43,6 @@ Plug 'cespare/vim-toml'
 Plug 'linduxed/vim-unimpaired'
 Plug 'SirVer/ultisnips'
 Plug 'guns/xterm-color-table.vim'
-Plug 'Shougo/deoplete.nvim'
 
 " Text objects
 
@@ -55,8 +55,8 @@ Plug 'kana/vim-textobj-user'
 
 " Language specific
 
-Plug 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'xenoterracide/html.vim'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-markdown'
 Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-endwise'
-Plug 'xenoterracide/html.vim'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
