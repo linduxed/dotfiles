@@ -30,5 +30,8 @@ if "$TODO_SH" command add "$@"; then
 	# figure out the line of what we just added, and "do" it
 	line=`sed -n '$ =' "$TODO_FILE"`
 	[ $PRIORITY != false ] && "$TODO_SH" command pri "$line" $PRIORITY
-	$DO && "$TODO_SH" command do "$line"
+fi
+
+if $DO; then
+	"$TODO_SH" command do "$line"
 fi
