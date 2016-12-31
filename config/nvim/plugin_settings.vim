@@ -28,9 +28,6 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#set('_', 'converters',
     \ ['converter_remove_paren'])
 
-let g:deoplete#omni#functions = {}
-let g:deoplete#omni#functions.lua = 'xolox#lua#omnifunc'
-
 " {{{1 EasyMotion
 
 hi link EasyMotionTarget ErrorMsg
@@ -89,13 +86,6 @@ let g:haskell_indent_in = 1
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermfg=none ctermbg=234 cterm=none
 hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
-
-" {{{1 lua-ftplugin
-
-let g:lua_check_syntax = 0
-let g:lua_complete_omni = 1
-let g:lua_complete_dynamic = 0
-let g:lua_define_completion_mappings = 0
 
 " {{{1 Mark
 
@@ -241,19 +231,6 @@ let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
 
-" {{{1 Tagbar
-
-let g:tagbar_type_moon = {
-    \ 'ctagstype' : 'moonscript',
-    \ 'kinds'     : [
-        \ 'v:variables',
-        \ 'f:functions',
-        \ 'c:classes',
-        \ 'm:methods',
-        \ 's:static properties',
-        \ 'p:properties',
-    \ ]
-    \ }
 " {{{1 UltiSnips
 
 let g:snips_author = 'linduxed'
