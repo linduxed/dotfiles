@@ -1,3 +1,4 @@
+Plug 'vim-scripts/bbcode'
 Plug 'linduxed/colemak.vim'
 Plug 'linduxed/cscope_macros.vim'
 Plug 'Raimondi/delimitMate'
