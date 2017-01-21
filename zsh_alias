@@ -9,3 +9,8 @@ alias pb='gist -c'
 alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
+mpf() {
+    chosen_track=$(mpc -f "%position% -- %artist% - %title% -- %file%" playlist | shuf | fzf)
+    track_number=$(sed -r 's/^([0-9]+).*/\1/' <<< $chosen_track);
+    mpc -q play $track_number
+}
