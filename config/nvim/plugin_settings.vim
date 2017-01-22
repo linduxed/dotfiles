@@ -224,7 +224,7 @@ let g:no_ruby_maps = 1
 
 " {{{1 TextObjects
 
-" Default bindings disabled for remapping to colemak bindings.
+" Default bindings disabled for remapping to Colemak bindings.
 let g:textobj_rubyblock_no_default_key_mappings = 1
 let g:textobj_indent_no_default_key_mappings = 1
 let g:textobj_space_no_default_key_mappings = 1
@@ -237,7 +237,7 @@ let g:snips_author = 'linduxed'
 
 " {{{1 unimpaired
 
-" Since the paste mappings conflict with my colemak setup, they need to be
+" Since the paste mappings conflict with my Colemak setup, they need to be
 " disabled. The plugin needs to be eager-loaded for the mappings to be
 " applied, whereafter they can be unmapped.
 runtime! plugin/unimpaired.vim
