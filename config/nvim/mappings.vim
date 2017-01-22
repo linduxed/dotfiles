@@ -87,10 +87,6 @@ nnoremap <c-o> <c-o>zz
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
-" Don't remove visual block when indenting.
-vmap < <gv
-vmap > >gv
-
 " The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
 nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
 vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
