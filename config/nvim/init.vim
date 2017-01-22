@@ -13,7 +13,7 @@ syntax on
 set background=dark
 
 set t_Co=256
-let g:solarized_termcolors=256
+let g:solarized_termcolors = 256
 let g:solarized_termtrans  = 1
 let g:solarized_degrade    = 0
 let g:solarized_bold       = 1
