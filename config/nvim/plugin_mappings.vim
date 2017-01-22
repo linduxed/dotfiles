@@ -95,6 +95,21 @@ nmap <leader>abq :Sayonara!<CR>
 
 nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
 
+" {{{1 surround
+
+let g:surround_no_mappings = 1
+
+nmap ds  <Plug>Dsurround
+nmap ws  <Plug>Csurround
+nmap wS  <Plug>CSurround
+nmap cs  <Plug>Ysurround
+nmap cS  <Plug>YSurround
+nmap css <Plug>Yssurround
+nmap cSs <Plug>YSsurround
+nmap cSS <Plug>YSsurround
+xmap s   <Plug>VSurround
+xmap gs  <Plug>VgSurround
+
 " {{{1 Tabularize
 
 vnoremap <Leader>ate :Tabularize / = /l0<CR>
