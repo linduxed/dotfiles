@@ -90,7 +90,6 @@ nnoremap Z <Plug>(RepeatUndo)
 nmap <leader>aq :Sayonara<CR>
 nmap <leader>abq :Sayonara!<CR>
 
-
 " {{{1 StripTrailingWhitespace
 
 nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
@@ -147,6 +146,7 @@ xmap tu <Plug>(textobj-url-a)
 omap tu <Plug>(textobj-url-a)
 xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
+
 " {{{1 wheel
 
 let g:wheel#map#up   = 'U'
