@@ -1,10 +1,3 @@
-" {{{1 ack.vim
-
-" Use Silver Searcher if present on the system.
-if executable("ag")
-    let g:ackprg = 'ag --nogroup --nocolor --column'
-endif
-
 " {{{1 airline
 
 let g:airline_powerline_fonts = 1
