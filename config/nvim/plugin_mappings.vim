@@ -79,6 +79,12 @@ let g:NERDTreeMapJumpLastChild = 'E'
 let g:NERDTreeMapJumpPrevSibling = '<C-u>'
 let g:NERDTreeMapJumpNextSibling = '<C-e>'
 
+" {{{1 repeat
+
+nnoremap z <Plug>(RepeatUndo)
+nnoremap gz <Plug>(RepeatUndo)
+nnoremap Z <Plug>(RepeatUndo)
+
 " {{{1 sayonara
 
 nmap <leader>aq :Sayonara<CR>
