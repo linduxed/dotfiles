@@ -234,6 +234,16 @@ let g:textobj_url_no_default_key_mappings = 1
 " {{{1 UltiSnips
 
 let g:snips_author = 'linduxed'
+
+" {{{1 unimpaired
+
+" Since the paste mappings conflict with my colemak setup, they need to be
+" disabled. The plugin needs to be eager-loaded for the mappings to be
+" applied, whereafter they can be unmapped.
+runtime! plugin/unimpaired.vim
+nunmap yo
+nunmap yO
+
 " {{{1 wheel
 
 " Disable for mouse, due to erratic behavior.
