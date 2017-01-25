@@ -1,411 +1,489 @@
-#!/bin/bash
-#
-# MIT
-#
-# Bash script to add funcitonality to todo.txt cli by Gina Trapani. Most
-# Important Tasks (MIT) are intended to be specific todo items associated
-# with a specific day. They differ from events in that they do not necessarily
-# have a specified time. As a best practice only 3 MITs should be scheduled
-# per day. This script is intended to parse the todo.txt file and generate a
-# schedule of MITs by day of the week if no arguments are given, or add new
-# MITs to the list.
-#
-# MITs are stored in the following format:
-#   {YYYY.MM.DD} mit task information
-#
-# Author(s): Cody Buell
-#
-# Licensing: GPL, http://www.gnu.org/copyleft/gpl.html
-#
-# Revisions: 2012.06.27 Framework roughed out.
-#            2012.06.28 Initial version completed.
-#            2012.06.29 Moved away from using DOY to prevent problems in
-#                       spanning years.
-#            2012.07.01 Added ability to move MITs.
-#            2012.07.02 Made greps a bit more robust.
-#            2012.07.13 Added ability to invert context listings.
-#            2012.09.22 Modified greps and seds to handle MITs with priorities.
-#            2012.10.29 Merged corrections from 00Davo regarding #2.
-#            2012.10.31 Added BSD vs GNU date detection.
-#            2013.01.16 Merged enhancements from rcraggs, adding ability to move
-#                       non-mit tasks into a mit and vise versa.  Incremented
-#                       version number from 1.1 to 1.2.  Setup core functions,
-#                       added short options section and re-arranged accordingly.
-#            2013.03.10 Added support for dated tasks per Justin Le's request.
-#                       Incremented version number from 1.2 to 1.3.
-#            2015.06.29 Support for GNU Sed 4.2.2.
-#
-# Requisite: todo.sh by Gina Trapanni
-#
-# Resources: https://github.com/ginatrapani/todo.txt-cli/wiki
-#
-# Task List: - Add extra check on mit mv to see that it is an MIT being moved.
-#            - Add ability to add a time {YYYY.MM.DD HH:MMam/pm}
-#                t mit today@10pm go to work @nasa
-#            - Fix mv function so that when a task is converted to a mit, the
-#                whole task name is displayed in the results.  Currently it
-#                snips out the first word.
-#            - Create brew formula.
-#            - Rewrite in a speedier language.
-#            - Date tab hinting, dates with weekday names, on mit creation.
-#            - Add 't mit [today,tomorrow,dow]' report output.
-#            - Ability to sort, prioritize and schedule.
-#            - Add 'events' to mit, non completable items that auto remove after date.
-#            - Overview to show exact dates for 0 - 14 days out, then by 'this month' then 'next month +'
+#!/usr/bin/env ruby
 
-###################
-# Usage Functions #
-###################
+require 'date'
 
-usage() {
-  cat <<-ENDOFUSAGE
+class TodoFileParser
+  TODOWithNumber = Struct.new(:line, :number)
 
-	  Most Important Tasks (MIT):
-	    Displays from or adds Most Important Tasks (MIT) to todo.txt file.
+  def initialize(todo_file_path)
+    @todo_file_path = todo_file_path
+  end
 
-	    $(basename $0) [-h|--help] [-v|--version] [date|day task] [rm ID]
-	        [not @context|@context] [mv ID DATE|DAY]
+  def mits
+    todo_lines = File.readlines(@todo_file_path)
+    chomped_lines = todo_lines.map(&:chomp)
 
-	    -h, --help      Displays help message.
-	    -v, --version   Displays version information.
+    all_todos = chomped_lines.map.with_index do |line, index|
+      # todo.sh uses the line numbers of the tasks as their IDs.
+      # The IDs are 1-indexed, which is why `index` is incremented by 1.
+      TODOWithNumber.new(line, index + 1)
+    end
 
-	    mit DATE|DAY task
-	      DATE must be in the format of YYYY.MM.DD.
-	      DAY can be full or short day names, today or tomorrow.
+    not_completed_todos = all_todos.reject do |todo|
+      todo.line.start_with?('x ')
+    end
 
-	    mit rm ID
-	      Convert the MIT identified by ID to a standard task.
+    not_completed_todos.
+      select { |todo| todo.line.match(Constants::MIT_DATE_REGEX) }.
+      map { |todo| MIT.new(todo.line, todo.number) }
+  end
+end
 
-	    mit not @context|@context
-	      Displays all MIT's not in or in specified context.
+class DateFormatter
+  def initialize(date)
+    @date = date
+  end
 
-	    mit mv ID DATE|DAY
-	      Move the MIT identified by ID to a new day.
-	      DATE must be in the format of YYYY.MM.DD.
-	      DAY can be full or short day names, today or tomorrow.
+  def format
+    raise(StandardError, 'Cannot format date prior to today') if @date < Constants::TODAY
 
-	    mit wed upload code to github
-	      Creates a new MIT for next Wednesday unless the current day
-	      is Wednesday in which case it will be created for today.
+    case
+    when today?
+      'Today:'
+    when tomorrow?
+      "Tomorrow, #{weekday}:"
+    when within_seven_days?
+      "#{weekday}:"
+    when next_week?
+      "#{weekday}, next week, #{@date}:"
+    else
+      "#{weekday}, #{number_of_weeks_from_now} weeks from now, #{@date}:"
+    end
+  end
 
-	ENDOFUSAGE
-  exit
-}
+  private
 
-error() {
-  echo "error: $1"
-  echo "usage: $(basename $0) [-hv] [date|day task] [not @context|@context] [mv ID DATE|DAY]"
-}
+  def today?
+    @date == Constants::TODAY
+  end
 
-version() {
-  echo "mit version $VERSION"
-}
+  def tomorrow?
+    @date == Constants::TODAY + 1
+  end
 
-####################
-# Helper Funcitons #
-####################
+  def within_seven_days?
+    @date <= Constants::TODAY + 7
+  end
 
-makeDOW() {
-  # format YYYY.MM.DD to day of week (Monday)
-  if [ $DVER = "BSD" ]; then
-    eval $1=`date -j -f "%Y.%m.%d" $2 +%A`
-  else
-    local DAY=`echo $2 | sed 's/\./\//g'`
-    eval $1=`date -d $DAY +%A`
-  fi
-}
+  def next_week?
+    @date.cweek == (Constants::TODAY + 7).cweek
+  end
 
-makeDATE() {
-  # format YYYY.MM.DD to Day, Month DD
-  if [ $DVER = "BSD" ]; then
-    eval $1=`date -j -f "%Y.%m.%d" $2 "+%A', '%B' '%d"`
-  else
-    local DAY=`echo $2 | sed 's/\./\//g'`
-    eval $1=`date -d $DAY "+%A', '%B' '%d"`
-  fi
-}
+  def number_of_weeks_from_now
+    # To account for potential transitions between years when counting weeks
+    # into the future, step forward week by week and check if the date of the
+    # first day that week matches.
+    #
+    # As the case-statement above has already handled the "next week"-case,
+    # start from two weeks into the future.
+    two_weeks = 14
+    days_in_week = 7
 
-parseDAY() {
-  # create YYYY.MM.DD from upcoming day of week
-  if [ $DVER = "BSD" ]; then
-    MITDATE=`date -v +$1 +%Y.%m.%d`
-  else
-	  local dayid=$1
-	  if [ $dayid = "1d" ]; then
-		  dayid="1day"
-	  fi
-    MITDATE=`date -d +$dayid +%Y.%m.%d`
-  fi
-}
+    days_away_from_matching_week =
+      (two_weeks..Float::INFINITY).
+      step(days_in_week).
+      find do |days_into_future|
+        future = Constants::TODAY + days_into_future.to_i
 
-getMITS() {
-  # print out mits matching specific date criteria
-  for (( i=0; i < ${#MITS[@]}; i++ )); do
-    MITDATE=`echo ${MITS[$i]} | awk '{print $1}' | sed 's/\.//g'`
-    MITTASK=`echo ${MITS[$i]} | awk '{$1 = ""; print}'`
-    if [ "$MITDATE" $1 "$2" ]; then
-      echo " $MITTASK"
-    fi
-  done
-}
+        start_of_week_for_date = @date - @date.cwday
+        start_of_week_in_future = future - future.cwday
 
-##################
-# Core Functions #
-##################
+        start_of_week_for_date == start_of_week_in_future
+      end.to_i
 
-moveMIT() {
-  # check that second argument is an id and a valid one
-  if [[ $1 =~ ^[0-9]+$ ]]; then
-    MITTASK=`awk -v ID=$1 'NR==ID {sub(/\{[0-9.]{10}\}/, ""); sub(/^ /, ""); print "\x27"$0"\x27"}' "$TODO_FILE"`
+    days_away_from_matching_week / days_in_week
+  end
 
-    TASK=`awk -v ID=$1 'NR==ID {print "\x27"$0"\x27"}' "$TODO_FILE"`
-    # Add a date to this item if there is none so that we can move it.
-    if [[ ! $TASK =~ \{[0-9]{4}\.[0-9]{2}\.[0-9]{2}\} ]]; then
-      TODAY="`date +%Y.%m.%d`"
-      FIRST_PART=`awk '{print $1"\x27"}' <<< $TASK`
-      SECOND_PART=`awk '{print "\x27"$2"\x27"}' <<< $TASK`
-      if [[ $FIRST_PART =~ ([A-Z] ) ]]; then
-        if [[ $SECOND_PART =~ [0-9]{4}-[0-9]{2}-[0-9]{2} ]]; then
-          $SEDI "$1 s/\(^([A-Z]\{1\} ) [0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\} \)\(.*$\)/\1{$TODAY} \2/" "$TODO_FILE"
-        else
-          $SEDI "$1 s/\(^([A-Z]\{1\} ) \)\(.*$\)/\1{$TODAY} \2/" "$TODO_FILE"
-        fi
-      elif [[ $FIRST_PART =~ [0-9]{4}-[0-9]{2}-[0-9]{2} ]]; then
-        $SEDI "$1 s/\(^[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\} \)\(.*$\)/\1{$TODAY} \2/" "$TODO_FILE"
+  def weekday
+    Date::DAYNAMES[@date.wday]
+  end
+end
+
+class DateParser
+  def initialize(date_string)
+    @date_string = date_string.downcase
+  end
+
+  def parse
+    maybe_fixed_date || maybe_weekday || maybe_constraint_free_parse
+  end
+
+  private
+
+  def maybe_fixed_date
+    fixed_dates = {
+      'today' => Constants::TODAY,
+      'tomorrow' => Constants::TODAY + 1,
+    }
+
+    fixed_dates.fetch(@date_string, nil)
+  end
+
+  def maybe_weekday
+    weekday_name_to_cwday = {
+      'monday' => 1,
+      'tuesday' => 2,
+      'wednesday' => 3,
+      'thursday' => 4,
+      'friday' => 5,
+      'saturday' => 6,
+      'sunday' => 7,
+      'mon' => 1,
+      'tue' => 2,
+      'wed' => 3,
+      'thu' => 4,
+      'fri' => 5,
+      'sat' => 6,
+      'sun' => 7,
+    }
+
+    return nil unless weekday_name_to_cwday.keys.include?(@date_string)
+
+    from_tomorrow_to_one_week_from_now = (1..7).map do |days_into_future|
+      Constants::TODAY + days_into_future
+    end
+
+    from_tomorrow_to_one_week_from_now.find do |day|
+      day.cwday == weekday_name_to_cwday[@date_string]
+    end
+  end
+
+  def maybe_constraint_free_parse
+    Date.parse(@date_string)
+  rescue ArgumentError
+    nil
+  end
+end
+
+class MIT
+  def initialize(todo, number)
+    @todo = todo
+    @number = number
+  end
+
+  def date
+    @date ||= Date.parse(@todo.match(Constants::MIT_DATE_REGEX)[1])
+  end
+
+  def to_s
+    @to_s ||= "#{priority_token}#{task} (#{@number})"
+  end
+
+  def past_due?
+    date < Constants::TODAY
+  end
+
+  def context?(context)
+    @todo.match(/#{context}/)
+  end
+
+  private
+
+  def task
+    @todo.split(Constants::MIT_DATE_REGEX).last.strip
+  end
+
+  def priority_token
+    if p = @todo.match(/\A\([A-Z]\) /) then p[0] else nil end
+  end
+end
+
+class MITListPrinter
+  def initialize(todo_file_path)
+    @todo_file_path = todo_file_path
+  end
+
+  def all_mits
+    return 'No MITs found.' if mits_from_file.empty?
+
+    grouped_by_date(mits_from_file)
+  end
+
+  def mits_with_context(context:)
+    context_mits = mits_from_file.select { |mit| mit.context?(context) }
+    return 'No MITs found.' if context_mits.empty?
+
+    grouped_by_date(context_mits)
+  end
+
+  def mits_without_context(context:)
+    not_context_mits = mits_from_file.reject { |mit| mit.context?(context) }
+    return 'No MITs found.' if not_context_mits.empty?
+
+    grouped_by_date(not_context_mits)
+  end
+
+  private
+
+  def mits_from_file
+    @mits_from_file ||= TodoFileParser.new(@todo_file_path).mits
+  end
+
+  def grouped_by_date(mits)
+    output_lines = []
+
+    if mits.any?(&:past_due?)
+      output_lines << 'Past due:'
+      mits.select(&:past_due?).each do |mit|
+        output_lines << "  #{mit}"
+      end
+      output_lines << ''
+    end
+
+    mits_today_or_in_future = mits.reject(&:past_due?).group_by(&:date)
+    sorted_dates = mits_today_or_in_future.keys.sort
+
+    sorted_dates.each do |date|
+      mits_for_date = mits_today_or_in_future[date]
+
+      output_lines << DateFormatter.new(date).format
+      mits_for_date.each do |mit|
+        output_lines << "  #{mit}"
+      end
+      output_lines << ''
+    end
+
+    output_lines.join("\n")
+  end
+end
+
+class CLI
+  class BadActionError < StandardError; end
+
+  EX_USAGE = 64
+
+  def run
+    case
+    when usage_requested_from_todo_help?
+      $stdout.puts usage_message
+      exit 0
+    when %w(usage -h --help).include?(ARGV[1])
+      $stdout.puts usage_message
+      exit 0
+    when %w(-v --version).include?(ARGV[1])
+      $stdout.puts version_message
+      exit 0
+    when ARGV[1].nil?
+      listing = MITListPrinter.new(ENV['TODO_FILE']).all_mits
+      $stdout.puts listing
+      exit 0
+    when ARGV[1].match(/@\w+/)
+      listing = MITListPrinter.new(ENV['TODO_FILE']).mits_with_context(
+        context: ARGV[1]
+      )
+      $stdout.puts listing
+      exit 0
+    when ARGV[1] == 'not' && ARGV[2].match(/@\w+/)
+      listing = MITListPrinter.new(ENV['TODO_FILE']).mits_without_context(
+        context: ARGV[2]
+      )
+      $stdout.puts listing
+      exit 0
+    when ARGV[1] == 'add'
+      message = TodoFileMutator.new(ENV['TODO_FILE']).add_mit(
+        date: ARGV[2],
+        task: ARGV[3],
+        include_creation_date: ENV['TODOTXT_DATE_ON_ADD'],
+      )
+      $stdout.puts message
+      exit 0
+    when ARGV[1] == 'mv'
+      message = TodoFileMutator.new(ENV['TODO_FILE']).move_or_make_mit(
+        task_id: ARGV[2],
+        date: ARGV[3],
+      )
+      $stdout.puts message
+      exit 0
+    when ARGV[1] == 'rm'
+      message = TodoFileMutator.new(ENV['TODO_FILE']).remove_mit_date(
+        task_id: ARGV[2],
+      )
+      $stdout.puts message
+      exit 0
+    else
+      fail BadActionError
+    end
+  rescue BadDateError, BadTaskIDError, MITDateMissingError => e
+    $stderr.puts "MIT: #{e.message}"
+    exit EX_USAGE
+  rescue BadActionError
+    $stderr.puts usage_message
+    exit EX_USAGE
+  end
+
+  private
+
+  def usage_requested_from_todo_help?
+    # Normally the add-on will be invoked as a subcommand (like
+    # `todo.sh mit foo`), meaning that the actual mit-action, along with its
+    # various arguments, will be placed in ARGV[1] and higher.
+    #
+    # The only exception to this case is when the add-on is invoked through
+    # `todo.sh help`. This command will iterate through all available add-ons
+    # and invoke them like `mit usage`, meaning that the action will be present
+    # in ARGV[0].
+
+    ARGV[0] == 'usage'
+  end
+
+  def usage_message
+    usage_message = <<-EOF
+      Most Important Tasks (MIT):
+        Displays Most Important Tasks (MIT) in todo.txt file, adds new ones or
+        turns MIT tasks into standard ones.
+
+        mit [-h|--help|-v|--version] [date|day task] [rm ID]
+          [not @context|@context] [mv ID DATE|DAY]
+
+        -h, --help      Displays help message.
+        -v, --version   Displays version information.
+
+        mit
+          List all MITs with default formatting.
+
+        mit rm ID
+          Convert the MIT identified by ID to a standard task.
+
+        mit not @context|@context
+          Displays all MIT's not in or in specified context.
+
+        mit DATE|DAY task
+          DATE must be in the format of YYYY.MM.DD.
+          DAY can be full or short day names, today or tomorrow.
+
+        mit mv ID DATE|DAY
+          Move the MIT identified by ID to a new day.
+          DATE must be in the format of YYYY.MM.DD.
+          DAY can be full or short day names, today or tomorrow.
+    EOF
+
+    # Remove leading indentation
+    usage_message.gsub(/^#{usage_message.scan(/^[ \t]*(?=\S)/).min}/, '')
+  end
+
+  def version_message
+    "mit (ruby) #{Constants::VERSION}"
+  end
+end
+
+class BadDateError < StandardError; end
+class BadTaskIDError < StandardError; end
+class MITDateMissingError < StandardError; end
+
+class TodoFileMutator
+  def initialize(todo_file_path)
+    @todo_file_path = todo_file_path
+  end
+
+  def add_mit(date:, task:, include_creation_date:)
+    parsed_date = DateParser.new(date).parse
+    raise(BadDateError, "\"#{date}\" is not a valid date.") unless parsed_date
+    mit_date = parsed_date.strftime('%Y.%m.%d')
+
+    optional_creation_date =
+      if include_creation_date
+        "#{Constants::TODAY} "
       else
-        $SEDI "$1 s/^/{$TODAY} /" "$TODO_FILE"
-      fi
-    fi
+        ''
+      end
+    mit = "#{optional_creation_date}{#{mit_date}} #{task}"
 
-    case $2 in
-      today )
-        MITDATE="`date +%Y.%m.%d`"
-        $SEDI "$1 s/{[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}}/{$MITDATE}/" "$TODO_FILE"
-        echo "TODO: MIT $MITTASK moved to today."
-        exit
-        ;;  
-      tomorrow )
-        parseDAY 1d
-        $SEDI "$1 s/{[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}}/{$MITDATE}/" "$TODO_FILE"
-        echo "TODO: MIT $MITTASK moved to tomorrow."
-        exit
-        ;;  
-      monday|mon|tuesday|tue|wednesday|wed|thursday|thu|friday|fri|saturday|sat|sunday|sun )
-        parseDAY $2
-        makeDOW DOW $MITDATE
-        $SEDI "$1 s/{[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}}/{$MITDATE}/" "$TODO_FILE"
-        echo "TODO: MIT $MITTASK moved to $DOW."
-        exit
-        ;;  
-      [0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9] )
-        makeDATE DATE $2
-        $SEDI "$1 s/{[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}}/{$2}/" "$TODO_FILE"
-        echo "TODO: MIT $MITTASK moved to $DATE."
-        exit
-        ;;  
-      * ) 
-        error "invalid date"
-        exit
-        ;;  
-    esac
-  else
-    error "invalid task id"
-    exit
-  fi
-}
+    write_mit_at_end_of_todo_file(mit)
 
-removeMIT() {
-  $SEDI "$1 s/{[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}}[ ]*//" "$TODO_FILE"
-  echo "Removed MIT from task $1"
-}
+    "#{mit}\nTODO: #{number_of_todos_in_todo_file} added."
+  end
 
-#######################
-# Establish Variables #
-#######################
+  def move_or_make_mit(task_id:, date:)
+    all_tasks = File.readlines(@todo_file_path)
+    task = maybe_find_task(task_id, all_tasks)
+    raise(BadTaskIDError, "No task for ID: #{task_id}") unless task
 
-if date -v 1d > /dev/null 2>&1; then    # detect date version in use
-  DVER="BSD"                            # set as bsd date
-else                                    # if it isn't bsd then...
-  DVER="GNU"                            # set as gnu date
-fi
+    parsed_date = DateParser.new(date).parse
+    raise(BadDateError, "\"#{date}\" is not a valid date.") unless parsed_date
+    mit_date = "{#{parsed_date.strftime('%Y.%m.%d')}}"
 
-if sed --version > /dev/null 2>&1; then # detect sed version in use
-  SEDI="sed -i "                        # set as gnu sed syntax
-else                                    # if it isn't gnu then...
-  SEDI="sed -i '' "                     # set as bsd sed syntax
-fi
+    changed_task =
+      if already_has_mit_date?(task)
+        change_mit_date(task, mit_date)
+      else
+        add_mit_date(task, mit_date)
+      end
+    all_tasks[task_id.to_i - 1] = changed_task
+    overwrite_todo_file(all_tasks)
 
-VERSION="1.4"                           # mit version number
-ACTION=$1                               # set first argument to action
+    "TODO: '#{task.chomp}' moved to #{parsed_date}"
+  end
 
-shift                                   # shift arguments
+  def remove_mit_date(task_id:)
+    all_tasks = File.readlines(@todo_file_path)
+    task = maybe_find_task(task_id, all_tasks)
+    raise(BadTaskIDError, "No task for ID: #{task_id}") unless task
 
-################
-# Long Options #
-################
+    unless already_has_mit_date?(task)
+      raise(MITDateMissingError, "Task #{task_id} is not a MIT: '#{task.chomp}'")
+    end
 
-# display usage
-[ "$ACTION" = "usage" ] || [ x"$1" = x"--help" ] && {
-  usage
-  exit
-}
+    changed_task = task.gsub(/#{Constants::MIT_DATE_REGEX} /, '')
+    all_tasks[task_id.to_i - 1] = changed_task
+    overwrite_todo_file(all_tasks)
 
-# display version
-[ x"$1" = x"--version" ] && {
-  version
-  exit
-}
+    "TODO: Removed MIT date from '#{changed_task.chomp}'"
+  end
 
-# move mit
-[ x"$1" = x"mv" ] && {
-  moveMIT $2 $3
-}
+  private
 
-# remove mit
-[ x"$1" = x"rm" ] && {
-  removeMIT $2
-  exit
-}
+  def write_mit_at_end_of_todo_file(mit)
+    File.open(@todo_file_path, 'a') { |file| file.puts(mit) }
+  end
 
-#################
-# Short Options #
-#################
+  def number_of_todos_in_todo_file
+    File.foreach(@todo_file_path).reduce(0) { |count| count + 1 }
+  end
 
-while getopts ":hv" Option; do
-  case $Option in
-    h ) 
-      usage
-      exit
-      ;;  
-    v ) 
-      version
-      exit
-      ;;  
-    : ) 
-      echo "Option -$OPTARG requires an argument." >&2
-      exit
-      ;;
-  esac
-done
+  def already_has_mit_date?(task)
+    task.match(Constants::MIT_DATE_REGEX)
+  end
 
-##########
-# Run It #
-##########
+  def maybe_find_task(task_id, tasks)
+    id = task_id.to_i # Note: String#to_i on non-numbers returns 0.
 
-# DISPLAY MITS
+    return nil if id <= 0
+    return nil if tasks.count < id
 
-[ -z $1 ] || [[ $1 =~ @.* ]] || [ "$1" = "not" ] && {
+    tasks[id - 1]
+  end
 
-  # define array element separator as newlines
-  OLDIFS=$IFS
-  IFS=$'\n'
+  def add_mit_date(task, mit_date)
+    priority_regex = /\([A-Z]\)/
+    date_regex = /\d{4}-\d{2}-\d{2}/
 
-  # invert search if not is specified before context
-  if [ "$1" = "not" ]; then
-    shift
-    FLAG="-v"
-  else
-    FLAG=""
-  fi
+    if task.start_with?('x ')
+      task.gsub(
+        /^x ((#{date_regex} ){0,2})(.+)$/,
+        "x \\1#{mit_date} \\3"
+      )
+    else
+      task.gsub(
+        /^(#{priority_regex} )?(#{date_regex} )?(.+)$/,
+        "\\1\\2#{mit_date} \\3"
+      )
+    end
+  end
 
-  # pull out MITs from the todo file, clean and sort
-  # grepping for "X {YYYY.MM.DD}", "{YYYY.MM.DD}", "X YYYY-MM-DD {YYYY.MM.DD}" or "YYYY-MM-DD {YYYY.MM.DD}"
-  NUM='[0-9].* '
-  PRI='([A-Z]\{1\}) '
-  ADD='[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\} '
-  MDD='{[0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}}'
-  # creat an array with values like YYYY.MM.DD [priority] [task info] [task number]
-  MITS=(`grep -n "^$PRI$MDD\|^$MDD\|^$PRI$ADD$MDD\|^$ADD$MDD" "$TODO_FILE" | grep $FLAG "$1" | sed "s/:/ /;s/\(^$NUM\)\($PRI\)\($ADD\)\(.*$\)/\1\2\4/;s/\(^$NUM\)\($ADD\)\(.*$\)/\1\3/;s/\(^$NUM\)\($PRI\)\($MDD \)\(.*\)/\1\3\2\4/;s/{//;s/}//" | awk '{s=$1;e=$NF;$1="";$NF=e" ("s")"}1' | sort`)
+  def change_mit_date(task, mit_date)
+    task.gsub(Constants::MIT_DATE_REGEX, mit_date)
+  end
 
-  # return array element separator to spaces
-  IFS=$OLDIFS
+  def overwrite_todo_file(tasks)
+    File.write(@todo_file_path, tasks.join)
+  end
+end
 
-  # make an array of ordered unique MIT dates
-  DATES=(`grep "^$PRI$MDD\|^$MDD\|^$PRI$ADD$MDD\|^$ADD$MDD" "$TODO_FILE" | grep $FLAG "$1" | sed 's/^.*{\([0-9]\{4\}\.[0-9]\{2\}\.[0-9]\{2\}\).*$/\1/' | sort | uniq`)
-  #DATES=(`grep "^$PRI$MDD\|^$MDD\|^$PRI$ADD$MDD\|^$ADD$MDD" "$TODO_FILE" | grep $FLAG "$1" | sed -e 's/{//' -e 's/}//' -e 's/([A-Z]\{1\})//' | awk '{print $1}' | sort | uniq`)
-  TODAY=`date +%Y%m%d`
+module Constants
+  TODAY = ENV.key?('FIXED_DATE') ? Date.parse(ENV['FIXED_DATE']) : Date.today
+  MIT_DATE_REGEX = /\{(\d{4}\.\d{2}\.\d{2})\}/
+  VERSION = 'v0.5.1'.freeze
+end
 
-  # processing if there are no mits
-  if [ "${#DATES[@]}" -eq "0" ]; then
-    echo "No MITs found."
-    exit
-  fi
 
-  # processing of past due mits
-  PASTDUE="false"
-  for day in ${DATES[@]}; do
-    DAY=`echo $day | sed 's/\.//g'`
-    if [ "$DAY" -lt "$TODAY" ]; then
-      PASTDUE="true"
-    fi
-  done
-  if [ "$PASTDUE" = "true" ]; then
-    echo "Past Due:"
-    getMITS -lt $TODAY
-    echo ""
-  fi
-
-  # processing of all other mits
-  for day in ${DATES[@]}; do
-
-    DAY=`echo $day | sed 's/\.//g'`
-    DAYSTO=$(( $DAY - $TODAY ))
-
-    if [ "$DAY" -eq "$TODAY" ]; then
-      echo "Today:"
-      getMITS -eq $DAY
-      echo ""
-
-    elif [ "$DAYSTO" -gt "0" ] && [ "$DAYSTO" -lt "7" ]; then
-      makeDOW DOW $day
-      echo "$DOW:"
-      getMITS -eq $DAY
-      echo ""
-
-    elif [ "$DAYSTO" -ge "7" ]; then
-      makeDATE DATE $day
-      echo "$DATE:"
-      getMITS -eq $DAY
-      echo ""
-    fi
-
-  done
-  exit
-
-}
-
-# ADD NEW MITS
-
-[ -n "$1" ] && {
-
-  MITDATE=`echo $1 | tr [A-Z] [a-z]`
-  shift
-  MITTASK=$@
-  TODAY=`date +%u`
-
-  case $MITDATE in
-    today )
-      NEWMIT="{`date +%Y.%m.%d`} $MITTASK"
-      ;;
-    tomorrow )
-      parseDAY 1d
-      NEWMIT="{$MITDATE} $MITTASK"
-      ;;
-    monday|mon|tuesday|tue|wednesday|wed|thursday|thu|friday|fri|saturday|sat|sunday|sun )
-      parseDAY $MITDATE
-      NEWMIT="{$MITDATE} $MITTASK"
-      ;;
-    [0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9] )
-      NEWMIT="{$MITDATE} $MITTASK"
-      ;;
-    * )
-      error "invalid date"
-      exit
-      ;;
-  esac
-
-  "$TODO_FULL_SH" add $NEWMIT
-
-  exit
-
-}
+CLI.new.run
