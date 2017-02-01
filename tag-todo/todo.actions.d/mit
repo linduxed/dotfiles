@@ -29,29 +29,144 @@ class TodoFileParser
   end
 end
 
+class MIT
+  def initialize(todo, number)
+    @todo = todo
+    @number = number
+  end
+
+  def date
+    @date ||= Date.parse(@todo.match(Constants::MIT_DATE_REGEX)[1])
+  end
+
+  def to_s
+    @to_s ||= "#{priority_token}#{task} (#{@number})"
+  end
+
+  def past_due?
+    date < Constants::TODAY
+  end
+
+  def context?(context)
+    @todo.match(/#{context}/)
+  end
+
+  private
+
+  def task
+    @todo.split(Constants::MIT_DATE_REGEX).last.strip
+  end
+
+  def priority_token
+    if p = @todo.match(/\A\([A-Z]\) /) then p[0] else nil end
+  end
+end
+
+class DateParser
+  def initialize(date_string)
+    @date_string = date_string.downcase
+  end
+
+  def parse
+    maybe_fixed_date ||
+      maybe_weekday ||
+      maybe_relative_date ||
+      maybe_constraint_free_parse
+  end
+
+  private
+
+  def maybe_fixed_date
+    fixed_dates = {
+      'today' => Constants::TODAY,
+      'tomorrow' => Constants::TODAY + 1,
+    }
+
+    fixed_dates.fetch(@date_string, nil)
+  end
+
+  def maybe_weekday
+    weekday_name_to_cwday = {
+      'monday' => 1,
+      'tuesday' => 2,
+      'wednesday' => 3,
+      'thursday' => 4,
+      'friday' => 5,
+      'saturday' => 6,
+      'sunday' => 7,
+      'mon' => 1,
+      'tue' => 2,
+      'wed' => 3,
+      'thu' => 4,
+      'fri' => 5,
+      'sat' => 6,
+      'sun' => 7,
+    }
+
+    return nil unless weekday_name_to_cwday.keys.include?(@date_string)
+
+    from_tomorrow_to_one_week_from_now = (1..7).map do |days_into_future|
+      Constants::TODAY + days_into_future
+    end
+
+    from_tomorrow_to_one_week_from_now.find do |day|
+      day.cwday == weekday_name_to_cwday[@date_string]
+    end
+  end
+
+  def maybe_relative_date
+    matches = @date_string.downcase.match(/\A(\d+)([dwm])\z/i)
+    return nil if matches.nil?
+
+    number, time_period = matches[1].to_i, matches[2]
+
+    case time_period
+    when 'd'
+      Constants::TODAY + number
+    when 'w'
+      Constants::TODAY + (7 * number)
+    when 'm'
+      Constants::TODAY >> number
+    end
+  end
+
+  def maybe_constraint_free_parse
+    Date.parse(@date_string)
+  rescue ArgumentError
+    nil
+  end
+end
+
 class DateFormatter
   def initialize(date)
     @date = date
   end
 
-  def format
-    raise(StandardError, 'Cannot format date prior to today') if @date < Constants::TODAY
+  def format(with_trailing_colon:, capitalize:)
+    formatted_date =
+      case
+      when in_the_past?
+        @date.to_s
+      when today?
+        capitalize ? 'Today' : 'today'
+      when tomorrow?
+        "#{capitalize ? 'Tomorrow' : 'tomorrow'}, #{weekday}"
+      when within_seven_days?
+        weekday
+      when next_week?
+        "#{weekday}, next week, #{@date}"
+      else
+        "#{weekday}, #{number_of_weeks_from_now} weeks from now, #{@date}"
+      end
 
-    case
-    when today?
-      'Today:'
-    when tomorrow?
-      "Tomorrow, #{weekday}:"
-    when within_seven_days?
-      "#{weekday}:"
-    when next_week?
-      "#{weekday}, next week, #{@date}:"
-    else
-      "#{weekday}, #{number_of_weeks_from_now} weeks from now, #{@date}:"
-    end
+    with_trailing_colon ? "#{formatted_date}:" : formatted_date
   end
 
   private
+
+  def in_the_past?
+    @date < Constants::TODAY
+  end
 
   def today?
     @date == Constants::TODAY
@@ -96,95 +211,6 @@ class DateFormatter
 
   def weekday
     Date::DAYNAMES[@date.wday]
-  end
-end
-
-class DateParser
-  def initialize(date_string)
-    @date_string = date_string.downcase
-  end
-
-  def parse
-    maybe_fixed_date || maybe_weekday || maybe_constraint_free_parse
-  end
-
-  private
-
-  def maybe_fixed_date
-    fixed_dates = {
-      'today' => Constants::TODAY,
-      'tomorrow' => Constants::TODAY + 1,
-    }
-
-    fixed_dates.fetch(@date_string, nil)
-  end
-
-  def maybe_weekday
-    weekday_name_to_cwday = {
-      'monday' => 1,
-      'tuesday' => 2,
-      'wednesday' => 3,
-      'thursday' => 4,
-      'friday' => 5,
-      'saturday' => 6,
-      'sunday' => 7,
-      'mon' => 1,
-      'tue' => 2,
-      'wed' => 3,
-      'thu' => 4,
-      'fri' => 5,
-      'sat' => 6,
-      'sun' => 7,
-    }
-
-    return nil unless weekday_name_to_cwday.keys.include?(@date_string)
-
-    from_tomorrow_to_one_week_from_now = (1..7).map do |days_into_future|
-      Constants::TODAY + days_into_future
-    end
-
-    from_tomorrow_to_one_week_from_now.find do |day|
-      day.cwday == weekday_name_to_cwday[@date_string]
-    end
-  end
-
-  def maybe_constraint_free_parse
-    Date.parse(@date_string)
-  rescue ArgumentError
-    nil
-  end
-end
-
-class MIT
-  def initialize(todo, number)
-    @todo = todo
-    @number = number
-  end
-
-  def date
-    @date ||= Date.parse(@todo.match(Constants::MIT_DATE_REGEX)[1])
-  end
-
-  def to_s
-    @to_s ||= "#{priority_token}#{task} (#{@number})"
-  end
-
-  def past_due?
-    date < Constants::TODAY
-  end
-
-  def context?(context)
-    @todo.match(/#{context}/)
-  end
-
-  private
-
-  def task
-    @todo.split(Constants::MIT_DATE_REGEX).last.strip
-  end
-
-  def priority_token
-    if p = @todo.match(/\A\([A-Z]\) /) then p[0] else nil end
   end
 end
 
@@ -236,7 +262,10 @@ class MITListPrinter
     sorted_dates.each do |date|
       mits_for_date = mits_today_or_in_future[date]
 
-      output_lines << DateFormatter.new(date).format
+      output_lines << DateFormatter.new(date).format(
+        with_trailing_colon: true,
+        capitalize: true,
+      )
       mits_for_date.each do |mit|
         output_lines << "  #{mit}"
       end
@@ -256,56 +285,64 @@ class TodoFileMutator
     @todo_file_path = todo_file_path
   end
 
-  def add_mit(date:, task:, include_creation_date:)
-    parsed_date = DateParser.new(date).parse
-    raise(BadDateError, "\"#{date}\" is not a valid date.") unless parsed_date
-    mit_date = parsed_date.strftime('%Y.%m.%d')
+  def add_mit(date_string:, task:, include_creation_date:)
+    parsed_date = DateParser.new(date_string).parse
+    raise(BadDateError, "\"#{date_string}\" is not a valid date.") unless parsed_date
+    mit_date = "{#{parsed_date.strftime('%Y.%m.%d')}}"
 
-    optional_creation_date =
-      if include_creation_date
-        "#{Constants::TODAY} "
-      else
-        ''
-      end
-    mit = "#{optional_creation_date}{#{mit_date}} #{task}"
+    optional_creation_date = include_creation_date ? "#{Constants::TODAY} " : ''
+    mit = "#{optional_creation_date}#{mit_date} #{task}"
 
     write_mit_at_end_of_todo_file(mit)
 
-    "#{mit}\nTODO: #{number_of_todos_in_todo_file} added."
+    id_of_added_todo = number_of_todos_in_todo_file
+    "#{mit}\nTODO: #{id_of_added_todo} added."
   end
 
-  def move_or_make_mit(task_id:, date:)
+  def move_or_make_mit(task_id_string:, date_string:)
     all_tasks = File.readlines(@todo_file_path)
-    task = maybe_find_task(task_id, all_tasks)
-    raise(BadTaskIDError, "No task for ID: #{task_id}") unless task
+    if valid_task_id?(task_id_string, all_tasks)
+      task_id = task_id_string.to_i
+    else
+      raise(BadTaskIDError, "No task for ID: #{task_id_string}")
+    end
 
-    parsed_date = DateParser.new(date).parse
-    raise(BadDateError, "\"#{date}\" is not a valid date.") unless parsed_date
+    parsed_date = DateParser.new(date_string).parse
+    raise(BadDateError, "\"#{date_string}\" is not a valid date.") unless parsed_date
     mit_date = "{#{parsed_date.strftime('%Y.%m.%d')}}"
 
+    task = all_tasks[task_id - 1]
     changed_task =
       if already_has_mit_date?(task)
         change_mit_date(task, mit_date)
       else
         add_mit_date(task, mit_date)
       end
-    all_tasks[task_id.to_i - 1] = changed_task
+    all_tasks[task_id - 1] = changed_task
     overwrite_todo_file(all_tasks)
 
-    "TODO: '#{task.chomp}' moved to #{parsed_date}"
+    formatted_date = DateFormatter.new(parsed_date).format(
+      with_trailing_colon: false,
+      capitalize: false,
+    )
+    "TODO: '#{task.chomp}' moved to #{formatted_date}"
   end
 
-  def remove_mit_date(task_id:)
+  def remove_mit_date(task_id_string:)
     all_tasks = File.readlines(@todo_file_path)
-    task = maybe_find_task(task_id, all_tasks)
-    raise(BadTaskIDError, "No task for ID: #{task_id}") unless task
+    if valid_task_id?(task_id_string, all_tasks)
+      task_id = task_id_string.to_i
+    else
+      raise(BadTaskIDError, "No task for ID: #{task_id_string}")
+    end
 
+    task = all_tasks[task_id - 1]
     unless already_has_mit_date?(task)
-      raise(MITDateMissingError, "Task #{task_id} is not a MIT: '#{task.chomp}'")
+      raise(MITDateMissingError, "Task #{task_id_string} is not a MIT: '#{task.chomp}'")
     end
 
     changed_task = task.gsub(/#{Constants::MIT_DATE_REGEX} /, '')
-    all_tasks[task_id.to_i - 1] = changed_task
+    all_tasks[task_id - 1] = changed_task
     overwrite_todo_file(all_tasks)
 
     "TODO: Removed MIT date from '#{changed_task.chomp}'"
@@ -325,13 +362,13 @@ class TodoFileMutator
     task.match(Constants::MIT_DATE_REGEX)
   end
 
-  def maybe_find_task(task_id, tasks)
-    id = task_id.to_i # Note: String#to_i on non-numbers returns 0.
+  def valid_task_id?(task_id_string, tasks)
+    id = task_id_string.to_i # Note: String#to_i on non-numbers returns 0.
 
-    return nil if id <= 0
-    return nil if tasks.count < id
+    return false if id <= 0
+    return false if tasks.count < id
 
-    tasks[id - 1]
+    true
   end
 
   def add_mit_date(task, mit_date)
@@ -360,68 +397,51 @@ class TodoFileMutator
   end
 end
 
-module Constants
-  TODAY = ENV.key?('FIXED_DATE') ? Date.parse(ENV['FIXED_DATE']) : Date.today
-  MIT_DATE_REGEX = /\{(\d{4}\.\d{2}\.\d{2})\}/
-  VERSION = 'v0.5.1'.freeze
-end
-
 class CLI
   class BadActionError < StandardError; end
 
   EX_USAGE = 64
 
   def run
-    case
-    when usage_requested_from_todo_help?
-      $stdout.puts usage_message
-      exit 0
-    when %w(usage -h --help).include?(ARGV[1])
-      $stdout.puts usage_message
-      exit 0
-    when %w(-v --version).include?(ARGV[1])
-      $stdout.puts version_message
-      exit 0
-    when ARGV[1].nil?
-      listing = MITListPrinter.new(ENV['TODO_FILE']).all_mits
-      $stdout.puts listing
-      exit 0
-    when ARGV[1].match(/@\w+/)
-      listing = MITListPrinter.new(ENV['TODO_FILE']).mits_with_context(
-        context: ARGV[1]
-      )
-      $stdout.puts listing
-      exit 0
-    when ARGV[1] == 'not' && ARGV[2].match(/@\w+/)
-      listing = MITListPrinter.new(ENV['TODO_FILE']).mits_without_context(
-        context: ARGV[2]
-      )
-      $stdout.puts listing
-      exit 0
-    when ARGV[1] == 'mv'
-      message = TodoFileMutator.new(ENV['TODO_FILE']).move_or_make_mit(
-        task_id: ARGV[2],
-        date: ARGV[3],
-      )
-      $stdout.puts message
-      exit 0
-    when ARGV[1] == 'rm'
-      message = TodoFileMutator.new(ENV['TODO_FILE']).remove_mit_date(
-        task_id: ARGV[2],
-      )
-      $stdout.puts message
-      exit 0
-    when !ARGV[1].nil? && !ARGV[2].nil?
-      message = TodoFileMutator.new(ENV['TODO_FILE']).add_mit(
-        date: ARGV[1],
-        task: ARGV[2],
-        include_creation_date: ENV['TODOTXT_DATE_ON_ADD'],
-      )
-      $stdout.puts message
-      exit 0
-    else
-      fail BadActionError
-    end
+    output =
+      case
+      when usage_requested_from_todo_help?
+        usage_message
+      when %w(usage -h --help).include?(ARGV[1])
+        usage_message
+      when %w(-v --version).include?(ARGV[1])
+        version_message
+      when ARGV[1].nil?
+        MITListPrinter.new(ENV['TODO_FILE']).all_mits
+      when ARGV[1].match(/@\w+/)
+        MITListPrinter.new(ENV['TODO_FILE']).mits_with_context(
+          context: ARGV[1]
+        )
+      when ARGV[1] == 'not' && ARGV[2].match(/@\w+/)
+        MITListPrinter.new(ENV['TODO_FILE']).mits_without_context(
+          context: ARGV[2]
+        )
+      when ARGV[1] == 'mv'
+        TodoFileMutator.new(ENV['TODO_FILE']).move_or_make_mit(
+          task_id_string: ARGV[2],
+          date_string: ARGV[3],
+        )
+      when ARGV[1] == 'rm'
+        TodoFileMutator.new(ENV['TODO_FILE']).remove_mit_date(
+          task_id_string: ARGV[2],
+        )
+      when !ARGV[1].nil? && !ARGV[2].nil?
+        TodoFileMutator.new(ENV['TODO_FILE']).add_mit(
+          date_string: ARGV[1],
+          task: ARGV[2],
+          include_creation_date: ENV['TODOTXT_DATE_ON_ADD'],
+        )
+      else
+        fail BadActionError
+      end
+
+    $stdout.puts output
+    exit 0
   rescue BadDateError, BadTaskIDError, MITDateMissingError => e
     $stderr.puts "MIT: #{e.message}"
     exit EX_USAGE
@@ -451,8 +471,8 @@ class CLI
         Displays Most Important Tasks (MIT) in todo.txt file, adds new ones or
         turns MIT tasks into standard ones.
 
-        mit [-h|--help|-v|--version] [date|day task] [rm ID]
-          [not @context|@context] [mv ID DATE|DAY]
+        mit [-h|--help|-v|--version] [date|day|relativedate task] [rm ID]
+          [not @context|@context] [mv ID DATE|DAY|RELATIVEDATE]
 
         -h, --help      Displays help message.
         -v, --version   Displays version information.
@@ -466,14 +486,18 @@ class CLI
         mit not @context|@context
           Displays all MIT's not in or in specified context.
 
-        mit DATE|DAY task
+        mit DATE|DAY|RELATIVEDATE task
           DATE must be in the format of YYYY.MM.DD.
           DAY can be full or short day names, today or tomorrow.
+          RELATIVEDATE is defined as an integer, followed by one of the letters
+          "d", "w" or "m" (days, weeks and months).
 
-        mit mv ID DATE|DAY
+        mit mv ID DATE|DAY|RELATIVEDATE
           Move the MIT identified by ID to a new day.
           DATE must be in the format of YYYY.MM.DD.
           DAY can be full or short day names, today or tomorrow.
+          RELATIVEDATE is defined as an integer, followed by one of the letters
+          "d", "w" or "m" (days, weeks and months).
     EOF
 
     # Remove leading indentation
@@ -483,6 +507,12 @@ class CLI
   def version_message
     "mit (ruby) #{Constants::VERSION}"
   end
+end
+
+module Constants
+  TODAY = ENV.key?('FIXED_DATE') ? Date.parse(ENV['FIXED_DATE']) : Date.today
+  MIT_DATE_REGEX = /\{(\d{4}\.\d{2}\.\d{2})\}/
+  VERSION = 'v1.0.0'.freeze
 end
 
 
