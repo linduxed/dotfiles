@@ -13,6 +13,9 @@ fi
 # ENV variables from tag-programming.
 [ -f "$HOME/.zsh_programming_env" ] && source "$HOME/.zsh_programming_env"
 
+# Note taking aliases.
+[ -f "$HOME/.znotes" ] && source "$HOME/.znotes"
+
 # Host-specific configuration loaded after aliases for overriding.
 source "$HOME/.zsh_alias"
 source "$HOME/.zsh_host-specific"

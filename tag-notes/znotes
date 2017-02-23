@@ -1,0 +1,8 @@
+export NOTES_DIRECTORY=$HOME/Dropbox/notes
+
+alias ntcd="cd $NOTES_DIRECTORY"
+ntn() { $EDITOR $NOTES_DIRECTORY/$1 }
+nte() {
+    file_name=$(find $NOTES_DIRECTORY -type f | sed -r 's|.+/([^/]+$)|\1|' | fzf)
+    $EDITOR $NOTES_DIRECTORY/$file_name
+}
