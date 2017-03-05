@@ -1,5 +1,5 @@
 Plug 'elixir-lang/vim-elixir'
-Plug 'awetzel/elixir.nvim', { 'do': 'yes \| ./install.sh' }
+Plug 'slashmili/alchemist.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'vim-scripts/octave.vim'
