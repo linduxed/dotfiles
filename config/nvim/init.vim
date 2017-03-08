@@ -62,7 +62,7 @@ set showbreak=…
 set synmaxcol=800
 set splitright
 set omnifunc=syntaxcomplete#Complete
-set completeopt=longest,menuone,preview
+set completeopt=menuone,preview,noinsert
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:∘
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
