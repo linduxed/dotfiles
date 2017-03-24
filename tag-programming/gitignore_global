@@ -20,3 +20,4 @@ Session.vim
 .ackrc
 .stack-work
 .cabal-sandbox
+.agignore
