@@ -12,3 +12,8 @@ fco() {
 
     [[ -n $branch_or_tag ]] && git checkout $branch_or_tag
 }
+ftig() {
+    branch_or_tag=$(fbrtp)
+
+    [[ -n $branch_or_tag ]] && tig $branch_or_tag
+}
