@@ -10,8 +10,9 @@ if test -d /etc/profile.d/; then
   unset profile
 fi
 
-# ENV variables from tag-programming.
+# Configuration from tag-programming.
 [ -f "$HOME/.zsh_programming_env" ] && source "$HOME/.zsh_programming_env"
+[ -f "$HOME/.zsh_programming_alias" ] && source "$HOME/.zsh_programming_alias"
 
 # Note taking aliases.
 [ -f "$HOME/.znotes" ] && source "$HOME/.znotes"
