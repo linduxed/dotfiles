@@ -1,14 +1,14 @@
-fbr() {
-    local branches branch
+# Fzf BRanch Tag Print - helper function
+fbrtp() {
+    tags=$(git tag | awk '{print "tag\t" $1}') &&
+    branches=$(git branch --all | grep -v HEAD | sed "s/.* //" | awk '{print "branch\t" $1}') &&
 
-    branches=$(git branch --all | grep -v HEAD) &&
-    branch=$(fzf <<< $branches) &&
-    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+    fzf <<< $(echo "$branches"; echo "$tags") | awk '{print $2}'
 }
-ftag() {
-    local tags target
 
-    tags=$(git tag) &&
-    target=$(fzf <<< $tags) &&
-    git checkout $(target)
+fco() {
+    # If a remote branch is selected, checkout a local branch with same name.
+    branch_or_tag=$(fbrtp | sed "s#remotes/[^/]*/##")
+
+    [[ -n $branch_or_tag ]] && git checkout $branch_or_tag
 }
