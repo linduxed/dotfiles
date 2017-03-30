@@ -5,3 +5,10 @@ fbr() {
     branch=$(fzf <<< $branches) &&
     git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+ftag() {
+    local tags target
+
+    tags=$(git tag) &&
+    target=$(fzf <<< $tags) &&
+    git checkout $(target)
+}
