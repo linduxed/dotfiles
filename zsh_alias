@@ -26,3 +26,9 @@ fd() {
 
     [[ -n $directory ]] && cd $directory
 }
+cdf() {
+    # Exclude files in dot-directories
+    file=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f | sed -r 's|^\./||' | fzf)
+
+    [[ -n $file ]] && dir=$(dirname "$file") && cd "$dir"
+}
