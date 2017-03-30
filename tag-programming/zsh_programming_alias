@@ -1,0 +1,7 @@
+fbr() {
+    local branches branch
+
+    branches=$(git branch --all | grep -v HEAD) &&
+    branch=$(fzf <<< $branches) &&
+    git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
