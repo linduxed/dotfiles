@@ -65,6 +65,12 @@ endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
+" {{{1 grepper
+
+let g:grepper = {}
+let g:grepper.tools = ['rg', 'git', 'ag']
+let g:grepper.highlight = 1
+
 " {{{1 haskell-vim
 
 let g:haskell_indent_if = 3
