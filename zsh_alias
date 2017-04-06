@@ -9,24 +9,32 @@ alias pb='gist -c'
 alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
+
+# FZF track in MPD playlist and play it
 mpf() {
     chosen_track=$(mpc -f "%position% -- %artist% - %title% -- %file%" playlist | shuf | fzf)
     track_number=$(sed -r 's/^([0-9]+).*/\1/' <<< $chosen_track)
 
     [[ -n $track_number ]] && mpc -q play $track_number
 }
+
+# FZF file and open in $EDITOR
 fe() {
     # Exclude files in dot-directories
     file=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f | sed -r 's|^\./||' | fzf)
 
     [[ -n $file ]] && $EDITOR $file
 }
+
+# FZF directory and cd into it.
 fd() {
     # Exclude dot-directories
     directory=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type d | sed -r 's|^\./||' | fzf)
 
     [[ -n $directory ]] && cd $directory
 }
+
+# FZF file and cd to its directory
 cdf() {
     # Exclude files in dot-directories
     file=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f | sed -r 's|^\./||' | fzf)
