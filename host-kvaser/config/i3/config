@@ -17,6 +17,7 @@ bar {
 bindsym $mod+y layout toggle split
 bindsym $mod+semicolon layout stacking
 bindsym $mod+bracketleft layout tabbed
+bindsym $mod+backslash layout tabbed
 bindsym $mod+m focus child
 bindsym $mod+k focus parent
 bindsym $mod+h split h
