@@ -1,3 +1,7 @@
+" {{{1 alchemist
+
+let g:alchemist_keyword_map = 'gK'
+
 " {{{1 Colemak
 
 nnoremap <Leader>alc :ColemakEnable<CR>
