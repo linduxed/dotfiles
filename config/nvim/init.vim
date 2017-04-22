@@ -71,7 +71,6 @@ set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.jpg,*.bmp,*.gif,*.png,*.jpeg,*
 let g:html_indent_tags = 'li\|p'
 let g:netrw_liststyle = 3
 let g:load_doxygen_syntax=1
-au VimResized * :wincmd =
 
 " {{{2 viminfo
 
