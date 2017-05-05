@@ -1,1 +1,1 @@
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore --follow --glob \"!.git/*\""
+export FZF_DEFAULT_COMMAND="rg --files --follow --glob \"!.git/*\""
