@@ -276,6 +276,133 @@ class MITListPrinter
   end
 end
 
+class CLI
+  class BadActionError < StandardError; end
+
+  EX_USAGE = 64
+
+  def run
+    output =
+      case
+      when usage_requested_from_todo_help?
+        usage_message
+      when %w(usage -h --help).include?(ARGV[1])
+        usage_message
+      when %w(-v --version).include?(ARGV[1])
+        version_message
+      when ARGV[1].nil?
+        MITListPrinter.new(ENV['TODO_FILE']).all_mits
+      when ARGV[1].match(/@\w+/)
+        MITListPrinter.new(ENV['TODO_FILE']).mits_with_context(
+          context: ARGV[1]
+        )
+      when ARGV[1] == 'not' && ARGV[2].match(/@\w+/)
+        MITListPrinter.new(ENV['TODO_FILE']).mits_without_context(
+          context: ARGV[2]
+        )
+      when ARGV[1] == 'mv'
+        TodoFileMutator.new(ENV['TODO_FILE']).move_or_make_mit(
+          task_id_string: ARGV[2],
+          date_string: ARGV[3],
+        )
+      when ARGV[1] == 'rm'
+        TodoFileMutator.new(ENV['TODO_FILE']).remove_mit_date(
+          task_id_string: ARGV[2],
+        )
+      when ARGV[1] == 'cp'
+        TodoFileMutator.new(ENV['TODO_FILE']).copy_mit(
+          task_id_string: ARGV[2],
+          date_string: ARGV[3],
+          include_creation_date: ENV['TODOTXT_DATE_ON_ADD'],
+        )
+      when !ARGV[1].nil? && !ARGV[2].nil?
+        TodoFileMutator.new(ENV['TODO_FILE']).add_mit(
+          date_string: ARGV[1],
+          task: ARGV[2],
+          include_creation_date: ENV['TODOTXT_DATE_ON_ADD'],
+        )
+      else
+        fail BadActionError
+      end
+
+    $stdout.puts output
+    exit 0
+  rescue BadDateError, BadTaskIDError, MITDateMissingError,
+         MissingDateError, MissingTaskIDError => e
+    $stderr.puts "MIT: #{e.message}"
+    exit EX_USAGE
+  rescue BadActionError
+    $stderr.puts usage_message
+    exit EX_USAGE
+  end
+
+  private
+
+  def usage_requested_from_todo_help?
+    # Normally the add-on will be invoked as a subcommand (like
+    # `todo.sh mit foo`), meaning that the actual mit-action, along with its
+    # various arguments, will be placed in ARGV[1] and higher.
+    #
+    # The only exception to this case is when the add-on is invoked through
+    # `todo.sh help`. This command will iterate through all available add-ons
+    # and invoke them like `mit usage`, meaning that the action will be present
+    # in ARGV[0].
+
+    ARGV[0] == 'usage'
+  end
+
+  def usage_message
+    usage_message = <<-EOF
+      Most Important Tasks (MIT):
+        Displays Most Important Tasks (MIT) in todo.txt file, adds new ones or
+        turns MIT tasks into standard ones.
+
+        mit [-h|--help|-v|--version] [date|day|relativedate task] [rm ID]
+          [not @context|@context] [mv ID DATE|DAY|RELATIVEDATE|FREEFORMDATE]
+          [cp ID DATE|DAY|RELATIVEDATE|FREEFORMDATE]
+
+        -h, --help      Displays help message.
+        -v, --version   Displays version information.
+
+        Date strings:
+
+        DATE must be in the format of YYYY.MM.DD.
+        DAY can be full or short day names, today or tomorrow.
+        RELATIVEDATE is defined as an integer, followed by one of the letters
+        "d", "w" or "m" (days, weeks and months).
+        FREEFORMDATE is any string that resembles a date; an attempt will be
+        made to parse it. FREEFORMDATE is the last date format checked.
+
+        Sub-commands:
+
+        mit
+          List all MITs with default formatting.
+
+        mit rm ID
+          Convert the MIT identified by ID to a standard task.
+
+        mit not @context|@context
+          Displays all MIT's not in or in specified context.
+
+        mit DATE|DAY|RELATIVEDATE|FREEFORMDATE task
+          Add MIT for chosen date.
+
+        mit mv ID DATE|DAY|RELATIVEDATE|FREEFORMDATE
+          Move the MIT identified by ID to a new day.
+
+        mit cp ID DATE|DAY|RELATIVEDATE|FREEFORMDATE
+          Copy the task identified by ID to a new MIT for the chosen date.
+    EOF
+
+    # Remove leading indentation
+    usage_message.gsub(/^#{usage_message.scan(/^[ \t]*(?=\S)/).min}/, '')
+  end
+
+  def version_message
+    "mit (ruby) #{Constants::VERSION}"
+  end
+end
+
 class BadDateError < StandardError; end
 class BadTaskIDError < StandardError; end
 class MITDateMissingError < StandardError; end
@@ -288,6 +415,7 @@ class TodoFileMutator
   end
 
   def add_mit(date_string:, task:, include_creation_date:)
+    date_string or raise(MissingDateError, 'date argument is missing.')
     parsed_date = DateParser.new(date_string).parse
     parsed_date or raise(BadDateError, "\"#{date_string}\" is not a valid date.")
     mit_date = "{#{parsed_date.strftime('%Y.%m.%d')}}"
@@ -353,6 +481,25 @@ class TodoFileMutator
     "TODO: Removed MIT date from '#{changed_task.chomp}'"
   end
 
+  def copy_mit(task_id_string:, date_string:, include_creation_date:)
+    all_tasks = File.readlines(@todo_file_path)
+    if valid_task_id?(task_id_string, all_tasks)
+      task_id = task_id_string.to_i
+    else
+      raise(BadTaskIDError, "No task for ID: #{task_id_string}")
+    end
+
+    full_task = all_tasks[task_id - 1]
+    task_without_leading_priority_and_dates =
+      strip_leading_priority_and_dates(full_task)
+
+    add_mit(
+      date_string: date_string,
+      task: task_without_leading_priority_and_dates,
+      include_creation_date: include_creation_date,
+    )
+  end
+
   private
 
   def write_mit_at_end_of_todo_file(mit)
@@ -400,129 +547,22 @@ class TodoFileMutator
   def overwrite_todo_file(tasks)
     File.write(@todo_file_path, tasks.join)
   end
-end
 
-class CLI
-  class BadActionError < StandardError; end
+  def strip_leading_priority_and_dates(task)
+    priority_regex = /\([A-Z]\)/
+    date_regex = /\d{4}-\d{2}-\d{2}/
 
-  EX_USAGE = 64
-
-  def run
-    output =
-      case
-      when usage_requested_from_todo_help?
-        usage_message
-      when %w(usage -h --help).include?(ARGV[1])
-        usage_message
-      when %w(-v --version).include?(ARGV[1])
-        version_message
-      when ARGV[1].nil?
-        MITListPrinter.new(ENV['TODO_FILE']).all_mits
-      when ARGV[1].match(/@\w+/)
-        MITListPrinter.new(ENV['TODO_FILE']).mits_with_context(
-          context: ARGV[1]
-        )
-      when ARGV[1] == 'not' && ARGV[2].match(/@\w+/)
-        MITListPrinter.new(ENV['TODO_FILE']).mits_without_context(
-          context: ARGV[2]
-        )
-      when ARGV[1] == 'mv'
-        TodoFileMutator.new(ENV['TODO_FILE']).move_or_make_mit(
-          task_id_string: ARGV[2],
-          date_string: ARGV[3],
-        )
-      when ARGV[1] == 'rm'
-        TodoFileMutator.new(ENV['TODO_FILE']).remove_mit_date(
-          task_id_string: ARGV[2],
-        )
-      when !ARGV[1].nil? && !ARGV[2].nil?
-        TodoFileMutator.new(ENV['TODO_FILE']).add_mit(
-          date_string: ARGV[1],
-          task: ARGV[2],
-          include_creation_date: ENV['TODOTXT_DATE_ON_ADD'],
-        )
-      else
-        fail BadActionError
-      end
-
-    $stdout.puts output
-    exit 0
-  rescue BadDateError, BadTaskIDError, MITDateMissingError,
-         MissingDateError, MissingTaskIDError => e
-    $stderr.puts "MIT: #{e.message}"
-    exit EX_USAGE
-  rescue BadActionError
-    $stderr.puts usage_message
-    exit EX_USAGE
-  end
-
-  private
-
-  def usage_requested_from_todo_help?
-    # Normally the add-on will be invoked as a subcommand (like
-    # `todo.sh mit foo`), meaning that the actual mit-action, along with its
-    # various arguments, will be placed in ARGV[1] and higher.
-    #
-    # The only exception to this case is when the add-on is invoked through
-    # `todo.sh help`. This command will iterate through all available add-ons
-    # and invoke them like `mit usage`, meaning that the action will be present
-    # in ARGV[0].
-
-    ARGV[0] == 'usage'
-  end
-
-  def usage_message
-    usage_message = <<-EOF
-      Most Important Tasks (MIT):
-        Displays Most Important Tasks (MIT) in todo.txt file, adds new ones or
-        turns MIT tasks into standard ones.
-
-        mit [-h|--help|-v|--version] [date|day|relativedate task] [rm ID]
-          [not @context|@context] [mv ID DATE|DAY|RELATIVEDATE|FREEFORMDATE]
-
-        -h, --help      Displays help message.
-        -v, --version   Displays version information.
-
-        Date strings:
-
-        DATE must be in the format of YYYY.MM.DD.
-        DAY can be full or short day names, today or tomorrow.
-        RELATIVEDATE is defined as an integer, followed by one of the letters
-        "d", "w" or "m" (days, weeks and months).
-        FREEFORMDATE is any string that resembles a date; an attempt will be
-        made to parse it. FREEFORMDATE is the last date format checked.
-
-        Sub-commands:
-
-        mit
-          List all MITs with default formatting.
-
-        mit rm ID
-          Convert the MIT identified by ID to a standard task.
-
-        mit not @context|@context
-          Displays all MIT's not in or in specified context.
-
-        mit DATE|DAY|RELATIVEDATE|FREEFORMDATE task
-          Add MIT for chosen date.
-
-        mit mv ID DATE|DAY|RELATIVEDATE|FREEFORMDATE
-          Move the MIT identified by ID to a new day.
-    EOF
-
-    # Remove leading indentation
-    usage_message.gsub(/^#{usage_message.scan(/^[ \t]*(?=\S)/).min}/, '')
-  end
-
-  def version_message
-    "mit (ruby) #{Constants::VERSION}"
+    task.gsub(
+      /^(#{priority_regex} |x )?(#{date_regex} ){0,2}(#{Constants::MIT_DATE_REGEX} )?(.+)$/,
+      '\5'
+    )
   end
 end
 
 module Constants
   TODAY = ENV.key?('FIXED_DATE') ? Date.parse(ENV['FIXED_DATE']) : Date.today
   MIT_DATE_REGEX = /\{(\d{4}\.\d{2}\.\d{2})\}/
-  VERSION = 'v1.0.2'.freeze
+  VERSION = 'v1.1.0'.freeze
 end
 
 
