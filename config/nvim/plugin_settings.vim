@@ -35,6 +35,15 @@ let g:EasyMotion_keys = 'hdoairesnt'
 
 let g:fugitive_no_maps = 1
 
+" {{{1 fzf
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
 " {{{1 Gist
 
 let g:gist_clip_command = 'xclip -selection clipboard'
