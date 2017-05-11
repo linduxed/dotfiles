@@ -23,3 +23,4 @@ Session.vim
 .agignore
 _vimrc_local.vim
 .ctags
+.rgignore
