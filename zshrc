@@ -14,6 +14,9 @@ fi
 [ -f "$HOME/.zsh_programming_env" ] && source "$HOME/.zsh_programming_env"
 [ -f "$HOME/.zsh_programming_alias" ] && source "$HOME/.zsh_programming_alias"
 
+# Configuration from tag-todo
+[ -f "$HOME/.zsh_todo_alias" ] && source "$HOME/.zsh_todo_alias"
+
 # Note taking aliases.
 [ -f "$HOME/.znotes" ] && source "$HOME/.znotes"
 

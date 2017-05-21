@@ -21,7 +21,6 @@ zstyle ':prezto:load' pmodule \
     'ruby' \
     'rails' \
     'fasd' \
-    'todo' \
     'tmux' \
     'ssh' \
     'history-substring-search' \
