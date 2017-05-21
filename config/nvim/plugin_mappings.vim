@@ -119,7 +119,7 @@ nmap <leader>abq :Sayonara!<CR>
 
 " {{{1 StripTrailingWhitespace
 
-nnoremap <silent> <Leader>aw :StripTrailingWhitespace<CR>
+nnoremap <silent> <Leader>awk :StripTrailingWhitespace<CR>
 
 " {{{1 surround
 
