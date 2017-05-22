@@ -1,19 +1,14 @@
 alias t='todo.sh'
-alias ta='todo.sh add'
 alias tap='todo.sh add pri' # Requires "adda" add-on
 alias tad='todo.sh addx' # Requires "addx" add-on
 alias tl='todo.sh list'
 alias tlf='todo.sh -p list | fzf --prompt=" `date +%x` "'
 alias tlfn='todo.sh -p list | fzf --prompt=" `date +%x` "| sed -r "s/([0-9]+) .+/\1/"'
 alias tll='todo.sh list | less'
-alias tla='todo.sh listall'
-alias tlal='todo.sh listall | less'
 alias tlc='todo.sh view context' # Requires "view" add-on
 alias tlp='todo.sh view project' # Requires "view" add-on
 alias td='todo.sh do'
 alias te='todo.sh edit' # Requires "edit" add-on
-alias tb='todo.sh nav' # Requires "nav" add-on
-alias tp='todo.sh pri'
 alias tmt='todo.sh mit today' # Requires "mit" add-on
 
 tml() {
