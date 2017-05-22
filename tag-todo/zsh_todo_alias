@@ -3,8 +3,8 @@ alias ta='todo.sh add'
 alias tap='todo.sh add pri' # Requires "adda" add-on
 alias tad='todo.sh addx' # Requires "addx" add-on
 alias tl='todo.sh list'
-alias tlf='todo.sh -p list | fzf'
-alias tlfn='todo.sh -p list | fzf | sed -r "s/([0-9]+) .+/\1/"'
+alias tlf='todo.sh -p list | fzf --prompt=" `date +%x` "'
+alias tlfn='todo.sh -p list | fzf --prompt=" `date +%x` "| sed -r "s/([0-9]+) .+/\1/"'
 alias tll='todo.sh list | less'
 alias tla='todo.sh listall'
 alias tlal='todo.sh listall | less'
