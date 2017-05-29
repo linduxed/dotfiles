@@ -50,7 +50,7 @@ nmap ]c <Plug>GitGutterNextHunk
 nmap [c <Plug>GitGutterPrevHunk
 nmap <silent> <Leader>agt <Plug>GitGutterLineHighlightsToggle
 nmap <silent> <Leader>ags <Plug>GitGutterStageHunk
-nmap <silent> <Leader>agr <Plug>GitGutterRevertHunk
+nmap <silent> <Leader>agu <Plug>GitGutterUndoHunk
 nmap <silent> <Leader>agp <Plug>GitGutterPreviewHunk
 
 " {{{1 grepper
