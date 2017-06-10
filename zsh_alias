@@ -10,6 +10,11 @@ alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
 
+# Edit email with neovim
+nvmail() {
+    nvim /tmp/nvmail_$(date "+%x--%X").mail -c "set spell" -c "set spelllang=en" -c "setf mail"
+}
+
 # FZF track in MPD playlist and play it
 mpf() {
     chosen_track=$(mpc -f "%position% -- %artist% - %title% -- %file%" playlist | shuf | fzf)
