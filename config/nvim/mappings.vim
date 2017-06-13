@@ -12,6 +12,8 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 " "Refocus" folds
 nnoremap <Leader>b zMzvzz
 
+nnoremap <leader>afmi :set foldmethod=indent<CR>
+
 " Yank contents of buffer, keeping cursor position
 nnoremap <leader>ayb gg"*yG2<C-o>
 
