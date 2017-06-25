@@ -19,7 +19,7 @@ alias tmt='todo.sh mit today' # Requires "mit" add-on
 #   - Optional added-at date
 #   - Optional MIT date
 alias tlaf="
-t -p listall\
+todo.sh -p listall\
 | head -n -4\
 | sed -r 's/\
 ^\
