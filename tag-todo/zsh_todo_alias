@@ -18,6 +18,12 @@ tlfn() {
     [[ -n $task ]] && sed -r "s/([0-9]+) .+/\1/" <<< $task
 }
 
+tdf() {
+    task_number=$(tlfn)
+
+    [[ -n $task_number ]] && todo.sh do $task_number
+}
+
 # FZF all TODOs (including done ones), with following things removed:
 #   - Trailing statistics shown by the listall action
 #   - Leading task number
