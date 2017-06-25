@@ -10,6 +10,12 @@ alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
 
+cdown() {
+    termdown --no-figlet --title $1 $2 &&
+    echo $1 &&
+    mpv ~/.sounds/notification >/dev/null 2>&1
+}
+
 # Edit email with neovim
 nvmail() {
     nvim /tmp/nvmail_$(date "+%x--%X").mail -c "set spell" -c "set spelllang=en" -c "setf mail"
