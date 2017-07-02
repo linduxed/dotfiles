@@ -18,6 +18,8 @@ nnoremap <leader>ase :set spelllang=en<CR>
 nnoremap <leader>ass :set spelllang=sv<CR>
 nnoremap <leader>asp :set spelllang=pl<CR>
 
+nnoremap <leader>atwz :set tw=0<CR>
+
 " Yank contents of buffer, keeping cursor position
 nnoremap <leader>ayb gg"*yG2<C-o>
 
