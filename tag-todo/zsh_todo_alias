@@ -46,6 +46,9 @@ $\
     sort | uniq | fzf
 }
 
+# Requires "addx" add-on
+tlafd() { todo.sh addx "$(tlaf)" }
+
 tml() {
     todo.sh mit $1 | $PAGER
 }
