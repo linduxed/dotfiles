@@ -9,9 +9,8 @@ alias td='todo.sh do'
 alias te='todo.sh edit' # Requires "edit" add-on
 alias tmt='todo.sh mit today' # Requires "mit" add-on
 
-tlf() {
-    todo.sh -p list | fzf --prompt=" `date +%x` "
-}
+tlf() { todo.sh -p list | fzf --prompt=" `date +%x` " }
+
 tlfn() {
     task=$(tlf)
 
@@ -49,6 +48,4 @@ $\
 # Requires "addx" add-on
 tlafd() { todo.sh addx "$(tlaf)" }
 
-tml() {
-    todo.sh mit $1 | $PAGER
-}
+tml() { todo.sh mit $1 | $PAGER }
