@@ -46,6 +46,10 @@ $\
 }
 
 # Requires "addx" add-on
-tlafd() { todo.sh addx "$(tlaf)" }
+tlafd() {
+    task=$(tlaf)
+
+    [[ -n $task ]] && todo.sh addx "$task"
+}
 
 tml() { todo.sh mit $1 | $PAGER }
