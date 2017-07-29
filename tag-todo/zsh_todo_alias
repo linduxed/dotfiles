@@ -53,3 +53,9 @@ tlafd() {
 }
 
 tml() { todo.sh mit $1 | $PAGER }
+
+tmtf() {
+    task=$(tlaf)
+
+    [[ -n $task ]] && todo.sh mit today "$task"
+}
