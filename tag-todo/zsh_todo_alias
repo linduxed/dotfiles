@@ -9,7 +9,8 @@ alias td='todo.sh do'
 alias te='todo.sh edit' # Requires "edit" add-on
 alias tmt='todo.sh mit today' # Requires "mit" add-on
 
-tlf() { todo.sh -p list | fzf --prompt=" `date +%x` " }
+# `head` removes trailing statistics
+tlf() { todo.sh -p list | head -n -2 | fzf --prompt=" `date +%x` " }
 
 tlfn() {
     task=$(tlf)
