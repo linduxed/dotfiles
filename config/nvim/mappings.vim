@@ -20,8 +20,8 @@ nnoremap <leader>asp :set spelllang=pl<CR>
 
 nnoremap <leader>atwz :set tw=0<CR>
 
-" Yank contents of buffer, keeping cursor position
-nnoremap <leader>ayb gg"*yG2<C-o>
+" Yank contents of buffer
+nnoremap <leader>ayb gg"*yG
 
 nnoremap ]v :tabnext<CR>
 nnoremap [v :tabprevious<CR>
