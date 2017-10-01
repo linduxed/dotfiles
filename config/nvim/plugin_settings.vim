@@ -247,7 +247,7 @@ let g:snips_author = 'linduxed'
 
 " Since the paste mappings conflict with my Colemak setup, they need to be
 " disabled. The plugin needs to be eager-loaded for the mappings to be
-" applied, whereafter they can be unmapped.
+" applied, where after they can be unmapped.
 runtime! plugin/unimpaired.vim
 nunmap yo
 nunmap yO
