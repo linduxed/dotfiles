@@ -37,9 +37,9 @@ Plug 'mhinz/vim-sayonara'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-Plug 'cespare/vim-toml'
 Plug 'tpope/vim-unimpaired'
 Plug 'SirVer/ultisnips'
+Plug 'sheerun/vim-polyglot'
 Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
 
@@ -54,11 +54,7 @@ Plug 'kana/vim-textobj-user'
 
 " Language specific
 
-Plug 'xenoterracide/html.vim'
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-markdown'
-Plug 'vim-ruby/vim-ruby'
-Plug 'Matt-Deacalion/vim-systemd-syntax'
 
 " Load after plugins that change mappings
 Plug 'linduxed/colemak.vim'
