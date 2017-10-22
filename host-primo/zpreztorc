@@ -26,5 +26,6 @@ zstyle ':prezto:load' pmodule \
     'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'linduxed'
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 zstyle ':prezto:module:terminal' auto-title 'yes'
 zstyle ':prezto:module:utility' safe-ops 'no'
