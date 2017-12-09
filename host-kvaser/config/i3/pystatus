@@ -29,6 +29,12 @@ status.register("load",
     format="{avg1} {avg5} {avg15}"
 )
 
+status.register("mem",
+    round_size=None,
+    warn_percentage=75,
+    alert_percentage=85
+)
+
 # It seems like `hwmonX` changes to different values of X. Pick the first one.
 for n in range(5):
     temperature_file='/sys/devices/platform/coretemp.0/hwmon/hwmon{}/temp1_input'.format(n)
