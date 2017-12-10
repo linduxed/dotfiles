@@ -231,6 +231,26 @@ let g:rsi_no_meta = 1
 
 let g:no_ruby_maps = 1
 
+" {{{1 tagbar
+
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records',
+        \ 't:tests'
+    \ ]
+\ }
+
 " {{{1 TextObjects
 
 " Default bindings disabled for remapping to Colemak bindings.
