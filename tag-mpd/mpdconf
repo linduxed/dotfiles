@@ -13,6 +13,7 @@ sticker_file       "~/.mpd/sticker.sql"
 # General music daemon options ################################################
 #
 restore_paused "yes"
+bind_to_address "127.0.0.1"
 #
 ###############################################################################
 
