@@ -6,7 +6,6 @@ autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 
 # Autostart
-[ ! -s ~/.mpd/pid  ] && mpd &
 kbdd &
 nm-applet &
 thunderbird &
