@@ -59,6 +59,7 @@ status.register(
         "play": "▶",
         "stop": "◾",
     },
+    host="127.0.0.1",
 )
 
 status.run()
