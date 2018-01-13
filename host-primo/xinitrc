@@ -26,6 +26,6 @@ redshift-gtk &
 # uim-xim &
 # export XMODIFIERS=@im='uim'
 # uim-toolbar-gtk-systray &
-export TERMINAL="roxterm"
+export TERMINAL="terminology"
 
 exec i3 -V >> ~/.config/i3/i3log 2>&1
