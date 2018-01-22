@@ -43,6 +43,7 @@ nnoremap <leader>fh :Helptags<CR>
 nnoremap <leader>fw :Windows<CR>
 nnoremap <leader>fr :Rg<CR>
 nnoremap <leader>fs :Snippets<CR>
+imap <C-x><C-l> <plug>(fzf-complete-line)
 
 " {{{1 gitgutter
 
