@@ -1,6 +1,6 @@
-export NOTES_DIRECTORY=$HOME/Dropbox/notes
+export NOTES_DIRECTORY="$HOME/SpiderOak Hive/notes"
 
-alias ntcd="cd $NOTES_DIRECTORY"
+alias ntcd="cd \"$NOTES_DIRECTORY\""
 ntn() {
     [[ -n $1 ]] && $EDITOR $NOTES_DIRECTORY/$1
 }
