@@ -10,6 +10,11 @@ alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
 
+# "cat" for code
+cocat() {
+    pygmentize $1 | nl -ba
+}
+
 cdown() {
     termdown --no-figlet --title $1 $2 &&
     echo $1 &&
