@@ -1,5 +1,7 @@
 export TERM=xterm-256color
+
 export PASSWORD_STORE_DIR=$HOME/SpiderOak\ Hive/password-store
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 export GOPATH=$HOME/Documents/go
 export PATH=$PATH:$GOPATH/bin
