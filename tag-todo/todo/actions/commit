@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+action=$1
+shift
+mode=$1
+
+function usage {
+	echo "  $(basename $0) [-n]"
+	echo "    Record all changes in Git repository located at $TODO_DIR."
+	echo "    If -n argument is provided, only a preview will be shown."
+	echo ""
+	exit
+}
+
+[ "$action" = "usage" ] && usage
+
+cd "$TODO_DIR"
+PAGER="less -+c -F" git diff
+if [ "$mode" != "-n" ]; then
+	git commit -a $mode -m "$(hostname): $(date -Iseconds)"
+fi
