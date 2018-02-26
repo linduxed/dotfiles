@@ -15,7 +15,8 @@ function usage {
 [ "$action" = "usage" ] && usage
 
 cd "$TODO_DIR"
-PAGER="less -+c -F" git diff
-if [ "$mode" != "-n" ]; then
-	git commit -a $mode -m "$(hostname): $(date -Iseconds)"
+if [ "$mode" == "-n" ]; then
+    PAGER="less -+c -F" git diff
+else
+    git commit -a $mode -m "$(hostname): $(date -Iseconds)"
 fi
