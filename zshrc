@@ -17,6 +17,9 @@ fi
 # Configuration from tag-todo
 [ -f "$HOME/.zsh_todo_alias" ] && source "$HOME/.zsh_todo_alias"
 
+# Configuration from tag-diary
+[ -f "$HOME/.zsh_diary_env" ] && source "$HOME/.zsh_diary_env"
+
 # Note taking aliases.
 [ -f "$HOME/.znotes" ] && source "$HOME/.znotes"
 

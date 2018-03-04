@@ -1,4 +1,4 @@
 SYMLINK_DIRS="rbenv plugged tmp zprezto"
 EXCLUDES="README.md LICENSE"
-TAGS="desktop mpd notes programming todo"
+TAGS="desktop diary mpd notes programming todo"
 UNDOTTED="bin"
