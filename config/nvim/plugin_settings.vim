@@ -61,6 +61,8 @@ let g:go_textobj_enabled = 0
 
 " {{{1 Goyo
 
+let g:goyo_bg = 232
+
 function! s:goyo_enter()
   set nocursorcolumn
   set nocursorline
