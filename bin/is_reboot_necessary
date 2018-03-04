@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+s1=$(pacman -Q linux-zen | sed 's/linux-zen //')
+s2=$(uname -r | sed 's/-zen//')
+
+if [ "$s1" == "$s2" ]; then
+  echo NO NEED
+else
+  echo REBOOT NECESSARY
+fi
