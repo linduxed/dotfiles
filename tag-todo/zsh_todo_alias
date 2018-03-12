@@ -9,6 +9,7 @@ alias td='todo.sh do'
 alias te='todo.sh edit' # Requires "edit" add-on
 alias tmt='todo.sh mit today' # Requires "mit" add-on
 alias tcd='eval "$(todo.sh cd)"' # Requires "cd" add-on
+alias ts='todo.sh sync' # Requires "sync" add-on
 
 # `head` removes trailing statistics
 tlf() { todo.sh -p list | head -n -2 | fzf --prompt=" `date +%x` " }
