@@ -149,7 +149,7 @@ nnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
 let g:UltiSnipsExpandTrigger="<C-h>"
 let g:UltiSnipsListSnippets="<C-r><C-h>"
 let g:UltiSnipsJumpForwardTrigger="<c-o>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-g><c-o>"
 
 " {{{1 TextObjects
 
