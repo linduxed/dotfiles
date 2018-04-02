@@ -33,6 +33,10 @@ nnoremap <leader>all :ElmEvalLine<CR>
 vnoremap <leader>als :<C-u>ElmEvalSelection<CR>
 nnoremap <leader>alm :ElmMakeCurrentFile<CR>
 
+" {{{1 Elixir
+
+nnoremap <leader>aef :MixFormat<CR>
+
 " {{{1 fzf
 
 nnoremap <C-p> :FZF<CR>
