@@ -29,9 +29,9 @@ map <Leader><Leader>k <Plug>(easymotion-bd-n)
 
 " {{{1 elm
 
-nnoremap <leader>ael :ElmEvalLine<CR>
-vnoremap <leader>aes :<C-u>ElmEvalSelection<CR>
-nnoremap <leader>aem :ElmMakeCurrentFile<CR>
+nnoremap <leader>all :ElmEvalLine<CR>
+vnoremap <leader>als :<C-u>ElmEvalSelection<CR>
+nnoremap <leader>alm :ElmMakeCurrentFile<CR>
 
 " {{{1 fzf
 
