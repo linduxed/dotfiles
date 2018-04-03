@@ -4,14 +4,6 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-#
-# Browser
-#
-if [[ "$OSTYPE" == darwin* ]]; then
-  export BROWSER='open'
-else
-  export BROWSER='xdg-open'
-fi
 
 #
 # Editors
