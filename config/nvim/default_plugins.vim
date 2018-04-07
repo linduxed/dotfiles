@@ -1,5 +1,4 @@
 Plug 'vim-scripts/bbcode'
-Plug 'linduxed/cscope_macros.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim'
 Plug 'junegunn/fzf'
