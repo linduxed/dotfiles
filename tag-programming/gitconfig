@@ -50,6 +50,7 @@
 [diff]
     algorithm = patience
     compactionHeuristic = true
+    colorMoved = default
 [commit]
     verbose = true
 [submodule]
