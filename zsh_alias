@@ -1,3 +1,4 @@
+alias nnv='nice nvim'
 alias wcmirror='mplayer -vf mirror -tv driver=v4l2:device=/dev/video0:fps=30 tv://'
 alias figdoh='clear && figlet -tc -f doh'
 alias usb='pmount /dev/sdb1'
