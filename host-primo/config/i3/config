@@ -133,11 +133,18 @@ bindsym $mod+F9 exec "/home/linduxed/bin/dual_no-pivot_bg_random_switch.sh"
 bindsym $mod+F10 exec "/usr/bin/pulseaudio-ctl mute"
 bindsym $mod+F11 exec "/usr/bin/pulseaudio-ctl down"
 bindsym $mod+F12 exec "/usr/bin/pulseaudio-ctl up"
+bindsym XF86AudioMute exec "/usr/bin/pulseaudio-ctl mute"
+bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down"
+bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up"
 
 bindsym Control+$ALT+p exec "MPD_HOST=127.0.0.1 mpc toggle"
 bindsym Control+$ALT+s exec "MPD_HOST=127.0.0.1 mpc stop"
 bindsym Control+$ALT+l exec "MPD_HOST=127.0.0.1 mpc prev"
 bindsym Control+$ALT+y exec "MPD_HOST=127.0.0.1 mpc next"
+bindsym XF86AudioPlay exec "MPD_HOST=127.0.0.1 mpc toggle"
+bindsym XF86AudioStop exec "MPD_HOST=127.0.0.1 mpc stop"
+bindsym XF86AudioPrev exec "MPD_HOST=127.0.0.1 mpc prev"
+bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
 
 bindsym $mod+Shift+l exec "xscreensaver-command -lock"
 
