@@ -196,7 +196,7 @@ def_key "delete"
 #def_key "right"
 #  slave_screen
 #
-def_key "i"
+def_key "J"
  volume_up
 #
 #def_key "+"
@@ -208,7 +208,7 @@ def_key "i"
 #def_key "left"
 #  master_screen
 #
-def_key "n"
+def_key "H"
  volume_down
 #
 #def_key "-"
@@ -265,16 +265,16 @@ def_key "n"
 #def_key "@"
 #  show_server_info
 #
-#def_key "s"
-#  stop
-#
-def_key "p"
- pause
-
 def_key "y"
- next
+ stop
 
 def_key "l"
+ pause
+
+def_key "i"
+ next
+
+def_key "n"
  previous
 #
 #def_key "ctrl_h"
