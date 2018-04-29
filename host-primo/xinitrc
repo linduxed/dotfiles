@@ -15,7 +15,7 @@ dropbox &
 SpiderOakONE &
 wmname LG3D &
 kupfer &
-workrave &
+rsibreak &
 xrandr --output HDMI-0 --mode 3840x2160 --pos 2560x-720 &
 xscreensaver -no-splash &
 redshift-gtk &
