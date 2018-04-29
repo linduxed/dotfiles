@@ -1,0 +1,33 @@
+[General]
+AutoStart=false
+
+[General Settings]
+BigDuration=1
+BigInterval=60
+BigThreshold=5
+DisableAccel=false
+Effect=3
+ExpandImageToFullScreen=true
+Graylevel=80
+HideLockButton=false
+HideMinimizeButton=false
+HidePostponeButton=false
+ImageFolder=/home/linduxed
+Patience=30
+PostponeBreakDuration=5
+SearchRecursiveCheck=false
+ShowSmallImagesCheck=true
+SlideInterval=10
+TinyDuration=15
+TinyInterval=8
+TinyThreshold=40
+UseNoIdleTimer=false
+UsePlasmaReadOnly=true
+
+[Popup Settings]
+UseFlash=true
+UsePopup=true
+
+[SetupDimensions]
+Height 2160=509
+Width 3840=567
