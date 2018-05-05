@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+s1=$(pacman -Q linux | sed 's/linux //')
+s2=$(uname -r)
+
+if [ "$s1" == "$s2" ]; then
+  echo NO NEED
+else
+  echo REBOOT NECESSARY
+fi
