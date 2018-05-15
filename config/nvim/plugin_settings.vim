@@ -272,12 +272,11 @@ let g:snips_author = 'linduxed'
 
 " {{{1 unimpaired
 
-" Since the paste mappings conflict with my Colemak setup, they need to be
-" disabled. The plugin needs to be eager-loaded for the mappings to be
-" applied, where after they can be unmapped.
-runtime! plugin/unimpaired.vim
-nunmap yo
-nunmap yO
+" The default mapping prefix 'yo' conflicts with my Colemak setup.
+" The older prefix 'co' works better for me.
+let g:nremap = {"y": "c"}
+let g:xremap = {"y": "c"}
+let g:oremap = {"y": "c"}
 
 " {{{1 wheel
 
