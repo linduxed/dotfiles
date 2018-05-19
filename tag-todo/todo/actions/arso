@@ -1,0 +1,68 @@
+#!/usr/bin/env ruby
+
+class CLI
+  class BadActionError < StandardError; end
+
+  EX_USAGE = 64
+
+  def run
+    output =
+      case
+      when usage_requested_from_todo_help?
+        usage_message
+      when %w[usage -h --help].include?(ARGV[1])
+        usage_message
+      when %w[-v --version].include?(ARGV[1])
+        version_message
+      when ARGV[1].nil?
+        todosh_archiving_output = `#{ENV["TODO_FULL_SH"]} archive`
+
+        sorted_todos_by_completion_date =
+          File.
+            readlines(ENV["DONE_FILE"]).
+            sort_by { |line| line.split(" ")[1] }
+
+        File.write(ENV["DONE_FILE"], sorted_todos_by_completion_date.join)
+
+        todosh_archiving_output
+      else
+        raise BadActionError
+      end
+
+    $stdout.puts output
+    exit 0
+  rescue BadActionError
+    $stderr.warn usage_message
+    exit EX_USAGE
+  end
+
+  private
+
+  def usage_requested_from_todo_help?
+    # Normally the add-on will be invoked as a subcommand (like
+    # `todo.sh foo bar`), meaning that the actual mit-action, along with its
+    # various arguments, will be placed in ARGV[1] and higher.
+    #
+    # The only exception to this case is when the add-on is invoked through
+    # `todo.sh help`. This command will iterate through all available add-ons
+    # and invoke them like `mit usage`, meaning that the action will be present
+    # in ARGV[0].
+
+    ARGV[0] == 'usage'
+  end
+
+  def usage_message
+    <<~USAGE
+      arso [-h|--help]
+        ARchive and SOrt done tasks. Archives as usual, then sorts the tasks by
+        completion date.
+
+        The add-on assumes that tasks have completion dates and that they're
+        positioned as the first token after the 'x' at the start of every line.
+
+        -h, --help    Displays help message.
+    USAGE
+  end
+end
+
+CLI.new.run
