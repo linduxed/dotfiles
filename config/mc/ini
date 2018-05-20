@@ -87,7 +87,7 @@ copymove_persistent_attr=true
 select_flags=6
 quick_search_case_sensitive=2
 mcview_eof=
-skin=default
+skin=modarin256-defbg
 keymap=mc.keymap
 auto_save_setup_panels=true
 
@@ -105,6 +105,8 @@ editor_group_undo=false
 editor_ask_filename_before_edit=false
 editor_filesize_threshold=64M
 editor_stop_format_chars=-+*\\,.;:&>
+
+editor_state_full_filename=false
 
 [Layout]
 message_visible=1
@@ -175,9 +177,6 @@ find_ignore_dirs=
 clipboard_store=
 clipboard_paste=
 
-[Colors]
-base_color=gray,black:normal=white,black:selected=black,brown:marked=black,lightgray:markselect=black,yellow:errors=white,red:menu=yellow,gray:reverse=brightmagenta,black:dnormal=black,lightgray:dfocus=black,cyan:dhotnormal=blue,lightgray:dhotfocus=blue,cyan:viewunderline=black,green:menuhot=red,gray:menusel=white,black:menuhotsel=yellow,black:helpnormal=black,lightgray:helpitalic=red,lightgray:helpbold=blue,lightgray:helplink=black,cyan:helpslink=yellow,blue:gauge=white,black:input=yellow,gray:directory=yellow,gray:executable=brightgreen,gray:link=brightcyan,gray:stalelink=brightred,blue:device=magenta,gray:core=red,blue:special=black,blue:editnormal=white,black:editbold=yellow,blue:editmarked=black,white:errdhotnormal=yellow,red:errdhotfocus=yellow,lightgray
-
 xterm=
 color_terminals=
 
@@ -203,6 +202,13 @@ quick_search_mode=2
 show_mini_info=true
 torben_fj_mode=false
 select_flags=6
+
+panel_scroll_center=false
+
+[Colors]
+base_color=
+xterm-256color=
+color_terminals=
 
 [Panelize]
 Find *.orig after patching=find . -name *.orig -print
