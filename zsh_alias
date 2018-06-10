@@ -19,7 +19,7 @@ cocat() {
 cdown() {
     termdown --no-figlet --title $1 $2 &&
     echo $1 &&
-    mpv ~/.sounds/notification >/dev/null 2>&1
+    mpv --volume 70 ~/.sounds/notification >/dev/null 2>&1
 }
 
 # Edit email with neovim
