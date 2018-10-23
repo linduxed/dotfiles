@@ -16,10 +16,14 @@ cocat() {
     pygmentize $1 | nl -ba
 }
 
+notification-sound() {
+    mpv --volume 70 ~/.sounds/notification >/dev/null 2>&1
+}
+
 cdown() {
     termdown --no-figlet --title $1 $2 &&
     echo $1 &&
-    mpv --volume 70 ~/.sounds/notification >/dev/null 2>&1
+    notification-sound
 }
 
 # Edit email with neovim
