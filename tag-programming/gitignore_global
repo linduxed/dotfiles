@@ -6,6 +6,7 @@
 .bundle
 .cabal-sandbox
 .ctags
+.elixir_ls
 .env
 .gitignore
 .rgignore
