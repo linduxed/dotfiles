@@ -7,6 +7,10 @@ Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/greplace.vim'
 Plug 'haya14busa/incsearch.vim'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'asins/mark'
 Plug 'vim-scripts/matchit.zip'
 Plug 'benekastah/neomake'

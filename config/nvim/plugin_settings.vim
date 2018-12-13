@@ -97,6 +97,12 @@ let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermfg=none ctermbg=234 cterm=none
 hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
 
+" {{{1 LanguageClient
+
+let g:LanguageClient_serverCommands = {
+    \ 'elixir': ['~/.elixir-ls/release/language_server.sh'],
+    \ }
+
 " {{{1 Mark
 
 let g:mwDefaultHighlightingPalette = [
@@ -163,7 +169,7 @@ let g:markdown_fenced_languages = ['ruby', 'haskell', 'vim', 'sh', 'c']
 " {{{1 Neomake
 
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
-let g:neomake_elixir_enabled_makers = ['elixir', 'mix', 'credo', 'dogma']
+let g:neomake_elixir_enabled_makers = ['credo', 'dogma']
 let g:neomake_warning_sign = {
   \ 'text': '>>',
   \ 'texthl': 'Todo',
