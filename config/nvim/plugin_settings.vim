@@ -160,10 +160,6 @@ let g:mwDefaultHighlightingPalette = [
 
 let g:markdown_fenced_languages = ['ruby', 'haskell', 'vim', 'sh', 'c']
 
-" {{{1 mix-format
-
-let g:mix_format_options = '--check-equivalent'
-
 " {{{1 Neomake
 
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
