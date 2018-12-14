@@ -77,6 +77,7 @@ nmap <silent> <Leader>ai <Plug>IndentGuidesToggle
 nnoremap <silent> <Leader>all :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> <Leader>ald :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <Leader>alf :call LanguageClient#textDocument_formatting()<CR>
+nnoremap <silent> <Leader>alh :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> <Leader>alm :call LanguageClient#textDocument_rename()<CR>
 nnoremap <silent> <Leader>alr :call LanguageClient#textDocument_references()<CR>
 nnoremap <silent> <Leader>als :call LanguageClient#textDocument_documentSymbol()<CR>
