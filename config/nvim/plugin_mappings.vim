@@ -23,11 +23,6 @@ map <Leader><Leader>e <Plug>(easymotion-bd-jk)
 map <Leader><Leader>u <Plug>(easymotion-overwin-line)
 map <Leader><Leader>k <Plug>(easymotion-bd-n)
 
-" {{{1 elm
-
-nnoremap <leader>all :ElmEvalLine<CR>
-vnoremap <leader>als :<C-u>ElmEvalSelection<CR>
-nnoremap <leader>alm :ElmMakeCurrentFile<CR>
 
 " {{{1 fzf
 
