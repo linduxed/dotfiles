@@ -101,6 +101,7 @@ hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
 
 let g:LanguageClient_serverCommands = {
     \ 'elixir': ['~/.elixir-ls/release/language_server.sh'],
+    \ 'ruby': ['rbenv', 'exec', 'solargraph', 'stdio'],
     \ }
 
 " {{{1 Mark
