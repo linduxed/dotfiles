@@ -150,5 +150,6 @@ bindsym XF86AudioPrev exec "MPD_HOST=127.0.0.1 mpc prev"
 bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
 
 bindsym $mod+Shift+l exec "xscreensaver-command -lock"
+bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 
 # }}}
