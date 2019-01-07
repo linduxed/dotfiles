@@ -1,5 +1,3 @@
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'racer-rust/vim-racer'
 Plug 'tpope/vim-bundler'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
