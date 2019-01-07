@@ -1,5 +1,3 @@
-Plug 'slashmili/alchemist.vim'
-Plug 'mhinz/vim-mix-format'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'racer-rust/vim-racer'
 Plug 'tpope/vim-bundler'
