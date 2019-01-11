@@ -18,3 +18,10 @@ ftig() {
 
     [[ -n $branch_or_tag ]] && tig $branch_or_tag
 }
+
+fchs() {
+  local commits commit
+  commits=$(git log --all --pretty="tformat:%h (%ar) %s%d")
+
+  echo "$commits" | fzf --no-sort --no-multi | sed "s/ .*//"
+}
