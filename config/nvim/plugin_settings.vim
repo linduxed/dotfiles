@@ -99,6 +99,7 @@ hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
 
 " {{{1 LanguageClient
 
+let g:LanguageClient_diagnosticsList = "Location"
 let g:LanguageClient_serverCommands = {
     \ 'elixir': ['~/.elixir-ls/release/language_server.sh'],
     \ 'ruby': ['rbenv', 'exec', 'solargraph', 'stdio'],
