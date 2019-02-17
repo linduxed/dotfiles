@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-s1=$(pacman -Q linux | sed 's/linux //' | sed 's/\.arch/-arch/')
+s1=$(pacman -Q linux | sed 's/linux-raspberrypi //' | sed 's/\.arch/-arch/')
 s2=$(uname -r | sed 's/-ARCH//')
 
 if [ "$s1" == "$s2" ]; then
