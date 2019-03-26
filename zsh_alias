@@ -11,11 +11,6 @@ alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
 
-# "cat" for code
-cocat() {
-    pygmentize $1 | nl -ba
-}
-
 notification-sound() {
     mpv --volume 70 ~/.sounds/notification >/dev/null 2>&1
 }
