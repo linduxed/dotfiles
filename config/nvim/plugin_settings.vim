@@ -53,10 +53,6 @@ let g:gist_browser_command = 'xdg-open %URL%'
 
 let g:gitgutter_map_keys = 0
 
-" {{{1 go
-
-let g:go_textobj_enabled = 0
-
 " {{{1 Goyo
 
 let g:goyo_bg = 232
@@ -145,10 +141,6 @@ let g:mwDefaultHighlightingPalette = [
 \   { 'ctermfg':'Black',   'ctermbg':'228' },
 \]
 
-" {{{1 Markdown
-
-let g:markdown_fenced_languages = ['ruby', 'haskell', 'vim', 'sh', 'c']
-
 " {{{1 Neomake
 
 let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
@@ -176,10 +168,6 @@ let g:NERDCustomDelimiters = {
 " {{{1 NERDtree
 
 let NERDTreeQuitOnOpen = 1
-
-" {{{1 racer
-
-let g:racer_cmd = "/usr/bin/racer"
 
 " {{{1 RainbowParentheses
 
@@ -213,14 +201,6 @@ let g:rbpt_colorpairs = [
 " For the colours to loop properly, rbpt_max needs to equal the length
 " of rbpt_colorpairs.
 let g:rbpt_max = 15
-
-" {{{1 rsi
-
-let g:rsi_no_meta = 1
-
-" {{{1 ruby
-
-let g:no_ruby_maps = 1
 
 " {{{1 tagbar
 
