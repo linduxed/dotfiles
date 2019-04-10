@@ -3,9 +3,22 @@
 nnoremap <Leader>ace :ColemakEnable<CR>
 nnoremap <Leader>acd :ColemakDisable<CR>
 
-" {{{1 deoplete
+" {{{1 coc
 
-nnoremap <Leader>ad :call deoplete#toggle()<CR>
+" The following mapping is required, as without it <C-n> or <C-p> in the
+" completion list results in snippets not expanding upon <CR>.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
+
+" For some reason these can not be nnoremap instead of nmap, if one uses the
+" <Plug> invocations instead of :call Whatever<CR>.
+nmap <Leader>all :CocList<CR>
+nmap <Leader>ald <Plug>(coc-definition)
+nmap <Leader>alf <Plug>(coc-format)
+vmap <Leader>alf <Plug>(coc-format-selected)
+nmap <silent> <Leader>alh :call CocAction("doHover")<CR>
+nmap <Leader>alm <Plug>(coc-rename)
+nmap <Leader>alr <Plug>(coc-references)
+nmap <Leader>alc <Plug>(coc-codeaction)
 
 " {{{1 EasyMotion
 
@@ -72,16 +85,6 @@ endfunction
 
 nmap <silent> <Leader>ai <Plug>IndentGuidesToggle
 
-" {{{1 LanguageClient
-
-nnoremap <silent> <Leader>all :call LanguageClient_contextMenu()<CR>
-nnoremap <silent> <Leader>ald :call LanguageClient#textDocument_definition()<CR>
-nnoremap <silent> <Leader>alf :call LanguageClient#textDocument_formatting()<CR>
-nnoremap <silent> <Leader>alh :call LanguageClient#textDocument_hover()<CR>
-nnoremap <silent> <Leader>alm :call LanguageClient#textDocument_rename()<CR>
-nnoremap <silent> <Leader>alr :call LanguageClient#textDocument_references()<CR>
-nnoremap <silent> <Leader>als :call LanguageClient#textDocument_documentSymbol()<CR>
-
 " {{{1 Mark
 
 nmap <Leader>mm <Plug>MarkSet
@@ -144,13 +147,6 @@ vnoremap <Leader>ate :Tabularize / = /l0<CR>
 nnoremap <Leader>ate :Tabularize / = /l0<CR>
 vnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
-
-" {{{1 UltiSnips
-
-let g:UltiSnipsExpandTrigger="<C-h>"
-let g:UltiSnipsListSnippets="<C-r><C-h>"
-let g:UltiSnipsJumpForwardTrigger="<c-o>"
-let g:UltiSnipsJumpBackwardTrigger="<c-g><c-o>"
 
 " {{{1 TextObjects
 

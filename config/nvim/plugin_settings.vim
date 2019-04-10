@@ -11,15 +11,13 @@ let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''◆'', ''
 
 " {{{1 DelimitMate
 
-let delimitMate_expand_cr = 1
+" This is the default, but is included here for clarity:
+" The coc.vim completion menu needs a <CR> mapping to work reliably.
+" Therefore this should not be set to 1.
+let delimitMate_expand_cr = 0
+
 let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
-
-" {{{1 deoplete
-
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#source('_', 'converters',
-    \ ['converter_remove_paren'])
 
 " {{{1 EasyMotion
 
@@ -82,28 +80,11 @@ let g:grepper = {}
 let g:grepper.tools = ['rg', 'git', 'ag']
 let g:grepper.highlight = 1
 
-" {{{1 haskell-vim
-
-let g:haskell_indent_if = 3
-let g:haskell_indent_case = 4
-let g:haskell_indent_let = 4
-let g:haskell_indent_where = 6
-let g:haskell_indent_do = 3
-let g:haskell_indent_in = 1
-
 " {{{1 IndentGuides
 
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermfg=none ctermbg=234 cterm=none
 hi IndentGuidesEven ctermfg=none ctermbg=235 cterm=none
-
-" {{{1 LanguageClient
-
-let g:LanguageClient_diagnosticsList = "Location"
-let g:LanguageClient_serverCommands = {
-    \ 'elixir': ['~/.elixir-ls/release/language_server.sh'],
-    \ 'ruby': ['rbenv', 'exec', 'solargraph', 'stdio'],
-    \ }
 
 " {{{1 Mark
 
@@ -269,10 +250,6 @@ let g:textobj_indent_no_default_key_mappings = 1
 let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
-
-" {{{1 UltiSnips
-
-let g:snips_author = 'linduxed'
 
 " {{{1 unimpaired
 

@@ -1,16 +1,12 @@
 Plug 'vim-scripts/bbcode'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/greplace.vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 Plug 'asins/mark'
 Plug 'vim-scripts/matchit.zip'
 Plug 'benekastah/neomake'
@@ -40,7 +36,6 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'SirVer/ultisnips'
 Plug 'sheerun/vim-polyglot'
 Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
@@ -53,10 +48,6 @@ Plug 'saihoooooooo/vim-textobj-space'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'mattn/vim-textobj-url'
 Plug 'kana/vim-textobj-user'
-
-" Language specific
-
-Plug 'tpope/vim-endwise'
 
 " Load after plugins that change mappings
 Plug 'linduxed/colemak.vim'
