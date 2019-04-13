@@ -18,7 +18,9 @@ notification-sound() {
 cdown() {
     termdown --no-figlet --title $1 $2 &&
     echo $1 &&
-    notification-sound
+    notification-sound &&
+    sleep 1 &&
+    mimic -t "$1"
 }
 
 # Edit email with neovim
