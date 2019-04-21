@@ -8,5 +8,9 @@
             ]
         }
     },
-    "suggest.noselect": false
+    "suggest.noselect": false,
+    "coc.source.emoji.filetypes": [
+        "markdown",
+        "mail"
+    ]
 }
