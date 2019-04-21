@@ -1,10 +1,12 @@
 {
-  "languageserver": {
-    "elixir": {
-      "command": "/home/linduxed/.elixir-ls/release/language_server.sh",
-      "args": [],
-      "filetypes": ["elixir"]
-    }
-  },
-  "suggest.noselect": false
+    "languageserver": {
+        "elixir": {
+            "command": "/home/linduxed/.elixir-ls/release/language_server.sh",
+            "args": [],
+            "filetypes": [
+                "elixir"
+            ]
+        }
+    },
+    "suggest.noselect": false
 }
