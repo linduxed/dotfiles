@@ -19,6 +19,7 @@ nmap <silent> <Leader>alh :call CocAction("doHover")<CR>
 nmap <Leader>alm <Plug>(coc-rename)
 nmap <Leader>alr <Plug>(coc-references)
 nmap <Leader>alc <Plug>(coc-codeaction)
+imap <C-h> <Plug>(coc-snippets-expand)
 
 " {{{1 EasyMotion
 
