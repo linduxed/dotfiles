@@ -55,6 +55,12 @@ tlafd() {
     [[ -n $task ]] && todo.sh addx "$task"
 }
 
+tlafa() {
+    task=$(tlaf)
+
+    [[ -n $task ]] && todo.sh add "$task"
+}
+
 tml() { todo.sh mit $1 | $PAGER }
 
 tmtf() {
