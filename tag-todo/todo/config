@@ -55,6 +55,28 @@ export PRI_B=$YELLOW
 export PRI_C=$CYAN
 export PRI_D=$LIGHT_BLUE
 export PRI_E=$BLUE
+export PRI_F=$DEFAULT
+export PRI_G=$DEFAULT
+export PRI_H=$DEFAULT
+export PRI_I=$DEFAULT
+export PRI_J=$DEFAULT
+export PRI_K=$DEFAULT
+export PRI_L=$DEFAULT
+export PRI_M=$DEFAULT
+export PRI_N=$DEFAULT
+export PRI_O=$DEFAULT
+export PRI_P=$DEFAULT
+export PRI_Q=$DEFAULT
+export PRI_R=$DEFAULT
+export PRI_S=$DEFAULT
+export PRI_T=$DEFAULT
+export PRI_U=$DEFAULT
+export PRI_V=$DEFAULT
+export PRI_W=$DEFAULT
+export PRI_X=$DEFAULT
+export PRI_Y=$DEFAULT
+export PRI_Z=$DEFAULT
+
 # export PRI_X=$WHITE   # color unless explicitly defined
 
 # There is highlighting for tasks that have been done,
