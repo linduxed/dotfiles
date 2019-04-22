@@ -1,0 +1,9 @@
+[Scheme]
+Name=Solar Light
+ColorForeground=#073642
+ColorBackground=#fdf6e3
+ColorCursor=#073642
+TabActivityColor=#dc322f
+ColorPalette=rgb(4,29,36);rgb(171,39,36);rgb(78,89,0);rgb(140,106,0);rgb(19,71,107);rgb(186,48,115);rgb(31,120,113);rgb(238,232,213);rgb(0,49,61);rgb(203,75,22);rgb(96,138,98);rgb(189,177,0);rgb(53,133,189);rgb(219,131,174);rgb(117,191,186);rgb(253,249,238)
+ColorBold=#073642
+ColorBoldUseDefault=FALSE
