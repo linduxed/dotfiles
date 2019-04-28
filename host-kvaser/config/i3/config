@@ -89,7 +89,7 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8:email
 bindsym $mod+9 workspace 9:shells
-bindsym $mod+0 workspace 10:irc
+bindsym $mod+0 workspace 10:chats
 
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -100,7 +100,7 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8:email
 bindsym $mod+Shift+9 move container to workspace 9:shells
-bindsym $mod+Shift+0 move container to workspace 10:irc
+bindsym $mod+Shift+0 move container to workspace 10:chats
 
 assign [class="Thunderbird"] 8:email
 
