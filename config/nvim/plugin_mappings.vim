@@ -20,6 +20,8 @@ nmap <Leader>alm <Plug>(coc-rename)
 nmap <Leader>alr <Plug>(coc-references)
 nmap <Leader>alc <Plug>(coc-codeaction)
 imap <C-h> <Plug>(coc-snippets-expand)
+vmap rf <Plug>(coc-funcobj-i)
+vmap tf <Plug>(coc-funcobj-a)
 
 " {{{1 EasyMotion
 
