@@ -1,0 +1,14 @@
+#!/usr/bin/zsh
+
+if [[ $1 == "dark" || $1 == "light" ]]; then
+    config_dir="$HOME/.config/xfce4/terminal"
+    cd $config_dir
+
+    grep -Fxvf <(cat $config_dir/colorschemes/solar_*.theme) terminalrc > .terminalrc.tmp
+    grep -v -e Name -e Scheme "$config_dir/colorschemes/solar_$1.theme" >> .terminalrc.tmp
+    cp terminalrc terminalrc.bak
+    mv .terminalrc.tmp terminalrc
+else
+    echo "Usage: terminal-background [dark|light]"
+    exit 1
+fi
