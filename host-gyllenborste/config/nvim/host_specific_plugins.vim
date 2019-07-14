@@ -1,7 +1,3 @@
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-Plug 'ujihisa/neco-ghc'
-Plug 'hspec/hspec.vim'
 Plug 'LucHermitte/lh-vim-lib' | Plug 'LucHermitte/local_vimrc'
 Plug 'shumphrey/fugitive-gitlab.vim'

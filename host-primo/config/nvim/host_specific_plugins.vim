@@ -1,6 +1,2 @@
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rake'
-Plug 'ujihisa/neco-ghc'
-Plug 'hspec/hspec.vim'
 Plug 'vim-scripts/warsow.vim'
