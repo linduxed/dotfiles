@@ -84,10 +84,6 @@ function! s:incsearch_keymap()
   IncSearchNoreMap <C-j> <Over>(incsearch-scroll-b)
 endfunction
 
-" {{{1 IndentGuides
-
-nmap <silent> <Leader>ai <Plug>IndentGuidesToggle
-
 " {{{1 Mark
 
 nmap <Leader>mm <Plug>MarkSet
