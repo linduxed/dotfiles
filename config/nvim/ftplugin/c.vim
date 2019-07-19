@@ -1,1 +1,0 @@
-setlocal noet foldmethod=indent
