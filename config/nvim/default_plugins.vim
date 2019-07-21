@@ -1,5 +1,4 @@
 Plug 'vim-scripts/bbcode'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'Raimondi/delimitMate'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -38,6 +37,12 @@ Plug 'tpope/vim-unimpaired'
 Plug 'sheerun/vim-polyglot'
 Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
+
+" COC
+
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
 
 " Text objects
 
