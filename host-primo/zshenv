@@ -36,6 +36,12 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
+# Add place for custom functions (e.g. completion).
+fpath=(
+  $HOME/.zsh/functions
+  $fpath
+)
+
 # Set the list of directories that Zsh searches for programs.
 path=(
   $HOME/.local/bin

@@ -1,5 +1,1 @@
 export FZF_DEFAULT_COMMAND="rg --files --follow --glob \"!.git/*\""
-
-if [ -f /usr/share/exercism-cli/completion/exercism_completion.zsh ]; then
-  . /usr/share/exercism-cli/completion/exercism_completion.zsh
-fi
