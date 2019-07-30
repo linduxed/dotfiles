@@ -1,1 +1,8 @@
 export FZF_DEFAULT_COMMAND="rg --files --follow --glob \"!.git/*\""
+
+if [ -f /opt/asdf-vm/asdf.sh ]; then
+  source /opt/asdf-vm/asdf.sh
+fi
+if [ -f /opt/asdf-vm/completions/asdf.bash ]; then
+  source /opt/asdf-vm/completions/asdf.bash
+fi
