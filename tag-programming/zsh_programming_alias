@@ -25,3 +25,5 @@ fchs() {
 
   echo "$commits" | fzf --no-sort --no-multi | sed "s/ .*//"
 }
+
+alias batl="bat --theme=OneHalfLight"
