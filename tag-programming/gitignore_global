@@ -15,6 +15,7 @@
 .ruby-version
 .sass-cache/
 .stack-work
+.tool-versions
 Session.vim
 _vimrc_local.vim
 db/*.sqlite3
