@@ -18,8 +18,6 @@ zstyle ':prezto:load' pmodule \
     'gnu-utility' \
     'pacman' \
     'rsync' \
-    'ruby' \
-    'rails' \
     'fasd' \
     'ssh' \
     'history-substring-search' \
