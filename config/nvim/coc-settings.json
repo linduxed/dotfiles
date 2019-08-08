@@ -1,4 +1,4 @@
 {
-    "solargraph.commandPath": "/home/linduxed/.rbenv/shims/solargraph",
+    "solargraph.commandPath": "/home/linduxed/.asdf/shims/solargraph",
     "suggest.noselect": false
 }
