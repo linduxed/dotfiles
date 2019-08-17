@@ -43,7 +43,7 @@ status.register(
 
 status.register(
     "mpd",
-    format="{title} {status} {album}",
+    format="{status} {artist} - {title} - {album}",
     status={
         "pause": "▷",
         "play": "▶",
