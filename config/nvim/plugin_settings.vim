@@ -151,6 +151,10 @@ autocmd! BufWritePost * Neomake
 " {{{1 NERDcommenter
 
 let NERDSpaceDelims = 1 " Add spaces around the comment signs for all languages
+let NERDDefaultAlign = 'left' " Placement of aligned comment symbols
+let NERDCommentEmptyLines = 1 " Empty lines will be commented as well
+let NERDTrimTrailingWhitespace = 1 " Trailing whitespace will be deleted when uncommenting a line
+
 
 " Since Alt style is not implemented at the moment, use custom delimiters instead.
 let g:NERDCustomDelimiters = {
