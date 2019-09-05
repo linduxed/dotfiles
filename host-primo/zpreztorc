@@ -23,7 +23,7 @@ zstyle ':prezto:load' pmodule \
     'history-substring-search' \
     'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'
-zstyle ':prezto:module:prompt' theme 'linduxed'
+zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 zstyle ':prezto:module:terminal' auto-title 'yes'
 zstyle ':prezto:module:utility' safe-ops 'no'
