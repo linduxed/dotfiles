@@ -22,6 +22,8 @@ nmap <Leader>alc <Plug>(coc-codeaction)
 imap <C-h> <Plug>(coc-snippets-expand)
 vmap rf <Plug>(coc-funcobj-i)
 vmap tf <Plug>(coc-funcobj-a)
+nnoremap <expr><C-j> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-j>"
+nnoremap <expr><C-h> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-h>"
 
 " {{{1 EasyMotion
 
