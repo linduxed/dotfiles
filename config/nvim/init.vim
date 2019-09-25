@@ -72,28 +72,15 @@ let g:html_indent_tags = 'li\|p'
 let g:netrw_liststyle = 3
 let g:load_doxygen_syntax=1
 
-" {{{2 viminfo
-
-"  '10  :  marks will be remembered for up to 10 previously edited files
-"  "100 :  will save up to 100 lines for each register
-"  :20  :  up to 20 lines of command-line history will be remembered
-"  n... :  where to save the viminfo files
-set viminfo='10,\"100,:20
-
 " {{{2 backups
 
-set backup
 set undofile
 
 set undodir=~/.config/nvim/tmp/undo//
-set backupdir=~/.config/nvim/tmp/backup//
 set directory=~/.config/nvim/tmp/swap//
 
 if !isdirectory(expand(&undodir))
     call mkdir(expand(&undodir), "p")
-endif
-if !isdirectory(expand(&backupdir))
-    call mkdir(expand(&backupdir), "p")
 endif
 if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
