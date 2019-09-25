@@ -51,6 +51,7 @@
     algorithm = patience
     compactionHeuristic = true
     colorMoved = default
+    wsErrorHighlight = all
 [commit]
     verbose = true
 [submodule]
