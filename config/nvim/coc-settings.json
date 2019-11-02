@@ -1,4 +1,6 @@
 {
     "solargraph.commandPath": "/home/linduxed/.asdf/shims/solargraph",
+    "solargraph.completion": true,
+    "solargraph.formatting": true,
     "suggest.noselect": false
 }
