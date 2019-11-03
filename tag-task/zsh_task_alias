@@ -13,6 +13,17 @@ ts() {
     popd -q
 }
 
+tc() {
+    local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
+    local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
+
+    pushd $task_dir
+
+    git commit -a $mode -m "$(hostname): $(date -Iseconds)"
+
+    popd -q
+}
+
 tcd() {
     local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
     local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
