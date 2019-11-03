@@ -1,0 +1,5 @@
+# [Created by task 2.5.1 11/2/2019 23:20:57]
+
+data.location=~/.task
+
+include /usr/share/doc/task/rc/dark-256.theme

@@ -1,6 +1,8 @@
 #!/usr/bin/zsh
 
 if [[ $1 == "dark" || $1 == "light" ]]; then
+    # Replace terminal background configuration
+
     config_dir="$HOME/.config/xfce4/terminal"
     cd $config_dir
 
@@ -8,6 +10,11 @@ if [[ $1 == "dark" || $1 == "light" ]]; then
     grep -v -e Name -e Scheme "$config_dir/colorschemes/solar_$1.theme" >> .terminalrc.tmp
     cp terminalrc terminalrc.bak
     mv .terminalrc.tmp terminalrc
+
+    # Modify `task` configuration
+
+    task_config_file="$HOME/.taskrc"
+    perl -p -i -e "s/(include \/.+)\/[a-z]+-256.theme/\1\/$1-256.theme/" $task_config_file
 else
     echo "Usage: terminal-background [dark|light]"
     exit 1

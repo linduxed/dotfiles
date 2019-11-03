@@ -21,6 +21,9 @@ fi
 # Configuration from tag-todo
 [ -f "$HOME/.zsh_todo_alias" ] && source "$HOME/.zsh_todo_alias"
 
+# Configuration from tag-task
+[ -f "$HOME/.zsh_task_alias" ] && source "$HOME/.zsh_task_alias"
+
 # Configuration from tag-diary
 [ -f "$HOME/.zsh_diary_env" ] && source "$HOME/.zsh_diary_env"
 
