@@ -10,7 +10,7 @@ ts() {
     git pull --rebase origin master
     git push origin master
 
-    popd -q
+    popd || return 0
 }
 
 tc() {
@@ -21,7 +21,7 @@ tc() {
 
     git commit -a $mode -m "$(hostname): $(date -Iseconds)"
 
-    popd -q
+    popd || return 0
 }
 
 tcd() {
