@@ -1,5 +1,9 @@
-# [Created by task 2.5.1 11/2/2019 23:20:57]
-
 data.location=~/.task
 
 include /usr/share/doc/task/rc/dark-256.theme
+
+context.work=project:work -stash
+context.break_at_work=! (project:work or project:food) -home -stash
+context.home=! (project:work) -visit -stash
+context.no_stash=-stash
+context=home
