@@ -1,6 +1,6 @@
 [user]
     name = Mikael Muszynski
-    email = linduxed@gmail.com
+    useConfigOnly = true
     signingkey = 658A93DD7DC872BE5A4DE44F6B4A5A7E2120DE95
 [merge]
     tool = vimdiff
