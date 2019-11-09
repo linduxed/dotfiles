@@ -24,3 +24,77 @@ tc() {
 tcd() {
     cd $task_dir
 }
+
+tlf() {
+    task export |
+    jq --raw-output \
+        '
+        [
+        .[] | select(
+            .status != "completed" and
+            .status != "deleted"
+        )
+        ] |
+        unique_by(.description)[] |
+        (.uuid | split("-"))[0] +
+        ": " +
+        .project +
+        if .tags? then
+            " [" +(.tags | join(", ")) + "]"
+        else
+            ""
+        end +
+        " -- " +
+        .description
+        ' |
+    shuf | fzf --prompt=" `date +%x` "
+}
+
+tlaf() {
+    task export |
+    jq --raw-output \
+        '
+        unique_by(.description)[] |
+        (.uuid | split("-"))[0] +
+        ": " +
+        .project +
+        if .tags? then
+            " [" +(.tags | join(", ")) + "]"
+        else
+            ""
+        end +
+        " -- " +
+        .description
+        ' |
+    shuf | fzf --prompt=" `date +%x` "
+}
+
+tlfuuid() {
+    task=$(tlf)
+
+    [[ -n $task ]] && cut -d ":" -f 1 <<< $task
+}
+
+tlafuuid() {
+    task=$(tlaf)
+
+    [[ -n $task ]] && cut -d ":" -f 1 <<< $task
+}
+
+tlfd() {
+    task=$(tlfuuid)
+
+    [[ -n $task ]] && task $task done
+}
+
+tlafa() {
+    task=$(tlafuuid)
+
+    [[ -n $task ]] && task $task duplicate
+}
+
+tlafad() {
+    task=$(tlafuuid)
+
+    [[ -n $task ]] && task $task duplicate end:now status:completed
+}
