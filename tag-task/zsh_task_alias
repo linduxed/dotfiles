@@ -1,10 +1,10 @@
+local task_dir=$(grep "data.location" $HOME/.taskrc | cut -d "=" -f 2)
+local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
+
 alias t='task'
 
 ts() {
     (
-    local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
-    local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
-
     cd $task_dir
 
     git commit -a $mode -m "$(hostname): $(date -Iseconds)"
@@ -15,9 +15,6 @@ ts() {
 
 tc() {
     (
-    local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
-    local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
-
     cd $task_dir
 
     git commit -a $mode -m "$(hostname): $(date -Iseconds)"
@@ -25,8 +22,5 @@ tc() {
 }
 
 tcd() {
-    local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
-    local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
-
     cd $task_dir
 }
