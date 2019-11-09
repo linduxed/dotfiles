@@ -1,27 +1,27 @@
 alias t='task'
 
 ts() {
+    (
     local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
     local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
 
-    pushd $task_dir
+    cd $task_dir
 
     git commit -a $mode -m "$(hostname): $(date -Iseconds)"
     git pull --rebase origin master
     git push origin master
-
-    popd || return 0
+    )
 }
 
 tc() {
+    (
     local task_dir=$(task _show | grep "data.location" | cut -d "=" -f 2)
     local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
 
-    pushd $task_dir
+    cd $task_dir
 
     git commit -a $mode -m "$(hostname): $(date -Iseconds)"
-
-    popd || return 0
+    )
 }
 
 tcd() {
