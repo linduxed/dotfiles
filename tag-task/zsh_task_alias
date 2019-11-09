@@ -7,8 +7,8 @@ ts() {
     (
     cd $task_dir
 
-    git commit -a $mode -m "$(hostname): $(date -Iseconds)"
-    git pull --rebase origin master
+    git commit -a $mode -m "$(hostname): $(date -Iseconds)" &&
+    git pull --rebase origin master &&
     git push origin master
     )
 }
