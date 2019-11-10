@@ -32,7 +32,9 @@ tlf() {
         [
         .[] | select(
             .status != "completed" and
-            .status != "deleted"
+            .status != "deleted" and
+            .status != "recurring" and
+            .status != "waiting"
         )
         ] |
         unique_by(.description)[] |
