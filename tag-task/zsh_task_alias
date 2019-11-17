@@ -35,7 +35,15 @@ tlf() {
             .status != "recurring" and
             .status != "waiting"
         )) |
-        unique_by(.description)[] |
+        map(. + {
+                fingerprint: {
+                    status: .status,
+                    description: .description,
+                    tags: (if .tags? then (.tags | sort) else [] end)
+                }
+            }
+        ) |
+        unique_by(.fingerprint)[] |
         (.uuid | split("-"))[0] +
         ": " +
         .project +
@@ -54,7 +62,15 @@ tlaf() {
     task export |
     jq --raw-output \
         '
-        unique_by(.description)[] |
+        map(. + {
+                fingerprint: {
+                    status: .status,
+                    description: .description,
+                    tags: (if .tags? then (.tags | sort) else [] end)
+                }
+            }
+        ) |
+        unique_by(.fingerprint)[] |
         (.uuid | split("-"))[0] +
         ": " +
         .project +
