@@ -29,14 +29,12 @@ tlf() {
     task export |
     jq --raw-output \
         '
-        [
-        .[] | select(
+        map(select(
             .status != "completed" and
             .status != "deleted" and
             .status != "recurring" and
             .status != "waiting"
-        )
-        ] |
+        )) |
         unique_by(.description)[] |
         (.uuid | split("-"))[0] +
         ": " +
