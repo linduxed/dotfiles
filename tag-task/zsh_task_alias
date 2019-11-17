@@ -40,7 +40,7 @@ tlf() {
         ": " +
         .project +
         if .tags? then
-            " [" +(.tags | join(", ")) + "]"
+            " [" +(.tags | sort | join(", ")) + "]"
         else
             ""
         end +
@@ -59,7 +59,7 @@ tlaf() {
         ": " +
         .project +
         if .tags? then
-            " [" +(.tags | join(", ")) + "]"
+            " [" +(.tags | sort | join(", ")) + "]"
         else
             ""
         end +
