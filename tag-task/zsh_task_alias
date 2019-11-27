@@ -108,7 +108,7 @@ tlfd() {
 tlafa() {
     task=$(tlafuuid)
 
-    [[ -n $task ]] && task $task duplicate
+    [[ -n $task ]] && task $task duplicate due: wait: recur:
 }
 
 tlafad() {
