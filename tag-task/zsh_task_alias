@@ -114,5 +114,5 @@ tlafa() {
 tlafad() {
     task=$(tlafuuid)
 
-    [[ -n $task ]] && task $task duplicate end:now status:completed
+    [[ -n $task ]] && task $task duplicate due: wait: recur: end:now status:completed
 }
