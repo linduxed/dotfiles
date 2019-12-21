@@ -7,5 +7,6 @@ context.break_at_work=! (project:work or project:food) -home
 context.home=! (project:work) -visit
 context.no_stash=-stash
 context=home
+urgency.blocking.coefficient=0
 urgency.user.tag.maintenance.coefficient=-1
 urgency.user.tag.stash.coefficient=-2
