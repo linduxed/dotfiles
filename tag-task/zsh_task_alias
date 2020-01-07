@@ -65,6 +65,9 @@ tlaf() {
     task export |
     jq --raw-output \
         '
+        map(select(
+            .mask == null
+        )) |
         map(. + {
                 fingerprint: {
                     status: .status,
