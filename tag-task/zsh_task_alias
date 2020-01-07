@@ -70,7 +70,6 @@ tlaf() {
         )) |
         map(. + {
                 fingerprint: {
-                    status: .status,
                     project: .project,
                     description: .description,
                     tags: (if .tags? then (.tags | sort) else [] end)
