@@ -1,0 +1,7 @@
+speak_time() {
+    local minute_count
+    minute_count=$1
+
+    sleep $(next_time $minute_count)
+    watch -p -n $(($minute_count * 60)) "date +%R | mimic"
+}

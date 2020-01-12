@@ -15,6 +15,9 @@ if test -d /etc/profile.d/; then
 fi
 
 # Configuration from tag-programming.
+[ -f "$HOME/.zsh_desktop_alias" ] && source "$HOME/.zsh_desktop_alias"
+
+# Configuration from tag-programming.
 [ -f "$HOME/.zsh_programming_env" ] && source "$HOME/.zsh_programming_env"
 [ -f "$HOME/.zsh_programming_alias" ] && source "$HOME/.zsh_programming_alias"
 
