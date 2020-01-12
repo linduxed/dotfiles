@@ -12,4 +12,9 @@ alias unusb='pumount /dev/sde1'
 alias usb2='pmount /dev/sdf1'
 alias unusb2='pumount /dev/sdf1'
 
+dual_display_brightness() {
+    sudo ddcutil -d 1 setvcp 10 $1
+    sudo ddcutil -d 2 setvcp 10 $1
+}
+
 eval "$(hub alias -s)"
