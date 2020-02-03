@@ -8,3 +8,5 @@ export PATH=$PATH:$GOPATH/bin
 export RUST_SRC_PATH='/usr/src/rust/src'
 
 eval "$(hub alias -s)"
+
+source /home/linduxed/.config/broot/launcher/bash/br
