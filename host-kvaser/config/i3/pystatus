@@ -36,7 +36,7 @@ status.register("mem",
 )
 
 # It seems like `hwmonX` changes to different values of X. Pick the first one.
-for n in range(5):
+for n in range(7):
     temperature_file='/sys/devices/platform/coretemp.0/hwmon/hwmon{}/temp1_input'.format(n)
     if os.path.exists(temperature_file):
         break
