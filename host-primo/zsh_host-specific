@@ -17,4 +17,6 @@ dual_display_brightness() {
     sudo ddcutil -d 2 setvcp 10 $1
 }
 
+source /home/linduxed/.config/broot/launcher/bash/br
+
 eval "$(hub alias -s)"
