@@ -28,6 +28,7 @@
     untracked = cyan
 [core]
     autocrlf = input
+    attributesfile = ~/.gitattributes_global
     excludesfile = ~/.gitignore_global
 [github]
     user = linduxed
