@@ -2,6 +2,7 @@ data.location=~/.task
 
 include /usr/share/doc/task/rc/dark-256.theme
 
+default.command=rating
 context.work=project:work -stash
 context.break_at_work=! (project:work or project:food) -home
 context.home=! (project:work) -visit
@@ -13,26 +14,17 @@ urgency.blocking.coefficient=0
 urgency.user.tag.maintenance.coefficient=-1
 urgency.user.tag.stash.coefficient=-2
 
-color.uda.priority.A=color255
-color.uda.priority.B=color252
-color.uda.priority.C=color249
-color.uda.priority.D=color246
-color.uda.priority.E=color243
-color.uda.priority.F=color240
-color.uda.priority.G=color237
-color.uda.priority.H=color234
-color.uda.priority.I=color231
+uda.rating.type=numeric
+uda.rating.label=Rating
+uda.rating_true.type=numeric
+uda.rating_true.label=Rating (no trunc.)
+uda.rating_deviation.type=numeric
+uda.rating_deviation.label=Rating dev.
+uda.rating_volatility.type=numeric
+uda.rating_volatility.label=Rating vol.
 
-uda.priority.label=Priority
-uda.priority.type=string
-uda.priority.values=A,B,C,D,E,F,G,H,I,
-
-urgency.uda.priority.A.coefficient=7.4
-urgency.uda.priority.B.coefficient=6.7
-urgency.uda.priority.C.coefficient=6.0
-urgency.uda.priority.D.coefficient=5.3
-urgency.uda.priority.E.coefficient=4.6
-urgency.uda.priority.F.coefficient=3.9
-urgency.uda.priority.G.coefficient=3.2
-urgency.uda.priority.H.coefficient=2.5
-urgency.uda.priority.I.coefficient=1.8
+report.rating.description=Tasks by rating
+report.rating.filter=status:pending limit:page
+report.rating.columns=id,start.age,entry.age,depends,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description,rating
+report.rating.labels=ID,Active,Age,Deps,P,Project,Tag,Recur,S,Due,Until,Description,Rating
+report.rating.sort=rating-
