@@ -1,0 +1,25 @@
+local wiki_dir="$HOME/vimwiki"
+
+wiks() {
+    (
+    cd $wiki_dir
+
+    git add . &&
+    git commit -m "$(hostname): $(date -Iseconds)" &&
+    git pull --rebase origin master &&
+    git push origin master
+    )
+}
+
+wikc() {
+    (
+    cd $wiki_dir
+
+    git add . &&
+    git commit -m "$(hostname): $(date -Iseconds)"
+    )
+}
+
+wikcd() {
+    cd $wiki_dir
+}

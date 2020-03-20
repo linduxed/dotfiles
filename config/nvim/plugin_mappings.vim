@@ -178,7 +178,27 @@ omap ru <Plug>(textobj-url-i)
 nnoremap <leader>abd :Dark<CR>
 nnoremap <leader>abl :Light<CR>
 
+" {{{1 vimwiki
+
+let g:vimwiki_map_prefix = '<Leader>an'
+let g:vimwiki_table_mappings = 0
+
+" See ftplugin/vimwiki.vim for more mappings.
+" It seems like the Vimwiki plugin prefers to have the local
+" mappings defined over in the ftplugin file.
+
 " {{{1 wheel
 
 let g:wheel#map#up   = 'U'
 let g:wheel#map#down = 'E'
+
+" {{{1 zettel
+
+let g:zettel_default_mappings = 0
+
+" Check value of g:vimwiki_map_prefix
+nmap <Leader>anz :ZettelNew<CR>
+
+" See ftplugin/vimwiki.vim for more mappings.
+" It seems like the Vimwiki plugin prefers to have the local
+" mappings defined over in the ftplugin file.

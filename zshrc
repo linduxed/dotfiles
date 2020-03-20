@@ -33,6 +33,9 @@ fi
 # Note taking aliases.
 [ -f "$HOME/.znotes" ] && source "$HOME/.znotes"
 
+# vimwiki aliases
+[ -f "$HOME/.zsh_vimwiki" ] && source "$HOME/.zsh_vimwiki"
+
 # Host-specific configuration loaded after aliases for overriding.
 source "$HOME/.zsh_alias"
 source "$HOME/.zsh_host-specific"

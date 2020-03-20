@@ -235,7 +235,21 @@ let g:nremap = {"y": "c"}
 let g:xremap = {"y": "c"}
 let g:oremap = {"y": "c"}
 
+" {{{1 vimwiki
+
+let g:vimwiki_auto_chdir = 1
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                     \ 'path_html': '~/stuff/vimwiki_html/',
+                     \ 'auto_tags': 1,
+                     \ 'auto_diary_index': 1}]
+
 " {{{1 wheel
 
 " Disable for mouse, due to erratic behavior.
 let g:wheel#map#mouse = 0
+
+" {{{1 zettel
+
+let g:zettel_format = "z_%y%m%d-%H%M"
+
+let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "

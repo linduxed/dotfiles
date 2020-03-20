@@ -34,10 +34,13 @@ Plug 'mhinz/vim-sayonara'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
+Plug 'tbabej/taskwiki'
 Plug 'tpope/vim-unimpaired'
 Plug 'sheerun/vim-polyglot'
+Plug 'vimwiki/vimwiki'
 Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
+Plug 'michal-h21/vim-zettel'
 
 " COC
 

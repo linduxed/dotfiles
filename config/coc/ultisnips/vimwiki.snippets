@@ -1,0 +1,41 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet diarytoday "Vimwiki diary entry, with today's TODOs" b
+== `ruby -e "require 'date'; puts DateTime.now.strftime('%F, %A, W%V')"` ==
+
+=== `ruby -e "require 'date'; puts DateTime.now.strftime('%R')"` ===
+
+${1:Content}
+
+=== Done TODOs | end.after:`!v strftime("%F")` end.before:`ruby -e "require 'date'; puts (DateTime.now + 1).strftime('%F')"` ===
+endsnippet
+
+snippet diarytime "Vimwiki diary entry, with today's TODOs" b
+=== `ruby -e "require 'date'; puts DateTime.now.strftime('%R')"` ===
+
+${1:Content}
+endsnippet
