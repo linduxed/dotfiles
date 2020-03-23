@@ -196,9 +196,6 @@ let g:wheel#map#down = 'E'
 
 let g:zettel_default_mappings = 0
 
-" Check value of g:vimwiki_map_prefix
-nmap <Leader>anz :ZettelNew<CR>
-
 " See ftplugin/vimwiki.vim for more mappings.
 " It seems like the Vimwiki plugin prefers to have the local
 " mappings defined over in the ftplugin file.

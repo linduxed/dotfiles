@@ -12,3 +12,4 @@ imap <silent> [[ [[<esc><Plug>ZettelSearchMap
 nmap gpy <Plug>ZettelYankNameMap
 xmap z <Plug>ZettelNewSelectedMap
 nmap gZ <Plug>ZettelReplaceFileWithLink
+nmap <Leader>z :ZettelNew<CR>
