@@ -39,3 +39,14 @@ snippet diarytime "Vimwiki diary entry, with today's TODOs" b
 
 ${1:Content}
 endsnippet
+
+snippet zettel "Vimwiki zettel, with title header and tag" b
+%title ${1:Title}
+%date `ruby -e "require 'date'; puts DateTime.now.strftime('%F %R')"`
+
+= ${1} =
+
+:${2:tag}:
+
+${3:Content}
+endsnippet
