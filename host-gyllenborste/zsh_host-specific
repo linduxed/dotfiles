@@ -7,4 +7,6 @@ export GOPATH=$HOME/Documents/go
 export PATH=$PATH:$GOPATH/bin
 export RUST_SRC_PATH='/usr/src/rust/src'
 
+source /home/linduxed/.config/broot/launcher/bash/br
+
 eval "$(hub alias -s)"
