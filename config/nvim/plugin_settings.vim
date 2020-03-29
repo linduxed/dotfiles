@@ -218,6 +218,10 @@ let g:tagbar_type_elixir = {
     \ ]
 \ }
 
+" {{{1 taskwiki
+
+let g:taskwiki_sort_orders={"E": "end-"}
+
 " {{{1 TextObjects
 
 " Default bindings disabled for remapping to Colemak bindings.
