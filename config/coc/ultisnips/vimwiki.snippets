@@ -50,3 +50,13 @@ snippet zettel "Vimwiki zettel, with title header and tag" b
 
 ${3:Content}
 endsnippet
+
+snippet todo_list_page "Standard Taskwarrior headers for pulling in TODOs" b
+= ${1:Title} TODOs || ${2:project:foobar} =
+== Pending || ${3:+PENDING } ==
+=== ${4:Category title} | ${5:+filter} ===
+
+=== Miscellaneous | -VISIBLE ===
+
+== Done (last two months, desc.) | +COMPLETED end.after:now-2m $E ==
+endsnippet
