@@ -244,8 +244,14 @@ let g:oremap = {"y": "c"}
 let g:vimwiki_auto_chdir = 1
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                      \ 'path_html': '~/stuff/vimwiki_html/',
+                     \ 'template_path': '~/vimwiki/templates',
+                     \ 'template_default': 'def_template',
+                     \ 'template_ext': '.html',
                      \ 'auto_tags': 1,
                      \ 'auto_diary_index': 1}]
+
+" add the <pre> tag, for inserting code snippets
+let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr,pre,script'
 
 " {{{1 wheel
 
