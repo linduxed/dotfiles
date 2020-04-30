@@ -44,6 +44,7 @@ fpath=(
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $HOME/.asdf/shims
   $HOME/.local/bin
   $HOME/.cabal/bin
   $HOME/bin
