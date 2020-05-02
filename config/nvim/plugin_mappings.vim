@@ -178,6 +178,16 @@ omap ru <Plug>(textobj-url-i)
 nnoremap <leader>abd :Dark<CR>
 nnoremap <leader>abl :Light<CR>
 
+" {{{1 unimpaired
+
+" These are not actual mappings for unimpaired, however they try to compliment
+" the existing mappings from the plugin.
+
+nnoremap [<C-q> :colder<CR>
+nnoremap ]<C-q> :cnewer<CR>
+nnoremap [<C-l> :lolder<CR>
+nnoremap ]<C-l> :lnewer<CR>
+
 " {{{1 vimwiki
 
 let g:vimwiki_map_prefix = '<Leader>an'
