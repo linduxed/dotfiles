@@ -5,7 +5,6 @@ export PASSWORD_STORE_ENABLE_EXTENSIONS=true
 
 export GOPATH=$HOME/Documents/go
 export PATH=$PATH:$GOPATH/bin
-export RUST_SRC_PATH='/usr/src/rust/src'
 
 # Set askpass utility for :SudoWrite in the vim-eunuch Vim plugin
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
