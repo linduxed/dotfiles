@@ -19,6 +19,7 @@ nmap <silent> <Leader>alh :call CocAction("doHover")<CR>
 nmap <Leader>alm <Plug>(coc-rename)
 nmap <Leader>alr <Plug>(coc-references)
 nmap <Leader>alc <Plug>(coc-codeaction)
+nmap <Leader>alx <Plug>(coc-float-hide)
 imap <C-h> <Plug>(coc-snippets-expand)
 vmap rf <Plug>(coc-funcobj-i)
 vmap tf <Plug>(coc-funcobj-a)
