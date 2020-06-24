@@ -4,9 +4,9 @@ setlocal linebreak
 setlocal nolist
 
 function! s:GenerateTags()
-    exe ":! rm .tags"
+    exe ":! rm .vimwiki_tags"
     exe ":VimwikiRebuildTags"
-    exe ":VimwikiGenerateTags"
+    exe ":VimwikiGenerateTagLinks"
     %s/\[\[\(.\+\)#\(.\+\)\]\]/[[\1|\2]]/
     w
 endfunction
