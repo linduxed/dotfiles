@@ -24,6 +24,8 @@ zstyle ':prezto:load' pmodule \
     'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
-zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 zstyle ':prezto:module:terminal' auto-title 'yes'
 zstyle ':prezto:module:utility' safe-ops 'no'
+
+# Host-specific configuration that's not checked in into version control
+[ -f "$HOME/.zpreztorc_secret" ] && source "$HOME/.zpreztorc_secret"
