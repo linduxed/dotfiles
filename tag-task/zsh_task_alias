@@ -114,11 +114,11 @@ tlfd() {
 tlafa() {
     task=$(tlafuuid)
 
-    [[ -n $task ]] && task $task duplicate due: wait: recur:
+    [[ -n $task ]] && task $task duplicate due: wait: recur: depends: parent:
 }
 
 tlafad() {
     task=$(tlafuuid)
 
-    [[ -n $task ]] && task $task duplicate due: wait: recur: end:now status:completed
+    [[ -n $task ]] && task $task duplicate due: wait: recur: depends: parent: end:now status:completed
 }
