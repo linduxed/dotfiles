@@ -6,8 +6,8 @@ wiks() {
 
     git add . &&
     git commit -m "$(hostname): $(date -Iseconds)" &&
-    git pull --rebase origin master &&
-    git push origin master
+    git pull --rebase &&
+    git push
     )
 }
 
