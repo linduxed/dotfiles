@@ -1,4 +1,5 @@
 export FZF_DEFAULT_COMMAND="rg --files --follow --glob \"!.git/*\""
+export KERL_BUILD_DOCS=yes
 
 if [ -f /opt/asdf-vm/asdf.sh ]; then
   source /opt/asdf-vm/asdf.sh
