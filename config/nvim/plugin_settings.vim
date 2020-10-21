@@ -1,3 +1,7 @@
+" {{{1 abolish
+
+let g:abolish_save_file = "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
+
 " {{{1 airline
 
 let g:airline_powerline_fonts = 1

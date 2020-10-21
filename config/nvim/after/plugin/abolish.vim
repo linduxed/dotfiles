@@ -1,0 +1,17 @@
+Abolish dont                                 don't
+Abolish theres                               there's
+Abolish maed                                 made
+Abolish {,in}consistan{cy,cies,t,tly}        {}consisten{}
+Abolish delimeter{,s}                        delimiter{}
+Abolish {,non}existan{ce,t}                  {}existen{}
+Abolish despara{te,tely,tion}                despera{}
+Abolish d{e,i}screp{e,a}nc{y,ies}            d{i}screp{a}nc{}
+Abolish {,un}nec{ce,ces,e}sar{y,ily}         {}nec{es}sar{}
+Abolish {,un}orgin{,al}                      {}origin{}
+Abolish persistan{ce,t,tly}                  persisten{}
+Abolish {,ir}releven{ce,cy,t,tly}            {}relevan{}
+Abolish rec{co,com,o}mend{,s,ed,ing,ation}   rec{om}mend{}
+Abolish reproducable                         reproducible
+Abolish seperat{e,es,ed,ing,ely,ion,ions,or} separat{}
+Abolish impedence                            impedance
+Abolish cvst{,s}                             conversation{}
