@@ -16,3 +16,5 @@ Abolish seperat{e,es,ed,ing,ely,ion,ions,or} separat{}
 Abolish impedence                            impedance
 Abolish cvst{,s}                             conversation{}
 Abolish abbr{n,e,d}                          abbreviat{ion,e,ed}
+Abolish rediculous                           ridiculous
+Abolish sthlm                                Stockholm
