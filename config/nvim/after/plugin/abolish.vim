@@ -618,20 +618,29 @@ Abolish yuo{,r}	you{}
 
 " My own corrections
 
+Abolish aabout	about
 Abolish delimeter{,s}	delimiter{}
 Abolish despara{te,tely,tion}	despera{}
 Abolish d{e,i}screp{e,a}nc{y,ies}	d{i}screp{a}nc{}
+Abolish fixign	fixing
+Abolish havea	have a
 Abolish hwy	why
 Abolish impedence	impedance
 Abolish maed	made
+Abolish osme	some
+Abolish oyu	you
+Abolish ive	I've
 Abolish persistan{ce,t,tly}	persisten{}
 Abolish rec{co,com,o}mend{,s,ed,ing,ation}	rec{om}mend{}
 Abolish rediculous	ridiculous
 Abolish reproducable	reproducible
 Abolish seperat{e,es,ed,ing,ely,ion,ions,or}	separat{}
 Abolish theres	there's
+Abolish wiret	write
+Abolish youre	you're
 Abolish {,in}consistan{cy,cies,t,tly}	{}consisten{}
 Abolish {,ir}releven{ce,cy,t,tly}	{}relevan{}
 Abolish {,non}existan{ce,t}	{}existen{}
 Abolish {,un}nec{ce,ces,e}sar{y,ily}	{}nec{es}sar{}
 Abolish {,un}orgin{,al}	{}origin{}
+Abolish caes	case
