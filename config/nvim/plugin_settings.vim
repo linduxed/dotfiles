@@ -257,6 +257,10 @@ let g:vimwiki_list = [{'path': '~/vimwiki/',
 " add the <pre> tag, for inserting code snippets
 let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr,pre,script'
 
+" {{{1 vista
+
+let g:vista_icon_indent = ["↳ ", "↦ "]
+
 " {{{1 wheel
 
 " Disable for mouse, due to erratic behavior.
