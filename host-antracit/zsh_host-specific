@@ -1,0 +1,12 @@
+export PASSWORD_STORE_DIR=$HOME/.password-store
+export PASSWORD_STORE_ENABLE_EXTENSIONS=true
+
+test -r "/usr/local/opt/fzf/shell/key-bindings.zsh" && . "/usr/local/opt/fzf/shell/key-bindings.zsh"
+test -r "/usr/local/opt/fzf/shell/completion.zsh" && . "/usr/local/opt/fzf/shell/completion.zsh"
+
+autoload -Uz compinit
+compinit
+
+source /Users/mikael/.config/broot/launcher/bash/br
+
+. /usr/local/opt/asdf/asdf.sh
