@@ -1,0 +1,20 @@
+[Desktop Entry]
+DefaultProfile=Standard.profile
+
+[Favorite Profiles]
+Favorites=Standard.profile
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+UseSingleInstance=true
+
+[MainWindow]
+DP-0 DP-2 Height 1440=1400
+DP-0 DP-2 Height 2160=2120
+DP-0 DP-2 Width 2560=2556
+DP-0 DP-2 Width 3840=1916
+DP-0 DP-2 XPosition=2
+DP-0 DP-2 YPosition=758
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAACfwAAAV4AAAABAAAAAQAAAAIAAAACPwAAAAA
+ToolBarsMovable=Disabled
