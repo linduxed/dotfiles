@@ -23,3 +23,8 @@ wikc() {
 wikcd() {
     cd $wiki_dir
 }
+
+wiko() {
+    cd $wiki_dir
+    nice nvim -c "VimwikiIndex"
+}
