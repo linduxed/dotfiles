@@ -23,8 +23,8 @@ nmap <Leader>alx <Plug>(coc-float-hide)
 imap <C-h> <Plug>(coc-snippets-expand)
 vmap rf <Plug>(coc-funcobj-i)
 vmap tf <Plug>(coc-funcobj-a)
-nnoremap <expr><C-j> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-j>"
-nnoremap <expr><C-h> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-h>"
+nnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-j>"
+nnoremap <silent><nowait><expr> <C-h> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-h>"
 
 " {{{1 EasyMotion
 
