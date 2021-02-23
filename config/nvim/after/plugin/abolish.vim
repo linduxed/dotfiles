@@ -305,6 +305,7 @@ Abolish informatoin	information
 Abolish inital	initial
 Abolish instaleld	installed
 Abolish insted	instead
+Abolish instaed	instead
 Abolish insurence	insurance
 Abolish inteh	in the
 Abolish interum	interim
