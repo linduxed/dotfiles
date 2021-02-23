@@ -247,6 +247,7 @@ Abolish gemeral	general
 Abolish gerat	great
 Abolish geting	getting
 Abolish gettin	getting
+Abolish gettign	getting
 Abolish gievn	given
 Abolish giveing	giving
 Abolish gloabl	global
@@ -406,6 +407,7 @@ Abolish personalyl	personally
 Abolish pleasent	pleasant
 Abolish poeple	people
 Abolish porblem{,s}	problem{}
+Abolish problesm	problems
 Abolish porvide	provide
 Abolish possable	possible
 Abolish postition	position
@@ -654,6 +656,7 @@ Abolish aobut	about
 Abolish aoubt	about
 Abolish aparently	apparently
 Abolish apathically	apathetically
+Abolish appartment	apartment
 Abolish caes	case
 Abolish caughing	coughing
 Abolish columsn	columns
