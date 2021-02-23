@@ -665,6 +665,7 @@ Abolish havea	have a
 Abolish hsould	should
 Abolish hten	then
 Abolish hwen	when
+Abolish hwere	where
 Abolish hwy	why
 Abolish impedence	impedance
 Abolish ive	I've
