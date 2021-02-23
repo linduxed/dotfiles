@@ -695,6 +695,7 @@ Abolish theres	there's
 Abolish uncohesive	incohesive
 Abolish uncretain	uncertain
 Abolish unitl	until
+Abolish whetehr	whether
 Abolish wiret	write
 Abolish youre	you're
 Abolish {,in}consistan{cy,cies,t,tly}	{}consisten{}
