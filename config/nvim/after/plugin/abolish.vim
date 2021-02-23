@@ -646,6 +646,7 @@ Abolish {,un}nec{ce,ces,e}sar{y,ily}	{}nec{es}sar{}
 Abolish {,un}orgin{,al}	{}origin{}
 Abolish caes	case
 Abolish THis	This
+Abolish THe	The
 Abolish apathically	apathetically
 Abolish unitl	until
 Abolish hsould	should
