@@ -9,6 +9,8 @@ Abolish thyu	thank you
 
 " From vim-correction (https://github.com/jdelkins/vim-correction)
 
+Abolish Ameria	America
+Abolish UnitedStates	United States
 Abolish abbout	about
 Abolish abotu	about
 Abolish abouta	about a
@@ -51,7 +53,6 @@ Abolish alwats	always
 Abolish alway	always
 Abolish alwyas	always
 Abolish amde	made
-Abolish Ameria	America
 Abolish amke	make
 Abolish amkes	makes
 Abolish anbd	and
@@ -86,7 +87,6 @@ Abolish bakc	back
 Abolish bal{e,la}nce	balance
 Abolish baout	about
 Abolish bcak	back
-Abolish be{cuse,cuase,acuse,casue,caus}	because
 Abolish because{a,of,the,you}	because {}
 Abolish becom{e,m}ing	becoming
 Abolish befoer	before
@@ -97,6 +97,7 @@ Abolish belei{ve,f,ve,ved,ves}	belie{}
 Abolish benifit{,s}	benefit{}
 Abolish betwen	between
 Abolish beutiful	beautiful
+Abolish be{cuse,cuase,acuse,casue,caus}	because
 Abolish blase	blasé
 Abolish boxs	boxes
 Abolish brodcast	broadcast
@@ -125,9 +126,9 @@ Abolish colection	collection
 Abolish coma{,p}n{y,ies}	com{p}an{}
 Abolish combintation{,s}	combination{}
 Abolish comit{ed,ee,tee,tment,tments}	commit{ted,tee,tee,ment,ments}
-Abolish committment{,s}	commitment{}
 Abolish commadn	command
 Abolish comming	coming
+Abolish committment{,s}	commitment{}
 Abolish commit{ee,te,ty}	committee
 Abolish comntain{,s}	contain{}
 Abolish compair	compare
@@ -169,15 +170,15 @@ Abolish deptartment	department
 Abolish desi{c,s}ion{,s}	deci{s}ion{}
 Abolish detente	détente
 Abolish develeoprs	developers
-Abolish devel{l,e}op{e,}{,ed,er,ers,ing,ment,ments,s}	deve{l}{o}p{}
 Abolish developor{,s}	developer{}
 Abolish develpment{,s}	development{}
+Abolish devel{l,e}op{e,}{,ed,er,ers,ing,ment,ments,s}	deve{l}{o}p{}
 Abolish diaplay	display
-Abolish did{i,}nt	didn't
 Abolish didnot	did not
-Abolish dif{ef,fe}r{e,a}n{t,ce,ces}	dif{fe}r{e}n{}
+Abolish did{i,}nt	didn't
 Abolish differemt	different
 Abolish diff{er,re}nt	different
+Abolish dif{ef,fe}r{e,a}n{t,ce,ces}	dif{fe}r{e}n{}
 Abolish directer{,s}	director{}
 Abolish directiosn	direction
 Abolish disatisfied	dissatisfied
@@ -190,9 +191,9 @@ Abolish divsion	division
 Abolish docu{ement,emnt,metn,mnet}{,s}	docu{ment}{}
 Abolish doese	does
 Abolish doesnt	doesn't
-Abolish do{nig,ign,img,ind}	doing
 Abolish dollers	dollars
 Abolish dont	don't
+Abolish do{nig,ign,img,ind}	doing
 Abolish driveing	driving
 Abolish drnik	drink
 Abolish eclair	éclair
@@ -224,8 +225,8 @@ Abolish faeture{,s}	feature{}
 Abolish fam{,m}il{air,ar,liar,iar}{,ize,ized,ized,izing}	fa{m}il{iar}{}
 Abolish feild{,s}	field{}
 Abolish fianlly	finally
-Abolish finalyl	finally
 Abolish fidn	find
+Abolish finalyl	finally
 Abolish firends	friends
 Abolish firts	first
 Abolish follwo{,ing}	follow{}
@@ -277,8 +278,8 @@ Abolish hsi	his
 Abolish hte	the
 Abolish htere	there
 Abolish htese	these
-Abolish hthese	these
 Abolish htey	they
+Abolish hthese	these
 Abolish hting	thing
 Abolish htink	think
 Abolish htis	this
@@ -303,9 +304,9 @@ Abolish influance	influence
 Abolish infomation	information
 Abolish informatoin	information
 Abolish inital	initial
+Abolish instaed	instead
 Abolish instaleld	installed
 Abolish insted	instead
-Abolish instaed	instead
 Abolish insurence	insurance
 Abolish inteh	in the
 Abolish interum	interim
@@ -378,8 +379,8 @@ Abolish onthe	on the
 Abolish onyl	only
 Abolish oppasite	opposite
 Abolish opperation	operation
-Abolish oppos{ate,it}	opposite
 Abolish opposible	opposable
+Abolish oppos{ate,it}	opposite
 Abolish opp{o,er}tunit{y,ies}	opp{or}tunit{}
 Abolish orginiz{e,ed,ation}	organiz{}
 Abolish otehr	other
@@ -422,15 +423,14 @@ Abolish pwoer	power
 Abolish quater{,s,ly}	quarter{}
 Abolish que{,s}{,t}{io,oi}{n,ns,ms,sn}	que{s}{t}{io}n{,s,s,s}
 Abolish realyl	really
-Abolish re{c,cc}o{m,mm}end	recommend
-Abolish rec{eie,ie}v{e,ed,ing}	rec{ei}v{}
 Abolish recomend{,ation,ations,ed,s}	recommend{}
-Abolish reommend	recommend
 Abolish reconize	recognize
 Abolish recrod	record
+Abolish rec{eie,ie}v{e,ed,ing}	rec{ei}v{}
 Abolish religous	religious
 Abolish reluctent	reluctant
 Abolish remeber	remember
+Abolish reommend	recommend
 Abolish representativs	representatives
 Abolish representives	representatives
 Abolish represetned	represented
@@ -444,6 +444,7 @@ Abolish respons{able,ibile,ability,iblity}	responsib{le,le,ility,ility}
 Abolish rest{arau,uara}nt	restaurant
 Abolish reult	result
 Abolish reveiw{,s,ed,ing}	review{}
+Abolish re{c,cc}o{m,mm}end	recommend
 Abolish rumers	rumors
 Abolish rwite	write
 Abolish rythm	rhythm
@@ -481,8 +482,8 @@ Abolish sohw	show
 Abolish soical	social
 Abolish somethign	something
 Abolish someting	something
-Abolish somthing	something
 Abolish somewaht	somewhat
+Abolish somthing	something
 Abolish somtimes	sometimes
 Abolish soudn{,s}	sound{}
 Abolish speach	speech
@@ -491,9 +492,9 @@ Abolish statment{,s}	statement{}
 Abolish stnad	stand
 Abolish stopry	story
 Abolish stoyr	story
-Abolish stroy	story
 Abolish stpo	stop
 Abolish strentgh	strength
+Abolish stroy	story
 Abolish struggel	struggle
 Abolish strugle	struggle
 Abolish studnet	student
@@ -535,8 +536,8 @@ Abolish thge	the
 Abolish thier	their
 Abolish thigsn	things
 Abolish thisyear	this year
-Abolish thn{a,e}	th{}n
 Abolish thnig{,s}	thing{}
+Abolish thn{a,e}	th{}n
 Abolish threatend	threatened
 Abolish thsi	this
 Abolish thsoe	those
@@ -564,7 +565,6 @@ Abolish tyhat	that
 Abolish tyhe	the
 Abolish udnerstand	understand
 Abolish understnad	understand
-Abolish UnitedStates	United States
 Abolish unliek	unlike
 Abolish unpleasently	unpleasantly
 Abolish untill{,l}	until
@@ -620,44 +620,6 @@ Abolish yuo{,r}	you{}
 
 " My own corrections
 
-Abolish aabout	about
-Abolish aobut	about
-Abolish aoubt	about
-Abolish delimeter{,s}	delimiter{}
-Abolish despara{te,tely,tion}	despera{}
-Abolish d{e,i}screp{e,a}nc{y,ies}	d{i}screp{a}nc{}
-Abolish fixign	fixing
-Abolish havea	have a
-Abolish hwy	why
-Abolish impedence	impedance
-Abolish maed	made
-Abolish osme	some
-Abolish oyu	you
-Abolish ive	I've
-Abolish persistan{ce,t,tly}	persisten{}
-Abolish rec{co,com,o}mend{,s,ed,ing,ation}	rec{om}mend{}
-Abolish rediculous	ridiculous
-Abolish reproducable	reproducible
-Abolish seperat{e,es,ed,ing,ely,ion,ions,or}	separat{}
-Abolish theres	there's
-Abolish wiret	write
-Abolish youre	you're
-Abolish {,in}consistan{cy,cies,t,tly}	{}consisten{}
-Abolish {,ir}releven{ce,cy,t,tly}	{}relevan{}
-Abolish {,non}existan{ce,t}	{}existen{}
-Abolish {,un}nec{ce,ces,e}sar{y,ily}	{}nec{es}sar{}
-Abolish {,un}orgin{,al}	{}origin{}
-Abolish caes	case
-Abolish THis	This
-Abolish THe	The
-Abolish apathically	apathetically
-Abolish unitl	until
-Abolish hsould	should
-Abolish retreiv{es,ed,ing}	retriev{}
-Abolish {nt,tn}o	not
-Abolish columsn	columns
-Abolish fonud	found
-Abolish uncohesive	incohesive
 Abolish monday	Monday
 Abolish tuesday	Tuesday
 Abolish wednesday	Wednesday
@@ -665,6 +627,7 @@ Abolish thursday	Thursday
 Abolish friday	Friday
 Abolish saturday	Saturday
 Abolish sunday	Sunday
+
 Abolish january	January
 Abolish february	February
 " Abolish march	March
@@ -677,20 +640,59 @@ Abolish september	September
 Abolish october	October
 Abolish november	November
 Abolish december	December
-Abolish uncretain	uncertain
-Abolish hten	then
-Abolish theh	the
-Abolish aparently	apparently
-Abolish repellant	repellent
-Abolish daiper{,s}	diaper{}
-Abolish laeve	leave
-Abolish laest	least
-Abolish rethoric	rhetoric
-Abolish rhethoric	rhetoric
-Abolish aboev	above
-Abolish WHile	While
-Abolish adjecency	adjacency
+
 Abolish SHe	She
-Abolish hwen	when
+Abolish THe	The
+Abolish THis	This
+Abolish WHile	While
+Abolish aabout	about
+Abolish aboev	above
+Abolish adjecency	adjacency
+Abolish aobut	about
+Abolish aoubt	about
+Abolish aparently	apparently
+Abolish apathically	apathetically
+Abolish caes	case
 Abolish caughing	coughing
+Abolish columsn	columns
+Abolish daiper{,s}	diaper{}
+Abolish delimeter{,s}	delimiter{}
+Abolish despara{te,tely,tion}	despera{}
+Abolish d{e,i}screp{e,a}nc{y,ies}	d{i}screp{a}nc{}
+Abolish fixign	fixing
+Abolish fonud	found
+Abolish havea	have a
+Abolish hsould	should
+Abolish hten	then
+Abolish hwen	when
+Abolish hwy	why
+Abolish impedence	impedance
+Abolish ive	I've
+Abolish laest	least
+Abolish laeve	leave
+Abolish maed	made
+Abolish osme	some
+Abolish oyu	you
+Abolish persistan{ce,t,tly}	persisten{}
 Abolish rahther	rather
+Abolish rec{co,com,o}mend{,s,ed,ing,ation}	rec{om}mend{}
+Abolish rediculous	ridiculous
+Abolish repellant	repellent
+Abolish reproducable	reproducible
+Abolish rethoric	rhetoric
+Abolish retreiv{es,ed,ing}	retriev{}
+Abolish rhethoric	rhetoric
+Abolish seperat{e,es,ed,ing,ely,ion,ions,or}	separat{}
+Abolish theh	the
+Abolish theres	there's
+Abolish uncohesive	incohesive
+Abolish uncretain	uncertain
+Abolish unitl	until
+Abolish wiret	write
+Abolish youre	you're
+Abolish {,in}consistan{cy,cies,t,tly}	{}consisten{}
+Abolish {,ir}releven{ce,cy,t,tly}	{}relevan{}
+Abolish {,non}existan{ce,t}	{}existen{}
+Abolish {,un}nec{ce,ces,e}sar{y,ily}	{}nec{es}sar{}
+Abolish {,un}orgin{,al}	{}origin{}
+Abolish {nt,tn}o	not
