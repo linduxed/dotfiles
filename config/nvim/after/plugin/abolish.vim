@@ -687,3 +687,4 @@ Abolish laeve	leave
 Abolish laest	least
 Abolish rethoric	rhetoric
 Abolish rhethoric	rhetoric
+Abolish aboev	above
