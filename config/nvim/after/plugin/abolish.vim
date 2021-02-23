@@ -672,6 +672,7 @@ Abolish hwen	when
 Abolish hwere	where
 Abolish hwy	why
 Abolish impedence	impedance
+Abolish improtant	important
 Abolish ive	I've
 Abolish laest	least
 Abolish laeve	leave
