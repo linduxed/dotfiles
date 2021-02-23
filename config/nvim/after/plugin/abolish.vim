@@ -644,8 +644,8 @@ Abolish {,non}existan{ce,t}	{}existen{}
 Abolish {,un}nec{ce,ces,e}sar{y,ily}	{}nec{es}sar{}
 Abolish {,un}orgin{,al}	{}origin{}
 Abolish caes	case
-Abolish THis This
-Abolish apathically apathetically
-Abolish unitl until
-Abolish hsould should
-Abolish retreived retrieved
+Abolish THis	This
+Abolish apathically	apathetically
+Abolish unitl	until
+Abolish hsould	should
+Abolish retreived	retrieved
