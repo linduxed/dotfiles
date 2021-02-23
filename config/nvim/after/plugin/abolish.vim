@@ -648,4 +648,4 @@ Abolish THis	This
 Abolish apathically	apathetically
 Abolish unitl	until
 Abolish hsould	should
-Abolish retreived	retrieved
+Abolish retreiv{es,ed,ing}	retriev{}
