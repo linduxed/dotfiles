@@ -676,3 +676,4 @@ Abolish november	November
 Abolish december	December
 Abolish uncretain	uncertain
 Abolish hten	then
+Abolish theh	the
