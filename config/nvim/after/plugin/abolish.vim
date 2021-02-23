@@ -677,3 +677,4 @@ Abolish december	December
 Abolish uncretain	uncertain
 Abolish hten	then
 Abolish theh	the
+Abolish aparently	apparently
