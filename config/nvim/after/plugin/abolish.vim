@@ -663,6 +663,7 @@ Abolish columsn	columns
 Abolish daiper{,s}	diaper{}
 Abolish delimeter{,s}	delimiter{}
 Abolish despara{te,tely,tion}	despera{}
+Abolish dhe	the
 Abolish dont	don't
 Abolish d{e,i}screp{e,a}nc{y,ies}	d{i}screp{a}nc{}
 Abolish fixign	fixing
