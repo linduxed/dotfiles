@@ -277,6 +277,7 @@ Abolish hsi	his
 Abolish hte	the
 Abolish htere	there
 Abolish htese	these
+Abolish hthese	these
 Abolish htey	they
 Abolish hting	thing
 Abolish htink	think
