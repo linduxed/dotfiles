@@ -540,6 +540,7 @@ Abolish thn{a,e}	th{}n
 Abolish threatend	threatened
 Abolish thsi	this
 Abolish thsoe	those
+Abolish tht	that
 Abolish thta	that
 Abolish tihs	this
 Abolish timne	time
@@ -646,7 +647,9 @@ Abolish THis	This
 Abolish WHile	While
 Abolish aabout	about
 Abolish aboev	above
+Abolish absoluetly	absolutely
 Abolish adjecency	adjacency
+Abolish anythign	anything
 Abolish aobut	about
 Abolish aoubt	about
 Abolish aparently	apparently
@@ -661,6 +664,7 @@ Abolish dont	don't
 Abolish d{e,i}screp{e,a}nc{y,ies}	d{i}screp{a}nc{}
 Abolish fixign	fixing
 Abolish fonud	found
+Abolish hadn	hand
 Abolish havea	have a
 Abolish hsould	should
 Abolish hten	then
@@ -684,6 +688,7 @@ Abolish rethoric	rhetoric
 Abolish retreiv{es,ed,ing}	retriev{}
 Abolish rhethoric	rhetoric
 Abolish seperat{e,es,ed,ing,ely,ion,ions,or}	separat{}
+Abolish sleev{se,ese}	sleeves
 Abolish theh	the
 Abolish theres	there's
 Abolish uncohesive	incohesive
