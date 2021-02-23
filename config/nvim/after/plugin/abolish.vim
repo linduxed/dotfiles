@@ -692,3 +692,4 @@ Abolish WHile	While
 Abolish adjecency	adjacency
 Abolish SHe	She
 Abolish hwen	when
+Abolish caughing	coughing
