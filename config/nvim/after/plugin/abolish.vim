@@ -672,3 +672,4 @@ Abolish september	September
 Abolish october	October
 Abolish november	November
 Abolish december	December
+Abolish uncretain	uncertain
