@@ -322,7 +322,7 @@ Abolish iwth	with
 Abolish jsut	just
 Abolish jugment	judgment
 Abolish knowl{d,e}ge	knowledge
-Abolish k{nwo,onw}{,n,s}	k{now}{}
+Abolish k{nwo,onw,wno}{,n,s}	k{now}{}
 Abolish labratory	laboratory
 Abolish lastyear	last year
 Abolish learnign	learning
