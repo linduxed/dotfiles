@@ -689,3 +689,4 @@ Abolish rethoric	rhetoric
 Abolish rhethoric	rhetoric
 Abolish aboev	above
 Abolish WHile	While
+Abolish adjecency	adjacency
