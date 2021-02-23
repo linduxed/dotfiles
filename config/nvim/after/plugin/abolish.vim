@@ -688,3 +688,4 @@ Abolish laest	least
 Abolish rethoric	rhetoric
 Abolish rhethoric	rhetoric
 Abolish aboev	above
+Abolish WHile	While
