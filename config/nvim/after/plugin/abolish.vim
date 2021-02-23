@@ -690,3 +690,4 @@ Abolish rhethoric	rhetoric
 Abolish aboev	above
 Abolish WHile	While
 Abolish adjecency	adjacency
+Abolish SHe	She
