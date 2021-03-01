@@ -649,3 +649,4 @@ Abolish apathically	apathetically
 Abolish unitl	until
 Abolish hsould	should
 Abolish retreiv{es,ed,ing}	retriev{}
+Abolish {nt,tn}o	not
