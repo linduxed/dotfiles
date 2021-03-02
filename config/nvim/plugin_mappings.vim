@@ -57,12 +57,15 @@ imap <C-x><C-l> <plug>(fzf-complete-line)
 
 " {{{1 gitgutter
 
-nmap ]c <Plug>GitGutterNextHunk
-nmap [c <Plug>GitGutterPrevHunk
-nmap <silent> <Leader>agt <Plug>GitGutterLineHighlightsToggle
-nmap <silent> <Leader>ags <Plug>GitGutterStageHunk
-nmap <silent> <Leader>agu <Plug>GitGutterUndoHunk
-nmap <silent> <Leader>agp <Plug>GitGutterPreviewHunk
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+nmap <silent> <Leader>agtb :GitGutterLineHighlightsToggle<CR>
+nmap <silent> <Leader>agtn :GitGutterLineNrHighlightsToggle<CR>
+nmap <silent> <Leader>agts :GitGutterSignsToggle<CR>
+nmap <silent> <Leader>agf :GitGutterFold<CR>
+nmap <silent> <Leader>ags :GitGutterStageHunk<CR>
+nmap <silent> <Leader>agu :GitGutterUndoHunk<CR>
+nmap <silent> <Leader>agp :GitGutterPreviewHunk<CR>
 
 " {{{1 grepper
 
