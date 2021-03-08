@@ -1,6 +1,6 @@
 {
     "elixir.pathToElixirLS": "~/.elixir-ls/release/language_server.sh",
-    "solargraph.commandPath": "/home/linduxed/.asdf/shims/solargraph",
+    "solargraph.commandPath": "$HOME/.asdf/shims/solargraph",
     "solargraph.completion": true,
     "solargraph.formatting": true,
     "elixirLS.dialyzerEnabled": false,
