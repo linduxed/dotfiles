@@ -35,6 +35,9 @@ nnoremap <leader>e :e<CR>
 
 tnoremap <C-\> <C-\><C-n>
 
+nnoremap <S-Up> <C-y>
+nnoremap <S-Down> <C-e>
+
 " {{{2 Make * in visual-mode behave smarter
 
 function! s:VSetSearch()
