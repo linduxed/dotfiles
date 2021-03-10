@@ -685,3 +685,5 @@ Abolish repellant	repellent
 Abolish daiper{,s}	diaper{}
 Abolish laeve	leave
 Abolish laest	least
+Abolish rethoric	rhetoric
+Abolish rhethoric	rhetoric
