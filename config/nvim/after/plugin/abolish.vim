@@ -651,3 +651,4 @@ Abolish hsould	should
 Abolish retreiv{es,ed,ing}	retriev{}
 Abolish {nt,tn}o	not
 Abolish columsn	columns
+Abolish fonud	found
