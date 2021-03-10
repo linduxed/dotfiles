@@ -621,6 +621,8 @@ Abolish yuo{,r}	you{}
 " My own corrections
 
 Abolish aabout	about
+Abolish aobut	about
+Abolish aoubt	about
 Abolish delimeter{,s}	delimiter{}
 Abolish despara{te,tely,tion}	despera{}
 Abolish d{e,i}screp{e,a}nc{y,ies}	d{i}screp{a}nc{}
