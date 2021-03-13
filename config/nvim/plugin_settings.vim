@@ -33,6 +33,11 @@ hi link EasyMotionTarget2Second Identifier
 " Characters at the end of the string have higher precedence.
 let g:EasyMotion_keys = 'hdoairesnt'
 
+" {{{1 ferret
+
+let g:FerretMap = 0
+let g:FerretQFCommands = 0
+
 " {{{1 fugitive
 
 let g:fugitive_no_maps = 1

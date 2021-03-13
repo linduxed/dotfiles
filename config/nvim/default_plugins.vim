@@ -1,6 +1,7 @@
 Plug 'vim-scripts/bbcode'
 Plug 'mattn/calendar-vim'
 Plug 'Raimondi/delimitMate'
+Plug 'wincent/ferret'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
