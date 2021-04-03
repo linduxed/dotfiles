@@ -58,7 +58,12 @@ tlf() {
         " -- " +
         .description
         ' |
-    shuf | fzf --prompt=" `date +%F` "
+    shuf |
+    fzf \
+      --prompt=" `date +%F` " \
+      --delimiter=":" \
+      --preview="task info {1}" \
+      --preview-window="top"
 }
 
 tlaf() {
@@ -90,7 +95,12 @@ tlaf() {
         " -- " +
         .description
         ' |
-    shuf | fzf --prompt=" `date +%F` "
+    shuf |
+    fzf \
+      --prompt=" `date +%F` " \
+      --delimiter=":" \
+      --preview="task info {1}" \
+      --preview-window="top"
 }
 
 tlfuuid() {
