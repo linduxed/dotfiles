@@ -282,5 +282,5 @@ let g:wheel#map#mouse = 0
 
 " {{{1 zettel
 
-let g:zettel_format = "z_%y%m%d-%H%M"
+let g:zettel_format = "z_%Y-%m-%d_%H%M"
 let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
