@@ -33,4 +33,10 @@ fgchs() {
   | sed "s/ .*//"
 }
 
+fgcpm() {
+  commit_hash=$(fgchs)
+
+  [[ -n $commit_hash ]] && git commit --reuse-message $commit_hash
+}
+
 alias batl="bat --theme=OneHalfLight"
