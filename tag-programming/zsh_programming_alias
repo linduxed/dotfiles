@@ -23,7 +23,14 @@ fgchs() {
   local commits commit
   commits=$(git log --all --pretty="tformat:%h (%ar) %s%d")
 
-  echo "$commits" | fzf --no-sort --no-multi | sed "s/ .*//"
+  echo "$commits" |
+  fzf \
+    --no-sort \
+    --no-multi \
+    --delimiter=" " \
+    --preview="git show {1}" \
+    --preview-window="top" \
+  | sed "s/ .*//"
 }
 
 alias batl="bat --theme=OneHalfLight"
