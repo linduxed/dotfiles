@@ -1,25 +1,25 @@
 # Fzf BRanch Tag Print - helper function
-fbrtp() {
+fgbrtp() {
     tags=$(git tag | awk '{print "tag\t" $1}') &&
     branches=$(git branch --all | grep -v HEAD | sed "s/.* //" | awk '{print "branch\t" $1}') &&
 
     fzf <<< $(echo "$branches"; echo "$tags") | awk '{print $2}'
 }
 
-fco() {
+fgco() {
     # If a remote branch is selected, checkout a local branch with same name.
     branch_or_tag=$(fbrtp | sed "s#remotes/[^/]*/##")
 
     [[ -n $branch_or_tag ]] && git checkout $branch_or_tag
 }
 
-ftig() {
+fgtig() {
     branch_or_tag=$(fbrtp)
 
     [[ -n $branch_or_tag ]] && tig $branch_or_tag
 }
 
-fchs() {
+fgchs() {
   local commits commit
   commits=$(git log --all --pretty="tformat:%h (%ar) %s%d")
 
