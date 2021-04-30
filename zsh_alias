@@ -53,7 +53,7 @@ fcd() {
 }
 
 # FZF file and cd to its directory
-fcdf() {
+ffcd() {
     # Exclude files in dot-directories
     file=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f | sed -r 's|^\./||' | fzf)
 
