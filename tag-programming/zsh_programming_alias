@@ -8,13 +8,13 @@ fgbrtp() {
 
 fgco() {
     # If a remote branch is selected, checkout a local branch with same name.
-    branch_or_tag=$(fbrtp | sed "s#remotes/[^/]*/##")
+    branch_or_tag=$(fgbrtp | sed "s#remotes/[^/]*/##")
 
     [[ -n $branch_or_tag ]] && git checkout $branch_or_tag
 }
 
 fgtig() {
-    branch_or_tag=$(fbrtp)
+    branch_or_tag=$(fgbrtp)
 
     [[ -n $branch_or_tag ]] && tig $branch_or_tag
 }
