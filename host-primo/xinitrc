@@ -1,10 +1,6 @@
 #!/bin/sh
 xrdb -load ~/.Xdefaults &
 
-# Synchronize X clipboard and X selection.
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
-
 # Autostart
 kbdd &
 nm-applet &
