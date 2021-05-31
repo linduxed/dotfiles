@@ -25,7 +25,7 @@ cdown() {
 
 # Edit email with neovim
 nvmail() {
-    nvim /tmp/nvmail_$(date "+%x--%X").mail -c "set spell" -c "set spelllang=en" -c "setf mail" -c "set linebreak"
+    nvim /tmp/nvmail_$(date "+%x--%X").mail -c "set spell" -c "set spelllang=en" -c "setf mail" -c "set linebreak" -c "set tw=0"
 }
 
 # FZF track in MPD playlist and play it
