@@ -3,7 +3,7 @@
 " * Spaces before leading tabs
 " * Non-indenting tabs
 " * Lines with only whitespace
-" Turn off highglighting of trailing whitespace during inster-mode.
+" Turn off highlighting of trailing whitespace during insert-mode.
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter    * match ExtraWhitespace /[^\t]\zs\t\+\| \+\ze\t\|\S\zs\s\+$\|^[ \t]\+$/
