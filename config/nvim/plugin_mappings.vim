@@ -177,11 +177,6 @@ omap tu <Plug>(textobj-url-a)
 xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
 
-" {{{1 theme_switcher
-
-nnoremap <leader>abd :Dark<CR>
-nnoremap <leader>abl :Light<CR>
-
 " {{{1 unimpaired
 
 " These are not actual mappings for unimpaired, however they try to compliment
