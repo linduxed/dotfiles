@@ -660,3 +660,15 @@ Abolish thursday	Thursday
 Abolish friday	Friday
 Abolish saturday	Saturday
 Abolish sunday	Sunday
+Abolish january	January
+Abolish february	February
+" Abolish march	March
+Abolish april	April
+" Abolish may	May
+Abolish june	June
+Abolish july	July
+Abolish august	August
+Abolish september	September
+Abolish october	October
+Abolish november	November
+Abolish december	December
