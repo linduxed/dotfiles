@@ -653,3 +653,10 @@ Abolish {nt,tn}o	not
 Abolish columsn	columns
 Abolish fonud	found
 Abolish uncohesive	incohesive
+Abolish monday	Monday
+Abolish tuesday	Tuesday
+Abolish wednesday	Wednesday
+Abolish thursday	Thursday
+Abolish friday	Friday
+Abolish saturday	Saturday
+Abolish sunday	Sunday
