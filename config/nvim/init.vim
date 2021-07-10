@@ -37,9 +37,6 @@ set shiftround
 set scrolloff=5
 set sidescroll=1
 set sidescrolloff=10
-set notimeout
-set ttimeout
-set ttimeoutlen=10
 set ignorecase
 set smartcase
 set nostartofline
