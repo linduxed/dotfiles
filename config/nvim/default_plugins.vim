@@ -42,7 +42,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'liuchengxu/vista.vim'
 Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
-Plug 'michal-h21/vim-zettel'
 
 " COC
 
