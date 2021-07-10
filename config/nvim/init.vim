@@ -72,16 +72,10 @@ let g:html_indent_tags = 'li\|p'
 let g:netrw_liststyle = 3
 let g:load_doxygen_syntax=1
 
-" {{{2 backups
+" {{{2 swap files
 
-set undofile
-
-set undodir=~/.config/nvim/tmp/undo//
 set directory=~/.config/nvim/tmp/swap//
 
-if !isdirectory(expand(&undodir))
-    call mkdir(expand(&undodir), "p")
-endif
 if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
