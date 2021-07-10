@@ -61,7 +61,6 @@ set foldmethod=marker
 set showbreak=…
 set synmaxcol=800
 set splitright
-set omnifunc=syntaxcomplete#Complete
 set completeopt=menuone,preview,noinsert
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:∘
