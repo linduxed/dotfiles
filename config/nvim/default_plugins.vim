@@ -1,4 +1,5 @@
 Plug 'vim-scripts/bbcode'
+Plug 'dkarter/bullets.vim'
 Plug 'mattn/calendar-vim'
 Plug 'Raimondi/delimitMate'
 Plug 'wincent/ferret'
