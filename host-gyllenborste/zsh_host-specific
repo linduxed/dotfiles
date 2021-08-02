@@ -10,5 +10,3 @@ export PATH=$PATH:$GOPATH/bin
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 
 source /home/linduxed/.config/broot/launcher/bash/br
-
-eval "$(hub alias -s)"

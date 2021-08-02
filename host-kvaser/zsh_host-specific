@@ -9,6 +9,4 @@ export PATH=$PATH:$GOPATH/bin
 # Set askpass utility for :SudoWrite in the vim-eunuch Vim plugin
 export SUDO_ASKPASS=/usr/lib/ssh/x11-ssh-askpass
 
-eval "$(hub alias -s)"
-
 source /home/linduxed/.config/broot/launcher/bash/br

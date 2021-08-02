@@ -20,5 +20,3 @@ dual_display_brightness() {
 }
 
 source /home/linduxed/.config/broot/launcher/bash/br
-
-eval "$(hub alias -s)"
