@@ -71,9 +71,6 @@ floating_modifier $mod
 bindsym $mod+Shift+t floating toggle
 bindsym $mod+t focus mode_toggle
 
-for_window [class="FTL" instance="FTL"] floating enable
-for_window [class="Gnome-screenshot"] floating enable
-
 # }}}
 # {{{ Workspaces
 
