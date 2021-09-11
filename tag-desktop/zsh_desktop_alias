@@ -5,3 +5,5 @@ speak_time() {
     sleep $(next_time $minute_count)
     watch -p -n $(($minute_count * 60)) "date +%R | mimic"
 }
+
+alias mpv-dlp='mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp'
