@@ -1,0 +1,78 @@
+theme = "space-villain"
+icons = "awesome"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "used"
+format = "{icon} {used}/{total} ({available} free )"
+alert_absolute = true
+unit = "GB"
+alert = 190
+warning = 210
+
+[[block]]
+block = "memory"
+format_mem = "{mem_used}/{mem_total}({mem_used_percents})"
+display_type = "memory"
+icons = true
+clickable = true
+interval = 5
+warning_mem = 80
+critical_mem = 95
+# format_swap = "{swap_used}/{swap_total}({swap_used_percents})"
+# warning_swap = 80
+# critical_swap = 95
+
+[[block]]
+block = "keyboard_layout"
+driver = "kbddbus"
+format = "KB: {layout}"
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m}"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 5
+format = "{max} max, {average} avg"
+# chip = "temp*input"
+# inputs = ["CPUTIN", "SYSTIN"]
+
+[[block]]
+block = "nvidia_gpu"
+label = "RTX2060"
+show_memory = false
+show_clocks = false
+interval = 1
+
+# [[block]]
+# block = "pacman"
+# interval = 43200
+# format = "{pacman} + {aur} = {both} updates available"
+# format_singular = "{both} update available"
+# format_up_to_date = "system up to date"
+# critical_updates_regex = "(linux|linux-lts|linux-zen)"
+# aur_command = "yay -Qua"
+
+[[block]]
+block = "net"
+device = "wlp4s0"
+format = "{speed_down;K*b}"
+interval = 5
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%a %-d %b %X W%V"
