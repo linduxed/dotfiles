@@ -41,6 +41,7 @@
     chp = cherry-pick
 [init]
     templatedir = ~/.git_template
+	defaultBranch = master
 [web]
     browser = xdg-open
 [include]
