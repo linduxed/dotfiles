@@ -12,6 +12,8 @@ export LC_MONETARY="en_US.UTF-8"
 export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="sv_SE.UTF-8"
 
+export XDG_CONFIG_HOME="$HOME/.config/"
+
 #
 # Editors
 #
