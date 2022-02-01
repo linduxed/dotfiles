@@ -8,7 +8,6 @@ thunderbird &
 firefox &
 start-pulseaudio-x11 &
 SpiderOakONE &
-wmname LG3D &
 kupfer &
 rsibreak &
 xrandr --output DP-0 --mode 2560x1440 --rate 144 &

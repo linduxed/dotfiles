@@ -13,7 +13,6 @@ firefox &
 xscreensaver -no-splash &
 start-pulseaudio-x11 &
 SpiderOakONE &
-wmname LG3D &
 kupfer &
 rsibreak &
 
