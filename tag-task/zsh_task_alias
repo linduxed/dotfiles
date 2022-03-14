@@ -1,4 +1,4 @@
-local task_dir=$(grep "data.location" $XDG_CONFIG_HOME/task/.taskrc | cut -d "=" -f 2)
+local task_dir=$(grep "data.location" $XDG_CONFIG_HOME/task/taskrc | cut -d "=" -f 2)
 local task_dir=$(sed "s|~|$HOME|" <<< $task_dir)
 
 alias t='task'
