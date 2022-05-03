@@ -4,7 +4,6 @@ xrdb -load ~/.Xdefaults &
 # Autostart
 kbdd &
 nm-applet &
-thunderbird &
 firefox &
 start-pulseaudio-x11 &
 SpiderOakONE &
