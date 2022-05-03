@@ -68,6 +68,10 @@ nmap <silent> <Leader>ags :GitGutterStageHunk<CR>
 nmap <silent> <Leader>agu :GitGutterUndoHunk<CR>
 nmap <silent> <Leader>agp :GitGutterPreviewHunk<CR>
 
+" {{{1 Goyo
+
+nmap <silent> <Leader>go :Goyo<CR>
+
 " {{{1 grepper
 
 nmap gl <plug>(GrepperOperator)
