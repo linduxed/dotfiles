@@ -15,6 +15,14 @@ wikc() {
     (
     cd $wiki_dir
 
+    git commit -m "$(hostname): $(date -Iseconds)"
+    )
+}
+
+wikca() {
+    (
+    cd $wiki_dir
+
     git add . &&
     git commit -m "$(hostname): $(date -Iseconds)"
     )
