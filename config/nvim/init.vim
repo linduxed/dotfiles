@@ -13,16 +13,27 @@ syntax on
 set background=dark
 
 set t_Co=256
-let g:solarized_termcolors = 256
-let g:solarized_termtrans  = 0
-let g:solarized_degrade    = 0
-let g:solarized_bold       = 1
-let g:solarized_underline  = 1
-let g:solarized_italic     = 1
-let g:solarized_contrast   = "normal"
-let g:solarized_visibility = "normal"
 
-colorscheme solar_linduxed
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'override' : {
+  \         'color00' : ['', '233'],
+  \         'folded_bg' : ['', '17'],
+  \         'folded_fg' : ['', '117']
+  \       }
+  \     },
+  \     'default.light': {
+  \       'override' : {
+  \         'color00' : ['', '255'],
+  \         'folded_fg' : ['', '31'],
+  \         'folded_bg' : ['', '195']
+  \       }
+  \     }
+  \   }
+  \ }
+
+colorscheme PaperColor
 
 " {{{1 Miscellaneous options
 
