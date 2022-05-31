@@ -1,5 +1,6 @@
 export FZF_DEFAULT_COMMAND="rg --files --follow --glob \"!.git/*\""
 export KERL_BUILD_DOCS=yes
+export SSH_AUTH_SOCK=$HOME/.1password/agent.sock
 
 if [ -f /opt/asdf-vm/asdf.sh ]; then
   source /opt/asdf-vm/asdf.sh

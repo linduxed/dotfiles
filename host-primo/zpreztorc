@@ -19,7 +19,6 @@ zstyle ':prezto:load' pmodule \
     'pacman' \
     'rsync' \
     'fasd' \
-    'ssh' \
     'history-substring-search' \
     'fzf'
 zstyle ':prezto:module:editor' keymap 'emacs'

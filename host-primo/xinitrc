@@ -14,6 +14,8 @@ xrandr --output DP-2 --mode 3840x2160 --pos 2560x-720 &
 xscreensaver -no-splash &
 redshift-gtk &
 flameshot &
+lxsession &
+1password &
 
 # UIM related
 # export GTK_IM_MODULE='uim'

@@ -17,7 +17,6 @@ zstyle ':prezto:load' pmodule \
     'gnu-utility' \
     'rsync' \
     'fasd' \
-    'ssh' \
     'history-substring-search'
 zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
