@@ -9,9 +9,6 @@ call plug#end()
 
 " {{{1 Colorscheme
 
-syntax on
-set background=dark
-
 set t_Co=256
 
 let g:PaperColor_Theme_Options = {
@@ -47,7 +44,6 @@ set cursorline
 set expandtab
 set foldmethod=marker
 set formatoptions=qrn1t
-set hidden
 set ignorecase
 set inccommand=nosplit
 set iskeyword+=-
@@ -55,17 +51,12 @@ set lazyredraw
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:∘
 set mouse=n
-set nojoinspaces
-set nostartofline
 set number
-set ruler
 set scrolloff=5
 set shiftround
 set shiftwidth=4
 set showbreak=…
-set showcmd
 set showtabline=1
-set sidescroll=1
 set sidescrolloff=10
 set smartcase
 set softtabstop=4
