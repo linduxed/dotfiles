@@ -53,7 +53,7 @@ set inccommand=nosplit
 set iskeyword+=-
 set lazyredraw
 set list
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:∘
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:∘
 set mouse=n
 set nojoinspaces
 set nostartofline
