@@ -1,5 +1,4 @@
-" {{{1 Plugins
-
+vim.cmd([[
 call plug#begin()
 
 source ~/.config/nvim/default_plugins.vim
@@ -84,3 +83,4 @@ endif
 source ~/.config/nvim/plugin_settings.vim
 source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/plugin_mappings.vim
+]])
