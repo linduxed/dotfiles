@@ -37,47 +37,47 @@ colorscheme PaperColor
 
 " {{{1 Miscellaneous options
 
-set inccommand=nosplit
-set expandtab
-set shiftwidth=4
-set tabstop=4
-set softtabstop=4
-set textwidth=79
+let g:html_indent_tags = 'li\|p'
+let g:load_doxygen_syntax=1
+let g:netrw_liststyle = 3
 set colorcolumn=+1
-set shiftround
-set scrolloff=5
-set sidescroll=1
-set sidescrolloff=10
-set ignorecase
-set smartcase
-set nostartofline
-set formatoptions=qrn1t
-set whichwrap=b,s,[,],<,>,h,l
-set iskeyword+=-
-set virtualedit=block
-set nojoinspaces
-set lazyredraw
-set cursorline
-set cursorcolumn
-set ruler
-set showcmd
-set showtabline=1
-set number
-set hidden
-set mouse=n
-set foldmethod=marker
-set showbreak=…
-set synmaxcol=800
-set splitright
 set completeopt=menuone,preview,noinsert
+set cursorcolumn
+set cursorline
+set expandtab
+set foldmethod=marker
+set formatoptions=qrn1t
+set hidden
+set ignorecase
+set inccommand=nosplit
+set iskeyword+=-
+set lazyredraw
 set list
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,nbsp:∘
+set mouse=n
+set nojoinspaces
+set nostartofline
+set number
+set ruler
+set scrolloff=5
+set shiftround
+set shiftwidth=4
+set showbreak=…
+set showcmd
+set showtabline=1
+set sidescroll=1
+set sidescrolloff=10
+set smartcase
+set softtabstop=4
+set splitright
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set wildmode=list:longest,full
+set synmaxcol=800
+set tabstop=4
+set textwidth=79
+set virtualedit=block
+set whichwrap=b,s,[,],<,>,h,l
 set wildignore+=.hg,.git,.svn,*.aux,*.out,*.toc,*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.o,*.obj,*.exe,*.dll,*.manifest,*.spl,*.sw?,*.DS_Store,*.luac,migrations,*.pyc,*.orig
-let g:html_indent_tags = 'li\|p'
-let g:netrw_liststyle = 3
-let g:load_doxygen_syntax=1
+set wildmode=list:longest,full
 
 " {{{2 swap files
 
