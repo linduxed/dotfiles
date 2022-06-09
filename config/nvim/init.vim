@@ -9,8 +9,6 @@ call plug#end()
 
 " {{{1 Colorscheme
 
-set t_Co=256
-
 let g:PaperColor_Theme_Options = {
   \   'theme': {
   \     'default.dark': {
