@@ -31,9 +31,6 @@ colorscheme PaperColor
 
 " {{{1 Miscellaneous options
 
-let g:html_indent_tags = 'li\|p'
-let g:load_doxygen_syntax=1
-let g:netrw_liststyle = 3
 set colorcolumn=+1
 set completeopt=menuone,preview,noinsert
 set cursorcolumn
