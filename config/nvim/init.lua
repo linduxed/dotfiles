@@ -69,13 +69,10 @@ set directory=~/.config/nvim/tmp/swap//
 if !isdirectory(expand(&directory))
     call mkdir(expand(&directory), "p")
 endif
-
-" {{{1 Sourcing
-
-" mappings.vim needs to be sourced after plugin_settings, otherwise some
-" plugin_settings get overwritten by mappings.vim.
-
-source ~/.config/nvim/plugin_settings.vim
-source ~/.config/nvim/mappings.vim
-source ~/.config/nvim/plugin_mappings.vim
 ]])
+
+-- mappings.vim needs to be sourced after plugin_settings, otherwise some
+-- plugin_settings get overwritten by mappings.vim.
+require("plugin_settings")
+require("mappings")
+require("plugin_mappings")

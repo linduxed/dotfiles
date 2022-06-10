@@ -1,3 +1,4 @@
+vim.cmd([[
 " {{{1 Miscellaneous
 
 let mapleader = " "
@@ -115,3 +116,4 @@ vnoremap U k
 " I *never* use this feature, and it mostly causes me to split the window
 " unintentionally when using <C-W>i with colemak.vim.
 nmap <C-W><C-I> <C-W>l
+]])

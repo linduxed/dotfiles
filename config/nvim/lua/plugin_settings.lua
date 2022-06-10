@@ -1,3 +1,4 @@
+vim.cmd([[
 " {{{1 abolish
 
 let g:abolish_save_file = "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
@@ -256,3 +257,4 @@ let g:wheel#map#mouse = 0
 
 let g:zettel_format = "z_%Y-%m-%d_%H%M"
 let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+]])

@@ -1,3 +1,4 @@
+vim.cmd([[
 " {{{1 Colemak
 
 nnoremap <Leader>ace :ColemakEnable<CR>
@@ -84,16 +85,16 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
-augroup incsearch-keymap
-  autocmd!
-  autocmd VimEnter * call s:incsearch_keymap()
-augroup END
 function! s:incsearch_keymap()
   IncSearchNoreMap <C-i> <Over>(incsearch-next)
   IncSearchNoreMap <C-n> <Over>(incsearch-prev)
   IncSearchNoreMap <C-h> <Over>(incsearch-scroll-f)
   IncSearchNoreMap <C-j> <Over>(incsearch-scroll-b)
 endfunction
+augroup incsearch-keymap
+  autocmd!
+  autocmd VimEnter * call s:incsearch_keymap()
+augroup END
 
 " {{{1 Mark
 
@@ -213,3 +214,4 @@ let g:zettel_default_mappings = 0
 " See ftplugin/vimwiki.vim for more mappings.
 " It seems like the Vimwiki plugin prefers to have the local
 " mappings defined over in the ftplugin file.
+]])
