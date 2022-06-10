@@ -65,6 +65,7 @@
     line-numbers = true
     decorations = true
     navigate = true
+    ; light = true
     ; side-by-side = true
     whitespace-error-style = 22 reverse
 [delta "decorations"]
