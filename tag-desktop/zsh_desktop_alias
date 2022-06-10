@@ -7,3 +7,11 @@ speak_time() {
 }
 
 alias mpv-dlp='mpv --script-opts=ytdl_hook-ytdl_path=yt-dlp'
+
+# To avoid having the main configuration file (`kitty.conf`) be updated on
+# every theme change (`kitty.conf` is checked into version control), target
+# `theme.conf` instead.
+alias background-dark='kitty +kitten themes --reload-in=all --config-file-name=theme.conf Modus Vivendi'
+alias background-light='kitty +kitten themes --reload-in=all --config-file-name=theme.conf PaperColor Light'
+alias background-medium='kitty +kitten themes --reload-in=all --config-file-name=theme.conf Relaxed Afterglow'
+alias background-red='kitty +kitten themes --reload-in=all --config-file-name=theme.conf Red Alert'
