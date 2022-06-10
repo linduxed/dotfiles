@@ -15,3 +15,5 @@ alias background-dark='kitty +kitten themes --reload-in=all --config-file-name=t
 alias background-light='kitty +kitten themes --reload-in=all --config-file-name=theme.conf PaperColor Light'
 alias background-medium='kitty +kitten themes --reload-in=all --config-file-name=theme.conf Relaxed Afterglow'
 alias background-red='kitty +kitten themes --reload-in=all --config-file-name=theme.conf Red Alert'
+
+alias icat="kitty +kitten icat"
