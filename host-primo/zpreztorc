@@ -8,7 +8,6 @@ zstyle ':prezto:load' pmodule \
     'history' \
     'directory' \
     'spectrum' \
-    'utility' \
     'completion' \
     'prompt' \
     'archive' \
@@ -24,7 +23,6 @@ zstyle ':prezto:load' pmodule \
 zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 zstyle ':prezto:module:terminal' auto-title 'yes'
-zstyle ':prezto:module:utility' safe-ops 'no'
 
 # Host-specific configuration that's not checked in into version control
 [ -f "$HOME/.zpreztorc_secret" ] && source "$HOME/.zpreztorc_secret"

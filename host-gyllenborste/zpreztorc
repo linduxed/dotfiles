@@ -8,7 +8,6 @@ zstyle ':prezto:load' pmodule \
     'history' \
     'directory' \
     'spectrum' \
-    'utility' \
     'completion' \
     'prompt' \
     'archive' \
@@ -26,4 +25,3 @@ zstyle ':prezto:module:editor' keymap 'emacs'
 zstyle ':prezto:module:prompt' theme 'powerlevel10k'
 zstyle ':prezto:module:ssh:load' identities 'id_rsa'
 zstyle ':prezto:module:terminal' auto-title 'yes'
-zstyle ':prezto:module:utility' safe-ops 'no'
