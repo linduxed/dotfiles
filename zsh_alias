@@ -1,4 +1,5 @@
-alias ls='echo "Use exa instead"'
+alias ls='echo "Use exa (alias \"e\") instead"'
+alias e='exa'
 alias tree='exa --tree'
 alias nnv='nice nvim'
 alias wcmirror='mplayer -vf mirror -tv driver=v4l2:device=/dev/video0:fps=30 tv://'
