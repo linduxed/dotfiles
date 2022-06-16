@@ -1,6 +1,12 @@
 alias ls='echo "Use exa (alias \"e\") instead"'
 alias e='exa'
+alias ex='exa'
+alias ea='exa -a'
+alias el='exa -l'
+alias ela='exa -la'
+alias eal='exa -la'
 alias tree='exa --tree'
+
 alias nnv='nice nvim'
 alias wcmirror='mplayer -vf mirror -tv driver=v4l2:device=/dev/video0:fps=30 tv://'
 alias figdoh='clear && figlet -tc -f doh'
