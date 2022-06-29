@@ -17,6 +17,15 @@ let g:airline#extensions#capslock#enabled = 1
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''◆'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
 ]])
 
+-- {{{1 abbreinder
+
+vim.cmd([[
+augroup setup_abbreinder
+    autocmd!
+    autocmd BufRead,BufEnter * :lua require'abbreinder'.setup()
+augroup END
+]])
+
 -- {{{1 bullets
 
 vim.cmd([[

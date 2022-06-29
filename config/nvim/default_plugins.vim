@@ -1,3 +1,4 @@
+Plug '0styx0/abbreinder.nvim' | Plug '0styx0/abbremand.nvim'
 Plug 'vim-scripts/bbcode'
 Plug 'dkarter/bullets.vim'
 Plug 'mattn/calendar-vim'
