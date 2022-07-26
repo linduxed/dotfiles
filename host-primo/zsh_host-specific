@@ -1,3 +1,7 @@
+# The following line I needed to add a long time ago to get Vim colors to work
+# properly, but it seems like it conflicts with Kitty being able to set colors
+# properly.
+#
 export TERM=xterm-256color
 
 export PASSWORD_STORE_DIR=$HOME/.password-store
