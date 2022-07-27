@@ -179,6 +179,16 @@ xmap s   <Plug>VSurround
 xmap gs  <Plug>VgSurround
 ]])
 
+-- {{{1 swap
+
+vim.cmd([[
+let g:swap_no_default_key_mappings = 1
+]])
+
+vim.keymap.set({"n"}, "g<", "<Plug>(swap-prev)")
+vim.keymap.set({"n"}, "g>", "<Plug>(swap-next)")
+vim.keymap.set({"n", "x"}, "gm", "<Plug>(swap-interactive)")
+
 -- {{{1 Tabularize
 
 vim.cmd([[
