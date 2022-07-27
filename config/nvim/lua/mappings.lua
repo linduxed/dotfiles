@@ -34,6 +34,8 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>e :e<CR>
 
+nnoremap <leader>/ :nohlsearch<CR>
+
 tnoremap <C-\> <C-\><C-n>
 
 nnoremap <S-Up> <C-y>
