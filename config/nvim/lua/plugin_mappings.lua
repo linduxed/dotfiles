@@ -31,25 +31,6 @@ nnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(
 nnoremap <silent><nowait><expr> <C-h> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-h>"
 ]])
 
--- {{{1 EasyMotion
-
-vim.cmd([[
-map <Leader><Leader>a <Plug>(easymotion-jumptoanywhere)
-map <Leader><Leader>s <Plug>(easymotion-sn)
-map <Leader><Leader>f <Plug>(easymotion-bd-f)
-map <Leader><Leader>F <Plug>(easymotion-overwin-f)
-map <Leader><Leader>p <Plug>(easymotion-bd-t)
-map <Leader><Leader>y <Plug>(easymotion-bd-w)
-map <Leader><Leader>Y <Plug>(easymotion-bd-W)
-map <Leader><Leader>l <Plug>(easymotion-overwin-w)
-map <Leader><Leader>i <Plug>(easymotion-bd-e)
-map <Leader><Leader>I <Plug>(easymotion-bd-E)
-map <Leader><Leader>e <Plug>(easymotion-bd-jk)
-map <Leader><Leader>u <Plug>(easymotion-overwin-line)
-map <Leader><Leader>k <Plug>(easymotion-bd-n)
-
-]])
-
 -- {{{1 fzf
 
 vim.cmd([[
@@ -128,6 +109,16 @@ nmap <Leader>m? <Plug>MarkSearchAnyPrev
 nmap * <Plug>MarkSearchNext
 nmap # <Plug>MarkSearchPrev
 ]])
+
+-- {{{1 leap.nvim
+
+vim.keymap.set({"n"}, "gs", "<Plug>(leap-forward)")
+vim.keymap.set({"n"}, "gS", "<Plug>(leap-backward)")
+vim.keymap.set({"o"}, "z", "<Plug>(leap-forward)")
+vim.keymap.set({"o"}, "Z", "<Plug>(leap-backward)")
+vim.keymap.set({"o"}, "x", "<Plug>(leap-forward-x)")
+vim.keymap.set({"o"}, "X", "<Plug>(leap-backward-x)")
+vim.keymap.set({"n", "x", "o"}, "gws", "<Plug>(leap-cross-window)")
 
 -- {{{1 NERDtree
 

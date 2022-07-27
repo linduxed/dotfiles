@@ -36,18 +36,6 @@ let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
 ]])
 
--- {{{1 EasyMotion
-
-vim.cmd([[
-hi link EasyMotionTarget ErrorMsg
-hi link EasyMotionShade Comment
-hi link EasyMotionTarget2First Identifier
-hi link EasyMotionTarget2Second Identifier
-
-" Characters at the end of the string have higher precedence.
-let g:EasyMotion_keys = 'hdoairesnt'
-]])
-
 -- {{{1 ferret
 
 vim.cmd([[
@@ -111,6 +99,26 @@ let g:grepper = {}
 let g:grepper.tools = ['rg', 'git', 'ag']
 let g:grepper.highlight = 1
 ]])
+
+-- {{{1 leap.nvim
+
+require('leap').setup {
+  -- Leaving the appropriate list empty effectively disables "smart" mode,
+  -- and forces auto-jump to be on or off.
+  safe_labels = {
+      "f", "k", "z", "j", "h",
+      "F", "K", "Z",
+      "G",
+      "/", "?",
+  },
+  labels = {
+      "f", "k", "z", "j", "h",
+      "n", "e", "i", "o", "l", "u", "y", "d", "m", "g",
+      "F", "K", "Z",
+      "G",
+      "/", "?",
+  },
+}
 
 -- {{{1 Mark
 
