@@ -68,9 +68,9 @@ nmap <silent> <Leader>go :Goyo<CR>
 -- {{{1 grepper
 
 vim.cmd([[
-nmap gl <plug>(GrepperOperator)
-xmap gl <plug>(GrepperOperator)
-nmap <Leader>gl :Grepper<CR>
+nmap gr <plug>(GrepperOperator)
+xmap gr <plug>(GrepperOperator)
+nmap <Leader>gr :Grepper<CR>
 ]])
 
 -- {{{1 incsearch
@@ -112,12 +112,12 @@ nmap # <Plug>MarkSearchPrev
 
 -- {{{1 leap.nvim
 
-vim.keymap.set({"n"}, "gs", "<Plug>(leap-forward)")
-vim.keymap.set({"n"}, "gS", "<Plug>(leap-backward)")
-vim.keymap.set({"o"}, "z", "<Plug>(leap-forward)")
-vim.keymap.set({"o"}, "Z", "<Plug>(leap-backward)")
-vim.keymap.set({"o"}, "x", "<Plug>(leap-forward-x)")
-vim.keymap.set({"o"}, "X", "<Plug>(leap-backward-x)")
+vim.keymap.set({"n"}, "gy", "<Plug>(leap-forward)")
+vim.keymap.set({"n"}, "gl", "<Plug>(leap-backward)")
+vim.keymap.set({"o"}, "gy", "<Plug>(leap-forward)")
+vim.keymap.set({"o"}, "gl", "<Plug>(leap-backward)")
+vim.keymap.set({"x"}, "gy", "<Plug>(leap-forward)")
+vim.keymap.set({"x"}, "gl", "<Plug>(leap-backward)")
 vim.keymap.set({"n", "x", "o"}, "gws", "<Plug>(leap-cross-window)")
 
 -- {{{1 NERDtree
