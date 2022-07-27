@@ -98,13 +98,6 @@ nnoremap <c-o> <c-o>zz
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
-" The Tab key is mapped to Escape. Press Shift-Tab to insert a Tab.
-nnoremap <silent> <Tab> <Esc>:nohlsearch<bar>pclose<CR>|
-vnoremap <Tab> <Esc><Nul>| " <Nul> added to fix select mode problem
-inoremap <Tab> <Esc>|
-vnoremap <S-Tab> >gv|
-inoremap <S-Tab> <Tab>|
-
 " 1. Entering visual-mode is done while holding Shift.
 " 2. colemak.vim maps "u" to "k" (moving up)
 "
