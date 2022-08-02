@@ -49,7 +49,7 @@ mpf() {
 # FZF file and open in $EDITOR
 fe() {
     # Exclude files in dot-directories
-    file=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f | sed -r 's|^\./||' | fzf)
+    file=$(fd --type file | fzf)
 
     [[ -n $file ]] && $EDITOR $file
 }
@@ -57,7 +57,7 @@ fe() {
 # FZF directory and cd into it.
 fcd() {
     # Exclude dot-directories
-    directory=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type d | sed -r 's|^\./||' | fzf)
+    directory=$(fd --type directory | fzf)
 
     [[ -n $directory ]] && cd $directory
 }
@@ -65,7 +65,7 @@ fcd() {
 # FZF file and cd to its directory
 ffcd() {
     # Exclude files in dot-directories
-    file=$(find . -type d -path '*/\.*' -prune -o -not -name '.*' -type f | sed -r 's|^\./||' | fzf)
+    file=$(fd --type file | fzf)
 
     [[ -n $file ]] && dir=$(dirname "$file") && cd "$dir"
 }
