@@ -76,7 +76,7 @@ local suffixes = "" ..
     "~"
 
 vim.opt.colorcolumn = "+1"
-vim.opt.completeopt = "menuone,preview,noinsert"
+vim.opt.completeopt = "menu,menuone,preview,noinsert"
 vim.opt.cursorcolumn = true
 vim.opt.cursorline = true
 vim.opt.expandtab = true
@@ -123,3 +123,5 @@ endif
 require("plugin_settings")
 require("mappings")
 require("plugin_mappings")
+require("nvim-cmp")
+require("servers")

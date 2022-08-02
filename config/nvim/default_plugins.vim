@@ -1,6 +1,7 @@
 Plug 'vim-scripts/bbcode'
 Plug 'dkarter/bullets.vim'
 Plug 'mattn/calendar-vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'wincent/ferret'
 Plug 'junegunn/fzf'
@@ -10,16 +11,19 @@ Plug 'junegunn/goyo.vim'
 Plug 'vim-scripts/greplace.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'ggandor/leap.nvim'
+Plug 'L3MON4D3/LuaSnip'
 Plug 'asins/mark'
 Plug 'benekastah/neomake'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'chrisbra/NrrwRgn'
+Plug 'jose-elias-alvarez/null-ls.nvim' | Plug 'nvim-lua/plenary.nvim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-scripts/scratch.vim'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'nvim-telescope/telescope.nvim' | Plug 'nvim-lua/plenary.nvim' | Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'linduxed/undotree'
 Plug 'tpope/vim-abolish'
@@ -46,12 +50,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'reedes/vim-wheel'
 Plug 'guns/xterm-color-table.vim'
 
-" COC
-
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-
 " Text objects
 
 Plug 'kana/vim-textobj-indent'
@@ -60,6 +58,16 @@ Plug 'saihoooooooo/vim-textobj-space'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'mattn/vim-textobj-url'
 Plug 'kana/vim-textobj-user'
+
+" nvim-cmp
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-git'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'saadparwaiz1/cmp_luasnip'
 
 " Load after plugins that change mappings
 Plug 'linduxed/colemak.vim'

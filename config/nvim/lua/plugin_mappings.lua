@@ -5,32 +5,6 @@ nnoremap <Leader>ace :ColemakEnable<CR>
 nnoremap <Leader>acd :ColemakDisable<CR>
 ]])
 
--- {{{1 coc
-
-vim.cmd([[
-" The following mapping is required, as without it <C-n> or <C-p> in the
-" completion list results in snippets not expanding upon <CR>.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"
-
-" For some reason these can not be nnoremap instead of nmap, if one uses the
-" <Plug> invocations instead of :call Whatever<CR>.
-nmap <Leader>all :CocList<CR>
-nmap <Leader>ald <Plug>(coc-definition)
-nmap <Leader>alf <Plug>(coc-format)
-vmap <Leader>alf <Plug>(coc-format-selected)
-nmap <silent> <Leader>alh :call CocAction("doHover")<CR>
-nmap <Leader>alm <Plug>(coc-rename)
-nmap <Leader>alr <Plug>(coc-references)
-nmap <Leader>alc <Plug>(coc-codeaction)
-nmap <Leader>alx <Plug>(coc-float-hide)
-nmap <Leader>alo :CocCommand workspace.showOutput<CR>
-imap <C-h> <Plug>(coc-snippets-expand)
-vmap rf <Plug>(coc-funcobj-i)
-vmap tf <Plug>(coc-funcobj-a)
-nnoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-j>"
-nnoremap <silent><nowait><expr> <C-h> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-h>"
-]])
-
 -- {{{1 fzf
 
 vim.cmd([[
@@ -119,6 +93,24 @@ vim.keymap.set({"o"}, "gl", "<Plug>(leap-backward)")
 vim.keymap.set({"x"}, "gy", "<Plug>(leap-forward)")
 vim.keymap.set({"x"}, "gl", "<Plug>(leap-backward)")
 vim.keymap.set({"n", "x", "o"}, "gws", "<Plug>(leap-cross-window)")
+
+-- {{{1 LuaSnip
+
+vim.cmd([[
+" press <Tab> to expand or jump in a snippet. These can also be mapped
+" separately " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+
+" -1 for jumping backwards.
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+]])
 
 -- {{{1 NERDtree
 

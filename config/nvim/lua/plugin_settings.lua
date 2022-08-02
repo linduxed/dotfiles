@@ -120,6 +120,22 @@ require('leap').setup {
     },
 }
 
+-- {{{1 LuaSnip
+
+require("luasnip.loaders.from_lua").load({
+    paths = os.getenv("HOME") .. "/.config/nvim/snippets"
+})
+local ls = require("luasnip")
+
+ls.config.set_config({
+    -- Tells LuaSnip to remember to keep around the last snippet.
+    -- One can jump back into it even if you move outside of the selection.
+    history = true,
+
+    -- This allows dynamic snippets to update as one types.
+    update_events = "TextChanged,TextChangedI",
+})
+
 -- {{{1 Mark
 
 vim.cmd([[
@@ -218,6 +234,19 @@ let g:NERDCustomDelimiters = {
 vim.cmd([[
 let NERDTreeQuitOnOpen = 1
 ]])
+
+-- {{{1 null-ls
+
+local null_ls = require("null-ls")
+
+null_ls.setup({ sources = {
+    null_ls.builtins.diagnostics.credo,
+    null_ls.builtins.diagnostics.rubocop,
+    null_ls.builtins.diagnostics.zsh,
+    null_ls.builtins.formatting.erlfmt,
+    null_ls.builtins.formatting.fnlfmt,
+    null_ls.builtins.formatting.jq,
+} })
 
 -- {{{1 tagbar
 
