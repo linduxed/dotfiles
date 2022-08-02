@@ -1,3 +1,5 @@
+require("before_load_plugin_settings")
+
 vim.cmd([[
 call plug#begin()
 
