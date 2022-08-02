@@ -103,21 +103,21 @@ let g:grepper.highlight = 1
 -- {{{1 leap.nvim
 
 require('leap').setup {
-  -- Leaving the appropriate list empty effectively disables "smart" mode,
-  -- and forces auto-jump to be on or off.
-  safe_labels = {
-      "f", "k", "z", "j", "h",
-      "F", "K", "Z",
-      "G",
-      "/", "?",
-  },
-  labels = {
-      "f", "k", "z", "j", "h",
-      "n", "e", "i", "o", "l", "u", "y", "d", "m", "g",
-      "F", "K", "Z",
-      "G",
-      "/", "?",
-  },
+    -- Leaving the appropriate list empty effectively disables "smart" mode,
+    -- and forces auto-jump to be on or off.
+    safe_labels = {
+        "f", "k", "z", "j", "h",
+        "F", "K", "Z",
+        "G",
+        "/", "?",
+    },
+    labels = {
+        "f", "k", "z", "j", "h",
+        "n", "e", "i", "o", "l", "u", "y", "d", "m", "g",
+        "F", "K", "Z",
+        "G",
+        "/", "?",
+    },
 }
 
 -- {{{1 Mark
