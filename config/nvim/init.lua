@@ -10,25 +10,70 @@ call plug#end()
 ]])
 
 vim.g.PaperColor_Theme_Options = {
-  theme = {
-    ["default.dark"] = {
-      override = {
-        color00 = { "", "233" },
-        folded_bg = { "", "17" },
-        folded_fg = { "", "117" }
-      }
-    },
-    ["default.light"] = {
-      override = {
-        color00 = { "", "255" },
-        folded_bg = { "", "195" },
-        folded_fg = { "", "31" }
-      }
+    theme = {
+        ["default.dark"] = {
+            override = {
+                color00 = { "", "233" },
+                folded_bg = { "", "17" },
+                folded_fg = { "", "117" }
+            }
+        },
+        ["default.light"] = {
+            override = {
+                color00 = { "", "255" },
+                folded_bg = { "", "195" },
+                folded_fg = { "", "31" }
+            }
+        }
     }
-  }
 }
 
 vim.cmd("colorscheme PaperColor")
+
+local wildignore = "" ..
+    "*.DS_Store," ..
+    "*.aux," ..
+    "*.bmp," ..
+    "*.dll," ..
+    "*.exe," ..
+    "*.gif," ..
+    "*.jpeg," ..
+    "*.jpg," ..
+    "*.luac," ..
+    "*.manifest," ..
+    "*.o," ..
+    "*.obj," ..
+    "*.orig," ..
+    "*.out," ..
+    "*.png," ..
+    "*.pyc," ..
+    "*.spl," ..
+    "*.sw?," ..
+    "*.toc," ..
+    ".git," ..
+    ".hg," ..
+    ".svn," ..
+    "migrations"
+
+local suffixes = "" ..
+    ".aux," ..
+    ".bak," ..
+    ".bbl," ..
+    ".blg," ..
+    ".brf," ..
+    ".cb," ..
+    ".dvi," ..
+    ".idx," ..
+    ".ilg," ..
+    ".ind," ..
+    ".info," ..
+    ".inx," ..
+    ".log," ..
+    ".o," ..
+    ".out," ..
+    ".swp," ..
+    ".toc," ..
+    "~"
 
 vim.opt.colorcolumn = "+1"
 vim.opt.completeopt = "menuone,preview,noinsert"
@@ -54,13 +99,13 @@ vim.opt.sidescrolloff = 10
 vim.opt.smartcase = true
 vim.opt.softtabstop = 4
 vim.opt.splitright = true
-vim.opt.suffixes = ".bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc"
+vim.opt.suffixes = suffixes
 vim.opt.synmaxcol = 800
 vim.opt.tabstop = 4
 vim.opt.textwidth = 79
 vim.opt.virtualedit = "block"
 vim.opt.whichwrap = "b,s,[,],<,>,h,l"
-vim.opt.wildignore = vim.opt.wildignore + ".hg,.git,.svn,*.aux,*.out,*.toc,*.jpg,*.bmp,*.gif,*.png,*.jpeg,*.o,*.obj,*.exe,*.dll,*.manifest,*.spl,*.sw?,*.DS_Store,*.luac,migrations,*.pyc,*.orig"
+vim.opt.wildignore = vim.opt.wildignore + wildignore
 vim.opt.wildmode = "list:longest,full"
 
 vim.cmd([[
