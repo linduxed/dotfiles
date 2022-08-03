@@ -110,7 +110,11 @@ snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 " For changing choices in choiceNodes (not strictly necessary for a basic setup).
 imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+command! LuaSnipEdit :lua require("luasnip.loaders").edit_snippet_files()
 ]])
+
+vim.keymap.set("n", "<Leader>rse", "<cmd>LuaSnipEdit<CR>")
 
 -- {{{1 NERDtree
 
