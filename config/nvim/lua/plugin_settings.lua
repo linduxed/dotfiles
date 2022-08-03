@@ -240,7 +240,7 @@ let NERDTreeQuitOnOpen = 1
 local null_ls = require("null-ls")
 
 null_ls.setup({ sources = {
-    null_ls.builtins.diagnostics.credo,
+    -- null_ls.builtins.diagnostics.credo,
     null_ls.builtins.diagnostics.rubocop,
     null_ls.builtins.diagnostics.zsh,
     null_ls.builtins.formatting.erlfmt,
