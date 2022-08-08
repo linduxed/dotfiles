@@ -49,15 +49,6 @@ vim.cmd([[
 let g:fugitive_no_maps = 1
 ]])
 
--- {{{1 fzf
-
-vim.cmd([[
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-]])
-
 -- {{{1 Gist
 
 vim.cmd([[
@@ -286,6 +277,10 @@ let g:textobj_space_no_default_key_mappings = 1
 let g:textobj_underscore_no_default_key_mappings = 1
 let g:textobj_url_no_default_key_mappings = 1
 ]])
+
+-- {{{1 Telescope
+
+require('telescope').load_extension('fzf')
 
 -- {{{1 unimpaired
 

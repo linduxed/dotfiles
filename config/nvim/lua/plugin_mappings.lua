@@ -5,20 +5,6 @@ nnoremap <Leader>ace :ColemakEnable<CR>
 nnoremap <Leader>acd :ColemakDisable<CR>
 ]])
 
--- {{{1 fzf
-
-vim.cmd([[
-nnoremap <C-p> :FZF<CR>
-nnoremap <leader>fl :Lines<CR>
-nnoremap <leader>fb :BLines<CR>
-nnoremap <leader>fg :GFiles?<CR>
-nnoremap <leader>fm :call fzf#vim#marks(0)<CR>
-nnoremap <leader>fh :Helptags<CR>
-nnoremap <leader>fw :Windows<CR>
-nnoremap <leader>fr :Rg<CR>
-imap <C-x><C-l> <plug>(fzf-complete-line)
-]])
-
 -- {{{1 gitgutter
 
 vim.cmd([[
@@ -183,6 +169,19 @@ vnoremap <Leader>ate :Tabularize / = /l0<CR>
 nnoremap <Leader>ate :Tabularize / = /l0<CR>
 vnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
 nnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
+]])
+
+-- {{{1 Telescope
+
+vim.cmd([[
+" Main mappings
+nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files({follow = true})<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
+nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
+nnoremap <leader>fap <cmd>lua require('telescope.builtin').pickers()<cr>
 ]])
 
 -- {{{1 TextObjects
