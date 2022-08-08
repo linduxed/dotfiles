@@ -356,7 +356,6 @@ Abolish morgage	mortgage
 Abolish mroe	more
 Abolish mysefl	myself
 Abolish myu	my
-Abolish naive	naïve
 Abolish nec{ass,cess,es}ar{y,ily}	nec{ess}ar{}
 Abolish negotiaing	negotiating
 Abolish nkow	know
