@@ -65,6 +65,21 @@ return {
         { t("Enum."), i(1, "") }
     ),
     s(
+        { trig = "emap", name = "bare-map" },
+        {
+            t("Enum.map("),
+            c(1, {
+                sn(nil, {
+                    t("& &1"), i(1, "")
+                }),
+                sn(nil, {
+                    t("fn "), i(1, "x"), t(" -> "), i(2, ""), t(" end")
+                }),
+            }),
+            t(")"),
+        }
+    ),
+    s(
         { trig = "pstr", name = "pipe-stream" },
         { t("|> Stream."), i(1, "") }
     ),
