@@ -76,7 +76,7 @@ nnoremap <F1> :buffer #<CR>
 nnoremap <F2> <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <F3> <cmd>lua require('telescope.builtin').tags()<cr>
 nnoremap <F4> <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <F5> <cmd>lua require('telescope.builtin').old_files()<cr>
+nnoremap <F5> <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <F6> :UndotreeToggle<CR>
 " F7: not bound.
 nnoremap <F8> :set list!<CR>
