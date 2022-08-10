@@ -182,6 +182,10 @@ nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
 nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <leader>fap <cmd>lua require('telescope.builtin').pickers()<cr>
+
+" LSP mappings
+nnoremap <leader>alr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+nnoremap <leader>ali <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
 ]])
 
 -- {{{1 TextObjects
