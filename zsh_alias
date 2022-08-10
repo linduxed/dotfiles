@@ -23,6 +23,7 @@ alias pb='gist -c'
 alias dl='aria2c'
 alias eaf="$EDITOR **/*(.)"
 alias gpbc="git rev-parse HEAD && git rev-parse HEAD | tr -d '\n' | pbcopy"
+alias eixt="exit"
 
 notification-sound() {
     mpv --volume=70 ~/.sounds/notification >/dev/null 2>&1
