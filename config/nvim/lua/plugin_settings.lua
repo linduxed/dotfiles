@@ -121,7 +121,7 @@ local ls = require("luasnip")
 ls.config.set_config({
     -- Tells LuaSnip to remember to keep around the last snippet.
     -- One can jump back into it even if you move outside of the selection.
-    history = true,
+    history = false,
 
     -- This allows dynamic snippets to update as one types.
     update_events = "TextChanged,TextChangedI",
