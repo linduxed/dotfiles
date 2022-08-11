@@ -55,13 +55,8 @@ lsp.solargraph.setup{
     on_attach = on_attach,
 }
 
--- Rust (rls)
-lsp.rls.setup {
-  settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save = false,
-      all_features = true,
-    },
-  },
+-- Rust
+lsp.rust_analyzer.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
