@@ -50,7 +50,10 @@ lsp.elixirls.setup {
 }
 
 -- Ruby (solargraph)
-require'lspconfig'.solargraph.setup{}
+lsp.solargraph.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
 
 -- Rust (rls)
 lsp.rls.setup {
