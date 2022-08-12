@@ -1,6 +1,9 @@
 local cmp = require 'cmp'
 local luasnip = require("luasnip")
 
+-- NOTE: Large portions of this configuration file is copy-pasted from the
+-- documentation for `cmp`.
+
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
 
