@@ -79,11 +79,7 @@ return {
         { t("|> Stream."), i(1, "") }
     ),
     s(
-        {
-            trig = "spec",
-            name = "typespec",
-            desc = "standard typespec line"
-        },
+        { trig = "spec", name = "typespec", },
         {
             t("@spec "),
             i(1, "name"),
@@ -94,11 +90,7 @@ return {
         }
     ),
     s(
-        {
-            trig = "test",
-            name = "test clause",
-            desc = "standard test clause"
-        },
+        { trig = "test", name = "test clause", },
         {
             t("test \""), i(1, "test name"), t({ "\" do",
                 "  " }), i(2, ""), t({ "",
@@ -106,11 +98,7 @@ return {
         }
     ),
     s(
-        {
-            trig = "desc",
-            name = "describe clause",
-            desc = "describe test group"
-        },
+        { trig = "desc", name = "describe clause", },
         {
             t("describe \""), i(1, "test group subject"), t({ "\" do",
                 "  " }), i(2, ""), t({ "",
