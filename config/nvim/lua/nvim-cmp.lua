@@ -56,9 +56,8 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
-    }, {
         { name = 'buffer' },
-    })
+    }, {})
 })
 
 -- Set configuration for specific filetype.
