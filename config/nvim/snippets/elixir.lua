@@ -92,7 +92,31 @@ return {
             t(") :: "),
             i(3, "returns")
         }
-    )
+    ),
+    s(
+        {
+            trig = "test",
+            name = "test clause",
+            desc = "standard test clause"
+        },
+        {
+            t("test \""), i(1, "test name"), t({ "\" do",
+                "  " }), i(2, ""), t({ "",
+                "end" }),
+        }
+    ),
+    s(
+        {
+            trig = "desc",
+            name = "describe clause",
+            desc = "describe test group"
+        },
+        {
+            t("describe \""), i(1, "test group subject"), t({ "\" do",
+                "  " }), i(2, ""), t({ "",
+                "end" }),
+        }
+    ),
 }
 
 -- TODO snippets:
@@ -137,14 +161,6 @@ return {
 --     @moduledoc """
 --     ${0}
 --     """
--- snippet test
---     test "${1:test name}" do
---         ${0}
---     end
--- snippet des
---     describe "${1:test group subject}" do
---         ${0}
---     end
 -- snippet destag
 --     @describetag :${1:describe tag}
 -- snippet mtag
