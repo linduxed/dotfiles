@@ -20,6 +20,13 @@ local c = require("luasnip.nodes.choiceNode").C
 -- local parse = require("luasnip.util.parser").parse_snippet
 -- local ai = require("luasnip.nodes.absolute_indexer")
 
+local fn_multiline = {
+    t("fn "), i(1, "x"), t({ " ->",
+        "  " }), i(2, ""), t({ "",
+        "end" }),
+}
+local ampersand_lambda = { t("& &1"), i(1, "") }
+
 return {
     s(
         { trig = "p", name = "pipe" },
@@ -31,29 +38,19 @@ return {
     ),
     s(
         { trig = "fnm", name = "lambda function (multiline)" },
-        {
-            t("fn "), i(1, "x"), t({ " ->",
-                "  " }), i(2, ""), t({ "",
-                "end" }),
-        }
+        fn_multiline
     ),
     s(
         { trig = "amp", name = "function capture ampersand" },
-        { t("& &1"), i(1, "") }
+        ampersand_lambda
     ),
     s(
         { trig = "pmap", name = "pipe-map" },
         {
             t("|> Enum.map("),
             c(1, {
-                sn(nil, {
-                    t("& &1"), i(1, "")
-                }),
-                sn(nil, {
-                    t("fn "), i(1, "x"), t({ " ->",
-                        "  " }), i(2, ""), t({ "",
-                        "end" })
-                }),
+                sn(nil, ampersand_lambda),
+                sn(nil, fn_multiline),
             }),
             t(")"),
         }
@@ -71,14 +68,8 @@ return {
         {
             t("Enum.map("),
             c(1, {
-                sn(nil, {
-                    t("& &1"), i(1, "")
-                }),
-                sn(nil, {
-                    t("fn "), i(1, "x"), t({ " ->",
-                        "  " }), i(2, ""), t({ "",
-                        "end" })
-                }),
+                sn(nil, ampersand_lambda),
+                sn(nil, fn_multiline),
             }),
             t(")"),
         }
