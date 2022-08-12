@@ -53,6 +53,7 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
+    }, {
         { name = 'buffer' },
     })
 })
@@ -61,6 +62,7 @@ cmp.setup({
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
         { name = 'cmp_git' },
+    }, {
         { name = 'buffer' },
     })
 })
@@ -76,6 +78,7 @@ cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = 'path' },
+    }, {
         { name = 'cmdline' }
     })
 })
