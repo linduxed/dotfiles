@@ -16,7 +16,7 @@
 .sass-cache/
 .stack-work
 .tool-versions
-Session.vim
+Session.vim*
 _vimrc_local.vim
 db/*.sqlite3
 log/*.log
