@@ -24,6 +24,12 @@ let g:bullets_outline_levels = ['num']
 let g:bullets_set_mappings = 0
 ]])
 
+-- {{{1 context
+
+vim.cmd([[
+let g:context_add_mappings = 0
+]])
+
 -- {{{1 DelimitMate
 
 vim.cmd([[
