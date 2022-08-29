@@ -68,7 +68,9 @@ return {
         { trig = "emap", name = "bare-map" },
         {
             t("Enum.map("),
-            c(1, {
+            i(1, "enum"),
+            t(", "),
+            c(2, {
                 sn(nil, { t("& &1"), i(1, "") }),
                 sn(nil, {
                     t("fn "), i(1, "x"), t({ " ->",
