@@ -33,25 +33,6 @@ xmap gr <plug>(GrepperOperator)
 nmap <Leader>gr :Grepper<CR>
 ]])
 
--- {{{1 incsearch
-
-vim.cmd([[
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-function! s:incsearch_keymap()
-  IncSearchNoreMap <C-i> <Over>(incsearch-next)
-  IncSearchNoreMap <C-n> <Over>(incsearch-prev)
-  IncSearchNoreMap <C-h> <Over>(incsearch-scroll-f)
-  IncSearchNoreMap <C-j> <Over>(incsearch-scroll-b)
-endfunction
-augroup incsearch-keymap
-  autocmd!
-  autocmd VimEnter * call s:incsearch_keymap()
-augroup END
-]])
-
 -- {{{1 Mark
 
 vim.cmd([[
