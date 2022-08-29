@@ -1,3 +1,30 @@
+-- {{{1 autolist
+
+require('autolist').setup({
+    generic = {
+        -- for if you have something else that you want to map when press return
+        -- with the create enter being false, you must create your own mapping
+        create_enter_mapping = true,
+
+        -- the mapping to invert the list type e.g ol -> ul, ul -> ol
+        -- disabled for now, since the default overrides <c-r> in insert mode
+        invert_mapping = "<c-m>",
+
+        -- invert mapping in normal mode
+        invert_normal_mapping = "<c-m>",
+
+        -- when there is a list like - [x] content, when invert mapping is
+        -- pressed and below option is true the list will turn into
+        -- - [ ] content, instead of 1. [x] content
+        invert_toggles_checkbox = true,
+
+        -- filetypes that this plugin is enabled for.
+        -- must put file name, not the extension.
+        -- if you are not sure, just run :echo &filetype. or :set filetype?
+        enabled_filetypes = { "markdown", "text" },
+    },
+})
+
 -- {{{1 abolish
 
 vim.cmd([[
@@ -15,13 +42,6 @@ let g:airline#extensions#hunks#non_zero_only = 1
 let g:airline#extensions#branch#displayed_head_limit = 12
 let g:airline#extensions#capslock#enabled = 1
 let g:airline_section_z = airline#section#create(['%{ObsessionStatus(''◆'', '''')}', 'windowswap', '%3p%% ', 'linenr', ':%3v '])
-]])
-
--- {{{1 bullets
-
-vim.cmd([[
-let g:bullets_outline_levels = ['num']
-let g:bullets_set_mappings = 0
 ]])
 
 -- {{{1 context
