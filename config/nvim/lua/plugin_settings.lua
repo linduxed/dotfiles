@@ -173,21 +173,6 @@ let g:mwDefaultHighlightingPalette = [
 \]
 ]])
 
--- {{{1 Neomake
-
-vim.cmd([[
-let g:neomake_ruby_enabled_makers = ['mri', 'rubocop']
-let g:neomake_elixir_enabled_makers = ['credo', 'dogma']
-let g:neomake_warning_sign = {
-  \ 'text': '>>',
-  \ 'texthl': 'Todo',
-  \ }
-let g:neomake_error_sign = {
-  \ 'texthl': 'Error',
-  \ }
-autocmd! BufWritePost * Neomake
-]])
-
 -- {{{1 NERDcommenter
 
 vim.cmd([[
