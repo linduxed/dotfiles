@@ -45,7 +45,6 @@ Plug 'guns/xterm-color-table.vim'
 " Text objects
 
 Plug 'kana/vim-textobj-indent'
-Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'saihoooooooo/vim-textobj-space'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'mattn/vim-textobj-url'
