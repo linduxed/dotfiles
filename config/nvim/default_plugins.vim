@@ -1,5 +1,4 @@
 Plug 'gaoDean/autolist.nvim'
-Plug 'vim-scripts/bbcode'
 Plug 'mattn/calendar-vim'
 Plug 'wellle/context.vim'
 Plug 'dyng/ctrlsf.vim'
