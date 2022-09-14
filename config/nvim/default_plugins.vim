@@ -1,5 +1,4 @@
 Plug 'gaoDean/autolist.nvim'
-Plug 'mattn/calendar-vim'
 Plug 'wellle/context.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'Raimondi/delimitMate'
