@@ -47,8 +47,6 @@ nmap <Leader>m* <Plug>MarkSearchCurrentNext
 nmap <Leader>m# <Plug>MarkSearchCurrentPrev
 nmap <Leader>m/ <Plug>MarkSearchAnyNext
 nmap <Leader>m? <Plug>MarkSearchAnyPrev
-nmap * <Plug>MarkSearchNext
-nmap # <Plug>MarkSearchPrev
 ]])
 
 -- {{{1 leap.nvim
@@ -94,6 +92,21 @@ let g:NERDTreeMapJumpLastChild = 'E'
 let g:NERDTreeMapJumpPrevSibling = '<C-u>'
 let g:NERDTreeMapJumpNextSibling = '<C-e>'
 ]])
+
+-- {{{1 nvim-hlslens
+
+local kopts = {noremap = true, silent = true}
+
+vim.api.nvim_set_keymap('n', 'n',
+    [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+vim.api.nvim_set_keymap('n', 'N',
+    [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]],
+    kopts)
+vim.api.nvim_set_keymap('n', '*', [[*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', '#', [[#<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', 'g*', [[g*<Cmd>lua require('hlslens').start()<CR>]], kopts)
+vim.api.nvim_set_keymap('n', 'g#', [[g#<Cmd>lua require('hlslens').start()<CR>]], kopts)
 
 -- {{{1 repeat
 

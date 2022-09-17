@@ -156,6 +156,8 @@ ls.config.set_config({
 -- {{{1 Mark
 
 vim.cmd([[
+let g:mw_no_mappings = 1
+
 let g:mwDefaultHighlightingPalette = [
 \   { 'ctermbg':'Blue',       'ctermfg':'Black' },
 \   { 'ctermbg':'Green',      'ctermfg':'Black' },
