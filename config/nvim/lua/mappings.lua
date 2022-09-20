@@ -89,10 +89,6 @@ nnoremap <F12> :NERDTreeToggle<CR>
 " {{{1 Change behaviour of standard functions
 
 " Keep search matches in the middle of the window.
-nnoremap k nzzzv
-nnoremap K Nzzzv
-
-" Same when jumping around
 nnoremap g; g;zz
 nnoremap g, g,zz
 nnoremap <c-o> <c-o>zz
