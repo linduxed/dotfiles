@@ -62,6 +62,17 @@ let delimitMate_expand_space = 1
 let delimitMate_jump_expansion = 1
 ]])
 
+-- {{{1 dial.nvim
+
+local augend = require("dial.augend")
+require("dial.config").augends:register_group {
+    default = {
+        augend.integer.alias.decimal,
+        augend.integer.alias.hex,
+        augend.constant.alias.bool,
+    }
+}
+
 -- {{{1 ferret
 
 vim.cmd([[
