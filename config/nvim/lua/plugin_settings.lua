@@ -210,6 +210,12 @@ null_ls.setup({ sources = {
     null_ls.builtins.formatting.jq,
 } })
 
+-- {{{1 nvim-hlslens
+
+require('hlslens').setup({
+    calm_down = true,
+})
+
 -- {{{1 tagbar
 
 vim.cmd([[
