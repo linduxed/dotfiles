@@ -49,9 +49,9 @@ format = "{max} max, {average} avg"
 
 [[block]]
 block = "nvidia_gpu"
-label = "RTX2060"
-show_memory = false
-show_clocks = false
+label = "GPU"
+show_memory = true
+show_clocks = true
 interval = 1
 
 # [[block]]
