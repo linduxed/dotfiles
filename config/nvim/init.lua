@@ -75,7 +75,6 @@ local suffixes = "" ..
     ".toc," ..
     "~"
 
-vim.opt.cmdheight = 0
 vim.opt.colorcolumn = "+1"
 vim.opt.completeopt = "menu,menuone,preview,noinsert"
 vim.opt.cursorcolumn = true
