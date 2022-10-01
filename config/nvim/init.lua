@@ -75,6 +75,7 @@ local suffixes = "" ..
     ".toc," ..
     "~"
 
+vim.opt.cmdheight = 0
 vim.opt.colorcolumn = "+1"
 vim.opt.completeopt = "menu,menuone,preview,noinsert"
 vim.opt.cursorcolumn = true
@@ -85,6 +86,7 @@ vim.opt.formatoptions = "qrn1t"
 vim.opt.ignorecase = true
 vim.opt.inccommand = "nosplit"
 vim.opt.iskeyword = vim.opt.iskeyword + "-"
+vim.opt.laststatus = 3
 vim.opt.lazyredraw = true
 vim.opt.list = true
 vim.opt.listchars = "tab:▸ ,eol:¬,extends:❯,precedes:❮,trail:-,nbsp:∘"
@@ -107,6 +109,7 @@ vim.opt.virtualedit = "block"
 vim.opt.whichwrap = "b,s,[,],<,>,h,l"
 vim.opt.wildignore = vim.opt.wildignore + wildignore
 vim.opt.wildmode = "list:longest,full"
+vim.opt.winbar = "%=%m %f%="
 
 vim.cmd([[
 " {{{1 swap files
