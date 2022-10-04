@@ -70,6 +70,19 @@ require("dial.config").augends:register_group {
         augend.integer.alias.decimal,
         augend.integer.alias.hex,
         augend.constant.alias.bool,
+        augend.date.alias["%Y-%m-%d"],
+        augend.date.alias["%H:%M"],
+        augend.case.new {
+            types = {
+                "snake_case",
+                "PascalCase",
+                "SCREAMING_SNAKE_CASE",
+                "camelCase",
+                "kebab-case",
+            },
+            cyclic = true,
+        },
+        augend.semver.alias.semver,
     }
 }
 
