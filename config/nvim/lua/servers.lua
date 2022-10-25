@@ -1,7 +1,5 @@
 local lsp = require("lspconfig")
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function on_attach(_, buf)
     vim.keymap.set("n", "<Leader>alh", vim.lsp.buf.hover, { buffer = buf })
