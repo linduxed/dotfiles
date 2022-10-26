@@ -141,6 +141,12 @@ let g:grepper.tools = ['rg', 'git', 'ag']
 let g:grepper.highlight = 1
 ]])
 
+-- {{{1 hlslens
+
+require('hlslens').setup({
+    calm_down = true,
+})
+
 -- {{{1 leap.nvim
 
 require('leap').setup {
@@ -239,12 +245,6 @@ null_ls.setup({ sources = {
     null_ls.builtins.formatting.fnlfmt,
     null_ls.builtins.formatting.jq,
 } })
-
--- {{{1 nvim-hlslens
-
-require('hlslens').setup({
-    calm_down = true,
-})
 
 -- {{{1 tagbar
 
