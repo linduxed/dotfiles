@@ -112,6 +112,24 @@ return {
                 "end" }),
         }
     ),
+
+    -- LiveView
+    s(
+        { trig = "t=", name = "template tag: <%= %>", },
+        {
+            t("<%= "), i(1, ""), t(" %>"),
+        }
+    ),
+    s(
+        { trig = "t-", name = "template tag: <% %>", },
+        {
+            t("<% "), i(1, ""), t(" %>"),
+        }
+    ),
+    s(
+        { trig = "tend", name = "template tag: <% end %>", },
+        { t("<% end %>") }
+    ),
 }
 
 -- TODO snippets:
