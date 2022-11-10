@@ -35,10 +35,7 @@ require('autolist').setup({
         tab = { "<c-t>" },
         detab = { "<c-d>" },
         recal = { "<c-z>" },
-        indent = {
-            "<tab>+[catch]('>>')",
-            "<s-tab>+[catch]('<<')",
-        },
+        indent = {},
     },
     normal_mappings = {
         new = {
