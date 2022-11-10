@@ -3,7 +3,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local function on_attach(_, buf)
     vim.keymap.set("n", "<Leader>alh", vim.lsp.buf.hover, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alf", vim.lsp.buf.formatting, { buffer = buf })
+    vim.keymap.set("n", "<Leader>alf", vim.lsp.buf.format, { buffer = buf })
     vim.keymap.set("v", "<Leader>alf", vim.lsp.buf.range_formatting, { buffer = buf })
     vim.keymap.set("n", "<Leader>alm", vim.lsp.buf.rename, { buffer = buf })
     vim.keymap.set("n", "<Leader>ald", vim.lsp.buf.definition, { buffer = buf })
