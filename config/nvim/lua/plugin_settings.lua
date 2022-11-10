@@ -1,27 +1,56 @@
 -- {{{1 autolist
 
 require('autolist').setup({
-    generic = {
-        -- for if you have something else that you want to map when press return
-        -- with the create enter being false, you must create your own mapping
-        create_enter_mapping = true,
-
-        -- the mapping to invert the list type e.g ol -> ul, ul -> ol
-        -- disabled for now, since the default overrides <c-r> in insert mode
-        invert_mapping = "<c-m>",
-
-        -- invert mapping in normal mode
-        invert_normal_mapping = "<c-m>",
-
-        -- when there is a list like - [x] content, when invert mapping is
-        -- pressed and below option is true the list will turn into
-        -- - [ ] content, instead of 1. [x] content
-        invert_toggles_checkbox = true,
-
-        -- filetypes that this plugin is enabled for.
-        -- must put file name, not the extension.
-        -- if you are not sure, just run :echo &filetype. or :set filetype?
-        enabled_filetypes = { "markdown", "text" },
+    enabled = true,
+    colon = {
+        indent_raw = true,
+        indent = true,
+        preferred = "-"
+    },
+    invert = {
+        indent = false,
+        toggles_checkbox = true,
+        ul_marker = "-",
+        ol_incrementable = "1",
+        ol_delim = ".",
+    },
+    lists = {
+        filetypes = {
+            generic = {
+                "markdown",
+                "text",
+            },
+        },
+        preloaded = {
+            generic = {
+                "unordered",
+                "digit",
+                "ascii",
+            },
+        },
+    },
+    insert_mappings = {
+        invert = { "<c-m>+[catch]" },
+        new = { "<CR>" },
+        tab = { "<c-t>" },
+        detab = { "<c-d>" },
+        recal = { "<c-z>" },
+        indent = {
+            "<tab>+[catch]('>>')",
+            "<s-tab>+[catch]('<<')",
+        },
+    },
+    normal_mappings = {
+        new = {
+            "o",
+            "O+(true)",
+        },
+        recal = {
+            "dd",
+            "p"
+        },
+        tab = { ">>" },
+        detab = { "<<" },
     },
 })
 
