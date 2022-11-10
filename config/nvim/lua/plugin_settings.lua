@@ -30,7 +30,7 @@ require('autolist').setup({
         },
     },
     insert_mappings = {
-        invert = { "<c-m>+[catch]" },
+        invert = { "<c-,>+[catch]" },
         new = { "<CR>" },
         tab = { "<c-t>" },
         detab = { "<c-d>" },
