@@ -169,7 +169,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
 nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
-nnoremap <leader>fap <cmd>lua require('telescope.builtin').bulitin()<cr>
+nnoremap <leader>fap <cmd>lua require('telescope.builtin').builtin()<cr>
 
 " LSP mappings
 nnoremap <leader>alr <cmd>lua require('telescope.builtin').lsp_references()<cr>
