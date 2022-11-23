@@ -164,6 +164,7 @@ nnoremap <Leader>atc :Tabularize /:\zs/l0l1<CR>
 vim.cmd([[
 " Main mappings
 nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files({follow = true})<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fr <cmd>lua require('telescope.builtin').grep_string({ shorten_path = true, word_match = "-w", only_sort_text = true, search = '' })<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
