@@ -19,7 +19,6 @@ local function on_attach(_, buf)
     vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { buffer = buf })
 end
 
--- Lua
 lsp.sumneko_lua.setup {
     capabilities = capabilities,
     on_attach = on_attach,
@@ -58,13 +57,11 @@ lsp.erlangls.setup {
     cmd = { vim.env.HOME .. "/.erlang_ls/release/erlang_ls" },
 }
 
--- Ruby (solargraph)
 lsp.solargraph.setup{
     capabilities = capabilities,
     on_attach = on_attach,
 }
 
--- Rust
 lsp.rust_analyzer.setup{
     capabilities = capabilities,
     on_attach = on_attach,
