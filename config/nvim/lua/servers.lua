@@ -44,7 +44,7 @@ lsp.sumneko_lua.setup {
 lsp.elixirls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    cmd = { vim.env.HOME .. "/.elixir-ls/release/language_server.sh" };
+    cmd = { vim.env.HOME .. "/.elixir-ls/release/language_server.sh" },
     elixirLS = {
         dialyzerEnabled = false,
         fetchDeps = false,
