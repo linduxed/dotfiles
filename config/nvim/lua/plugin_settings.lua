@@ -11,10 +11,8 @@ require('autolist').setup({
         indent = {},
     },
     normal_mappings = {
-        new = {
-            "o",
-            "O+(true)",
-        },
+        new = { "o" },
+        new_before = { "O" },
         normal_recal = {},
         tab = { ">>" },
         detab = { "<<" },
