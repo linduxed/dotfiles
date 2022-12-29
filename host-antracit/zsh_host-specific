@@ -9,4 +9,4 @@ compinit
 
 source /Users/mikael/.config/broot/launcher/bash/br
 
-. /usr/local/opt/asdf/asdf.sh
+. /usr/local/opt/asdf/libexec/asdf.sh
