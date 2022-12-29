@@ -2,33 +2,6 @@
 
 require('autolist').setup({
     enabled = true,
-    colon = {
-        indent_raw = true,
-        indent = true,
-        preferred = "-"
-    },
-    invert = {
-        indent = false,
-        toggles_checkbox = true,
-        ul_marker = "-",
-        ol_incrementable = "1",
-        ol_delim = ".",
-    },
-    lists = {
-        filetypes = {
-            generic = {
-                "markdown",
-                "text",
-            },
-        },
-        preloaded = {
-            generic = {
-                "unordered",
-                "digit",
-                "ascii",
-            },
-        },
-    },
     insert_mappings = {
         invert = { "<c-,>+[catch]" },
         new = { "<CR>" },
