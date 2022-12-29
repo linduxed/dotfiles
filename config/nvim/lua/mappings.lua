@@ -14,6 +14,7 @@ nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <Leader>b zMzvzz
 
 nnoremap <leader>afmi :set foldmethod=indent<CR>
+nnoremap <leader>afmm :set foldmethod=marker<CR>
 
 nnoremap <leader>ase :set spelllang=en<CR>
 nnoremap <leader>ass :set spelllang=sv<CR>
