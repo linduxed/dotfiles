@@ -15,10 +15,7 @@ require('autolist').setup({
             "o",
             "O+(true)",
         },
-        recal = {
-            "dd",
-            "p"
-        },
+        normal_recal = {},
         tab = { ">>" },
         detab = { "<<" },
     },
