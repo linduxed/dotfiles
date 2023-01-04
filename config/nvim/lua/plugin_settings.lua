@@ -283,6 +283,10 @@ let g:textobj_url_no_default_key_mappings = 1
 
 require('telescope').load_extension('fzf')
 
+-- {{{1 trouble
+
+require("trouble").setup({})
+
 -- {{{1 unimpaired
 
 vim.cmd([[

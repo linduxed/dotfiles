@@ -12,11 +12,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'chrisbra/NrrwRgn'
 Plug 'jose-elias-alvarez/null-ls.nvim' | Plug 'nvim-lua/plenary.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'vim-scripts/scratch.vim'
 Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
 Plug 'nvim-telescope/telescope.nvim' | Plug 'nvim-lua/plenary.nvim' | Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+Plug 'folke/trouble.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'linduxed/undotree'
