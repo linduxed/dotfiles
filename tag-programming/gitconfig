@@ -35,6 +35,8 @@
     user = linduxed
 [gpg]
     format = ssh
+[gpg "ssh"]
+    allowedSignersFile = ~/.config/git/allowed_signers
 [push]
     default = simple
 [alias]
