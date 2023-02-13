@@ -1,8 +1,11 @@
 local lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+vim.keymap.set("n", "<Leader>ale", "<cmd>TroubleToggle<cr>")
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { buffer = buf })
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { buffer = buf })
+
 local function on_attach(_, buf)
-    vim.keymap.set("n", "<Leader>ale", "<cmd>TroubleToggle<cr>")
     vim.keymap.set("n", "<Leader>alh", vim.lsp.buf.hover, { buffer = buf })
     vim.keymap.set("n", "<Leader>alf", vim.lsp.buf.format, { buffer = buf })
     vim.keymap.set("v", "<Leader>alf", vim.lsp.buf.range_formatting, { buffer = buf })
@@ -16,8 +19,6 @@ local function on_attach(_, buf)
     vim.keymap.set("n", "<Leader>alwl", function()
         vim.pretty_print(vim.lsp.buf.list_workspace_folders())
     end, { buffer = buf })
-    vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { buffer = buf })
-    vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { buffer = buf })
 end
 
 lsp.sumneko_lua.setup {
