@@ -1,5 +1,4 @@
 Plug 'gaoDean/autolist.nvim'
-Plug 'wellle/context.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'wincent/ferret'
@@ -21,6 +20,7 @@ Plug 'nvim-telescope/telescope.nvim' | Plug 'nvim-lua/plenary.nvim' | Plug 'nvim
 Plug 'folke/trouble.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'nvim-treesitter/playground'
 Plug 'linduxed/undotree'
 Plug 'tpope/vim-abolish'

@@ -203,6 +203,10 @@ xmap ru <Plug>(textobj-url-i)
 omap ru <Plug>(textobj-url-i)
 ]])
 
+-- {{{1 treesitter-context
+
+require('treesitter-context').setup({})
+
 -- {{{1 unimpaired
 
 vim.cmd([[
