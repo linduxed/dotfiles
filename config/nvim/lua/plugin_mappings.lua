@@ -181,10 +181,6 @@ nnoremap <leader>ali <cmd>lua require('telescope.builtin').lsp_implementations()
 
 vim.cmd([[
 " Bindings adjusted to work with colemak.vim.
-xmap tr <Plug>(textobj-rubyblock-a)
-omap tr <Plug>(textobj-rubyblock-a)
-xmap rr <Plug>(textobj-rubyblock-i)
-omap rr <Plug>(textobj-rubyblock-i)
 xmap ti <Plug>(textobj-indent-a)
 omap ti <Plug>(textobj-indent-a)
 xmap ri <Plug>(textobj-indent-i)
