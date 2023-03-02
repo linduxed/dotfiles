@@ -1,64 +1,50 @@
+[theme]
 theme = "space-villain"
-icons = "awesome"
+[icons]
+icons = "awesome6"
 
 [[block]]
 block = "disk_space"
 path = "/"
 info_type = "used"
-format = "{icon} {used}/{total} ({available} free )"
-alert_absolute = true
-unit = "GB"
+format = " $icon $used/$total ($available.eng(w:2) free)"
+alert_unit = "GB"
 alert = 190
 warning = 210
 
 [[block]]
 block = "memory"
-format_mem = "{mem_used}/{mem_total}({mem_used_percents})"
-display_type = "memory"
-icons = true
-clickable = true
-interval = 5
-warning_mem = 80
-critical_mem = 95
-# format_swap = "{swap_used}/{swap_total}({swap_used_percents})"
-# warning_swap = 80
-# critical_swap = 95
+format = " $mem_used/$mem_total($mem_total_used_percents.eng(w:2))"
 
 [[block]]
 block = "keyboard_layout"
 driver = "kbddbus"
-format = "KB: {layout}"
+format = "KB: $layout"
 
 [[block]]
 block = "load"
 interval = 1
-format = "{1m}"
+format = " $icon $1m.eng(w:4)"
 
 [[block]]
 block = "cpu"
 interval = 1
-format = "{utilization}"
+format = " $icon $utilization"
 
 [[block]]
 block = "temperature"
-collapsed = false
-interval = 5
-format = "{max} max, {average} avg"
-# chip = "temp*input"
-# inputs = ["CPUTIN", "SYSTIN"]
+format = " $icon $max max, $average avg"
 
 [[block]]
 block = "nvidia_gpu"
-label = "GPU"
-show_memory = true
-show_clocks = true
+format = " $icon $utilization $memory $temperature"
 interval = 1
 
 # [[block]]
 # block = "pacman"
 # interval = 43200
-# format = "{pacman} + {aur} = {both} updates available"
-# format_singular = "{both} update available"
+# format = "$pacman + $aur = $both updates available"
+# format_singular = "$both update available"
 # format_up_to_date = "system up to date"
 # critical_updates_regex = "(linux|linux-lts|linux-zen)"
 # aur_command = "yay -Qua"
@@ -66,7 +52,7 @@ interval = 1
 [[block]]
 block = "net"
 device = "wlp4s0"
-format = "{speed_down;K*b}"
+format = " $icon $speed_down"
 interval = 5
 
 [[block]]
@@ -75,4 +61,4 @@ block = "sound"
 [[block]]
 block = "time"
 interval = 1
-format = "%a %-d %b %X W%V"
+format = "$icon $timestamp.datetime(f:'%a %-d %b %X W%V')"
