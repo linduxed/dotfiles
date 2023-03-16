@@ -34,6 +34,10 @@ lsp.lua_ls.setup {
             workspace = {
                 -- Make the server aware of Neovim runtime files
                 library = vim.api.nvim_get_runtime_file("", true),
+
+                -- Prevent asking about adding a `.luarc.json` file in every
+                -- Lua project directory.
+                checkThirdParty = false,
             },
             -- Do not send telemetry data containing a randomized but unique
             -- identifier
