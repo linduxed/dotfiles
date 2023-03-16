@@ -63,17 +63,17 @@ lsp.erlangls.setup {
     cmd = { vim.env.HOME .. "/.erlang_ls/release/erlang_ls" },
 }
 
-lsp.solargraph.setup{
+lsp.solargraph.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
 
-lsp.rust_analyzer.setup{
+lsp.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
 
-lsp.tailwindcss.setup{
+lsp.tailwindcss.setup {
     capabilities = capabilities,
     on_attach = on_attach,
 }
