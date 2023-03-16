@@ -2,8 +2,8 @@ local lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.keymap.set("n", "<Leader>ale", "<cmd>TroubleToggle<cr>")
-vim.keymap.set("n", "[g", vim.diagnostic.goto_prev, { buffer = buf })
-vim.keymap.set("n", "]g", vim.diagnostic.goto_next, { buffer = buf })
+vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
+vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
 
 local function on_attach(_, buf)
     vim.keymap.set("n", "<Leader>alh", vim.lsp.buf.hover, { buffer = buf })
