@@ -9,6 +9,7 @@
 .elixir_ls
 .env
 .gitignore
+.ignore
 .rgignore
 .rspec
 .rubocop.yml
