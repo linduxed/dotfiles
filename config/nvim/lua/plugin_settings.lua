@@ -290,31 +290,6 @@ let g:xremap = {"y": "c"}
 let g:oremap = {"y": "c"}
 ]])
 
--- {{{1 vimwiki
-
-vim.cmd([[
-let g:vimwiki_auto_chdir = 1
-let g:vimwiki_list = [
-  \{
-    \ 'path': '~/vimwiki/',
-    \ 'path_html': '~/stuff/vimwiki_html/',
-    \ 'template_path': '~/vimwiki/templates',
-    \ 'template_default': 'def_template',
-    \ 'template_ext': '.html',
-    \ 'syntax': 'markdown',
-    \ 'ext': '.md',
-    \ 'auto_tags': 1,
-    \ 'auto_diary_index': 1
-  \},
-  \{
-    \ 'path': '~/taskwiki/',
-  \}
-\]
-
-" add the <pre> tag, for inserting code snippets
-let g:vimwiki_valid_html_tags = 'b,i,s,u,sub,sup,kbd,br,hr,pre,script'
-]])
-
 -- {{{1 vista
 
 vim.cmd([[
@@ -328,9 +303,3 @@ vim.cmd([[
 let g:wheel#map#mouse = 0
 ]])
 
--- {{{1 zettel
-
-vim.cmd([[
-let g:zettel_format = "z_%Y-%m-%d_%H%M"
-let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-]])

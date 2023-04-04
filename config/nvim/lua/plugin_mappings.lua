@@ -215,17 +215,6 @@ nnoremap [<C-l> :lolder<CR>
 nnoremap ]<C-l> :lnewer<CR>
 ]])
 
--- {{{1 vimwiki
-
-vim.cmd([[
-let g:vimwiki_map_prefix = '<Leader>an'
-let g:vimwiki_table_mappings = 0
-
-" See ftplugin/vimwiki.vim for more mappings.
-" It seems like the Vimwiki plugin prefers to have the local
-" mappings defined over in the ftplugin file.
-]])
-
 -- {{{1 wheel
 
 vim.cmd([[
@@ -233,12 +222,3 @@ let g:wheel#map#up   = 'U'
 let g:wheel#map#down = 'E'
 ]])
 
--- {{{1 zettel
-
-vim.cmd([[
-let g:zettel_default_mappings = 0
-
-" See ftplugin/vimwiki.vim for more mappings.
-" It seems like the Vimwiki plugin prefers to have the local
-" mappings defined over in the ftplugin file.
-]])
