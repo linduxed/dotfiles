@@ -1,8 +1,6 @@
 vim.cmd([[
 " {{{1 Miscellaneous
 
-let mapleader = " "
-
 " Help file navigation
 au FileType help nnoremap <buffer> <CR> <C-]>|
 au FileType help nnoremap <buffer> <Backspace> <C-t>|
@@ -11,7 +9,7 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " "Refocus" folds
-nnoremap <Leader>b zMzvzz
+nnoremap <Leader>afr zMzvzz
 
 nnoremap <leader>afmi :set foldmethod=indent<CR>
 nnoremap <leader>afmm :set foldmethod=marker<CR>
@@ -108,4 +106,10 @@ vnoremap U k
 " I *never* use this feature, and it mostly causes me to split the window
 " unintentionally when using <C-W>i with colemak.vim.
 nmap <C-W><C-I> <C-W>l
+]])
+
+-- {{{1 StripTrailingWhitespace
+
+vim.cmd([[
+nnoremap <silent> <Leader>awk :StripTrailingWhitespace<CR>
 ]])
