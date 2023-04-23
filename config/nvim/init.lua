@@ -997,8 +997,6 @@ if !isdirectory(expand(&directory))
 endif
 ]])
 
--- mappings.vim needs to be sourced after plugin_settings, otherwise some
--- plugin_settings get overwritten by mappings.vim.
 require("mappings")
 require("nvim-cmp")
 require("lsp-configuration")
