@@ -414,7 +414,11 @@ local lazy_setup = {
             lazy = true
         },
         config = function()
-            require('lualine').setup({})
+            require('lualine').setup({
+                options = {
+                    theme = "powerline_dark"
+                }
+            })
         end
     },
     "tpope/vim-capslock",
