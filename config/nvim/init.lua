@@ -830,6 +830,14 @@ local lazy_setup = {
         end
     },
     "guns/xterm-color-table.vim",
+    {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({})
+        end,
+    },
 
     -- Text objects
     {
