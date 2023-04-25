@@ -210,8 +210,6 @@ local lazy_setup = {
     },
     {
         "L3MON4D3/LuaSnip",
-        -- Follow latest release.
-        version = "<CurrentMajor>.*",
         config = function()
             require("luasnip.loaders.from_lua").load({
                 paths = os.getenv("HOME") .. "/.config/nvim/snippets"
