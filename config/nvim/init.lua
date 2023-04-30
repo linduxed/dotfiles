@@ -863,6 +863,25 @@ local lazy_setup = {
             require("copilot").setup({})
         end,
     },
+    {
+        'stevearc/oil.nvim',
+        config = function()
+            require("oil").setup({
+                -- Id is automatically added at the beginning, and name at the end
+                -- See :help oil-columns
+                columns = {
+                    "icon",
+                    -- "permissions",
+                    -- "size",
+                    -- "mtime",
+                },
+                -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`
+                default_file_explorer = true,
+                -- Skip the confirmation popup for simple operations
+                skip_confirm_for_simple_edits = false,
+            })
+        end
+    },
 
     -- Text objects
     {
