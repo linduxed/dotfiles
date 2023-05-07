@@ -350,6 +350,7 @@ local lazy_setup = {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-lua/plenary.nvim",
+            "debugloop/telescope-undo.nvim",
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build =
@@ -359,6 +360,15 @@ local lazy_setup = {
             }
         },
         config = function()
+            require("telescope").setup({
+                extensions = {
+                    undo = {
+                        layout_strategy = "vertical",
+                    },
+                },
+            })
+
+            require("telescope").load_extension("undo")
             require('telescope').load_extension('fzf')
 
             vim.cmd([[
@@ -376,6 +386,8 @@ local lazy_setup = {
             nnoremap <leader>alr <cmd>lua require('telescope.builtin').lsp_references()<cr>
             nnoremap <leader>ali <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
             ]])
+
+            vim.keymap.set("n", "<F6>", "<cmd>Telescope undo<cr>")
         end,
     },
     {
@@ -397,7 +409,6 @@ local lazy_setup = {
         config = true
     },
     "nvim-treesitter/playground",
-    "linduxed/undotree",
     {
         "tpope/vim-abolish",
         init = function()
