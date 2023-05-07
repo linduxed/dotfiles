@@ -78,8 +78,8 @@ nnoremap <F4> <cmd>lua require('telescope.builtin').git_files()<cr>
 nnoremap <F5> <cmd>lua require('telescope.builtin').oldfiles()<cr>
 " F6: bound elsewhere.
 " F7: not bound.
-nnoremap <F8> :set list!<CR>
-nnoremap <F9> :make<CR>
+" F8: not bound.
+" F9: not bound.
 " F10: not bound.
 nnoremap <F11> :TagbarToggle<CR>
 nnoremap <F12> :NERDTreeToggle<CR>
