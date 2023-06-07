@@ -901,6 +901,86 @@ local lazy_setup = {
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         cmd = "EditMarkdownTable",
     },
+    {
+        "epwalsh/obsidian.nvim",
+        lazy = true,
+        event = { "BufReadPre " .. vim.fn.expand "~" .. "/vimwiki/**.md" },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "hrsh7th/nvim-cmp",
+            "nvim-telescope/telescope.nvim",
+        },
+        opts = {
+            dir = "~/vimwiki",
+            notes_subdir = "notes",
+            daily_notes = {
+                folder = "diary",
+            },
+            completion = {
+                nvim_cmp = true,
+            },
+
+            -- Disable frontmatter handling, since I don't fully understand all
+            -- the things that the plugin does with the frontmatter.
+            disable_frontmatter = true,
+
+            -- Optional, customize how names/IDs for new notes are created.
+            note_id_func = function(title)
+                -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+                -- In this case a note with the title 'My new note' will given an ID that looks
+                -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+                local suffix = ""
+                if title ~= nil then
+                    -- If title is given, transform it into valid file name.
+                    suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+                else
+                    -- If title is nil, just add 4 random uppercase letters to the suffix.
+                    for _ = 1, 4 do
+                        suffix = suffix .. string.char(math.random(65, 90))
+                    end
+                end
+                return tostring(os.time()) .. "-" .. suffix
+            end,
+
+            -- Optional, alternatively you can customize the frontmatter data.
+            note_frontmatter_func = function(note)
+                -- This is equivalent to the default frontmatter function.
+                local out = { id = note.id, aliases = note.aliases, tags = note.tags }
+                -- `note.metadata` contains any manually added fields in the frontmatter.
+                -- So here we just make sure those fields are kept in the frontmatter.
+                if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
+                    for k, v in pairs(note.metadata) do
+                        out[k] = v
+                    end
+                end
+                return out
+            end,
+
+            templates = {
+                subdir = "templates",
+                date_format = "%Y-%m-%d",
+                time_format = "%H:%M",
+            },
+            follow_url_func = function(url)
+                vim.fn.jobstart({ "xdg-open", url }) -- linux
+            end,
+            -- Optional, set to true if you use the Obsidian Advanced URI plugin.
+            use_advanced_uri = false,
+            -- Optional, set to true to force ':ObsidianOpen' to bring the app to the foreground.
+            open_app_foreground = false,
+        },
+        config = function(_, opts)
+            require("obsidian").setup(opts)
+
+            vim.keymap.set("n", "gf", function()
+                if require("obsidian").util.cursor_on_markdown_link() then
+                    return "<cmd>ObsidianFollowLink<CR>"
+                else
+                    return "gf"
+                end
+            end, { noremap = false, expr = true })
+        end,
+    },
 
     -- Text objects
     {
