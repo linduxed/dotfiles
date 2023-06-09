@@ -981,6 +981,12 @@ local lazy_setup = {
             end, { noremap = false, expr = true })
         end,
     },
+    {
+        'antonk52/markdowny.nvim',
+        config = function()
+            require('markdowny').setup()
+        end
+    },
 
     -- Text objects
     {
