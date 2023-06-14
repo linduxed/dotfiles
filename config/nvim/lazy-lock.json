@@ -69,5 +69,6 @@
   "vim-wheel": { "branch": "master", "commit": "3aed582e945630e932d2c33e07816ab1ce4178df" },
   "vista.vim": { "branch": "master", "commit": "522a5e0ef955c037d530d5c89944043c92e4e8da" },
   "warsow.vim": { "branch": "master", "commit": "62f22d4625a1b795dabfe4f102f5bc91f3f162f4" },
-  "xterm-color-table.vim": { "branch": "master", "commit": "8785bb47a38a8bce3f5e452c083907e1a9b32763" }
+  "xterm-color-table.vim": { "branch": "master", "commit": "8785bb47a38a8bce3f5e452c083907e1a9b32763" },
+  "zen-mode.nvim": { "branch": "main", "commit": "68f554702de63f4b7b6b6d4bcb10178f41a0acc7" }
 }
