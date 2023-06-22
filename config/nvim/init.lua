@@ -973,6 +973,7 @@ local lazy_setup = {
         "folke/flash.nvim",
         event = "VeryLazy",
         opts = {
+            labels = "arstoienhdwfpyulgjqzxcvmkb",
             modes = {
                 -- options used when flash is activated through
                 -- `f`, `F`, `t`, `T`, `;` and `,` motions
