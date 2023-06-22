@@ -191,37 +191,6 @@ local lazy_setup = {
         }
     },
     {
-        "ggandor/leap.nvim",
-        config = function()
-            require('leap').setup({
-                -- Leaving the appropriate list empty effectively disables "smart" mode,
-                -- and forces auto-jump to be on or off.
-                safe_labels = {
-                    "f", "k", "z", "j", "h",
-                    "F", "K", "Z",
-                    "G",
-                    "/", "?",
-                },
-                labels = {
-                    "f", "k", "z", "j", "h",
-                    "n", "e", "i", "o", "l", "u", "y", "d", "m", "g",
-                    "F", "K", "Z",
-                    "G",
-                    "/", "?",
-                },
-            })
-        end,
-        keys = {
-            { "gy",  "<Plug>(leap-forward)" },
-            { "gl",  "<Plug>(leap-backward)" },
-            { "gy",  "<Plug>(leap-forward)" },
-            { "gl",  "<Plug>(leap-backward)" },
-            { "gy",  "<Plug>(leap-forward)" },
-            { "gl",  "<Plug>(leap-backward)" },
-            { "gws", "<plug>(leap-cross-window)", mode = { "n", "x", "o" } }
-        }
-    },
-    {
         "L3MON4D3/LuaSnip",
         config = function()
             require("luasnip.loaders.from_lua").load({
@@ -999,6 +968,46 @@ local lazy_setup = {
         config = function()
             require('markdowny').setup()
         end
+    },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        opts = {
+            modes = {
+                -- options used when flash is activated through
+                -- `f`, `F`, `t`, `T`, `;` and `,` motions
+                char = {
+                    enabled = false,
+                },
+            },
+        },
+        keys = {
+            {
+                "gl",
+                mode = { "n", "x", "o" },
+                function()
+                    -- default options:
+                    -- exact mode, multi window, all directions, with a backdrop
+                    require("flash").jump()
+                end,
+            },
+            {
+                "gy",
+                mode = { "n", "x", "o" },
+                function()
+                    -- default options:
+                    -- exact mode, multi window, all directions, with a backdrop
+                    require("flash").jump()
+                end,
+            },
+            {
+                "gt",
+                mode = { "o", "x" },
+                function()
+                    require("flash").treesitter()
+                end,
+            },
+        },
     },
 
     -- Text objects
