@@ -73,35 +73,3 @@ ffcd() {
 
     [[ -n $file ]] && dir=$(dirname "$file") && cd "$dir"
 }
-
-package-update--linux() {
-    sudo ionice -c2 -n7 nice yay -S linux-zen &&
-
-    notification-sound &&
-    mimic -t "Linux kernel updated"
-}
-
-package-update--aur() {
-    ionice -c2 -n7 nice yay -Syu --aur &&
-
-    notification-sound &&
-    mimic -t "User Repository packages updated"
-}
-
-package-update--system() {
-    sudo ionice -c2 -n7 pacman -Syu &&
-
-    notification-sound &&
-    mimic -t "System update finished"
-}
-
-package-update--no-linux() {
-    package-update--system &&
-    package-update--aur
-}
-
-package-update--full() {
-    package-update--system &&
-    package-update--linux &&
-    package-update--aur
-}
