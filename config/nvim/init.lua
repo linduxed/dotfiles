@@ -72,6 +72,7 @@ local lazy_setup = {
 
     {
         "gaoDean/autolist.nvim",
+        version = "~2.3",
         ft = {
             "markdown",
             "text",
