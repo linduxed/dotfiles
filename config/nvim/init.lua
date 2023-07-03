@@ -77,18 +77,28 @@ local lazy_setup = {
             "text",
         },
         config = function()
-            local autolist = require("autolist")
+            require("autolist").setup()
 
-            autolist.setup()
-            autolist.create_mapping_hook("i", "<CR>", autolist.new)
-            autolist.create_mapping_hook("i", "<C-T>", autolist.indent)
-            autolist.create_mapping_hook("i", "<C-D>", autolist.indent)
-            autolist.create_mapping_hook("n", "o", autolist.new)
-            autolist.create_mapping_hook("n", "O", autolist.new_before)
-            autolist.create_mapping_hook("n", ">>", autolist.indent)
-            autolist.create_mapping_hook("n", "<<", autolist.indent)
-            autolist.create_mapping_hook("n", "<Leader>blr", autolist.force_recalculate)
-            autolist.create_mapping_hook("n", "<Leader>bli", autolist.invert_entry)
+            vim.keymap.set("i", "<CR>", "<CR><cmd>AutolistNewBullet<cr>")
+
+            vim.keymap.set("i", "<C-T>", "<cmd>AutolistTab<cr>")
+            vim.keymap.set("i", "<C-D>", "<cmd>AutolistShiftTab<cr>")
+
+            vim.keymap.set("n", "o", "o<cmd>AutolistNewBullet<cr>")
+            vim.keymap.set("n", "O", "O<cmd>AutolistNewBulletBefore<cr>")
+
+            vim.keymap.set("n", "<CR>", "<cmd>AutolistToggleCheckbox<cr><CR>")
+            vim.keymap.set("n", "<Leader>blr", "<cmd>AutolistRecalculate<cr>")
+
+            -- cycle list types with dot-repeat
+            vim.keymap.set("n", "<Leader>bln", require("autolist").cycle_next_dr, { expr = true })
+            vim.keymap.set("n", "<Leader>blp", require("autolist").cycle_prev_dr, { expr = true })
+
+            -- functions to recalculate list on edit
+            vim.keymap.set("n", ">>", ">><cmd>AutolistRecalculate<cr>")
+            vim.keymap.set("n", "<<", "<<<cmd>AutolistRecalculate<cr>")
+            vim.keymap.set("n", "dd", "dd<cmd>AutolistRecalculate<cr>")
+            vim.keymap.set("v", "d", "d<cmd>AutolistRecalculate<cr>")
         end,
     },
     {
