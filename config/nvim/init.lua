@@ -1011,6 +1011,7 @@ local lazy_setup = {
             },
         },
     },
+    'kosayoda/nvim-lightbulb',
 
     -- Text objects
     {
