@@ -1021,6 +1021,27 @@ local lazy_setup = {
             require('range-highlight').setup({})
         end,
     },
+    {
+        "gbprod/cutlass.nvim",
+        -- Set to not be lazy to predictably override the mappings of
+        -- colemak.vim, since the mappings for this plugin overlap for
+        -- every key that this plugin touches.
+        lazy = false,
+        -- Priority is set to be 1 less than colemak.vim, to ensure that
+        -- colemak.vim gets loaded first, followed by this plugin, leading to
+        -- `k` and `K` being overridden.
+        priority = 99,
+        opts = {
+            cut_key = "x",
+            override_del = true,
+            exclude = {},
+            registers = {
+                select = "_",
+                delete = "_",
+                change = "_",
+            },
+        }
+    },
 
     -- Text objects
     {
