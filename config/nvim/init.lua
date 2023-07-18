@@ -394,6 +394,10 @@ local lazy_setup = {
     "nvim-treesitter/playground",
     {
         "tpope/vim-abolish",
+        -- Must be eagerly loaded, otherwise the Abolish definitions in the
+        -- `abolish_save_file` are attempted to read without the plugin loaded,
+        -- resulting in errors on startup.
+        lazy = false,
         init = function()
             vim.g.abolish_save_file =
             "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
