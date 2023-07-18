@@ -399,6 +399,9 @@ local lazy_setup = {
         -- resulting in errors on startup.
         lazy = false,
         init = function()
+            -- Turn of mappings, mostly to disable the Coerce functionality of
+            -- the plugin.
+            vim.g.abolish_no_mappings = 1
             vim.g.abolish_save_file =
             "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
         end,
