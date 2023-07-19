@@ -993,28 +993,33 @@ local lazy_setup = {
         keys = {
             {
                 "gl",
-                mode = { "n", "x", "o" },
-                function()
-                    -- default options:
-                    -- exact mode, multi window, all directions, with a backdrop
-                    require("flash").jump()
-                end,
+                mode = { "n", "o", "x" },
+                function() require("flash").jump() end,
+                desc = "Flash - Jump"
             },
             {
                 "gy",
-                mode = { "n", "x", "o" },
-                function()
-                    -- default options:
-                    -- exact mode, multi window, all directions, with a backdrop
-                    require("flash").jump()
-                end,
+                mode = { "o" },
+                function() require("flash").remote() end,
+                desc = "Flash - Remote operation (o-mode)"
             },
             {
                 "gt",
+                mode = { "n", "o", "x" },
+                function() require("flash").treesitter() end,
+                desc = "Flash - Treesitter jump"
+            },
+            {
+                "gT",
                 mode = { "o", "x" },
-                function()
-                    require("flash").treesitter()
-                end,
+                function() require("flash").treesitter_search() end,
+                desc = "Flash - Treesitter search (o- and x-mode)"
+            },
+            {
+                "<c-s>",
+                mode = { "c" },
+                function() require("flash").toggle() end,
+                desc = "Flash - Toggle flash search (command-mode)"
             },
         },
     },
