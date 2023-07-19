@@ -82,8 +82,7 @@ nnoremap <F5> <cmd>lua require('telescope.builtin').oldfiles()<cr>
 " F9: not bound.
 " F10: not bound.
 nnoremap <F11> :TagbarToggle<CR>
-nnoremap <F12> :NERDTreeToggle<CR>
-
+nnoremap <F12> <cmd>Neotree toggle<CR>
 
 " {{{1 Change behaviour of standard functions
 
