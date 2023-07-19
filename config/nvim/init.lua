@@ -1182,7 +1182,7 @@ local lazy_setup = {
         lazy = false,
         -- Priority is set to be 1 less than colemak.vim, to ensure that
         -- colemak.vim gets loaded first, followed by this plugin, leading to
-        -- `k` and `K` being overridden.
+        -- the following being overridden: c, C, s, S, d, D, x, X
         priority = 99,
         opts = {
             cut_key = "x",
