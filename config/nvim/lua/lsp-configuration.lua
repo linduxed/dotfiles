@@ -1,23 +1,47 @@
 local lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local wk = require("which-key")
 
-vim.keymap.set("n", "[g", vim.diagnostic.goto_prev)
-vim.keymap.set("n", "]g", vim.diagnostic.goto_next)
+wk.register(
+    {
+        ["[g"] = { vim.diagnostic.goto_prev, "Move to previous diagnostic." },
+        ["]g"] = { vim.diagnostic.goto_next, "Move to next diagnostic." },
+    }, {}
+)
 
 local function on_attach(_, buf)
-    vim.keymap.set("n", "<Leader>alh", vim.lsp.buf.hover, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alf", vim.lsp.buf.format, { buffer = buf })
-    vim.keymap.set("v", "<Leader>alf", vim.lsp.buf.format, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alm", vim.lsp.buf.rename, { buffer = buf })
-    vim.keymap.set("n", "<Leader>ald", vim.lsp.buf.definition, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alc", vim.lsp.buf.code_action, { buffer = buf })
-    vim.keymap.set("n", "<Leader>als", vim.lsp.buf.signature_help, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alt", vim.lsp.buf.type_definition, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alwa", vim.lsp.buf.add_workspace_folder, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alwr", vim.lsp.buf.remove_workspace_folder, { buffer = buf })
-    vim.keymap.set("n", "<Leader>alwl", function()
-        vim.pretty_print(vim.lsp.buf.list_workspace_folders())
-    end, { buffer = buf })
+    wk.register(
+        {
+            ["<leader>al"] = {
+                name = "LSP-related",
+                h = { vim.lsp.buf.hover, "Hover help", buffer = buf },
+                f = { vim.lsp.buf.format, "Format file", buffer = buf },
+                m = { vim.lsp.buf.rename, "Rename all references to symbol under cursor", buffer = buf },
+                d = { vim.lsp.buf.definition, "Jump to definition", buffer = buf },
+                c = { vim.lsp.buf.code_action, "Select code action for current cursor position", buffer = buf },
+                s = { vim.lsp.buf.signature_help, "Display signature information about symbol cursor", buffer = buf },
+                t = { vim.lsp.buf.type_definition, "Jump to type definition", buffer = buf },
+
+                w = { name = "LSP workspace" },
+                ["wa"] = { vim.lsp.buf.add_workspace_folder, "Add folder to the workspace.", buffer = buf },
+                ["wr"] = { vim.lsp.buf.remove_workspace_folder, "Remove folder from the workspace.", buffer = buf },
+                ["wl"] = {
+                    function() vim.pretty_print(vim.lsp.buf.list_workspace_folders()) end,
+                    "List workspace folders.",
+                    buffer = buf
+                },
+            },
+        }, {}
+    )
+    wk.register(
+        {
+            ["<leader>al"] = {
+                name = "LSP-related",
+                f = { vim.lsp.buf.format, "description", buffer = buf },
+            },
+        },
+        { mode = "v" }
+    )
 end
 
 lsp.lua_ls.setup {
