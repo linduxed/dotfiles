@@ -1166,15 +1166,6 @@ local lazy_setup = {
     },
     'kosayoda/nvim-lightbulb',
     {
-        'winston0410/range-highlight.nvim',
-        dependencies = {
-            'winston0410/cmd-parser.nvim'
-        },
-        config = function()
-            require('range-highlight').setup({})
-        end,
-    },
-    {
         "gbprod/cutlass.nvim",
         -- Set to not be lazy to predictably override the mappings of
         -- colemak.vim, since the mappings for this plugin overlap for
