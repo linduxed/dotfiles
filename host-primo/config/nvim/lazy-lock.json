@@ -10,7 +10,7 @@
   "cmp-nvim-lsp-signature-help": { "branch": "main", "commit": "3d8912ebeb56e5ae08ef0906e3a54de1c66b92f1" },
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
-  "colemak.vim": { "branch": "master", "commit": "e8bd90d04d868b0e64965c19526de21a15e1eec7" },
+  "colemak.nvim": { "branch": "master", "commit": "01e8414cf377389694ea00b978ba0198d431f98a" },
   "copilot.lua": { "branch": "master", "commit": "e48bd7020a98be217d85c006a298656294fd6210" },
   "ctrlsf.vim": { "branch": "master", "commit": "32236a8b376d9311dec9b5fe795ca99d32060b13" },
   "cutlass.nvim": { "branch": "main", "commit": "708864fb2263226aabceaf5b2c2eee9841132668" },

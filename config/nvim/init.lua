@@ -54,19 +54,19 @@ local lazy_setup = {
         end
     },
     {
-        "linduxed/colemak.vim",
+        "linduxed/colemak.nvim",
         -- Set to not be lazy, because I find it mentally easier to have it
         -- guaranteed that this plugin is loaded; it's hard for me to reason
         -- about the custom mappings of other plugins (commonly to account for
-        -- the colemak.vim) if I'm not sure whether coleman.vim will have been
-        -- loaded.
+        -- the colemak.nvim) if I'm not sure whether colemak.nvim will have
+        -- been loaded.
         lazy = false,
         -- Priority set to some arbitrary high number. If some other plugin
-        -- has mappings that conflict with those of colemak.vim, that plugin
+        -- has mappings that conflict with those of colemak.nvim, that plugin
         -- will need to be set to `lazy = true` (haven't figured out another
         -- way) and set the priority to be _lower_ than that of this plugin, to
         -- ensure that the other plugin will apply its mappings _after_
-        -- colemak.vim (higher priority means earlier load).
+        -- colemak.nvim (higher priority means earlier load).
         priority = 100,
     },
 
@@ -406,11 +406,11 @@ local lazy_setup = {
     {
         "kevinhwang91/nvim-hlslens",
         -- Set to not be lazy to predictably override the mappings of
-        -- colemak.vim, since the mappings for this plugin overlap for
+        -- colemak.nvim, since the mappings for this plugin overlap for
         -- normal-mode `k` and `K`.
         lazy = false,
-        -- Priority is set to be 1 less than colemak.vim, to ensure that
-        -- colemak.vim gets loaded first, followed by this plugin, leading to
+        -- Priority is set to be 1 less than colemak.nvim, to ensure that
+        -- colemak.nvim gets loaded first, followed by this plugin, leading to
         -- `k` and `K` being overridden.
         priority = 99,
         config = function()
@@ -1168,11 +1168,11 @@ local lazy_setup = {
     {
         "gbprod/cutlass.nvim",
         -- Set to not be lazy to predictably override the mappings of
-        -- colemak.vim, since the mappings for this plugin overlap for
+        -- colemak.nvim, since the mappings for this plugin overlap for
         -- every key that this plugin touches.
         lazy = false,
-        -- Priority is set to be 1 less than colemak.vim, to ensure that
-        -- colemak.vim gets loaded first, followed by this plugin, leading to
+        -- Priority is set to be 1 less than colemak.nvim, to ensure that
+        -- colemak.nvim gets loaded first, followed by this plugin, leading to
         -- the following being overridden: c, C, s, S, d, D, x, X
         priority = 99,
         opts = {
@@ -1202,7 +1202,7 @@ local lazy_setup = {
     {
         "kana/vim-textobj-indent",
         dependencies = { "kana/vim-textobj-user" },
-        -- Mappings adjusted to work with colemak.vim.
+        -- Mappings adjusted to work with colemak.nvim.
         init = function()
             vim.g.textobj_indent_no_default_key_mappings = 1
         end,
@@ -1216,7 +1216,7 @@ local lazy_setup = {
     {
         "saihoooooooo/vim-textobj-space",
         dependencies = { "kana/vim-textobj-user" },
-        -- Mappings adjusted to work with colemak.vim.
+        -- Mappings adjusted to work with colemak.nvim.
         init = function()
             vim.g.textobj_space_no_default_key_mappings = 1
         end,
@@ -1230,7 +1230,7 @@ local lazy_setup = {
     {
         "lucapette/vim-textobj-underscore",
         dependencies = { "kana/vim-textobj-user" },
-        -- Mappings adjusted to work with colemak.vim.
+        -- Mappings adjusted to work with colemak.nvim.
         init = function()
             vim.g.textobj_underscore_no_default_key_mappings = 1
         end,
@@ -1244,7 +1244,7 @@ local lazy_setup = {
     {
         "mattn/vim-textobj-url",
         dependencies = { "kana/vim-textobj-user" },
-        -- Mappings adjusted to work with colemak.vim.
+        -- Mappings adjusted to work with colemak.nvim.
         init = function()
             vim.g.textobj_url_no_default_key_mappings = 1
         end,
