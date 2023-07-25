@@ -68,6 +68,9 @@ local lazy_setup = {
         -- ensure that the other plugin will apply its mappings _after_
         -- colemak.nvim (higher priority means earlier load).
         priority = 100,
+        config = function()
+            require("colemak").setup()
+        end,
     },
 
     {
