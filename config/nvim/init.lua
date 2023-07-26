@@ -484,7 +484,13 @@ local lazy_setup = {
                     "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && " ..
                     "cmake --build build --config Release && " ..
                     "cmake --install build --prefix build"
-            }
+            },
+            {
+                "ahmedkhalf/project.nvim",
+                config = function()
+                    require("project_nvim").setup({})
+                end,
+            },
         },
         config = function()
             require("telescope").setup({
@@ -497,6 +503,7 @@ local lazy_setup = {
 
             require("telescope").load_extension("undo")
             require('telescope').load_extension('fzf')
+            require("telescope").load_extension("projects")
 
             vim.cmd([[
             " Main mappings
@@ -515,6 +522,14 @@ local lazy_setup = {
             ]])
 
             vim.keymap.set("n", "<F6>", "<cmd>Telescope undo<cr>")
+            vim.keymap.set(
+                "n",
+                "<leader>fp",
+                function()
+                    require("telescope").extensions.projects.projects({})
+                end,
+                { desc = "Telescope - Projects" }
+            )
         end,
     },
     {
