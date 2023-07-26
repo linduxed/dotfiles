@@ -1412,6 +1412,9 @@ local lazy_setup = {
                                 name = "Foldmethod"
                             }
                         },
+                        s = {
+                            name = "Spelling"
+                        },
                         q = {
                             name = "Buffer/Window closing (Sayonara)"
                         }

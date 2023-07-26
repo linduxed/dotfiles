@@ -11,6 +11,22 @@ vim.keymap.set("n",
     { desc = "Foldmethod - Marker" }
 )
 
+vim.keymap.set("n",
+    "<leader>ase",
+    function() vim.opt.spelllang = "en" end,
+    { desc = "Spell language - EN" }
+)
+vim.keymap.set("n",
+    "<leader>ass",
+    function() vim.opt.spelllang = "sv" end,
+    { desc = "Spell language - SV" }
+)
+vim.keymap.set("n",
+    "<leader>asp",
+    function() vim.opt.spelllang = "pl" end,
+    { desc = "Spell language - PL" }
+)
+
 vim.cmd([[
 " {{{1 Miscellaneous
 
@@ -20,10 +36,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-nnoremap <leader>ase :set spelllang=en<CR>
-nnoremap <leader>ass :set spelllang=sv<CR>
-nnoremap <leader>asp :set spelllang=pl<CR>
 
 nnoremap <leader>atwz :set tw=0<CR>
 
