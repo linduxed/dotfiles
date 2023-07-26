@@ -30,6 +30,32 @@ vim.keymap.set("n",
     { desc = "Spell language - PL" }
 )
 
+-- {{{2 Miscellaneous
+
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
+vim.keymap.set("n", "<leader>e", "<cmd>e<cr>", { desc = "File - Reload (:e)" })
+
+vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
+
+-- {{{3 File name
+
+vim.keymap.set("n",
+    "<leader>pp",
+    "<cmd>echo @%<CR>",
+    { desc = "File name - Echo" }
+)
+vim.keymap.set("n",
+    "<leader>py",
+    '<cmd>let @+=@%<Bar>echo @% "- yanked"<CR>',
+    { desc = "File name - Yank and Echo" }
+)
+
+-- {{{3 Tabs
+
+vim.keymap.set("n", "]v", "<cmd>tabnext<CR>", { desc = "Tab - Next" })
+vim.keymap.set("n", "[v", "<cmd>tabprevious<CR>", { desc = "Tab - Previous" })
+
 -- {{{1 Miscellaneous (Vimscript)
 
 vim.cmd([[
@@ -42,19 +68,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 nnoremap <leader>atwz :set tw=0<CR>
-
-" Yank contents of buffer
-nnoremap <leader>ayb gg"+yG
-
-nnoremap ]v :tabnext<CR>
-nnoremap [v :tabprevious<CR>
-
-nnoremap <leader>pp :echo @%<CR>
-nnoremap <leader>py :let @+=@%<Bar>echo @% "- yanked"<CR>
-
-nnoremap <leader>w :w<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>e :e<CR>
 
 nnoremap <leader>/ :nohlsearch<CR>
 

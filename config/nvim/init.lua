@@ -1417,10 +1417,16 @@ local lazy_setup = {
                         },
                         q = {
                             name = "Buffer/Window closing (Sayonara)"
+                        },
+                        y = {
+                            name = "Yank"
                         }
                     },
                     m = {
                         name = "Highlight words with color (Mark)"
+                    },
+                    p = {
+                        name = "File name"
                     }
                 }
             }, {})
