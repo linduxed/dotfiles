@@ -1406,6 +1406,12 @@ local lazy_setup = {
                 ["<leader>"] = {
                     a = {
                         name = "Misc #1",
+                        f = {
+                            name = "Folds",
+                            m = {
+                                name = "Foldmethod"
+                            }
+                        },
                         q = {
                             name = "Buffer/Window closing (Sayonara)"
                         }

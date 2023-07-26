@@ -1,3 +1,16 @@
+-- Folds
+vim.keymap.set("n", "<Leader>afr", "zMzvzz", { desc = '"Refocus" folds' })
+vim.keymap.set("n",
+    "<leader>afmi",
+    function() vim.opt.foldmethod = "indent" end,
+    { desc = "Foldmethod - Indent" }
+)
+vim.keymap.set("n",
+    "<leader>afmm",
+    function() vim.opt.foldmethod = "marker" end,
+    { desc = "Foldmethod - Marker" }
+)
+
 vim.cmd([[
 " {{{1 Miscellaneous
 
@@ -7,12 +20,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-" "Refocus" folds
-nnoremap <Leader>afr zMzvzz
-
-nnoremap <leader>afmi :set foldmethod=indent<CR>
-nnoremap <leader>afmm :set foldmethod=marker<CR>
 
 nnoremap <leader>ase :set spelllang=en<CR>
 nnoremap <leader>ass :set spelllang=sv<CR>
