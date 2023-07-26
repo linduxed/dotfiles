@@ -736,8 +736,16 @@ local lazy_setup = {
     {
         "mhinz/vim-sayonara",
         keys = {
-            { "<leader>aq",  ":Sayonara<CR>" },
-            { "<leader>abq", ":Sayonara!<CR>" },
+            {
+                "<leader>aqh",
+                ":Sayonara<CR>",
+                desc = "Sayonara - Hard (affects window layout)"
+            },
+            {
+                "<leader>aqs",
+                ":Sayonara!<CR>",
+                desc = "Sayonara - Soft (retains window layout)"
+            },
         },
     },
     "honza/vim-snippets",
@@ -1328,6 +1336,9 @@ local lazy_setup = {
                 ["<leader>"] = {
                     a = {
                         name = "Misc #1",
+                        q = {
+                            name = "Buffer/Window closing (Sayonara)"
+                        }
                     },
             }, {})
         end
