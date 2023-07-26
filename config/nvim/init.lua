@@ -505,30 +505,77 @@ local lazy_setup = {
             require('telescope').load_extension('fzf')
             require("telescope").load_extension("projects")
 
-            vim.cmd([[
-            " Main mappings
-            nnoremap <C-p> <cmd>lua require('telescope.builtin').find_files({follow = true})<cr>
-            nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-            nnoremap <leader>fr <cmd>lua require('telescope.builtin').grep_string({ shorten_path = true, word_match = "-w", only_sort_text = true, search = '' })<cr>
-            nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-            nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
-            nnoremap <leader>fb <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
-            nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
-            nnoremap <leader>fap <cmd>lua require('telescope.builtin').builtin()<cr>
-
-            " LSP mappings
-            nnoremap <leader>alr <cmd>lua require('telescope.builtin').lsp_references()<cr>
-            nnoremap <leader>ali <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
-            ]])
-
-            vim.keymap.set("n", "<F6>", "<cmd>Telescope undo<cr>")
-            vim.keymap.set(
-                "n",
+            -- Misc. mappings
+            vim.keymap.set("n",
+                "<C-p>",
+                function () require('telescope.builtin').find_files({follow = true}) end,
+                { desc = "Telescope - Files" }
+            )
+            vim.keymap.set("n",
+                "<leader>fg",
+                function () require('telescope.builtin').live_grep() end,
+                { desc = "Telescope - Line, all files, exact grep" }
+            )
+            vim.keymap.set("n",
+                "<leader>fr",
+                function ()
+                    require('telescope.builtin').grep_string({
+                        shorten_path = true,
+                        word_match = "-w",
+                        only_sort_text = true,
+                        search = ''
+                    })
+                end,
+                { desc = "Telescope - Line, all files, fuzzy" }
+            )
+            vim.keymap.set("n",
+                "<leader>fh",
+                function () require('telescope.builtin').help_tags() end,
+                { desc = "Telescope - Help tags" }
+            )
+            vim.keymap.set("n",
+                "<leader>fm",
+                function () require('telescope.builtin').marks() end,
+                { desc = "Telescope - Marks" }
+            )
+            vim.keymap.set("n",
+                "<leader>fb",
+                function () require('telescope.builtin').current_buffer_fuzzy_find() end,
+                { desc = "Telescope - Line, current buffer, fuzzy" }
+            )
+            vim.keymap.set("n",
+                "<leader>ft",
+                function () require('telescope.builtin').treesitter() end,
+                { desc = "Telescope - Treesitter" }
+            )
+            vim.keymap.set("n",
+                "<leader>fap",
+                function () require('telescope.builtin').builtin() end,
+                { desc = "Telescope - List all pickers" }
+            )
+            vim.keymap.set("n",
                 "<leader>fp",
                 function()
                     require("telescope").extensions.projects.projects({})
                 end,
                 { desc = "Telescope - Projects" }
+            )
+            vim.keymap.set("n",
+                "<F6>",
+                "<cmd>Telescope undo<cr>",
+                { desc = "Telescope - Undo tree" }
+            )
+
+            -- LSP mappings
+            vim.keymap.set("n",
+                "<leader>alr",
+                function () require('telescope.builtin').lsp_references() end,
+                { desc = "Telescope - LSP - references" }
+            )
+            vim.keymap.set("n",
+                "<leader>ali",
+                function () require('telescope.builtin').lsp_implementations() end,
+                { desc = "Telescope - LSP - Implementations" }
             )
         end,
     },
