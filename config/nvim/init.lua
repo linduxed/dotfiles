@@ -191,7 +191,7 @@ local lazy_setup = {
             },
         },
         keys = {
-            { "<Leader>go", "<cmd>ZenMode<CR>" }
+            { "<Leader>go", "<cmd>ZenMode<CR>", desc = "ZenMode" }
         }
     },
     {
@@ -435,10 +435,30 @@ local lazy_setup = {
     {
         "godlygeek/tabular",
         keys = {
-            { "<Leader>ate", ":Tabularize / = /l0<CR>",     mode = "v" },
-            { "<Leader>ate", ":Tabularize / = /l0<CR>",     mode = "n" },
-            { "<Leader>atc", ":Tabularize /:\\zs/l0l1<CR>", mode = "v" },
-            { "<Leader>atc", ":Tabularize /:\\zs/l0l1<CR>", mode = "n" },
+            {
+                "<Leader>ate",
+                ":Tabularize / = /l0<CR>",
+                mode = "v",
+                desc = "Tabularize - Equals"
+            },
+            {
+                "<Leader>ate",
+                ":Tabularize / = /l0<CR>",
+                mode = "n",
+                desc = "Tabularize - Equals"
+            },
+            {
+                "<Leader>atc",
+                ":Tabularize /:\\zs/l0l1<CR>",
+                mode = "v",
+                desc = "Tabularize - Whitespace after colon"
+            },
+            {
+                "<Leader>atc",
+                ":Tabularize /:\\zs/l0l1<CR>",
+                mode = "n",
+                desc = "Tabularize - Whitespace after colon"
+            },
         }
     },
     {
@@ -585,7 +605,11 @@ local lazy_setup = {
             require("trouble").setup({})
         end,
         keys = {
-            { "<Leader>ale", "<cmd>TroubleToggle<cr>" },
+            {
+                "<Leader>ale",
+                "<cmd>TroubleToggle<cr>",
+                desc = "Diagnostics window (Trouble)"
+            },
         },
     },
     "neovim/nvim-lspconfig",
@@ -718,17 +742,63 @@ local lazy_setup = {
             }
         end,
         keys = {
-            { "<Leader>mm", "<Plug>MarkSet" },
-            { "<Leader>mm", "<Plug>MarkSet",              mode = "x" },
-            { "<Leader>mr", "<Plug>MarkRegex" },
-            { "<Leader>mr", "<Plug>MarkRegex",            mode = "x" },
-            { "<Leader>mt", "<Plug>MarkToggle" },
-            { "<Leader>mx", "<Plug>MarkClear" },
-            { "<Leader>mc", "<Plug>MarkAllClear" },
-            { "<Leader>m*", "<Plug>MarkSearchCurrentNext" },
-            { "<Leader>m#", "<Plug>MarkSearchCurrentPrev" },
-            { "<Leader>m/", "<Plug>MarkSearchAnyNext" },
-            { "<Leader>m?", "<Plug>MarkSearchAnyPrev" },
+            {
+                "<Leader>mm",
+                "<Plug>MarkSet",
+                desc = "Mark - Word under cursor"
+            },
+            {
+                "<Leader>mm",
+                "<Plug>MarkSet",
+                mode = "x",
+                desc = "Mark - Selected"
+            },
+            {
+                "<Leader>mr",
+                "<Plug>MarkRegex",
+                desc = "Mark - Regex"
+            },
+            {
+                "<Leader>mr",
+                "<Plug>MarkRegex",
+                mode = "x",
+                desc = "Mark - Regex"
+            },
+            {
+                "<Leader>mt",
+                "<Plug>MarkToggle",
+                desc = "Mark - Toggle all highlights"
+            },
+            {
+                "<Leader>mx",
+                "<Plug>MarkClear",
+                desc = "Mark - Remove highlight under cursor"
+            },
+            {
+                "<Leader>mc",
+                "<Plug>MarkAllClear",
+                desc = "Mark - Remove all highlights"
+            },
+            {
+                "<Leader>m*",
+                "<Plug>MarkSearchCurrentNext",
+                desc = "Mark - Jump to next instance of current"
+            },
+            {
+                "<Leader>m#",
+                "<Plug>MarkSearchCurrentPrev",
+                desc = "Mark - Jump to previous instance of current"
+            },
+            {
+                "<Leader>m/",
+                "<Plug>MarkSearchAnyNext",
+                desc = "Mark - Jump to next highlight (any)"
+            },
+            {
+                "<Leader>m?",
+                "<Plug>MarkSearchAnyPrev",
+                desc = "Mark - Jump to previous highlight (any)"
+            },
         },
     },
     "tpope/vim-obsession",
@@ -1340,6 +1410,10 @@ local lazy_setup = {
                             name = "Buffer/Window closing (Sayonara)"
                         }
                     },
+                    m = {
+                        name = "Highlight words with color (Mark)"
+                    }
+                }
             }, {})
         end
     },
@@ -1353,10 +1427,30 @@ local lazy_setup = {
             vim.g.textobj_indent_no_default_key_mappings = 1
         end,
         keys = {
-            { "ti", "<Plug>(textobj-indent-a)", mode = "x" },
-            { "ti", "<Plug>(textobj-indent-a)", mode = "o" },
-            { "ri", "<Plug>(textobj-indent-i)", mode = "x" },
-            { "ri", "<Plug>(textobj-indent-i)", mode = "o" },
+            {
+                "ti",
+                "<Plug>(textobj-indent-a)",
+                mode = "x",
+                desc = "Indentation - A"
+            },
+            {
+                "ti",
+                "<Plug>(textobj-indent-a)",
+                mode = "o",
+                desc = "Indentation - A"
+            },
+            {
+                "ri",
+                "<Plug>(textobj-indent-i)",
+                mode = "x",
+                desc = "Indentation - I"
+            },
+            {
+                "ri",
+                "<Plug>(textobj-indent-i)",
+                mode = "o",
+                desc = "Indentation - I"
+            },
         }
     },
     {
@@ -1367,10 +1461,30 @@ local lazy_setup = {
             vim.g.textobj_space_no_default_key_mappings = 1
         end,
         keys = {
-            { "tS", "<Plug>(textobj-space-a)", mode = "x" },
-            { "tS", "<Plug>(textobj-space-a)", mode = "o" },
-            { "rS", "<Plug>(textobj-space-i)", mode = "x" },
-            { "rS", "<Plug>(textobj-space-i)", mode = "o" },
+            {
+                "tS",
+                "<Plug>(textobj-space-a)",
+                mode = "x",
+                desc = "Whitespace - A"
+            },
+            {
+                "tS",
+                "<Plug>(textobj-space-a)",
+                mode = "o",
+                desc = "Whitespace - A"
+            },
+            {
+                "rS",
+                "<Plug>(textobj-space-i)",
+                mode = "x",
+                desc = "Whitespace - I"
+            },
+            {
+                "rS",
+                "<Plug>(textobj-space-i)",
+                mode = "o",
+                desc = "Whitespace - I"
+            },
         }
     },
     {
@@ -1381,10 +1495,30 @@ local lazy_setup = {
             vim.g.textobj_underscore_no_default_key_mappings = 1
         end,
         keys = {
-            { "t_", "<Plug>(textobj-underscore-a)", mode = "x" },
-            { "t_", "<Plug>(textobj-underscore-a)", mode = "o" },
-            { "r_", "<Plug>(textobj-underscore-i)", mode = "x" },
-            { "r_", "<Plug>(textobj-underscore-i)", mode = "o" },
+            {
+                "t_",
+                "<Plug>(textobj-underscore-a)",
+                mode = "x",
+                desc = "Underscores - A"
+            },
+            {
+                "t_",
+                "<Plug>(textobj-underscore-a)",
+                mode = "o",
+                desc = "Underscores - A"
+            },
+            {
+                "r_",
+                "<Plug>(textobj-underscore-i)",
+                mode = "x",
+                desc = "Underscores - I"
+            },
+            {
+                "r_",
+                "<Plug>(textobj-underscore-i)",
+                mode = "o",
+                desc = "Underscores - I"
+            },
         }
     },
     {
@@ -1395,10 +1529,30 @@ local lazy_setup = {
             vim.g.textobj_url_no_default_key_mappings = 1
         end,
         keys = {
-            { "tu", "<Plug>(textobj-url-a)", mode = "x" },
-            { "tu", "<Plug>(textobj-url-a)", mode = "o" },
-            { "ru", "<Plug>(textobj-url-i)", mode = "x" },
-            { "ru", "<Plug>(textobj-url-i)", mode = "o" },
+            {
+                "tu",
+                "<Plug>(textobj-url-a)",
+                mode = "x",
+                desc = "URL - A"
+            },
+            {
+                "tu",
+                "<Plug>(textobj-url-a)",
+                mode = "o",
+                desc = "URL - A"
+            },
+            {
+                "ru",
+                "<Plug>(textobj-url-i)",
+                mode = "x",
+                desc = "URL - I"
+            },
+            {
+                "ru",
+                "<Plug>(textobj-url-i)",
+                mode = "o",
+                desc = "URL - I"
+            },
         }
     },
 
