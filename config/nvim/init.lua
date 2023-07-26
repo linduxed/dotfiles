@@ -1333,15 +1333,13 @@ local lazy_setup = {
             --  * <leader>fe edit file
             -- and hide <leader>1
 
-            wk.register(
-                {
+            wk.register({
+                ["<leader>"] = {
                     a = {
                         name = "Misc #1",
                         -- create a binding with label
                     },
-                },
-                { prefix = "<leader>" }
-            )
+            }, {})
         end
     },
 
