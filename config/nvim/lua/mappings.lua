@@ -1,4 +1,6 @@
--- Folds
+-- {{{1 Miscellaneous (Lua)
+
+-- {{{2 Folds
 vim.keymap.set("n", "<Leader>afr", "zMzvzz", { desc = '"Refocus" folds' })
 vim.keymap.set("n",
     "<leader>afmi",
@@ -11,6 +13,7 @@ vim.keymap.set("n",
     { desc = "Foldmethod - Marker" }
 )
 
+-- {{{2 Spelling
 vim.keymap.set("n",
     "<leader>ase",
     function() vim.opt.spelllang = "en" end,
@@ -27,9 +30,10 @@ vim.keymap.set("n",
     { desc = "Spell language - PL" }
 )
 
-vim.cmd([[
-" {{{1 Miscellaneous
+-- {{{1 Miscellaneous (Vimscript)
 
+vim.cmd([[
+"" {{{2 Miscellaneous
 " Help file navigation
 au FileType help nnoremap <buffer> <CR> <C-]>|
 au FileType help nnoremap <buffer> <Backspace> <C-t>|
@@ -59,7 +63,7 @@ tnoremap <C-\> <C-\><C-n>
 nnoremap <S-Up> <C-y>
 nnoremap <S-Down> <C-e>
 
-" {{{2 Make * in visual-mode behave smarter
+" {{{3 Make * in visual-mode behave smarter
 
 function! s:VSetSearch()
     let temp = @@
@@ -71,7 +75,7 @@ endfunction
 vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
 vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
 
-" {{{2 Split line and remove potential trailing whitespace
+" {{{3 Split line and remove potential trailing whitespace
 
 function! s:SplitLine()
     exe "norm! i\<CR>"
@@ -82,13 +86,13 @@ function! s:SplitLine()
 endfunction
 nnoremap <Leader><CR> :call <SID>SplitLine()<CR>
 
-" {{{1 Completion menu
+" {{{2 Completion menu
 
 "Tip #1386, Make Vim completion popup menu work just like in an IDE
 inoremap <expr> <C-n> pumvisible() ? "\<lt>C-n>" : "\<lt>C-n>\<lt>C-r>=pumvisible() ? \"\\<lt>Down>\" : \"\"\<lt>CR>"
 inoremap <expr> <M-;> pumvisible() ? "\<lt>C-n>" : "\<lt>C-x>\<lt>C-o>\<lt>C-n>\<lt>C-p>\<lt>C-r>=pumvisible() ? \"\\<lt>Down>\" : \"\"\<lt>CR>"
 
-" {{{1 Function keys
+" {{{2 Function keys
 
 nnoremap <F1> :buffer #<CR>
 nnoremap <F2> <cmd>lua require('telescope.builtin').buffers()<cr>
@@ -103,7 +107,7 @@ nnoremap <F5> <cmd>lua require('telescope.builtin').oldfiles()<cr>
 nnoremap <F11> :TagbarToggle<CR>
 nnoremap <F12> <cmd>Neotree toggle<CR>
 
-" {{{1 Change behaviour of standard functions
+" {{{2 Change behaviour of standard functions
 
 " Keep search matches in the middle of the window.
 nnoremap g; g;zz
@@ -126,7 +130,7 @@ vnoremap U k
 nmap <C-W><C-I> <C-W>l
 ]])
 
--- {{{1 StripTrailingWhitespace
+-- {{{2 StripTrailingWhitespace
 
 vim.cmd([[
 nnoremap <silent> <Leader>awk :StripTrailingWhitespace<CR>
