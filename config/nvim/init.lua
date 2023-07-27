@@ -1408,26 +1408,14 @@ local lazy_setup = {
                         name = "Misc #1",
                         f = {
                             name = "Folds",
-                            m = {
-                                name = "Foldmethod"
-                            }
+                            m = { name = "Foldmethod" }
                         },
-                        s = {
-                            name = "Spelling"
-                        },
-                        q = {
-                            name = "Buffer/Window closing (Sayonara)"
-                        },
-                        y = {
-                            name = "Yank"
-                        }
+                        s = { name = "Spelling" },
+                        q = { name = "Buffer/Window closing (Sayonara)" },
+                        y = { name = "Yank" }
                     },
-                    m = {
-                        name = "Highlight words with color (Mark)"
-                    },
-                    p = {
-                        name = "File name"
-                    }
+                    m = { name = "Highlight words with color (Mark)" },
+                    p = { name = "File name" }
                 }
             }, {})
         end
