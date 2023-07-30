@@ -506,11 +506,48 @@ local lazy_setup = {
                     "cmake --install build --prefix build"
             },
             {
-                "ahmedkhalf/project.nvim",
+                "olimorris/persisted.nvim",
                 config = function()
-                    require("project_nvim").setup({})
-                end,
-            },
+                    require("persisted").setup({
+                        -- directory where session files are saved
+                        save_dir = vim.fn.expand(
+                            vim.fn.stdpath("data") .. "/sessions/"
+                        ),
+                        -- silent nvim message when sourcing session file
+                        silent = false,
+                        -- create session files based on the branch of the
+                        -- git enabled repository
+                        use_git_branch = true,
+                        -- automatically load the session for the cwd on
+                        -- Neovim startup
+                        autoload = true,
+                        -- change session file name to match current working
+                        -- directory if it changes
+                        follow_cwd = true,
+                        -- table of dirs that the plugin will auto-save and
+                        -- auto-load from
+                        allowed_dirs = {
+                            "~/.dotfiles",
+                            "~/Documents/exercism",
+                            "~/Documents/programming",
+                            "~/Documents/studies",
+                            "~/Documents/upstream_repos",
+                            "~/Documents/work",
+                            "~/Documents/writing",
+                            "~/build",
+                            "~/vimwiki",
+                        },
+                        -- table of dirs that are ignored when auto-saving
+                        -- and auto-loading
+                        ignored_dirs = nil,
+                        -- options for the telescope extension
+                        telescope = {
+                            -- whether to reset prompt after session deleted
+                            reset_prompt_after_deletion = true,
+                        },
+                    })
+                end
+            }
         },
         config = function()
             require("telescope").setup({
@@ -523,7 +560,7 @@ local lazy_setup = {
 
             require("telescope").load_extension("undo")
             require('telescope').load_extension('fzf')
-            require("telescope").load_extension("projects")
+            require("telescope").load_extension("persisted")
 
             -- Misc. mappings
             vim.keymap.set("n",
@@ -574,11 +611,9 @@ local lazy_setup = {
                 { desc = "Telescope - List all pickers" }
             )
             vim.keymap.set("n",
-                "<leader>fp",
-                function()
-                    require("telescope").extensions.projects.projects({})
-                end,
-                { desc = "Telescope - Projects" }
+                "<leader>fs",
+                "<cmd>Telescope persisted<cr>",
+                { desc = "Telescope - Sessions" }
             )
             vim.keymap.set("n",
                 "<F6>",
@@ -801,7 +836,6 @@ local lazy_setup = {
             },
         },
     },
-    "tpope/vim-obsession",
     "tpope/vim-ragtag",
     {
         "mhinz/vim-sayonara",
