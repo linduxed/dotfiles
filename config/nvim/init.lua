@@ -130,7 +130,12 @@ local lazy_setup = {
             })
         end
     },
-    "dyng/ctrlsf.vim",
+    {
+        "dyng/ctrlsf.vim",
+        init = function()
+            vim.g.ctrlsf_populate_qflist = 1
+        end
+    },
     {
         "Raimondi/delimitMate",
         init = function()
