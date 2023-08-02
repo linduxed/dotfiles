@@ -1045,7 +1045,11 @@ local lazy_setup = {
                     tlast = false,
                     ptprevious = false,
                     ptnext = false,
-                    previous_file = false,
+                    previous_file = {
+                        mapping = '[f',
+                        description = 'Previous file in directory. :colder in qflist',
+                        dot_repeat = true,
+                    },
                     next_file = {
                         mapping = ']f',
                         description = 'Next file in directory. :cnewer in qflist',
