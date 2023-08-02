@@ -1649,6 +1649,19 @@ local wildignore = "" ..
     ".svn," ..
     "migrations"
 
+local sessionoptions = "" ..
+    "blank," ..
+    "buffers," ..
+    "curdir," ..
+    "folds," ..
+    "globals," ..
+    "help," ..
+    "localoptions," ..
+    "options," ..
+    "tabpages," ..
+    "terminal," ..
+    "winsize"
+
 local suffixes = "" ..
     ".aux," ..
     ".bak," ..
@@ -1690,6 +1703,7 @@ vim.opt.shiftround = true
 vim.opt.shiftwidth = 4
 vim.opt.showbreak = "…"
 vim.opt.showtabline = 1
+vim.opt.sessionoptions = sessionoptions
 vim.opt.sidescrolloff = 10
 vim.opt.smartcase = true
 vim.opt.softtabstop = 4
