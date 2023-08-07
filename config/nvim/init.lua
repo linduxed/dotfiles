@@ -1236,6 +1236,22 @@ local lazy_setup = {
                 nvim_cmp = true,
             },
 
+            -- Default configuration only has one mapping: "gf", for navigation
+            -- of markdown links. This is functionality that I want, but
+            -- the mapping can't be set the normal way (by setting it through
+            -- `mappings` below), due to an interaction between `obsidian.nvim`
+            -- and `which-key.nvim`.
+            --
+            -- For `which-key.nvim` to work for various normal-mode mappings
+            -- that *start* with "g", it needs to set normal-mode "g" to opening
+            -- its menu for "g". Apparently `obsidian.nvim` does not like that,
+            -- as it seems to want a completely clear mapping of both
+            -- normal-mode "g" and "gf" (presuming that's the mapping one wants).
+            --
+            -- As a solution to this, set the mappings to an empty table, and
+            -- then set the mapping manually in the `config` of the plugin.
+            mappings = {},
+
             -- Disable frontmatter handling, since I don't fully understand all
             -- the things that the plugin does with the frontmatter.
             disable_frontmatter = true,
