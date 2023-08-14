@@ -1,8 +1,0 @@
-{
-    "elixir.pathToElixirLS": "$HOME/.elixir-ls/release/language_server.sh",
-    "solargraph.commandPath": "$HOME/.asdf/shims/solargraph",
-    "solargraph.completion": true,
-    "solargraph.formatting": true,
-    "elixirLS.dialyzerEnabled": false,
-    "suggest.noselect": false
-}
