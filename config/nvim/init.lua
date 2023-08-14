@@ -1,5 +1,3 @@
-require("before_load_plugin_settings")
-
 -- Leader must be set before plugins are loaded, to ensure that the right
 -- leader key is used when generating the mappings.
 vim.g.mapleader = " "

@@ -848,7 +848,12 @@ return {
             })
         end
     },
-    "sheerun/vim-polyglot",
+    {
+        "sheerun/vim-polyglot",
+        init = function()
+            vim.g.polyglot_disabled = { "csv", "markdown", "text" }
+        end
+    },
     {
         "liuchengxu/vista.vim",
         init = function()
