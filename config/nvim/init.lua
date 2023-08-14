@@ -50,7 +50,6 @@ local sessionoptions = "" ..
     "globals," ..
     "help," ..
     "localoptions," ..
-    "options," ..
     "tabpages," ..
     "terminal," ..
     "winsize"
