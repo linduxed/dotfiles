@@ -141,7 +141,11 @@ return {
             },
         },
         keys = {
-            { "<Leader>go", "<cmd>ZenMode<CR>", desc = "ZenMode" }
+            {
+                "<Leader>go",
+                function() require("zen-mode").toggle() end,
+                desc = "ZenMode"
+            }
         }
     },
     {
