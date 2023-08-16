@@ -13,6 +13,13 @@ local has_words_before = function()
         )[1]:sub(col, col):match("%s") == nil
 end
 
+local buffer_source = {
+    name = 'buffer',
+    option = {
+        keyword_pattern = [[\k\+]],
+    }
+}
+
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -56,7 +63,7 @@ cmp.setup({
         { name = 'luasnip' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' },
-        { name = 'buffer' },
+        buffer_source,
     }, {})
 })
 
@@ -65,14 +72,14 @@ cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
         { name = 'cmp_git' },
     }, {
-        { name = 'buffer' },
+        buffer_source,
     })
 })
 
 cmp.setup.cmdline('/', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-        { name = 'buffer' }
+        buffer_source
     }
 })
 
