@@ -5,6 +5,7 @@
 #
 
 export XDG_CONFIG_HOME="$HOME/.config/"
+export XDG_CURRENT_DESKTOP="i3"
 
 #
 # Editors
