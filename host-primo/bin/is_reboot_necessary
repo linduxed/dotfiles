@@ -1,9 +1,9 @@
 #!/usr/bin/bash
-s1=$(pacman -Q linux-lts | sed 's/linux-lts //' | sed 's/\.lts/-lts/')
-s2=$(uname -r | sed 's/-lts$//')
+s1=$(uname -r | sed 's/-lts$//')
+s2=$(pacman -Q linux-lts | sed 's/linux-lts //' | sed 's/\.lts/-lts/')
 
-echo "pacman -Q: $(pacman -Q linux-lts)"
 echo "uname -r:  $(uname -r)"
+echo "pacman -Q: $(pacman -Q linux-lts)"
 echo ""
 
 if [ "$s1" == "$s2" ]; then
