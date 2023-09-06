@@ -29,9 +29,6 @@ fi
 # Configuration from tag-task
 [ -f "$HOME/.zsh_task_alias" ] && source "$HOME/.zsh_task_alias"
 
-# Configuration from tag-diary
-[ -f "$HOME/.zsh_diary_env" ] && source "$HOME/.zsh_diary_env"
-
 # Note taking aliases.
 [ -f "$HOME/.znotes" ] && source "$HOME/.znotes"
 

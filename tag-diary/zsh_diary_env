@@ -1,2 +1,0 @@
-export DIARY_PATH="~/SpiderOak Hive/diary"
-export DIARY_PAGER="nvim -R -c 'setf markdown' -c 'set nospell' -c 'Goyo'"
