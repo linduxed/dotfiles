@@ -69,6 +69,7 @@
   "vim-textobj-url": { "branch": "master", "commit": "782d5b990caaa4519d5b4f39ca9ec48bd2e4bfc5" },
   "vim-textobj-user": { "branch": "master", "commit": "41a675ddbeefd6a93664a4dc52f302fe3086a933" },
   "vim-wheel": { "branch": "master", "commit": "3aed582e945630e932d2c33e07816ab1ce4178df" },
+  "vim-you-autocorrect": { "branch": "master", "commit": "a251513305d5c883346ab75db194aa3b5378c64f" },
   "vista.vim": { "branch": "master", "commit": "f925e481bba7cd5451fb8bca9a6ecfc2bf1f2858" },
   "warsow.vim": { "branch": "master", "commit": "62f22d4625a1b795dabfe4f102f5bc91f3f162f4" },
   "which-key.nvim": { "branch": "main", "commit": "7ccf476ebe0445a741b64e36c78a682c1c6118b7" },

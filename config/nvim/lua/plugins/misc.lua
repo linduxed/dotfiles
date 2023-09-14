@@ -1095,4 +1095,73 @@ return {
             { "<C-W>X",     "<Cmd>WinShift swap<CR>", mode = "n" },
         },
     },
+    {
+        "sedm0784/vim-you-autocorrect",
+        ft = {
+            "markdown",
+            "text",
+        },
+        keys = {
+            {
+                "<Leader>asce",
+                "<Cmd>EnableAutocorrect<CR>",
+                mode = "n",
+                desc = "Autocorrect - Enable"
+            },
+            {
+                "<Leader>ascd",
+                "<Cmd>DisableAutocorrect<CR>",
+                mode = "n",
+                desc = "Autocorrect - Disable"
+            },
+            {
+                "<F7>",
+                "<C-O><Plug>VimyouautocorrectUndo",
+                mode = "i",
+                desc = "Autocorrect - Undo latest"
+            },
+            {
+                "<Leader>ascu",
+                "<Plug>VimyouautocorrectUndo",
+                mode = "n",
+                desc = "Autocorrect - Undo latest"
+            },
+            {
+                "<F8>",
+                "<C-O><Plug>VimyouautocorrectJump",
+                mode = "i",
+                desc = "Autocorrect - Jump to latest"
+            },
+            {
+                "<Leader>ascj",
+                "<Plug>VimyouautocorrectJump",
+                mode = "n",
+                desc = "Autocorrect - Jump to latest"
+            },
+            {
+                "<F9>",
+                "<C-O><Plug>VimyouautocorrectNext",
+                mode = "i",
+                desc = "Autocorrect - Next suggested correction"
+            },
+            {
+                "<Leader>ascn",
+                "<Plug>VimyouautocorrectJump",
+                mode = "n",
+                desc = "Autocorrect - Next suggested correction"
+            },
+            {
+                "<F10>",
+                "<C-O><Plug>VimyouautocorrectPrevious",
+                mode = "i",
+                desc = "Autocorrect - Previous suggested correction"
+            },
+            {
+                "<Leader>ascp",
+                "<Plug>VimyouautocorrectPrevious",
+                mode = "n",
+                desc = "Autocorrect - Previous suggested correction"
+            },
+        }
+    },
 }

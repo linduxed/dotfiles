@@ -70,7 +70,10 @@ return {
                             name = "Folds",
                             m = { name = "Foldmethod" }
                         },
-                        s = { name = "Spelling" },
+                        s = {
+                            name = "Spelling",
+                            c = { name = "Autocorrect" }
+                        },
                         q = { name = "Buffer/Window closing (Sayonara)" },
                         y = { name = "Yank" }
                     },
