@@ -1097,10 +1097,7 @@ return {
     },
     {
         "sedm0784/vim-you-autocorrect",
-        ft = {
-            "markdown",
-            "text",
-        },
+        lazy = false,
         keys = {
             {
                 "<Leader>asce",
