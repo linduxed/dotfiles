@@ -83,7 +83,7 @@ lsp.elixirls.setup {
 lsp.erlangls.setup {
     capabilities = capabilities,
     on_attach = on_attach,
-    cmd = { vim.env.HOME .. "/.erlang_ls/release/erlang_ls" },
+    cmd = { vim.env.HOME .. "/.erlang_ls/release/bin/erlang_ls" },
 }
 
 lsp.solargraph.setup {
