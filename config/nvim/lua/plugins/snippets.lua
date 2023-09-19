@@ -31,9 +31,12 @@ return {
             smap <silent><expr> <c-e> luasnip#choice_active() ? '<plug>luasnip-next-choice' : '<c-e>'
             ]])
 
-            vim.keymap.set("n", "<leader>rse", function()
-                require("luasnip.loaders").edit_snippet_files()
-            end)
+            vim.keymap.set(
+                "n",
+                "<leader>se",
+                function() require("luasnip.loaders").edit_snippet_files() end,
+                { desc = "Edit snippets for current file" }
+            )
         end,
     },
     "honza/vim-snippets",
