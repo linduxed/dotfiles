@@ -142,7 +142,7 @@ return {
         },
         keys = {
             {
-                "<Leader>go",
+                "<Leader>z",
                 function() require("zen-mode").toggle() end,
                 desc = "ZenMode"
             }
