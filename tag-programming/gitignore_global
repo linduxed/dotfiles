@@ -18,6 +18,7 @@
 .stack-work
 .tool-versions
 Session.vim*
+assets/vendor
 _vimrc_local.vim
 db/*.sqlite3
 log/*.log
