@@ -77,6 +77,8 @@ return {
                         q = { name = "Buffer/Window closing (Sayonara)" },
                         y = { name = "Yank" }
                     },
+                    c = { name = "Commenting" },
+                    f = { name = "Fuzzy finding (Telescope)" },
                     m = { name = "Highlight words with color (Mark)" },
                     p = { name = "File name (yanking and printing)" }
                 }
