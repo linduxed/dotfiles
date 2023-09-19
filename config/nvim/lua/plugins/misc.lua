@@ -303,7 +303,13 @@ return {
             }
         }
     },
-    "chrisbra/NrrwRgn",
+    {
+        "chrisbra/NrrwRgn",
+        init = function()
+            vim.g.nrrw_rgn_nomap_nr = 1
+            vim.g.nrrw_rgn_nomap_Nr = 1
+        end
+    },
     {
         "kevinhwang91/nvim-hlslens",
         -- Set to not be lazy to predictably override the mappings of
