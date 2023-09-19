@@ -78,7 +78,7 @@ return {
                         y = { name = "Yank" }
                     },
                     m = { name = "Highlight words with color (Mark)" },
-                    p = { name = "File name" }
+                    p = { name = "File name (yanking and printing)" }
                 }
             }, {})
         end
