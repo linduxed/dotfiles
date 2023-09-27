@@ -1131,18 +1131,6 @@ return {
             },
             {
                 "<F8>",
-                "<C-O><Plug>VimyouautocorrectJump",
-                mode = "i",
-                desc = "Autocorrect - Jump to latest"
-            },
-            {
-                "<Leader>ascj",
-                "<Plug>VimyouautocorrectJump",
-                mode = "n",
-                desc = "Autocorrect - Jump to latest"
-            },
-            {
-                "<F9>",
                 "<C-O><Plug>VimyouautocorrectNext",
                 mode = "i",
                 desc = "Autocorrect - Next suggested correction"
@@ -1154,7 +1142,7 @@ return {
                 desc = "Autocorrect - Next suggested correction"
             },
             {
-                "<F10>",
+                "<F9>",
                 "<C-O><Plug>VimyouautocorrectPrevious",
                 mode = "i",
                 desc = "Autocorrect - Previous suggested correction"
@@ -1164,6 +1152,18 @@ return {
                 "<Plug>VimyouautocorrectPrevious",
                 mode = "n",
                 desc = "Autocorrect - Previous suggested correction"
+            },
+            {
+                "<F10>",
+                "<C-O><Plug>VimyouautocorrectJump",
+                mode = "i",
+                desc = "Autocorrect - Jump to latest"
+            },
+            {
+                "<Leader>ascj",
+                "<Plug>VimyouautocorrectJump",
+                mode = "n",
+                desc = "Autocorrect - Jump to latest"
             },
         }
     },
