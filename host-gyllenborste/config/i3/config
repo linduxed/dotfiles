@@ -6,9 +6,18 @@ set $ALT Mod1
 font pango:UbuntuMono 16
 
 bar {
-   status_command    python ~/.config/i3/pystatus
-   position          top
-   workspace_buttons yes
+    font pango:pango:UbuntuMono 10, FontAwesome 12
+    position top
+    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
 }
 
 # }}}
