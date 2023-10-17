@@ -43,6 +43,13 @@ vim.keymap.set(
     { desc = "Text width = 0" }
 )
 
+vim.keymap.set(
+    "n",
+    "<leader>aws",
+    "<CMD>StripTrailingWhitespace<CR>",
+    { desc = "Strip trailing whitespace" }
+)
+
 vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
 
 -- {{{3 File name
@@ -128,10 +135,4 @@ vnoremap U k
 " I *never* use this feature, and it mostly causes me to split the window
 " unintentionally when using <C-W>i with colemak.vim.
 nmap <C-W><C-I> <C-W>l
-]])
-
--- {{{2 StripTrailingWhitespace
-
-vim.cmd([[
-nnoremap <silent> <Leader>awk :StripTrailingWhitespace<CR>
 ]])

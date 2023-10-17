@@ -77,7 +77,8 @@ return {
                         },
                         t = { name = "Text width" },
                         q = { name = "Buffer/Window closing (Sayonara)" },
-                        y = { name = "Yank" }
+                        y = { name = "Yank" },
+                        w = { name = "Whitespace" },
                     },
                     c = { name = "Commenting" },
                     f = { name = "Fuzzy finding (Telescope)" },
