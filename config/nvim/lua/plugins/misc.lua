@@ -1173,4 +1173,46 @@ return {
             require("hex").setup()
         end
     },
+    {
+        "nvim-neotest/neotest",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "jfpedroza/neotest-elixir",
+        },
+        config = function()
+            require("neotest").setup({
+                adapters = {
+                    require("neotest-elixir"),
+                }
+            })
+        end,
+        keys = {
+            {
+                "<Leader>tn",
+                function() require("neotest").run.run() end,
+                mode = "n",
+                desc = "Run nearest test"
+            },
+            {
+                "<Leader>tf",
+                function() require("neotest").run.run(vim.fn.expand("%")) end,
+                mode = "n",
+                desc = "Run tests for current file"
+            },
+            {
+                "<Leader>ts",
+                function() require("neotest").run.stop() end,
+                mode = "n",
+                desc = "Stop nearest test"
+            },
+            {
+                "<Leader>ta",
+                function() require("neotest").run.attach() end,
+                mode = "n",
+                desc = "Attach to nearest test"
+            },
+        }
+    },
 }

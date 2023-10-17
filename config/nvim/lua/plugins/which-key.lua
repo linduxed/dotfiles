@@ -83,6 +83,7 @@ return {
                     m = { name = "Highlight words with color (Mark)" },
                     p = { name = "File name (yanking and printing)" },
                     s = { name = "Snippets" },
+                    t = { name = "Test (NeoTest)" },
                 }
             }, {})
         end
