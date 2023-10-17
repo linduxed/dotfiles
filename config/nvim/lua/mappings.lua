@@ -52,6 +52,23 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
 
+-- {{{3 Split line and remove potential trailing whitespace
+
+vim.keymap.set(
+    "n",
+    "<Leader><CR>",
+    function()
+        vim.cmd([[
+            exe "norm! i\<CR>"
+            norm! ^mwgk
+            s/\v *$//
+            norm! `w
+            delmarks w
+        ]])
+    end,
+    { desc = "Split line and remove trailing whitespace" }
+)
+
 -- {{{3 File name
 
 vim.keymap.set("n",
@@ -87,17 +104,6 @@ tnoremap <C-\> <C-\><C-n>
 
 nnoremap <S-Up> <C-y>
 nnoremap <S-Down> <C-e>
-
-" {{{3 Split line and remove potential trailing whitespace
-
-function! s:SplitLine()
-    exe "norm! i\<CR>"
-    norm! ^mwgk
-    s/\v *$//
-    norm! `w
-    delmarks w
-endfunction
-nnoremap <Leader><CR> :call <SID>SplitLine()<CR>
 
 " {{{2 Function keys
 
