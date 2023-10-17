@@ -81,18 +81,6 @@ tnoremap <C-\> <C-\><C-n>
 nnoremap <S-Up> <C-y>
 nnoremap <S-Down> <C-e>
 
-" {{{3 Make * in visual-mode behave smarter
-
-function! s:VSetSearch()
-    let temp = @@
-    norm! gvy
-    let @/ = '\V' . substitute(escape(@@, '\'), '\n', '\\n', 'g')
-    let @@ = temp
-endfunction
-
-vnoremap * :<C-u>call <SID>VSetSearch()<CR>//<CR><c-o>
-vnoremap # :<C-u>call <SID>VSetSearch()<CR>??<CR><c-o>
-
 " {{{3 Split line and remove potential trailing whitespace
 
 function! s:SplitLine()
