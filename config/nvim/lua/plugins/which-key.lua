@@ -75,6 +75,7 @@ return {
                             name = "Spelling",
                             c = { name = "Autocorrect" }
                         },
+                        t = { name = "Text width" },
                         q = { name = "Buffer/Window closing (Sayonara)" },
                         y = { name = "Yank" }
                     },

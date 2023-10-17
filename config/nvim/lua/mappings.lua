@@ -36,6 +36,13 @@ vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
 vim.keymap.set("n", "<leader>e", "<cmd>e<cr>", { desc = "File - Reload (:e)" })
 
+vim.keymap.set(
+    "n",
+    "<leader>atz",
+    function() vim.o.tw = 0 end,
+    { desc = "Text width = 0" }
+)
+
 vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
 
 -- {{{3 File name
@@ -66,8 +73,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-nnoremap <leader>atwz :set tw=0<CR>
 
 nnoremap <leader>/ :nohlsearch<CR>
 
