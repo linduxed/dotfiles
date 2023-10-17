@@ -30,6 +30,42 @@ vim.keymap.set("n",
     { desc = "Spell language - PL" }
 )
 
+-- {{{2 Split line and remove potential trailing whitespace
+
+vim.keymap.set(
+    "n",
+    "<Leader><CR>",
+    function()
+        vim.cmd([[
+            exe "norm! i\<CR>"
+            norm! ^mwgk
+            s/\v *$//
+            norm! `w
+            delmarks w
+        ]])
+    end,
+    { desc = "Split line and remove trailing whitespace" }
+)
+
+-- {{{2 File name
+
+vim.keymap.set("n",
+    "<leader>pp",
+    "<cmd>echo @%<CR>",
+    { desc = "File name - Echo" }
+)
+vim.keymap.set("n",
+    "<leader>py",
+    '<cmd>let @+=@%<Bar>echo @% "- yanked"<CR>',
+    { desc = "File name - Yank and Echo" }
+)
+
+-- {{{2 Tabs
+
+vim.keymap.set("n", "]v", "<cmd>tabnext<CR>", { desc = "Tab - Next" })
+vim.keymap.set("n", "[v", "<cmd>tabprevious<CR>", { desc = "Tab - Previous" })
+
+
 -- {{{2 Miscellaneous
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
@@ -51,41 +87,6 @@ vim.keymap.set(
 )
 
 vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
-
--- {{{3 Split line and remove potential trailing whitespace
-
-vim.keymap.set(
-    "n",
-    "<Leader><CR>",
-    function()
-        vim.cmd([[
-            exe "norm! i\<CR>"
-            norm! ^mwgk
-            s/\v *$//
-            norm! `w
-            delmarks w
-        ]])
-    end,
-    { desc = "Split line and remove trailing whitespace" }
-)
-
--- {{{3 File name
-
-vim.keymap.set("n",
-    "<leader>pp",
-    "<cmd>echo @%<CR>",
-    { desc = "File name - Echo" }
-)
-vim.keymap.set("n",
-    "<leader>py",
-    '<cmd>let @+=@%<Bar>echo @% "- yanked"<CR>',
-    { desc = "File name - Yank and Echo" }
-)
-
--- {{{3 Tabs
-
-vim.keymap.set("n", "]v", "<cmd>tabnext<CR>", { desc = "Tab - Next" })
-vim.keymap.set("n", "[v", "<cmd>tabprevious<CR>", { desc = "Tab - Previous" })
 
 -- {{{1 Miscellaneous (Vimscript)
 
