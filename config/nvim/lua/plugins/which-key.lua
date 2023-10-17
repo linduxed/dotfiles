@@ -66,6 +66,7 @@ return {
                 ["<leader>"] = {
                     a = {
                         name = "Misc #1",
+                        a = { name = "Align text (Tabularize)" },
                         f = {
                             name = "Folds",
                             m = { name = "Foldmethod" }

@@ -340,25 +340,25 @@ return {
         "godlygeek/tabular",
         keys = {
             {
-                "<Leader>ate",
+                "<Leader>aae",
                 ":Tabularize / = /l0<CR>",
                 mode = "v",
                 desc = "Tabularize - Equals"
             },
             {
-                "<Leader>ate",
+                "<Leader>aae",
                 ":Tabularize / = /l0<CR>",
                 mode = "n",
                 desc = "Tabularize - Equals"
             },
             {
-                "<Leader>atc",
+                "<Leader>aac",
                 ":Tabularize /:\\zs/l0l1<CR>",
                 mode = "v",
                 desc = "Tabularize - Whitespace after colon"
             },
             {
-                "<Leader>atc",
+                "<Leader>aac",
                 ":Tabularize /:\\zs/l0l1<CR>",
                 mode = "n",
                 desc = "Tabularize - Whitespace after colon"
