@@ -1,4 +1,4 @@
 SYMLINK_DIRS="tmp zprezto"
 EXCLUDES="README.md LICENSE"
-TAGS="desktop mpd notes programming task plover"
+TAGS="desktop mpd notes programming task"
 UNDOTTED="bin"
