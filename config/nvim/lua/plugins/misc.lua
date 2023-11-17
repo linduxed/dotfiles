@@ -19,28 +19,6 @@ return {
         end,
     },
     {
-        "gaoDean/autolist.nvim",
-        version = "~2.3",
-        ft = {
-            "markdown",
-            "text",
-        },
-        config = function()
-            local autolist = require("autolist")
-
-            autolist.setup()
-            autolist.create_mapping_hook("i", "<CR>", autolist.new)
-            autolist.create_mapping_hook("i", "<C-T>", autolist.indent)
-            autolist.create_mapping_hook("i", "<C-D>", autolist.indent)
-            autolist.create_mapping_hook("n", "o", autolist.new)
-            autolist.create_mapping_hook("n", "O", autolist.new_before)
-            autolist.create_mapping_hook("n", ">>", autolist.indent)
-            autolist.create_mapping_hook("n", "<<", autolist.indent)
-            autolist.create_mapping_hook("n", "<Leader>blr", autolist.force_recalculate)
-            autolist.create_mapping_hook("n", "<Leader>bli", autolist.invert_entry)
-        end,
-    },
-    {
         'numToStr/Comment.nvim',
         config = function()
             require("Comment").setup({
