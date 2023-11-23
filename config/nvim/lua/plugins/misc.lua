@@ -897,6 +897,7 @@ return {
     {
         "epwalsh/obsidian.nvim",
         lazy = true,
+        version = "2.0.0",
         event = { "BufReadPre " .. vim.fn.expand "~" .. "/vimwiki/**.md" },
         dependencies = {
             "nvim-lua/plenary.nvim",
