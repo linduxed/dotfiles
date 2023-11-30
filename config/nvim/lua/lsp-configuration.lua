@@ -37,7 +37,7 @@ local function on_attach(_, buf)
         {
             ["<leader>al"] = {
                 name = "LSP-related",
-                f = { vim.lsp.buf.format, "description", buffer = buf },
+                f = { vim.lsp.buf.format, "Format file", buffer = buf },
             },
         },
         { mode = "v" }
