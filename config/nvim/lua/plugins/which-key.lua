@@ -62,32 +62,35 @@ return {
             })
             local wk = require("which-key")
 
-            wk.register({
-                ["<leader>"] = {
-                    a = {
-                        name = "Misc #1",
-                        a = { name = "Align text (Tabularize)" },
-                        f = {
-                            name = "Folds",
-                            m = { name = "Foldmethod" }
+            wk.register(
+                {
+                    ["<leader>"] = {
+                        a = {
+                            name = "Misc #1",
+                            a = { name = "Align text (Tabularize)" },
+                            f = {
+                                name = "Folds",
+                                m = { name = "Foldmethod" }
+                            },
+                            s = {
+                                name = "Spelling",
+                                c = { name = "Autocorrect" }
+                            },
+                            t = { name = "Text width" },
+                            q = { name = "Buffer/Window closing (Sayonara)" },
+                            y = { name = "Yank" },
+                            w = { name = "Whitespace" },
                         },
-                        s = {
-                            name = "Spelling",
-                            c = { name = "Autocorrect" }
-                        },
-                        t = { name = "Text width" },
-                        q = { name = "Buffer/Window closing (Sayonara)" },
-                        y = { name = "Yank" },
-                        w = { name = "Whitespace" },
-                    },
-                    c = { name = "Commenting" },
-                    f = { name = "Fuzzy finding (Telescope)" },
-                    m = { name = "Highlight words with color (Mark)" },
-                    n = { name = "Snippets" },
-                    p = { name = "File name (yanking and printing)" },
-                    s = { name = "Search (CtrlSF)" },
-                }
-            }, {})
+                        c = { name = "Commenting" },
+                        f = { name = "Fuzzy finding (Telescope)" },
+                        m = { name = "Highlight words with color (Mark)" },
+                        n = { name = "Snippets" },
+                        p = { name = "File name (yanking and printing)" },
+                        s = { name = "Search (CtrlSF)" },
+                    }
+                },
+                { mode = "n" }
+            )
         end
     },
 }
