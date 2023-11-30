@@ -91,6 +91,21 @@ return {
                 },
                 { mode = "n" }
             )
+
+            wk.register(
+                {
+                    ["<leader>"] = {
+                        a = {
+                            name = "Misc #1",
+                            a = { name = "Align text (Tabularize)" },
+                        },
+                        c = { name = "Commenting" },
+                        m = { name = "Highlight words with color (Mark)" },
+                        s = { name = "Search (CtrlSF)" },
+                    }
+                },
+                { mode = "v" }
+            )
         end
     },
 }
