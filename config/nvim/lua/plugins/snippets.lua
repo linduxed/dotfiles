@@ -33,7 +33,7 @@ return {
 
             vim.keymap.set(
                 "n",
-                "<leader>se",
+                "<leader>ne",
                 function() require("luasnip.loaders").edit_snippet_files() end,
                 { desc = "Edit snippets for current file" }
             )

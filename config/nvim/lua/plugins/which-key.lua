@@ -83,8 +83,9 @@ return {
                     c = { name = "Commenting" },
                     f = { name = "Fuzzy finding (Telescope)" },
                     m = { name = "Highlight words with color (Mark)" },
+                    n = { name = "Snippets" },
                     p = { name = "File name (yanking and printing)" },
-                    s = { name = "Snippets" },
+                    s = { name = "Search (CtrlSF)" },
                 }
             }, {})
         end

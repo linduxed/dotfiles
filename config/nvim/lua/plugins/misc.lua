@@ -57,7 +57,39 @@ return {
         "dyng/ctrlsf.vim",
         init = function()
             vim.g.ctrlsf_populate_qflist = 1
-        end
+        end,
+        keys = {
+            {
+                "<Leader>sc",
+                "<Plug>CtrlSFCwordPath",
+                mode = "n",
+                desc = "CtrlSF - Word under cursor"
+            },
+            {
+                "<Leader>sb",
+                "<Plug>CtrlSFCCwordPath",
+                mode = "n",
+                desc = "CtrlSF - Word (and boundary) under cursor"
+            },
+            {
+                "<Leader>sl",
+                "<Plug>CtrlSFPwordPath",
+                mode = "n",
+                desc = "CtrlSF - Last search pattern"
+            },
+            {
+                "<Leader>sc",
+                "<Plug>CtrlSFVwordExec",
+                mode = "v",
+                desc = "CtrlSF - Search highlighted"
+            },
+            {
+                "<Leader>sp",
+                "<Plug>CtrlSFVwordPath",
+                mode = "v",
+                desc = "CtrlSF - Open prompt with highlighted"
+            },
+        }
     },
     {
         "Raimondi/delimitMate",
