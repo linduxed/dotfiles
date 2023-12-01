@@ -55,6 +55,7 @@ return {
     },
     {
         "dyng/ctrlsf.vim",
+        lazy = false,
         init = function()
             vim.g.ctrlsf_populate_qflist = 1
         end,
