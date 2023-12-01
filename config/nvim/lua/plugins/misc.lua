@@ -61,6 +61,12 @@ return {
         end,
         keys = {
             {
+                "<Leader>sp",
+                "<Plug>CtrlSFPrompt",
+                mode = "n",
+                desc = "CtrlSF - Bare prompt"
+            },
+            {
                 "<Leader>sc",
                 "<Plug>CtrlSFCwordPath",
                 mode = "n",
@@ -77,6 +83,24 @@ return {
                 "<Plug>CtrlSFPwordPath",
                 mode = "n",
                 desc = "CtrlSF - Last search pattern"
+            },
+            {
+                "<Leader>swf",
+                "<cmd>CtrlSFFocus<cr>",
+                mode = "n",
+                desc = "CtrlSF - Focus"
+            },
+            {
+                "<Leader>swt",
+                "<cmd>CtrlSFToggle<cr>",
+                mode = "n",
+                desc = "CtrlSF - Toggle"
+            },
+            {
+                "<Leader>swu",
+                "<cmd>CtrlSFUpdate<cr>",
+                mode = "n",
+                desc = "CtrlSF - Update (run same search)"
             },
             {
                 "<Leader>sc",

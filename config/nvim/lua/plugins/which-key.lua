@@ -86,7 +86,10 @@ return {
                         m = { name = "Highlight words with color (Mark)" },
                         n = { name = "Snippets" },
                         p = { name = "File name (yanking and printing)" },
-                        s = { name = "Search (CtrlSF)" },
+                        s = {
+                            name = "Search (CtrlSF)",
+                            w = { name = "Window" },
+                        },
                     }
                 },
                 { mode = "n" }
