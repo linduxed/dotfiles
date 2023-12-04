@@ -35,6 +35,19 @@ return {
                 extensions = {
                     undo = {
                         layout_strategy = "vertical",
+
+                        mappings = {
+                            i = {
+                                ["<cr>"] = require("telescope-undo.actions").restore,
+                                ["<S-cr>"] = require("telescope-undo.actions").yank_additions,
+                                ["<C-cr>"] = require("telescope-undo.actions").yank_deletions,
+                            },
+                            n = {
+                                ["c"] = require("telescope-undo.actions").yank_additions,
+                                ["C"] = require("telescope-undo.actions").yank_deletions,
+                                ["z"] = require("telescope-undo.actions").restore,
+                            },
+                        },
                     },
                 },
             })
