@@ -78,3 +78,7 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+[pretty]
+    brief = "format:%C(yellow)%h%C(reset) %s%n%C(cyan)%an %C(dim white)(%ar)%C(auto)%d%C(reset)%n"
+    fuller-mod = "%C(bold)Commit:%C(reset)        %C(yellow)%H%n%C(reset)Refs:         %C(auto)%d%n%C(bold)Author:%C(reset)        %C(cyan)%an <%ae>%n%C(bold)AuthorDate:%C(reset)    %C(dim white)%ai (%ar)%C(reset)%n%C(bold)Committer:%C(reset)     %C(cyan)%cn <%ce>%n%C(bold)CommitterDate:%C(reset) %C(dim white)%ci (%cr)%C(reset)%n%w(0, 4, 4)%+B"
+    oneline-mod = "%C(yellow)%h%C(reset) %C(dim white)(%ar)%C(reset) %s%C(auto)%d%C(reset)"
