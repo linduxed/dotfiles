@@ -64,7 +64,8 @@ vim.keymap.set("n",
 
 vim.keymap.set("n", "]v", "<cmd>tabnext<CR>", { desc = "Tab - Next" })
 vim.keymap.set("n", "[v", "<cmd>tabprevious<CR>", { desc = "Tab - Previous" })
-
+vim.keymap.set("n", "]V", "<cmd>tabmove +1<CR>", { desc = "Tab - Move right" })
+vim.keymap.set("n", "[V", "<cmd>tabmove -1<CR>", { desc = "Tab - Move left" })
 
 -- {{{2 Miscellaneous
 
