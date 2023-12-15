@@ -73,8 +73,8 @@ vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
 vim.keymap.set("n", "<leader>e", "<cmd>e<cr>", { desc = "File - Reload (:e)" })
 
 vim.keymap.set("n", "<leader>atz", function() vim.o.tw = 0 end, { desc = "Text width = 0" })
-vim.keymap.set("n", "<leader>atg", function() vim.o.tw = 0 end, { desc = "Text width = 72 (gitcommit)" })
-vim.keymap.set("n", "<leader>ate", function() vim.o.tw = 0 end, { desc = "Text width = 80" })
+vim.keymap.set("n", "<leader>atg", function() vim.o.tw = 72 end, { desc = "Text width = 72 (gitcommit)" })
+vim.keymap.set("n", "<leader>ate", function() vim.o.tw = 80 end, { desc = "Text width = 80" })
 
 vim.keymap.set(
     "n",
