@@ -7,6 +7,9 @@ if status is-interactive
 
     abbr nivm nvim
     abbr eixt exit
+    abbr exti exit
+    abbr xeit exit
+    abbr xeti exit
 
     # Git
     abbr g git
