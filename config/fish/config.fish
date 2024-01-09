@@ -24,8 +24,8 @@ if status is-interactive
     abbr gbL "git branch --all --verbose"
     abbr gbm "git branch --move"
     abbr gbM "git branch --move --force"
-    abbr gbpg 'git branch --verbose | grep -v "master" | grep -v "\*" | grep "\[gone\]" | awk "{print \$1}" | xargs -n 1 git branch -D'
-    abbr gbpm 'git branch --merged | grep -v "master" | grep -v "\*" | xargs -n 1 git branch -d'
+    abbr gbpg 'git branch --verbose | grep -v "main" | grep -v "master" | grep -v "\*" | grep "\[gone\]" | awk "{print \$1}" | xargs -n 1 git branch -D'
+    abbr gbpm 'git branch --merged | grep -v "main" | grep -v "master" | grep -v "\*" | xargs -n 1 git branch -d'
     abbr gbr "git branch --move"
     abbr gbR "git branch --move --force"
     abbr gbs "git show-branch"
