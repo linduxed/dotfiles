@@ -81,6 +81,12 @@ return {
                             y = { name = "Yank" },
                             w = { name = "Whitespace" },
                         },
+                        b = {
+                            name = "Misc #2",
+                            t = {
+                                name = "todo-comments.nvim",
+                            }
+                        },
                         c = { name = "Commenting" },
                         f = { name = "Fuzzy finding (Telescope)" },
                         m = { name = "Highlight words with color (Mark)" },

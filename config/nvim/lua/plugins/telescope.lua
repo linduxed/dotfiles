@@ -110,6 +110,11 @@ return {
                 { desc = "Telescope - Sessions" }
             )
             vim.keymap.set("n",
+                "<leader>fc",
+                "<cmd>TodoTelescope<cr>",
+                { desc = "Telescope - TODO comments" }
+            )
+            vim.keymap.set("n",
                 "<F6>",
                 "<cmd>Telescope undo<cr>",
                 { desc = "Telescope - Undo tree" }

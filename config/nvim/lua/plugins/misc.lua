@@ -1181,5 +1181,40 @@ return {
         "lukas-reineke/indent-blankline.nvim",
         main = "ibl",
         opts = {},
-    }
+    },
+    {
+        "folke/todo-comments.nvim",
+        lazy = false,
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "folke/trouble.nvim",
+        },
+        opts = {},
+        keys = {
+            {
+                "<Leader>btq",
+                "<cmd>TodoQuickFix<cr>",
+                mode = "n",
+                desc = "TODO - QuickFix list"
+            },
+            {
+                "<Leader>btl",
+                "<cmd>TodoLocList<cr>",
+                mode = "n",
+                desc = "TODO - Location list"
+            },
+            {
+                "<Leader>bte",
+                "<cmd>TodoTrouble<cr>",
+                mode = "n",
+                desc = "TODO - Trouble window"
+            },
+            {
+                "<Leader>btf",
+                "<cmd>TodoTelescope<cr>",
+                mode = "n",
+                desc = "TODO - Telescope"
+            },
+        }
+    },
 }
