@@ -3,6 +3,14 @@ set -gx VISUAL nvim
 set -gx BAT_THEME "Monokai Extended"
 
 if status is-interactive
+    fzf_configure_bindings \
+        --directory=\cF \
+        --git_log=\cL \
+        --git_status=\cS \
+        --history=\cr \
+        --processes=\cP \
+        --variables=\cV
+
     # Miscellaneous
 
     abbr nivm nvim
