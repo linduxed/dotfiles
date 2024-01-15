@@ -4,12 +4,12 @@ set -gx BAT_THEME "Monokai Extended"
 
 if status is-interactive
     fzf_configure_bindings \
-        --directory=\cF \
-        --git_log=\cL \
-        --git_status=\cS \
+        --directory=\ef \
+        --git_log=\el \
+        --git_status=\es \
         --history=\cr \
-        --processes=\cP \
-        --variables=\cV
+        --processes=\ep \
+        --variables=\ev
 
     # Miscellaneous
 
