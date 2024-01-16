@@ -1086,7 +1086,9 @@ return {
         opts = {
             cut_key = "x",
             override_del = true,
-            exclude = {},
+            exclude = {
+                "s<space>",
+            },
             registers = {
                 select = "_",
                 delete = "_",
