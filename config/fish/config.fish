@@ -55,7 +55,6 @@ if status is-interactive
     abbr gcp "git cherry-pick --ff"
     abbr gcP "git cherry-pick --no-commit"
     abbr gcr "git revert"
-    abbr gcR 'git reset "HEAD^"'
     abbr gcs "git show"
     abbr gcsS "git show --pretty=short --show-signature"
     abbr gcy "git cherry --verbose --abbrev"
@@ -95,6 +94,9 @@ if status is-interactive
     abbr giI "git update-index --no-assume-unchanged"
     abbr gir "git reset"
     abbr giR "git reset --patch"
+    abbr girs "git reset --soft"
+    abbr girh "git reset --hard"
+    abbr girp 'git reset "HEAD^"'
     abbr gix "git rm -r --cached"
     abbr giX "git rm -r --force --cached"
 
@@ -171,8 +173,6 @@ if status is-interactive
     abbr gwS "git status"
     abbr gwd "git diff --no-ext-diff"
     abbr gwD "git diff --no-ext-diff --word-diff"
-    abbr gwrs "git reset --soft"
-    abbr gwrh "git reset --hard"
     abbr gwc "git clean --dry-run"
     abbr gwC "git clean --force"
     abbr gwx "git rm -r"
