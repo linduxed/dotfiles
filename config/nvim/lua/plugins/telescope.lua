@@ -31,7 +31,64 @@ return {
             }
         },
         config = function()
+            local actions = require("telescope.actions")
             require("telescope").setup({
+                pickers = {
+                    -- Using `actions.select_drop` works as if the chosen file
+                    -- was passed as an argument to `:drop`, which will jump to
+                    -- a window where the file is already opened.
+                    --
+                    -- Not sure how `select_drop` will work with multiple
+                    -- selected files.
+                    buffers = {
+                        mappings = {
+                            i = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            },
+                            n = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            }
+                        },
+                    },
+                    find_files = {
+                        mappings = {
+                            i = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            },
+                            n = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            }
+                        }
+                    },
+                    git_files = {
+                        mappings = {
+                            i = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            },
+                            n = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            }
+                        }
+                    },
+                    old_files = {
+                        mappings = {
+                            i = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            },
+                            n = {
+                                ["<CR>"] = actions.select_drop,
+                                ["<S-CR>"] = actions.select_default,
+                            }
+                        }
+                    },
+                },
                 extensions = {
                     undo = {
                         layout_strategy = "vertical",
