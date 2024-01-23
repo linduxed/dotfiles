@@ -1,6 +1,6 @@
 # Screens start at 1
 bind c screen 1
-bind 0 select 10                                                            
+bind 0 select 10
 
 # Generate standard screens
 screen 1 
