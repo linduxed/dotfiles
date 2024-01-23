@@ -32,6 +32,17 @@ return {
         },
         config = function()
             local actions = require("telescope.actions")
+            local drop_mappings = {
+                i = {
+                    ["<CR>"] = actions.select_drop,
+                    ["<S-CR>"] = actions.select_default,
+                },
+                n = {
+                    ["<CR>"] = actions.select_drop,
+                    ["<S-CR>"] = actions.select_default,
+                }
+            }
+
             require("telescope").setup({
                 pickers = {
                     -- Using `actions.select_drop` works as if the chosen file
@@ -40,54 +51,10 @@ return {
                     --
                     -- Not sure how `select_drop` will work with multiple
                     -- selected files.
-                    buffers = {
-                        mappings = {
-                            i = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            },
-                            n = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            }
-                        },
-                    },
-                    find_files = {
-                        mappings = {
-                            i = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            },
-                            n = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            }
-                        }
-                    },
-                    git_files = {
-                        mappings = {
-                            i = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            },
-                            n = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            }
-                        }
-                    },
-                    old_files = {
-                        mappings = {
-                            i = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            },
-                            n = {
-                                ["<CR>"] = actions.select_drop,
-                                ["<S-CR>"] = actions.select_default,
-                            }
-                        }
-                    },
+                    buffers = { mappings = drop_mappings },
+                    find_files = { mappings = drop_mappings },
+                    git_files = { mappings = drop_mappings },
+                    old_files = { mappings = drop_mappings },
                 },
                 extensions = {
                     undo = {
