@@ -271,6 +271,7 @@ return {
             },
             nesting_rules = {},
             filesystem = {
+                hijack_netrw_behavior = "disabled",
                 filtered_items = {
                     -- when true, they will just be displayed differently than
                     -- normal items
