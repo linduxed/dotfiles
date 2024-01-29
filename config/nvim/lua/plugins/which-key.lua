@@ -68,6 +68,9 @@ return {
                         a = {
                             name = "Misc #1",
                             a = { name = "Align text (Tabularize)" },
+                            j = {
+                                name = "SplitJoin",
+                            },
                             f = {
                                 name = "Folds",
                                 m = { name = "Foldmethod" }

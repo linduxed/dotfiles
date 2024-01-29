@@ -1220,4 +1220,42 @@ return {
             },
         }
     },
+    {
+        'Wansmer/treesj',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        config = function()
+            require('treesj').setup({
+                use_default_keymaps = false,
+                check_syntax_error = true,
+                max_join_length = 120,
+                -- Cursor behavior:
+                -- hold - cursor follows the node/place on which it was called
+                -- start - cursor jumps to the first symbol of the node being formatted
+                -- end - cursor jumps to the last symbol of the node being formatted
+                cursor_behavior = 'hold',
+                dot_repeat = true,
+
+            })
+        end,
+        keys = {
+            {
+                "<Leader>ajt",
+                "<cmd>TSJToggle<cr>",
+                mode = "n",
+                desc = "SplitJoin - Toggle"
+            },
+            {
+                "<Leader>ajs",
+                "<cmd>TSJSplit<cr>",
+                mode = "n",
+                desc = "SplitJoin - Split"
+            },
+            {
+                "<Leader>ajj",
+                "<cmd>TSJJoin<cr>",
+                mode = "n",
+                desc = "SplitJoin - Join",
+            },
+        }
+    },
 }
