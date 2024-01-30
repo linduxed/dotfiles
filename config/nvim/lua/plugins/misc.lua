@@ -1234,7 +1234,37 @@ return {
                 -- end - cursor jumps to the last symbol of the node being formatted
                 cursor_behavior = 'hold',
                 dot_repeat = true,
-
+                langs = {
+                    elixir = {
+                        arguments = {
+                            both = {
+                                separator = ',',
+                                last_separator = false,
+                            },
+                        },
+                        tuple = {
+                            both = {
+                                separator = ',',
+                                last_separator = false,
+                            },
+                        },
+                        keywords = {
+                            both = {
+                                separator = ',',
+                                last_separator = false,
+                                non_bracket_node = true,
+                                recursive = false,
+                            },
+                        },
+                        map_content = {
+                            both = {
+                                separator = ',',
+                                last_separator = false,
+                                non_bracket_node = true,
+                            },
+                        },
+                    },
+                }
             })
         end,
         keys = {
