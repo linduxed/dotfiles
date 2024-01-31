@@ -13,6 +13,7 @@ return {
             },
             {
                 'rmagatti/auto-session',
+                lazy = false,
                 config = function()
                     require("auto-session").setup({
                         auto_session_allowed_dirs = {
@@ -27,7 +28,39 @@ return {
                             "~/vimwiki",
                         },
                     })
-                end
+                end,
+                keys = {
+                    {
+                        "<Leader>bss",
+                        "<Cmd>SessionSave<CR>",
+                        mode = "n",
+                        desc = "Session - Save"
+                    },
+                    {
+                        "<Leader>bsd",
+                        "<Cmd>SessionDelete<CR>",
+                        mode = "n",
+                        desc = "Session - Delete"
+                    },
+                    {
+                        "<Leader>bsr",
+                        "<Cmd>SessionRestore<CR>",
+                        mode = "n",
+                        desc = "Session - Restore"
+                    },
+                    {
+                        "<Leader>bsp",
+                        "<Cmd>SessionPurgeOrphaned<CR>",
+                        mode = "n",
+                        desc = "Session - Purge orphaned"
+                    },
+                    {
+                        "<Leader>bsf",
+                        "<Cmd>SessionRestoreFromFile<CR>",
+                        mode = "n",
+                        desc = "Session - Restore from file"
+                    },
+                }
             }
         },
         config = function()

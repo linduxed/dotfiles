@@ -86,6 +86,9 @@ return {
                         },
                         b = {
                             name = "Misc #2",
+                            s = {
+                                name = "Session management",
+                            },
                             t = {
                                 name = "todo-comments.nvim",
                             }
