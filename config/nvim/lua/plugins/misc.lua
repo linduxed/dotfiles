@@ -464,21 +464,7 @@ return {
         },
         init = function()
             vim.g.mw_no_mappings = 1
-            vim.g.mwDefaultHighlightingPalette = {
-                { ctermbg = "Blue",        ctermfg = "Black" },
-                { ctermbg = "Green",       ctermfg = "Black" },
-                { ctermbg = "Yellow",      ctermfg = "Black" },
-                { ctermbg = "DarkCyan",    ctermfg = "Black" },
-                { ctermbg = "DarkBlue",    ctermfg = "Black" },
-                { ctermbg = "DarkMagenta", ctermfg = "Black" },
-                { ctermbg = "DarkRed",     ctermfg = "Black" },
-                { ctermbg = "DarkGreen",   ctermfg = "Black" },
-                { ctermbg = "Red",         ctermfg = "Black" },
-                { ctermbg = "White",       ctermfg = "Gray" },
-                { ctermbg = "LightGray",   ctermfg = "White" },
-                { ctermbg = "Cyan",        ctermfg = "Black" },
-                { ctermbg = "Brown",       ctermfg = "Black" }
-            }
+            vim.g.mwDefaultHighlightingPalette = 'extended'
         end,
         keys = {
             {

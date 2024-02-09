@@ -1,5 +1,13 @@
 return {
     {
+        "savq/melange-nvim",
+        lazy = false,
+        priority = 1000,
+        init = function()
+            vim.opt.termguicolors = true
+        end
+    },
+    {
         "NLKNguyen/papercolor-theme",
         lazy = false,
         priority = 1000,
@@ -23,8 +31,5 @@ return {
                 }
             }
         end,
-        config = function()
-            vim.cmd("colorscheme PaperColor")
-        end
     },
 }

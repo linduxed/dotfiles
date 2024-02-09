@@ -167,6 +167,11 @@ return {
                 { desc = "Telescope - Sessions" }
             )
             vim.keymap.set("n",
+                "<leader>fo",
+                "<cmd>Telescope colorscheme<cr>",
+                { desc = "Telescope - Colorscheme (c_O_lorscheme)" }
+            )
+            vim.keymap.set("n",
                 "<leader>fc",
                 "<cmd>TodoTelescope<cr>",
                 { desc = "Telescope - TODO comments" }

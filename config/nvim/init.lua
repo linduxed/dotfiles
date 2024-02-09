@@ -31,6 +31,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("plugins")
 
+vim.cmd.colorscheme("melange")
+
 local wildignore = "" ..
     "*.DS_Store," ..
     "*.aux," ..
