@@ -2,6 +2,20 @@
 -- leader key is used when generating the mappings.
 vim.g.mapleader = " "
 
+-- Set up a :Browse command, to fix problem with :GBrowse complaining about
+-- missing netrw. netrw is disabled by the nvim-tree plugin, and for some
+-- reason vim-fugitive requires netrw to be loaded. A way around this problem
+-- is to set a :Browse command. The command needs to be adjusted, depending on
+-- the OS (Linux vs. OSX).
+vim.api.nvim_create_user_command(
+  'Browse',
+  function (opts)
+    -- vim.fn.system { 'xdg-open', opts.fargs[1] }
+    vim.fn.system { 'open', opts.fargs[1] }
+  end,
+  { nargs = 1 }
+)
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
