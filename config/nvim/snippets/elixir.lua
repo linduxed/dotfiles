@@ -42,7 +42,7 @@ return {
         { t("& &1"), i(1, "") }
     ),
     s(
-        { trig = "pmap", name = "pipe-map" },
+        { trig = "pemap", name = "pipe-enum-map" },
         {
             t("|> Enum.map("),
             c(1, {
@@ -84,6 +84,10 @@ return {
     s(
         { trig = "pstr", name = "pipe-stream" },
         { t("|> Stream."), i(1, "") }
+    ),
+    s(
+        { trig = "pmap", name = "pipe-map" },
+        { t("|> Map."), i(1, "") }
     ),
     s(
         { trig = "spec", name = "typespec", },
