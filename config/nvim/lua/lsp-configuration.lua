@@ -86,6 +86,11 @@ lsp.erlangls.setup {
     cmd = { vim.env.HOME .. "/.erlang_ls/release/bin/erlang_ls" },
 }
 
+lsp.gleam.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+}
+
 lsp.solargraph.setup {
     capabilities = capabilities,
     on_attach = on_attach,
