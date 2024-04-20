@@ -558,6 +558,11 @@ return {
                     augend.integer.alias.decimal,
                     augend.integer.alias.hex,
                     augend.constant.alias.bool,
+                    augend.constant.new({
+                        elements = { "True", "False" },
+                        word = true,
+                        cyclic = true,
+                    }),
                     augend.date.alias["%Y-%m-%d"],
                     augend.date.alias["%H:%M"],
                     augend.case.new {
