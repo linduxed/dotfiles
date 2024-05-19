@@ -914,6 +914,7 @@ return {
     },
     {
         "epwalsh/obsidian.nvim",
+        version = "~3.6.0",
         lazy = true,
         event = { "BufReadPre " .. vim.fn.expand "~" .. "/vimwiki/**.md" },
         dependencies = {
@@ -922,20 +923,17 @@ return {
             "nvim-telescope/telescope.nvim",
         },
         opts = {
-            workspaces = {
-                {
-                    name = "main",
-                    path = "~/vimwiki",
-                    overrides = {
-                        notes_subdir = "notes",
-                    },
-                },
-            },
+            dir = "~/vimwiki",
+            notes_subdir = "notes",
             daily_notes = {
                 folder = "diary",
             },
             completion = {
                 nvim_cmp = true,
+                -- Where to put new notes created from completion. Valid options are
+                --  * "current_dir" - put new notes in same directory as the current buffer.
+                --  * "notes_subdir" - put new notes in the default notes subdirectory.
+                new_notes_location = "notes_subdir",
             },
 
             -- Default configuration only has one mapping: "gf", for navigation
@@ -954,11 +952,6 @@ return {
             -- then set the mapping manually in the `config` of the plugin.
             mappings = {},
 
-            -- Where to put new notes. Valid options are
-            --  * "current_dir" - put new notes in same directory as the current buffer.
-            --  * "notes_subdir" - put new notes in the default notes subdirectory.
-            new_notes_location = "notes_subdir",
-
             -- Disable frontmatter handling, since I don't fully understand all
             -- the things that the plugin does with the frontmatter.
             disable_frontmatter = true,
@@ -966,7 +959,7 @@ return {
             -- Optional, customize how names/IDs for new notes are created.
             note_id_func = function(title)
                 -- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
-                -- In this case a note with the title 'My new note' will be given an ID that looks
+                -- In this case a note with the title 'My new note' will given an ID that looks
                 -- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
                 local suffix = ""
                 if title ~= nil then
@@ -983,25 +976,17 @@ return {
 
             -- Optional, alternatively you can customize the frontmatter data.
             note_frontmatter_func = function(note)
-                -- Add the title of the note as an alias.
-                if note.title then
-                    note:add_alias(note.title)
-                end
-
+                -- This is equivalent to the default frontmatter function.
                 local out = { id = note.id, aliases = note.aliases, tags = note.tags }
-
                 -- `note.metadata` contains any manually added fields in the frontmatter.
                 -- So here we just make sure those fields are kept in the frontmatter.
-                if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+                if note.metadata ~= nil and require("obsidian").util.table_length(note.metadata) > 0 then
                     for k, v in pairs(note.metadata) do
                         out[k] = v
                     end
                 end
-
                 return out
             end,
-
-            wiki_link_func = "use_alias_only",
 
             templates = {
                 subdir = "templates",
@@ -1010,7 +995,6 @@ return {
             },
             follow_url_func = function(url)
                 vim.fn.jobstart({ "xdg-open", url }) -- linux
-                -- vim.fn.jobstart({ "open", url })  -- Mac OS
             end,
             -- Optional, set to true if you use the Obsidian Advanced URI plugin.
             use_advanced_uri = false,
