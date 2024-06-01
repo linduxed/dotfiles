@@ -68,9 +68,7 @@ return {
                         a = {
                             name = "Misc #1",
                             a = { name = "Align text (Tabularize)" },
-                            j = {
-                                name = "SplitJoin",
-                            },
+                            j = { name = "SplitJoin" },
                             f = {
                                 name = "Folds",
                                 m = { name = "Foldmethod" }
@@ -87,12 +85,8 @@ return {
                         },
                         b = {
                             name = "Misc #2",
-                            s = {
-                                name = "Session management",
-                            },
-                            t = {
-                                name = "todo-comments.nvim",
-                            }
+                            s = { name = "Session management" },
+                            t = { name = "todo-comments.nvim" }
                         },
                         c = { name = "Commenting" },
                         f = { name = "Fuzzy finding (Telescope)" },
