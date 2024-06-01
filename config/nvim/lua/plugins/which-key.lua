@@ -75,6 +75,7 @@ return {
                                 name = "Folds",
                                 m = { name = "Foldmethod" }
                             },
+                            r = { name = "Trouble (tRouble)" },
                             s = {
                                 name = "Spelling",
                                 c = { name = "Autocorrect" }
