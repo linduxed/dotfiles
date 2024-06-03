@@ -21,6 +21,7 @@ if status is-interactive
 
     # Git
     abbr g git
+    abbr lg lazygit
 
     # Git - Branch (b)
     abbr gb "git branch"
