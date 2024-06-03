@@ -52,6 +52,7 @@
     path = ~/.gitconfig_host_specific
 [rebase]
     autosquash = true
+    updateRefs = true
 [rerere]
     enabled = true
 [diff]
