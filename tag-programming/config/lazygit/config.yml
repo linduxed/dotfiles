@@ -1,0 +1,40 @@
+# Config relating to the Lazygit UI
+gui:
+  # The number of lines you scroll by when scrolling the main window
+  scrollHeight: 2
+
+  # If true, capture mouse events.
+  # When mouse events are captured, it's a little harder to select text: e.g. requiring you to hold the option key when on macOS.
+  mouseEvents: false
+
+  # Format used when displaying time e.g. commit time.
+  # Uses Go's time format syntax: https://pkg.go.dev/time#Time.Format
+  timeFormat: 2020-01-06
+
+  # Format used when displaying time if the time is less than 24 hours ago.
+  # Uses Go's time format syntax: https://pkg.go.dev/time#Time.Format
+  shortTimeFormat: 03:04
+
+# Config relating to git
+git:
+  # If true, periodically fetch from remote
+  autoFetch: false
+
+  # If true, periodically refresh files and submodules
+  autoRefresh: true
+
+  # If true, pass the --all arg to git fetch
+  fetchAll: true
+
+# Background refreshes
+refresher:
+  # File/submodule refresh interval in seconds.
+  # Auto-refresh can be disabled via option 'git.autoRefresh'.
+  refreshInterval: 10
+
+  # Re-fetch interval in seconds.
+  # Auto-fetch can be disabled via option 'git.autoFetch'.
+  fetchInterval: 60
+
+# If true, don't display introductory popups upon opening Lazygit.
+disableStartupPopups: true
