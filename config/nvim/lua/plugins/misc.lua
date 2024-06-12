@@ -58,6 +58,7 @@ return {
         lazy = false,
         init = function()
             vim.g.ctrlsf_populate_qflist = 1
+            vim.g.ctrlsf_backend = "rg"
         end,
         keys = {
             {
