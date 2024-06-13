@@ -940,7 +940,6 @@ return {
     },
     {
         "epwalsh/obsidian.nvim",
-        version = "~3.6.0",
         lazy = true,
         event = { "BufReadPre " .. vim.fn.expand "~" .. "/vimwiki/**.md" },
         dependencies = {
