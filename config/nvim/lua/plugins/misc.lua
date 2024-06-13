@@ -1029,6 +1029,7 @@ return {
         config = function(_, opts)
             require("obsidian").setup(opts)
 
+            vim.opt.conceallevel = 2
             vim.keymap.set("n", "gf", function()
                 if require("obsidian").util.cursor_on_markdown_link() then
                     return "<cmd>ObsidianFollowLink<CR>"
