@@ -11,6 +11,8 @@ if status is-interactive
         --processes=\ep \
         --variables=\ev
 
+    mise activate fish | source
+
     # Miscellaneous
 
     abbr nivm nvim
