@@ -67,12 +67,12 @@ return {
             local actions = require("telescope.actions")
             local drop_mappings = {
                 i = {
-                    ["<CR>"] = actions.select_drop,
-                    ["<S-CR>"] = actions.select_default,
+                    ["<CR>"] = actions.select_default,
+                    ["<S-CR>"] = actions.select_drop,
                 },
                 n = {
-                    ["<CR>"] = actions.select_drop,
                     ["<S-CR>"] = actions.select_default,
+                    ["<CR>"] = actions.select_drop,
                 }
             }
 
