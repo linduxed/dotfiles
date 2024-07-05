@@ -15,17 +15,17 @@ vim.keymap.set("n",
 
 -- {{{2 Spelling
 vim.keymap.set("n",
-    "<leader>ase",
+    "<leader>asle",
     function() vim.opt.spelllang = "en" end,
     { desc = "Spell language - EN" }
 )
 vim.keymap.set("n",
-    "<leader>ass",
+    "<leader>asls",
     function() vim.opt.spelllang = "sv" end,
     { desc = "Spell language - SV" }
 )
 vim.keymap.set("n",
-    "<leader>asp",
+    "<leader>aslp",
     function() vim.opt.spelllang = "pl" end,
     { desc = "Spell language - PL" }
 )

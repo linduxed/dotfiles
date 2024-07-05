@@ -76,7 +76,8 @@ return {
                             r = { name = "Trouble (tRouble)" },
                             s = {
                                 name = "Spelling",
-                                c = { name = "Autocorrect" }
+                                c = { name = "Autocorrect" },
+                                l = { name = "Language" }
                             },
                             t = { name = "Text width" },
                             q = { name = "Buffer/Window closing (Sayonara)" },
