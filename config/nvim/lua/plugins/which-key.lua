@@ -27,7 +27,7 @@ return {
 
             require("which-key").setup({
                 ---@type false | "classic" | "modern" | "helix"
-                preset = "classic",
+                preset = "helix",
                 spec = {},
                 -- show a warning when issues were detected with your mappings
                 notify = true,
