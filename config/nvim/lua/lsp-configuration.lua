@@ -2,46 +2,83 @@ local lsp = require("lspconfig")
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local wk = require("which-key")
 
-wk.register(
-    {
-        ["[g"] = { vim.diagnostic.goto_prev, "Move to previous diagnostic." },
-        ["]g"] = { vim.diagnostic.goto_next, "Move to next diagnostic." },
-    }, {}
-)
+wk.add({
+    { "[g", vim.diagnostic.goto_prev, desc = "Move to previous diagnostic." },
+    { "]g", vim.diagnostic.goto_next, desc = "Move to next diagnostic." },
+})
 
 local function on_attach(_, buf)
-    wk.register(
+    wk.add({
+        { "<leader>al",  group = "LSP-related" },
         {
-            ["<leader>al"] = {
-                name = "LSP-related",
-                h = { vim.lsp.buf.hover, "Hover help", buffer = buf },
-                f = { vim.lsp.buf.format, "Format file", buffer = buf },
-                m = { vim.lsp.buf.rename, "Rename all references to symbol under cursor", buffer = buf },
-                d = { vim.lsp.buf.definition, "Jump to definition", buffer = buf },
-                c = { vim.lsp.buf.code_action, "Select code action for current cursor position", buffer = buf },
-                s = { vim.lsp.buf.signature_help, "Display signature information about symbol cursor", buffer = buf },
-                t = { vim.lsp.buf.type_definition, "Jump to type definition", buffer = buf },
-
-                w = { name = "LSP workspace" },
-                ["wa"] = { vim.lsp.buf.add_workspace_folder, "Add folder to the workspace.", buffer = buf },
-                ["wr"] = { vim.lsp.buf.remove_workspace_folder, "Remove folder from the workspace.", buffer = buf },
-                ["wl"] = {
-                    function() vim.pretty_print(vim.lsp.buf.list_workspace_folders()) end,
-                    "List workspace folders.",
-                    buffer = buf
-                },
-            },
-        }, {}
-    )
-    wk.register(
-        {
-            ["<leader>al"] = {
-                name = "LSP-related",
-                f = { vim.lsp.buf.format, "Format file", buffer = buf },
-            },
+            "<leader>alc",
+            vim.lsp.buf.code_action,
+            buffer = buf,
+            desc = "Select code action for current cursor position"
         },
-        { mode = "v" }
-    )
+        {
+            "<leader>ald",
+            vim.lsp.buf.definition,
+            buffer = buf,
+            desc = "Jump to definition"
+        },
+        {
+            "<leader>alf",
+            vim.lsp.buf.format,
+            buffer = buf,
+            desc = "Format file"
+        },
+        {
+            "<leader>alh",
+            vim.lsp.buf.hover,
+            buffer = buf,
+            desc = "Hover help"
+        },
+        {
+            "<leader>alm",
+            vim.lsp.buf.rename,
+            buffer = buf,
+            desc = "Rename all references to symbol under cursor"
+        },
+        {
+            "<leader>als",
+            vim.lsp.buf.signature_help,
+            buffer = buf,
+            desc = "Display signature information about symbol cursor"
+        },
+        {
+            "<leader>alt",
+            vim.lsp.buf.type_definition,
+            buffer = buf,
+            desc = "Jump to type definition"
+        },
+
+        { "<leader>alw", group = "LSP workspace" },
+        {
+            "<leader>alwa",
+            vim.lsp.buf.add_workspace_folder,
+            buffer = buf,
+            desc = "Add folder to the workspace."
+        },
+        {
+            "<leader>alwl",
+            function() vim.pretty_print(vim.lsp.buf.list_workspace_folders()) end,
+            buffer = buf,
+            desc = "List workspace folders."
+        },
+        {
+            "<leader>alwr",
+            vim.lsp.buf.remove_workspace_folder,
+            buffer = buf,
+            desc = "Remove folder from the workspace."
+        },
+    })
+
+    wk.add({ {
+        mode = { "v" },
+        { "<leader>al",  group = "LSP-related" },
+        { "<leader>alf", vim.lsp.buf.format,   buffer = buf, desc = "Format file" },
+    } })
 end
 
 lsp.lua_ls.setup {
