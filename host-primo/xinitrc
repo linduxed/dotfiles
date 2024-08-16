@@ -15,6 +15,7 @@ redshift-gtk &
 flameshot &
 lxsession &
 1password &
+openrgb &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
