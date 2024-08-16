@@ -22,7 +22,19 @@ local c = require("luasnip.nodes.choiceNode").C
 
 return {
     s(
-        { trig = "%", name = "<% %>" },
-        { t("<% "), i(1, ""), t(" %>") }
+        { trig = "t=", name = "template tag: <%= %>", },
+        {
+            t("<%= "), i(1, ""), t(" %>"),
+        }
+    ),
+    s(
+        { trig = "t-", name = "template tag: <% %>", },
+        {
+            t("<% "), i(1, ""), t(" %>"),
+        }
+    ),
+    s(
+        { trig = "tend", name = "template tag: <% end %>", },
+        { t("<% end %>") }
     ),
 }
