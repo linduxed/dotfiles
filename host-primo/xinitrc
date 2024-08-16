@@ -7,7 +7,6 @@ nm-applet &
 firefox &
 start-pulseaudio-x11 &
 SpiderOakONE &
-kupfer &
 rsibreak &
 xrandr --output DP-0 --mode 2560x1440 --rate 144 &
 xrandr --output DP-2 --mode 3840x2160 --pos 2560x-720 &
