@@ -1,6 +1,7 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx BAT_THEME "Monokai Extended"
+set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
 
 if status is-interactive
     fzf_configure_bindings \
