@@ -4,6 +4,8 @@ set -gx BAT_THEME "Monokai Extended"
 set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
 
 if status is-interactive
+    fish_add_path ~/bin
+
     fzf_configure_bindings \
         --directory=\ef \
         --git_log=\el \
