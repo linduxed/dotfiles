@@ -32,14 +32,16 @@ return {
                 -- show a warning when issues were detected with your mappings
                 notify = true,
                 -- Enable/disable WhichKey for certain mapping modes
-                modes = {
-                    n = true, -- Normal mode
-                    i = true, -- Insert mode
-                    x = true, -- Visual mode
-                    s = true, -- Select mode
-                    o = true, -- Operator pending mode
-                    t = true, -- Terminal mode
-                    c = true, -- Command mode
+                triggers = {
+                    -- Default value. Will setup keymap triggers for every mode
+                    -- automatically and will trigger during `ModeChanged`.
+                    { "<auto>", mode = "nixsotc" },
+
+                    -- Auto triggers will never be created for existing
+                    -- keymaps. That includes every valid single key Neovim
+                    -- builtin mapping. If you want to trigger on a builtin
+                    -- keymap, you have to add it manually. Example:
+                    -- { "a", mode = { "n", "v" } },
                 },
                 plugins = {
                     -- shows a list of your marks on ' and `
