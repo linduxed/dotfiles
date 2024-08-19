@@ -1,7 +1,7 @@
 [theme]
 theme = "space-villain"
 [icons]
-icons = "awesome6"
+icons = "awesome4"
 
 [[block]]
 block = "disk_space"
