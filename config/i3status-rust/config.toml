@@ -14,7 +14,7 @@ warning = 210
 
 [[block]]
 block = "memory"
-format = " $mem_used/$mem_total($mem_total_used_percents.eng(w:2))"
+format = " $icon $mem_used/$mem_total($mem_total_used_percents.eng(w:2))"
 
 [[block]]
 block = "keyboard_layout"
@@ -33,7 +33,7 @@ format = " $icon $utilization"
 
 [[block]]
 block = "temperature"
-format = " $icon $max max, $average avg"
+format = " $icon max: $max $icon avg: $average"
 
 [[block]]
 block = "nvidia_gpu"
