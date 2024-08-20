@@ -51,7 +51,7 @@ interval = 1
 
 [[block]]
 block = "net"
-device = "wlp4s0"
+device = "wlo1"
 format = " $icon $speed_down"
 interval = 5
 
