@@ -125,7 +125,7 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # }}}
 # {{{ Mappings
 
-bindsym $mod+space exec "rofi -show drun -drun-show-actions"
+bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
 
 bindsym $mod+F1 exec "rofi -show run"
 bindsym $mod+F2 exec "rofi -show window"
