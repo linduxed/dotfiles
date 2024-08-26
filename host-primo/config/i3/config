@@ -123,6 +123,59 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # }}}
+# {{{ i3-resurrect
+
+set $mode_resurrect_save "resurrect - save ([A]ll / [l]ayout / [p]rograms)"
+set $mode_resurrect_save_layout_and_programs "ressurect - save - layout & programs ([i]nstance / [T]itle)"
+set $mode_resurrect_save_layout "ressurect - save - layout ([i]nstance / [T]itle)"
+set $mode_resurrect_save_programs "ressurect - save - programs ([i]nstance / [T]itle)"
+
+# Save workspace mode.
+mode $mode_resurrect_save {
+  bindsym a mode $mode_resurrect_save_layout_and_programs
+  bindsym Return mode $mode_resurrect_save_layout_and_programs
+
+  bindsym l mode $mode_resurrect_save_layout
+  bindsym p mode $mode_resurrect_save_programs
+
+  bindsym Escape mode "default"
+}
+mode $mode_resurrect_save_layout_and_programs {
+  bindsym i exec "i3-resurrect save --swallow=class,instance"; mode "default"
+  bindsym t exec "i3-resurrect save --swallow=class,instance,title"; mode "default"
+  bindsym Return exec "i3-resurrect save --swallow=class,instance,title"; mode "default"
+
+  bindsym Escape mode "default"
+}
+mode $mode_resurrect_save_layout {
+  bindsym i exec "i3-resurrect save --layout-only --swallow=class,instance"; mode "default"
+  bindsym t exec "i3-resurrect save --layout-only --swallow=class,instance,title"; mode "default"
+  bindsym Return exec "i3-resurrect save --layout-only --swallow=class,instance,title"; mode "default"
+
+  bindsym Escape mode "default"
+}
+mode $mode_resurrect_save_programs {
+  bindsym i exec "i3-resurrect save --programs-only --swallow=class,instance"; mode "default"
+  bindsym t exec "i3-resurrect save --programs-only --swallow=class,instance,title"; mode "default"
+  bindsym Return exec "i3-resurrect save --programs-only --swallow=class,instance,title"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+set $mode_resurrect_restore "resurrect - restore ([A]ll / [l]ayout / [p]rograms)"
+
+# Restore workspace mode.
+mode $mode_resurrect_restore {
+  bindsym a exec "i3-resurrect restore"; mode "default"
+  bindsym Return exec "i3-resurrect restore"; mode "default"
+
+  bindsym l exec "i3-resurrect restore --layout-only"; mode "default"
+  bindsym p exec "i3-resurrect restore --programs-only"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+# }}}
 # {{{ Mappings
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
@@ -130,8 +183,8 @@ bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window
 bindsym $mod+F1 exec "rofi -show run"
 bindsym $mod+F2 exec "rofi -show window"
 # bindsym $mod+F3 exec ""
-# bindsym $mod+F4 exec ""
-# bindsym $mod+F5 exec ""
+bindsym $mod+F4 mode $mode_resurrect_save
+bindsym $mod+F5 mode $mode_resurrect_restore
 # bindsym $mod+F6 exec ""
 # bindsym $mod+F7 exec ""
 # bindsym $mod+F8 exec ""
@@ -150,5 +203,11 @@ bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
 
 bindsym $mod+Shift+l exec "xscreensaver-command -lock"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
+
+# }}}
+# {{{ Startup
+
+exec "i3-resurrect restore -w 1 --profile startup_stacked --layout-only"
+exec "i3-resurrect restore -w __i3_scratch"
 
 # }}}
