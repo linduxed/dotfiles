@@ -9,8 +9,8 @@ path = "/"
 info_type = "used"
 format = " $icon $used/$total ($available.eng(w:2) free)"
 alert_unit = "GB"
-alert = 190
-warning = 210
+alert = 750
+warning = 900
 
 [[block]]
 block = "memory"
