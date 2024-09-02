@@ -14,7 +14,7 @@ warning = 900
 
 [[block]]
 block = "memory"
-format = " $icon $mem_used/$mem_total($mem_total_used_percents.eng(w:2))"
+format = " $icon $mem_used/$mem_total($mem_used_percents.eng(w:2))"
 
 [[block]]
 block = "keyboard_layout"
