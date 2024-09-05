@@ -20,7 +20,8 @@ bar {
     }
 }
 
-# {{{1 Layout
+# {{{1 i3 mappings
+# {{{2 Layout
 
 bindsym $mod+y layout toggle split
 bindsym $mod+semicolon layout stacking
@@ -48,7 +49,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# {{{1 Navigation
+# {{{2 Navigation
 
 bindsym $mod+u focus up
 bindsym $mod+e focus down
@@ -71,13 +72,13 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+o move container to output right
 bindsym $mod+apostrophe move workspace to output right
 
-# {{{1 Floating
+# {{{2 Floating
 
 floating_modifier $mod
 bindsym $mod+Shift+t floating toggle
 bindsym $mod+t focus mode_toggle
 
-# {{{1 Workspaces
+# {{{2 Workspaces
 
 bindsym $mod+Tab workspace back_and_forth
 
@@ -103,12 +104,12 @@ bindsym $mod+Shift+8 move container to workspace 8:email
 bindsym $mod+Shift+9 move container to workspace 9:shells
 bindsym $mod+Shift+0 move container to workspace 10:chats
 
-# {{{1 Scratchpad
+# {{{2 Scratchpad
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
-# {{{1 Commands
+# {{{2 Commands
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+grave kill
@@ -117,13 +118,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # {{{1 i3-resurrect
+# {{{2 Save workspace mode
 
 set $mode_resurrect_save "resurrect - save ([A]ll / [l]ayout / [p]rograms)"
 set $mode_resurrect_save_layout_and_programs "ressurect - save - layout & programs ([i]nstance / [T]itle)"
 set $mode_resurrect_save_layout "ressurect - save - layout ([i]nstance / [T]itle)"
 set $mode_resurrect_save_programs "ressurect - save - programs ([i]nstance / [T]itle)"
 
-# Save workspace mode.
 mode $mode_resurrect_save {
   bindsym a mode $mode_resurrect_save_layout_and_programs
   bindsym Return mode $mode_resurrect_save_layout_and_programs
@@ -155,9 +156,9 @@ mode $mode_resurrect_save_programs {
   bindsym Escape mode "default"
 }
 
+# {{{2 Restore workspace mode
 set $mode_resurrect_restore "resurrect - restore ([A]ll / [l]ayout / [p]rograms)"
 
-# Restore workspace mode.
 mode $mode_resurrect_restore {
   bindsym a exec "i3-resurrect restore"; mode "default"
   bindsym Return exec "i3-resurrect restore"; mode "default"
@@ -168,9 +169,14 @@ mode $mode_resurrect_restore {
   bindsym Escape mode "default"
 }
 
-# {{{1 Mappings
+# {{{1 Other mappings
+# {{{2 Miscellaneous
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $mod+Shift+l exec "xscreensaver-command -lock"
+bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
+
+# {{{2 F-keys
 
 bindsym $mod+F1 exec "rofi -show run"
 bindsym $mod+F2 exec "rofi -show window"
@@ -184,6 +190,9 @@ bindsym $mod+F9 exec "/home/linduxed/bin/dual_no-pivot_bg_random_switch.sh"
 bindsym $mod+F10 exec "/usr/bin/pulseaudio-ctl mute"
 bindsym $mod+F11 exec "/usr/bin/pulseaudio-ctl down"
 bindsym $mod+F12 exec "/usr/bin/pulseaudio-ctl up"
+
+# {{{2 Media keys
+
 bindsym XF86AudioMute exec "/usr/bin/pulseaudio-ctl mute"
 bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down"
 bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up"
@@ -192,9 +201,6 @@ bindsym XF86AudioPlay exec "MPD_HOST=127.0.0.1 mpc toggle"
 bindsym XF86AudioStop exec "MPD_HOST=127.0.0.1 mpc stop"
 bindsym XF86AudioPrev exec "MPD_HOST=127.0.0.1 mpc prev"
 bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
-
-bindsym $mod+Shift+l exec "xscreensaver-command -lock"
-bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 
 # {{{1 Startup
 
