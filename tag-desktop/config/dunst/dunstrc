@@ -133,18 +133,18 @@
     # and 'mod4' (windows-key)
     # xev might be helpful to find names for keys
 
-    # close notification
-    close = ctrl+space
+    ## close notification
+    #close = mod4+shift+F9
 
-    # close all notifications
-    close_all = ctrl+shift+space
+    ## close all notifications
+    #close_all = mod4+shift+F10
 
-    # redisplay last message(s)
-    # On the US keyboard layout 'grave' is normally above TAB and left of '1'.
-    history = ctrl+grave
+    ## redisplay last message(s)
+    ## On the US keyboard layout 'grave' is normally above TAB and left of '1'.
+    #history = mod4+shift+F11
 
-    # context menu
-    context = ctrl+shift+period
+    ## context menu
+    #context = mod4+shift+F12
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.

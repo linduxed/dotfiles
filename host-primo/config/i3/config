@@ -169,6 +169,14 @@ mode $mode_resurrect_restore {
   bindsym Escape mode "default"
 }
 
+# {{{1 dunst
+
+bindsym $mod+Shift+F7 exec "dunstctl close"
+bindsym $mod+Shift+F8 exec "dunstctl close-all"
+bindsym $mod+Shift+F9 exec "dunstctl history-pop"
+bindsym $mod+Shift+F10 exec "dunstctl action"
+bindsym $mod+Shift+F11 exec "dunstctl context"
+
 # {{{1 Other mappings
 # {{{2 Miscellaneous
 
