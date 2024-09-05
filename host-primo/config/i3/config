@@ -1,4 +1,4 @@
-# {{{ Setup
+# {{{1 Setup
 
 set $mod Mod4
 set $ALT Mod1
@@ -20,8 +20,7 @@ bar {
     }
 }
 
-# }}}
-# {{{ Layout
+# {{{1 Layout
 
 bindsym $mod+y layout toggle split
 bindsym $mod+semicolon layout stacking
@@ -49,8 +48,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-# }}}
-# {{{ Navigation
+# {{{1 Navigation
 
 bindsym $mod+u focus up
 bindsym $mod+e focus down
@@ -73,15 +71,13 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+o move container to output right
 bindsym $mod+apostrophe move workspace to output right
 
-# }}}
-# {{{ Floating
+# {{{1 Floating
 
 floating_modifier $mod
 bindsym $mod+Shift+t floating toggle
 bindsym $mod+t focus mode_toggle
 
-# }}}
-# {{{ Workspaces
+# {{{1 Workspaces
 
 bindsym $mod+Tab workspace back_and_forth
 
@@ -107,14 +103,12 @@ bindsym $mod+Shift+8 move container to workspace 8:email
 bindsym $mod+Shift+9 move container to workspace 9:shells
 bindsym $mod+Shift+0 move container to workspace 10:chats
 
-# }}}
-# {{{ Scratchpad
+# {{{1 Scratchpad
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
 
-# }}}
-# {{{ Commands
+# {{{1 Commands
 
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+grave kill
@@ -122,8 +116,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# }}}
-# {{{ i3-resurrect
+# {{{1 i3-resurrect
 
 set $mode_resurrect_save "resurrect - save ([A]ll / [l]ayout / [p]rograms)"
 set $mode_resurrect_save_layout_and_programs "ressurect - save - layout & programs ([i]nstance / [T]itle)"
@@ -175,8 +168,7 @@ mode $mode_resurrect_restore {
   bindsym Escape mode "default"
 }
 
-# }}}
-# {{{ Mappings
+# {{{1 Mappings
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
 
@@ -204,10 +196,7 @@ bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
 bindsym $mod+Shift+l exec "xscreensaver-command -lock"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 
-# }}}
-# {{{ Startup
+# {{{1 Startup
 
 exec "i3-resurrect restore -w 1 --profile startup_stacked --layout-only"
 exec "i3-resurrect restore -w __i3_scratch"
-
-# }}}
