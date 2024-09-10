@@ -20,8 +20,8 @@
 .stack-work
 .tool-versions
 Session.vim*
-assets/vendor
 _vimrc_local.vim
+assets/vendor
 db/*.sqlite3
 log/*.log
 rerun.txt
