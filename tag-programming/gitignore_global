@@ -10,6 +10,8 @@
 .env
 .gitignore
 .ignore
+.mise.*.local.toml
+.mise.local.toml
 .rgignore
 .rspec
 .rubocop.yml
