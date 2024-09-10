@@ -212,5 +212,4 @@ bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
 
 # {{{1 Startup
 
-exec "i3-resurrect restore -w 1 --profile startup_stacked --layout-only"
 exec "i3-resurrect restore -w __i3_scratch"
