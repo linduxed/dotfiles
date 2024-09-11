@@ -171,11 +171,20 @@ mode $mode_resurrect_restore {
 
 # {{{1 dunst
 
+set $dunst_mode "dunst - [c]lose / close-[a]ll / [h]istory-pop / [a]ction / [c]ontext"
+
+mode $dunst_mode {
+  bindsym c exec "dunstctl close"; mode "default"
+  bindsym a exec "dunstctl close-all"; mode "default"
+  bindsym h exec "dunstctl history-pop"; mode "default"
+  bindsym a exec "dunstctl action"; mode "default"
+  bindsym c exec "dunstctl context"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
 bindsym $mod+Shift+F7 exec "dunstctl close"
-bindsym $mod+Shift+F8 exec "dunstctl close-all"
-bindsym $mod+Shift+F9 exec "dunstctl history-pop"
-bindsym $mod+Shift+F10 exec "dunstctl action"
-bindsym $mod+Shift+F11 exec "dunstctl context"
+bindsym $mod+Shift+F8 mode $dunst_mode
 
 # {{{1 sound_switch
 
