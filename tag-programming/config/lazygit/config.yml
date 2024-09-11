@@ -104,3 +104,40 @@ customCommands:
         body: "Are you sure you want to commit?"
     command: "git commit --message '{{.Form.Type}}{{ if .Form.Scope }}({{ .Form.Scope }}){{ end }}{{.Form.Breaking}}: {{.Form.Message}}'"
     loadingText: "Creating conventional commit..."
+
+  # Disentangle branch
+  - key: 'K'
+    description: "Disentangle: Squash all changes of branch into a single commit and rebase onto the selected branch"
+    context: localBranches
+    command: |
+      #!/bin/bash
+
+      # Set the base branch
+      BASE_BRANCH="{{.SelectedLocalBranch.Name}}"
+
+      # Check if the working tree is dirty
+      if [[ -n $(git status --porcelain) ]]; then
+          echo "Error: Working tree is dirty. Please commit or stash your changes before running this script."
+          exit 1
+      fi
+
+      # Get the merge base commit
+      merge_base=$(git merge-base $BASE_BRANCH HEAD)
+
+      # Get the first commit hash, message, and author details
+      first_commit_hash=$(git rev-list --reverse $merge_base..HEAD | head -n 1)
+      first_commit_message=$(git log -1 --format=%B $first_commit_hash)
+
+      # Reset to the merge base
+      git reset $merge_base
+
+      # Stage all changes
+      git add -A
+
+      # Create a new commit with all the changes, using the first commit's message and author
+      GIT_AUTHOR_NAME="$(git log -1 --format='%an' $first_commit_hash)" \
+      GIT_AUTHOR_EMAIL="$(git log -1 --format='%ae' $first_commit_hash)" \
+      git commit -m "$first_commit_message"
+
+      # Rebase onto the base branch
+      git rebase $BASE_BRANCH
