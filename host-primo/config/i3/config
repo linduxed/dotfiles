@@ -177,6 +177,20 @@ bindsym $mod+Shift+F9 exec "dunstctl history-pop"
 bindsym $mod+Shift+F10 exec "dunstctl action"
 bindsym $mod+Shift+F11 exec "dunstctl context"
 
+# {{{1 sound_switch
+
+set $sound_switch_mode "sound_switch - [j]bl / [s]tage_mini / s[t]arship"
+
+mode $sound_switch_mode {
+  bindsym j exec "~/bin/sound_switch jbl"; mode "default"
+  bindsym s exec "~/bin/sound_switch stage_mini"; mode "default"
+  bindsym t exec "~/bin/sound_switch starship"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+F12 mode $sound_switch_mode
+
 # {{{1 Miscellaneous
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
