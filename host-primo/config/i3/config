@@ -183,8 +183,8 @@ mode $dunst_mode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+F7 exec "dunstctl close"
-bindsym $mod+Shift+F8 mode $dunst_mode
+bindsym $mod+Shift+F11 mode $dunst_mode
+bindsym $mod+Shift+F12 exec "dunstctl close"
 
 # {{{1 sound_switch
 
@@ -198,7 +198,7 @@ mode $sound_switch_mode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+F12 mode $sound_switch_mode
+bindsym $mod+Shift+F7 mode $sound_switch_mode
 
 # {{{1 Miscellaneous
 
