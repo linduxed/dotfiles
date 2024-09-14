@@ -200,10 +200,13 @@ mode $sound_switch_mode {
 
 bindsym $mod+Shift+F7 mode $sound_switch_mode
 
+# {{{1 xscreensaver
+
+bindsym $mod+Shift+l exec "xscreensaver-command -lock"
+
 # {{{1 Miscellaneous
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
-bindsym $mod+Shift+l exec "xscreensaver-command -lock"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 
 # {{{1 Keyboard key group mappings
