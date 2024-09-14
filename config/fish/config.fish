@@ -23,6 +23,7 @@ if status is-interactive
     abbr exti exit
     abbr xeit exit
     abbr xeti exit
+    abbr xo xdg-open
 
     # Git
     abbr g git
