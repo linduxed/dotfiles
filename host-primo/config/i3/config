@@ -204,6 +204,10 @@ bindsym $mod+Shift+F7 mode $sound_switch_mode
 
 bindsym $mod+Shift+l exec "xscreensaver-command -lock"
 
+# I don't see myself using XF86Calculator anytime soon, so I'll repurpose this
+# keysym to be a "Lock" key.
+bindsym XF86Calculator exec "xscreensaver-command -lock"
+
 # {{{1 Miscellaneous
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
