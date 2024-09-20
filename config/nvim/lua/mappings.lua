@@ -42,6 +42,7 @@ vim.keymap.set(
             s/\v *$//
             norm! `w
             delmarks w
+            nohlsearch
         ]])
     end,
     { desc = "Split line and remove trailing whitespace" }
