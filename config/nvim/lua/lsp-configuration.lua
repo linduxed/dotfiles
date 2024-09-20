@@ -76,8 +76,8 @@ local function on_attach(_, buf)
 
     wk.add({ {
         mode = { "v" },
-        { "<leader>al",  group = "LSP-related" },
-        { "<leader>alf", vim.lsp.buf.format,   buffer = buf, desc = "Format file" },
+        { "<leader>al", group = "LSP-related" },
+        { "<leader>alf", vim.lsp.buf.format, buffer = buf, desc = "Format file" },
     } })
 end
 
