@@ -138,7 +138,4 @@ lsp.rust_analyzer.setup {
     on_attach = on_attach,
 }
 
-lsp.tailwindcss.setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-}
+-- Tailwind configured by tailwind-tools.nvim
