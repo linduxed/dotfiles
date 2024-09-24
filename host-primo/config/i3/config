@@ -25,6 +25,14 @@ bar {
 }
 
 # {{{1 i3 mappings
+# {{{2 Commands
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+grave kill
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
 # {{{2 Layout
 
 bindsym $mod+y layout toggle split
@@ -112,14 +120,6 @@ bindsym $mod+Shift+0 move container to workspace 10:chats
 
 bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+minus move scratchpad
-
-# {{{2 Commands
-
-bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+grave kill
-bindsym $mod+Shift+c reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # {{{1 i3-resurrect
 # {{{2 Save workspace mode
