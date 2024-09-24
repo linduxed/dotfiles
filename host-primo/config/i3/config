@@ -1,9 +1,13 @@
-# {{{1 Setup
+# {{{1 Mod-key mappings
 
 set $mod Mod4
 set $ALT Mod1
 
+# {{{1 i3 interface font
+
 font pango:UbuntuMono 10
+
+# {{{1 Bar
 
 bar {
     font pango:pango:UbuntuMono 10, FontAwesome 12
