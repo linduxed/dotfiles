@@ -899,6 +899,19 @@ return {
         end
     },
     {
+        "hedyhli/outline.nvim",
+        lazy = true,
+        cmd = { "Outline", "OutlineOpen" },
+        keys = {
+            {
+                "<F10>",
+                "<cmd>Outline<CR>",
+                desc = "Toggle outline",
+            },
+        },
+        opts = {},
+    },
+    {
         "reedes/vim-wheel",
         init = function()
             -- Disable for mouse, due to erratic behavior.
