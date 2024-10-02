@@ -21,11 +21,11 @@ local c = require("luasnip.nodes.choiceNode").C
 -- local ai = require("luasnip.nodes.absolute_indexer")
 
 local echo_fun = function(
-  args, -- text from i(x) node, accessed with [1][1]
-  _,    -- parent snippet or parent node, unused
-  _     -- user_args from opts.user_args
+    args, -- text from i(x) node, accessed with [1][1]
+    _,    -- parent snippet or parent node, unused
+    _     -- user_args from opts.user_args
 )
-   return args[1][1]
+    return args[1][1]
 end
 
 return {
@@ -50,7 +50,7 @@ return {
         {
             t("<"), i(1, ""), t(">"),
             i(0, ""),
-            t("</"), f(echo_fun, {1}, nil), t(">"),
+            t("</"), f(echo_fun, { 1 }, nil), t(">"),
         }
     ),
 }

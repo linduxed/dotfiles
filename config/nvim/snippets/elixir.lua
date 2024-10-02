@@ -21,11 +21,11 @@ local c = require("luasnip.nodes.choiceNode").C
 -- local ai = require("luasnip.nodes.absolute_indexer")
 
 local echo_fun = function(
-  args, -- text from i(x) node, accessed with [1][1]
-  _,    -- parent snippet or parent node, unused
-  _     -- user_args from opts.user_args
+    args, -- text from i(x) node, accessed with [1][1]
+    _,    -- parent snippet or parent node, unused
+    _     -- user_args from opts.user_args
 )
-   return args[1][1]
+    return args[1][1]
 end
 
 return {
@@ -41,8 +41,8 @@ return {
         { trig = "fnm", name = "lambda function (multiline)" },
         {
             t("fn "), i(1, "x"), t({ " ->",
-                "  " }), i(2, ""), t({ "",
-                "end" }),
+            "  " }), i(2, ""), t({ "",
+            "end" }),
         }
     ),
     s(
@@ -57,8 +57,8 @@ return {
                 sn(nil, { t("& &1"), i(1, "") }),
                 sn(nil, {
                     t("fn "), i(1, "x"), t({ " ->",
-                        "  " }), i(2, ""), t({ "",
-                        "end" }),
+                    "  " }), i(2, ""), t({ "",
+                    "end" }),
                 }),
             }),
             t(")"),
@@ -82,8 +82,8 @@ return {
                 sn(nil, { t("& &1"), i(1, "") }),
                 sn(nil, {
                     t("fn "), i(1, "x"), t({ " ->",
-                        "  " }), i(2, ""), t({ "",
-                        "end" }),
+                    "  " }), i(2, ""), t({ "",
+                    "end" }),
                 }),
             }),
             t(")"),
@@ -112,16 +112,16 @@ return {
         { trig = "test", name = "test clause", },
         {
             t("test \""), i(1, "test name"), t({ "\" do",
-                "  " }), i(2, ""), t({ "",
-                "end" }),
+            "  " }), i(2, ""), t({ "",
+            "end" }),
         }
     ),
     s(
         { trig = "desc", name = "describe clause", },
         {
             t("describe \""), i(1, "test group subject"), t({ "\" do",
-                "  " }), i(2, ""), t({ "",
-                "end" }),
+            "  " }), i(2, ""), t({ "",
+            "end" }),
         }
     ),
 
@@ -147,7 +147,7 @@ return {
         {
             t("<"), i(1, ""), t(">"),
             i(0, ""),
-            t("</"), f(echo_fun, {1}, nil), t(">"),
+            t("</"), f(echo_fun, { 1 }, nil), t(">"),
         }
     ),
 }
