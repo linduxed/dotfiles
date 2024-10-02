@@ -1,9 +1,9 @@
 local s = require("luasnip.nodes.snippet").S
-local sn = require("luasnip.nodes.snippet").SN
+-- local sn = require("luasnip.nodes.snippet").SN
 local t = require("luasnip.nodes.textNode").T
 local f = require("luasnip.nodes.functionNode").F
 local i = require("luasnip.nodes.insertNode").I
-local c = require("luasnip.nodes.choiceNode").C
+-- local c = require("luasnip.nodes.choiceNode").C
 -- local d = require("luasnip.nodes.dynamicNode").D
 -- local r = require("luasnip.nodes.restoreNode").R
 -- local l = require("luasnip.extras").lambda
