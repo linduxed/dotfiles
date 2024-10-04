@@ -104,6 +104,7 @@ return {
                     { "<leader>ay",  group = "Yank" },
                     { "<leader>b",   group = "Misc #2" },
                     { "<leader>bs",  group = "Session management" },
+                    { "<leader>bc",  group = "Color picker (Minty)" },
                     { "<leader>bt",  group = "todo-comments.nvim" },
                     { "<leader>c",   group = "Commenting" },
                     { "<leader>f",   group = "Fuzzy finding (Telescope)" },
