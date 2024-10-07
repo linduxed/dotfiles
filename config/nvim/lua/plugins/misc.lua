@@ -1334,12 +1334,12 @@ return {
             {
                 "<Leader>bch",
                 function() require("minty.huefy").open({ border = true }) end,
-                desc = "Hue picker (Minty)"
+                desc = "Hue picker"
             },
             {
                 "<Leader>bcs",
                 function() require("minty.shades").open({ border = true }) end,
-                desc = "Shade picker (Minty)"
+                desc = "Shade picker"
             }
         }
     },
