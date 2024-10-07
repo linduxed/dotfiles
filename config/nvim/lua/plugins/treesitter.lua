@@ -1,7 +1,19 @@
 return {
     {
         'nvim-treesitter/nvim-treesitter',
-        build = ":TSUpdate"
+        build = ":TSUpdate",
+        keys = {
+            {
+                "<Leader>aeah",
+                ":TSToggle highlight<CR>",
+                desc = "Toggle Treesitter highlights"
+            },
+            {
+                "<Leader>aebh",
+                ":TSBufToggle highlight<CR>",
+                desc = "Toggle buffer Treesitter highlights"
+            },
+        }
     },
     {
         "nvim-treesitter/nvim-treesitter-context",
