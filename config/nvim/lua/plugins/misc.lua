@@ -1343,4 +1343,42 @@ return {
             }
         }
     },
+    {
+        -- NOTE: This plugin slows down scrolling _significantly_ in files
+        -- where a lot of color strings are present. The larger the amount of
+        -- color strings in the window the worse it gets.
+        "brenoprata10/nvim-highlight-colors",
+        config = function()
+            -- Ensure termguicolors is enabled if not already
+            vim.opt.termguicolors = true
+
+            require("nvim-highlight-colors").setup({
+                ---Render style
+                ---@usage 'background'|'foreground'|'virtual'
+                render = 'background',
+
+                ---Highlight hex colors, e.g. '#FFFFFF'
+                enable_hex = true,
+                ---Highlight short hex colors e.g. '#fff'
+                enable_short_hex = true,
+                ---Highlight rgb colors, e.g. 'rgb(0 0 0)'
+                enable_rgb = true,
+                ---Highlight hsl colors, e.g. 'hsl(150deg 30% 40%)'
+                enable_hsl = true,
+                ---Highlight CSS variables, e.g. 'var(--testing-color)'
+                enable_var_usage = true,
+                ---Highlight named colors, e.g. 'green'
+                enable_named_colors = true,
+                ---Highlight tailwind colors, e.g. 'bg-blue-500'
+                enable_tailwind = false,
+            })
+        end,
+        keys = {
+            {
+                "<Leader>bht",
+                function() require("nvim-highlight-colors").toggle() end,
+                desc = "Toggle color code highlights"
+            },
+        }
+    },
 }

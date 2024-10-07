@@ -39,7 +39,12 @@ return {
                             eruby = "erb",
                         },
                     }
-                }
+                },
+                document_color = {
+                    -- disable, to allow nvim-highlight-colors to add colors
+                    -- for tailwind classes.
+                    enabled = false,
+                },
             })
         end
     }
