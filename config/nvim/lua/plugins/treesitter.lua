@@ -13,6 +13,19 @@ return {
                 ":TSBufToggle highlight<CR>",
                 desc = "Toggle buffer Treesitter highlights"
             },
+
+            -- Duplication of mappings to have the ones related to color also
+            -- be available under the `<leader>bct` prefix.
+            {
+                "<Leader>bcta",
+                ":TSToggle highlight<CR>",
+                desc = "Toggle Treesitter highlights"
+            },
+            {
+                "<Leader>bctb",
+                ":TSBufToggle highlight<CR>",
+                desc = "Toggle buffer Treesitter highlights"
+            },
         }
     },
     {

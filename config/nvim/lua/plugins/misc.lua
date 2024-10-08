@@ -1395,12 +1395,12 @@ return {
         },
         keys = {
             {
-                "<Leader>bch",
+                "<Leader>bcph",
                 function() require("minty.huefy").open({ border = true }) end,
                 desc = "Hue picker"
             },
             {
-                "<Leader>bcs",
+                "<Leader>bcps",
                 function() require("minty.shades").open({ border = true }) end,
                 desc = "Shade picker"
             }
@@ -1438,7 +1438,7 @@ return {
         end,
         keys = {
             {
-                "<Leader>bht",
+                "<Leader>bcht",
                 function() require("nvim-highlight-colors").toggle() end,
                 desc = "Toggle color code highlights"
             },
