@@ -114,6 +114,7 @@ return {
                     { "<leader>bt",  group = "todo-comments.nvim" },
                     { "<leader>c",   group = "Commenting" },
                     { "<leader>f",   group = "Fuzzy finding (Telescope)" },
+                    { "<leader>fe",  group = "File finding (_e_dit)" },
                     { "<leader>m",   group = "Highlight words with color (Mark)" },
                     { "<leader>n",   group = "Snippets" },
                     { "<leader>p",   group = "File name (yanking and printing)" },

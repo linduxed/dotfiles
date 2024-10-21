@@ -120,6 +120,16 @@ return {
                 { desc = "Telescope - Files" }
             )
             vim.keymap.set("n",
+                "<leader>fef",
+                function() require('telescope.builtin').find_files({ follow = true }) end,
+                { desc = "Telescope - Files" }
+            )
+            vim.keymap.set("n",
+                "<leader>feg",
+                function() require('telescope.builtin').git_files({ follow = true }) end,
+                { desc = "Telescope - Git files" }
+            )
+            vim.keymap.set("n",
                 "<leader>fg",
                 function() require('telescope.builtin').live_grep() end,
                 { desc = "Telescope - Line, all files, exact grep" }
