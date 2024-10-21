@@ -30,6 +30,26 @@ end
 
 return {
     s(
+        { trig = "shebang", name = "#!-line for elixir" },
+        { t({
+            "#!/usr/bin/env elixir",
+            "",
+            "",
+        }) }
+    ),
+    s(
+        { trig = "doc", name = "function documentation" },
+        { t({ '@doc """',
+            "" }), i(1, "function description"), t({ "",
+            '"""' }) }
+    ),
+    s(
+        { trig = "mdoc", name = "module documentation" },
+        { t({ '@moduledoc """',
+            "" }), i(1, "module description"), t({ "",
+            '"""' }) }
+    ),
+    s(
         { trig = "p", name = "pipe" },
         { t("|> "), i(1, "") }
     ),
@@ -186,14 +206,6 @@ return {
 --     defmodule ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
 --         ${0}
 --     end
--- snippet doc
---     @doc """
---     ${0}
---     """
--- snippet mdoc
---     @moduledoc """
---     ${0}
---     """
 -- snippet destag
 --     @describetag :${1:describe tag}
 -- snippet mtag
