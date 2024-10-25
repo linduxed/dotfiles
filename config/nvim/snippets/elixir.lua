@@ -66,6 +66,10 @@ return {
         }
     ),
     s(
+        { trig = "fnz", name = "lambda function" },
+        { t("fn -> "), i(1, ""), t(" end") }
+    ),
+    s(
         { trig = "amp", name = "function capture ampersand" },
         { t("& &1"), i(1, "") }
     ),
