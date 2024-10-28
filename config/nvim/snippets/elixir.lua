@@ -174,6 +174,26 @@ return {
             t("</"), f(echo_fun, { 1 }, nil), t(">"),
         }
     ),
+    s(
+        { trig = "tac", name = "template tag (arbitrary, closed): </>", },
+        {
+            t("<"), i(1, "tag"), i(2, " attr=value"), t(" />"),
+        }
+    ),
+    s(
+        { trig = "link", name = "link tag: <.link attr=val>TEXT</.link>" },
+        {
+            t("<.link "),
+            c(1, {
+                sn(nil, { t('navigate={~p"'), i(1, "/ROUTE_HERE"), t('"}') }),
+                sn(nil, { t('href="'), i(1, "URL_HERE"), t('"') }),
+            }),
+            i(2, " attr=value"),
+            t(">"),
+            i(0, ""),
+            t("</.link>"),
+        }
+    ),
 }
 
 -- TODO snippets:
