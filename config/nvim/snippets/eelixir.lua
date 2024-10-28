@@ -48,7 +48,7 @@ return {
     s(
         { trig = "ta", name = "template tag (arbitrary): <></>", },
         {
-            t("<"), i(1, ""), t(">"),
+            t("<"), i(1, "tag"), i(2, " attr=value"), t(">"),
             i(0, ""),
             t("</"), f(echo_fun, { 1 }, nil), t(">"),
         }
