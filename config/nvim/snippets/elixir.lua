@@ -151,6 +151,14 @@ return {
 
     -- LiveView
     s(
+        { trig = "heex", name = 'HEEx template block: ~H"""', },
+        {
+            t({'~H"""',
+            ""}), i(0, ""), t({"",
+            '"""'}),
+        }
+    ),
+    s(
         { trig = "t=", name = "template tag: <%= %>", },
         {
             t("<%= "), i(1, ""), t(" %>"),
