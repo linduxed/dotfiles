@@ -16,7 +16,7 @@ return {
                 lazy = false,
                 config = function()
                     require("auto-session").setup({
-                        auto_session_allowed_dirs = {
+                        allowed_dirs = {
                             "~/.dotfiles",
                             "~/Documents/exercism",
                             "~/Documents/programming",
