@@ -5,10 +5,13 @@
 [merge]
     tool = vimdiff
     defaultToUpstream = true
+    conflictstyle = zdiff3
 [mergetool]
     prompt = true
 [mergetool "vimdiff"]
     cmd = nvim -d $BASE $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[branch]
+    sort = -committerdate
 [color]
     branch = auto
     diff = auto
@@ -26,6 +29,8 @@
     added = green
     changed = yellow
     untracked = cyan
+[column]
+    ui = auto
 [core]
     autocrlf = input
     attributesfile = ~/.gitattributes_global
@@ -39,6 +44,8 @@
     allowedSignersFile = ~/.config/git/allowed_signers
 [push]
     default = simple
+    autoSetupRemote = true
+    followTags = true
 [alias]
     delete-branch = !sh -c 'git push origin :refs/heads/$1 && git remote prune origin && git branch -D $1' -
     chp = cherry-pick
@@ -55,11 +62,14 @@
     updateRefs = true
 [rerere]
     enabled = true
+    autoupdate = true
 [diff]
-    algorithm = patience
+    algorithm = histogram
     compactionHeuristic = true
-    colorMoved = default
+    colorMoved = plain
     wsErrorHighlight = all
+    mnemonicPrefix = true
+    renames = true
 [commit]
     verbose = true
     gpgsign = true
@@ -84,3 +94,7 @@
     oneline-mod = "%C(yellow)%h%C(reset) %C(dim white)(%ar)%C(reset) %s%C(auto)%d%C(reset)"
 [format]
     pretty = fuller-mod
+[tag]
+    sort = version:refname
+[help]
+    autocorrect = prompt
