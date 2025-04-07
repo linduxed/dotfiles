@@ -24,6 +24,7 @@ if status is-interactive
     abbr xeit exit
     abbr xeti exit
     abbr xo xdg-open
+    abbr unarchive dtrx
 
     # Git
     abbr g git
