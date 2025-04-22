@@ -99,6 +99,8 @@ local suffixes = "" ..
     ".toc," ..
     "~"
 
+vim.opt.breakindent = true
+vim.opt.breakindentopt = "list:-1"
 vim.opt.colorcolumn = "+1"
 vim.opt.completeopt = "menu,menuone,preview,noinsert"
 vim.opt.cursorcolumn = true
