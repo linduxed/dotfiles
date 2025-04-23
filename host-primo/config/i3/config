@@ -236,9 +236,13 @@ bindsym $mod+F12 exec "/usr/bin/pulseaudio-ctl up"
 
 # {{{2 Media keys
 
+# {{{3 Volume adjustment
+
 bindsym XF86AudioMute exec "/usr/bin/pulseaudio-ctl mute"
 bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down"
 bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up"
+
+# {{{3 MPD control (mpc)
 
 bindsym XF86AudioPlay exec "MPD_HOST=127.0.0.1 mpc toggle"
 bindsym XF86AudioStop exec "MPD_HOST=127.0.0.1 mpc stop"
