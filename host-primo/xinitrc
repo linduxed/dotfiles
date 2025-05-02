@@ -16,6 +16,7 @@ flameshot &
 lxsession &
 1password &
 openrgb &
+solaar &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
