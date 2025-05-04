@@ -2,6 +2,7 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx BAT_THEME "Monokai Extended"
 set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
+set -gx LANG en_US.UTF-8
 
 if status is-interactive
     fish_add_path ~/bin
