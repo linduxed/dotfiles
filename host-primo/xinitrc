@@ -17,6 +17,7 @@ lxsession &
 1password &
 openrgb &
 solaar &
+pasystray &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
