@@ -18,6 +18,7 @@ lxsession &
 openrgb &
 solaar &
 pasystray &
+variety &
 
 # UIM related
 # export GTK_IM_MODULE='uim'
