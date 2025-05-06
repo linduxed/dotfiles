@@ -138,4 +138,10 @@ lsp.rust_analyzer.setup {
     on_attach = on_attach,
 }
 
+vim.lsp.config('gopls', {
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+vim.lsp.enable('gopls')
+
 -- Tailwind configured by tailwind-tools.nvim
