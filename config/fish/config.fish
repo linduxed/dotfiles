@@ -19,6 +19,7 @@ if status is-interactive
 
     # Miscellaneous
 
+    abbr dl aria2c
     abbr nivm nvim
     abbr eixt exit
     abbr exti exit
