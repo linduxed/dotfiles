@@ -15,83 +15,70 @@ wk.add({
     },
 })
 
-local function on_attach(_, buf)
-    wk.add({
-        { "<leader>al",  group = "LSP-related" },
-        {
-            "<leader>alc",
-            vim.lsp.buf.code_action,
-            buffer = buf,
-            desc = "Select code action for current cursor position"
-        },
-        {
-            "<leader>ald",
-            vim.lsp.buf.definition,
-            buffer = buf,
-            desc = "Jump to definition"
-        },
-        {
-            "<leader>alf",
-            vim.lsp.buf.format,
-            buffer = buf,
-            desc = "Format file"
-        },
-        {
-            "<leader>alh",
-            vim.lsp.buf.hover,
-            buffer = buf,
-            desc = "Hover help"
-        },
-        {
-            "<leader>alm",
-            vim.lsp.buf.rename,
-            buffer = buf,
-            desc = "Rename all references to symbol under cursor"
-        },
-        {
-            "<leader>als",
-            vim.lsp.buf.signature_help,
-            buffer = buf,
-            desc = "Display signature information about symbol cursor"
-        },
-        {
-            "<leader>alt",
-            vim.lsp.buf.type_definition,
-            buffer = buf,
-            desc = "Jump to type definition"
-        },
+wk.add({
+    { "<leader>al",  group = "LSP-related" },
+    {
+        "<leader>alc",
+        vim.lsp.buf.code_action,
+        desc = "Select code action for current cursor position"
+    },
+    {
+        "<leader>ald",
+        vim.lsp.buf.definition,
+        desc = "Jump to definition"
+    },
+    {
+        "<leader>alf",
+        vim.lsp.buf.format,
+        desc = "Format file"
+    },
+    {
+        "<leader>alh",
+        vim.lsp.buf.hover,
+        desc = "Hover help"
+    },
+    {
+        "<leader>alm",
+        vim.lsp.buf.rename,
+        desc = "Rename all references to symbol under cursor"
+    },
+    {
+        "<leader>als",
+        vim.lsp.buf.signature_help,
+        desc = "Display signature information about symbol cursor"
+    },
+    {
+        "<leader>alt",
+        vim.lsp.buf.type_definition,
+        desc = "Jump to type definition"
+    },
 
-        { "<leader>alw", group = "LSP workspace" },
-        {
-            "<leader>alwa",
-            vim.lsp.buf.add_workspace_folder,
-            buffer = buf,
-            desc = "Add folder to the workspace."
-        },
-        {
-            "<leader>alwl",
-            function() vim.print(vim.lsp.buf.list_workspace_folders()) end,
-            buffer = buf,
-            desc = "List workspace folders."
-        },
-        {
-            "<leader>alwr",
-            vim.lsp.buf.remove_workspace_folder,
-            buffer = buf,
-            desc = "Remove folder from the workspace."
-        },
-    })
+    { "<leader>alw", group = "LSP workspace" },
+    {
+        "<leader>alwa",
+        vim.lsp.buf.add_workspace_folder,
+        desc = "Add folder to the workspace."
+    },
+    {
+        "<leader>alwl",
+        function() vim.print(vim.lsp.buf.list_workspace_folders()) end,
+        desc = "List workspace folders."
+    },
+    {
+        "<leader>alwr",
+        vim.lsp.buf.remove_workspace_folder,
+        desc = "Remove folder from the workspace."
+    },
+})
 
-    wk.add({ {
-        mode = { "v" },
-        { "<leader>al", group = "LSP-related" },
-        { "<leader>alf", vim.lsp.buf.format, buffer = buf, desc = "Format file" },
-    } })
-end
+wk.add({ {
+    mode = { "v" },
+    { "<leader>al",  group = "LSP-related" },
+    { "<leader>alf", vim.lsp.buf.format,   desc = "Format file" },
+} })
 
 lsp.lua_ls.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
     settings = {
         Lua = {
             completion = { enable = true, },
@@ -117,7 +104,6 @@ lsp.lua_ls.setup {
 
 lsp.elixirls.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
     cmd = { vim.env.HOME .. "/.elixir-ls/release/language_server.sh" },
     elixirLS = {
         dialyzerEnabled = false,
@@ -127,28 +113,23 @@ lsp.elixirls.setup {
 
 lsp.erlangls.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
     cmd = { vim.env.HOME .. "/.erlang_ls/release/bin/erlang_ls" },
 }
 
 lsp.gleam.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
 }
 
 lsp.solargraph.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
 }
 
 lsp.rust_analyzer.setup {
     capabilities = capabilities,
-    on_attach = on_attach,
 }
 
 vim.lsp.config('gopls', {
     capabilities = capabilities,
-    on_attach = on_attach,
 })
 vim.lsp.enable('gopls')
 
