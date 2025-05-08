@@ -62,7 +62,7 @@ local function on_attach(_, buf)
         },
         {
             "<leader>alwl",
-            function() vim.pretty_print(vim.lsp.buf.list_workspace_folders()) end,
+            function() vim.print(vim.lsp.buf.list_workspace_folders()) end,
             buffer = buf,
             desc = "List workspace folders."
         },
