@@ -1,5 +1,3 @@
-local lsp = require("lspconfig")
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local wk = require("which-key")
 
 wk.add({
@@ -77,8 +75,7 @@ wk.add({ {
     { "<leader>alf", vim.lsp.buf.format,   desc = "Format file" },
 } })
 
-lsp.lua_ls.setup {
-    capabilities = capabilities,
+vim.lsp.config('lua_ls', {
     settings = {
         Lua = {
             completion = { enable = true, },
@@ -100,37 +97,26 @@ lsp.lua_ls.setup {
             runtime = { version = "LuaJIT", path = vim.split(package.path, ';'), },
         },
     },
-}
+})
+vim.lsp.enable('lua_ls')
 
-lsp.elixirls.setup {
-    capabilities = capabilities,
+vim.lsp.config('elixirls', {
     cmd = { vim.env.HOME .. "/.elixir-ls/release/language_server.sh" },
     elixirLS = {
         dialyzerEnabled = false,
         fetchDeps = false,
     }
-}
-
-lsp.erlangls.setup {
-    capabilities = capabilities,
-    cmd = { vim.env.HOME .. "/.erlang_ls/release/bin/erlang_ls" },
-}
-
-lsp.gleam.setup {
-    capabilities = capabilities,
-}
-
-lsp.solargraph.setup {
-    capabilities = capabilities,
-}
-
-lsp.rust_analyzer.setup {
-    capabilities = capabilities,
-}
-
-vim.lsp.config('gopls', {
-    capabilities = capabilities,
 })
+vim.lsp.enable('elixirls')
+
+vim.lsp.config('erlangls', {
+    cmd = { vim.env.HOME .. "/.erlang_ls/release/bin/erlang_ls" },
+})
+vim.lsp.enable('erlangls')
+
+vim.lsp.enable('gleam')
+vim.lsp.enable('solargraph')
+vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('gopls')
 
 -- Tailwind configured by tailwind-tools.nvim
