@@ -3,8 +3,16 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local wk = require("which-key")
 
 wk.add({
-    { "[g", vim.diagnostic.goto_prev, desc = "Move to previous diagnostic." },
-    { "]g", vim.diagnostic.goto_next, desc = "Move to next diagnostic." },
+    {
+        "[g",
+        function() vim.diagnostic.jump({ count = 1, float = true }) end,
+        desc = "Move to previous diagnostic.",
+    },
+    {
+        "]g",
+        function() vim.diagnostic.jump({ count = -1, float = true }) end,
+        desc = "Move to next diagnostic.",
+    },
 })
 
 local function on_attach(_, buf)
