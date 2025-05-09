@@ -113,6 +113,7 @@ vim.opt.inccommand = "nosplit"
 vim.opt.iskeyword = vim.opt.iskeyword + "-"
 vim.opt.laststatus = 3
 vim.opt.lazyredraw = true
+vim.opt.linebreak = true
 vim.opt.list = true
 vim.opt.listchars = "tab:▸ ,extends:❯,precedes:❮,trail:-,nbsp:∘,conceal:·"
 vim.opt.mouse = "n"
