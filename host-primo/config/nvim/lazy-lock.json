@@ -3,6 +3,7 @@
   "LuaSnip": { "branch": "master", "commit": "d474d67848006fc3fea201c77d408e1ed25123f0" },
   "NrrwRgn": { "branch": "master", "commit": "e027db9d94f94947153cd7b5ac9abd04371ab2b0" },
   "auto-session": { "branch": "main", "commit": "00334ee24b9a05001ad50221c8daffbeedaa0842" },
+  "browsher.nvim": { "branch": "main", "commit": "79aa87bd24ea6b2e79b82a32fcc332e78adee07b" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },
   "cmp-cmdline": { "branch": "main", "commit": "d250c63aa13ead745e3a40f61fdd3470efde3923" },
   "cmp-git": { "branch": "main", "commit": "169202582f900b0e189eed5153b291383bfbba47" },

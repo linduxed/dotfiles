@@ -52,4 +52,45 @@ return {
             }
         end
     },
+    {
+        'claydugo/browsher.nvim',
+        event = "VeryLazy",
+        config = function()
+            -- Specify empty to use below default options
+            require("browsher").setup({
+                --- Command to open URLs (e.g., 'firefox').
+                --- If this is a single character, it will be interpreted as a vim register
+                --- instead. For example, to copy the url to your OS clipboard instead of
+                --- opening it inside an application, set `open_cmd` to `+` for unix systems,
+                --- or `*` if you're on Windows.
+                open_cmd = "xdg-open",
+            })
+        end,
+        keys = {
+            {
+                "<Leader>bbc",
+                '<cmd>Browsher commit<CR>',
+                mode = "n",
+                desc = "Browsher - open file on latest commit"
+            },
+            {
+                "<Leader>bbc",
+                '<cmd>Browsher commit<CR>',
+                mode = "v",
+                desc = "Browsher - open lines on latest commit"
+            },
+            {
+                "<Leader>bbt",
+                '<cmd>Browsher tag<CR>',
+                mode = "n",
+                desc = "Browsher - open file on latest tag"
+            },
+            {
+                "<Leader>bbt",
+                '<cmd>Browsher tag<CR>',
+                mode = "v",
+                desc = "Browsher - open lines on latest tag"
+            },
+        }
+    }
 }
