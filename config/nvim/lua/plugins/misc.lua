@@ -1444,4 +1444,34 @@ return {
             },
         }
     },
+    {
+        "Goose97/alternative.nvim",
+        version = "*",
+        event = "VeryLazy",
+        config = function()
+            require("alternative").setup({
+                rules = {
+                    "general.compare_operator_flip",
+                    "javascript.if_condition_flip",
+                    "javascript.ternary_to_if_else",
+                    "javascript.function_definition_variants",
+                    "javascript.arrow_function_implicit_return",
+                    "typescript.function_definition_variants",
+                    "lua.if_condition_flip",
+                    "lua.ternary_to_if_else",
+                    "lua.wrap_it_test_in_describe",
+                    "elixir.function_definition_variants",
+                    "elixir.if_condition_flip",
+                    "elixir.if_expression_variants",
+                    "elixir.pipe_first_function_argument",
+                    custom = {},
+                },
+                select_labels = "neiotsra",
+                keymaps = {
+                    alternative_next = "<leader>ban",
+                    alternative_prev = "<leader>bap",
+                },
+            })
+        end
+    }
 }

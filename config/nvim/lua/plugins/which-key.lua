@@ -106,6 +106,7 @@ return {
                     { "<leader>aw",  group = "Whitespace" },
                     { "<leader>ay",  group = "Yank" },
                     { "<leader>b",   group = "Misc #2" },
+                    { "<leader>ba",  group = "Code modification (alternative.nvim)" },
                     { "<leader>bb",  group = "Open in browser (Browsher)" },
                     { "<leader>bs",  group = "Session management" },
                     { "<leader>bc",  group = "Color and highlights" },
