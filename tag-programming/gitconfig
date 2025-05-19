@@ -98,3 +98,7 @@
     sort = version:refname
 [help]
     autocorrect = prompt
+[blame]
+    ignoreRevsFile = .git-blame-ignore-revs
+    markIgnoredLines = true
+    markUnblamableLines = true
