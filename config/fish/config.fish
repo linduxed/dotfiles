@@ -27,6 +27,8 @@ if status is-interactive
     abbr xeti exit
     abbr xo xdg-open
     abbr unarchive dtrx
+    abbr syc systemctl
+    abbr sycu systemctl --user
 
     # Git
     abbr g git
