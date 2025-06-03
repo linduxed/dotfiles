@@ -6,6 +6,8 @@ Abolish cvst{,s}	conversation{}
 Abolish abbr{n,e,d}	abbreviat{ion,e,ed}
 Abolish sthlm	Stockholm
 Abolish thyu	thank you
+Abolish eg	e.g. 
+Abolish ie	i.e. 
 
 " From vim-correction (https://github.com/jdelkins/vim-correction)
 
