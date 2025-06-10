@@ -1,6 +1,6 @@
 # Files and directories #######################################################
 #
-music_directory    "~/musik"
+music_directory    "~/Music"
 playlist_directory "~/.mpd/playlists"
 db_file            "~/.mpd/mpd.db"
 log_file           "~/.mpd/log"
