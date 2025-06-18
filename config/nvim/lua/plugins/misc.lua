@@ -1489,6 +1489,50 @@ return {
                     require("neotest-elixir")
                 }
             })
-        end
+        end,
+        keys = {
+            {
+                "<Leader>bt<space>",
+                function() require("neotest").run.run() end,
+                mode = "n",
+                desc = "Neotest - Run nearest test"
+            },
+            {
+                "<Leader>btt",
+                function() require("neotest").run.run() end,
+                mode = "n",
+                desc = "Neotest - Run nearest test"
+            },
+            {
+                "<Leader>bta",
+                function() require("neotest").run.run(vim.fn.expand("%")) end,
+                mode = "n",
+                desc = "Neotest - Run all tests in file"
+            },
+            {
+                "<Leader>bts",
+                function() require("neotest").summary.toggle() end,
+                mode = "n",
+                desc = "Neotest - Summary window toggle"
+            },
+            {
+                "<Leader>btf",
+                function() require("neotest").output.open() end,
+                mode = "n",
+                desc = "Neotest - Open single test result window"
+            },
+            {
+                "<Leader>btp",
+                function() require("neotest").output.open() end,
+                mode = "n",
+                desc = "Neotest - Toggle test results panel"
+            },
+            {
+                "<Leader>btw",
+                function() require("neotest").watch.toggle(vim.fn.expand("%")) end,
+                mode = "n",
+                desc = "Neotest - Watch current test file"
+            },
+        }
     }
 }
