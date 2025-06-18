@@ -113,7 +113,7 @@ return {
                     { "<leader>bcp", group = "Picker (Minty)" },
                     { "<leader>bch", group = "Color codes highlights" },
                     { "<leader>bct", group = "Treesitter highlights" },
-                    { "<leader>bt",  group = "todo-comments.nvim" },
+                    { "<leader>bx",  group = "todo-comments.nvim" },
                     { "<leader>c",   group = "Commenting" },
                     { "<leader>f",   group = "Fuzzy finding (Telescope)" },
                     { "<leader>fe",  group = "File finding (_e_dit)" },

@@ -922,8 +922,8 @@ return {
             },
 
             preview_window = {
-                width = 50,     -- Percentage or integer of columns
-                min_width = 50, -- Minimum number of columns
+                width = 50,      -- Percentage or integer of columns
+                min_width = 50,  -- Minimum number of columns
                 relative_width = true,
                 height = 50,     -- Percentage or integer of lines
                 min_height = 10, -- Minimum number of lines
@@ -1294,25 +1294,25 @@ return {
         opts = {},
         keys = {
             {
-                "<Leader>btq",
+                "<Leader>bxq",
                 "<cmd>TodoQuickFix<cr>",
                 mode = "n",
                 desc = "TODO - QuickFix list"
             },
             {
-                "<Leader>btl",
+                "<Leader>bxl",
                 "<cmd>TodoLocList<cr>",
                 mode = "n",
                 desc = "TODO - Location list"
             },
             {
-                "<Leader>bte",
+                "<Leader>bxe",
                 "<cmd>TodoTrouble<cr>",
                 mode = "n",
                 desc = "TODO - Trouble window"
             },
             {
-                "<Leader>btf",
+                "<Leader>bxf",
                 "<cmd>TodoTelescope<cr>",
                 mode = "n",
                 desc = "TODO - Telescope"
@@ -1471,6 +1471,23 @@ return {
                     alternative_next = "<leader>ban",
                     alternative_prev = "<leader>bap",
                 },
+            })
+        end
+    },
+    {
+        "nvim-neotest/neotest",
+        dependencies = {
+            "nvim-neotest/nvim-nio",
+            "nvim-lua/plenary.nvim",
+            "antoinemadec/FixCursorHold.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "jfpedroza/neotest-elixir",
+        },
+        config = function()
+            require("neotest").setup({
+                adapters = {
+                    require("neotest-elixir")
+                }
             })
         end
     }
