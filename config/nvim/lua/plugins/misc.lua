@@ -1534,5 +1534,9 @@ return {
                 desc = "Neotest - Watch current test file"
             },
         }
+    },
+    {
+        "shrynx/line-numbers.nvim",
+        opts = {},
     }
 }

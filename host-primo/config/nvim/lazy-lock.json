@@ -27,6 +27,7 @@
   "hex.nvim": { "branch": "master", "commit": "fcff75fcf43b5a6c5b471eed65b3a06c412d6020" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "line-numbers.nvim": { "branch": "main", "commit": "8162930e62991a271948e1d43d2886a864c6fd1b" },
   "lualine.nvim": { "branch": "master", "commit": "a94fc68960665e54408fe37dcf573193c4ce82c9" },
   "markdowny.nvim": { "branch": "main", "commit": "8ff18e8677cf39821913f387697378fcf3e141a0" },
   "melange-nvim": { "branch": "master", "commit": "ce42f6b629beeaa00591ba73a77d3eeac4cf28ce" },
