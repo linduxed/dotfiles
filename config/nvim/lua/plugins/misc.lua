@@ -1,6 +1,7 @@
 return {
     {
         "linduxed/colemak.nvim",
+        enabled = true,
         -- Set to not be lazy, because I find it mentally easier to have it
         -- guaranteed that this plugin is loaded; it's hard for me to reason
         -- about the custom mappings of other plugins (commonly to account for
@@ -20,6 +21,7 @@ return {
     },
     {
         'numToStr/Comment.nvim',
+        enabled = true,
         config = function()
             require("Comment").setup({
                 toggler = {
@@ -55,6 +57,7 @@ return {
     },
     {
         "dyng/ctrlsf.vim",
+        enabled = true,
         lazy = false,
         init = function()
             vim.g.ctrlsf_populate_qflist = 1
@@ -119,6 +122,7 @@ return {
     },
     {
         "Raimondi/delimitMate",
+        enabled = true,
         init = function()
             --  This is the default, but is included here for clarity:
             --  The coc.vim completion menu needs a <CR> mapping to work reliably.
@@ -131,6 +135,7 @@ return {
     },
     {
         "wincent/ferret",
+        enabled = true,
         -- This plugin is primarily added for the Quickfix listing
         -- enhancements. The other features are rarely used.
 
@@ -142,6 +147,7 @@ return {
     "Rawnly/gist.nvim",
     {
         "folke/zen-mode.nvim",
+        enabled = true,
         opts = {
             window = {
                 backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
@@ -186,6 +192,7 @@ return {
     },
     {
         "nvim-neo-tree/neo-tree.nvim",
+        enabled = true,
         branch = "v3.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -342,6 +349,7 @@ return {
     },
     {
         "chrisbra/NrrwRgn",
+        enabled = true,
         init = function()
             vim.g.nrrw_rgn_nomap_nr = 1
             vim.g.nrrw_rgn_nomap_Nr = 1
@@ -349,6 +357,7 @@ return {
     },
     {
         "kevinhwang91/nvim-hlslens",
+        enabled = true,
         -- Set to not be lazy to predictably override the mappings of
         -- colemak.nvim, since the mappings for this plugin overlap for
         -- normal-mode `k` and `K`.
@@ -375,6 +384,7 @@ return {
     "vim-scripts/scratch.vim",
     {
         "godlygeek/tabular",
+        enabled = true,
         keys = {
             {
                 "<Leader>aae",
@@ -404,6 +414,7 @@ return {
     },
     {
         "folke/trouble.nvim",
+        enabled = true,
         config = function()
             require("trouble").setup({})
         end,
@@ -442,6 +453,7 @@ return {
     },
     {
         "tpope/vim-abolish",
+        enabled = true,
         -- Must be eagerly loaded, otherwise the Abolish definitions in the
         -- `abolish_save_file` are attempted to read without the plugin loaded,
         -- resulting in errors on startup.
@@ -456,6 +468,7 @@ return {
     },
     {
         "nvim-lualine/lualine.nvim",
+        enabled = true,
         dependencies = {
             "nvim-tree/nvim-web-devicons",
             lazy = true
@@ -471,6 +484,7 @@ return {
     "tpope/vim-capslock",
     {
         "chrisgrieser/nvim-genghis",
+        enabled = true,
         -- dependencies = "stevearc/dressing.nvim"
         config = function()
             -- running this only to initialize the plugin, as it seems like
@@ -480,6 +494,7 @@ return {
     },
     {
         "plasticboy/vim-markdown",
+        enabled = true,
         init = function()
             vim.g.vim_markdown_folding_disabled = 1
             vim.g.vim_markdown_auto_insert_bullets = 0
@@ -490,6 +505,7 @@ return {
     },
     {
         "inkarkat/vim-mark",
+        enabled = true,
         dependencies = {
             "inkarkat/vim-ingo-library",
         },
@@ -560,6 +576,7 @@ return {
     "tpope/vim-ragtag",
     {
         "mhinz/vim-sayonara",
+        enabled = true,
         keys = {
             {
                 "<leader>aqh",
@@ -575,6 +592,7 @@ return {
     },
     {
         "monaqa/dial.nvim",
+        enabled = true,
         config = function()
             vim.keymap.set("n", "<C-a>", require("dial.map").inc_normal())
             vim.keymap.set("n", "<C-x>", require("dial.map").dec_normal())
@@ -613,6 +631,7 @@ return {
     },
     {
         "kylechui/nvim-surround",
+        enabled = true,
         -- Use for stability; omit to use `main` branch for the latest features
         version = "*",
         event = "VeryLazy",
@@ -643,6 +662,7 @@ return {
     },
     {
         "machakann/vim-swap",
+        enabled = true,
         init = function()
             vim.g.swap_no_default_key_mappings = 1
         end,
@@ -654,6 +674,7 @@ return {
     },
     {
         "Tummetott/unimpaired.nvim",
+        enabled = true,
         config = function()
             require('unimpaired').setup({
                 -- Copying in entire default configuration to modify it.
@@ -886,12 +907,14 @@ return {
     },
     {
         "sheerun/vim-polyglot",
+        enabled = true,
         init = function()
             vim.g.polyglot_disabled = { "csv", "markdown", "text" }
         end
     },
     {
         "liuchengxu/vista.vim",
+        enabled = true,
         init = function()
             vim.g.vista_icon_indent = { "↳ ", "↦ " }
             vim.g.vista_default_executive = "nvim_lsp"
@@ -900,6 +923,7 @@ return {
     },
     {
         "hedyhli/outline.nvim",
+        enabled = true,
         lazy = true,
         cmd = { "Outline", "OutlineOpen" },
         keys = {
@@ -976,6 +1000,7 @@ return {
     },
     {
         "reedes/vim-wheel",
+        enabled = true,
         init = function()
             -- Disable for mouse, due to erratic behavior.
             vim.g["wheel#map#mouse"] = 0
@@ -987,6 +1012,7 @@ return {
     "guns/xterm-color-table.vim",
     {
         "zbirenbaum/copilot.lua",
+        enabled = true,
         cmd = "Copilot",
         config = function()
             require("copilot").setup({})
@@ -994,6 +1020,7 @@ return {
     },
     {
         'stevearc/oil.nvim',
+        enabled = true,
         config = function()
             require("oil").setup({
                 -- Id is automatically added at the beginning, and name at the end
@@ -1013,6 +1040,7 @@ return {
     },
     {
         'kiran94/edit-markdown-table.nvim',
+        enabled = true,
         config = function()
             require('edit-markdown-table').setup()
         end,
@@ -1021,6 +1049,7 @@ return {
     },
     {
         "epwalsh/obsidian.nvim",
+        enabled = true,
         lazy = true,
         event = { "BufReadPre " .. vim.fn.expand "~" .. "/vimwiki/**.md" },
         dependencies = {
@@ -1122,12 +1151,14 @@ return {
     },
     {
         'antonk52/markdowny.nvim',
+        enabled = true,
         config = function()
             require('markdowny').setup()
         end
     },
     {
         "folke/flash.nvim",
+        enabled = true,
         event = "VeryLazy",
         opts = {
             labels = "arstoienhdwfpyulgjqzxcvmkb",
@@ -1175,6 +1206,7 @@ return {
     'kosayoda/nvim-lightbulb',
     {
         "gbprod/cutlass.nvim",
+        enabled = true,
         -- Set to not be lazy to predictably override the mappings of
         -- colemak.nvim, since the mappings for this plugin overlap for
         -- every key that this plugin touches.
@@ -1198,6 +1230,7 @@ return {
     },
     {
         "sindrets/winshift.nvim",
+        enabled = true,
         keys = {
             -- Start Win-Move mode:
             { "<C-W><C-M>", "<Cmd>WinShift<CR>",      mode = "n" },
@@ -1209,6 +1242,7 @@ return {
     },
     {
         "sedm0784/vim-you-autocorrect",
+        enabled = true,
         lazy = false,
         keys = {
             {
@@ -1275,17 +1309,20 @@ return {
     },
     {
         "RaafatTurki/hex.nvim",
+        enabled = true,
         config = function()
             require("hex").setup()
         end
     },
     {
         "lukas-reineke/indent-blankline.nvim",
+        enabled = true,
         main = "ibl",
         opts = {},
     },
     {
         "folke/todo-comments.nvim",
+        enabled = true,
         lazy = false,
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -1321,6 +1358,7 @@ return {
     },
     {
         'Wansmer/treesj',
+        enabled = true,
         dependencies = { 'nvim-treesitter/nvim-treesitter' },
         config = function()
             require('treesj').setup({
@@ -1389,6 +1427,7 @@ return {
     },
     {
         "nvchad/minty",
+        enabled = true,
         lazy = true,
         dependencies = {
             "nvchad/volt",
@@ -1411,6 +1450,7 @@ return {
         -- where a lot of color strings are present. The larger the amount of
         -- color strings in the window the worse it gets.
         "brenoprata10/nvim-highlight-colors",
+        enabled = true,
         config = function()
             -- Ensure termguicolors is enabled if not already
             vim.opt.termguicolors = true
@@ -1446,6 +1486,7 @@ return {
     },
     {
         "Goose97/alternative.nvim",
+        enabled = true,
         version = "*",
         event = "VeryLazy",
         config = function()
@@ -1476,6 +1517,7 @@ return {
     },
     {
         "nvim-neotest/neotest",
+        enabled = true,
         dependencies = {
             "nvim-neotest/nvim-nio",
             "nvim-lua/plenary.nvim",
@@ -1537,6 +1579,7 @@ return {
     },
     {
         "shrynx/line-numbers.nvim",
+        enabled = true,
         opts = {},
     }
 }
