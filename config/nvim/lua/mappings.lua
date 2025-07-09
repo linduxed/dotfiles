@@ -129,16 +129,4 @@ nnoremap <c-o> <c-o>zz
 
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
-
-" 1. Entering visual-mode is done while holding Shift.
-" 2. colemak.vim maps "u" to "k" (moving up)
-"
-" These two together cause me to uppercase stuff when I just wanted to move
-" up, causing frustration. Disable uppercasing with "U"; I can use "`" anyway.
-vnoremap U k
-
-" Disable splitting window and open first instance of word under cursor.
-" I *never* use this feature, and it mostly causes me to split the window
-" unintentionally when using <C-W>i with colemak.vim.
-nmap <C-W><C-I> <C-W>l
 ]])

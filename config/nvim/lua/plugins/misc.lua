@@ -1,25 +1,5 @@
 return {
     {
-        "linduxed/colemak.nvim",
-        enabled = true,
-        -- Set to not be lazy, because I find it mentally easier to have it
-        -- guaranteed that this plugin is loaded; it's hard for me to reason
-        -- about the custom mappings of other plugins (commonly to account for
-        -- the colemak.nvim) if I'm not sure whether colemak.nvim will have
-        -- been loaded.
-        lazy = false,
-        -- Priority set to some arbitrary high number. If some other plugin
-        -- has mappings that conflict with those of colemak.nvim, that plugin
-        -- will need to be set to `lazy = true` (haven't figured out another
-        -- way) and set the priority to be _lower_ than that of this plugin, to
-        -- ensure that the other plugin will apply its mappings _after_
-        -- colemak.nvim (higher priority means earlier load).
-        priority = 100,
-        config = function()
-            require("colemak").setup()
-        end,
-    },
-    {
         'numToStr/Comment.nvim',
         enabled = true,
         config = function()
@@ -358,22 +338,14 @@ return {
     {
         "kevinhwang91/nvim-hlslens",
         enabled = true,
-        -- Set to not be lazy to predictably override the mappings of
-        -- colemak.nvim, since the mappings for this plugin overlap for
-        -- normal-mode `k` and `K`.
-        lazy = false,
-        -- Priority is set to be 1 less than colemak.nvim, to ensure that
-        -- colemak.nvim gets loaded first, followed by this plugin, leading to
-        -- `k` and `K` being overridden.
-        priority = 99,
         config = function()
             require('hlslens').setup({
                 calm_down = true,
             })
         end,
         keys = {
-            { "k",  [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]] },
-            { "K",  [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]] },
+            { "n",  [[<Cmd>execute('normal! ' . v:count1 . 'n')<CR><Cmd>lua require('hlslens').start()<CR>]] },
+            { "N",  [[<Cmd>execute('normal! ' . v:count1 . 'N')<CR><Cmd>lua require('hlslens').start()<CR>]] },
             { "*",  [[*<Cmd>lua require('hlslens').start()<CR>]] },
             { "#",  [[#<Cmd>lua require('hlslens').start()<CR>]] },
             { "g*", [[g*<Cmd>lua require('hlslens').start()<CR>]] },
@@ -637,18 +609,6 @@ return {
         event = "VeryLazy",
         config = function()
             require("nvim-surround").setup({
-                keymaps = {
-                    insert = "<C-g>s",
-                    insert_line = "<C-g>S",
-                    normal = "cs",
-                    normal_cur = "css",
-                    normal_line = "cS",
-                    normal_cur_line = "cSS",
-                    visual = "s",
-                    visual_line = "gs",
-                    delete = "ds",
-                    change = "ws",
-                },
                 aliases = {
                     ["a"] = ">",
                     ["b"] = ")",
@@ -663,14 +623,6 @@ return {
     {
         "machakann/vim-swap",
         enabled = true,
-        init = function()
-            vim.g.swap_no_default_key_mappings = 1
-        end,
-        config = function()
-            vim.keymap.set({ "n" }, "g<", "<Plug>(swap-prev)")
-            vim.keymap.set({ "n" }, "g>", "<Plug>(swap-next)")
-            vim.keymap.set({ "n", "x" }, "gm", "<Plug>(swap-interactive)")
-        end
     },
     {
         "Tummetott/unimpaired.nvim",
@@ -998,17 +950,6 @@ return {
 
         },
     },
-    {
-        "reedes/vim-wheel",
-        enabled = true,
-        init = function()
-            -- Disable for mouse, due to erratic behavior.
-            vim.g["wheel#map#mouse"] = 0
-
-            vim.g["wheel#map#up"]    = "U"
-            vim.g["wheel#map#down"]  = "E"
-        end
-    },
     "guns/xterm-color-table.vim",
     {
         "zbirenbaum/copilot.lua",
@@ -1162,35 +1103,28 @@ return {
         event = "VeryLazy",
         opts = {
             labels = "arstoienhdwfpyulgjqzxcvmkb",
-            modes = {
-                -- options used when flash is activated through
-                -- `f`, `F`, `t`, `T`, `;` and `,` motions
-                char = {
-                    enabled = false,
-                },
-            },
         },
         keys = {
             {
-                "gl",
+                "s",
                 mode = { "n", "o", "x" },
                 function() require("flash").jump() end,
                 desc = "Flash - Jump"
             },
             {
-                "gy",
+                "r",
                 mode = { "o" },
                 function() require("flash").remote() end,
                 desc = "Flash - Remote operation (o-mode)"
             },
             {
-                "gt",
+                "S",
                 mode = { "n", "o", "x" },
                 function() require("flash").treesitter() end,
                 desc = "Flash - Treesitter jump"
             },
             {
-                "gT",
+                "R",
                 mode = { "o", "x" },
                 function() require("flash").treesitter_search() end,
                 desc = "Flash - Treesitter search (o- and x-mode)"
@@ -1207,14 +1141,6 @@ return {
     {
         "gbprod/cutlass.nvim",
         enabled = true,
-        -- Set to not be lazy to predictably override the mappings of
-        -- colemak.nvim, since the mappings for this plugin overlap for
-        -- every key that this plugin touches.
-        lazy = false,
-        -- Priority is set to be 1 less than colemak.nvim, to ensure that
-        -- colemak.nvim gets loaded first, followed by this plugin, leading to
-        -- the following being overridden: c, C, s, S, d, D, x, X
-        priority = 99,
         opts = {
             cut_key = "x",
             override_del = true,
