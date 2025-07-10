@@ -68,6 +68,7 @@ return {
                     { "<leader>ae",  group = "Treesitter" },
                     { "<leader>aea", group = "Toggle - All buffers" },
                     { "<leader>aeb", group = "Toggle - Current buffer" },
+                    { "<leader>ad",  group = "Avante (AI assitant)" },
                     { "<leader>af",  group = "Folds" },
                     { "<leader>afm", group = "Foldmethod" },
                     { "<leader>aj",  group = "SplitJoin" },

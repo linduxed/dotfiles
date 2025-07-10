@@ -255,6 +255,7 @@ return {
                     ["?"] = "show_help",
                     ["<"] = "prev_source",
                     [">"] = "next_source",
+                    ['oa'] = 'avante_add_files',
                 }
             },
             nesting_rules = {},
@@ -289,6 +290,29 @@ return {
                     never_show_by_pattern = {
                         --".null-ls_*",
                     },
+                },
+                commands = {
+                    avante_add_files = function(state)
+                        local node = state.tree:get_node()
+                        local filepath = node:get_id()
+                        local relative_path = require('avante.utils').relative_path(filepath)
+
+                        local sidebar = require('avante').get()
+
+                        local open = sidebar:is_open()
+                        -- ensure avante sidebar is open
+                        if not open then
+                            require('avante.api').ask()
+                            sidebar = require('avante').get()
+                        end
+
+                        sidebar.file_selector:add_selected_file(relative_path)
+
+                        -- remove neo tree buffer
+                        if not open then
+                            sidebar.file_selector:remove_selected_file('neo-tree filesystem [1]')
+                        end
+                    end,
                 },
             },
             buffers = {
@@ -1629,6 +1653,69 @@ return {
                 mode = "n",
                 desc = "harpoon - next",
             },
-        }
+        },
+    },
+    {
+        "yetone/avante.nvim",
+        -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+        -- ⚠️ must add this setting! ! !
+        enabled = true,
+        build = vim.fn.has("win32") ~= 0
+            and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+            or "make",
+        event = "VeryLazy",
+        version = false, -- Never set this value to "*"! Never!
+        opts = {
+            -- add any opts here
+            -- for example
+            provider = "ollama",
+            providers = {
+                ollama = {
+                    endpoint = "http://localhost:11434",
+                    model = "gemma3:latest",
+                },
+            },
+            mappings = {
+                ask = "<leader>ada",
+                new_ask = "<leader>adn",
+                edit = "<leader>ade",
+                refresh = "<leader>adr",
+                focus = "<leader>adf",
+                stop = "<leader>adS",
+                toggle = {
+                    default = "<leader>adt",
+                    debug = "<leader>add",
+                    hint = "<leader>adh",
+                    suggestion = "<leader>ads",
+                    repomap = "<leader>adR",
+                },
+                files = {
+                    add_current = "<leader>adc",
+                    add_all_buffers = "<leader>adB",
+                },
+                select_model = "<leader>ad?",
+                select_history = "<leader>adh",
+            },
+            hints = {
+                enabled = false
+            }
+        },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "MunifTanjim/nui.nvim",
+            --- The below dependencies are optional,
+            "nvim-telescope/telescope.nvim",
+            "hrsh7th/nvim-cmp",
+            "stevearc/dressing.nvim",
+            "nvim-tree/nvim-web-devicons",
+            {
+                -- Make sure to set this up properly if you have lazy=true
+                'MeanderingProgrammer/render-markdown.nvim',
+                opts = {
+                    file_types = { "markdown", "Avante" },
+                },
+                ft = { "markdown", "Avante" },
+            },
+        },
     }
 }
