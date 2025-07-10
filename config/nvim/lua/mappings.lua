@@ -105,6 +105,9 @@ tnoremap <C-\> <C-\><C-n>
 nnoremap <S-Up> <C-y>
 nnoremap <S-Down> <C-e>
 
+nnoremap z<Up> zk
+nnoremap z<Down> zj
+
 " {{{2 Function keys
 
 nnoremap <F1> :buffer #<CR>
