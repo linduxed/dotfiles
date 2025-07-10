@@ -26,6 +26,8 @@ git:
   # If true, pass the --all arg to git fetch
   fetchAll: true
 
+  overrideGpg: true
+
 # Background refreshes
 refresher:
   # File/submodule refresh interval in seconds.
