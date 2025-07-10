@@ -51,12 +51,12 @@ vim.keymap.set(
 -- {{{2 File name
 
 vim.keymap.set("n",
-    "<leader>pp",
+    "<leader>bfp",
     "<cmd>echo @%<CR>",
     { desc = "File name - Echo" }
 )
 vim.keymap.set("n",
-    "<leader>py",
+    "<leader>bfy",
     '<cmd>let @+=@%<Bar>echo @% "- yanked"<CR>',
     { desc = "File name - Yank and Echo" }
 )

@@ -1520,5 +1520,16 @@ return {
         "shrynx/line-numbers.nvim",
         enabled = true,
         opts = {},
+    },
+    {
+        "yorickpeterse/nvim-window",
+        keys = {
+            {
+                "<leader>p",
+                "<cmd>lua require('nvim-window').pick()<cr>",
+                desc = "nvim-window: pick window (mnemonic: (P)ane)",
+            },
+        },
+        config = true,
     }
 }
