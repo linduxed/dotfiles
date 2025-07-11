@@ -37,6 +37,7 @@ bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+y layout toggle split
 bindsym $mod+semicolon layout stacking
+bindsym $mod+backslash layout tabbed
 bindsym $mod+bracketleft layout tabbed
 bindsym $mod+m focus child
 bindsym $mod+k focus parent
