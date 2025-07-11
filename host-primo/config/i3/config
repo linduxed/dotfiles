@@ -187,8 +187,8 @@ mode $dunst_mode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+F11 exec "dunstctl close"
-bindsym $mod+Shift+F12 mode $dunst_mode
+bindsym $mod+Shift+F9 exec "dunstctl close"
+bindsym $mod+Shift+F10 mode $dunst_mode
 
 # {{{1 sound_switch
 
@@ -203,7 +203,7 @@ mode $sound_switch_mode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+F7 mode $sound_switch_mode
+bindsym $mod+F5 mode $sound_switch_mode
 
 # {{{1 xscreensaver
 
@@ -221,15 +221,16 @@ bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 # {{{1 Keyboard key group mappings
 # {{{2 F-keys
 
-bindsym $mod+F1 exec "rofi -show run"
-bindsym $mod+F2 exec "rofi -show window"
-# bindsym $mod+F3 exec ""
-bindsym $mod+F4 mode $mode_resurrect_save
-bindsym $mod+F5 mode $mode_resurrect_restore
-# bindsym $mod+F6 exec ""
-# bindsym $mod+F7 exec ""
-bindsym $mod+F8 exec "/usr/bin/variety --previous"
-bindsym $mod+F9 exec "/usr/bin/variety --next"
+# bindsym $mod+F1 exec ""
+# bindsym $mod+F2 exec ""
+bindsym $mod+F3 exec "rofi -show run"
+bindsym $mod+F4 exec "rofi -show window"
+# $mod+F5 bound to sound_switch
+bindsym $mod+F6 mode $mode_resurrect_save
+bindsym $mod+F7 mode $mode_resurrect_restore
+# bindsym $mod+F8 exec ""
+bindsym $mod+F9 exec "/usr/bin/variety --previous"
+bindsym $mod+F10 exec "/usr/bin/variety --next"
 
 # {{{2 Media keys
 
