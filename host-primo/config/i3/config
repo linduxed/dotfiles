@@ -230,9 +230,6 @@ bindsym $mod+F5 mode $mode_resurrect_restore
 # bindsym $mod+F7 exec ""
 bindsym $mod+F8 exec "/usr/bin/variety --previous"
 bindsym $mod+F9 exec "/usr/bin/variety --next"
-bindsym $mod+F10 exec "/usr/bin/pulseaudio-ctl mute"
-bindsym $mod+F11 exec "/usr/bin/pulseaudio-ctl down"
-bindsym $mod+F12 exec "/usr/bin/pulseaudio-ctl up"
 
 # {{{2 Media keys
 
