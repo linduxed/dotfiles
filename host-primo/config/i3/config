@@ -224,6 +224,8 @@ bindsym $mod+F5 mode $sound_switch_mode
 
 # Note that xscreensaver locking can be done from $mode_commands.
 
+bindsym $hyper+F9 exec "xscreensaver-command -lock"
+
 # I don't see myself using XF86Calculator anytime soon, so I'll repurpose this
 # keysym to be a "Lock" key.
 bindsym XF86Calculator exec "xscreensaver-command -lock"
@@ -231,6 +233,7 @@ bindsym XF86Calculator exec "xscreensaver-command -lock"
 # {{{1 Miscellaneous
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $hyper+F10 exec "systemctl suspend"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 
 # {{{1 Keyboard key group mappings
