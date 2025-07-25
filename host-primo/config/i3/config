@@ -222,7 +222,7 @@ bindsym $mod+F5 mode $sound_switch_mode
 
 # {{{1 xscreensaver
 
-bindsym $mod+Shift+l exec "xscreensaver-command -lock"
+# Note that xscreensaver locking can be done from $mode_commands.
 
 # I don't see myself using XF86Calculator anytime soon, so I'll repurpose this
 # keysym to be a "Lock" key.
