@@ -31,13 +31,16 @@ set $hyper Mod4+Mod1+Control+Shift
 bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+grave kill
 
-set $mode_i3_commands "i3 commands ([q]uit / [r]estart / re[l]oad)"
-bindsym $hyper+e mode $mode_i3_commands
+set $mode_commands "Commands (i3-[q]uit / i3-[r]estart / i3-re[l]oad / lock screen [i] / suspend [o])"
+bindsym $hyper+e mode $mode_commands
 
-mode $mode_i3_commands {
+mode $mode_commands {
     bindsym q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
     bindsym r restart
     bindsym l reload
+
+    bindsym i exec "xscreensaver-command -lock"
+    bindsym o exec "systemctl suspend"
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
