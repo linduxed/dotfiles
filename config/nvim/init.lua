@@ -151,3 +151,4 @@ endif
 require("mappings")
 require("nvim-cmp")
 require("lsp-configuration")
+require("abbreviations")
