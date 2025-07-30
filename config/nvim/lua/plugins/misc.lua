@@ -1539,6 +1539,7 @@ return {
         lazy = false,
         dependencies = { "MunifTanjim/nui.nvim" },
         opts = {
+            disable_mouse = false,
             restricted_keys = {
                 ["<Up>"] = { "n", "x" },
                 ["<Down>"] = { "n", "x" },
