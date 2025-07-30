@@ -1530,7 +1530,9 @@ return {
                 desc = "nvim-window: pick window (mnemonic: (P)ane)",
             },
         },
-        config = true,
+        config = {
+            chars = { 't', 'r', 's', 'a', 'n', 'e', 'i', 'o', 'd', 'h', 'f', 'p', 'u', 'l', 'w', 'y', 'c', 'q', 'z' },
+        },
     },
     {
         "m4xshen/hardtime.nvim",
