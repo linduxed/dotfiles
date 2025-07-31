@@ -1179,6 +1179,12 @@ return {
                 mode = "n",
                 desc = "Win-Move",
             },
+            {
+                "<leader>ps",
+                "<Cmd>WinShift<CR>",
+                mode = "n",
+                desc = "window move (mnemonic: (P)ane (S)hift)",
+            },
 
             -- Swap two windows:
             { "<C-W>X", "<Cmd>WinShift swap<CR>", mode = "n" },
@@ -1530,9 +1536,9 @@ return {
         "yorickpeterse/nvim-window",
         keys = {
             {
-                "<leader>p",
+                "<leader>pf",
                 "<cmd>lua require('nvim-window').pick()<cr>",
-                desc = "nvim-window: pick window (mnemonic: (P)ane)",
+                desc = "pick window (mnemonic: (P)ane (F)ocus)",
             },
         },
         config = {

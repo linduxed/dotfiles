@@ -68,6 +68,10 @@ vim.keymap.set("n", "[v", "<cmd>tabprevious<CR>", { desc = "Tab - Previous" })
 vim.keymap.set("n", "]V", "<cmd>tabmove +1<CR>", { desc = "Tab - Move right" })
 vim.keymap.set("n", "[V", "<cmd>tabmove -1<CR>", { desc = "Tab - Move left" })
 
+-- {{{2 Windows
+
+vim.keymap.set("n", "<leader>pw", "<c-w>p", { desc = "(P)revious (W)indow" })
+
 -- {{{2 Miscellaneous
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })

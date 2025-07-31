@@ -96,6 +96,7 @@ return {
                     { "<leader>fe",  group = "File finding (_e_dit)" },
                     { "<leader>m",   group = "Highlight words with color (Mark)" },
                     { "<leader>n",   group = "Snippets" },
+                    { "<leader>p",   group = "Windows (_p_anes)" },
                     { "<leader>s",   group = "Search (CtrlSF)" },
                     { "<leader>sw",  group = "Window" },
                 },
