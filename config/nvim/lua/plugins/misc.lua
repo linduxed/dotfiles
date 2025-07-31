@@ -1173,7 +1173,12 @@ return {
         keys = {
             -- Start Win-Move mode:
             { "<C-W><C-M>", "<Cmd>WinShift<CR>", mode = "n" },
-            { "<C-W>m",     "<Cmd>WinShift<CR>", mode = "n" },
+            {
+                "<C-W>m",
+                "<Cmd>WinShift<CR>",
+                mode = "n",
+                desc = "Win-Move",
+            },
 
             -- Swap two windows:
             { "<C-W>X", "<Cmd>WinShift swap<CR>", mode = "n" },
