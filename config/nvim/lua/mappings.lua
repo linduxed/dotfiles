@@ -92,6 +92,9 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
 
+-- Move default mapping for Visual-mode folding, in favor of nvim-surround.
+vim.keymap.set("x", "Zf", "zf", { desc = "Create fold" })
+
 -- {{{1 Miscellaneous (Vimscript)
 
 vim.cmd([[
