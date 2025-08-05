@@ -109,6 +109,13 @@ return {
                     { "<leader>s",  group = "Search (CtrlSF)" },
                 }
             })
-        end
+
+            vim.keymap.set(
+                "n",
+                "<leader>pp",
+                function() wk.show({ keys = "<c-w>", loop = true }) end,
+                { desc = "Hydra - Windows" }
+            )
+        end,
     },
 }
