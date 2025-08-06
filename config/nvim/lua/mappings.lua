@@ -77,7 +77,7 @@ vim.keymap.set("n", "<leader>pw", "<c-w>p", { desc = "(P)revious (W)indow" })
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
 vim.keymap.set("n", "<leader>x", "<cmd>qa<cr>", { desc = "Window - Quit all (:qa)" })
-vim.keymap.set("n", "<leader>e", "<cmd>e<cr>", { desc = "File - Reload (:e)" })
+vim.keymap.set("n", "<leader>ge", "<cmd>e<cr>", { desc = "File - Reload (:e)" })
 
 vim.keymap.set("n", "<leader>atz", function() vim.o.tw = 0 end, { desc = "Text width = 0" })
 vim.keymap.set("n", "<leader>atg", function() vim.o.tw = 72 end, { desc = "Text width = 72 (gitcommit)" })

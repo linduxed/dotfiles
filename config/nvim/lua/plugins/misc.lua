@@ -1573,4 +1573,62 @@ return {
             },
         },
     },
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require("harpoon"):setup()
+        end,
+        keys = {
+            {
+                "<leader>m",
+                function() require("harpoon"):list():add() end,
+                mode = "n",
+                desc = "harpoon - add",
+            },
+            {
+                "<leader>k",
+                function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end,
+                mode = "n",
+                desc = "harpoon - list",
+            },
+            {
+                "<leader>n",
+                function() require("harpoon"):list():select(1) end,
+                mode = "n",
+                desc = "harpoon - select - 1",
+            },
+            {
+                "<leader>e",
+                function() require("harpoon"):list():select(2) end,
+                mode = "n",
+                desc = "harpoon - select - 2",
+            },
+            {
+                "<leader>i",
+                function() require("harpoon"):list():select(3) end,
+                mode = "n",
+                desc = "harpoon - select - 3",
+            },
+            {
+                "<leader>o",
+                function() require("harpoon"):list():select(4) end,
+                mode = "n",
+                desc = "harpoon - select - 4",
+            },
+            {
+                "<leader>h",
+                function() require("harpoon"):list():prev() end,
+                mode = "n",
+                desc = "harpoon - previous",
+            },
+            {
+                "<leader>,",
+                function() require("harpoon"):list():next() end,
+                mode = "n",
+                desc = "harpoon - next",
+            },
+        }
+    }
 }
