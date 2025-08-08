@@ -11,6 +11,7 @@ return {
     {
         'lewis6991/gitsigns.nvim',
         enabled = true,
+        lazy = false,
         config = function()
             require('gitsigns').setup {
                 -- Toggle with `:Gitsigns toggle_signs`
@@ -56,7 +57,13 @@ return {
                     map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
                 end
             }
-        end
+        end,
+        keys = {
+            { "<leader>bgb", "<cmd>Gitsigns toggle_current_line_blame<cr>" },
+            { "<leader>bgd", "<cmd>Gitsigns toggle_deleted<cr>" },
+            { "<leader>bgl", "<cmd>Gitsigns toggle_linehl<cr>" },
+            { "<leader>bgw", "<cmd>Gitsigns toggle_word_diff<cr>" },
+        }
     },
     {
         'claydugo/browsher.nvim',
