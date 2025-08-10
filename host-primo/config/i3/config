@@ -23,7 +23,6 @@ bar {
 # {{{2 Mod-key setup
 
 set $mod Mod4
-set $ALT Mod1
 set $hyper Mod4+Mod1+Control+Shift
 
 # {{{2 Commands
