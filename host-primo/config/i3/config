@@ -45,7 +45,6 @@ mode $mode_commands {
     bindsym Escape mode "default"
 }
 
-
 # {{{2 Layout
 
 bindsym $mod+y layout toggle split
