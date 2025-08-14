@@ -28,6 +28,7 @@ set $hyper Mod4+Mod1+Control+Shift
 # {{{2 Commands
 
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $hyper+o exec i3-sensible-terminal
 bindsym $mod+grave kill
 
 set $mode_commands "Commands (i3-[q]uit / i3-[r]estart / i3-re[l]oad / lock screen [i] / suspend [o])"
@@ -236,6 +237,7 @@ bindsym XF86Calculator exec "xscreensaver-command -lock"
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
 bindsym $hyper+F10 exec "systemctl suspend"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
+bindsym $hyper+n exec "firefox"
 
 # {{{1 Keyboard key group mappings
 # {{{2 F-keys
