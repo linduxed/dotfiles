@@ -1,0 +1,244 @@
+# Activates hint mode. (default: A-M-x)
+hint_activation_key: A-M-x
+
+# Activate two pass hint mode. (default: A-M-X)
+hint2_activation_key: A-M-X
+
+# Activates grid mode and allows for further manipulation of the pointer using
+# the mapped keys. (default: A-M-g)
+grid_activation_key: A-M-g
+
+# Activate history mode. (default: A-M-h)
+history_activation_key: A-M-h
+
+# Activate (s)creen selection mode. (default: A-M-s)
+screen_activation_key: A-M-s
+
+# Activate normal movement mode (manual (c)ursor movement). (default: A-M-c)
+activation_key: A-M-c
+
+# Activate hint mode and exit upon selection. (default: A-M-l)
+hint_oneshot_key: A-M-l
+
+# Activate two pass hint mode and exit upon selection. (default: A-M-L)
+hint2_oneshot_key: A-M-L
+
+# Exit the currently active warpd session. (default: esc)
+exit: esc
+
+# Toggle drag mode (mnemonic (v)isual mode). (default: v)
+drag: v
+
+# Send the copy key and exit (useful in combination with v). (default: c)
+copy_and_exit: c
+
+# Increase the acceleration of the pointer while held. (default: a)
+accelerator: a
+
+# Decrease the speed of the pointer while held. (default: d)
+decelerator: d
+
+# A space separated list of mouse buttons (2 is middle click). (default: m , .)
+buttons: h , .
+
+# The mouse buttton used for dragging. (default: 1)
+drag_button: 1
+
+# Oneshot mouse buttons (deactivate on click). (default: n - /)
+oneshot_buttons: k - /
+
+# Print the current mouse coordinates to stdout (useful for scripts). (default: p)
+print: p
+
+# Activate hint history mode while in normal mode. (default: ;)
+history: ;
+
+# Activate hint mode while in normal mode (mnemonic: x marks the spot?). (default: x)
+hint: x
+
+# Activate two pass hint mode. (default: X)
+hint2: X
+
+# Activate (g)rid mode while in normal mode. (default: g)
+grid: g
+
+# Activate (s)creen selection while in normal mode. (default: s)
+screen: s
+
+# Move the cursor left in normal mode. (default: h)
+left: n
+
+# Move the cursor down in normal mode. (default: j)
+down: e
+
+# Move the cursor up in normal mode. (default: k)
+up: u
+
+# Move the cursor right in normal mode. (default: l)
+right: i
+
+# Moves the cursor to the top of the screen in normal mode. (default: H)
+top: U
+
+# Moves the cursor to the middle of the screen in normal mode. (default: M)
+middle: M
+
+# Moves the cursor to the bottom of the screen in normal mode. (default: L)
+bottom: E
+
+# Moves the cursor to the leftmost corner of the screen in normal mode. (default: 0)
+start: N
+
+# Moves the cursor to the rightmost corner of the screen in normal mode. (default: $)
+end: I
+
+# Scroll down key. (default: e)
+scroll_down: m
+
+# Scroll up key. (default: r)
+scroll_up: j
+
+# The color of the pointer in normal mode (rgba hex value). (default: #FF4500)
+cursor_color: #FF4500
+
+# The height of the pointer in normal mode. (default: 7)
+cursor_size: 7
+
+# The number of milliseconds before repeating a movement event. (default: 20)
+repeat_interval: 20
+
+# Pointer speed in pixels/second. (default: 220)
+speed: 220
+
+# The maximum pointer speed. (default: 1600)
+max_speed: 1600
+
+# Pointer speed while decelerator is depressed. (default: 50)
+decelerator_speed: 50
+
+# Pointer acceleration in pixels/second^2. (default: 700)
+acceleration: 700
+
+# Pointer acceleration while the accelerator is depressed. (default: 2900)
+accelerator_acceleration: 2900
+
+# The length of time in milliseconds to wait for a second click after a oneshot
+# key has been pressed. (default: 300)
+oneshot_timeout: 300
+
+# History hint size as a percentage of screen height. (default: 2)
+hist_hint_size: 2
+
+# The number of rows in the grid. (default: 2)
+grid_nr: 2
+
+# The number of columns in the grid. (default: 2)
+grid_nc: 2
+
+# Move to the last position in the history stack. (default: C-o)
+hist_back: C-o
+
+# Move to the next position in the history stack. (default: C-i)
+hist_forward: C-i
+
+# Move the grid up. (default: w)
+grid_up: f
+
+# Move the grid left. (default: a)
+grid_left: r
+
+# Move the grid down. (default: s)
+grid_down: s
+
+# Move the grid right. (default: d)
+grid_right: t
+
+# A sequence of comma delimited keybindings which are ordered bookwise with
+# respect to grid position. (default: u i j k)
+grid_keys: l u n e
+
+# Exit grid mode and return to normal mode. (default: c)
+grid_exit: c
+
+# The thickness of grid lines in pixels. (default: 4)
+grid_size: 4
+
+# The thickness of the grid border in pixels. (default: 0)
+grid_border_size: 0
+
+# The color of the grid. (default: #1c1c1e)
+grid_color: #1c1c1e
+
+# The color of the grid border. (default: #ffffff)
+grid_border_color: #ffffff
+
+# The background hint color. (default: #1c1c1e)
+hint_bgcolor: #1c1c1e
+
+# The foreground hint color. (default: #a1aba7)
+hint_fgcolor: #a1aba7
+
+# The character set from which hints are generated. The total number of hints
+# is the square of the size of this string. It may be desirable to increase
+# this for larger screens or trim it to increase gaps between hints. (default:
+# abcdefghijklmnopqrstuvwxyz)
+hint_chars: abcdefghijklmnopqrstuvwxyz
+
+# The font name used by hints. Note: This is platform specific, in X it
+# corresponds to a valid xft font name, on macos it corresponds to a postscript
+# name. (default: Arial)
+hint_font: Arial
+
+# Hint size (range: 1-1000) (default: 20)
+hint_size: 20
+
+# Border radius. (default: 3)
+hint_border_radius: 3
+
+# The exit key used for hint mode. (default: esc)
+hint_exit: esc
+
+# undo last selection step in one of the hint based modes. (default: backspace)
+hint_undo: backspace
+
+# undo all selection steps in one of the hint based modes. (default: C-u)
+hint_undo_all: C-u
+
+# The character set used for the second hint selection, should consist of at
+# least hint_grid_size^2 characters. (default: hjkl;asdfgqwertyuiopzxcvb)
+hint2_chars: luyneih,.tsradcxpf
+
+# The size of hints in the secondary grid (range: 1-1000). (default: 20)
+hint2_size: 20
+
+# The spacing between hints in the secondary grid. (range: 1-1000) (default: 1)
+hint2_gap_size: 1
+
+# The size of the secondary grid. (default: 3)
+hint2_grid_size: 3
+
+# The characters used for screen selection. (default: jkl;asdfg)
+screen_chars: neiotsra
+
+# Initial scroll speed in units/second (unit varies by platform). (default: 300)
+scroll_speed: 300
+
+# Maximum scroll speed. (default: 9000)
+scroll_max_speed: 9000
+
+# Scroll acceleration in units/second^2. (default: 1600)
+scroll_acceleration: 1600
+
+# Scroll deceleration. (default: -3400)
+scroll_deceleration: -3400
+
+# Specifies an optional visual indicator to be displayed while normal mode is
+# active, must be one of: topright, topleft, bottomright, bottomleft, none
+# (default: none)
+indicator: none
+
+# The color of the visual indicator color. (default: #00ff00)
+indicator_color: #00ff00
+
+# The size of the visual indicator in pixels. (default: 12)
+indicator_size: 12

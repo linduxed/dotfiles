@@ -238,6 +238,7 @@ bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window
 bindsym $hyper+F10 exec "systemctl suspend"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 bindsym $hyper+n exec "firefox"
+bindsym $hyper+i exec "warpd --hint --oneshot"
 
 # {{{1 Keyboard key group mappings
 # {{{2 F-keys
