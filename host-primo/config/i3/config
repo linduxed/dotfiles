@@ -57,6 +57,8 @@ bindsym $mod+comma split h
 bindsym $mod+l split v
 bindsym $mod+f fullscreen
 
+# {{{3 Resize
+
 bindsym $mod+j mode "resize"
 
 mode "resize" {
@@ -174,6 +176,7 @@ mode $mode_resurrect_save_programs {
 }
 
 # {{{2 Restore workspace mode
+
 set $mode_resurrect_restore "resurrect - restore ([A]ll / [l]ayout / [p]rograms)"
 
 mode $mode_resurrect_restore {
