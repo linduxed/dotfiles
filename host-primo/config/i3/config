@@ -206,6 +206,8 @@ mode $dunst_mode {
 
 bindsym $mod+Shift+F9 exec "dunstctl close"
 bindsym $mod+Shift+F10 mode $dunst_mode
+bindsym $hyper+period exec "dunstctl close"
+bindsym $hyper+slash mode $dunst_mode
 
 # {{{1 sound_switch
 
@@ -221,6 +223,7 @@ mode $sound_switch_mode {
 }
 
 bindsym $mod+F5 mode $sound_switch_mode
+bindsym $hyper+semicolon mode $sound_switch_mode
 
 # {{{1 xscreensaver
 
@@ -232,9 +235,15 @@ bindsym $hyper+F9 exec "xscreensaver-command -lock"
 # keysym to be a "Lock" key.
 bindsym XF86Calculator exec "xscreensaver-command -lock"
 
-# {{{1 Miscellaneous
+# {{{1 rofi
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $hyper+l exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $hyper+u exec "rofi -show window"
+bindsym $hyper+y exec "rofi -show run"
+
+# {{{1 Miscellaneous
+
 bindsym $hyper+F10 exec "systemctl suspend"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 bindsym $hyper+n exec "firefox"
