@@ -104,11 +104,7 @@ return {
         "Raimondi/delimitMate",
         enabled = true,
         init = function()
-            --  This is the default, but is included here for clarity:
-            --  The coc.vim completion menu needs a <CR> mapping to work reliably.
-            --  Therefore this should not be set to 1.
-            vim.g.delimitMate_expand_cr = 0
-
+            vim.g.delimitMate_expand_cr = 1
             vim.g.delimitMate_expand_space = 1
             vim.g.delimitMate_jump_expansion = 1
         end,
