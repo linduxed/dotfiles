@@ -109,10 +109,7 @@ vim.lsp.config('elixirls', {
 })
 vim.lsp.enable('elixirls')
 
-vim.lsp.config('erlangls', {
-    cmd = { vim.env.HOME .. "/.erlang_ls/release/bin/erlang_ls" },
-})
-vim.lsp.enable('erlangls')
+vim.lsp.enable('elp')
 
 vim.lsp.enable('gleam')
 vim.lsp.enable('solargraph')
