@@ -1542,6 +1542,9 @@ return {
                 ["<Left>"] = false,
                 ["<Right>"] = false,
             },
+            disabled_filetypes = {
+                ["Outline"] = true,
+            }
         },
     },
     {
