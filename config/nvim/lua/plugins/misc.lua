@@ -325,14 +325,6 @@ return {
         }
     },
     {
-        "chrisbra/NrrwRgn",
-        enabled = true,
-        init = function()
-            vim.g.nrrw_rgn_nomap_nr = 1
-            vim.g.nrrw_rgn_nomap_Nr = 1
-        end
-    },
-    {
         "kevinhwang91/nvim-hlslens",
         enabled = true,
         config = function()
@@ -542,7 +534,6 @@ return {
             },
         },
     },
-    "tpope/vim-ragtag",
     {
         "mhinz/vim-sayonara",
         enabled = true,
