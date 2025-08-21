@@ -944,14 +944,6 @@ return {
     },
     "guns/xterm-color-table.vim",
     {
-        "zbirenbaum/copilot.lua",
-        enabled = true,
-        cmd = "Copilot",
-        config = function()
-            require("copilot").setup({})
-        end,
-    },
-    {
         'stevearc/oil.nvim',
         enabled = true,
         config = function()
