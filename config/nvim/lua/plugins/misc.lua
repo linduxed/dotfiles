@@ -866,15 +866,6 @@ return {
         end
     },
     {
-        "liuchengxu/vista.vim",
-        enabled = true,
-        init = function()
-            vim.g.vista_icon_indent = { "↳ ", "↦ " }
-            vim.g.vista_default_executive = "nvim_lsp"
-            vim.g.vista_sidebar_width = 60
-        end
-    },
-    {
         "hedyhli/outline.nvim",
         enabled = true,
         lazy = true,
