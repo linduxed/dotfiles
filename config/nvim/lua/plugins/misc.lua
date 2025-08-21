@@ -105,6 +105,7 @@ return {
         enabled = true,
         init = function()
             vim.g.delimitMate_expand_cr = 1
+            vim.g.delimitMate_balance_matchpairs = 1
             vim.g.delimitMate_expand_space = 1
             vim.g.delimitMate_jump_expansion = 1
         end,
