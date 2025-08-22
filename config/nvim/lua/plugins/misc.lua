@@ -1375,10 +1375,10 @@ return {
         }
     },
     {
+        "brenoprata10/nvim-highlight-colors",
         -- NOTE: This plugin slows down scrolling _significantly_ in files
         -- where a lot of color strings are present. The larger the amount of
         -- color strings in the window the worse it gets.
-        "brenoprata10/nvim-highlight-colors",
         enabled = true,
         config = function()
             -- Ensure termguicolors is enabled if not already
