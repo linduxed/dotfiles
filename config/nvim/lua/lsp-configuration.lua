@@ -101,7 +101,7 @@ vim.lsp.config('lua_ls', {
 vim.lsp.enable('lua_ls')
 
 vim.lsp.config('elixirls', {
-    cmd = { vim.env.HOME .. "/.elixir-ls/release/language_server.sh" },
+    cmd = { vim.env.HOME .. "/.local/share/mise/shims/elixir-ls" },
     elixirLS = {
         dialyzerEnabled = false,
         fetchDeps = false,
