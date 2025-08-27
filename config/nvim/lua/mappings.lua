@@ -74,6 +74,8 @@ vim.keymap.set("n", "<leader>pw", "<c-w>p", { desc = "(P)revious (W)indow" })
 
 -- {{{2 Miscellaneous
 
+vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command-mode (:)" })
+
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
 vim.keymap.set("n", "<leader>x", "<cmd>qa<cr>", { desc = "Window - Quit all (:qa)" })
