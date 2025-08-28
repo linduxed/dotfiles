@@ -75,6 +75,7 @@ vim.keymap.set("n", "<leader>pw", "<c-w>p", { desc = "(P)revious (W)indow" })
 -- {{{2 Miscellaneous
 
 vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command-mode (:)" })
+vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = ":nohlsearch" })
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
 vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
@@ -107,8 +108,6 @@ au FileType help nnoremap <buffer> <Backspace> <C-t>|
 
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-nnoremap <leader>/ :nohlsearch<CR>
 
 tnoremap <C-\> <C-\><C-n>
 
