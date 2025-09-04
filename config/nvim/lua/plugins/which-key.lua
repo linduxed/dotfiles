@@ -83,6 +83,7 @@ return {
                     { "<leader>ba",  group = "Code modification (alternative.nvim)" },
                     { "<leader>bb",  group = "Open in browser (Browsher)" },
                     { "<leader>bg",  group = "Gitsigns" },
+                    { "<leader>bl",  group = "Line numbers" },
                     { "<leader>bn",  group = "Snippets" },
                     { "<leader>bp",  group = "File name (yanking and printing)" },
                     { "<leader>bs",  group = "Session management" },

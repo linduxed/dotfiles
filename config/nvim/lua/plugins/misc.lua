@@ -713,18 +713,10 @@ return {
                     },
                     enable_number = false,
                     disable_number = false,
-                    toggle_number = {
-                        mapping = 'con',
-                        description = 'Toggle line numbers',
-                        dot_repeat = false,
-                    },
+                    toggle_number = false,
                     enable_relativenumber = false,
                     disable_relativenumber = false,
-                    toggle_relativenumber = {
-                        mapping = 'cor',
-                        description = 'Toggle relative numbers',
-                        dot_repeat = false,
-                    },
+                    toggle_relativenumber = false,
                     enable_spell = false,
                     disable_spell = false,
                     toggle_spell = {
@@ -1421,7 +1413,40 @@ return {
     {
         "shrynx/line-numbers.nvim",
         enabled = true,
+        lazy = false,
         opts = {},
+        keys = {
+            {
+                "<leader>blc",
+                "<cmd>LineNumberToggle<cr>",
+                mode = "n",
+                desc = "Line number mode - Cycle"
+            },
+            {
+                "<leader>blb",
+                "<cmd>LineNumberBoth<cr>",
+                mode = "n",
+                desc = "Line number mode - Both"
+            },
+            {
+                "<leader>blr",
+                "<cmd>LineNumberRelative<cr>",
+                mode = "n",
+                desc = "Line number mode - Relative"
+            },
+            {
+                "<leader>bla",
+                "<cmd>LineNumberAbsolute<cr>",
+                mode = "n",
+                desc = "Line number mode - Absolute"
+            },
+            {
+                "<leader>bln",
+                "<cmd>LineNumberNone<cr>",
+                mode = "n",
+                desc = "Line number mode - None"
+            },
+        }
     },
     {
         "yorickpeterse/nvim-window",
