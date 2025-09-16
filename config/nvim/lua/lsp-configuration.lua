@@ -100,14 +100,21 @@ vim.lsp.config('lua_ls', {
 })
 vim.lsp.enable('lua_ls')
 
-vim.lsp.config('elixirls', {
-    cmd = { vim.env.HOME .. "/.local/share/mise/shims/elixir-ls" },
-    elixirLS = {
-        dialyzerEnabled = false,
-        fetchDeps = false,
-    }
+-- vim.lsp.config('elixirls', {
+--     cmd = { vim.env.HOME .. "/.local/share/mise/shims/elixir-ls" },
+--     elixirLS = {
+--         dialyzerEnabled = false,
+--         fetchDeps = false,
+--     }
+-- })
+-- vim.lsp.enable('elixirls')
+
+vim.lsp.config('expert', {
+  cmd = { vim.env.HOME .. "/bin/expert" },
+  root_markers = { 'mix.exs', '.git' },
+  filetypes = { 'elixir', 'eelixir', 'heex' },
 })
-vim.lsp.enable('elixirls')
+vim.lsp.enable('expert')
 
 vim.lsp.enable('elp')
 
