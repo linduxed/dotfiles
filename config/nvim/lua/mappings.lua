@@ -75,6 +75,8 @@ vim.keymap.set("n", "<leader>pw", "<c-w>p", { desc = "(P)revious (W)indow" })
 -- {{{2 Miscellaneous
 
 vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command-mode (:)" })
+vim.keymap.set("v", "<leader><leader>", ":", { desc = "Command-mode (:)" })
+
 vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = ":nohlsearch" })
 
 vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
