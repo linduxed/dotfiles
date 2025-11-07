@@ -1,4 +1,3 @@
-alias ls='echo "Use eza (alias \"e\") instead" && eza'
 alias e='eza'
 alias e1='eza --oneline'
 alias et='eza --tree --icons'
