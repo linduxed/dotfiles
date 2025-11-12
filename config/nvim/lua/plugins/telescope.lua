@@ -56,9 +56,9 @@ return {
                     },
                     {
                         "<Leader>bsf",
-                        "<Cmd>SessionRestoreFromFile<CR>",
+                        "<Cmd>SessionSearch<CR>",
                         mode = "n",
-                        desc = "Session - Restore from file"
+                        desc = "Session - Search"
                     },
                 }
             }
