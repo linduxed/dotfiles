@@ -60,6 +60,18 @@ return {
                         mode = "n",
                         desc = "Session - Search"
                     },
+                    {
+                        "<Leader>bst",
+                        "<Cmd>SessionToggleAutoSave<CR>",
+                        mode = "n",
+                        desc = "Session - Toggle AutoSave"
+                    },
+                    {
+                        "<Leader>bso",
+                        "<Cmd>SessionDisableAutoSave<CR>",
+                        mode = "n",
+                        desc = "Session - Disable AutoSave"
+                    },
                 }
             }
         },
