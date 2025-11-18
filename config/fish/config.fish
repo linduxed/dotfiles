@@ -6,6 +6,7 @@ set -gx LANG en_US.UTF-8
 
 if status is-interactive
     fish_add_path ~/bin
+    fish_add_path ~/.local/bin
 
     fzf_configure_bindings \
         --directory=\ef \
