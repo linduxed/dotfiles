@@ -28,11 +28,11 @@ set $hyper Mod4+Mod1+Control+Shift
 # {{{2 Commands
 
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $hyper+o exec i3-sensible-terminal
+bindsym $hyper+e exec i3-sensible-terminal
 bindsym $mod+grave kill
 
 set $mode_commands "Commands (i3-[q]uit / i3-[r]estart / i3-re[l]oad / lock screen [i] / suspend [o])"
-bindsym $hyper+e mode $mode_commands
+bindsym $hyper+l mode $mode_commands
 
 mode $mode_commands {
     bindsym q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -238,7 +238,7 @@ bindsym XF86Calculator exec "xscreensaver-command -lock"
 # {{{1 rofi
 
 bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
-bindsym $hyper+l exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $hyper+i exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
 bindsym $hyper+u exec "rofi -show window"
 bindsym $hyper+y exec "rofi -show run"
 
@@ -247,7 +247,7 @@ bindsym $hyper+y exec "rofi -show run"
 bindsym $hyper+F10 exec "systemctl suspend"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
 bindsym $hyper+n exec "firefox"
-bindsym $hyper+i exec "warpd --hint --oneshot"
+bindsym $hyper+o exec "warpd --hint --oneshot"
 
 # {{{1 Keyboard key group mappings
 # {{{2 F-keys
