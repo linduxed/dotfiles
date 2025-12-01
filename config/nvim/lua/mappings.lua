@@ -123,9 +123,9 @@ nnoremap z<Down> zj
 
 nnoremap <F1> :buffer #<CR>
 nnoremap <F2> <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <F3> <cmd>lua require('telescope.builtin').tags()<cr>
-nnoremap <F4> <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <F5> <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <F3> <cmd>lua require('telescope.builtin').git_files()<cr>
+nnoremap <F4> <cmd>lua require('telescope.builtin').oldfiles()<cr>
+nnoremap <F5> <cmd>lua require('telescope.builtin').tags()<cr>
 " F6: bound elsewhere -- Telescope undo
 " F7: not bound.
 " F8: not bound.
