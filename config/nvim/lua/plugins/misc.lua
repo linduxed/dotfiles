@@ -776,12 +776,12 @@ return {
         cmd = { "Outline", "OutlineOpen" },
         keys = {
             {
-                "<F9>",
+                "<F10>",
                 "<cmd>OutlineFocus<CR>",
                 desc = "Focus outline",
             },
             {
-                "<F10>",
+                "<F11>",
                 "<cmd>Outline<CR>",
                 desc = "Toggle outline",
             },

@@ -131,7 +131,7 @@ nnoremap <F5> <cmd>lua require('telescope.builtin').oldfiles()<cr>
 " F8: not bound.
 " F9: not bound.
 " F10: bound elsewhere -- outline.nvim
-nnoremap <F11> :Vista!!<CR>
+" F11: bound elsewhere -- outline.nvim
 nnoremap <F12> <cmd>Neotree toggle<CR>
 
 " {{{2 Change behaviour of standard functions
