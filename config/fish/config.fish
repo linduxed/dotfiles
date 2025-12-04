@@ -30,6 +30,8 @@ if status is-interactive
     abbr unarchive dtrx
     abbr syc systemctl
     abbr sycu systemctl --user
+    abbr joc journalctl
+    abbr jocu journalctl --user
 
     # Git
     abbr g git
