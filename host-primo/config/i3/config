@@ -296,6 +296,10 @@ bindsym XF86MonBrightnessDown exec "ddcutil -d 1 setvcp 10 0"
 bindsym Shift+XF86MonBrightnessUp exec "ddcutil -d 1 setvcp 10 + 10"
 bindsym Shift+XF86MonBrightnessDown exec "ddcutil -d 1 setvcp 10 - 10"
 
+# {{{1 Floating window applications
+
+for_window [class="Variety"] floating enable
+
 # {{{1 Startup
 
 exec "i3-resurrect restore -w __i3_scratch"
