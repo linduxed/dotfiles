@@ -122,5 +122,4 @@ vim.lsp.enable('gleam')
 vim.lsp.enable('solargraph')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('gopls')
-
--- Tailwind configured by tailwind-tools.nvim
+vim.lsp.enable('tailwindcss')
