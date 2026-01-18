@@ -38,6 +38,12 @@ return {
         }) }
     ),
     s(
+        { trig = "do", name = "do-block" },
+        { t({ 'do',
+            "  " }), i(1), t({ "",
+            'end' }) }
+    ),
+    s(
         { trig = "doc", name = "function documentation" },
         { t({ '@doc """',
             "" }), i(1, "function description"), t({ "",
