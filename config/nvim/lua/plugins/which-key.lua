@@ -98,6 +98,7 @@ return {
                     { "<leader>f",   group = "Fuzzy finding (Telescope)" },
                     { "<leader>fe",  group = "File finding (_e_dit)" },
                     { "<leader>g",   group = "Misc #3" },
+                    { "<leader>gs",  group = "Scratch" },
                     { "<leader>m",   group = "Highlight words with color (Mark)" },
                     { "<leader>p",   group = "Windows (_p_anes)" },
                     { "<leader>s",   group = "Search (CtrlSF)" },
