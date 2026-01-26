@@ -1,34 +1,5 @@
 return {
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ":TSUpdate",
-        keys = {
-            {
-                "<Leader>aeah",
-                ":TSToggle highlight<CR>",
-                desc = "Toggle Treesitter highlights"
-            },
-            {
-                "<Leader>aebh",
-                ":TSBufToggle highlight<CR>",
-                desc = "Toggle buffer Treesitter highlights"
-            },
-
-            -- Duplication of mappings to have the ones related to color also
-            -- be available under the `<leader>bct` prefix.
-            {
-                "<Leader>bcta",
-                ":TSToggle highlight<CR>",
-                desc = "Toggle Treesitter highlights"
-            },
-            {
-                "<Leader>bctb",
-                ":TSBufToggle highlight<CR>",
-                desc = "Toggle buffer Treesitter highlights"
-            },
-        }
-    },
-    {
         "nvim-treesitter/nvim-treesitter-context",
         config = function()
             require 'treesitter-context'.setup({
@@ -46,11 +17,4 @@ return {
             })
         end
     },
-    {
-        "nvim-treesitter/nvim-treesitter-textobjects",
-        dependencies = {
-            "nvim-treesitter/nvim-treesitter",
-        },
-    },
-    "nvim-treesitter/playground",
 }

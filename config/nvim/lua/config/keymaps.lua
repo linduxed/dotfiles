@@ -1,3 +1,7 @@
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
+
 -- {{{1 Miscellaneous (Lua)
 
 -- {{{2 Folds
@@ -45,44 +49,33 @@ vim.keymap.set(
             nohlsearch
         ]])
     end,
-    { desc = "Split line and remove trailing whitespace" }
+    { desc = "Split line" }
 )
 
 -- {{{2 File name
 
 vim.keymap.set("n",
-    "<leader>bfp",
+    "<leader>apf",
     "<cmd>echo @%<CR>",
-    { desc = "File name - Echo" }
+    { desc = "File name - Print" }
 )
 vim.keymap.set("n",
-    "<leader>bfy",
+    "<leader>ayf",
     '<cmd>let @+=@%<Bar>echo @% "- yanked"<CR>',
-    { desc = "File name - Yank and Echo" }
+    { desc = "Yank - Filename" }
 )
-
--- {{{2 Tabs
-
-vim.keymap.set("n", "]v", "<cmd>tabnext<CR>", { desc = "Tab - Next" })
-vim.keymap.set("n", "[v", "<cmd>tabprevious<CR>", { desc = "Tab - Previous" })
-vim.keymap.set("n", "]V", "<cmd>tabmove +1<CR>", { desc = "Tab - Move right" })
-vim.keymap.set("n", "[V", "<cmd>tabmove -1<CR>", { desc = "Tab - Move left" })
 
 -- {{{2 Windows
 
-vim.keymap.set("n", "<leader>pw", "<c-w>p", { desc = "(P)revious (W)indow" })
+vim.keymap.set("n", "<leader>wa", "<c-w>p", { desc = "Previous window" })
 
 -- {{{2 Miscellaneous
 
 vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command-mode (:)" })
 vim.keymap.set("v", "<leader><leader>", ":", { desc = "Command-mode (:)" })
 
-vim.keymap.set("n", "<leader>/", "<cmd>nohlsearch<CR>", { desc = ":nohlsearch" })
 
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>", { desc = "File - Write (:w)" })
-vim.keymap.set("n", "<leader>q", "<cmd>q<cr>", { desc = "Window - Quit (:q)" })
-vim.keymap.set("n", "<leader>x", "<cmd>qa<cr>", { desc = "Window - Quit all (:qa)" })
-vim.keymap.set("n", "<leader>ge", "<cmd>e<cr>", { desc = "File - Reload (:e)" })
+vim.keymap.set("n", "<leader>fl", "<cmd>e<cr>", { desc = "File re(l)oad (:e)" })
 
 vim.keymap.set("n", "<leader>atz", function() vim.o.tw = 0 end, { desc = "Text width = 0" })
 vim.keymap.set("n", "<leader>atg", function() vim.o.tw = 72 end, { desc = "Text width = 72 (gitcommit)" })
@@ -97,50 +90,35 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<leader>ayb", 'gg"+yG', { desc = "Yank - Contents of buffer" })
 
--- Move default mapping for Visual-mode folding, in favor of nvim-surround.
-vim.keymap.set("x", "Zf", "zf", { desc = "Create fold" })
+vim.keymap.set("n", "<S-Up>", "<C-y>")
+vim.keymap.set("n", "<S-Down>", "<C-e>")
+
+vim.keymap.set("n", "z<Up>", "zk")
+vim.keymap.set("n", "z<Down>", "zj")
+
+-- {{{2 Function keys
+
+vim.keymap.set("n", "<F1>", "<cmd>buffer #<cr>")
+vim.keymap.set("n", "<F2>", function() Snacks.picker.buffers() end)
+vim.keymap.set("n", "<F3>", function() Snacks.picker.git_files() end)
+-- F4: not bound.
+-- F5: not bound.
+-- F6: not bound.
+-- F7: not bound.
+-- F8: not bound.
+-- F9: not bound.
+-- F10: bound elsewhere -- outline.nvim
+-- F11: bound elsewhere -- outline.nvim
+vim.keymap.set("n", "<F12>", function() Snacks.explorer() end)
+
+-- Keep the cursor in place while joining lines
+vim.keymap.set("n", "J", "mzJ`z")
 
 -- {{{1 Miscellaneous (Vimscript)
 
 vim.cmd([[
-"" {{{2 Miscellaneous
-" Help file navigation
-au FileType help nnoremap <buffer> <CR> <C-]>|
-au FileType help nnoremap <buffer> <Backspace> <C-t>|
-
 " Reselection of pasted text (linewise or not, it adjusts)
 nnoremap <expr> gp '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 tnoremap <C-\> <C-\><C-n>
-
-nnoremap <S-Up> <C-y>
-nnoremap <S-Down> <C-e>
-
-nnoremap z<Up> zk
-nnoremap z<Down> zj
-
-" {{{2 Function keys
-
-nnoremap <F1> :buffer #<CR>
-nnoremap <F2> <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <F3> <cmd>lua require('telescope.builtin').git_files()<cr>
-nnoremap <F4> <cmd>lua require('telescope.builtin').oldfiles()<cr>
-nnoremap <F5> <cmd>lua require('telescope.builtin').tags()<cr>
-" F6: bound elsewhere -- Telescope undo
-" F7: not bound.
-" F8: not bound.
-" F9: not bound.
-" F10: bound elsewhere -- outline.nvim
-" F11: bound elsewhere -- outline.nvim
-nnoremap <F12> <cmd>Neotree toggle<CR>
-
-" {{{2 Change behaviour of standard functions
-
-" Keep search matches in the middle of the window.
-nnoremap g; g;zz
-nnoremap g, g,zz
-nnoremap <c-o> <c-o>zz
-
-" Keep the cursor in place while joining lines
-nnoremap J mzJ`z
 ]])
