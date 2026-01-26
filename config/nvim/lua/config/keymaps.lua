@@ -69,6 +69,15 @@ vim.keymap.set("n",
 
 vim.keymap.set("n", "<leader>wa", "<c-w>p", { desc = "Previous window" })
 
+vim.keymap.set("n", "<leader>wF", function()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+        local cfg = vim.api.nvim_win_get_config(win)
+        if cfg.relative ~= "" then
+            vim.api.nvim_win_close(win, false)
+        end
+    end
+end, { desc = "Floating windows - All close" })
+
 -- {{{2 Miscellaneous
 
 vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command-mode (:)" })
