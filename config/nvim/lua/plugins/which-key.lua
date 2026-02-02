@@ -10,6 +10,7 @@ return {
                     { "<leader>acp", group = "Picker (Minty)" },
                     { "<leader>af",  group = "Folds" },
                     { "<leader>afm", group = "Foldmethod" },
+                    { "<leader>ai",  group = "AI" },
                     { "<leader>ap",  group = "Print info" },
                     { "<leader>as",  group = "Spelling" },
                     { "<leader>asc", group = "Autocorrect" },
