@@ -4,6 +4,45 @@
 
 -- {{{1 Miscellaneous (Lua)
 
+-- {{{2 LazyVim overrides
+
+-- LazyVim opts to use HJKL as the main navigation keys. On my keyboard layout,
+-- however, it's far more comfortable to make use of the arrow keys. Since
+-- LazyVim already has mappings that make use of the arrow keys, it seems this
+-- should be fine as a set of swaps.
+
+-- Move to window using the <ctrl> arrow keys
+vim.keymap.set("n", "<C-Left>", "<C-w>h", { desc = "Go to Left Window", remap = true })
+vim.keymap.set("n", "<C-Down>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
+vim.keymap.set("n", "<C-Up>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
+vim.keymap.set("n", "<C-Right>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+
+-- Resize window using <ctrl> arrow keys
+vim.keymap.set("n", "<C-h>", "<cmd>resize +2<cr>", { desc = "Increase Window Height" })
+vim.keymap.set("n", "<C-j>", "<cmd>resize -2<cr>", { desc = "Decrease Window Height" })
+vim.keymap.set("n", "<C-k>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
+vim.keymap.set("n", "<C-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
+
+-- Move Lines
+vim.keymap.del("n", "<A-j>")
+vim.keymap.del("n", "<A-k>")
+vim.keymap.del("i", "<A-j>")
+vim.keymap.del("i", "<A-k>")
+vim.keymap.del("v", "<A-j>")
+vim.keymap.del("v", "<A-k>")
+vim.keymap.set("n", "<A-Down>", "<cmd>execute 'move .+' . v:count1<cr>==", { desc = "Move Down" })
+vim.keymap.set("n", "<A-Up>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", { desc = "Move Up" })
+vim.keymap.set("i", "<A-Down>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
+vim.keymap.set("i", "<A-Up>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+vim.keymap.set("v", "<A-Down>", ":<C-u>execute \"'<,'>move '>+\" . v:count1<cr>gv=gv", { desc = "Move Down" })
+vim.keymap.set("v", "<A-Up>", ":<C-u>execute \"'<,'>move '<-\" . (v:count1 + 1)<cr>gv=gv", { desc = "Move Up" })
+
+-- buffers
+vim.keymap.del("n", "<S-h>")
+vim.keymap.del("n", "<S-l>")
+vim.keymap.set("n", "<S-Left>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
+vim.keymap.set("n", "<S-Right>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
+
 -- {{{2 Folds
 vim.keymap.set("n", "<Leader>afr", "zMzvzz", { desc = '"Refocus" folds' })
 vim.keymap.set("n",
