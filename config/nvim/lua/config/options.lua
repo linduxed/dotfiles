@@ -59,7 +59,6 @@ vim.opt.inccommand = "nosplit"
 vim.opt.iskeyword = vim.opt.iskeyword + "-"
 vim.opt.linebreak = true
 vim.opt.list = true
-vim.opt.listchars = "tab:▸ ,extends:❯,precedes:❮,trail:-,nbsp:∘,conceal:·"
 vim.opt.shiftround = true
 vim.opt.shiftwidth = 4
 vim.opt.showbreak = "…"

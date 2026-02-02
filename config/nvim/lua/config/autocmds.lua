@@ -13,3 +13,16 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.cmd("EnableAutocorrect")
     end,
 })
+
+vim.api.nvim_create_autocmd("BufReadPost", {
+    callback = function()
+        local default_listchars = "extends:❯,precedes:❮,trail:-,nbsp:∘,conceal:·"
+
+        -- Show tabs when unwanted, hide when expected.
+        if vim.bo.expandtab then
+            vim.opt_local.listchars = "tab:▸―," .. default_listchars
+        else
+            vim.opt_local.listchars = "tab:  ," .. default_listchars
+        end
+    end
+})
