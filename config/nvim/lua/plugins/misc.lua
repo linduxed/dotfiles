@@ -516,34 +516,35 @@ return {
         "shrynx/line-numbers.nvim",
         enabled = true,
         lazy = false,
+        opts = { mode = "both" },
         keys = {
             {
                 "<leader>uqc",
-                "<cmd>LineNumberToggle<cr>",
+                function() require("line-numbers").toggle_mode() end,
                 mode = "n",
                 desc = "Line number mode - Cycle"
             },
             {
                 "<leader>uqb",
-                "<cmd>LineNumberBoth<cr>",
+                function() require("line-numbers").set_mode("both") end,
                 mode = "n",
                 desc = "Line number mode - Both"
             },
             {
                 "<leader>uqr",
-                "<cmd>LineNumberRelative<cr>",
+                function() require("line-numbers").set_mode("relative") end,
                 mode = "n",
                 desc = "Line number mode - Relative"
             },
             {
                 "<leader>uqa",
-                "<cmd>LineNumberAbsolute<cr>",
+                function() require("line-numbers").set_mode("absolute") end,
                 mode = "n",
                 desc = "Line number mode - Absolute"
             },
             {
                 "<leader>uqn",
-                "<cmd>LineNumberNone<cr>",
+                function() require("line-numbers").set_mode("none") end,
                 mode = "n",
                 desc = "Line number mode - None"
             },
