@@ -2,7 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter-context",
         config = function()
-            require 'treesitter-context'.setup({
+            require("treesitter-context").setup({
                 -- How many lines the window should span.
                 -- Values <= 0 mean no limit.
                 max_lines = 0,
@@ -13,8 +13,8 @@ return {
                 multiline_threshold = 1,
                 -- Which context lines to discard if `max_lines` is exceeded.
                 -- Choices: 'inner', 'outer'
-                trim_scope = 'outer',
+                trim_scope = "outer",
             })
-        end
+        end,
     },
 }

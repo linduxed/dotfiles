@@ -12,57 +12,57 @@ return {
                 "<Leader>sxp",
                 "<Plug>CtrlSFPrompt",
                 mode = "n",
-                desc = "CtrlSF - Bare prompt"
+                desc = "CtrlSF - Bare prompt",
             },
             {
                 "<Leader>sxc",
                 "<Plug>CtrlSFCwordPath",
                 mode = "n",
-                desc = "CtrlSF - Word under cursor"
+                desc = "CtrlSF - Word under cursor",
             },
             {
                 "<Leader>sxb",
                 "<Plug>CtrlSFCCwordPath",
                 mode = "n",
-                desc = "CtrlSF - Word (and boundary) under cursor"
+                desc = "CtrlSF - Word (and boundary) under cursor",
             },
             {
                 "<Leader>sxl",
                 "<Plug>CtrlSFPwordPath",
                 mode = "n",
-                desc = "CtrlSF - Last search pattern"
+                desc = "CtrlSF - Last search pattern",
             },
             {
                 "<Leader>sxwf",
                 "<cmd>CtrlSFFocus<cr>",
                 mode = "n",
-                desc = "CtrlSF - Focus"
+                desc = "CtrlSF - Focus",
             },
             {
                 "<Leader>sxwt",
                 "<cmd>CtrlSFToggle<cr>",
                 mode = "n",
-                desc = "CtrlSF - Toggle"
+                desc = "CtrlSF - Toggle",
             },
             {
                 "<Leader>sxwu",
                 "<cmd>CtrlSFUpdate<cr>",
                 mode = "n",
-                desc = "CtrlSF - Update (run same search)"
+                desc = "CtrlSF - Update (run same search)",
             },
             {
                 "<Leader>sxc",
                 "<Plug>CtrlSFVwordExec",
                 mode = "v",
-                desc = "CtrlSF - Search highlighted"
+                desc = "CtrlSF - Search highlighted",
             },
             {
                 "<Leader>sxp",
                 "<Plug>CtrlSFVwordPath",
                 mode = "v",
-                desc = "CtrlSF - Open prompt with highlighted"
+                desc = "CtrlSF - Open prompt with highlighted",
             },
-        }
+        },
     },
     "Rawnly/gist.nvim",
     {
@@ -75,18 +75,18 @@ return {
                 -- * an absolute number of cells when > 1
                 -- * a percentage of the width / height of the editor when <= 1
                 -- * a function that returns the width or the height
-                width = 80,    -- width of the Zen window
+                width = 80, -- width of the Zen window
                 height = 0.95, -- height of the Zen window
                 -- by default, no options are changed for the Zen window
                 -- uncomment any of the options below, or add other vim.wo options you want to apply
                 options = {
-                    signcolumn = "no",      -- disable signcolumn
-                    number = false,         -- disable number column
+                    signcolumn = "no", -- disable signcolumn
+                    number = false, -- disable number column
                     relativenumber = false, -- disable relative numbers
-                    cursorline = false,     -- disable cursorline
-                    cursorcolumn = false,   -- disable cursor column
-                    foldcolumn = "0",       -- disable fold column
-                    list = false,           -- disable whitespace characters
+                    cursorline = false, -- disable cursorline
+                    cursorcolumn = false, -- disable cursor column
+                    foldcolumn = "0", -- disable fold column
+                    list = false, -- disable whitespace characters
                 },
             },
             plugins = {
@@ -94,21 +94,23 @@ return {
                 -- comment the lines to not apply the options
                 options = {
                     enabled = true,
-                    ruler = false,              -- disables the ruler text in the cmd line area
-                    showcmd = false,            -- disables the command in the last line of the screen
+                    ruler = false, -- disables the ruler text in the cmd line area
+                    showcmd = false, -- disables the command in the last line of the screen
                 },
-                twilight = { enabled = true },  -- enable to start Twilight when zen mode opens
+                twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
                 gitsigns = { enabled = false }, -- disables git signs
-                tmux = { enabled = false },     -- disables the tmux statusline
+                tmux = { enabled = false }, -- disables the tmux statusline
             },
         },
         keys = {
             {
                 "<Leader>az",
-                function() require("zen-mode").toggle() end,
-                desc = "ZenMode"
-            }
-        }
+                function()
+                    require("zen-mode").toggle()
+                end,
+                desc = "ZenMode",
+            },
+        },
     },
     "nvim-tree/nvim-web-devicons",
     {
@@ -122,8 +124,7 @@ return {
             -- Turn of mappings, mostly to disable the Coerce functionality of
             -- the plugin.
             vim.g.abolish_no_mappings = 1
-            vim.g.abolish_save_file =
-            "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
+            vim.g.abolish_save_file = "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
         end,
     },
     "tpope/vim-capslock",
@@ -135,7 +136,7 @@ return {
             -- running this only to initialize the plugin, as it seems like
             -- it's not being loaded properly.
             require("genghis").setup({})
-        end
+        end,
     },
     {
         "inkarkat/vim-mark",
@@ -145,65 +146,65 @@ return {
         },
         init = function()
             vim.g.mw_no_mappings = 1
-            vim.g.mwDefaultHighlightingPalette = 'extended'
+            vim.g.mwDefaultHighlightingPalette = "extended"
         end,
         keys = {
             {
                 "<Leader>mm",
                 "<Plug>MarkSet",
-                desc = "Mark - Word under cursor"
+                desc = "Mark - Word under cursor",
             },
             {
                 "<Leader>mm",
                 "<Plug>MarkSet",
                 mode = "x",
-                desc = "Mark - Selected"
+                desc = "Mark - Selected",
             },
             {
                 "<Leader>mr",
                 "<Plug>MarkRegex",
-                desc = "Mark - Regex"
+                desc = "Mark - Regex",
             },
             {
                 "<Leader>mr",
                 "<Plug>MarkRegex",
                 mode = "x",
-                desc = "Mark - Regex"
+                desc = "Mark - Regex",
             },
             {
                 "<Leader>mt",
                 "<Plug>MarkToggle",
-                desc = "Mark - Toggle all highlights"
+                desc = "Mark - Toggle all highlights",
             },
             {
                 "<Leader>mx",
                 "<Plug>MarkClear",
-                desc = "Mark - Remove highlight under cursor"
+                desc = "Mark - Remove highlight under cursor",
             },
             {
                 "<Leader>mc",
                 "<Plug>MarkAllClear",
-                desc = "Mark - Remove all highlights"
+                desc = "Mark - Remove all highlights",
             },
             {
                 "<Leader>m*",
                 "<Plug>MarkSearchCurrentNext",
-                desc = "Mark - Jump to next instance of current"
+                desc = "Mark - Jump to next instance of current",
             },
             {
                 "<Leader>m#",
                 "<Plug>MarkSearchCurrentPrev",
-                desc = "Mark - Jump to previous instance of current"
+                desc = "Mark - Jump to previous instance of current",
             },
             {
                 "<Leader>m/",
                 "<Plug>MarkSearchAnyNext",
-                desc = "Mark - Jump to next highlight (any)"
+                desc = "Mark - Jump to next highlight (any)",
             },
             {
                 "<Leader>m?",
                 "<Plug>MarkSearchAnyPrev",
-                desc = "Mark - Jump to previous highlight (any)"
+                desc = "Mark - Jump to previous highlight (any)",
             },
         },
     },
@@ -232,20 +233,20 @@ return {
             },
 
             preview_window = {
-                width = 50,      -- Percentage or integer of columns
-                min_width = 50,  -- Minimum number of columns
+                width = 50, -- Percentage or integer of columns
+                min_width = 50, -- Minimum number of columns
                 relative_width = true,
-                height = 50,     -- Percentage or integer of lines
+                height = 50, -- Percentage or integer of lines
                 min_height = 10, -- Minimum number of lines
                 relative_height = true,
-                border = 'double',
-                live = true
+                border = "double",
+                live = true,
             },
         },
     },
     "guns/xterm-color-table.vim",
     {
-        'stevearc/oil.nvim',
+        "stevearc/oil.nvim",
         enabled = true,
         config = function()
             require("oil").setup({
@@ -262,7 +263,7 @@ return {
                 -- Skip the confirmation popup for simple operations
                 skip_confirm_for_simple_edits = false,
             })
-        end
+        end,
     },
     {
         "obsidian-nvim/obsidian.nvim",
@@ -270,7 +271,7 @@ return {
         ft = "markdown",
         opts = {
             workspaces = {
-                { name = "personal", path = "~/notes", },
+                { name = "personal", path = "~/notes" },
             },
         },
     },
@@ -280,7 +281,7 @@ return {
             labels = "arstoienhdwfpyulgjqzxcvmkb",
         },
     },
-    'kosayoda/nvim-lightbulb',
+    "kosayoda/nvim-lightbulb",
     {
         "gbprod/cutlass.nvim",
         enabled = true,
@@ -295,7 +296,7 @@ return {
                 delete = "_",
                 change = "_",
             },
-        }
+        },
     },
     {
         "sindrets/winshift.nvim",
@@ -327,77 +328,77 @@ return {
                 "<Leader>asce",
                 "<Cmd>EnableAutocorrect<CR>",
                 mode = "n",
-                desc = "Autocorrect - Enable"
+                desc = "Autocorrect - Enable",
             },
             {
                 "<Leader>ascd",
                 "<Cmd>DisableAutocorrect<CR>",
                 mode = "n",
-                desc = "Autocorrect - Disable"
+                desc = "Autocorrect - Disable",
             },
             {
                 "<F7>",
                 "<C-O><Plug>VimyouautocorrectUndo",
                 mode = "i",
-                desc = "Autocorrect - Undo latest"
+                desc = "Autocorrect - Undo latest",
             },
             {
                 "<Leader>ascu",
                 "<Plug>VimyouautocorrectUndo",
                 mode = "n",
-                desc = "Autocorrect - Undo latest"
+                desc = "Autocorrect - Undo latest",
             },
             {
                 "<F8>",
                 "<C-O><Plug>VimyouautocorrectNext",
                 mode = "i",
-                desc = "Autocorrect - Next suggested correction"
+                desc = "Autocorrect - Next suggested correction",
             },
             {
                 "<Leader>ascn",
                 "<Plug>VimyouautocorrectJump",
                 mode = "n",
-                desc = "Autocorrect - Next suggested correction"
+                desc = "Autocorrect - Next suggested correction",
             },
             {
                 "<F9>",
                 "<C-O><Plug>VimyouautocorrectPrevious",
                 mode = "i",
-                desc = "Autocorrect - Previous suggested correction"
+                desc = "Autocorrect - Previous suggested correction",
             },
             {
                 "<Leader>ascp",
                 "<Plug>VimyouautocorrectPrevious",
                 mode = "n",
-                desc = "Autocorrect - Previous suggested correction"
+                desc = "Autocorrect - Previous suggested correction",
             },
             {
                 "<F10>",
                 "<C-O><Plug>VimyouautocorrectJump",
                 mode = "i",
-                desc = "Autocorrect - Jump to latest"
+                desc = "Autocorrect - Jump to latest",
             },
             {
                 "<Leader>ascj",
                 "<Plug>VimyouautocorrectJump",
                 mode = "n",
-                desc = "Autocorrect - Jump to latest"
+                desc = "Autocorrect - Jump to latest",
             },
-        }
+        },
     },
     {
         "RaafatTurki/hex.nvim",
         enabled = true,
         config = function()
             require("hex").setup()
-        end
+        end,
     },
     {
-        'Wansmer/treesj',
+        "Wansmer/treesj",
         enabled = true,
-        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()
-            require('treesj').setup({
+            require("treesj").setup({
                 use_default_keymaps = false,
                 check_syntax_error = true,
                 max_join_length = 120,
@@ -405,25 +406,25 @@ return {
                 -- hold - cursor follows the node/place on which it was called
                 -- start - cursor jumps to the first symbol of the node being formatted
                 -- end - cursor jumps to the last symbol of the node being formatted
-                cursor_behavior = 'hold',
+                cursor_behavior = "hold",
                 dot_repeat = true,
                 langs = {
                     elixir = {
                         arguments = {
                             both = {
-                                separator = ',',
+                                separator = ",",
                                 last_separator = false,
                             },
                         },
                         tuple = {
                             both = {
-                                separator = ',',
+                                separator = ",",
                                 last_separator = false,
                             },
                         },
                         keywords = {
                             both = {
-                                separator = ',',
+                                separator = ",",
                                 last_separator = false,
                                 non_bracket_node = true,
                                 recursive = false,
@@ -431,13 +432,13 @@ return {
                         },
                         map_content = {
                             both = {
-                                separator = ',',
+                                separator = ",",
                                 last_separator = false,
                                 non_bracket_node = true,
                             },
                         },
                     },
-                }
+                },
             })
         end,
         keys = {
@@ -445,13 +446,13 @@ return {
                 "<Leader>cjt",
                 "<cmd>TSJToggle<cr>",
                 mode = "n",
-                desc = "SplitJoin - Toggle"
+                desc = "SplitJoin - Toggle",
             },
             {
                 "<Leader>cjs",
                 "<cmd>TSJSplit<cr>",
                 mode = "n",
-                desc = "SplitJoin - Split"
+                desc = "SplitJoin - Split",
             },
             {
                 "<Leader>cjj",
@@ -459,7 +460,7 @@ return {
                 mode = "n",
                 desc = "SplitJoin - Join",
             },
-        }
+        },
     },
     {
         "nvchad/minty",
@@ -471,15 +472,19 @@ return {
         keys = {
             {
                 "<Leader>acph",
-                function() require("minty.huefy").open({ border = true }) end,
-                desc = "Hue picker"
+                function()
+                    require("minty.huefy").open({ border = true })
+                end,
+                desc = "Hue picker",
             },
             {
                 "<Leader>acps",
-                function() require("minty.shades").open({ border = true }) end,
-                desc = "Shade picker"
-            }
-        }
+                function()
+                    require("minty.shades").open({ border = true })
+                end,
+                desc = "Shade picker",
+            },
+        },
     },
     {
         "Goose97/alternative.nvim",
@@ -510,7 +515,7 @@ return {
                     alternative_prev = "<leader>cnp",
                 },
             })
-        end
+        end,
     },
     {
         "shrynx/line-numbers.nvim",
@@ -520,35 +525,45 @@ return {
         keys = {
             {
                 "<leader>uqc",
-                function() require("line-numbers").toggle_mode() end,
+                function()
+                    require("line-numbers").toggle_mode()
+                end,
                 mode = "n",
-                desc = "Line number mode - Cycle"
+                desc = "Line number mode - Cycle",
             },
             {
                 "<leader>uqb",
-                function() require("line-numbers").set_mode("both") end,
+                function()
+                    require("line-numbers").set_mode("both")
+                end,
                 mode = "n",
-                desc = "Line number mode - Both"
+                desc = "Line number mode - Both",
             },
             {
                 "<leader>uqr",
-                function() require("line-numbers").set_mode("relative") end,
+                function()
+                    require("line-numbers").set_mode("relative")
+                end,
                 mode = "n",
-                desc = "Line number mode - Relative"
+                desc = "Line number mode - Relative",
             },
             {
                 "<leader>uqa",
-                function() require("line-numbers").set_mode("absolute") end,
+                function()
+                    require("line-numbers").set_mode("absolute")
+                end,
                 mode = "n",
-                desc = "Line number mode - Absolute"
+                desc = "Line number mode - Absolute",
             },
             {
                 "<leader>uqn",
-                function() require("line-numbers").set_mode("none") end,
+                function()
+                    require("line-numbers").set_mode("none")
+                end,
                 mode = "n",
-                desc = "Line number mode - None"
+                desc = "Line number mode - None",
             },
-        }
+        },
     },
     {
         "yorickpeterse/nvim-window",
@@ -560,7 +575,7 @@ return {
             },
         },
         config = {
-            chars = { 't', 'r', 's', 'a', 'n', 'e', 'i', 'o', 'd', 'h', 'f', 'p', 'u', 'l', 'w', 'y', 'c', 'q', 'z' },
+            chars = { "t", "r", "s", "a", "n", "e", "i", "o", "d", "h", "f", "p", "u", "l", "w", "y", "c", "q", "z" },
         },
     },
     {
@@ -577,7 +592,7 @@ return {
             },
             disabled_filetypes = {
                 ["Outline"] = true,
-            }
+            },
         },
     },
     {
