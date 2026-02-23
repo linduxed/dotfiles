@@ -18,6 +18,7 @@ return {
                     { "<leader>at",  group = "Text width" },
                     { "<leader>aw",  group = "Whitespace" },
                     { "<leader>ay",  group = "Yank" },
+                    { "<leader>fs",  group = "Seeker" },
                     { "<leader>cn",  group = "Code modification (alternative.nvim)" },
                     { "<leader>cj",  group = "SplitJoin" },
                     { "<leader>m",   group = "Highlight words (Mark)" },

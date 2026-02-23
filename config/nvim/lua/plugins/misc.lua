@@ -605,4 +605,16 @@ return {
             },
         },
     },
+    {
+        "2kabhishek/seeker.nvim",
+        dependencies = { "folke/snacks.nvim" },
+        cmd = { "Seeker" },
+        keys = {
+            { "<leader>fst", ":Seeker files<CR>", desc = "Seek Files" },
+            { "<leader>fsg", ":Seeker git_files<CR>", desc = "Seek Git Files" },
+            { "<leader>fsr", ":Seeker grep<CR>", desc = "Seek Grep" },
+            { "<leader>fsw", ":Seeker grep_word<CR>", desc = "Seek Grep Word" },
+        },
+        opts = {},
+    },
 }
