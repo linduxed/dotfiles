@@ -270,6 +270,7 @@ return {
         version = "*", -- use latest release, remove to use latest commit
         ft = "markdown",
         opts = {
+            legacy_commands = false,
             workspaces = {
                 { name = "personal", path = "~/notes" },
             },
