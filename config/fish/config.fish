@@ -1,6 +1,7 @@
 set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx BAT_THEME "Monokai Extended"
+set -gx RUBY_CONFIGURE_OPTS "--enable-install-doc"
 set -gx SSH_AUTH_SOCK ~/.1password/agent.sock
 set -gx LANG en_US.UTF-8
 
