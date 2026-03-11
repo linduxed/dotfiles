@@ -607,12 +607,52 @@ return {
         },
     },
     {
+        "folke/snacks.nvim",
+        keys = {
+            { "<leader>sl", false },
+            {
+                "<leader>sL",
+                function()
+                    Snacks.picker.loclist()
+                end,
+                desc = "Location List",
+            },
+            {
+                "<leader>sl",
+                function()
+                    Snacks.picker.grep({
+                        need_search = false,
+                        search = "",
+                        live = false,
+                        matcher = { fuzzy = true },
+                    })
+                end,
+                desc = "Line, all files, fuzzy",
+            },
+        },
+    },
+    {
         "2kabhishek/seeker.nvim",
         dependencies = { "folke/snacks.nvim" },
         cmd = { "Seeker" },
         keys = {
             { "<leader>fst", ":Seeker files<CR>", desc = "Seek Files" },
             { "<leader>fsg", ":Seeker git_files<CR>", desc = "Seek Git Files" },
+            {
+                "<leader>fsl",
+                function()
+                    require("seeker.picker").seek({
+                        mode = "grep",
+                        picker_opts = {
+                            need_search = false,
+                            search = "",
+                            live = false,
+                            matcher = { fuzzy = true },
+                        },
+                    })
+                end,
+                desc = "Seek Fuzzy Lines",
+            },
             { "<leader>fsr", ":Seeker grep<CR>", desc = "Seek Grep" },
             { "<leader>fsw", ":Seeker grep_word<CR>", desc = "Seek Grep Word" },
         },
