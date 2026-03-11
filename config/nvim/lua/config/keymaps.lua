@@ -93,6 +93,55 @@ vim.keymap.set(
 
 -- {{{2 File name
 
+local function file_path(absolute)
+    local abs = vim.fn.expand("%:p")
+    if absolute then
+        return abs
+    end
+    return vim.fn.fnamemodify(abs, ":.")
+end
+
+local function yank_file_line(absolute)
+    local path = file_path(absolute)
+    if path == "" then
+        vim.notify("No file path for current buffer", vim.log.levels.WARN)
+        return
+    end
+
+    local line = vim.fn.line(".")
+    local out = string.format("%s#L%d", path, line)
+    vim.fn.setreg("+", out)
+    vim.notify("Yanked: " .. out)
+end
+
+local function yank_file_span(absolute)
+    local path = file_path(absolute)
+    if path == "" then
+        vim.notify("No file path for current buffer", vim.log.levels.WARN)
+        return
+    end
+
+    local start_line = vim.fn.line("v")
+    local end_line = vim.fn.line(".")
+    if start_line == 0 or end_line == 0 then
+        start_line = vim.fn.getpos("'<")[2]
+        end_line = vim.fn.getpos("'>")[2]
+    end
+    if start_line > end_line then
+        start_line, end_line = end_line, start_line
+    end
+
+    local out
+    if start_line == end_line then
+        out = string.format("%s#L%d", path, start_line)
+    else
+        out = string.format("%s#L%d-L%d", path, start_line, end_line)
+    end
+
+    vim.fn.setreg("+", out)
+    vim.notify("Yanked: " .. out)
+end
+
 vim.keymap.set("n",
     "<leader>apf",
     "<cmd>echo @%<CR>",
@@ -102,6 +151,30 @@ vim.keymap.set("n",
     "<leader>ayf",
     '<cmd>let @+=@%<Bar>echo @% "- yanked"<CR>',
     { desc = "Yank - Filename" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>ayl",
+    function() yank_file_line(false) end,
+    { desc = "Yank - File + Line" }
+)
+vim.keymap.set(
+    "x",
+    "<leader>ayl",
+    function() yank_file_span(false) end,
+    { desc = "Yank - File + LineSpan" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>ayL",
+    function() yank_file_line(true) end,
+    { desc = "Yank - File (abs. path) + Line" }
+)
+vim.keymap.set(
+    "x",
+    "<leader>ayL",
+    function() yank_file_span(true) end,
+    { desc = "Yank - File (abs. path) + LineSpan" }
 )
 
 -- {{{2 Windows

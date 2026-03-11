@@ -28,6 +28,8 @@ return {
                 },
                 {
                     mode = { "v" },
+                    { "<leader>a",  group = "misc" },
+                    { "<leader>ay", group = "Yank" },
                     { "<leader>m",  group = "Highlight words (Mark)" },
                 }
             }
