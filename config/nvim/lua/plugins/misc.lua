@@ -1,4 +1,9 @@
 return {
+    "Rawnly/gist.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "tpope/vim-capslock",
+    "guns/xterm-color-table.vim",
+    "kosayoda/nvim-lightbulb",
     {
         "dyng/ctrlsf.vim",
         enabled = true,
@@ -64,7 +69,6 @@ return {
             },
         },
     },
-    "Rawnly/gist.nvim",
     {
         "folke/zen-mode.nvim",
         enabled = true,
@@ -112,7 +116,6 @@ return {
             },
         },
     },
-    "nvim-tree/nvim-web-devicons",
     {
         "tpope/vim-abolish",
         enabled = true,
@@ -127,7 +130,6 @@ return {
             vim.g.abolish_save_file = "/home/linduxed/.config/nvim/after/plugin/abolish.vim"
         end,
     },
-    "tpope/vim-capslock",
     {
         "chrisgrieser/nvim-genghis",
         enabled = true,
@@ -244,7 +246,6 @@ return {
             },
         },
     },
-    "guns/xterm-color-table.vim",
     {
         "stevearc/oil.nvim",
         enabled = true,
@@ -282,7 +283,6 @@ return {
             labels = "arstoienhdwfpyulgjqzxcvmkb",
         },
     },
-    "kosayoda/nvim-lightbulb",
     {
         "gbprod/cutlass.nvim",
         enabled = true,
