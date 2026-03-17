@@ -33,6 +33,8 @@ return {
             },
         },
         opts = function(_, opts)
+            local luasnip = require("luasnip")
+            luasnip.filetype_extend("heex", { "eelixir" })
             require("luasnip.loaders.from_lua").lazy_load({
                 paths = { vim.fn.stdpath("config") .. "/snippets" },
             })
