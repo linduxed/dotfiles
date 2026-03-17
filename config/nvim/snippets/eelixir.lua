@@ -30,13 +30,13 @@ end
 
 return {
     s(
-        { trig = "t=", name = "template tag: <%= %>", },
+        { trig = "teq", name = "template tag: <%= %>", },
         {
             t("<%= "), i(1, ""), t(" %>"),
         }
     ),
     s(
-        { trig = "t-", name = "template tag: <% %>", },
+        { trig = "tno", name = "template tag: <% %>", },
         {
             t("<% "), i(1, ""), t(" %>"),
         }
