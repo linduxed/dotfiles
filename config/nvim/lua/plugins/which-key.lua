@@ -21,6 +21,7 @@ return {
                     { "<leader>fs",  group = "Seeker" },
                     { "<leader>cn",  group = "Code modification (alternative.nvim)" },
                     { "<leader>cj",  group = "SplitJoin" },
+                    { "<leader>h",   group = "Harpoon" },
                     { "<leader>m",   group = "Highlight words (Mark)" },
                     { "<leader>sx",  group = "CtrlSF" },
                     { "<leader>uq",  group = "Line numbers" },
