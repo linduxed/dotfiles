@@ -464,6 +464,50 @@ return {
         },
     },
     {
+        "Wansmer/sibling-swap.nvim",
+        enabled = true,
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        opts = {
+            use_default_keymaps = false,
+            highlight_node_at_cursor = true,
+            interline_swaps_without_separator = false,
+        },
+        keys = {
+            {
+                "<leader>cx.",
+                function()
+                    require("sibling-swap").swap_with_right()
+                end,
+                mode = "n",
+                desc = "Code swap - Next sibling",
+            },
+            {
+                "<leader>cx,",
+                function()
+                    require("sibling-swap").swap_with_left()
+                end,
+                mode = "n",
+                desc = "Code swap - Previous sibling",
+            },
+            {
+                "<leader>cx>",
+                function()
+                    require("sibling-swap").swap_with_right_with_opp()
+                end,
+                mode = "n",
+                desc = "Code swap - Next (flip operator)",
+            },
+            {
+                "<leader>cx<",
+                function()
+                    require("sibling-swap").swap_with_left_with_opp()
+                end,
+                mode = "n",
+                desc = "Code swap - Previous (flip operator)",
+            },
+        },
+    },
+    {
         "nvchad/minty",
         enabled = true,
         lazy = true,
