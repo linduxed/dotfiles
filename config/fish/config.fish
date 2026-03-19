@@ -29,9 +29,11 @@ if status is-interactive
     abbr xeti exit
     abbr xo xdg-open
     abbr unarchive dtrx
-    abbr syc systemctl
+    abbr syc sudo systemctl
+    abbr nsyc systemctl
     abbr sycu systemctl --user
-    abbr joc journalctl
+    abbr joc sudo journalctl
+    abbr njoc journalctl
     abbr jocu journalctl --user
 
     # Git
