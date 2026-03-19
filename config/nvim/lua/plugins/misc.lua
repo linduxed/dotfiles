@@ -603,6 +603,15 @@ return {
                 elixirls = { enabled = false },
                 erlangls = { enabled = false },
                 expert = { cmd = { vim.env.HOME .. "/bin/expert" } },
+                lua_ls = {
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                globals = { "vim" },
+                            },
+                        },
+                    },
+                },
             },
         },
     },
