@@ -126,6 +126,9 @@ return {
     {
         "saghen/blink.cmp",
         opts = {
+            snippets = {
+                score_offset = 0.5
+            },
             completion = {
                 ghost_text = {
                     show_with_menu = false
@@ -134,6 +137,9 @@ return {
             sources = {
                 providers = {
                     lsp = { async = true },
+                    snippets = {
+                        score_offset = 1
+                    },
                 },
             },
         },
