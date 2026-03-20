@@ -195,7 +195,6 @@ end, { desc = "Floating windows - All close" })
 vim.keymap.set("n", "<leader><leader>", ":", { desc = "Command-mode (:)" })
 vim.keymap.set("v", "<leader><leader>", ":", { desc = "Command-mode (:)" })
 
-
 vim.keymap.set("n", "<leader>fl", "<cmd>e<cr>", { desc = "File re(l)oad (:e)" })
 
 vim.keymap.set("n", "<leader>atz", function() vim.o.tw = 0 end, { desc = "Text width = 0" })
