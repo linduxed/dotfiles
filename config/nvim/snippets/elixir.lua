@@ -154,6 +154,18 @@ return {
             "end" }),
         }
     ),
+    s(
+        { trig = "opts-get", name = "extract from opts" },
+        {
+            i(1, "key"), t(" = opts[:"), f(echo_fun, { 1 }, nil), t("] || ")
+        }
+    ),
+    s(
+        { trig = "opts-arg", name = "opts function arg" },
+        {
+            t("opts \\\\ []")
+        }
+    ),
 
     -- LiveView
     s(
