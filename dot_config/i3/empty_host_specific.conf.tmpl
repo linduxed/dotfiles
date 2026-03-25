@@ -1,0 +1,10 @@
+{{- if eq .chezmoi.hostname "gyllenborste" }}
+# Laptop-specific i3 tweaks.
+unbindsym XF86MonBrightnessDown
+unbindsym XF86MonBrightnessUp
+unbindsym $mod+F8
+
+bindsym XF86MonBrightnessDown exec "/usr/bin/xbacklight -dec 10"
+bindsym XF86MonBrightnessUp exec "/usr/bin/xbacklight -inc 10"
+bindsym $mod+F8 exec "/usr/bin/autorandr --change --force --default laptop"
+{{- end }}

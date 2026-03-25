@@ -1,0 +1,211 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+#
+# git-doctor-submodules
+#
+# Detects and optionally removes stale Git submodule metadata.
+#
+# It compares four sources of submodule state:
+# - active gitlinks in the index (mode 160000)
+# - declarations in .gitmodules
+# - local submodule sections in .git/config
+# - cached module gitdirs under .git/modules
+#
+# Typical usage:
+#   git-doctor-submodules
+#   git-doctor-submodules --fix
+#   git-doctor-submodules --help
+#
+# Exit codes:
+#   0: clean state (or help shown)
+#   1: stale metadata found
+#   2: unable to run safely (not a repo, or fix blocked)
+
+require "open3"
+require "set"
+
+def capture(*cmd)
+  output, status = Open3.capture2e(*cmd)
+  [output, status.success?]
+end
+
+def git_output(*args)
+  output, ok = capture("git", *args)
+  return "" unless ok
+
+  output
+end
+
+def section_name_from_key(key)
+  match = key.match(/\Asubmodule\.(.+)\.(?:path|url|active)\z/)
+  match && match[1]
+end
+
+def gitlinks
+  lines = git_output("ls-files", "--stage").lines
+
+  lines.filter_map do |line|
+    parts = line.split(/\s+/, 4)
+    next unless parts[0] == "160000" && parts[3]
+
+    parts[3].strip
+  end.to_set
+end
+
+def declared_sections_and_paths
+  return {} unless File.exist?(".gitmodules")
+
+  lines = git_output("config", "-f", ".gitmodules", "--get-regexp", '^submodule\\..*\\.path$').lines
+  lines.each_with_object({}) do |line, result|
+    key, path = line.strip.split(/\s+/, 2)
+    next unless key && path
+
+    name = section_name_from_key(key)
+    next unless name
+
+    result[name] = path
+  end
+end
+
+def local_sections
+  lines = git_output("config", "--local", "--name-only", "--get-regexp", '^submodule\\..*\\.(url|active)$').lines
+  names = lines.filter_map do |line|
+    section_name_from_key(line.strip)
+  end
+
+  names.uniq.sort
+end
+
+def section_path(section_name, declared)
+  return declared[section_name] if declared.key?(section_name)
+
+  path = git_output("config", "--local", "--get", "submodule.#{section_name}.path").strip
+  return path unless path.empty?
+
+  section_name
+end
+
+def module_dirs(git_dir)
+  root = File.join(git_dir, "modules")
+  return Set.new unless Dir.exist?(root)
+
+  dirs = Dir.glob(File.join(root, "**", "*")).select do |path|
+    File.directory?(path) && File.file?(File.join(path, "HEAD"))
+  end
+
+  dirs.map { |path| path.delete_prefix("#{root}/") }.to_set
+end
+
+def print_list(title, items)
+  puts "#{title} (#{items.length})"
+  if items.empty?
+    puts "  - none"
+  else
+    items.sort.each { |item| puts "  - #{item}" }
+  end
+end
+
+def remove_section(scope_args, section)
+  _output, ok = capture("git", "config", *scope_args, "--remove-section", "submodule.#{section}")
+  ok
+end
+
+def run_fix(stale_declared_sections, stale_local_sections, stale_module_dirs, git_dir)
+  changed = false
+
+  stale_declared_sections.each do |section|
+    changed ||= remove_section(["-f", ".gitmodules"], section)
+  end
+
+  stale_local_sections.each do |section|
+    changed ||= remove_section(["--local"], section)
+  end
+
+  stale_module_dirs.each do |path|
+    full_path = File.join(git_dir, "modules", path)
+    next unless Dir.exist?(full_path)
+
+    require "fileutils"
+    FileUtils.rm_rf(full_path)
+    changed = true
+  end
+
+  if changed && File.exist?(".gitmodules")
+    _output, ok = capture("git", "add", ".gitmodules")
+    warn "warning: failed to stage .gitmodules" unless ok
+  end
+
+  changed
+end
+
+def main
+  fix = ARGV.include?("--fix")
+  help = ARGV.include?("-h") || ARGV.include?("--help")
+
+  if help
+    puts "Usage: git-doctor-submodules [--fix]"
+    puts
+    puts "Checks for stale submodule metadata in:"
+    puts "  - gitlinks (index mode 160000)"
+    puts "  - .gitmodules declarations"
+    puts "  - local .git/config submodule sections"
+    puts "  - .git/modules cached gitdirs"
+    puts
+    puts "--fix removes stale entries and stages .gitmodules when changed."
+    return 0
+  end
+
+  git_dir = git_output("rev-parse", "--git-dir").strip
+  if git_dir.empty?
+    warn "error: not a git repository"
+    return 2
+  end
+
+  active_gitlinks = gitlinks
+  declared = declared_sections_and_paths
+  declared_paths = declared.values.to_set
+  locals = local_sections
+  module_paths = module_dirs(git_dir)
+
+  stale_declared_sections = declared.select { |_section, path| !active_gitlinks.include?(path) }.keys.sort
+  stale_local_sections = locals.select { |section| !active_gitlinks.include?(section_path(section, declared)) }
+  stale_module_dirs = module_paths.reject { |path| active_gitlinks.include?(path) }.to_a.sort
+  missing_in_gitmodules = active_gitlinks.reject { |path| declared_paths.include?(path) }.to_a.sort
+
+  puts "Submodule Doctor"
+  puts
+  print_list("Active gitlinks", active_gitlinks.to_a)
+  puts
+  print_list("Declared in .gitmodules", declared.values)
+  puts
+  print_list("Local submodule sections", locals)
+  puts
+  print_list("Cached module dirs", module_paths.to_a)
+  puts
+  puts "Findings"
+  print_list("Stale .gitmodules sections", stale_declared_sections)
+  print_list("Stale local config sections", stale_local_sections)
+  print_list("Stale cached module dirs", stale_module_dirs)
+  print_list("Active gitlinks missing .gitmodules entry", missing_in_gitmodules)
+
+  clean = stale_declared_sections.empty? && stale_local_sections.empty? && stale_module_dirs.empty? && missing_in_gitmodules.empty?
+
+  puts
+  if fix
+    if missing_in_gitmodules.empty?
+      changed = run_fix(stale_declared_sections, stale_local_sections, stale_module_dirs, git_dir)
+      puts(changed ? "Applied fixes." : "Nothing to fix.")
+    else
+      puts "Skipped --fix because some active gitlinks are missing .gitmodules entries."
+      puts "Resolve those first to avoid destructive cleanup."
+      return 2
+    end
+  else
+    puts(clean ? "No stale submodule metadata found." : "Stale submodule metadata found. Re-run with --fix to clean up.")
+  end
+
+  clean ? 0 : 1
+end
+
+exit(main)

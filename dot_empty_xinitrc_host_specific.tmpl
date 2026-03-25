@@ -1,0 +1,21 @@
+{{- if eq .chezmoi.hostname "primo" }}
+export TERMINAL="kitty"
+
+start-pulseaudio-x11 &
+SpiderOakONE &
+redshift-gtk &
+flameshot &
+lxsession &
+1password &
+openrgb &
+solaar &
+variety &
+{{- else if eq .chezmoi.hostname "gyllenborste" }}
+export TERMINAL="kitty"
+
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+start-pulseaudio-x11 &
+SpiderOakONE &
+kupfer &
+{{- end }}

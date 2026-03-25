@@ -1,0 +1,6 @@
+# This file is loaded by ~/.gitconfig.
+# Add any host specific overriding configuration here.
+{{- if eq .chezmoi.os "darwin" }}
+[gpg "ssh"]
+    program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+{{- end }}

@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.hostname "primo" }}
+function monitor_brightness --description "Changes brightness with ddcutil"
+    sudo ddcutil -d 1 setvcp 10 $argv[1] $argv[2]
+end
+{{- end }}

@@ -1,0 +1,61 @@
+#!/usr/bin/env fish
+
+set -l auto_yes 0
+
+if test (count $argv) -gt 0
+    switch $argv[1]
+        case '-y' '--yes'
+            set auto_yes 1
+        case '-h' '--help'
+            echo "Usage: chezmoi-prune-broken-managed-symlinks [--yes]"
+            echo ""
+            echo "Removes broken symlinks from 'chezmoi managed' and"
+            echo "tries rmdir upward to prune empty parent directories."
+            exit 0
+        case '*'
+            echo "Unknown argument: $argv[1]" >&2
+            exit 2
+    end
+end
+
+set -l found 0
+set -l removed 0
+
+for p in (chezmoi managed)
+    if test -L "$p"
+        and not test -e "$p"
+        set found (math $found + 1)
+
+        set -l do_remove 0
+        if test $auto_yes -eq 1
+            set do_remove 1
+        else
+            read -l -P "Remove broken symlink $p ? [y/N] " ans
+            if string match -qi "y" -- $ans
+                set do_remove 1
+            end
+        end
+
+        if test $do_remove -eq 1
+            rm -- "$p"
+            echo "removed: $p"
+            set removed (math $removed + 1)
+
+            set -l dir (path dirname "$p")
+            while test "$dir" != "/" -a "$dir" != "$HOME"
+                if rmdir -- "$dir" 2>/dev/null
+                    echo "rmdir:   $dir"
+                    set dir (path dirname "$dir")
+                else
+                    break
+                end
+            end
+        else
+            echo "kept: $p"
+        end
+    end
+end
+
+echo ""
+echo "Found broken managed symlinks: $found"
+echo "Removed: $removed"

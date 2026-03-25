@@ -1,0 +1,309 @@
+# {{{1 i3 interface font
+
+font pango:UbuntuMono 10
+
+# {{{1 Bar
+
+bar {
+    font pango:pango:UbuntuMono 10, FontAwesome 12
+    position top
+    status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
+}
+
+# {{{1 i3 mappings
+# {{{2 Mod-key setup
+
+set $mod Mod4
+set $hyper Mod4+Mod1+Control+Shift
+
+# {{{2 Commands
+
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $hyper+e exec i3-sensible-terminal
+bindsym $mod+grave kill
+
+set $mode_commands "Commands (i3-[q]uit / i3-[r]estart / i3-re[l]oad / lock screen [i] / suspend [o])"
+bindsym $hyper+l mode $mode_commands
+
+mode $mode_commands {
+    bindsym q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+    bindsym r restart
+    bindsym l reload
+
+    bindsym i exec "xscreensaver-command -lock"
+    bindsym o exec "systemctl suspend"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# {{{2 Layout
+
+bindsym $mod+y layout toggle split
+bindsym $mod+semicolon layout stacking
+bindsym $mod+bracketleft layout tabbed
+bindsym $mod+m layout tabbed
+bindsym $mod+h focus child
+bindsym $mod+k focus parent
+bindsym $mod+comma split h
+bindsym $mod+l split v
+bindsym $mod+f fullscreen
+
+# {{{3 Resize
+
+bindsym $mod+j mode "resize"
+
+mode "resize" {
+    bindsym n resize shrink width 5 px or 5 ppt
+    bindsym i resize grow width 5 px or 5 ppt
+    bindsym e resize shrink height 5 px or 5 ppt
+    bindsym u resize grow height 5 px or 5 ppt
+
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+    bindsym Down resize shrink height 5 px or 5 ppt
+    bindsym Up resize grow height 5 px or 5 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# {{{2 Navigation
+
+bindsym $mod+u focus up
+bindsym $mod+e focus down
+bindsym $mod+n focus left
+bindsym $mod+i focus right
+bindsym $mod+Up focus up
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+u move up
+bindsym $mod+Shift+e move down
+bindsym $mod+Shift+n move left
+bindsym $mod+Shift+i move right
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+o move container to output right
+bindsym $mod+apostrophe move workspace to output right
+
+# {{{2 Floating
+
+floating_modifier $mod
+bindsym $mod+Shift+t floating toggle
+bindsym $mod+t focus mode_toggle
+
+# {{{2 Workspaces
+
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8:email
+bindsym $mod+9 workspace 9:shells
+bindsym $mod+0 workspace 10:chats
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8:email
+bindsym $mod+Shift+9 move container to workspace 9:shells
+bindsym $mod+Shift+0 move container to workspace 10:chats
+
+# {{{2 Scratchpad
+
+bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+
+# {{{1 i3-resurrect
+# {{{2 Save workspace mode
+
+set $mode_resurrect_save "resurrect - save ([A]ll / [l]ayout / [p]rograms)"
+set $mode_resurrect_save_layout_and_programs "ressurect - save - layout & programs ([i]nstance / [T]itle)"
+set $mode_resurrect_save_layout "ressurect - save - layout ([i]nstance / [T]itle)"
+set $mode_resurrect_save_programs "ressurect - save - programs ([i]nstance / [T]itle)"
+
+mode $mode_resurrect_save {
+  bindsym a mode $mode_resurrect_save_layout_and_programs
+  bindsym Return mode $mode_resurrect_save_layout_and_programs
+
+  bindsym l mode $mode_resurrect_save_layout
+  bindsym p mode $mode_resurrect_save_programs
+
+  bindsym Escape mode "default"
+}
+mode $mode_resurrect_save_layout_and_programs {
+  bindsym i exec "i3-resurrect save --swallow=class,instance"; mode "default"
+  bindsym t exec "i3-resurrect save --swallow=class,instance,title"; mode "default"
+  bindsym Return exec "i3-resurrect save --swallow=class,instance,title"; mode "default"
+
+  bindsym Escape mode "default"
+}
+mode $mode_resurrect_save_layout {
+  bindsym i exec "i3-resurrect save --layout-only --swallow=class,instance"; mode "default"
+  bindsym t exec "i3-resurrect save --layout-only --swallow=class,instance,title"; mode "default"
+  bindsym Return exec "i3-resurrect save --layout-only --swallow=class,instance,title"; mode "default"
+
+  bindsym Escape mode "default"
+}
+mode $mode_resurrect_save_programs {
+  bindsym i exec "i3-resurrect save --programs-only --swallow=class,instance"; mode "default"
+  bindsym t exec "i3-resurrect save --programs-only --swallow=class,instance,title"; mode "default"
+  bindsym Return exec "i3-resurrect save --programs-only --swallow=class,instance,title"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+# {{{2 Restore workspace mode
+
+set $mode_resurrect_restore "resurrect - restore ([A]ll / [l]ayout / [p]rograms)"
+
+mode $mode_resurrect_restore {
+  bindsym a exec "i3-resurrect restore"; mode "default"
+  bindsym Return exec "i3-resurrect restore"; mode "default"
+
+  bindsym l exec "i3-resurrect restore --layout-only"; mode "default"
+  bindsym p exec "i3-resurrect restore --programs-only"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+# {{{1 dunst
+
+set $dunst_mode "dunst - [c]lose / close-[a]ll / [h]istory-pop / [a]ction / [c]ontext"
+
+mode $dunst_mode {
+  bindsym c exec "dunstctl close"; mode "default"
+  bindsym a exec "dunstctl close-all"; mode "default"
+  bindsym h exec "dunstctl history-pop"; mode "default"
+  bindsym a exec "dunstctl action"; mode "default"
+  bindsym c exec "dunstctl context"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+F9 exec "dunstctl close"
+bindsym $mod+Shift+F10 mode $dunst_mode
+bindsym $hyper+period exec "dunstctl close"
+bindsym $hyper+slash mode $dunst_mode
+
+# {{{1 sound_switch
+
+set $sound_switch_mode "sound_switch - [j]bl / j[a]bra_old / [s]tage_mini / s[t]arship"
+
+mode $sound_switch_mode {
+  bindsym j exec "~/bin/sound_switch jbl"; mode "default"
+  bindsym a exec "~/bin/sound_switch jabra_old"; mode "default"
+  bindsym s exec "~/bin/sound_switch stage_mini"; mode "default"
+  bindsym t exec "~/bin/sound_switch starship"; mode "default"
+
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+F5 mode $sound_switch_mode
+bindsym $hyper+semicolon mode $sound_switch_mode
+
+# {{{1 xscreensaver
+
+# Note that xscreensaver locking can be done from $mode_commands.
+
+bindsym $hyper+F9 exec "xscreensaver-command -lock"
+
+# I don't see myself using XF86Calculator anytime soon, so I'll repurpose this
+# keysym to be a "Lock" key.
+bindsym XF86Calculator exec "xscreensaver-command -lock"
+
+# {{{1 rofi
+
+bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $hyper+i exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $hyper+u exec "rofi -show window"
+bindsym $hyper+y exec "rofi -show run"
+
+# {{{1 Miscellaneous
+
+bindsym $hyper+F10 exec "systemctl suspend"
+bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
+bindsym $hyper+n exec "firefox"
+bindsym $hyper+o exec "warpd --hint --oneshot"
+
+# {{{1 Keyboard key group mappings
+# {{{2 F-keys
+
+# bindsym $mod+F1 exec ""
+# bindsym $mod+F2 exec ""
+bindsym $mod+F3 exec "rofi -show run"
+bindsym $mod+F4 exec "rofi -show window"
+# $mod+F5 bound to sound_switch
+bindsym $mod+F6 mode $mode_resurrect_save
+bindsym $mod+F7 mode $mode_resurrect_restore
+# bindsym $mod+F8 exec ""
+bindsym $mod+F9 exec "/usr/bin/variety --previous"
+bindsym $mod+F10 exec "/usr/bin/variety --next"
+
+# {{{2 Media keys
+
+# {{{3 Volume adjustment
+
+bindsym XF86AudioMute exec "/usr/bin/pulseaudio-ctl mute"
+bindsym XF86AudioLowerVolume exec "/usr/bin/pulseaudio-ctl down"
+bindsym XF86AudioRaiseVolume exec "/usr/bin/pulseaudio-ctl up"
+
+# {{{3 MPD control (mpc)
+
+bindsym XF86AudioPlay exec "MPD_HOST=127.0.0.1 mpc toggle"
+bindsym XF86AudioStop exec "MPD_HOST=127.0.0.1 mpc stop"
+bindsym XF86AudioPrev exec "MPD_HOST=127.0.0.1 mpc prev"
+bindsym XF86AudioNext exec "MPD_HOST=127.0.0.1 mpc next"
+
+# {{{3 Monitor brightness adjustment
+
+# `ddcutil` sets/gets various monitor settings. `setvcp 10` sets the
+# brightness, as 10 is the number of the setting corresponding to brightness.
+# The final argument is either a relative number adjustment or an absolute
+# number for brightness (0-100).
+#
+# The brightness down/up keys are set to go to min/max, as I've found this is
+# my most common usage: max during day, minimum at night. Granular adjustment
+# requires a Shift modifier to be pressed. If I would find myself changing the
+# brightness in a granular fashion more frequently, then I'll probably switch
+# the two methods around.
+
+bindsym XF86MonBrightnessUp exec "ddcutil -d 1 setvcp 10 100"
+bindsym XF86MonBrightnessDown exec "ddcutil -d 1 setvcp 10 0"
+bindsym Shift+XF86MonBrightnessUp exec "ddcutil -d 1 setvcp 10 + 10"
+bindsym Shift+XF86MonBrightnessDown exec "ddcutil -d 1 setvcp 10 - 10"
+
+# {{{1 Floating window applications
+
+for_window [class="Variety"] floating enable
+
+# {{{1 Host-specific overrides
+
+include ~/.config/i3/host_specific.conf
+
+# {{{1 Startup
+
+exec "i3-resurrect restore -w __i3_scratch"

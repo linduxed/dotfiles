@@ -1,0 +1,13 @@
+{{- if eq .chezmoi.os "darwin" }}
+bin/is_reboot_necessary
+.Xdefaults
+.config/i3/config
+.config/i3status-rust/config.toml
+.config/dunst/dunstrc
+.config/rsibreakrc
+.xinitrc
+.xinitrc_host_specific
+.mpdconf
+.ncmpcpp/bindings
+.ncmpcpp/config
+{{- end }}
