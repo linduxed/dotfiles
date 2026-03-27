@@ -13,6 +13,7 @@
     "lazyvim.plugins.extras.lang.ruby",
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.test.core",
+    "lazyvim.plugins.extras.util.chezmoi",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "install_version": 8,

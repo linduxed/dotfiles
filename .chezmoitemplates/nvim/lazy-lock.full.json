@@ -6,6 +6,8 @@
   "blink.cmp": { "branch": "main", "commit": "451168851e8e2466bc97ee3e026c3dcb9141ce07" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "catppuccin": { "branch": "main", "commit": "384f304c8b04664c9e0091fbfb3923c5f97c1bcf" },
+  "chezmoi.nvim": { "branch": "main", "commit": "ad26a6c4f5be0c348612518fcb1b7116649e026f" },
+  "chezmoi.vim": { "branch": "main", "commit": "73b30df35c6b645ebd2e6a440eea8463ef3c3f47" },
   "conform.nvim": { "branch": "master", "commit": "086a40dc7ed8242c03be9f47fbcee68699cc2395" },
   "ctrlsf.vim": { "branch": "master", "commit": "50186c529c881b7844bcd66c7b8e9826eb8990a4" },
   "cutlass.nvim": { "branch": "main", "commit": "d01b5c1943050fcda8edf5c89d4419c41a65890e" },
