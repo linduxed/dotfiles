@@ -1,0 +1,5 @@
+{{- if eq .chezmoi.hostname "blackberry" }}
+set -gx NVIM_APPNAME nvim-min
+{{- else }}
+set -e NVIM_APPNAME
+{{- end }}

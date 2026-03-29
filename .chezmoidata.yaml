@@ -1,4 +1,3 @@
-nvim_profile: full
 i3status_net_device: wlo1
 i3status_show_battery: false
 i3status_show_nvidia: true

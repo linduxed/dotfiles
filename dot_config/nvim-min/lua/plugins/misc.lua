@@ -1,123 +1,5 @@
 return {
-    "Rawnly/gist.nvim",
-    "nvim-tree/nvim-web-devicons",
     "tpope/vim-capslock",
-    "guns/xterm-color-table.vim",
-    "tpope/vim-rake",
-    "vim-scripts/warsow.vim",
-    "kosayoda/nvim-lightbulb",
-    {
-        "dyng/ctrlsf.vim",
-        enabled = true,
-        lazy = false,
-        init = function()
-            vim.g.ctrlsf_populate_qflist = 1
-            vim.g.ctrlsf_backend = "rg"
-        end,
-        keys = {
-            {
-                "<Leader>sxp",
-                "<Plug>CtrlSFPrompt",
-                mode = "n",
-                desc = "CtrlSF - Bare prompt",
-            },
-            {
-                "<Leader>sxc",
-                "<Plug>CtrlSFCwordPath",
-                mode = "n",
-                desc = "CtrlSF - Word under cursor",
-            },
-            {
-                "<Leader>sxb",
-                "<Plug>CtrlSFCCwordPath",
-                mode = "n",
-                desc = "CtrlSF - Word (and boundary) under cursor",
-            },
-            {
-                "<Leader>sxl",
-                "<Plug>CtrlSFPwordPath",
-                mode = "n",
-                desc = "CtrlSF - Last search pattern",
-            },
-            {
-                "<Leader>sxwf",
-                "<cmd>CtrlSFFocus<cr>",
-                mode = "n",
-                desc = "CtrlSF - Focus",
-            },
-            {
-                "<Leader>sxwt",
-                "<cmd>CtrlSFToggle<cr>",
-                mode = "n",
-                desc = "CtrlSF - Toggle",
-            },
-            {
-                "<Leader>sxwu",
-                "<cmd>CtrlSFUpdate<cr>",
-                mode = "n",
-                desc = "CtrlSF - Update (run same search)",
-            },
-            {
-                "<Leader>sxc",
-                "<Plug>CtrlSFVwordExec",
-                mode = "v",
-                desc = "CtrlSF - Search highlighted",
-            },
-            {
-                "<Leader>sxp",
-                "<Plug>CtrlSFVwordPath",
-                mode = "v",
-                desc = "CtrlSF - Open prompt with highlighted",
-            },
-        },
-    },
-    {
-        "folke/zen-mode.nvim",
-        enabled = true,
-        opts = {
-            window = {
-                backdrop = 0.95, -- shade the backdrop of the Zen window. Set to 1 to keep the same as Normal
-                -- height and width can be:
-                -- * an absolute number of cells when > 1
-                -- * a percentage of the width / height of the editor when <= 1
-                -- * a function that returns the width or the height
-                width = 80, -- width of the Zen window
-                height = 0.95, -- height of the Zen window
-                -- by default, no options are changed for the Zen window
-                -- uncomment any of the options below, or add other vim.wo options you want to apply
-                options = {
-                    signcolumn = "no", -- disable signcolumn
-                    number = false, -- disable number column
-                    relativenumber = false, -- disable relative numbers
-                    cursorline = false, -- disable cursorline
-                    cursorcolumn = false, -- disable cursor column
-                    foldcolumn = "0", -- disable fold column
-                    list = false, -- disable whitespace characters
-                },
-            },
-            plugins = {
-                -- disable some global vim options (vim.o...)
-                -- comment the lines to not apply the options
-                options = {
-                    enabled = true,
-                    ruler = false, -- disables the ruler text in the cmd line area
-                    showcmd = false, -- disables the command in the last line of the screen
-                },
-                twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
-                gitsigns = { enabled = false }, -- disables git signs
-                tmux = { enabled = false }, -- disables the tmux statusline
-            },
-        },
-        keys = {
-            {
-                "<Leader>az",
-                function()
-                    require("zen-mode").toggle()
-                end,
-                desc = "ZenMode",
-            },
-        },
-    },
     {
         "tpope/vim-abolish",
         enabled = true,
@@ -269,17 +151,6 @@ return {
         end,
     },
     {
-        "obsidian-nvim/obsidian.nvim",
-        version = "*", -- use latest release, remove to use latest commit
-        ft = "markdown",
-        opts = {
-            legacy_commands = false,
-            workspaces = {
-                { name = "personal", path = "~/notes" },
-            },
-        },
-    },
-    {
         "folke/flash.nvim",
         opts = {
             labels = "arstoienhdwfpyulgjqzxcvmkb",
@@ -388,13 +259,6 @@ return {
                 desc = "Autocorrect - Jump to latest",
             },
         },
-    },
-    {
-        "RaafatTurki/hex.nvim",
-        enabled = true,
-        config = function()
-            require("hex").setup()
-        end,
     },
     {
         "Wansmer/treesj",
@@ -510,109 +374,6 @@ return {
         },
     },
     {
-        "nvchad/minty",
-        enabled = true,
-        lazy = true,
-        dependencies = {
-            "nvchad/volt",
-        },
-        keys = {
-            {
-                "<Leader>acph",
-                function()
-                    require("minty.huefy").open({ border = true })
-                end,
-                desc = "Hue picker",
-            },
-            {
-                "<Leader>acps",
-                function()
-                    require("minty.shades").open({ border = true })
-                end,
-                desc = "Shade picker",
-            },
-        },
-    },
-    {
-        "Goose97/alternative.nvim",
-        enabled = true,
-        version = "*",
-        event = "VeryLazy",
-        config = function()
-            require("alternative").setup({
-                rules = {
-                    "general.compare_operator_flip",
-                    "javascript.if_condition_flip",
-                    "javascript.ternary_to_if_else",
-                    "javascript.function_definition_variants",
-                    "javascript.arrow_function_implicit_return",
-                    "typescript.function_definition_variants",
-                    "lua.if_condition_flip",
-                    "lua.ternary_to_if_else",
-                    "lua.wrap_it_test_in_describe",
-                    "elixir.function_definition_variants",
-                    "elixir.if_condition_flip",
-                    "elixir.if_expression_variants",
-                    "elixir.pipe_first_function_argument",
-                    custom = {},
-                },
-                select_labels = "neiotsra",
-                keymaps = {
-                    alternative_next = "<leader>cnn",
-                    alternative_prev = "<leader>cnp",
-                },
-            })
-        end,
-    },
-    {
-        "shrynx/line-numbers.nvim",
-        enabled = true,
-        lazy = false,
-        opts = { mode = "both" },
-        keys = {
-            {
-                "<leader>uqc",
-                function()
-                    require("line-numbers").toggle_mode()
-                end,
-                mode = "n",
-                desc = "Line number mode - Cycle",
-            },
-            {
-                "<leader>uqb",
-                function()
-                    require("line-numbers").set_mode("both")
-                end,
-                mode = "n",
-                desc = "Line number mode - Both",
-            },
-            {
-                "<leader>uqr",
-                function()
-                    require("line-numbers").set_mode("relative")
-                end,
-                mode = "n",
-                desc = "Line number mode - Relative",
-            },
-            {
-                "<leader>uqa",
-                function()
-                    require("line-numbers").set_mode("absolute")
-                end,
-                mode = "n",
-                desc = "Line number mode - Absolute",
-            },
-            {
-                "<leader>uqn",
-                function()
-                    require("line-numbers").set_mode("none")
-                end,
-                mode = "n",
-                desc = "Line number mode - None",
-            },
-        },
-    },
-    {
         "yorickpeterse/nvim-window",
         keys = {
             {
@@ -626,29 +387,9 @@ return {
         },
     },
     {
-        "m4xshen/hardtime.nvim",
-        lazy = false,
-        dependencies = { "MunifTanjim/nui.nvim" },
-        opts = {
-            disable_mouse = false,
-            disabled_keys = {
-                ["<Up>"] = false,
-                ["<Down>"] = false,
-                ["<Left>"] = false,
-                ["<Right>"] = false,
-            },
-            disabled_filetypes = {
-                ["Outline"] = true,
-            },
-        },
-    },
-    {
         "neovim/nvim-lspconfig",
         opts = {
             servers = {
-                elixirls = { enabled = false },
-                erlangls = { enabled = false },
-                expert = { cmd = { vim.env.HOME .. "/bin/expert" } },
                 lua_ls = {
                     settings = {
                         Lua = {
@@ -685,32 +426,5 @@ return {
                 desc = "Line, all files, fuzzy",
             },
         },
-    },
-    {
-        "2kabhishek/seeker.nvim",
-        dependencies = { "folke/snacks.nvim" },
-        cmd = { "Seeker" },
-        keys = {
-            { "<leader>fst", ":Seeker files<CR>", desc = "Seek Files" },
-            { "<leader>fsg", ":Seeker git_files<CR>", desc = "Seek Git Files" },
-            {
-                "<leader>fsl",
-                function()
-                    require("seeker.picker").seek({
-                        mode = "grep",
-                        picker_opts = {
-                            need_search = false,
-                            search = "",
-                            live = false,
-                            matcher = { fuzzy = true },
-                        },
-                    })
-                end,
-                desc = "Seek Fuzzy Lines",
-            },
-            { "<leader>fsr", ":Seeker grep<CR>", desc = "Seek Grep" },
-            { "<leader>fsw", ":Seeker grep_word<CR>", desc = "Seek Grep Word" },
-        },
-        opts = {},
     },
 }
