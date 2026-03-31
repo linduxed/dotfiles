@@ -91,6 +91,10 @@ xterm*toolBar:          false
 xterm*charClass:        33:48,35-38:48,39:43,42-47:48,58-59:48,61:48,63-64:48,126:48
 Xcursor*theme:          Neutral
 
+{{ if eq .chezmoi.hostname "gyllenborste" }}
 Xft*dpi:                192
+{{ else }}
+Xft*dpi:                96
+{{ end }}
 Xft*antialias:          true
 Xft*hinting:            full
