@@ -56,7 +56,6 @@
     browser = xdg-open
 [include]
     path = ~/.gitconfig_overrides
-    path = ~/.gitconfig_host_specific
 [rebase]
     autosquash = true
     updateRefs = true
