@@ -11,13 +11,21 @@ fu! CustomFoldText()
 	endif
 
 	let levelIndent = repeat('  ', max([0, v:foldlevel - 1]))
-
-	let w = winwidth(0) - &foldcolumn - (&number ? 8 : 0)
+	let textoff = get(getwininfo(win_getid())[0], 'textoff', 0)
+	let w = winwidth(0) - textoff
 	let foldSize = 1 + v:foldend - v:foldstart
-	let foldSizeStr = " " . foldSize . " lines "
-	let foldLevelStr = repeat("+--", v:foldlevel)
+	let foldSizeStr = ' ' . foldSize . ' lines '
 	let lineCount = line("$")
-	let foldPercentage = printf("[%.1f", (foldSize*1.0)/lineCount*100) . "%] "
-	let expansionString = repeat(".", w - strwidth(levelIndent.foldSizeStr.line.foldLevelStr.foldPercentage))
-	return levelIndent . line . expansionString . foldSizeStr . foldPercentage . foldLevelStr
+	let foldPercentage = printf('[%.1f%%] ', (foldSize * 1.0) / max([1, lineCount]) * 100)
+	let rightText = foldSizeStr . foldPercentage
+
+	let leftText = levelIndent . line
+	let leftMax = max([0, w - strdisplaywidth(rightText) - 1])
+	if strdisplaywidth(leftText) > leftMax
+		let truncWidth = max([0, leftMax - 3])
+		let leftText = strcharpart(leftText, 0, truncWidth) . '...'
+	endif
+
+	let expansionString = repeat('.', max([1, w - strdisplaywidth(leftText) - strdisplaywidth(rightText)]))
+	return leftText . expansionString . rightText
 endf
