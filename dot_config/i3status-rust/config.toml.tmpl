@@ -32,7 +32,7 @@ end
 [[block]]
 block = "net"
 device = "{{ .i3status_net_device }}"
-format = " $icon $speed_down"
+format = " $icon $speed_down.eng(prefix:K,width:4)"
 interval = 5
 
 
@@ -44,7 +44,7 @@ format = " $icon $1m.eng(w:4)"
 [[block]]
 block = "cpu"
 interval = 1
-format = " $icon $utilization"
+format = " $icon $utilization.eng(w:4)"
 
 [[block]]
 block = "temperature"
@@ -53,7 +53,7 @@ format = " $icon max: $max $icon avg: $average"
 {{- if .i3status_show_nvidia }}
 [[block]]
 block = "nvidia_gpu"
-format = " $icon $utilization $memory $temperature"
+format = " $icon $utilization.eng(w:4) $memory $temperature"
 interval = 1
 {{- end }}
 
