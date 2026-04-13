@@ -11,6 +11,25 @@ good_fg = { link = "idle_fg" }
 icons = "awesome4"
 
 [[block]]
+block = "custom"
+interval = 1
+json = true
+command = '''
+fish -c "
+switch (voxtype status 2>/dev/null; or echo offline)
+    case recording
+        echo \"{\\\"icon\\\":\\\"microphone\\\",\\\"text\\\":\\\"VT: REC\\\",\\\"state\\\":\\\"Critical\\\"}\"
+    case transcribing
+        echo \"{\\\"icon\\\":\\\"microphone_muted\\\",\\\"text\\\":\\\"VT: TX\\\",\\\"state\\\":\\\"Warning\\\"}\"
+    case idle
+        echo \"{\\\"icon\\\":\\\"microphone_muted\\\",\\\"text\\\":\\\"VT\\\",\\\"state\\\":\\\"Idle\\\"}\"
+    case '*'
+        echo \"{\\\"icon\\\":\\\"microphone\\\",\\\"text\\\":\\\"?\\\",\\\"state\\\":\\\"Info\\\"}\"
+end
+"
+'''
+
+[[block]]
 block = "disk_space"
 path = "/"
 info_type = "used"

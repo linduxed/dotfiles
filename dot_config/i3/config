@@ -246,6 +246,7 @@ bindsym $hyper+y exec "rofi -show run"
 
 bindsym $hyper+F10 exec "systemctl suspend"
 bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
+bindsym $hyper+h exec "voxtype record toggle"
 bindsym $hyper+n exec "firefox"
 bindsym $hyper+o exec "warpd --hint --oneshot"
 
