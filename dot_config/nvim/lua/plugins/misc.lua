@@ -661,8 +661,76 @@ return {
         },
     },
     {
-        "folke/snacks.nvim",
+        "dmtrKovalenko/fff.nvim",
+        build = function()
+            require("fff.download").download_or_build_binary()
+        end,
+        lazy = false,
+        opts = {
+            layout = {
+                prompt_position = "top",
+            },
+        },
         keys = {
+            {
+                "<leader>ff",
+                function()
+                    require("fff").find_files()
+                end,
+                desc = "FFF Find Files",
+            },
+            {
+                "<leader>fg",
+                function()
+                    local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+                    if vim.v.shell_error ~= 0 or not git_root or git_root == "" then
+                        require("fff").find_files()
+                    else
+                        require("fff").find_files({
+                            cwd = git_root,
+                            title = "FFF Git Root Files",
+                        })
+                    end
+                end,
+                desc = "FFF Find Files (git root)",
+            },
+            {
+                "<leader>sg",
+                function()
+                    require("fff").live_grep()
+                end,
+                desc = "FFF Grep (Root Dir)",
+            },
+        },
+    },
+    {
+        "folke/snacks.nvim",
+        opts = function(_, opts)
+            local dashboard_keys = opts.dashboard and opts.dashboard.preset and opts.dashboard.preset.keys
+            if not dashboard_keys then
+                return opts
+            end
+
+            for _, item in ipairs(dashboard_keys) do
+                if item.key == "f" then
+                    item.desc = "Find File (FFF)"
+                    item.action = function()
+                        require("fff").find_files()
+                    end
+                elseif item.key == "g" then
+                    item.desc = "Find Text (FFF)"
+                    item.action = function()
+                        require("fff").live_grep()
+                    end
+                end
+            end
+
+            return opts
+        end,
+        keys = {
+            { "<leader>ff", false },
+            { "<leader>fg", false },
+            { "<leader>sg", false },
             { "<leader>sl", false },
             {
                 "<leader>sL",
