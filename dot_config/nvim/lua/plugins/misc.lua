@@ -675,13 +675,6 @@ return {
             {
                 "<leader>ff",
                 function()
-                    require("fff").find_files()
-                end,
-                desc = "FFF Find Files",
-            },
-            {
-                "<leader>fg",
-                function()
                     local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
                     if vim.v.shell_error ~= 0 or not git_root or git_root == "" then
                         require("fff").find_files()
@@ -693,6 +686,16 @@ return {
                     end
                 end,
                 desc = "FFF Find Files (git root)",
+            },
+            {
+                "<leader>fF",
+                function()
+                    require("fff").find_files({
+                        cwd = vim.fn.getcwd(),
+                        title = "FFF CWD Files",
+                    })
+                end,
+                desc = "FFF Find Files (cwd)",
             },
             {
                 "<leader>sg",
@@ -715,7 +718,15 @@ return {
                 if item.key == "f" then
                     item.desc = "Find File (FFF)"
                     item.action = function()
-                        require("fff").find_files()
+                        local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+                        if vim.v.shell_error ~= 0 or not git_root or git_root == "" then
+                            require("fff").find_files()
+                        else
+                            require("fff").find_files({
+                                cwd = git_root,
+                                title = "FFF Git Root Files",
+                            })
+                        end
                     end
                 elseif item.key == "g" then
                     item.desc = "Find Text (FFF)"
@@ -729,7 +740,7 @@ return {
         end,
         keys = {
             { "<leader>ff", false },
-            { "<leader>fg", false },
+            { "<leader>fF", false },
             { "<leader>sg", false },
             { "<leader>sl", false },
             {
