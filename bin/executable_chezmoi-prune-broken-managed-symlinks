@@ -20,39 +20,61 @@ end
 
 set -l found 0
 set -l removed 0
+set -l broken_links
 
 for p in (chezmoi managed)
-    if test -L "$p"
-        and not test -e "$p"
-        set found (math $found + 1)
+    set -l target "$p"
+    if not string match -rq '^/' -- "$p"
+        set target "$HOME/$p"
+    end
 
-        set -l do_remove 0
-        if test $auto_yes -eq 1
-            set do_remove 1
-        else
-            read -l -P "Remove broken symlink $p ? [y/N] " ans
-            if string match -qi "y" -- $ans
-                set do_remove 1
-            end
+    if test -L "$target"
+        and not test -e "$target"
+        if not contains -- "$target" $broken_links
+            set broken_links $broken_links "$target"
         end
+    end
 
-        if test $do_remove -eq 1
-            rm -- "$p"
-            echo "removed: $p"
-            set removed (math $removed + 1)
-
-            set -l dir (path dirname "$p")
-            while test "$dir" != "/" -a "$dir" != "$HOME"
-                if rmdir -- "$dir" 2>/dev/null
-                    echo "rmdir:   $dir"
-                    set dir (path dirname "$dir")
-                else
-                    break
+    if test -d "$target"
+        for link in (find "$target" -type l 2>/dev/null)
+            if not test -e "$link"
+                if not contains -- "$link" $broken_links
+                    set broken_links $broken_links "$link"
                 end
             end
-        else
-            echo "kept: $p"
         end
+    end
+end
+
+for p in $broken_links
+    set found (math $found + 1)
+
+    set -l do_remove 0
+    if test $auto_yes -eq 1
+        set do_remove 1
+    else
+        read -l -P "Remove broken symlink $p ? [y/N] " ans
+        if string match -qi "y" -- $ans
+            set do_remove 1
+        end
+    end
+
+    if test $do_remove -eq 1
+        rm -- "$p"
+        echo "removed: $p"
+        set removed (math $removed + 1)
+
+        set -l dir (path dirname "$p")
+        while test "$dir" != "/" -a "$dir" != "$HOME"
+            if rmdir -- "$dir" 2>/dev/null
+                echo "rmdir:   $dir"
+                set dir (path dirname "$dir")
+            else
+                break
+            end
+        end
+    else
+        echo "kept: $p"
     end
 end
 
