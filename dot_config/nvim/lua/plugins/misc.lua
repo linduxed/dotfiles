@@ -808,5 +808,14 @@ return {
     },
     {
         "sindrets/diffview.nvim",
+        keys = {
+            { "<leader>gvo", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+            { "<leader>gvc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+            { "<leader>gvh", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview File History" },
+            { "<leader>gvH", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview Repo History" },
+            { "<leader>gvr", "<cmd>DiffviewRefresh<cr>", desc = "Refresh Diffview" },
+            { "<leader>gvm", "<cmd>DiffviewOpen origin/HEAD...HEAD<cr>", desc = "Diffview Main Compare" },
+            { "<leader>gvs", "<cmd>DiffviewOpen --staged<cr>", desc = "Diffview Staged" },
+        },
     }
 }

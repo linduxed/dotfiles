@@ -19,6 +19,7 @@ return {
                     { "<leader>aw",  group = "Whitespace" },
                     { "<leader>ay",  group = "Yank" },
                     { "<leader>fs",  group = "Seeker" },
+                    { "<leader>gv",  group = "Diffview" },
                     { "<leader>cn",  group = "Code modification (alternative.nvim)" },
                     { "<leader>cj",  group = "SplitJoin" },
                     { "<leader>cx",  group = "Code swap (sibling-swap.nvim)" },
