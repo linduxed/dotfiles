@@ -708,36 +708,50 @@ return {
     },
     {
         "folke/snacks.nvim",
-        opts = function(_, opts)
-            local dashboard_keys = opts.dashboard and opts.dashboard.preset and opts.dashboard.preset.keys
-            if not dashboard_keys then
-                return opts
-            end
-
-            for _, item in ipairs(dashboard_keys) do
-                if item.key == "f" then
-                    item.desc = "Find File (FFF)"
-                    item.action = function()
-                        local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
-                        if vim.v.shell_error ~= 0 or not git_root or git_root == "" then
-                            require("fff").find_files()
-                        else
-                            require("fff").find_files({
-                                cwd = git_root,
-                                title = "FFF Git Root Files",
-                            })
-                        end
-                    end
-                elseif item.key == "g" then
-                    item.desc = "Find Text (FFF)"
-                    item.action = function()
-                        require("fff").live_grep()
-                    end
-                end
-            end
-
-            return opts
-        end,
+        opts = {
+            dashboard = {
+                preset = {
+                    keys = {
+                        {
+                            icon = " ",
+                            key = "f",
+                            desc = "Find File (FFF)",
+                            action = function()
+                                local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+                                if vim.v.shell_error ~= 0 or not git_root or git_root == "" then
+                                    require("fff").find_files()
+                                else
+                                    require("fff").find_files({
+                                        cwd = git_root,
+                                        title = "FFF Git Root Files",
+                                    })
+                                end
+                            end,
+                        },
+                        { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
+                        {
+                            icon = " ",
+                            key = "g",
+                            desc = "Find Text (FFF)",
+                            action = function()
+                                require("fff").live_grep()
+                            end,
+                        },
+                        { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                        {
+                            icon = " ",
+                            key = "c",
+                            desc = "Config",
+                            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+                        },
+                        { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+                        { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
+                        { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
+                        { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                    },
+                },
+            },
+        },
         keys = {
             { "<leader>ff", false },
             { "<leader>fF", false },
