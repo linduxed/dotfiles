@@ -5,7 +5,7 @@ font pango:UbuntuMono 10
 # {{{1 Bar
 
 bar {
-    font pango:pango:UbuntuMono 10, FontAwesome 12
+    font pango:FontAwesome 12
     position top
     status_command /usr/bin/i3status-rs ~/.config/i3status-rust/config.toml
     colors {
