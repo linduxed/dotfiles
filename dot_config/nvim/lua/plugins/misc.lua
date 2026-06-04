@@ -810,6 +810,7 @@ return {
         "sindrets/diffview.nvim",
         keys = {
             { "<leader>gvo", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
+            { "<leader>gvv", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
             { "<leader>gvc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
             { "<leader>gvh", "<cmd>DiffviewFileHistory %<cr>", desc = "Diffview File History" },
             { "<leader>gvH", "<cmd>DiffviewFileHistory<cr>", desc = "Diffview Repo History" },
