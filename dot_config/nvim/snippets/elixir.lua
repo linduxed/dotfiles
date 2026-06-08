@@ -166,6 +166,12 @@ return {
             t("opts \\\\ []")
         }
     ),
+    s(
+        { trig = "sym-key-val", name = "symmetrical key-value pair" },
+        {
+            i(1, "key"), t(": "), f(echo_fun, { 1 }, nil),
+        }
+    ),
 
     -- LiveView
     s(
