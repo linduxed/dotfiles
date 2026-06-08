@@ -135,6 +135,21 @@ return {
         end,
     },
     {
+        "folke/noice.nvim",
+        opts = {
+            views = {
+                mini = {
+                    size = {
+                        max_width = 80,
+                    },
+                    win_options = {
+                        wrap = true,
+                    },
+                },
+            },
+        },
+    },
+    {
         "saghen/blink.cmp",
         opts = {
             snippets = {
