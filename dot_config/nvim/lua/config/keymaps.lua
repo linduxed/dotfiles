@@ -27,6 +27,12 @@ vim.keymap.set("n", "<C-k>", "<cmd>resize -2<cr>", { desc = "Decrease Window Hei
 vim.keymap.set("n", "<C-h>", "<cmd>vertical resize -2<cr>", { desc = "Decrease Window Width" })
 vim.keymap.set("n", "<C-l>", "<cmd>vertical resize +2<cr>", { desc = "Increase Window Width" })
 
+-- better up/down (restore default, disable gj/gk)
+vim.keymap.del({ "n", "x" }, "j")
+vim.keymap.del({ "n", "x" }, "k")
+vim.keymap.del({ "n", "x" }, "<Down>")
+vim.keymap.del({ "n", "x" }, "<Up>")
+
 -- Move Lines
 vim.keymap.del("n", "<A-j>")
 vim.keymap.del("n", "<A-k>")
