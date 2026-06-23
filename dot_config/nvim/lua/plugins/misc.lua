@@ -737,7 +737,12 @@ return {
                                 require("fff").live_grep()
                             end,
                         },
-                        { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+                        {
+                            icon = " ",
+                            key = "r",
+                            desc = "Recent Files",
+                            action = ":lua Snacks.dashboard.pick('oldfiles')",
+                        },
                         {
                             icon = " ",
                             key = "c",
