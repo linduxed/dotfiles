@@ -813,6 +813,12 @@ return {
     },
     {
         "sindrets/diffview.nvim",
+        cmd = {
+            "DiffviewOpen",
+            "DiffviewClose",
+            "DiffviewFileHistory",
+            "DiffviewRefresh",
+        },
         keys = {
             { "<leader>gvo", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
             { "<leader>gvv", "<cmd>DiffviewOpen<cr>", desc = "Open Diffview" },
