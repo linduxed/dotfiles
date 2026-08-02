@@ -831,6 +831,60 @@ return {
         },
     },
     {
+        "CoreyKaylor/diffbandit.nvim",
+        cmd = {
+            "DiffBandit",
+            "DiffBanditBuffers",
+            "DiffBanditCommitPanel",
+            "DiffBanditFolderDiff",
+            "DiffBanditGit",
+            "DiffBanditGitCheckout",
+            "DiffBanditGitCommit",
+            "DiffBanditGitCompare",
+            "DiffBanditGitCurrent",
+            "DiffBanditGitLog",
+            "DiffBanditGitMenu",
+            "DiffBanditMerge",
+        },
+        keys = {
+            { "<leader>gVb", ":DiffBanditBuffers ", desc = "DiffBandit Buffers" },
+            { "<leader>gVB", ":DiffBanditGitCompare ", desc = "DiffBandit Compare Refs" },
+            { "<leader>gVo", "<cmd>DiffBanditGit<cr>", desc = "DiffBandit Open" },
+            { "<leader>gVv", "<cmd>DiffBanditGit<cr>", desc = "DiffBandit Open" },
+            { "<leader>gVc", "<cmd>DiffBanditCommitPanel<cr>", desc = "DiffBandit Commit Panel" },
+            { "<leader>gVC", ":DiffBanditGitCommit ", desc = "DiffBandit Commit Review" },
+            { "<leader>gVd", ":DiffBanditFolderDiff ", desc = "DiffBandit Folder Diff" },
+            { "<leader>gVf", ":DiffBandit ", desc = "DiffBandit Files" },
+            { "<leader>gVh", "<cmd>DiffBanditGitCurrent<cr>", desc = "DiffBandit Current File" },
+            { "<leader>gVH", "<cmd>DiffBanditGitLog --all --max-count 50<cr>", desc = "DiffBandit Repo History" },
+            { "<leader>gVm", "<cmd>DiffBanditGitCompare origin/HEAD HEAD<cr>", desc = "DiffBandit Main Compare" },
+            { "<leader>gVM", "<cmd>DiffBanditGitMenu<cr>", desc = "DiffBandit Git Menu" },
+            { "<leader>gVn", "<cmd>DiffBanditMerge<cr>", desc = "DiffBandit Resolve Conflict" },
+            { "<leader>gVs", "<cmd>DiffBanditGit --staged<cr>", desc = "DiffBandit Staged" },
+            { "<leader>gVx", ":DiffBanditGitCheckout ", desc = "DiffBandit Checkout" },
+        },
+        opts = {
+            actions = {
+                keys = {
+                    toggle_stage = "gs",
+                },
+            },
+            git = {
+                panel = {
+                    keys = {
+                        toggle_stage = "s",
+                        toggle_amend = "A",
+                    },
+                },
+            },
+            folder = {
+                keys = {
+                    toggle_expand = "zA",
+                },
+            },
+        },
+    },
+    {
         "stevearc/quicker.nvim",
         ft = "qf",
         opts = {},
