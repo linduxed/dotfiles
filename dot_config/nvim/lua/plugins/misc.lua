@@ -7,6 +7,17 @@ return {
     "vim-scripts/warsow.vim",
     "kosayoda/nvim-lightbulb",
     {
+        "freeo/md-table.nvim",
+        cmd = "MdTable",
+        keys = {
+            {
+                "<leader>amt",
+                "<cmd>MdTable<cr>",
+                desc = "Markdown - Read table",
+            },
+        },
+    },
+    {
         "dyng/ctrlsf.vim",
         enabled = true,
         lazy = false,
