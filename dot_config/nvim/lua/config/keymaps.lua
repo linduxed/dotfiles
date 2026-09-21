@@ -53,6 +53,13 @@ vim.keymap.del("n", "<S-l>")
 vim.keymap.set("n", "<S-Left>", "<cmd>bprevious<cr>", { desc = "Prev Buffer" })
 vim.keymap.set("n", "<S-Right>", "<cmd>bnext<cr>", { desc = "Next Buffer" })
 
+-- LazyVim adds undo break-points on punctuation, which chops a single insert
+-- session into many undo steps. Drop them and keep the Vim default of one
+-- insert session == one undo step.
+vim.keymap.del("i", ",")
+vim.keymap.del("i", ".")
+vim.keymap.del("i", ";")
+
 -- {{{2 Folds
 vim.keymap.set("n", "<Leader>afr", "zMzvzz", { desc = '"Refocus" folds' })
 vim.keymap.set("n",
