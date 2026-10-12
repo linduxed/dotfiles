@@ -19,9 +19,7 @@ if status is-interactive
     abbr xo xdg-open
     abbr unarchive dtrx
     abbr syc sudo systemctl
-    abbr nsyc systemctl
     abbr sycu systemctl --user
     abbr joc sudo journalctl
-    abbr njoc journalctl
     abbr jocu journalctl --user
 end
