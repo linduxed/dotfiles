@@ -10,8 +10,6 @@ if status is-interactive
     fish_add_path ~/.local/bin
     fish_add_path /usr/local/sbin
 
-    # Miscellaneous
-
     abbr dl aria2c
     abbr nivm nvim
     abbr eixt exit
