@@ -1,3 +1,3 @@
-function tree --wraps='eza' --description 'alias tree=eza --tree --icons'
-  eza --tree --icons $argv
+function tree --wraps='eza' --description 'alias tree=eza --tree --icons=auto'
+  eza --tree --icons=auto $argv
 end
