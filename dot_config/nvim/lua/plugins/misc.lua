@@ -877,6 +877,9 @@ return {
             { "<leader>gvx", ":DiffBanditGitCheckout ", desc = "DiffBandit Checkout" },
         },
         opts = {
+            ui = {
+                connector_renderer = "auto",
+            },
             actions = {
                 keys = {
                     toggle_stage = "gs",
@@ -896,6 +899,27 @@ return {
                 },
             },
         },
+        config = function(_, opts)
+            local diffbandit = require("diffbandit")
+            diffbandit.setup(opts)
+
+            local saved_winbar
+            vim.api.nvim_create_autocmd({ "TabEnter", "WinEnter", "BufWinEnter" }, {
+                group = vim.api.nvim_create_augroup("diffbandit_winbar", { clear = true }),
+                -- DiffBandit registers its tab after creating the layout.
+                callback = vim.schedule_wrap(function()
+                    if diffbandit.is_running({ tab = vim.api.nvim_get_current_tabpage(), panel = true }) then
+                        if saved_winbar == nil then
+                            saved_winbar = vim.go.winbar
+                        end
+                        vim.go.winbar = ""
+                    elseif saved_winbar ~= nil then
+                        vim.go.winbar = saved_winbar
+                        saved_winbar = nil
+                    end
+                end),
+            })
+        end,
     },
     {
         "stevearc/quicker.nvim",
