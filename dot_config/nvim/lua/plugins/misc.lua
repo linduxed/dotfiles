@@ -764,7 +764,7 @@ return {
                         { icon = " ", key = "x", desc = "Lazy Extras", action = ":LazyExtras" },
                         { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy" },
                         { icon = " ", key = "d", desc = "Diffview", action = ":DiffviewOpen" },
-                        { icon = " ", key = "V", desc = "DiffBandit", action = ":DiffBanditGit" },
+                        { icon = " ", key = "v", desc = "DiffBandit", action = ":DiffBanditGit" },
                         { icon = " ", key = "q", desc = "Quit", action = ":qa" },
                     },
                 },
