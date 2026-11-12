@@ -6,6 +6,10 @@
 
 -- {{{2 LazyVim overrides
 
+-- Do not keep the visual selection after indenting, matching stock Neovim.
+vim.keymap.set("v", "<", "<")
+vim.keymap.set("v", ">", ">")
+
 -- LazyVim opts to use HJKL as the main navigation keys. On my keyboard layout,
 -- however, it's far more comfortable to make use of the arrow keys. Since
 -- LazyVim already has mappings that make use of the arrow keys, it seems this
