@@ -899,6 +899,27 @@ return {
                 },
             },
         },
+        config = function(_, opts)
+            local diffbandit = require("diffbandit")
+            diffbandit.setup(opts)
+
+            vim.api.nvim_create_autocmd({ "TabEnter", "WinEnter", "BufWinEnter" }, {
+                group = vim.api.nvim_create_augroup("diffbandit_line_numbers", { clear = true }),
+                -- DiffBandit registers its tab after creating the layout.
+                callback = vim.schedule_wrap(function()
+                    if diffbandit.is_running({ tab = vim.api.nvim_get_current_tabpage(), panel = true }) then
+                        -- Run after line-numbers.nvim's window-enter handler.
+                        for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+                            if vim.wo[win].winhighlight:find("DiffBandit", 1, true) then
+                                vim.wo[win].number = false
+                                vim.wo[win].relativenumber = false
+                                vim.wo[win].statuscolumn = ""
+                            end
+                        end
+                    end
+                end),
+            })
+        end,
     },
     {
         "stevearc/quicker.nvim",
