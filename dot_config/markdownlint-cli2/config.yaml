@@ -1,0 +1,3 @@
+# Global base config, passed via --config from nvim (see lazyvim_overrides.lua)
+config:
+  MD013: false

@@ -102,6 +102,32 @@ return {
         end,
     },
     {
+        -- nvim-lint pipes the buffer to markdownlint-cli2 via stdin, in which mode it
+        -- only reads config from nvim's cwd. Pass the global config explicitly so
+        -- rules apply everywhere; a project config still layers on top of it.
+        "mfussenegger/nvim-lint",
+        opts = {
+            linters = {
+                ["markdownlint-cli2"] = {
+                    args = { "--config", vim.fn.expand("~/.config/markdownlint-cli2/config.yaml"), "-" },
+                },
+            },
+        },
+    },
+    -- LazyVim runs `markdownlint-cli2 --fix` on format when markdownlint diagnostics
+    -- exist. Point it at the same global config as nvim-lint above, otherwise it
+    -- would auto-fix rules the linter has been told to ignore.
+    {
+        "stevearc/conform.nvim",
+        opts = {
+            formatters = {
+                ["markdownlint-cli2"] = {
+                    prepend_args = { "--config", vim.fn.expand("~/.config/markdownlint-cli2/config.yaml") },
+                },
+            },
+        },
+    },
+    {
         "saghen/blink.cmp",
         opts = {
             snippets = {
