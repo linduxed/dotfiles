@@ -14,6 +14,13 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown",
+    callback = function()
+        vim.opt_local.textwidth = 0
+    end,
+})
+
 vim.api.nvim_create_autocmd("BufReadPost", {
     callback = function()
         local default_listchars = "extends:❯,precedes:❮,trail:-,nbsp:∘,conceal:·"
