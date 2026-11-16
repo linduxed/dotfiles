@@ -22,14 +22,14 @@ bar {
 # {{{1 i3 mappings
 # {{{2 Mod-key setup
 
-set $mod Mod4
+set $super Mod4
 set $hyper Mod4+Mod1+Control+Shift
 
 # {{{2 Commands
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $super+Return exec i3-sensible-terminal
 bindsym $hyper+e exec i3-sensible-terminal
-bindsym $mod+grave kill
+bindsym $super+grave kill
 
 set $mode_commands "Commands (i3-[q]uit / i3-[r]estart / i3-re[l]oad / lock screen [i] / suspend [o])"
 bindsym $hyper+l mode $mode_commands
@@ -48,23 +48,23 @@ mode $mode_commands {
 
 # {{{2 Layout
 
-bindsym $mod+y layout toggle split
-bindsym $mod+semicolon layout stacking
-bindsym $mod+bracketleft layout tabbed
-bindsym $mod+m layout tabbed
-bindsym $mod+h focus child
-bindsym $mod+k focus parent
-bindsym $mod+comma split h
-bindsym $mod+l split v
-bindsym $mod+f fullscreen
+bindsym $super+y layout toggle split
+bindsym $super+semicolon layout stacking
+bindsym $super+bracketleft layout tabbed
+bindsym $super+m layout tabbed
+bindsym $super+h focus child
+bindsym $super+k focus parent
+bindsym $super+comma split h
+bindsym $super+l split v
+bindsym $super+f fullscreen
 
 # Additional binding for the ZMK keyboard, whose ;/: mod-morph sends
 # Shift+semicolon when the key is pressed without physical Shift.
-bindsym $mod+Shift+semicolon layout stacking
+bindsym $super+Shift+semicolon layout stacking
 
 # {{{3 Resize
 
-bindsym $mod+j mode "resize"
+bindsym $super+j mode "resize"
 
 mode "resize" {
     bindsym n resize shrink width 5 px or 5 ppt
@@ -83,63 +83,63 @@ mode "resize" {
 
 # {{{2 Navigation
 
-bindsym $mod+u focus up
-bindsym $mod+e focus down
-bindsym $mod+n focus left
-bindsym $mod+i focus right
-bindsym $mod+Up focus up
-bindsym $mod+Down focus down
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
+bindsym $super+u focus up
+bindsym $super+e focus down
+bindsym $super+n focus left
+bindsym $super+i focus right
+bindsym $super+Up focus up
+bindsym $super+Down focus down
+bindsym $super+Left focus left
+bindsym $super+Right focus right
 
-bindsym $mod+Shift+u move up
-bindsym $mod+Shift+e move down
-bindsym $mod+Shift+n move left
-bindsym $mod+Shift+i move right
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Right move right
+bindsym $super+Shift+u move up
+bindsym $super+Shift+e move down
+bindsym $super+Shift+n move left
+bindsym $super+Shift+i move right
+bindsym $super+Shift+Up move up
+bindsym $super+Shift+Down move down
+bindsym $super+Shift+Left move left
+bindsym $super+Shift+Right move right
 
-bindsym $mod+o move container to output right
-bindsym $mod+apostrophe move workspace to output right
+bindsym $super+o move container to output right
+bindsym $super+apostrophe move workspace to output right
 
 # {{{2 Floating
 
-floating_modifier $mod
-bindsym $mod+Shift+t floating toggle
-bindsym $mod+t focus mode_toggle
+floating_modifier $super
+bindsym $super+Shift+t floating toggle
+bindsym $super+t focus mode_toggle
 
 # {{{2 Workspaces
 
-bindsym $mod+Tab workspace back_and_forth
+bindsym $super+Tab workspace back_and_forth
 
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8:email
-bindsym $mod+9 workspace 9:shells
-bindsym $mod+0 workspace 10:chats
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8:email
+bindsym $super+9 workspace 9:shells
+bindsym $super+0 workspace 10:chats
 
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8:email
-bindsym $mod+Shift+9 move container to workspace 9:shells
-bindsym $mod+Shift+0 move container to workspace 10:chats
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8:email
+bindsym $super+Shift+9 move container to workspace 9:shells
+bindsym $super+Shift+0 move container to workspace 10:chats
 
 # {{{2 Scratchpad
 
-bindsym $mod+minus scratchpad show
-bindsym $mod+Shift+minus move scratchpad
+bindsym $super+minus scratchpad show
+bindsym $super+Shift+minus move scratchpad
 
 # {{{1 i3-resurrect
 # {{{2 Save workspace mode
@@ -208,8 +208,8 @@ mode $dunst_mode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+F9 exec "dunstctl close"
-bindsym $mod+Shift+F10 mode $dunst_mode
+bindsym $super+Shift+F9 exec "dunstctl close"
+bindsym $super+Shift+F10 mode $dunst_mode
 bindsym $hyper+period exec "dunstctl close"
 bindsym $hyper+slash mode $dunst_mode
 
@@ -227,13 +227,13 @@ mode $sound_switch_mode {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+F5 mode $sound_switch_mode
+bindsym $super+F5 mode $sound_switch_mode
 bindsym $hyper+semicolon mode $sound_switch_mode
 
 # Additional binding for the ZMK keyboard, whose ;/: mod-morph suppresses
 # held Shift. Physical Hyper+key reaches i3 as Super+Alt+Control+semicolon.
 # Keep $hyper+semicolon above for keyboards with a regular semicolon key.
-bindsym $mod+Mod1+Control+semicolon mode $sound_switch_mode
+bindsym $super+Mod1+Control+semicolon mode $sound_switch_mode
 
 # {{{1 xscreensaver
 
@@ -247,7 +247,7 @@ bindsym XF86Calculator exec "xscreensaver-command -lock"
 
 # {{{1 rofi
 
-bindsym $mod+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
+bindsym $super+space exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
 bindsym $hyper+i exec "rofi -show combi -modes combi -combi-modes 'drun,window' -drun-show-actions"
 bindsym $hyper+u exec "rofi -show window"
 bindsym $hyper+y exec "rofi -show run"
@@ -255,7 +255,7 @@ bindsym $hyper+y exec "rofi -show run"
 # {{{1 Miscellaneous
 
 bindsym $hyper+F10 exec "systemctl suspend"
-bindsym $mod+Shift+k exec "killall kbdd ; kbdd"
+bindsym $super+Shift+k exec "killall kbdd ; kbdd"
 bindsym $hyper+h exec "voxtype record toggle"
 bindsym $hyper+n exec "firefox"
 bindsym $hyper+o exec "warpd --hint --oneshot"
@@ -263,16 +263,16 @@ bindsym $hyper+o exec "warpd --hint --oneshot"
 # {{{1 Keyboard key group mappings
 # {{{2 F-keys
 
-# bindsym $mod+F1 exec ""
-# bindsym $mod+F2 exec ""
-bindsym $mod+F3 exec "rofi -show run"
-bindsym $mod+F4 exec "rofi -show window"
-# $mod+F5 bound to sound_switch
-bindsym $mod+F6 mode $mode_resurrect_save
-bindsym $mod+F7 mode $mode_resurrect_restore
-# bindsym $mod+F8 exec ""
-bindsym $mod+F9 exec "/usr/bin/variety --previous"
-bindsym $mod+F10 exec "/usr/bin/variety --next"
+# bindsym $super+F1 exec ""
+# bindsym $super+F2 exec ""
+bindsym $super+F3 exec "rofi -show run"
+bindsym $super+F4 exec "rofi -show window"
+# $super+F5 bound to sound_switch
+bindsym $super+F6 mode $mode_resurrect_save
+bindsym $super+F7 mode $mode_resurrect_restore
+# bindsym $super+F8 exec ""
+bindsym $super+F9 exec "/usr/bin/variety --previous"
+bindsym $super+F10 exec "/usr/bin/variety --next"
 
 # {{{2 Media keys
 
