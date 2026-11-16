@@ -23,6 +23,7 @@ bar {
 # {{{2 Mod-key setup
 
 set $super Mod4
+set $alt Mod1
 set $hyper Mod4+Mod1+Control+Shift
 
 # {{{2 Commands
@@ -233,7 +234,7 @@ bindsym $hyper+semicolon mode $sound_switch_mode
 # Additional binding for the ZMK keyboard, whose ;/: mod-morph suppresses
 # held Shift. Physical Hyper+key reaches i3 as Super+Alt+Control+semicolon.
 # Keep $hyper+semicolon above for keyboards with a regular semicolon key.
-bindsym $super+Mod1+Control+semicolon mode $sound_switch_mode
+bindsym $super+$alt+Control+semicolon mode $sound_switch_mode
 
 # {{{1 xscreensaver
 
