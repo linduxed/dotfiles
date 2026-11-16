@@ -58,6 +58,10 @@ bindsym $mod+comma split h
 bindsym $mod+l split v
 bindsym $mod+f fullscreen
 
+# Additional binding for the ZMK keyboard, whose ;/: mod-morph sends
+# Shift+semicolon when the key is pressed without physical Shift.
+bindsym $mod+Shift+semicolon layout stacking
+
 # {{{3 Resize
 
 bindsym $mod+j mode "resize"
@@ -225,6 +229,11 @@ mode $sound_switch_mode {
 
 bindsym $mod+F5 mode $sound_switch_mode
 bindsym $hyper+semicolon mode $sound_switch_mode
+
+# Additional binding for the ZMK keyboard, whose ;/: mod-morph suppresses
+# held Shift. Physical Hyper+key reaches i3 as Super+Alt+Control+semicolon.
+# Keep $hyper+semicolon above for keyboards with a regular semicolon key.
+bindsym $mod+Mod1+Control+semicolon mode $sound_switch_mode
 
 # {{{1 xscreensaver
 
