@@ -28,6 +28,10 @@ git:
 
   overrideGpg: true
 
+  # Use git-delta for syntax highlighting in the diff
+  diffRenderers:
+    - command: delta --{{colorScheme}} --paging=never
+
 # Background refreshes
 refresher:
   # File/submodule refresh interval in seconds.
